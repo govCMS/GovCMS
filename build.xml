@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="govCMS" default="env">
+
+  <taskdef name="setxmlproperty" classpath="${project.basedir}/src/Task" classname="SetXMLPropertyTask"/>
+
+  <!-- Locations of required binaries. -->
+  <property name="drush" value="${project.basedir}/bin/drush"/>
+  <property name="composer" value="/usr/local/bin/composer"/>
+  <property name="npm" value="/usr/local/bin/npm"/>
+  <property name="rsync" value="/usr/bin/rsync"/>
+  <property name="bzip2" value="/usr/bin/bzip2"/>
+  <property name="bunzip2" value="/usr/bin/bunzip2"/>
+
+  <!-- Database credentials. -->
+  <property name="db.type" value="mysql"/>
+  <property name="db.host" value="localhost"/>
+  <property name="db.user" value="root"/>
+  <property name="db.password" value=""/>
+  <property name="db.database" value="govcms"/>
+  <property name="db.url" value="${db.type}://${db.user}:${db.password}@${db.host}/${db.database}"/>
+
+  <!-- Installation and build-specific variables. -->
+  <property name="url" value="http://127.0.0.1"/>
+  <property name="docroot" value="docroot"/>
+  <property name="profile" value="${docroot}/profiles/govcms"/>
+  <property name="site" value="${docroot}/sites/default"/>
+  <property name="version" value="HEAD"/>
+  <property name="fixture" value="${project.basedir}/tests/fixtures/${version}.sql"/>
+
+  <!-- Finds required binaries. -->
+  <target name="env">
+    <if>
+      <not>
+        <available file="${drush}" property="drush.exists"/>
+      </not>
+      <then>
+        <exec command="which drush" outputProperty="drush"/>
+      </then>
+    </if>
+    <exec command="which composer" outputProperty="composer"/>
+    <exec command="which npm" outputProperty="npm"/>
+    <exec command="which rsync" outputProperty="rsync"/>
+    <exec command="which bzip2" outputProperty="bzip2"/>
+    <exec command="which bunzip2" outputProperty="bunzip2"/>
+
+    <echo message="Found Drush: ${drush}"/>
+    <echo message="Found Composer: ${composer}"/>
+    <echo message="Found NPM: ${npm}"/>
+    <echo message="Found rsync: ${rsync}"/>
+    <echo message="Found bzip2: ${bzip2}"/>
+    <echo message="Found bunzip2: ${bunzip2}"/>
+  </target>
+
+  <!-- Push the govcms profile into the Drupal code base. -->
+  <target name="push" depends="env">
+    <!-- Create the destination if it doesn't exist. -->
+    <mkdir dir="${profile}"/>
+    <!-- rsync the profile, excluding developer flotsam. -->
+    <filesync destinationDir="${profile}" rsyncPath="${rsync}" sourceDir="." verbose="false" exclude=".idea,bin,build.xml,.git,.gitignore,${docroot},karma.conf.js,*.make,node_modules,.travis.yml,vendor"/>
+  </target>
+
+  <!-- Pull the updated profile into govCMS distribtuion. -->
+  <target name="pull" depends="env">
+    <filesync destinationDir="." rsyncPath="${rsync}" sourceDir="${profile}/" verbose="false" exclude="libraries,modules/contrib,behat.local.yml"/>
+  </target>
+
+  <!-- Destroys the installed code base. -->
+  <target name="destroy">
+    <delete failonerror="true" includeemptydirs="true">
+      <fileset dir="." defaultexcludes="false">
+        <include name="bin/**"/>
+        <include name="${docroot}/**"/>
+        <include name="node_modules/**"/>
+        <include name="vendor/**"/>
+      </fileset>
+    </delete>
+  </target>
+
+</project>

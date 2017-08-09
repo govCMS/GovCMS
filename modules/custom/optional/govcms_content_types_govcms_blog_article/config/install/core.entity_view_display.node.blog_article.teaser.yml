@@ -1,0 +1,58 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.blog_article.body
+    - field.field.node.blog_article.field_attachments
+    - field.field.node.blog_article.field_categories
+    - field.field.node.blog_article.field_featured_image
+    - field.field.node.blog_article.field_meta_tags
+    - image.style.featured_thumbnail
+    - node.type.blog_article
+  module:
+    - image
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.blog_article.teaser
+targetEntityType: node
+bundle: blog_article
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_trimmed
+    weight: 2
+    settings:
+      trim_length: 300
+    third_party_settings: {  }
+    region: content
+  field_categories:
+    type: entity_reference_label
+    weight: 1
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_featured_image:
+    type: image
+    weight: 0
+    label: hidden
+    settings:
+      image_style: featured_thumbnail
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_attachments: true
+  field_meta_tags: true
+  links: true
+  workbench_moderation_control: true

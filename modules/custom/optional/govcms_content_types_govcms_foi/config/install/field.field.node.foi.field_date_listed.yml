@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_listed
+    - node.type.foi
+  module:
+    - datetime
+id: node.foi.field_date_listed
+field_name: field_date_listed
+entity_type: node
+bundle: foi
+label: 'Date Listed'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

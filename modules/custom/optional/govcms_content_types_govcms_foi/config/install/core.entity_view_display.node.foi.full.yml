@@ -1,0 +1,86 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.foi.body
+    - field.field.node.foi.field_attachments
+    - field.field.node.foi.field_date_listed
+    - field.field.node.foi.field_foi_release_type
+    - field.field.node.foi.field_log_reference_id
+    - field.field.node.foi.field_meta_tags
+    - field.field.node.foi.field_proposed_deletion_date
+    - node.type.foi
+  module:
+    - datetime
+    - file
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.foi.full
+targetEntityType: node
+bundle: foi
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_attachments:
+    weight: 6
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_date_listed:
+    weight: 2
+    label: visually_hidden
+    settings:
+      timezone_override: ''
+      format_type: short
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_foi_release_type:
+    weight: 4
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_log_reference_id:
+    weight: 1
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_proposed_deletion_date:
+    weight: 3
+    label: visually_hidden
+    settings:
+      timezone_override: ''
+      format_type: short
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  workbench_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_meta_tags: true
+  links: true

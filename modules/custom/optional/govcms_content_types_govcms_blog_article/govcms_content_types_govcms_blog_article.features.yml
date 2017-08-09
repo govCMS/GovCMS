@@ -1,0 +1,9 @@
+bundle: govcms_content_types
+excluded:
+  - system.menu.main
+  - user.role.blog_article_creator
+  - user.role.blog_article_reviewer
+required:
+  - taxonomy.vocabulary.categories
+  - field.storage.node.body
+  - field.storage.node.field_meta_tags

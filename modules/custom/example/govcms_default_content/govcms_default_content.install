@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function govcms_default_content_schema() {
+    $schema['govcms_default_content'] = array(
+        'description' => 'The base table for default content.',
+        'fields' => array(
+            'id' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE),
+            'selector' => array('type' => 'varchar','length' => 32,'not null' => TRUE, 'default' => ''),
+            'type' => array('type' => 'varchar','length' => 32,'not null' => TRUE, 'default' => ''),
+        ),
+    );
+
+    return $schema;
+}

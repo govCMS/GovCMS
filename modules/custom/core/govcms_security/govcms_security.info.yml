@@ -1,0 +1,5 @@
+name: govCMS Security Kit
+type: module
+description: Enhance security of govCMS website.
+package: govCMS
+core: 8.x

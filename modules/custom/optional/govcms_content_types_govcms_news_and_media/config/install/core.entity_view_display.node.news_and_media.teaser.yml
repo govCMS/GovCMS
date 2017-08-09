@@ -1,0 +1,67 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.news_and_media.body
+    - field.field.node.news_and_media.field_attachments
+    - field.field.node.news_and_media.field_categories
+    - field.field.node.news_and_media.field_featured_image
+    - field.field.node.news_and_media.field_media_release_type
+    - field.field.node.news_and_media.field_meta_tags
+    - image.style.featured_thumbnail
+    - node.type.news_and_media
+  module:
+    - image
+    - options
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.news_and_media.teaser
+targetEntityType: node
+bundle: news_and_media
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 3
+    settings:
+      trim_length: 300
+    third_party_settings: {  }
+    region: content
+  field_categories:
+    type: entity_reference_label
+    weight: 2
+    region: content
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_featured_image:
+    type: image
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      image_style: featured_thumbnail
+      image_link: ''
+    third_party_settings: {  }
+  field_media_release_type:
+    type: list_default
+    weight: 0
+    region: content
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_attachments: true
+  field_meta_tags: true
+  links: true
+  workbench_moderation_control: true

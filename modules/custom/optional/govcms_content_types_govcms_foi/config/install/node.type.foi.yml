@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - archived
+      - draft
+      - needs_review
+    default_moderation_state: draft
+name: FOI
+type: foi
+description: 'Use <em>FOI</em> to display a record of an FOI request. '
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

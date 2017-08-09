@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: foi
+label: FOI
+type: 'canonical_entities:node'
+pattern: 'about/foi/[node:title]'
+selection_criteria:
+  00dafe19-ad03-45dd-b876-7cdfad5ac5aa:
+    id: node_type
+    bundles:
+      foi: foi
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 00dafe19-ad03-45dd-b876-7cdfad5ac5aa
+selection_logic: and
+weight: -5
+relationships: {  }

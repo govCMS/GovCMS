@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - archived
+      - draft
+      - needs_review
+    default_moderation_state: draft
+name: 'News and Media'
+type: news_and_media
+description: 'Use <em>News and Media</em> to reach your target audience directly. '
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

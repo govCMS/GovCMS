@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.govcms_event_views
+  module:
+    - system
+    - views
+  theme:
+    - govcmsui
+id: views_block__govcms_event_views_block_3
+theme: govcmsui
+region: sidebar_second
+weight: -3
+provider: null
+plugin: 'views_block:govcms_event_views-block_3'
+settings:
+  id: 'views_block:govcms_event_views-block_3'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/event\r\n/event/show/*"
+    negate: false
+    context_mapping: {  }

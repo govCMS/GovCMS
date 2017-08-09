@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Categories
+vid: categories
+description: 'Like in WordPress, categories are used to sort and classify your content.'
+hierarchy: 0
+weight: 0

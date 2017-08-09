@@ -1,0 +1,10 @@
+bundle: govcms_content_types
+excluded:
+  - block.block.mainnavigation
+  - system.menu.main
+  - user.role.foi_creator
+  - user.role.foi_reviewer
+required:
+  - field.storage.node.body
+  - field.storage.node.field_attachments
+  - field.storage.node.field_meta_tags

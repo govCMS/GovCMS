@@ -1,0 +1,102 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall hooks for the govCMS profile.
+ */
+
+use Drupal\user\Entity\User;
+use Drupal\user\RoleInterface;
+use Drupal\shortcut\Entity\Shortcut;
+
+/**
+ * Define a default theme constant.
+ */
+define('GOVCMS_DEFAULT_THEME', 'govcmsui');
+
+/**
+ * Define the admin theme.
+ */
+define('GOVCMS_DEFAULT_ADMIN_THEME', 'adminimal_theme');
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for govCMS Profile.
+ *
+ * @see system_install()
+ */
+function govcms_install() {
+  // Set front page to "node".
+  \Drupal::configFactory()
+    ->getEditable('system.site')
+    ->set('page.front', '/node')
+    ->save(TRUE);
+
+  // Restrict user registration to admin role creation.
+  $user_settings = \Drupal::configFactory()->getEditable('user.settings');
+  $user_settings->set('register', USER_REGISTER_ADMINISTRATORS_ONLY)
+    ->save(TRUE);
+
+  // Allow authenticated users to use shortcuts.
+  user_role_grant_permissions(RoleInterface::AUTHENTICATED_ID, ['access shortcuts']);
+  // Populate the default shortcut set.
+  Shortcut::create(
+    [
+      'shortcut_set' => 'default',
+      'title' => t('Content library'),
+      'weight' => 1,
+      'link' => ['uri' => 'internal:/node/add'],
+    ]
+  )->save();
+
+  // Allow all users to use search.
+  user_role_grant_permissions(RoleInterface::ANONYMOUS_ID, ['search content']);
+  user_role_grant_permissions(RoleInterface::AUTHENTICATED_ID, ['search content']);
+
+  // Set the default and admin theme.
+  \Drupal::configFactory()
+    ->getEditable('system.theme')
+    ->set('default', GOVCMS_DEFAULT_THEME)
+    ->set('admin', GOVCMS_DEFAULT_ADMIN_THEME)
+    ->save(TRUE);
+
+  // Enable the admin theme.
+  \Drupal::configFactory()
+    ->getEditable('node.settings')
+    ->set('use_admin_theme', TRUE)
+    ->save(TRUE);
+
+  // Set the path to the logo, favicon and README file based on install directory.
+  $govcms_path = drupal_get_path('profile', 'govcms');
+  \Drupal::configFactory()
+    ->getEditable('system.theme.global')
+    ->set('logo', [
+      'path' => $govcms_path . '/logo.svg',
+      'url' => '',
+      'use_default' => FALSE,
+    ])
+    ->set('favicon', [
+      'mimetype' => 'image/vnd.microsoft.icon',
+      'path' => $govcms_path . '/favicon.ico',
+      'url' => '',
+      'use_default' => FALSE,
+    ])
+    ->save(TRUE);
+}
+
+/**
+ * Implements hook_install_tasks().
+ */
+function govcms_install_tasks(&$install_state) {
+  $tasks = [];
+
+  // Install optional modules.
+  $tasks['govcms_install_optional'] = [
+    'display_name' => t('Install optional modules'),
+    'type' => 'form',
+    'function' => 'Drupal\govcms\Installer\Form\optionalForm',
+  ];
+
+  return $tasks;
+}

@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: featured_thumbnail
+label: 'Thumbnail when featured (max height 300px)'
+effects:
+  2590fa38-ae19-4187-8256-8f9b7be39875:
+    uuid: 2590fa38-ae19-4187-8256-8f9b7be39875
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 300
+      upscale: false

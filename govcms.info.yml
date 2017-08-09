@@ -1,0 +1,66 @@
+name:                   govCMS
+type:                   profile
+description:            'A govCMS Drupal Distribution for government and the public sector in Australia.'
+core:                   8.x
+
+distribution:
+  name:                 govCMS
+  langcode:             en
+
+dependencies:
+  # Drupal Core modules
+  - block_content
+  - block_place
+  - breakpoint
+  - ckeditor
+  - color
+  - config
+  - contact
+  - content_moderation
+  - datetime_range
+  - field_layout
+  - field_ui
+  - help
+  - history
+  - image
+  - layout_discovery
+  - menu_ui
+  - node
+  - options
+  - quickedit
+  - rdf
+  - responsive_image
+  - shortcut
+  - syslog
+  - taxonomy
+  - telephone
+  - views_ui
+
+  # Contrib modules
+  - adminimal_admin_toolbar
+  - chosen
+  - config_split
+  - config_update
+  - ds
+  - features_ui
+  - honeypot
+  - linkit
+  - metatag
+  - panelizer
+  - pathauto
+  - seckit
+  - simple_sitemap
+  - swiftmailer
+
+  # Custom modules
+  - govcms_austism_password_policy
+
+dependencies_optional:
+  - govcms_content_types_govcms_blog_article
+  - govcms_content_types_govcms_event
+  - govcms_content_types_govcms_foi
+  - govcms_content_types_govcms_news_and_media
+
+themes:
+  - adminimal_theme
+  - govcmsui

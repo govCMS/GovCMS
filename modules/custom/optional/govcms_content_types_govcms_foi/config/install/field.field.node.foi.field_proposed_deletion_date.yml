@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_proposed_deletion_date
+    - node.type.foi
+  module:
+    - datetime
+id: node.foi.field_proposed_deletion_date
+field_name: field_proposed_deletion_date
+entity_type: node
+bundle: foi
+label: 'Proposed Deletion Date'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: relative
+    default_date: '+1 year'
+default_value_callback: ''
+settings: {  }
+field_type: datetime

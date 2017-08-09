@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: news_and_media
+label: 'News and Media'
+type: 'canonical_entities:node'
+pattern: 'news-and-media/[node:title]'
+selection_criteria:
+  5d2394f8-cb41-477f-ab8e-bd481084b847:
+    id: node_type
+    bundles:
+      news_and_media: news_and_media
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 5d2394f8-cb41-477f-ab8e-bd481084b847
+selection_logic: and
+weight: -5
+relationships: {  }

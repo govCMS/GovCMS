@@ -1,0 +1,9 @@
+country:
+  default:        AU
+first_day:        1
+timezone:
+  default:        Australia/Sydney
+  user:
+    configurable: true
+    warn:         false
+    default:      0

@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.govcms_news_and_media_views
+  module:
+    - system
+    - views
+  theme:
+    - govcmsui
+id: views_block__govcms_news_and_media_views_block_3
+theme: govcmsui
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'views_block:govcms_news_and_media_views-block_3'
+settings:
+  id: 'views_block:govcms_news_and_media_views-block_3'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/news-and-media\r\n/news-and-media/show/*"
+    negate: false
+    context_mapping: {  }
