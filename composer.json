@@ -37,21 +37,6 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "harvesthq/chosen",
-                "version": "1.7.0",
-                "type": "drupal-library",
-                "dist": {
-                    "url": "https://github.com/harvesthq/chosen/releases/download/v1.7.0/chosen_v1.7.0.zip",
-                    "type": "zip"
-                },
-                "require": {
-                    "composer/installers": "^1.2.0"
-                }
-            }
         }
     ],
     "require": {
@@ -59,25 +44,21 @@
         "cweagans/composer-patches": "^1.5.0",
         "composer/installers": "^1.2",
         "drupal-composer/drupal-scaffold": "^2.1.0",
-        "govcms/govcms-ui": "dev-master",
         "drupal/core": "^8.4",
         "drupal/admin_toolbar": "^1.19",
         "drupal/adminimal_admin_toolbar": "^1.5",
         "drupal/adminimal_theme": "^1.3",
-        "harvesthq/chosen": "^1.7",
         "drupal/chosen": "^2.4",
         "drupal/config_split": "^1.0@beta",
         "drupal/disqus": "^1.0@RC",
         "drupal/ds": "^3.1",
         "drupal/entity_browser": "^1.1",
         "drupal/environment_indicator": "^3.0",
-        "drupal/eva": "^1.1",
         "drupal/features": "^3.5",
         "drupal/honeypot": "^1.27",
         "drupal/linkit": "^4.3",
         "drupal/memcache": "^2.0@alpha",
         "drupal/metatag": "^1.2",
-        "drupal/module_filter": "^3.0",
         "drupal/panelizer": "^4.0",
         "drupal/paragraphs": "^1.1",
         "drupal/password_policy": "^3.0",
@@ -91,7 +72,10 @@
         "drupal/token": "^1.0",
         "drupal/username_enumeration_prevention": "^1.0@beta",
         "drupal/views_data_export": "^1.0@alpha",
-        "drupal/webform": "^5.0@beta"
+        "drupal/webform": "^5.0@beta",
+        "oomphinc/composer-installers-extender": "^1.1",
+        "bower-asset/chosen": "^1.7",
+        "govcms/govcms-ui": "dev-master"
     },
     "require-dev": {
         "composer/composer": "^1.5",
@@ -114,10 +98,7 @@
                 "sites/development.services.yml"
             ]
         },
-        "installer-types": [
-            "bower-asset",
-            "npm-asset"
-        ],
+        "installer-types": ["bower-asset", "npm-asset"],
         "installer-paths": {
             "docroot/core": ["type:drupal-core"],
             "docroot/profiles/govcms/modules/contrib/{$name}": ["type:drupal-module"],

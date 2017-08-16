@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fd6ec62ea158cd0f2926351566df7459",
+    "content-hash": "bd3af35bfdc51abd155f77024919c792",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -57,6 +57,25 @@
                 "stack"
             ],
             "time": "2017-04-11T20:03:41+00:00"
+        },
+        {
+            "name": "bower-asset/chosen",
+            "version": "v1.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/harvesthq/chosen-package.git",
+                "reference": "20457c69249226af89fda0b357591622b922b36a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/harvesthq/chosen-package/zipball/20457c69249226af89fda0b357591622b922b36a",
+                "reference": "20457c69249226af89fda0b357591622b922b36a",
+                "shasum": null
+            },
+            "type": "bower-asset",
+            "license": [
+                "https://github.com/harvesthq/chosen/blob/master/LICENSE.md"
+            ]
         },
         {
             "name": "composer/installers",
@@ -1994,69 +2013,6 @@
             }
         },
         {
-            "name": "drupal/eva",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupal.org/project/eva",
-                "reference": "8.x-1.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/eva-8.x-1.1.zip",
-                "reference": "8.x-1.1",
-                "shasum": "4f5a51144c547c15c6a7f226c4a9e316947309e7"
-            },
-            "require": {
-                "drupal/core": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-1.1",
-                    "datestamp": "1490483282",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Crell",
-                    "homepage": "https://www.drupal.org/user/26398"
-                },
-                {
-                    "name": "ahebrank",
-                    "homepage": "https://www.drupal.org/user/3190515"
-                },
-                {
-                    "name": "axel.rutz",
-                    "homepage": "https://www.drupal.org/user/229048"
-                },
-                {
-                    "name": "eaton",
-                    "homepage": "https://www.drupal.org/user/16496"
-                },
-                {
-                    "name": "mkadin",
-                    "homepage": "https://www.drupal.org/user/1093166"
-                }
-            ],
-            "description": "Attach a view to an entity",
-            "homepage": "https://www.drupal.org/project/eva",
-            "support": {
-                "source": "http://cgit.drupalcode.org/eva"
-            }
-        },
-        {
             "name": "drupal/features",
             "version": "3.5.0",
             "source": {
@@ -2424,61 +2380,6 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/metatag",
                 "issues": "http://drupal.org/project/issues/metatag"
-            }
-        },
-        {
-            "name": "drupal/module_filter",
-            "version": "3.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupal.org/project/module_filter",
-                "reference": "8.x-3.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/module_filter-8.x-3.0.zip",
-                "reference": "8.x-3.0",
-                "shasum": "a24171c8c7c1609cac584c371ede7fdf03faaf00"
-            },
-            "require": {
-                "drupal/core": "~8.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-3.x": "3.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-3.0",
-                    "datestamp": "1483321444",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "greenSkin",
-                    "homepage": "https://www.drupal.org/user/173855"
-                },
-                {
-                    "name": "realityloop",
-                    "homepage": "https://www.drupal.org/user/139189"
-                },
-                {
-                    "name": "shumushin",
-                    "homepage": "https://www.drupal.org/user/22093"
-                }
-            ],
-            "description": "Filter the modules list.",
-            "homepage": "https://www.drupal.org/project/module_filter",
-            "support": {
-                "source": "http://cgit.drupalcode.org/module_filter"
             }
         },
         {
@@ -3854,20 +3755,6 @@
             "time": "2017-03-20T17:10:46+00:00"
         },
         {
-            "name": "harvesthq/chosen",
-            "version": "1.7.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/harvesthq/chosen/releases/download/v1.7.0/chosen_v1.7.0.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "^1.2.0"
-            },
-            "type": "drupal-library"
-        },
-        {
             "name": "html2text/html2text",
             "version": "4.0.1",
             "source": {
@@ -4025,6 +3912,48 @@
                 "xml"
             ],
             "time": "2016-09-22T11:01:11+00:00"
+        },
+        {
+            "name": "oomphinc/composer-installers-extender",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/oomphinc/composer-installers-extender.git",
+                "reference": "ca1c4b16b0905c81d1e77e608f36a2eff1a56f56"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/oomphinc/composer-installers-extender/zipball/ca1c4b16b0905c81d1e77e608f36a2eff1a56f56",
+                "reference": "ca1c4b16b0905c81d1e77e608f36a2eff1a56f56",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "composer/installers": "^1.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "OomphInc\\ComposerInstallersExtender\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "OomphInc\\ComposerInstallersExtender\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stephen Beemsterboer",
+                    "email": "stephen@oomphinc.com",
+                    "homepage": "https://github.com/balbuf"
+                }
+            ],
+            "description": "Extend the composer/installers plugin to accept any arbitrary package type.",
+            "homepage": "http://www.oomphinc.com/",
+            "time": "2017-03-31T16:57:39+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -10262,7 +10191,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "govcms/govcms-ui": 20,
         "drupal/config_split": 10,
         "drupal/disqus": 5,
         "drupal/memcache": 15,
@@ -10270,7 +10198,8 @@
         "drupal/swiftmailer": 10,
         "drupal/username_enumeration_prevention": 10,
         "drupal/views_data_export": 15,
-        "drupal/webform": 10
+        "drupal/webform": 10,
+        "govcms/govcms-ui": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
