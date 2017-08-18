@@ -47,7 +47,7 @@ composer update govcms/govcms
 
 #### Packaged installation
 
-govCMS exists as packaged versions on both the [Github](https://github.com/govCMS/govCMS) and [Drupal.org](https://www.drupal.org/project/govcms) project pages. These compressed archives are available in both zip and tar.gz format to download and use as needed.
+govCMS exists as packaged versions on both the [Github](https://github.com/govCMS/govCMS8) and [Drupal.org](https://www.drupal.org/project/govcms) project pages. These compressed archives are available in both zip and tar.gz format to download and use as needed.
 
 This is no longer the recommended method and will likely be deprecated in the future.
 
@@ -58,7 +58,7 @@ To develop on or patch against govCMS, the source files should be downloaded and
 govCMS source may be downloaded using git
 
 ```
-git clone -b 8.4.x git@github.com:govCMS/govcms-core.git
+git clone -b 8.4.x git@github.com:govCMS/govCMS8-core.git
 ```
 
 ## Patching govCMS
