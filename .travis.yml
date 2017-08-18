@@ -1,0 +1,60 @@
+dist:             trusty
+sudo:             required
+language:         php
+
+branches:
+  except:
+     - master
+
+cache:
+  bundler:        true
+  apt:            true
+  directories:
+    - "$HOME/.composer/cache"
+    - "$HOME/.drush/cache"
+    - "$HOME/.npm"
+
+php:
+  - '5.6'
+  - '7.0'
+  - '7.1'
+
+matrix:
+  allow_failures:
+  - php:          5.6
+
+before_install:
+  - echo 'sendmail_path = /bin/true' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+  - phpenv config-rm xdebug.ini
+  - composer self-update
+  - composer --version
+
+install:
+  # Add Composer's local bin directory to the PATH.
+  - export PATH="$HOME/.composer/vendor/bin:$TRAVIS_BUILD_DIR/bin:$PATH"
+
+  # composer install should fail on bad patches.
+  - export COMPOSER_EXIT_ON_PATCH_FAILURE=1
+
+  # Create the MySQL database and add a user for testing.
+  - mysql -u root -e "CREATE DATABASE govcms8; CREATE USER 'govcms'@'localhost' IDENTIFIED BY 'govcms'; GRANT ALL ON govcms8.* TO 'govcms'@'localhost';"
+
+  # Install govCMS codes.
+  - travis_retry composer --verbose update
+
+  # Install govCMS site.
+  - phing site:install -Ddb.database=govcms8 -Ddb.user=govcms -Ddb.password=govcms -Ddb.host=localhost -Durl=http://127.0.0.1:8080
+
+  - cd $TRAVIS_BUILD_DIR/docroot
+
+  # Execute database updates, if there are any.
+  - drupal update:execute
+
+before_script:
+  - drush runserver --default-server=builtin 8080 &>/dev/null &
+  - jdk_switcher use oraclejdk8
+
+script:
+  - cd $TRAVIS_BUILD_DIR
+  - composer validate composer.json --no-check-all --ansi --no-interaction
+  - phing tests:phpunit
