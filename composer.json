@@ -1,6 +1,7 @@
 {
-    "name": "govcms/govcms",
+    "name": "govcms/govcms8-core",
     "description": "govCMS Drupal Distribution",
+    "keywords": ["govCMS", "govCMS8"],
     "type": "drupal-profile",
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -25,9 +26,9 @@
     ],
     "homepage": "https://www.govcms.gov.au",
     "support": {
-        "issues:": "https://github.com/govCMS/govcms-core/issues",
-        "wik": "https://github.com/govCMS/govcms-core/wiki",
-        "source": "https://github.com/govCMS/govcms-core/releases"
+        "issues:": "https://github.com/govCMS/govCMS8-core/issues",
+        "wik": "https://github.com/govCMS/govCMS8-core/wiki",
+        "source": "https://github.com/govCMS/govCMS8-core/releases"
     },
     "repositories": [
         {
