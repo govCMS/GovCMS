@@ -30,7 +30,7 @@ composer global require "hirak/prestissimo:^0.3"
 #### Via Composer Create-Project
 
 ```
-composer create-project --stability dev --prefer-dist govcms/govcms-project MY_PROJECT
+composer create-project --stability dev --prefer-dist govcms/govcms8 MY_PROJECT
 ```
 
 Composer will create a new directory called MY_PROJECT containing a docroot directory with a full govCMS code base therein.
