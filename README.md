@@ -35,14 +35,10 @@ composer create-project --stability dev --prefer-dist govcms/govcms8 MY_PROJECT
 
 Composer will create a new directory called MY_PROJECT containing a docroot directory with a full govCMS code base therein.
 
-```
-cd MY_PROJECT
-composer update
-```
-
 And you can update govCMS Distribution Core via
+
 ```
-composer update govcms/govcms
+composer update govcms/govcms8-core
 ```
 
 #### Packaged installation
