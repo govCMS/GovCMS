@@ -15,12 +15,12 @@
   <property name="db.type" value="mysql"/>
   <property name="db.host" value="localhost"/>
   <property name="db.user" value="root"/>
-  <property name="db.password" value=""/>
-  <property name="db.database" value="govcms"/>
+  <property name="db.password" value="root"/>
+  <property name="db.database" value="govcms8"/>
   <property name="db.url" value="${db.type}://${db.user}:${db.password}@${db.host}/${db.database}"/>
 
   <!-- Installation and build-specific variables. -->
-  <property name="url" value="http://127.0.0.1"/>
+  <property name="url" value="http://govcms8.local"/>
   <property name="docroot" value="docroot"/>
   <property name="profile" value="${docroot}/profiles/govcms"/>
   <property name="site" value="${docroot}/sites/default"/>
@@ -74,6 +74,14 @@
         <include name="vendor/**"/>
       </fileset>
     </delete>
+  </target>
+
+  <!-- Empties the database by dropping and recreating it. -->
+  <target name="db:reset">
+    <!-- pdosqlexec requires an SQL file to execute. -->
+    <echo message="DROP DATABASE ${db.database}; CREATE DATABASE ${db.database};" file=".reset.sql" />
+    <pdosqlexec url="${db.type}:host=${db.host}" userid="${db.user}" password="${db.password}" src=".reset.sql" />
+    <delete file=".reset.sql" />
   </target>
 
 </project>
