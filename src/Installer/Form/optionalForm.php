@@ -80,10 +80,6 @@ class optionalForm extends FormBase {
       $form['#suffix'] = $this->t('There are no available modules at this time.');
     }
 
-    $form['warning'] = [
-      '#markup' => "<p><strong>Warning:</strong> Don't install the optional modules if you're upgrading from Drupal 7 - you need to start from a blank site.</p>",
-    ];
-
     $form['actions'] = ['#type' => 'actions'];
     $form['actions']['submit'] = [
       '#type' => 'submit',
