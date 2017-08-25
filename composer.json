@@ -57,6 +57,7 @@
         "drupal/environment_indicator": "^3.0",
         "drupal/features": "^3.5",
         "drupal/honeypot": "^1.27",
+        "drupal/inline_entity_form": "^1.0",
         "drupal/linkit": "^4.3",
         "drupal/memcache": "^2.0@alpha",
         "drupal/metatag": "^1.2",
