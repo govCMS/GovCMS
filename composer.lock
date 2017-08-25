@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "68dfcd6511a5e06b15ba0dc6d900142a",
+    "content-hash": "0aa5e4595251219a56b4af63c9a6465a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2201,32 +2201,35 @@
         },
         {
             "name": "drupal/linkit",
-            "version": "4.3.0",
+            "version": "5.0.0-beta5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/linkit",
-                "reference": "8.x-4.3"
+                "reference": "8.x-5.0-beta5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/linkit-8.x-4.3.zip",
-                "reference": "8.x-4.3",
-                "shasum": "e624ea2f18a6100b76a8337e24f7c08df6e2235e"
+                "url": "https://ftp.drupal.org/files/projects/linkit-8.x-5.0-beta5.zip",
+                "reference": "8.x-5.0-beta5",
+                "shasum": "8dcbd9c8c162e9801a699ef5717ab291b65bae8e"
             },
             "require": {
                 "drupal/core": "~8.0"
             },
+            "require-dev": {
+                "drupal/imce": "*"
+            },
             "type": "drupal-module",
             "extra": {
                 "branch-alias": {
-                    "dev-4.x": "4.x-dev"
+                    "dev-5.x": "5.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-4.3",
-                    "datestamp": "1490205830",
+                    "version": "8.x-5.0-beta5",
+                    "datestamp": "1490224383",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
                 }
             },
