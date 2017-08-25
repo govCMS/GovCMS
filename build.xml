@@ -27,6 +27,9 @@
   <property name="version" value="HEAD"/>
   <property name="fixture" value="${project.basedir}/tests/fixtures/${version}.sql"/>
 
+  <!-- The following allows local overrides. -->
+  <property file="${project.basedir}/build.properties" override="true"/>
+
   <!-- Finds required binaries. -->
   <target name="env">
     <if>
