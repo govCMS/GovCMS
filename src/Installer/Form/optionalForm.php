@@ -99,12 +99,16 @@ class optionalForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $modules = array_filter($form_state->getValue('modules_optional'), function ($enabled) {
-      return (bool) $enabled;
-    });
-    // Install optional modules.
-    if (!empty($modules) && is_array($modules)) {
-      $this->moduleInstaller->install(array_keys($modules));
+    $modules_array = $form_state->getValue('modules_optional');
+
+    if (!empty($modules_array) && is_array($modules_array)) {
+      $modules = array_filter($modules_array, function ($enabled) {
+        return (bool) $enabled;
+      });
+      // Install optional modules.
+      if (!empty($modules) && is_array($modules)) {
+        $this->moduleInstaller->install(array_keys($modules));
+      }
     }
   }
 
