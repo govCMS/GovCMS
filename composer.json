@@ -88,7 +88,8 @@
         "drupal/console": "^1.0",
         "drupal/coder": "^8.2",
         "drupal/devel": "^1.0",
-        "drupal/drupal-extension": "^3.3"
+        "drupal/drupal-extension": "^3.3",
+        "grasmash/drupal-security-warning": "^1.0.0"
     },
     "extra": {
         "drupal-scaffold": {
