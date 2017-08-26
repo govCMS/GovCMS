@@ -10,6 +10,7 @@
   <property name="rsync" value="/usr/bin/rsync"/>
   <property name="bzip2" value="/usr/bin/bzip2"/>
   <property name="bunzip2" value="/usr/bin/bunzip2"/>
+  <property name="phpunit" value="${project.basedir}/bin/phpunit"/>
 
   <!-- Database credentials. -->
   <property name="db.type" value="mysql"/>
@@ -50,6 +51,15 @@
         <exec command="which drush" outputProperty="drush"/>
       </then>
     </if>
+    <if>
+      <not>
+        <available file="${phpunit}" property="phpunit.exists"/>
+      </not>
+      <then>
+        <exec command="which phpunit" outputProperty="phpunit"/>
+      </then>
+    </if>
+
     <exec command="which composer" outputProperty="composer"/>
     <exec command="which npm" outputProperty="npm"/>
     <exec command="which rsync" outputProperty="rsync"/>
@@ -62,6 +72,7 @@
     <echo message="Found rsync: ${rsync}"/>
     <echo message="Found bzip2: ${bzip2}"/>
     <echo message="Found bunzip2: ${bunzip2}"/>
+    <echo message="Found PHPUnit: ${phpunit}"/>
   </target>
 
   <!-- Push the govcms profile into the Drupal code base. -->
@@ -118,6 +129,26 @@
       <fileset refid="custom.modules"/>
       <formatter type="full" usefile="false"/>
     </phpcodesniffer>
+  </target>
+
+  <!-- PHPUnit tests. -->
+  <target name="tests:phpunit" description="PHPUnit tests">
+    <!-- Prepare PHPUnit. -->
+    <mkdir dir="${docroot}/modules"/>
+    <mkdir dir="${docroot}/themes"/>
+    <mkdir dir="${docroot}/sites/simpletest"/>
+    <if>
+      <not>
+        <available property="phpunit.xml" file="${docroot}/core/phpunit.xml"/>
+      </not>
+      <then>
+        <copy file="${docroot}/core/phpunit.xml.dist" tofile="${docroot}/core/phpunit.xml"/>
+        <setxmlproperty file="${docroot}/core/phpunit.xml" element="/phpunit/php/env[@name = 'SIMPLETEST_DB']" attribute="value" value="${db.url}"/>
+        <setxmlproperty file="${docroot}/core/phpunit.xml" element="/phpunit/php/env[@name = 'SIMPLETEST_BASE_URL']" attribute="value" value="${url}"/>
+      </then>
+    </if>
+    <!-- Use passthru() when executing so that we'll know if errors occur. -->
+    <exec command="${phpunit} -c ${docroot}/core --testsuite unit --exclude-group Composer,DependencyInjection,PageCache" passthru="true"/>
   </target>
 
 </project>

@@ -61,6 +61,7 @@
         "drupal/linkit": "^5.0",
         "drupal/memcache": "^2.0",
         "drupal/metatag": "^1.2",
+        "drupal/page_manager": "^4.0",
         "drupal/panelizer": "^4.0",
         "drupal/paragraphs": "^1.1",
         "drupal/password_policy": "^3.0",
@@ -81,15 +82,16 @@
     },
     "require-dev": {
         "composer/composer": "^1.5",
-        "drush/drush": "~9",
-        "phing/phing": "^2.16",
-        "phpunit/phpunit": "~4.8 <5",
-        "squizlabs/php_codesniffer": "^2.8",
         "drupal/console": "^1.0",
         "drupal/coder": "^8.2",
+        "drush/drush": "~9",
         "drupal/devel": "^1.0",
         "drupal/drupal-extension": "^3.3",
-        "grasmash/drupal-security-warning": "^1.0.0"
+        "grasmash/drupal-security-warning": "^1.0.0",
+        "mikey179/vfsStream": "^1.6",
+        "phing/phing": "^2.16",
+        "phpunit/phpunit": "~4.8 <5",
+        "squizlabs/php_codesniffer": "^2.8"
     },
     "extra": {
         "drupal-scaffold": {
@@ -104,8 +106,8 @@
         "installer-types": ["bower-asset", "npm-asset"],
         "installer-paths": {
             "docroot/core": ["type:drupal-core"],
-            "docroot/profiles/govcms/modules/contrib/{$name}": ["type:drupal-module"],
-            "docroot/profiles/govcms/modules/custom/{$name}": ["type:drupal-custom-module"],
+            "docroot/modules/contrib/{$name}": ["type:drupal-module"],
+            "docroot/modules/custom/{$name}": ["type:drupal-custom-module"],
             "docroot/profiles/{$name}": ["type:drupal-profile"],
             "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
             "docroot/themes/custom/{$name}": ["type:drupal-custom-theme"],
