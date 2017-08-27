@@ -1,5 +1,5 @@
 {
-    "name": "govcms/govcms8-core",
+    "name": "govcms/govcms",
     "description": "govCMS Drupal Distribution",
     "keywords": ["govCMS", "govCMS8"],
     "type": "drupal-profile",
