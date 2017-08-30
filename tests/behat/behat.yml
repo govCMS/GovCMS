@@ -19,7 +19,8 @@ default:
         browser:                   phantomjs
       javascript_session:          selenium2
       browser_name:                chrome
-    Bex\Behat\ScreenshotExtension: ~
+    Bex\Behat\ScreenshotExtension:
+      screenshot_taking_mode:      all_scenarios
     Drupal\DrupalExtension:
       blackbox:                    ~
       api_driver:                  'drush'
