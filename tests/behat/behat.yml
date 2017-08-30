@@ -1,0 +1,29 @@
+default:
+  autoload:
+    '':                            %paths.base%/bootstrap
+  suites:
+    default:
+      contexts:
+        - '\Drupal\DrupalExtension\Context\DrupalContext'
+        - '\Drupal\DrupalExtension\Context\MinkContext'
+        - '\Drupal\DrupalExtension\Context\MessageContext'
+        - '\Drupal\DrupalExtension\Context\DrushContext'
+      paths:
+        features:                  %paths.base%/features
+  extensions:
+    Behat\MinkExtension:
+      base_url:                    'http://govcms8.local'
+      goutte:                      ~
+      selenium2:
+        wd_host:                   'http://localhost:4444/wd/hub'
+        browser:                   phantomjs
+      javascript_session:          selenium2
+      browser_name:                chrome
+    Bex\Behat\ScreenshotExtension: ~
+    Drupal\DrupalExtension:
+      blackbox:                    ~
+      api_driver:                  'drush'
+      drush:
+        root:                      'docroot'
+      drupal:
+        drupal_root:               'docroot'
