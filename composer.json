@@ -94,6 +94,7 @@
         "mikey179/vfsStream": "^1.6",
         "phing/phing": "^2.16",
         "phpunit/phpunit": "~4.8 <5",
+        "se/selenium-server-standalone": "^3.4",
         "squizlabs/php_codesniffer": "^2.8"
     },
     "extra": {
