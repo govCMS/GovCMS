@@ -1,10 +1,10 @@
+@javascript @api
 Feature: User
-  govCMS site user behaviours
+  govCMS site user behavior
 
-  @api
-  Scenario: Create users
+  Scenario: Create user
     Given users:
-      | name | status |
-      | Test user | 1 |
-    When I am logged in as "Test user"
-    Then I should see the link "Log out"
+      | name | mail | status |
+      | Tim | tim@example.com | 1 |
+    When I am logged in as "Tim"
+    Then I should see "Commonwealth of Australia"

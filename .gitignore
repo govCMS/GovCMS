@@ -1,10 +1,12 @@
+# Ignore govCMS build files.
+tests/screenshots/*
+
 # Ignore drupal core.
 docroot/
 
 # Ignore build artifacts
 /deploy
 bin/*
-tmp
 reports
 
 # Composer vendor

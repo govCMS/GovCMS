@@ -1,6 +1,6 @@
 default:
   autoload:
-    '':                            %paths.base%/bootstrap
+    '':                               %paths.base%/bootstrap
   suites:
     default:
       contexts:
@@ -9,22 +9,26 @@ default:
         - '\Drupal\DrupalExtension\Context\MessageContext'
         - '\Drupal\DrupalExtension\Context\DrushContext'
       paths:
-        features:                  %paths.base%/features
+        features:                     %paths.base%/features
   extensions:
     Behat\MinkExtension:
-      base_url:                    'http://govcms8.local'
-      goutte:                      ~
+      base_url:                       'http://govcms8.local'
+      goutte:                         ~
       selenium2:
-        wd_host:                   'http://localhost:4444/wd/hub'
-        browser:                   phantomjs
-      javascript_session:          selenium2
-      browser_name:                chrome
+        wd_host:                      'http://localhost:4444/wd/hub'
+        browser:                      chrome
+      javascript_session:             selenium2
+      browser_name:                   chrome
     Bex\Behat\ScreenshotExtension:
-      screenshot_taking_mode:      all_scenarios
+      screenshot_taking_mode:         all_scenarios
+      image_drivers:
+        local:
+          screenshot_directory:       '../tests/screenshots'
+          clear_screenshot_directory: true
     Drupal\DrupalExtension:
-      blackbox:                    ~
-      api_driver:                  'drush'
+      blackbox:                       ~
+      api_driver:                     'drush'
       drush:
-        root:                      'docroot'
+        root:                         'docroot'
       drupal:
-        drupal_root:               'docroot'
+        drupal_root:                  'docroot'
