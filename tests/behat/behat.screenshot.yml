@@ -1,0 +1,8 @@
+default:
+  extensions:
+        Bex\Behat\ScreenshotExtension:
+          screenshot_taking_mode:         all_scenarios
+          image_drivers:
+            local:
+              screenshot_directory:       '../tests/screenshots'
+              clear_screenshot_directory: true
