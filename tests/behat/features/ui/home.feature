@@ -1,4 +1,3 @@
-@javascript
 Feature: Home Page
   Ensure the home page is rendering correctly
 
