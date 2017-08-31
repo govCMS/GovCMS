@@ -3,12 +3,13 @@ sudo:             required
 language:         php
 
 addons:
+  apt:
+      packages:
+        # Dependencies for Chrome.
+        - libappindicator1
+        - fonts-liberation
   hosts:
     - govcms8.local
-  packages:
-    # Dependencies for Chrome.
-    - libappindicator1
-    - fonts-liberation
 
 branches:
   except:
