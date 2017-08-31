@@ -33,10 +33,18 @@ matrix:
   - php:          5.6
 
 before_install:
+  # Tweak PHP configuration.
   - echo 'sendmail_path = /bin/true' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+  - echo 'max_execution_time = 180' >> govcms.php.ini;
+  - echo 'sendmail_path = /bin/true' >> govcms.php.ini;
+  - phpenv config-add govcms.php.ini
   - phpenv config-rm xdebug.ini
+  - phpenv rehash
+
+  # Composer
   - composer self-update
   - composer --version
+
   # Initialize xvfb (see https://docs.travis-ci.com/user/gui-and-headless-browsers)
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
