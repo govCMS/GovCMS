@@ -2,6 +2,10 @@ dist:             trusty
 sudo:             required
 language:         php
 
+addons:
+  hosts:
+    - govcms8.local
+
 branches:
   except:
      - master
@@ -43,7 +47,7 @@ install:
   - travis_retry composer --verbose update
 
   # Install govCMS site.
-  - phing site:install -Ddb.database=govcms8 -Ddb.user=govcms -Ddb.password=govcms -Ddb.host=localhost -Durl=http://127.0.0.1:8080
+  - phing site:install -Ddb.database=govcms8 -Ddb.user=govcms -Ddb.password=govcms -Ddb.host=localhost -Durl=http://govcms8.local
 
   - cd $TRAVIS_BUILD_DIR/docroot
 
@@ -51,7 +55,7 @@ install:
   - drupal update:execute
 
 before_script:
-  - drush runserver --default-server=builtin 8080 &>/dev/null &
+  - drush runserver --default-server=govcms8.local:80 &>/dev/null &
   - jdk_switcher use oraclejdk8
 
 script:
