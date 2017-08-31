@@ -57,8 +57,13 @@ install:
 before_script:
   - drush runserver --default-server=govcms8.local:80 &>/dev/null &
   - jdk_switcher use oraclejdk8
+  # Start Selenium and dump its ginormous log into a temporary file.
+  - mkdir ../tmp
+  - selenium-server-standalone -port 4444 -log ../tmp/selenium2.log &
+  - sleep 5
 
 script:
   - cd $TRAVIS_BUILD_DIR
   - composer validate composer.json --no-check-all --ansi --no-interaction
   - phing tests:phpunit
+  - behat --strict --stop-on-failure --config tests/behat/behat.yml
