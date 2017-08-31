@@ -72,7 +72,7 @@ install:
   - travis_retry composer --verbose update
 
   # Install govCMS site.
-  - phing site:install -Ddb.database=govcms8 -Ddb.user=govcms -Ddb.password=govcms -Ddb.host=localhost -Durl=http://govcms8.local
+  - phing site:install -Ddb.database=govcms8 -Ddb.user=govcms -Ddb.password=govcms -Ddb.host=127.0.0.1 -Durl==http://127.0.0.1:8080
 
   - cd $TRAVIS_BUILD_DIR/docroot
 
@@ -80,7 +80,7 @@ install:
   - drupal update:execute
 
 before_script:
-  - drush runserver --default-server=builtin 80 &>/dev/null &
+  - drush runserver --default-server=builtin 8080 &>/dev/null &
   - cd $TRAVIS_BUILD_DIR
   - jdk_switcher use oraclejdk8
   # Start Selenium and dump its ginormous log into a temporary file.
@@ -91,7 +91,7 @@ before_script:
 script:
   - composer validate composer.json --no-check-all --ansi --no-interaction
   - phing tests:phpunit
-  - behat --strict --stop-on-failure --config tests/behat/behat.yml
+  - behat --strict --stop-on-failure --config tests/behat/behat.travis.yml
 
 matrix:
   fast_finish:    true
