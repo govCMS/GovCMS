@@ -72,6 +72,7 @@
         "drupal/shield": "^1.1",
         "drupal/simple_sitemap": "^2.9",
         "drupal/swiftmailer": "^1.0",
+        "drupal/tfa": "^1.0@alpha",
         "drupal/token": "^1.0",
         "drupal/username_enumeration_prevention": "^1.0",
         "drupal/views_data_export": "^1.0",
