@@ -40,11 +40,8 @@ function govcms_form_user_login_form_alter(&$form, &$form_state) {
  */
 function govcms_system_breadcrumb_alter(Breadcrumb $breadcrumb, RouteMatchInterface $route_match, array $context) {
   // Append the current page title to the breadcrumb for non-admin routes.
-  if ($breadcrumb && !\Drupal::service('router.admin_context')
-      ->isAdminRoute()
-  ) {
-    $title = \Drupal::service('title_resolver')
-      ->getTitle(\Drupal::request(), $route_match->getRouteObject());
+  if ($breadcrumb && !\Drupal::service('router.admin_context')->isAdminRoute()) {
+    $title = \Drupal::service('title_resolver')->getTitle(\Drupal::request(), $route_match->getRouteObject());
     if (!empty($title)) {
       $breadcrumb->addLink(Link::createFromRoute($title, '<none>'));
     }
