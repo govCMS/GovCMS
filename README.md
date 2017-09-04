@@ -19,27 +19,25 @@
 
 ### Installing govCMS
 
+_For an easy, one-line, dev setup see ['Automated Default Dev Setup' wiki page](https://github.com/govCMS/govCMS8-core/wiki/Automated-Default-Dev-Setup)._
+
 govCMS Drupal 8 utilizes [Composer](https://getcomposer.org/) to manage its dependencies. So, before using govCMS, make sure you have Composer installed on your machine.
 
 For a better performance, we recommend
 
-```
-composer global require "hirak/prestissimo:^0.3"
-```
+    composer global require "hirak/prestissimo:^0.3"
+
 
 #### Via Composer Create-Project
 
-```
-composer create-project --stability dev --prefer-dist govcms/govcms8 MY_PROJECT
-```
+    composer create-project --stability dev --prefer-dist govcms/govcms8 MY_PROJECT
 
 Composer will create a new directory called MY_PROJECT containing a docroot directory with a full govCMS code base therein.
 
 And you can update govCMS Distribution Core via
 
-```
-composer update govcms/govcms8-core
-```
+    composer update govcms/govcms8-core
+
 
 #### Packaged installation
 
@@ -53,9 +51,8 @@ To develop on or patch against govCMS, the source files should be downloaded and
 
 govCMS source may be downloaded using git
 
-```
-git clone -b 8.4.x git@github.com:govCMS/govCMS8-core.git
-```
+    git clone -b 8.4.x git@github.com:govCMS/govCMS8-core.git
+
 
 ## Patching govCMS
 
