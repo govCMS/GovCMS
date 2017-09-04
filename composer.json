@@ -77,6 +77,7 @@
         "drupal/tfa": "^1.0@alpha",
         "drupal/token": "^1.0",
         "drupal/username_enumeration_prevention": "^1.0",
+        "drupal/video_embed_field": "^1.5",
         "drupal/views_data_export": "^1.0",
         "drupal/webform": "^5.0",
         "oomphinc/composer-installers-extender": "^1.1",
