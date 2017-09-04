@@ -43,6 +43,7 @@ dependencies:
   - config_update
   - ds
   - features_ui
+  - field_group
   - honeypot
   - linkit
   - metatag

@@ -56,6 +56,7 @@
         "drupal/entity_browser": "^1.1",
         "drupal/environment_indicator": "^3.0",
         "drupal/features": "^3.5",
+        "drupal/field_group": "^1.0@RC",
         "drupal/honeypot": "^1.27",
         "drupal/inline_entity_form": "^1.0",
         "drupal/linkit": "^5.0",
