@@ -1,4 +1,5 @@
 # Ignore govCMS build files.
+build.properties
 tests/screenshots/*
 
 # Ignore drupal core.
