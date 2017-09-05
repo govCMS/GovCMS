@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a76018bfd722ba4b75263f89756829e5",
+    "content-hash": "f2990f9a241cdd9c28173a3a10909363",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1345,6 +1345,70 @@
             "homepage": "https://www.drupal.org/project/config_update",
             "support": {
                 "source": "http://cgit.drupalcode.org/config_update"
+            }
+        },
+        {
+            "name": "drupal/contact_storage",
+            "version": "1.0.0-beta9",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/contact_storage",
+                "reference": "8.x-1.0-beta9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/contact_storage-8.x-1.0-beta9.zip",
+                "reference": "8.x-1.0-beta9",
+                "shasum": "42b12d6f755485617e949aaf1b2c9aae09eb0e3e"
+            },
+            "require": {
+                "drupal/core": "*",
+                "drupal/token": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-beta9",
+                    "datestamp": "1497478742",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Arla",
+                    "homepage": "https://www.drupal.org/user/226712"
+                },
+                {
+                    "name": "Berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "andypost",
+                    "homepage": "https://www.drupal.org/user/118908"
+                },
+                {
+                    "name": "jibran",
+                    "homepage": "https://www.drupal.org/user/1198144"
+                },
+                {
+                    "name": "larowlan",
+                    "homepage": "https://www.drupal.org/user/395439"
+                }
+            ],
+            "description": "Provides storage and edit capability for contact messages.",
+            "homepage": "https://www.drupal.org/project/contact_storage",
+            "support": {
+                "source": "http://cgit.drupalcode.org/contact_storage"
             }
         },
         {
@@ -11523,6 +11587,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/contact_storage": 10,
         "drupal/dropzonejs": 15,
         "drupal/entity_embed": 10,
         "drupal/field_group": 5,
