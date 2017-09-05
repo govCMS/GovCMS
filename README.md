@@ -34,11 +34,6 @@ For a better performance, we recommend
 
 Composer will create a new directory called MY_PROJECT containing a docroot directory with a full govCMS code base therein.
 
-And you can update govCMS Distribution Core via
-
-    composer update govcms/govcms8-core
-
-
 #### Packaged installation
 
 govCMS exists as packaged versions on both the [Github](https://github.com/govCMS/govCMS8) and [Drupal.org](https://www.drupal.org/project/govcms) project pages. These compressed archives are available in both zip and tar.gz format to download and use as needed.
