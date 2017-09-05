@@ -82,11 +82,6 @@ install:
   # Install govCMS site.
   - phing site:install -Ddb.database=govcms8 -Ddb.user=govcms -Ddb.password=govcms -Ddb.host=127.0.0.1 -Durl==http://127.0.0.1:8080
 
-  - cd $TRAVIS_BUILD_DIR/docroot
-
-  # Execute database updates, if there are any.
-  - drupal update:execute
-
 before_script:
   - drush runserver --default-server=builtin 8080 &>/dev/null &
   - cd $TRAVIS_BUILD_DIR
