@@ -63,6 +63,7 @@
         "drupal/inline_entity_form": "^1.0",
         "drupal/linkit": "^5.0",
         "drupal/memcache": "^2.0",
+        "drupal/menu_trail_by_path": "^1.1",
         "drupal/metatag": "^1.2",
         "drupal/page_manager": "^4.0",
         "drupal/panelizer": "^4.0",
