@@ -90,6 +90,7 @@
 
   <!-- Destroys the installed code base. -->
   <target name="destroy">
+    <chmod file="${site}" mode="0755"/>
     <delete failonerror="true" includeemptydirs="true">
       <fileset dir="." defaultexcludes="false">
         <include name="bin/**"/>
