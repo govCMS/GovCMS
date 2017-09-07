@@ -47,12 +47,9 @@ dependencies:
   - field_group
   - honeypot
   - linkit
-  - metatag
   - panelizer
   - pathauto
   - seckit
-  - simple_sitemap
-  - swiftmailer
 
   # Custom modules
   - govcms_austism_password_policy
