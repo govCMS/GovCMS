@@ -4579,13 +4579,13 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/govCMS/govcms-ui.git",
-                "reference": "146e8b342fa4c63626a00489a55dc0bbd2743335"
+                "url": "https://github.com/govCMS/govCMS8-ui.git",
+                "reference": "2af00fddfb60dc08f2ad570b7ca556ff2ffd1c9d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/govCMS/govcms-ui/zipball/146e8b342fa4c63626a00489a55dc0bbd2743335",
-                "reference": "146e8b342fa4c63626a00489a55dc0bbd2743335",
+                "url": "https://api.github.com/repos/govCMS/govCMS8-ui/zipball/2af00fddfb60dc08f2ad570b7ca556ff2ffd1c9d",
+                "reference": "2af00fddfb60dc08f2ad570b7ca556ff2ffd1c9d",
                 "shasum": ""
             },
             "type": "drupal-theme",
@@ -4594,7 +4594,7 @@
                 "GPL-2.0+"
             ],
             "description": "A Drupal 8 theme for govCMS incorporating the DTA ui toolkit",
-            "time": "2017-04-12T01:22:14+00:00"
+            "time": "2017-09-07T12:13:57+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
