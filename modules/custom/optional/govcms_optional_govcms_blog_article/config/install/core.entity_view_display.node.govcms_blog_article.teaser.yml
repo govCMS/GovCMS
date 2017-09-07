@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.govcms_blog_article.body
+    - node.type.govcms_blog_article
+  module:
+    - text
+    - user
+id: node.govcms_blog_article.teaser
+targetEntityType: node
+bundle: govcms_blog_article
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden: {  }

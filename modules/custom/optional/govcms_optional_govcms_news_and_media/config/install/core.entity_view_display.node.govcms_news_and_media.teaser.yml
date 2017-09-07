@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.govcms_news_and_media.body
+    - node.type.govcms_news_and_media
+  module:
+    - text
+    - user
+id: node.govcms_news_and_media.teaser
+targetEntityType: node
+bundle: govcms_news_and_media
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden: {  }

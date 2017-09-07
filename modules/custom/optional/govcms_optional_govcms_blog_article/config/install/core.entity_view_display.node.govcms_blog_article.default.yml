@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.govcms_blog_article.body
+    - node.type.govcms_blog_article
+  module:
+    - text
+    - user
+id: node.govcms_blog_article.default
+targetEntityType: node
+bundle: govcms_blog_article
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden: {  }

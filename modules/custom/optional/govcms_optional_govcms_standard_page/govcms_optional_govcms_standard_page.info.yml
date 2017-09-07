@@ -1,5 +1,5 @@
-name: FOI
-description: 'Provides FOI content type and related configuration.'
+name: 'Standard page'
+description: 'Provides Standard page content type and related configuration. '
 type: module
 core: 8.x
 dependencies:

@@ -1,24 +1,16 @@
-name: 'govCMS Blog article'
-description: 'Provides Blog article content type and related configuration. Use <em>Blog articles</em> to reach your target audience directly. '
+name: 'Blog article'
+description: 'Provides Blog article content type and related configuration.'
 type: module
 core: 8.x
 dependencies:
-  - block
+  - content_moderation
   - field
   - field_layout
-  - file
-  - image
   - layout_discovery
   - menu_ui
-  - metatag
   - node
-  - panelizer
   - path
-  - pathauto
-  - system
-  - taxonomy
   - text
   - user
-  - views
-version: 8.x-0.4
-package: 'govCMS optional'
+version: 8.x-1.0-alpha1
+package: govcms_optional

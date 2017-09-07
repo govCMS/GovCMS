@@ -1,9 +1,1 @@
 bundle: govcms_optional
-required:
-  - field.storage.node.field_attachments
-  - field.storage.node.field_categories
-  - field.storage.node.field_featured_image
-  - field.storage.node.body
-  - field.storage.node.field_meta_tags
-  - image.style.featured_thumbnail
-  - taxonomy.vocabulary.categories
