@@ -1,0 +1,3 @@
+bundle: govcms_fields
+required:
+  - field.storage.node.field_attachments
