@@ -55,10 +55,11 @@ dependencies:
   - govcms_austism_password_policy
 
 dependencies_optional:
-  - govcms_content_types_govcms_blog_article
-  - govcms_content_types_govcms_event
-  - govcms_content_types_govcms_foi
-  - govcms_content_types_govcms_news_and_media
+  - govcms_optional_govcms_blog_article
+  - govcms_optional_govcms_event
+  - govcms_optional_govcms_foi
+  - govcms_optional_govcms_news_and_media
+  - govcms_optional_govcms_standard_page
 
 themes:
   - adminimal_theme
