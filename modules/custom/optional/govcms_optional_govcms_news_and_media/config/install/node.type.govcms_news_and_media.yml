@@ -9,7 +9,7 @@ third_party_settings:
     parent: ''
 name: 'News and Media'
 type: govcms_news_and_media
-description: 'Provides News and Media content type and related configuration. Use <em>News and Media</em> to reach your target audience directly. '
+description: 'Use <em>News and Media</em> to reach your target audience directly. '
 help: ''
 new_revision: false
 preview_mode: 1

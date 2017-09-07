@@ -9,7 +9,7 @@ third_party_settings:
     parent: ''
 name: 'Blog article'
 type: govcms_blog_article
-description: 'Provides Blog article content type and related configuration. Use <em>Blog articles</em> to reach your target audience directly. '
+description: 'Use <em>Blog articles</em> to reach your target audience directly. '
 help: ''
 new_revision: false
 preview_mode: 1

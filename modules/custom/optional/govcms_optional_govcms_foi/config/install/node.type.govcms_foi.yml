@@ -9,7 +9,7 @@ third_party_settings:
     parent: ''
 name: FOI
 type: govcms_foi
-description: 'Provides FOI content type and related configuration. Use <em>FOI</em> to display a record of an FOI request. '
+description: 'Use <em>FOI</em> to display a record of an FOI request. '
 help: ''
 new_revision: false
 preview_mode: 1

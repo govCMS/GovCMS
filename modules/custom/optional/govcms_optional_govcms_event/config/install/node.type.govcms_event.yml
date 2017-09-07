@@ -9,7 +9,7 @@ third_party_settings:
     parent: ''
 name: Event
 type: govcms_event
-description: 'Provides Event content type and related configuration. Use <em>Event</em> to reach your target audience directly. '
+description: 'Use <em>Event</em> to reach your target audience directly. '
 help: ''
 new_revision: false
 preview_mode: 1

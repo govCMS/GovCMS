@@ -10,7 +10,7 @@ third_party_settings:
     parent: 'main:'
 name: 'Standard page'
 type: govcms_standard_page
-description: 'Provides Standard page content type and related configuration. Use <em>Standard pages</em> for your static content such as an ''About us'' page or other informational pages that will always be accessible on the site.'
+description: 'Use <em>Standard pages</em> for your static content such as an ''About us'' page or other informational pages that will always be accessible on the site.'
 help: ''
 new_revision: false
 preview_mode: 1
