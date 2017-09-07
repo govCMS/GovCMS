@@ -6,7 +6,6 @@ dependencies:
   - content_moderation
   - field
   - field_layout
-  - govcms_content_types_govcms_news_and_media
   - layout_discovery
   - menu_ui
   - node

@@ -1,0 +1,26 @@
+name: 'govCMS Event'
+description: 'Provides Event content type and related configuration. Use <em>Event</em> to reach your target audience directly. '
+type: module
+core: 8.x
+dependencies:
+  - block
+  - datetime_range
+  - entity_browser
+  - field
+  - field_layout
+  - file
+  - image
+  - layout_discovery
+  - menu_ui
+  - metatag
+  - node
+  - panelizer
+  - path
+  - pathauto
+  - system
+  - taxonomy
+  - text
+  - user
+  - views
+version: 8.x-1.0
+package: 'govCMS optional'

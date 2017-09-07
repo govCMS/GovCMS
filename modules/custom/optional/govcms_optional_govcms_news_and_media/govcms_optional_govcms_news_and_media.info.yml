@@ -1,0 +1,26 @@
+name: 'govCMS News and Media'
+description: 'Provides News and Media content type and related configuration. Use <em>News and Media</em> to reach your target audience directly. '
+type: module
+core: 8.x
+dependencies:
+  - block
+  - entity_browser
+  - field
+  - field_layout
+  - file
+  - image
+  - layout_discovery
+  - menu_ui
+  - metatag
+  - node
+  - options
+  - panelizer
+  - path
+  - pathauto
+  - system
+  - taxonomy
+  - text
+  - user
+  - views
+version: 8.x-1.0-alpha1
+package: 'govCMS optional'

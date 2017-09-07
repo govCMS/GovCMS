@@ -1,0 +1,23 @@
+name: 'govCMS FOI'
+description: 'Provides FOI content type and related configuration. Use <em>FOI</em> to display a record of an FOI request. '
+type: module
+core: 8.x
+dependencies:
+  - block
+  - datetime
+  - field
+  - field_layout
+  - file
+  - layout_discovery
+  - menu_ui
+  - metatag
+  - node
+  - panelizer
+  - path
+  - pathauto
+  - system
+  - text
+  - user
+  - views
+version: 8.x-1.0-alpha1
+package: 'govCMS optional'

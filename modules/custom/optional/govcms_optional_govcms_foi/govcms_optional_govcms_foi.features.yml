@@ -1,0 +1,7 @@
+bundle: govcms_optional
+excluded:
+  - system.menu.main
+required:
+  - field.storage.node.body
+  - field.storage.node.field_attachments
+  - field.storage.node.field_meta_tags
