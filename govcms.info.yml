@@ -42,6 +42,7 @@ dependencies:
   - config_split
   - config_update
   - ds
+  - entity_browser
   - features_ui
   - field_group
   - honeypot
