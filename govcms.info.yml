@@ -24,9 +24,14 @@ dependencies:
   - history
   - image
   - layout_discovery
+  - login_security  
   - menu_ui
   - node
   - options
+  - password_policy
+  - password_policy_length
+  - password_policy_characters
+  - password_policy_character_types
   - quickedit
   - rdf
   - responsive_image
@@ -50,9 +55,6 @@ dependencies:
   - panelizer
   - pathauto
   - seckit
-
-  # Custom modules
-  - govcms_austism_password_policy
 
 dependencies_optional:
   - govcms_optional_govcms_blog_article
