@@ -16,6 +16,5 @@ dependencies:
   - path
   - text
   - user
-  - workbench_moderation
 version: 8.x-1.0-alpha1
 package: govcms_optional
