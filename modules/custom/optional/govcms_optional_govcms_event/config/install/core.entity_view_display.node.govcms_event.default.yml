@@ -10,6 +10,8 @@ dependencies:
     - field.field.node.govcms_event.field_location
     - node.type.govcms_event
   module:
+    - datetime_range
+    - image
     - panelizer
     - text
     - user
@@ -27,19 +29,56 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     region: content
   content_moderation_control:
     weight: -20
     region: content
-  links:
-    weight: 100
+  field_contact:
+    type: text_default
+    weight: 6
     region: content
-hidden:
-  field_contact: true
-  field_cost: true
-  field_event_date: true
-  field_feature_image: true
-  field_location: true
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+  field_cost:
+    type: text_default
+    weight: 5
+    region: content
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+  field_event_date:
+    type: daterange_default
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: fallback
+      separator: '-'
+    third_party_settings: {  }
+  field_feature_image:
+    type: image
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+  field_location:
+    type: text_default
+    weight: 4
+    region: content
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.full
     - field.field.node.govcms_event.body
     - field.field.node.govcms_event.field_contact
     - field.field.node.govcms_event.field_cost
@@ -11,24 +11,35 @@ dependencies:
     - field.field.node.govcms_event.field_location
     - node.type.govcms_event
   module:
+    - panelizer
     - text
     - user
-id: node.govcms_event.teaser
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.govcms_event.full
 targetEntityType: node
 bundle: govcms_event
-mode: teaser
+mode: full
 content:
   body:
     label: hidden
-    type: text_summary_or_trimmed
+    type: text_default
     weight: 101
-    settings:
-      trim_length: 600
+    settings: {  }
     third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: -20
     region: content
   links:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   field_contact: true
   field_cost: true
