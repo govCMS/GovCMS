@@ -3,10 +3,22 @@ status: true
 dependencies:
   config:
     - field.field.node.govcms_event.body
+    - field.field.node.govcms_event.field_contact
+    - field.field.node.govcms_event.field_cost
+    - field.field.node.govcms_event.field_event_date
+    - field.field.node.govcms_event.field_feature_image
+    - field.field.node.govcms_event.field_location
     - node.type.govcms_event
   module:
+    - panelizer
     - text
     - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 id: node.govcms_event.default
 targetEntityType: node
 bundle: govcms_event
@@ -19,7 +31,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  content_moderation_control:
+    weight: -20
+    region: content
   links:
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_contact: true
+  field_cost: true
+  field_event_date: true
+  field_feature_image: true
+  field_location: true

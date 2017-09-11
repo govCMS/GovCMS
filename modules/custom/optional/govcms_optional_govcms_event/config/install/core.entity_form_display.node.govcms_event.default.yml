@@ -3,13 +3,18 @@ status: true
 dependencies:
   config:
     - field.field.node.govcms_event.body
+    - field.field.node.govcms_event.field_contact
+    - field.field.node.govcms_event.field_cost
+    - field.field.node.govcms_event.field_event_date
+    - field.field.node.govcms_event.field_feature_image
+    - field.field.node.govcms_event.field_location
     - node.type.govcms_event
   module:
-    - content_moderation
     - field_layout
     - layout_discovery
     - path
     - text
+    - workbench_moderation
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -33,12 +38,6 @@ content:
     weight: 10
     region: content
     settings: {  }
-    third_party_settings: {  }
-  moderation_state:
-    type: moderation_state_default
-    weight: 100
-    settings: {  }
-    region: content
     third_party_settings: {  }
   path:
     type: path
@@ -84,4 +83,9 @@ content:
       placeholder: ''
     region: content
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_contact: true
+  field_cost: true
+  field_event_date: true
+  field_feature_image: true
+  field_location: true
