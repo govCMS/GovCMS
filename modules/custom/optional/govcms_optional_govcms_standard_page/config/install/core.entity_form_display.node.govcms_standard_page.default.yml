@@ -4,11 +4,14 @@ dependencies:
   config:
     - field.field.node.govcms_standard_page.body
     - field.field.node.govcms_standard_page.field_attachments
+    - field.field.node.govcms_standard_page.field_featured_image
+    - image.style.thumbnail
     - node.type.govcms_standard_page
   module:
     - content_moderation
     - field_layout
     - file
+    - image
     - layout_discovery
     - path
     - text
@@ -42,6 +45,14 @@ content:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
+    region: content
+  field_featured_image:
+    weight: 123
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
     region: content
   moderation_state:
     type: moderation_state_default

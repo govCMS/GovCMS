@@ -8,6 +8,8 @@ dependencies:
   - field_layout
   - file
   - govcms_fields_attachment
+  - govcms_fields_featured_image
+  - image
   - layout_discovery
   - menu_ui
   - node

@@ -4,6 +4,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.govcms_standard_page.body
+    - field.field.node.govcms_standard_page.field_attachments
     - node.type.govcms_standard_page
   module:
     - text
@@ -24,4 +25,5 @@ content:
   links:
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_attachments: true

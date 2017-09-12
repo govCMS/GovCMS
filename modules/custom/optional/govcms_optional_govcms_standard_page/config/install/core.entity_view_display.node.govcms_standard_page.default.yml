@@ -4,9 +4,11 @@ dependencies:
   config:
     - field.field.node.govcms_standard_page.body
     - field.field.node.govcms_standard_page.field_attachments
+    - field.field.node.govcms_standard_page.field_featured_image
     - node.type.govcms_standard_page
   module:
     - file
+    - image
     - text
     - user
 id: node.govcms_standard_page.default
@@ -27,6 +29,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: file_default
+    region: content
+  field_featured_image:
+    weight: 103
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
     region: content
   links:
     weight: 100
