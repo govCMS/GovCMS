@@ -12,8 +12,15 @@ dependencies:
     - file
     - image
     - options
+    - panelizer
     - text
     - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 id: node.govcms_news_and_media.default
 targetEntityType: node
 bundle: govcms_news_and_media
@@ -60,4 +67,6 @@ content:
   links:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }

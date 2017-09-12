@@ -2,63 +2,65 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.full
     - field.field.node.govcms_news_and_media.body
     - field.field.node.govcms_news_and_media.field_attachments
     - field.field.node.govcms_news_and_media.field_featured_image
     - field.field.node.govcms_news_and_media.field_media_release_type
     - field.field.node.govcms_news_and_media.field_news_categories
-    - image.style.medium
     - node.type.govcms_news_and_media
   module:
+    - file
     - image
     - options
-    - panelizer
     - text
     - user
-third_party_settings:
-  panelizer:
-    enable: false
-    custom: false
-    allow: false
-    default: default
-id: node.govcms_news_and_media.teaser
+id: node.govcms_news_and_media.full
 targetEntityType: node
 bundle: govcms_news_and_media
-mode: teaser
+mode: full
 content:
   body:
     label: hidden
-    type: text_summary_or_trimmed
-    weight: 3
-    settings:
-      trim_length: 300
-    third_party_settings: {  }
-    region: content
-  field_featured_image:
-    type: image
-    weight: 1
-    region: content
-    label: hidden
-    settings:
-      image_style: medium
-      image_link: content
-    third_party_settings: {  }
-  field_media_release_type:
-    type: list_default
-    weight: 0
-    region: content
-    label: inline
+    type: text_default
+    weight: 101
     settings: {  }
     third_party_settings: {  }
-  field_news_categories:
-    type: entity_reference_label
-    weight: 2
     region: content
-    label: inline
+  field_attachments:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_featured_image:
+    weight: 103
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_media_release_type:
+    weight: 105
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_news_categories:
+    weight: 104
+    label: above
     settings:
       link: true
     third_party_settings: {  }
-hidden:
-  field_attachments: true
-  links: true
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
