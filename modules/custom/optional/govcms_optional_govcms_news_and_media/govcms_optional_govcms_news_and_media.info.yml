@@ -16,6 +16,7 @@ dependencies:
   - options
   - panelizer
   - path
+  - pathauto
   - taxonomy
   - text
   - user

@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: foi
+label: FOI
+type: 'canonical_entities:node'
+pattern: 'freedom-of-information/[node:title]'
+selection_criteria:
+  fa14121d-b350-41b9-849f-25aa78bab9dd:
+    id: node_type
+    bundles:
+      govcms_foi: govcms_foi
+    negate: false
+    context_mapping:
+      node: node
+    uuid: fa14121d-b350-41b9-849f-25aa78bab9dd
+selection_logic: and
+weight: -5
+relationships: {  }

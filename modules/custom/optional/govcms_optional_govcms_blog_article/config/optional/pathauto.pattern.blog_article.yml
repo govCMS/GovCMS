@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: blog_article
+label: 'Blog article'
+type: 'canonical_entities:node'
+pattern: 'blog/[node:title]'
+selection_criteria:
+  911a4dd0-8b1c-4916-8739-1613ae46de2e:
+    id: node_type
+    bundles:
+      govcms_blog_article: govcms_blog_article
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 911a4dd0-8b1c-4916-8739-1613ae46de2e
+selection_logic: and
+weight: -5
+relationships: {  }

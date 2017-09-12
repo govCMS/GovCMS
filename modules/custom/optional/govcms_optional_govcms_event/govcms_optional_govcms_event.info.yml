@@ -15,8 +15,10 @@ dependencies:
   - menu_ui
   - node
   - path
+  - pathauto
   - taxonomy
   - text
   - user
+  - views
 package: 'govCMS Optional'
 version: 8.x-1.0-alpha1

@@ -5,6 +5,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.govcms_standard_page.body
     - field.field.node.govcms_standard_page.field_attachments
+    - field.field.node.govcms_standard_page.field_featured_image
     - node.type.govcms_standard_page
   module:
     - text
@@ -27,3 +28,4 @@ content:
     region: content
 hidden:
   field_attachments: true
+  field_featured_image: true

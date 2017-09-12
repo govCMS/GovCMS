@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: news_and_media
+label: 'News and Media'
+type: 'canonical_entities:node'
+pattern: 'news-and-media/[node:title]'
+selection_criteria:
+  d780c6f8-8995-47cf-ac48-0edb7e55d92d:
+    id: node_type
+    bundles:
+      govcms_news_and_media: govcms_news_and_media
+    negate: false
+    context_mapping:
+      node: node
+    uuid: d780c6f8-8995-47cf-ac48-0edb7e55d92d
+selection_logic: and
+weight: -5
+relationships: {  }
