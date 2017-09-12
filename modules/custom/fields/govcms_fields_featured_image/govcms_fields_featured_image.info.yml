@@ -1,0 +1,11 @@
+name: 'Featured image'
+description: 'Provides featured image field type for govCMS optional modules'
+type: module
+core: 8.x
+dependencies:
+  - field
+  - file
+  - image
+  - node
+version: 8.x-1.0-alpha1
+package: 'govCMS Fields'
