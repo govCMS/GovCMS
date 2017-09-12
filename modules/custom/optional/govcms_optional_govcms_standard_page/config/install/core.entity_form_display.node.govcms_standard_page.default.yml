@@ -3,10 +3,12 @@ status: true
 dependencies:
   config:
     - field.field.node.govcms_standard_page.body
+    - field.field.node.govcms_standard_page.field_attachments
     - node.type.govcms_standard_page
   module:
     - content_moderation
     - field_layout
+    - file
     - layout_discovery
     - path
     - text
@@ -34,6 +36,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_attachments:
+    weight: 122
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
   moderation_state:
     type: moderation_state_default
     weight: 100

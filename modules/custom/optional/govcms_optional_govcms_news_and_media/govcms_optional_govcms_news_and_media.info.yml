@@ -13,4 +13,4 @@ dependencies:
   - text
   - user
 version: 8.x-1.0-alpha1
-package: govcms_optional
+package: 'govCMS Optional'

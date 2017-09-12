@@ -3,8 +3,10 @@ status: true
 dependencies:
   config:
     - field.field.node.govcms_standard_page.body
+    - field.field.node.govcms_standard_page.field_attachments
     - node.type.govcms_standard_page
   module:
+    - file
     - text
     - user
 id: node.govcms_standard_page.default
@@ -18,6 +20,13 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_attachments:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
     region: content
   links:
     weight: 100
