@@ -3,37 +3,27 @@ status:                            true
 dependencies:
   module:
     - features
-name:                              'govCMS Optional'
-machine_name:                      govcms_optional
-description:                       'govCMS Optional modules'
+name:                              'govCMS Fields'
+machine_name:                      govcms_fields
+description:                       'Provides base fields for govCMS optional modules.'
 assignments:
   alter:
-    core:                          true
-    uuid:                          true
-    user_permissions:              true
+    core:                          1
+    uuid:                          1
+    user_permissions:              1
     enabled:                       true
     weight:                        0
   base:
     types:
-      config:
-        comment_type:              comment_type
-        node_type:                 node_type
-      content:
-        user:                      user
-    enabled:                       true
+      config:                      {  }
+      content:                     {  }
+    enabled:                       false
     weight:                        -2
   core:
     types:
       config:
-        date_format:               date_format
         field_storage_config:      field_storage_config
-        entity_form_mode:          entity_form_mode
-        image_style:               image_style
-        menu:                      menu
-        responsive_image_style:    responsive_image_style
-        user_role:                 user_role
-        entity_view_mode:          entity_view_mode
-    enabled:                       true
+    enabled:                       false
     weight:                        5
   dependency:
     enabled:                       true
@@ -62,7 +52,7 @@ assignments:
   optional:
     types:
       config:                      {  }
-    enabled:                       true
+    enabled:                       false
     weight:                        0
   packages:
     enabled:                       true
@@ -80,20 +70,13 @@ assignments:
         migration:                 migration
         shortcut_set:              shortcut_set
         tour:                      tour
-    enabled:                       true
+    enabled:                       false
     weight:                        10
   site:
     types:
       config:
-        action:                    action
-        contact_form:              contact_form
-        block_content_type:        block_content_type
-        rdf_mapping:               rdf_mapping
-        search_page:               search_page
-        taxonomy_vocabulary:       taxonomy_vocabulary
-        editor:                    editor
-        filter_format:             filter_format
-    enabled:                       true
+        field_storage_config:      field_storage_config
+    enabled:                       false
     weight:                        7
-profile_name:                      ''
+profile_name:                      govcms
 is_profile:                        false
