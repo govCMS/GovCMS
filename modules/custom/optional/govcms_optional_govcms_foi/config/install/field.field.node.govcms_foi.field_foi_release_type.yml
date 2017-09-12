@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_foi_release_type
+    - node.type.govcms_foi
+id: node.govcms_foi.field_foi_release_type
+field_name: field_foi_release_type
+entity_type: node
+bundle: govcms_foi
+label: 'FOI Release Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

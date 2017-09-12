@@ -3,8 +3,15 @@ status: true
 dependencies:
   config:
     - field.field.node.govcms_foi.body
+    - field.field.node.govcms_foi.field_attachments
+    - field.field.node.govcms_foi.field_foi_date_listed
+    - field.field.node.govcms_foi.field_foi_log_reference_id
+    - field.field.node.govcms_foi.field_foi_proposed_deletion_date
+    - field.field.node.govcms_foi.field_foi_release_type
     - node.type.govcms_foi
   module:
+    - datetime
+    - file
     - text
     - user
 id: node.govcms_foi.default
@@ -18,6 +25,47 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_attachments:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_foi_date_listed:
+    weight: 103
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_foi_log_reference_id:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_foi_proposed_deletion_date:
+    weight: 107
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_foi_release_type:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   links:
     weight: 100
