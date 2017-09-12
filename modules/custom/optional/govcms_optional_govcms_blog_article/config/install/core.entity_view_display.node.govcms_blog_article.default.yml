@@ -3,8 +3,13 @@ status: true
 dependencies:
   config:
     - field.field.node.govcms_blog_article.body
+    - field.field.node.govcms_blog_article.field_attachments
+    - field.field.node.govcms_blog_article.field_blog_article_categories
+    - field.field.node.govcms_blog_article.field_featured_image
     - node.type.govcms_blog_article
   module:
+    - file
+    - image
     - text
     - user
 id: node.govcms_blog_article.default
@@ -18,6 +23,30 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_attachments:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_blog_article_categories:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_featured_image:
+    weight: 103
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
     region: content
   links:
     weight: 100

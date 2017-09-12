@@ -3,10 +3,16 @@ status: true
 dependencies:
   config:
     - field.field.node.govcms_blog_article.body
+    - field.field.node.govcms_blog_article.field_attachments
+    - field.field.node.govcms_blog_article.field_blog_article_categories
+    - field.field.node.govcms_blog_article.field_featured_image
+    - image.style.thumbnail
     - node.type.govcms_blog_article
   module:
     - content_moderation
     - field_layout
+    - file
+    - image
     - layout_discovery
     - path
     - text
@@ -34,6 +40,30 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_attachments:
+    weight: 122
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_blog_article_categories:
+    weight: 125
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_featured_image:
+    weight: 123
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
   moderation_state:
     type: moderation_state_default
     weight: 100
