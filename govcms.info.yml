@@ -9,13 +9,13 @@ distribution:
 
 dependencies:
   # Drupal Core modules
+  - big_pipe
   - block_content
   - block_place
   - breakpoint
   - ckeditor
   - color
   - config
-  - contact
   - content_moderation
   - datetime_range
   - field_layout
@@ -40,9 +40,10 @@ dependencies:
   - adminimal_admin_toolbar
   - chosen
   - config_split
-  - config_update
+  - config_update_ui
   - ds
   - entity_browser
+  - entity_embed
   - features_ui
   - field_group
   - honeypot
@@ -55,6 +56,7 @@ dependencies:
   - password_policy_character_types
   - pathauto
   - seckit
+  - swiftmailer
 
 dependencies_optional:
   - govcms_optional_govcms_blog_article
