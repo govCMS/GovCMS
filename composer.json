@@ -46,7 +46,7 @@
         "composer/installers": "^1.2",
         "drupal-composer/drupal-scaffold": "^2.1.0",
         "drupal/core": "^8.4",
-        "drupal/admin_toolbar": "^1.19",
+        "drupal/admin_toolbar": "^1.2",
         "drupal/adminimal_admin_toolbar": "^1.5",
         "drupal/adminimal_theme": "^1.3",
         "drupal/chosen": "^2.4",
