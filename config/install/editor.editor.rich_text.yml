@@ -1,0 +1,64 @@
+langcode:             en
+status:               true
+dependencies:
+  config:
+    - filter.format.rich_text
+  module:
+    - ckeditor
+format:               rich_text
+editor:               ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name:       Formatting
+          items:
+            - Bold
+            - Italic
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - JustifyBlock
+            - Underline
+            - Strike
+            - Superscript
+            - Subscript
+            - Format
+        -
+          name:       Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name:       Lists
+          items:
+            - Table
+            - BulletedList
+            - NumberedList
+        -
+          name:       Media
+          items:
+            - Blockquote
+            - DrupalImage
+        -
+          name:       Tools
+          items:
+            - PasteFromWord
+            - Source
+  plugins:
+    drupallink:
+      linkit_enabled: true
+      linkit_profile: default
+    language:
+      language_list:  un
+    stylescombo:
+      styles:         ''
+image_upload:
+  status:             false
+  scheme:             public
+  directory:          inline-images
+  max_size:           ''
+  max_dimensions:
+    width:            null
+    height:           null
