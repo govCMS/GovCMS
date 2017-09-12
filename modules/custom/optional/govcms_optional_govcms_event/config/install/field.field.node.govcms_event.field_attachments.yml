@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attachments
+    - node.type.govcms_event
+  module:
+    - file
+id: node.govcms_event.field_attachments
+field_name: field_attachments
+entity_type: node
+bundle: govcms_event
+label: Attachments
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'attachments/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'jpg jpeg gif png txt doc docx xls xlsx xlsm pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv svg weba webp webm'
+  max_filesize: ''
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

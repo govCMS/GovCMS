@@ -2,12 +2,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_location
+    - field.storage.node.field_event_location
     - node.type.govcms_event
-  module:
-    - text
-id: node.govcms_event.field_location
-field_name: field_location
+id: node.govcms_event.field_event_location
+field_name: field_event_location
 entity_type: node
 bundle: govcms_event
 label: Location
@@ -17,4 +15,4 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text_long
+field_type: string

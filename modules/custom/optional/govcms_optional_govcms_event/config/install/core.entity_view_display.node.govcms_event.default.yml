@@ -3,24 +3,18 @@ status: true
 dependencies:
   config:
     - field.field.node.govcms_event.body
-    - field.field.node.govcms_event.field_contact
-    - field.field.node.govcms_event.field_cost
+    - field.field.node.govcms_event.field_attachments
+    - field.field.node.govcms_event.field_event_
     - field.field.node.govcms_event.field_event_date
-    - field.field.node.govcms_event.field_feature_image
-    - field.field.node.govcms_event.field_location
+    - field.field.node.govcms_event.field_event_location
+    - field.field.node.govcms_event.field_featured_image
     - node.type.govcms_event
   module:
     - datetime_range
+    - file
     - image
-    - panelizer
     - text
     - user
-third_party_settings:
-  panelizer:
-    enable: false
-    custom: false
-    allow: false
-    default: default
 id: node.govcms_event.default
 targetEntityType: node
 bundle: govcms_event
@@ -29,56 +23,53 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 2
+    weight: 101
     settings: {  }
     third_party_settings: {  }
     region: content
-  content_moderation_control:
-    weight: -20
-    region: content
-  field_contact:
-    type: text_default
-    weight: 6
-    region: content
-    label: inline
+  field_attachments:
+    weight: 102
+    label: above
     settings: {  }
     third_party_settings: {  }
-  field_cost:
-    type: text_default
-    weight: 5
+    type: file_default
     region: content
-    label: inline
-    settings: {  }
-    third_party_settings: {  }
-  field_event_date:
-    type: daterange_default
-    weight: 1
-    region: content
-    label: hidden
+  field_event_:
+    weight: 106
+    label: above
     settings:
-      timezone_override: ''
-      format_type: fallback
-      separator: '-'
+      link: true
     third_party_settings: {  }
-  field_feature_image:
-    type: image
-    weight: 3
+    type: entity_reference_label
     region: content
-    label: hidden
+  field_event_date:
+    weight: 105
+    label: above
+    settings:
+      separator: '-'
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_event_location:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_featured_image:
+    weight: 103
+    label: above
     settings:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
-  field_location:
-    type: text_default
-    weight: 4
+    type: image
     region: content
-    label: inline
-    settings: {  }
-    third_party_settings: {  }
   links:
-    weight: 0
+    weight: 100
     region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden: {  }

@@ -3,13 +3,15 @@ status: true
 dependencies:
   module:
     - node
-    - text
-id: node.field_cost
-field_name: field_cost
+id: node.field_event_location
+field_name: field_event_location
 entity_type: node
-type: text_long
-settings: {  }
-module: text
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

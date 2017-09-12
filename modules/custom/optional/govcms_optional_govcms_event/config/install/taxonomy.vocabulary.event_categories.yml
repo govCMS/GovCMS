@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Event categories'
+vid: event_categories
+description: ''
+hierarchy: 0
+weight: 0

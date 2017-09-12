@@ -4,11 +4,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.govcms_event.body
-    - field.field.node.govcms_event.field_contact
-    - field.field.node.govcms_event.field_cost
-    - field.field.node.govcms_event.field_event_date
-    - field.field.node.govcms_event.field_feature_image
-    - field.field.node.govcms_event.field_location
     - node.type.govcms_event
   module:
     - text
@@ -29,9 +24,4 @@ content:
   links:
     weight: 100
     region: content
-hidden:
-  field_contact: true
-  field_cost: true
-  field_event_date: true
-  field_feature_image: true
-  field_location: true
+hidden: {  }

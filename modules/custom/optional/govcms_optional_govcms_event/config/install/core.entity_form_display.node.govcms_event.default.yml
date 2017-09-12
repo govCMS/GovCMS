@@ -3,17 +3,18 @@ status: true
 dependencies:
   config:
     - field.field.node.govcms_event.body
-    - field.field.node.govcms_event.field_contact
-    - field.field.node.govcms_event.field_cost
+    - field.field.node.govcms_event.field_attachments
+    - field.field.node.govcms_event.field_event_
     - field.field.node.govcms_event.field_event_date
-    - field.field.node.govcms_event.field_feature_image
-    - field.field.node.govcms_event.field_location
+    - field.field.node.govcms_event.field_event_location
+    - field.field.node.govcms_event.field_featured_image
     - image.style.thumbnail
     - node.type.govcms_event
   module:
     - content_moderation
     - datetime_range
     - field_layout
+    - file
     - image
     - layout_discovery
     - path
@@ -29,7 +30,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 1
+    weight: 121
     settings:
       rows: 9
       summary_rows: 3
@@ -38,57 +39,57 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 8
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_contact:
-    type: text_textarea
-    weight: 6
-    region: content
+  field_attachments:
+    weight: 122
     settings:
-      rows: 5
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_event_:
+    weight: 126
+    settings:
+      match_operator: CONTAINS
+      size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_cost:
-    type: text_textarea
-    weight: 5
+    type: entity_reference_autocomplete
     region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
   field_event_date:
-    type: daterange_default
-    weight: 3
-    region: content
+    weight: 125
     settings: {  }
     third_party_settings: {  }
-  field_feature_image:
-    type: image_image
-    weight: 2
+    type: daterange_default
     region: content
+  field_event_location:
+    weight: 124
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_featured_image:
+    weight: 123
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-  field_location:
-    type: text_textarea
-    weight: 4
+    type: image_image
     region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 12
+    weight: 100
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 11
+    weight: 30
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -96,26 +97,26 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 9
+    weight: 15
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 13
+    weight: 120
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 10
+    weight: 16
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 0
+    weight: -5
     region: content
     settings:
       size: 60
@@ -123,7 +124,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 7
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60

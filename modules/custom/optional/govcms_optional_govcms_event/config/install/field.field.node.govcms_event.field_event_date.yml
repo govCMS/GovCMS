@@ -10,7 +10,7 @@ id: node.govcms_event.field_event_date
 field_name: field_event_date
 entity_type: node
 bundle: govcms_event
-label: 'Event Date'
+label: 'Event date'
 description: ''
 required: false
 translatable: false

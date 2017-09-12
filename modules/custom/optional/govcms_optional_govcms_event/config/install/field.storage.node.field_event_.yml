@@ -3,15 +3,16 @@ status: true
 dependencies:
   module:
     - node
-    - text
-id: node.field_contact
-field_name: field_contact
+    - taxonomy
+id: node.field_event_
+field_name: field_event_
 entity_type: node
-type: text_long
-settings: {  }
-module: text
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false
