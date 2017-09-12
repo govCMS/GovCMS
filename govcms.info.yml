@@ -24,14 +24,9 @@ dependencies:
   - history
   - image
   - layout_discovery
-  - login_security  
   - menu_ui
   - node
   - options
-  - password_policy
-  - password_policy_length
-  - password_policy_characters
-  - password_policy_character_types
   - quickedit
   - rdf
   - responsive_image
@@ -52,7 +47,12 @@ dependencies:
   - field_group
   - honeypot
   - linkit
+  - login_security
   - panelizer
+  - password_policy
+  - password_policy_length
+  - password_policy_characters
+  - password_policy_character_types
   - pathauto
   - seckit
 
