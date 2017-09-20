@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "33d143d8b82b621ef3daee157cd15434",
+    "content-hash": "b06773e5ee414b327b0be1013f7c367f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1408,6 +1408,53 @@
             "homepage": "https://www.drupal.org/project/config_update",
             "support": {
                 "source": "http://cgit.drupalcode.org/config_update"
+            }
+        },
+        {
+            "name": "drupal/consumers",
+            "version": "1.0.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/consumers",
+                "reference": "8.x-1.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/consumers-8.x-1.0-beta1.zip",
+                "reference": "8.x-1.0-beta1",
+                "shasum": "87e5472fde6c7cc60ed7dda2af350997ae4767d8"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-beta1",
+                    "datestamp": "1505249045",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "e0ipso",
+                    "homepage": "https://www.drupal.org/user/550110"
+                }
+            ],
+            "description": "Declare all the consumers of your API",
+            "homepage": "https://www.drupal.org/project/consumers",
+            "support": {
+                "source": "http://cgit.drupalcode.org/consumers"
             }
         },
         {
@@ -4255,33 +4302,34 @@
         },
         {
             "name": "drupal/simple_oauth",
-            "version": "2.0.0-rc3",
+            "version": "3.0.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/simple_oauth",
-                "reference": "8.x-2.0-rc3"
+                "reference": "8.x-3.0-beta1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/simple_oauth-8.x-2.0-rc3.zip",
-                "reference": "8.x-2.0-rc3",
-                "shasum": "a672216d3f3ceb13f7b2840cf466169d546f67e2"
+                "url": "https://ftp.drupal.org/files/projects/simple_oauth-8.x-3.0-beta1.zip",
+                "reference": "8.x-3.0-beta1",
+                "shasum": "fe529ff93f3c0ec5ca3860623a36356ddf2992c3"
             },
             "require": {
-                "drupal/core": "*",
-                "league/oauth2-server": "~5.1"
+                "drupal/consumers": "*",
+                "drupal/core": "^8.3",
+                "league/oauth2-server": "~6.0"
             },
             "type": "drupal-module",
             "extra": {
                 "branch-alias": {
-                    "dev-2.x": "2.x-dev"
+                    "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-rc3",
-                    "datestamp": "1499089742",
+                    "version": "8.x-3.0-beta1",
+                    "datestamp": "1505028244",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "RC releases are not covered by Drupal security advisories."
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -5337,16 +5385,16 @@
         },
         {
             "name": "league/oauth2-server",
-            "version": "5.1.5",
+            "version": "6.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/oauth2-server.git",
-                "reference": "8e5df6d6286d0010861a708b70f00345d074bce9"
+                "reference": "925776958fc3f5278e74363663c20147af32b668"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/oauth2-server/zipball/8e5df6d6286d0010861a708b70f00345d074bce9",
-                "reference": "8e5df6d6286d0010861a708b70f00345d074bce9",
+                "url": "https://api.github.com/repos/thephpleague/oauth2-server/zipball/925776958fc3f5278e74363663c20147af32b668",
+                "reference": "925776958fc3f5278e74363663c20147af32b668",
                 "shasum": ""
             },
             "require": {
@@ -5355,7 +5403,7 @@
                 "lcobucci/jwt": "^3.1",
                 "league/event": "^2.1",
                 "paragonie/random_compat": "^2.0",
-                "php": ">=5.5.9",
+                "php": ">=5.6.0",
                 "psr/http-message": "^1.0"
             },
             "replace": {
@@ -5363,19 +5411,10 @@
                 "lncd/oauth2": "*"
             },
             "require-dev": {
-                "indigophp/hash-compat": "^1.1",
                 "phpunit/phpunit": "^4.8 || ^5.0",
                 "zendframework/zend-diactoros": "^1.0"
             },
-            "suggest": {
-                "indigophp/hash-compat": "Polyfill for hash_equals function for PHP 5.5"
-            },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-V5-WIP": "5.0-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "League\\OAuth2\\Server\\": "src/"
@@ -5410,7 +5449,7 @@
                 "secure",
                 "server"
             ],
-            "time": "2017-07-11T06:31:36+00:00"
+            "time": "2017-08-03T15:09:23+00:00"
         },
         {
             "name": "masterminds/html5",
@@ -12298,7 +12337,6 @@
         "drupal/field_group": 5,
         "drupal/graphql": 15,
         "drupal/redirect": 10,
-        "drupal/simple_oauth": 5,
         "drupal/tfa": 15,
         "govcms/govcms-ui": 20
     },
