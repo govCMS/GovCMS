@@ -58,6 +58,7 @@
         "drupal/entity_browser": "^1.1",
         "drupal/entity_embed": "^1.0@beta",
         "drupal/environment_indicator": "^3.0",
+        "drupal/facets":"^1.0@alpha",
         "drupal/features": "^3.5",
         "drupal/field_group": "^1.0@RC",
         "drupal/google_analytics": "^2.1",

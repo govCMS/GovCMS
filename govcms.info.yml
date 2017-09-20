@@ -59,6 +59,7 @@ dependencies:
   - swiftmailer
 
 dependencies_optional:
+  - facets
   - govcms_optional_govcms_blog_article
   - govcms_optional_govcms_event
   - govcms_optional_govcms_foi
