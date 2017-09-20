@@ -3,8 +3,10 @@ description: 'Provides Event content type and related configuration. '
 type: module
 core: 8.x
 dependencies:
+  - block
   - content_moderation
   - datetime_range
+  - facets
   - field
   - field_layout
   - file
@@ -16,9 +18,12 @@ dependencies:
   - node
   - path
   - pathauto
+  - search_api
+  - search_api_db
+  - system
   - taxonomy
   - text
   - user
   - views
 package: 'govCMS Optional'
-version: 8.x-1.0-alpha1
+version: 8.x-1.0-alpha2
