@@ -7,7 +7,7 @@
 ### Server Requirements
 
 * Apache, Nginx, Microsoft IIS or any other web server with proper PHP support
-* PHP 5.6.0 or higher
+* Supported PHP Version 7.1.*
 * MySQL 5.5.3/MariaDB 5.5.20/Percona Server 5.5.8 or higher with PDO and an InnoDB-compatible primary storage engine
 * PostgreSQL 9.1.2 or higher with PDO
 * SQLite 3.7.11 or higher
