@@ -23,6 +23,7 @@ default:
       blackbox:             ~
       api_driver:           'drush'
       drush:
+        alias:              'local'
         root:               'docroot'
       drupal:
         drupal_root:        'docroot'

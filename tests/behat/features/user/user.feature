@@ -4,7 +4,7 @@ Feature: User
 
   Scenario: Create user
     Given users:
-      | name | mail | status |
-      | Tim | tim@example.com | 1 |
-    When I am logged in as "Tim"
+      | name | mail | roles |
+      | Tim Junior | tim.junior@example.com | 1 |
+    When I am logged in as "Tim Junior"
     Then I should see "Commonwealth of Australia"
