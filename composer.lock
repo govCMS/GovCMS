@@ -4995,12 +4995,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/govCMS/govCMS8-ui.git",
-                "reference": "2af00fddfb60dc08f2ad570b7ca556ff2ffd1c9d"
+                "reference": "52dd20b1e2a0fa5effa69f16098e811147a64282"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/govCMS/govCMS8-ui/zipball/2af00fddfb60dc08f2ad570b7ca556ff2ffd1c9d",
-                "reference": "2af00fddfb60dc08f2ad570b7ca556ff2ffd1c9d",
+                "url": "https://api.github.com/repos/govCMS/govCMS8-ui/zipball/52dd20b1e2a0fa5effa69f16098e811147a64282",
+                "reference": "52dd20b1e2a0fa5effa69f16098e811147a64282",
                 "shasum": ""
             },
             "type": "drupal-theme",
@@ -5009,7 +5009,7 @@
                 "GPL-2.0+"
             ],
             "description": "A Drupal 8 theme for govCMS incorporating the DTA ui toolkit",
-            "time": "2017-09-07T12:13:57+00:00"
+            "time": "2017-10-11T02:20:43+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -9436,16 +9436,16 @@
         },
         {
             "name": "grasmash/drupal-security-warning",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/grasmash/drupal-security-warning.git",
-                "reference": "2aa88531e18df21a674ad9c7fe833442cc385436"
+                "reference": "cfc5424c84df02be9d094f491e5b57063c15cd72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/grasmash/drupal-security-warning/zipball/2aa88531e18df21a674ad9c7fe833442cc385436",
-                "reference": "2aa88531e18df21a674ad9c7fe833442cc385436",
+                "url": "https://api.github.com/repos/grasmash/drupal-security-warning/zipball/cfc5424c84df02be9d094f491e5b57063c15cd72",
+                "reference": "cfc5424c84df02be9d094f491e5b57063c15cd72",
                 "shasum": ""
             },
             "require": {
@@ -9484,7 +9484,7 @@
                 "drupal",
                 "security"
             ],
-            "time": "2017-10-10T03:16:58+00:00"
+            "time": "2017-10-10T14:47:08+00:00"
         },
         {
             "name": "grasmash/yaml-expander",
@@ -9846,16 +9846,16 @@
         },
         {
             "name": "justinrainbow/json-schema",
-            "version": "5.2.4",
+            "version": "5.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/justinrainbow/json-schema.git",
-                "reference": "7ccb0e67ea8ace0f84c40900ca3c8a234467628c"
+                "reference": "0d4fda8efdf216ade084a7f0aad5637572ce9835"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/7ccb0e67ea8ace0f84c40900ca3c8a234467628c",
-                "reference": "7ccb0e67ea8ace0f84c40900ca3c8a234467628c",
+                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/0d4fda8efdf216ade084a7f0aad5637572ce9835",
+                "reference": "0d4fda8efdf216ade084a7f0aad5637572ce9835",
                 "shasum": ""
             },
             "require": {
@@ -9908,7 +9908,7 @@
                 "json",
                 "schema"
             ],
-            "time": "2017-10-04T20:57:36+00:00"
+            "time": "2017-10-10T13:22:37+00:00"
         },
         {
             "name": "league/container",
