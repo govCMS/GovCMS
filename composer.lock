@@ -10926,16 +10926,16 @@
         },
         {
             "name": "se/selenium-server-standalone",
-            "version": "3.5.3",
+            "version": "3.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sveneisenschmidt/selenium-server-standalone.git",
-                "reference": "d3b5c43ca9c72d2abdbb3692d9cdda2dc20d9634"
+                "reference": "170b450650d237b5b3922d2ec88cde5ec86b6115"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sveneisenschmidt/selenium-server-standalone/zipball/d3b5c43ca9c72d2abdbb3692d9cdda2dc20d9634",
-                "reference": "d3b5c43ca9c72d2abdbb3692d9cdda2dc20d9634",
+                "url": "https://api.github.com/repos/sveneisenschmidt/selenium-server-standalone/zipball/170b450650d237b5b3922d2ec88cde5ec86b6115",
+                "reference": "170b450650d237b5b3922d2ec88cde5ec86b6115",
                 "shasum": ""
             },
             "require-dev": {
@@ -10961,7 +10961,7 @@
                 "selenium",
                 "testing"
             ],
-            "time": "2017-09-06T10:38:18+00:00"
+            "time": "2017-10-11T17:47:15+00:00"
         },
         {
             "name": "sebastian/comparator",
