@@ -14,7 +14,6 @@ dependencies:
   - block_place
   - breakpoint
   - ckeditor
-  - color
   - config
   - content_moderation
   - datetime_range
@@ -23,6 +22,7 @@ dependencies:
   - help
   - history
   - image
+  - inline_form_errors
   - layout_discovery
   - menu_ui
   - node
