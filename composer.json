@@ -85,7 +85,6 @@
         "drupal/simple_oauth": "^3.0",
         "drupal/simple_sitemap": "^2.10",
         "drupal/swiftmailer": "^1.0",
-        "drupal/tfa": "^1.0@alpha",
         "drupal/token": "^1.0",
         "drupal/username_enumeration_prevention": "^1.0",
         "drupal/video_embed_field": "^1.5",
