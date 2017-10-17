@@ -2,9 +2,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_event_date
-    - field.storage.node.field_event_
-    - field.storage.node.field_event_location
     - field.storage.node.body
     - search_api.server.database_search
   module:
@@ -22,42 +19,11 @@ field_settings:
     configuration:
       roles:
         anonymous: anonymous
-      view_mode:
-        'entity:node':
-          govcms_blog_article: ''
-          govcms_event: ''
-          govcms_foi: ''
-          govcms_news_and_media: ''
-          govcms_standard_page: ''
-  field_event_date:
-    label: 'Event date'
-    datasource_id: 'entity:node'
-    property_path: field_event_date
-    type: date
-    dependencies:
-      config:
-        - field.storage.node.field_event_date
-  field_event_:
-    label: 'Event categories'
-    datasource_id: 'entity:node'
-    property_path: field_event_
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_event_
   title:
     label: Title
     datasource_id: 'entity:node'
     property_path: title
     type: text
-  field_event_location:
-    label: Location
-    datasource_id: 'entity:node'
-    property_path: field_event_location
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_event_location
   body:
     label: Body
     datasource_id: 'entity:node'
