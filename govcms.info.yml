@@ -36,6 +36,9 @@ dependencies:
   - telephone
   - views_ui
 
+  #govCMS core modules
+  - govcms_search
+
   # Contrib modules
   - adminimal_admin_toolbar
   - chosen
