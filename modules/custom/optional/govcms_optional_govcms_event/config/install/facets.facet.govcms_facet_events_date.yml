@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.database_search_index
+    - views.view.govcms_views_searchapi_events
+  module:
+    - search_api
+id: govcms_facet_events_date
+name: 'Facet: events by date'
+url_alias: govcms_facet_events_date
+weight: 0
+min_count: 1
+show_only_one_result: true
+field_identifier: field_event_date
+facet_source_id: 'search_api:views_page__govcms_views_searchapi_events__page_1'
+widget:
+  type: datebasic
+  config:
+    show_numbers: true
+    display_relative: '0'
+    granularity: '5'
+    date_display: 'F Y'
+query_operator: or
+use_hierarchy: false
+expand_hierarchy: false
+enable_parent_when_child_gets_disabled: true
+hard_limit: 0
+exclude: false
+only_visible_when_facet_source_is_visible: true
+processor_configs:
+  raw_value_widget_order:
+    processor_id: raw_value_widget_order
+    weights:
+      sort: -10
+    settings:
+      sort: DESC
+  url_processor_handler:
+    processor_id: url_processor_handler
+    weights:
+      pre_query: -10
+      build: -10
+    settings: {  }
+empty_behavior:
+  behavior: none

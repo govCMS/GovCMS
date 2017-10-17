@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.govcms_facet_events_date
+  module:
+    - facets
+    - system
+  theme:
+    - govcmsui
+id: faceteventsbydate
+theme: govcmsui
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'facet_block:govcms_facet_events_date'
+settings:
+  id: 'facet_block:govcms_facet_events_date'
+  label: 'Facet: events by date'
+  provider: facets
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: /events
+    negate: false
+    context_mapping: {  }
