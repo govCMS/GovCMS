@@ -36,6 +36,17 @@ function govcms_form_user_login_form_alter(&$form, &$form_state) {
 }
 
 /**
+ * Implements hook_page_attachments_alter().
+ */
+function govcms_page_attachments_alter(array &$page) {
+  foreach ($page['#attached']['html_head'] as $key => $value) {
+    if ($value[1] == 'system_meta_generator') {
+      $page['#attached']['html_head'][$key][0]['#attributes']['content'] = 'Drupal 8 (http://drupal.org) + govCMS (http://govcms.gov.au)';
+    }
+  }
+}
+
+/**
  * Implements hook_system_breadcrumb_alter().
  */
 function govcms_system_breadcrumb_alter(Breadcrumb $breadcrumb, RouteMatchInterface $route_match, array $context) {
