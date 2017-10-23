@@ -36,9 +36,6 @@ dependencies:
   - telephone
   - views_ui
 
-  #govCMS core modules
-  - govcms_search
-
   # Contrib modules
   - adminimal_admin_toolbar
   - chosen
@@ -61,6 +58,9 @@ dependencies:
   - pathauto
   - seckit
   - swiftmailer
+
+  # govCMS core modules
+  - govcms_search
 
 dependencies_optional:
   - govcms_optional_govcms_blog_article
