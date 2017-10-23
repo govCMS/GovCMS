@@ -48,9 +48,9 @@ govCMS source may be downloaded using git
 
     git clone -b 8.4.x git@github.com:govCMS/govCMS8-core.git
 
-### Troubleshooting    
+### Troubleshooting
 
-* [runs out of memory using composer](https://github.com/composer/composer/issues/5915#issuecomment-264014672)
+If you're encountering some oddities, [here's a list of resolutions](https://github.com/govCMS/govCMS8-core/wiki/Troubleshooting) to some of the problems you may be experiencing.
 
 ## Patching govCMS
 
