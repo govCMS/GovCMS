@@ -38,6 +38,7 @@ dependencies:
 
   # Contrib modules
   - adminimal_admin_toolbar
+  - admin_toolbar_tools
   - chosen
   - config_split
   - config_update_ui
