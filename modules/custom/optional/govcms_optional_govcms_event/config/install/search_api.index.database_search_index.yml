@@ -62,6 +62,11 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.body
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
 datasource_settings:
   'entity:node':
     bundles:

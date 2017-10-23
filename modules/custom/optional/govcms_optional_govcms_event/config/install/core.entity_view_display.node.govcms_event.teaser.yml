@@ -32,6 +32,7 @@ content:
 hidden:
   field_attachments: true
   field_event_: true
+  field_event_categories: true
   field_event_date: true
   field_event_location: true
   field_featured_image: true

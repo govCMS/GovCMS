@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
-    - field.storage.node.field_event_categories
     - field.storage.node.field_event_date
     - field.storage.node.field_event_location
     - search_api.index.database_search_index
@@ -484,7 +483,46 @@ display:
             multi_separator: ', '
           entity_type: node
           plugin_id: search_api_field
-      filters: {  }
+      filters:
+        type:
+          id: type
+          table: search_api_index_database_search_index
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            govcms_event: govcms_event
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          plugin_id: search_api_options
       sorts: {  }
       title: Events
       header: {  }
@@ -501,7 +539,6 @@ display:
         - url.query_args
       tags:
         - 'config:field.storage.node.body'
-        - 'config:field.storage.node.field_event_categories'
         - 'config:field.storage.node.field_event_date'
         - 'config:field.storage.node.field_event_location'
   page_1:
@@ -528,6 +565,5 @@ display:
         - url.query_args
       tags:
         - 'config:field.storage.node.body'
-        - 'config:field.storage.node.field_event_categories'
         - 'config:field.storage.node.field_event_date'
         - 'config:field.storage.node.field_event_location'

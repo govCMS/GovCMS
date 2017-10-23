@@ -72,4 +72,5 @@ content:
   links:
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_event_categories: true
