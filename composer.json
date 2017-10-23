@@ -79,7 +79,7 @@
         "drupal/redirect": "^1.0@beta",
         "drupal/restui": "^1.15",
         "drupal/robotstxt": "^1.1",
-        "drupal/search_api": "^1.4",
+        "drupal/search_api": "^1.5",
         "drupal/seckit": "^1.0",
         "drupal/shield": "^1.1",
         "drupal/simple_oauth": "^3.0",
