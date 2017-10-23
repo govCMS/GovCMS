@@ -5,7 +5,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.govcms_event.body
     - field.field.node.govcms_event.field_attachments
-    - field.field.node.govcms_event.field_event_category
+    - field.field.node.govcms_event.field_event_categories
     - field.field.node.govcms_event.field_event_date
     - field.field.node.govcms_event.field_event_location
     - field.field.node.govcms_event.field_featured_image

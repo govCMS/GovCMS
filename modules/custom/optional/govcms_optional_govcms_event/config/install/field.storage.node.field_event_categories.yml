@@ -4,8 +4,8 @@ dependencies:
   module:
     - node
     - taxonomy
-id: node.field_event_
-field_name: field_event_
+id: node.field_event_categories
+field_name: field_event_categories
 entity_type: node
 type: entity_reference
 settings:

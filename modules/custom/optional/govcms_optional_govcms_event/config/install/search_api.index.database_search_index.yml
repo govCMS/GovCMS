@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_event_date
-    - field.storage.node.field_event_category
+    - field.storage.node.field_event_categories
     - field.storage.node.field_event_location
     - field.storage.node.body
     - search_api.server.database_search
@@ -36,11 +36,11 @@ field_settings:
   field_event_:
     label: 'Event categories'
     datasource_id: 'entity:node'
-    property_path: field_event_category
+    property_path: field_event_categories
     type: string
     dependencies:
       config:
-        - field.storage.node.field_event_category
+        - field.storage.node.field_event_categories
   title:
     label: Title
     datasource_id: 'entity:node'
