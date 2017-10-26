@@ -159,7 +159,8 @@
             "@composer package"
         ],
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-        "package": "govCMS\\Core\\Composer\\Package::execute"
+        "package": "govCMS\\Core\\Composer\\Package::execute",
+        "nuke": "rm -r -f bin docroot vendor"
     },
     "suggest": {
         "hirak/prestissimo": "^0.3"
