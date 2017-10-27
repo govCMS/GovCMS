@@ -1,6 +1,0 @@
-name: govCMS Default Content
-description: Fill your site with some default content, useful when testing out the distribution.
-package: govCMS
-
-type: module
-core: 8.x
