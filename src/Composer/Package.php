@@ -102,7 +102,7 @@ class Package {
         $info['libraries'][$name] = $this->buildLibrary($package);
       }
       elseif ($this->isgovCMSTheme($package)) {
-        $info['package'][$name] = $this->buildProject($package);
+        $info['projects'][$name] = $this->buildProject($package);
       }
     }
     return $info;
