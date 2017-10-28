@@ -121,4 +121,4 @@ package[govcms-ui][type] = theme
 package[govcms-ui][download][type] = git
 package[govcms-ui][download][url] = https://github.com/govCMS/govCMS8-ui.git
 package[govcms-ui][download][branch] = master
-package[govcms-ui][download][revision] = 95a9ec11eb665239d861b53a39723174497c8d8e
+package[govcms-ui][download][revision] = ff943cee05b4e1407bca330cd57234456986b218
