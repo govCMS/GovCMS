@@ -4738,12 +4738,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/govCMS/govCMS8-ui.git",
-                "reference": "980a9e7faea0fbc8c9caf5621aae90af043b4534"
+                "reference": "95a9ec11eb665239d861b53a39723174497c8d8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/govCMS/govCMS8-ui/zipball/980a9e7faea0fbc8c9caf5621aae90af043b4534",
-                "reference": "980a9e7faea0fbc8c9caf5621aae90af043b4534",
+                "url": "https://api.github.com/repos/govCMS/govCMS8-ui/zipball/95a9ec11eb665239d861b53a39723174497c8d8e",
+                "reference": "95a9ec11eb665239d861b53a39723174497c8d8e",
                 "shasum": ""
             },
             "require-dev": {
@@ -4759,7 +4759,7 @@
                 "govCMS",
                 "govCMS8"
             ],
-            "time": "2017-10-26T08:29:04+00:00"
+            "time": "2017-10-28T01:28:36+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
