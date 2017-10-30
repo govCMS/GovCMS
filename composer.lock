@@ -2685,7 +2685,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/govcms8_ui",
-                "reference": "e4ad2cfde8814f27b97f30970a0b0826b4ceb91b"
+                "reference": "f6a1abfe0b79823a1791360a828c7f97fb9df289"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2697,7 +2697,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1509338589",
+                    "datestamp": "1509350584",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -2726,7 +2726,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/govcms8_ui"
             },
-            "time": "2017-10-30T03:54:16+00:00"
+            "time": "2017-10-30T08:31:50+00:00"
         },
         {
             "name": "drupal/graphql",
@@ -4610,7 +4610,7 @@
                 },
                 "drupal": {
                     "version": "8.x-5.0-beta19",
-                    "datestamp": "1506634743",
+                    "datestamp": "1509357785",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -8424,14 +8424,8 @@
             "version": "8.2.12",
             "source": {
                 "type": "git",
-                "url": "https://github.com/klausi/coder.git",
+                "url": "https://git.drupal.org/project/coder.git",
                 "reference": "984c54a7b1e8f27ff1c32348df69712afd86b17f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/klausi/coder/zipball/984c54a7b1e8f27ff1c32348df69712afd86b17f",
-                "reference": "984c54a7b1e8f27ff1c32348df69712afd86b17f",
-                "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
