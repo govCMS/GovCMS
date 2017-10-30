@@ -1,6 +1,6 @@
 # govCMS (Drupal 8)
 
-[![Build Status](https://travis-ci.org/govCMS/govCMS8-core.svg?branch=8.4.x)](https://travis-ci.org/govCMS/govCMS8-core)
+[![Build Status](https://travis-ci.org/govCMS/govCMS8.svg?branch=8.4.x)](https://travis-ci.org/govCMS/govCMS8)
 
 ## Installation
 
