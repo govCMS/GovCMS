@@ -9,6 +9,7 @@ distribution:
 
 dependencies:
   # Drupal Core modules
+  - big_pipe
   - block_content
   - block_place
   - breakpoint
@@ -55,9 +56,12 @@ dependencies:
   - password_policy_length
   - password_policy_characters
   - password_policy_character_types
+  - password_policy_history
+  - password_policy_username
   - pathauto
   - seckit
   - swiftmailer
+  - username_enumeration_prevention
 
   # govCMS core modules
   - govcms_search
