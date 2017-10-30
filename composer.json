@@ -93,7 +93,7 @@
         "oomphinc/composer-installers-extender": "^1.1",
         "bower-asset/chosen": "^1.8",
         "bower-asset/dropzone": "^5.1",
-        "govcms/govcms-ui": "dev-master"
+        "drupal/govcms8_ui": "1.x-dev"
     },
     "require-dev": {
         "bex/behat-screenshot": "^1.2",

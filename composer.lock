@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c0aa2a9202c62c9e98b007477eee740d",
+    "content-hash": "df9ac7f5de9616753d483d19c9116ba5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2680,6 +2680,55 @@
             }
         },
         {
+            "name": "drupal/govcms8_ui",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/govcms8_ui",
+                "reference": "e4ad2cfde8814f27b97f30970a0b0826b4ceb91b"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.x-dev",
+                    "datestamp": "1509338589",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Joseph Zhao",
+                    "homepage": "https://www.drupal.org/user/1987218"
+                },
+                {
+                    "name": "govcms",
+                    "homepage": "https://www.drupal.org/user/3141265"
+                },
+                {
+                    "name": "tobybellwood",
+                    "homepage": "https://www.drupal.org/user/3529537"
+                }
+            ],
+            "homepage": "https://www.drupal.org/project/govcms8_ui",
+            "support": {
+                "source": "http://cgit.drupalcode.org/govcms8_ui"
+            },
+            "time": "2017-10-30T03:54:16+00:00"
+        },
+        {
             "name": "drupal/graphql",
             "version": "3.0.0-beta1",
             "source": {
@@ -4731,35 +4780,6 @@
                 "validator"
             ],
             "time": "2017-02-03T22:48:59+00:00"
-        },
-        {
-            "name": "govcms/govcms-ui",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/govCMS/govCMS8-ui.git",
-                "reference": "ff943cee05b4e1407bca330cd57234456986b218"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/govCMS/govCMS8-ui/zipball/ff943cee05b4e1407bca330cd57234456986b218",
-                "reference": "ff943cee05b4e1407bca330cd57234456986b218",
-                "shasum": ""
-            },
-            "require-dev": {
-                "geerlingguy/drupal-vm": "dev-master"
-            },
-            "type": "drupal-theme",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "description": "A Drupal 8 theme for govCMS incorporating the DTA ui toolkit",
-            "keywords": [
-                "govCMS",
-                "govCMS8"
-            ],
-            "time": "2017-10-28T01:38:59+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -12141,7 +12161,7 @@
         "drupal/field_group": 5,
         "drupal/graphql": 10,
         "drupal/redirect": 10,
-        "govcms/govcms-ui": 20
+        "drupal/govcms8_ui": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
