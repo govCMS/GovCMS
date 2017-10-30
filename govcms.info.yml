@@ -9,7 +9,6 @@ distribution:
 
 dependencies:
   # Drupal Core modules
-  - big_pipe
   - block_content
   - block_place
   - breakpoint
