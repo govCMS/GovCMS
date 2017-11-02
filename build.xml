@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="govCMS" default="env">
+<project name="govCMS8" default="env">
 
   <taskdef name="setxmlproperty" classpath="${project.basedir}/src/Task" classname="SetXMLPropertyTask"/>
 
@@ -23,7 +23,7 @@
   <!-- Installation and build-specific variables. -->
   <property name="url" value="http://govcms8.local"/>
   <property name="docroot" value="docroot"/>
-  <property name="profile" value="${docroot}/profiles/govcms"/>
+  <property name="profile" value="${docroot}/profiles/govcms8"/>
   <property name="site" value="${docroot}/sites/default"/>
   <property name="version" value="HEAD"/>
   <property name="fixture" value="${project.basedir}/tests/fixtures/${version}.sql"/>
