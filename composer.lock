@@ -4589,17 +4589,17 @@
         },
         {
             "name": "drupal/webform",
-            "version": "5.0.0-beta19",
+            "version": "5.0.0-beta22",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/webform",
-                "reference": "8.x-5.0-beta19"
+                "reference": "8.x-5.0-beta22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.0-beta19.zip",
-                "reference": "8.x-5.0-beta19",
-                "shasum": "c117f293e1f009a86adfd7cff1007e4e89b2c5fd"
+                "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.0-beta22.zip",
+                "reference": "8.x-5.0-beta22",
+                "shasum": "5254e03501c00fc6a25c051f04b28bbe1358e44f"
             },
             "require": {
                 "drupal/core": "*"
@@ -4610,8 +4610,8 @@
                     "dev-5.x": "5.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-5.0-beta19",
-                    "datestamp": "1509357785",
+                    "version": "8.x-5.0-beta22",
+                    "datestamp": "1509576185",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
