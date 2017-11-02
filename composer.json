@@ -45,7 +45,7 @@
         "cweagans/composer-patches": "^1.6.2",
         "composer/installers": "^1.4",
         "drupal-composer/drupal-scaffold": "^2.3.0",
-        "drupal/core": "^8.4",
+        "drupal/core": "8.4.0",
         "drupal/admin_toolbar": "^1.20",
         "drupal/adminimal_admin_toolbar": "^1.5",
         "drupal/adminimal_theme": "^1.3",
