@@ -58,7 +58,6 @@ dependencies:
   - password_policy_history
   - password_policy_username
   - pathauto
-  - seckit
 
   # govCMS core modules
   - govcms_search
