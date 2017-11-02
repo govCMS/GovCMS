@@ -63,7 +63,7 @@ class optionalForm extends FormBase {
         '#tree' => TRUE,
       ];
       foreach ($install_state['profile_info']['dependencies_optional'] as $module_name) {
-        $module_path = 'profiles/govcms8/modules/custom/optional/' . $module_name . '/' . $module_name . '.info.yml';
+        $module_path = 'profiles/govcms/modules/custom/optional/' . $module_name . '/' . $module_name . '.info.yml';
         if (file_exists($module_path) && $module_info_file = file_get_contents($module_path)) {
           $module_info = Yaml::parse($module_info_file);
           $form['modules_optional'][$module_name] = [
