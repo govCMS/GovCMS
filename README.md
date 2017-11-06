@@ -1,4 +1,4 @@
-# govCMS8
+# govCMS8 Distribution Core
 <img src="https://www.drupal.org/files/styles/grid-3/public/project-images/govcms8.png" alt="govCMS8 logo" align="right"/>
 
 [![Build Status](https://travis-ci.org/govCMS/govCMS8-core.svg?branch=8.4.x)](https://travis-ci.org/govCMS/govCMS8-core)
