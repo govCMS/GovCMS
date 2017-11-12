@@ -12,3 +12,9 @@ govCMS8 is the Drupal 8-specific version of the govCMS distribution.
 This repository is for distribution development only.
 
 Complete installation instructions are available at the main govCMS8 repository https://github.com/govCMS/govCMS8
+
+## Issues and Pull Requests
+
+Issues and PRs should only be raised against this repository when they **directly** relate to the contents of the govCMS8 distribution (module version updates and patches, build/dependency errors or in-depth d.o. discussion on issues etc).
+
+For all other more generic issues, please raise and discuss them at https://github.com/govCMS/govCMS8/issues
