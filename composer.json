@@ -60,7 +60,7 @@
         "drupal/environment_indicator": "^3.2",
         "drupal/facets":"^1.0@alpha",
         "drupal/features": "^3.5",
-        "drupal/field_group": "^1.0",
+        "drupal/field_group": "^3.0",
         "drupal/google_analytics": "^2.2",
         "drupal/graphql": "^3.0@beta",
         "drupal/honeypot": "^1.27",
