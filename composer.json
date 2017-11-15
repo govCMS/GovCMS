@@ -26,9 +26,9 @@
     ],
     "homepage": "https://www.govcms.gov.au",
     "support": {
-        "issues:": "https://github.com/govCMS/govCMS8/issues",
-        "wik": "https://github.com/govCMS/govCMS8/wiki",
-        "source": "https://github.com/govCMS/govCMS8/releases"
+        "issues:": "https://github.com/govCMS/govCMS8-core/issues",
+        "wik": "https://github.com/govCMS/govCMS8-core/wiki",
+        "source": "https://github.com/govCMS/govCMS8-core/releases"
     },
     "repositories": [
         {
@@ -60,7 +60,7 @@
         "drupal/environment_indicator": "^3.2",
         "drupal/facets":"^1.0@alpha",
         "drupal/features": "^3.5",
-        "drupal/field_group": "^1.0@RC",
+        "drupal/field_group": "^1.0",
         "drupal/google_analytics": "^2.2",
         "drupal/graphql": "^3.0@beta",
         "drupal/honeypot": "^1.27",
