@@ -1,0 +1,18 @@
+# This theme is for govCMS distro install only
+name: 'govCMS Install'
+type: theme
+base theme: seven
+description: 'Warning: Used for govCMS distro install only.'
+core: 8.x
+regions:
+  header: 'Header'
+  pre_content: 'Pre-content'
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  sidebar_first: 'First sidebar'
+regions_hidden:
+  - sidebar_first

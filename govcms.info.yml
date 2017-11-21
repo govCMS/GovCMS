@@ -6,6 +6,8 @@ core:                   8.x
 distribution:
   name:                 govCMS
   langcode:             en
+  install:
+    theme:              govcmsinstall
 
 dependencies:
   # Drupal Core modules

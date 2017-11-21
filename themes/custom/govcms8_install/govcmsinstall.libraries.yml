@@ -1,0 +1,16 @@
+maintenance-page:
+  version: VERSION
+  css:
+    theme:
+      css/theme/maintenance-page.css: {}
+  dependencies:
+    - system/maintenance
+    - seven/global-styling
+
+install-page:
+  version: VERSION
+  css:
+    theme:
+      css/theme/install-page.css: {}
+  dependencies:
+    - seven/maintenance-page

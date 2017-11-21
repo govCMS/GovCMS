@@ -1,0 +1,235 @@
+/**
+* @file
+* Installation styling.
+*
+* Unfortunately we have to make our styling quite strong, to override the
+* .maintenance-page styling.
+*/
+{
+background-color: #1275b2;
+background-image:
+  url(../../images/noise-low.png),
+  -webkit-radial-gradient(hsl(203, 80%, 45%), hsl(203, 80%, 32%));
+background-image:
+  url(../../images/noise-low.png),
+  radial-gradient(hsl(203, 80%, 45%), hsl(203, 80%, 32%));
+background-repeat: repeat;
+background-position: left top, 50% 50%; /* LTR */
+min-height: 100%;
+}
+[dir="rtl"]  {
+background-position: right top, 50% 50%;
+}
+
+/**
+* Password widget
+*/
+.password-parent,
+.confirm-parent {
+width: auto;
+}
+.form-item .password-suggestions {
+float: none;
+width: auto;
+}
+table td {
+word-break: break-all;
+}
+.site-version {
+	vertical-align: super;
+	font-size: 0.5em;
+	color: #595959;
+}
+@media all and (max-width: 1010px) and (min-width: 48em) {
+ .password-strength,
+ .confirm-parent {
+	  width: 100%;
+	}
+	.install-configure-form .form-type-password {
+	  width: 100%;
+	}
+	.password-confirm,
+	.password-field {
+	  float: none;
+	}
+	.password-confirm-match {
+	  float: none;
+	  width: auto;
+	  max-width: 100%;
+	}
+}
+
+
+
+
+
+
+
+
+/*
+govCMS distro install page styles
+- To give govCMS look and feel
+- Tim Hurley, Oct. 2017
+*/
+
+.page-title {
+	display: block;
+	color: #395C6D;
+}
+.install-page {
+	background: linear-gradient(11deg,#24d4dc,#395C6D);
+}
+.site-version {
+	float: right;
+	color: #395C6D;
+	font-size: 1em;
+	font-weight: 200;
+}
+.heading-a {
+	color: #395C6D;
+}
+#error {
+	color: #BB271A;
+}
+#warning {
+	color: #AB5F22;
+}
+#ok {
+	color: #327357;
+}
+.system-status-report:last-of-type {
+	margin-bottom: 2em;
+}
+main > a[href$="?rewrite=ok"] {
+	text-decoration: underline;
+}
+.button,
+.form-submit,
+main > a:not([href$="?rewrite=ok"]) {
+	display: inline-block;
+	padding: 6px 9px;
+	border: 1px solid #395C6D;
+	color: #395C6D;
+	background: transparent;
+	border-radius: 3px;
+	margin: 5px 0;
+	text-shadow: none;
+	transition: all 0.2s;
+	box-shadow: none;
+	font-weight: 600;
+  font-size: 1.3em;
+}
+.button:active,
+.button:focus,
+main > a:not([href$="?rewrite=ok"]):focus,
+main > a:not([href$="?rewrite=ok"]):active {
+	background: #24d4dc;
+	color: #111;
+	text-decoration: none;
+}
+.button:hover,
+main > a:not([href$="?rewrite=ok"]):hover {
+	background: #395C6D;
+	color: #fff;
+	text-decoration: none;
+}
+@media (min-width: 48em) {
+	.task-list li {
+		color: #395C6D;
+	}
+	.task-list .done {
+	  color: #696969;
+	}
+	.task-list .is-active {
+	  background: #395C6D;
+		color: #fff;
+	}
+	.task-list .is-active:after {
+	  border-left-color: #395C6D;
+		border-width: 1.3em;
+	}
+}
+.progress__bar {
+	border-color: #395C6D;
+	background: #24d4dc;
+	background-image: /*linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)),*/
+										linear-gradient(90deg, #24d4dc 0%, #4F8A97 50%, #24d4dc 100%);
+}
+pre,
+.backtrace {
+	background-color: #f0f3f5;
+	display: block;
+	padding: 9.5px;
+	margin: 1em 0 1px;
+	font-size: 13px;
+	line-height: 1.42857143;
+	color: #333;
+	word-break: break-all;
+	word-wrap: break-word;
+	background-color: #f5f5f5;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+.placeholder,
+code {
+	padding: 2px 4px;
+	font-size: 90%;
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+}
+.progress__bar,
+.progress__track {
+	border-radius: 3px;
+}
+.password-suggestions,
+.messages {
+  background: transparent;
+  border: 0;
+  border-radius: 1px;
+  -webkit-box-shadow: 0 0 8px #bbb;
+  box-shadow: 0 0 8px #bbb;
+  color: #333;
+  padding: 1.2em;
+  margin: 0 0 2em 0 !important;
+}
+.messages--status {
+  border-left: 0.4em solid #007554 !important;
+}
+.form-item-account-pass-pass2 {
+	margin-bottom: 0;
+}
+.password-suggestions {
+  margin-bottom: 2em;
+	border-left: 0.4em solid #24d4dc;
+	color: #333 !important;
+}
+.password-suggestions ul {
+  padding: 0 15px;
+}
+.password-strength__indicator.is-strong {
+  background-color: #24d4dc;
+	width: 100% !important;
+}
+.password-strength__indicator.is-good {
+  background-color: #007554;
+}
+.password-strength__indicator {
+  background-color: #395C6D;
+}
+.password-strength__indicator.is-fair {
+  background-color: #F1C85C;
+}
+.password-strength__indicator.is-weak {
+  background-color: #BB271A;
+}
+ul.tips,
+div.description,
+.form-item .description {
+  color: #696969;
+}
+.install-configure-form .form-text,
+.install-configure-form .password-strength,
+.install-configure-form .chosen-container {
+  width: 100% !important;
+}
