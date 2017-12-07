@@ -3,8 +3,6 @@
     "description": "govCMS Drupal Distribution",
     "keywords": ["govCMS", "govCMS8"],
     "type": "drupal-profile",
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "license": "GPL-2.0+",
     "authors": [
         {
@@ -142,7 +140,8 @@
     },
     "config": {
         "bin-dir": "bin/",
-        "preferred-install": "dist"
+        "sort-packages": true,
+        "optimize-autoloader": true
     },
     "conflict": {
         "drupal/core": "7.*"
@@ -164,5 +163,7 @@
     },
     "suggest": {
         "hirak/prestissimo": "^0.3"
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
