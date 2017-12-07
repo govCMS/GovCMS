@@ -1,7 +1,7 @@
 # govCMS8
 <img src="https://www.drupal.org/files/styles/grid-3/public/project-images/govcms8.png" alt="govCMS8 logo" align="right"/>
 
-[![Build Status](https://travis-ci.org/govCMS/govCMS8-core.svg?branch=8.4.x)](https://travis-ci.org/govCMS/govCMS8-core)
+[![Build Status](https://travis-ci.org/govCMS/govCMS8.svg?branch=8.4.x)](https://travis-ci.org/govCMS/govCMS8)
 
 govCMS8 is the Drupal 8-specific version of the govCMS distribution.
 
