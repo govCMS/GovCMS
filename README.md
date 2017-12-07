@@ -24,7 +24,7 @@ For a quick demo instance, you can launch a (24-hour only) sandbox at http://sim
 **[Back to top](#govcms8)**
 ## Installation - Developer
 
-_For an easy, one-line, dev setup see ['Automated Default Dev Setup' wiki page](https://github.com/govCMS/govCMS8-core/wiki/Automated-Default-Dev-Setup)._
+_For an easy, one-line, dev setup see ['Automated Default Dev Setup' wiki page](https://github.com/govCMS/govCMS8/wiki/Automated-Default-Dev-Setup)._
 
 govCMS8 utilizes [Composer](https://getcomposer.org/) to manage its dependencies. So, before using govCMS8, make sure you have Composer installed on your machine.
 
