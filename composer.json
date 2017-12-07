@@ -53,7 +53,7 @@
         "drupal/contact_storage": "^1.0@beta",
         "drupal/core": "8.4.2",
         "drupal/disqus": "^1.0",
-        "drupal/dropzonejs": "^1.0@alpha",
+        "drupal/dropzonejs": "2.0.0-alpha2",
         "drupal/ds": "^3.1",
         "drupal/entity_browser": "1.4",
         "drupal/entity_embed": "^1.0@beta",
