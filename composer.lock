@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0e448a02fa7a342dc8f8a088071d9f27",
+    "content-hash": "9eb0d4f3718d5e5b569073c012fc56da",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -255,16 +255,16 @@
         },
         {
             "name": "cweagans/composer-patches",
-            "version": "1.6.3",
+            "version": "1.6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cweagans/composer-patches.git",
-                "reference": "730f0f620845974764a91482ac936cc6f39da184"
+                "reference": "462e65061606dc6149349535d4322241515d1b16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cweagans/composer-patches/zipball/730f0f620845974764a91482ac936cc6f39da184",
-                "reference": "730f0f620845974764a91482ac936cc6f39da184",
+                "url": "https://api.github.com/repos/cweagans/composer-patches/zipball/462e65061606dc6149349535d4322241515d1b16",
+                "reference": "462e65061606dc6149349535d4322241515d1b16",
                 "shasum": ""
             },
             "require": {
@@ -295,7 +295,7 @@
                 }
             ],
             "description": "Provides a way to patch Composer packages.",
-            "time": "2017-11-22T20:18:27+00:00"
+            "time": "2017-12-07T16:16:31+00:00"
         },
         {
             "name": "defuse/php-encryption",
@@ -1310,16 +1310,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "8.4.2",
+            "version": "8.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "68d25c07b7306340900abc4020c38683a817f0eb"
+                "reference": "793cb14c54624b4be160b78f742af44a01cc7b4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/68d25c07b7306340900abc4020c38683a817f0eb",
-                "reference": "68d25c07b7306340900abc4020c38683a817f0eb",
+                "url": "https://api.github.com/repos/drupal/core/zipball/793cb14c54624b4be160b78f742af44a01cc7b4e",
+                "reference": "793cb14c54624b4be160b78f742af44a01cc7b4e",
                 "shasum": ""
             },
             "require": {
@@ -1494,7 +1494,7 @@
                 "GPL-2.0+"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "time": "2017-11-03T13:20:16+00:00"
+            "time": "2017-12-06T22:45:30+00:00"
         },
         {
             "name": "drupal/csv_serialization",
@@ -7458,16 +7458,16 @@
         },
         {
             "name": "chi-teck/drupal-code-generator",
-            "version": "1.21.2",
+            "version": "1.21.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Chi-teck/drupal-code-generator.git",
-                "reference": "c195b2e8174f99303b3bbf22d1349a53ccd06179"
+                "reference": "a3373cbd4504d1257f4f82abcefc02450f99d2bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Chi-teck/drupal-code-generator/zipball/c195b2e8174f99303b3bbf22d1349a53ccd06179",
-                "reference": "c195b2e8174f99303b3bbf22d1349a53ccd06179",
+                "url": "https://api.github.com/repos/Chi-teck/drupal-code-generator/zipball/a3373cbd4504d1257f4f82abcefc02450f99d2bc",
+                "reference": "a3373cbd4504d1257f4f82abcefc02450f99d2bc",
                 "shasum": ""
             },
             "require": {
@@ -7493,7 +7493,7 @@
                 "GPL2"
             ],
             "description": "Drupal code generator",
-            "time": "2017-12-06T09:31:07+00:00"
+            "time": "2017-12-07T05:38:11+00:00"
         },
         {
             "name": "composer/ca-bundle",
