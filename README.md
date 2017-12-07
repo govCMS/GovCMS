@@ -42,7 +42,7 @@ Composer will create a new directory called MY_PROJECT containing a docroot dire
 
 ### Installation from source
 
-    git clone -b 8.4.x git@github.com:govCMS/govCMS8-core.git
+    git clone -b 8.4.x git@github.com:govCMS/govCMS8.git
     cd govCMS8
     composer install
     
@@ -58,16 +58,13 @@ Additional platform instructions are available in the wiki (https://github.com/g
 govCMS8 comprises a number of repositories and projects:
 
 ### [govCMS8](https://github.com/govCMS/govCMS8)
-* This is an 'installer' for the current stable release of the main govCMS8 distribution, along with the artefacts needed to run a production instance of govCMS8.
-* This is the entry point for most users to govCMS8.
-
-### [govCMS8-core](https://github.com/govCMS/govCMS8-core)
 * This hosts the current development release of the govCMS8 distribution, intended for distribution development only.
-* This can either be required by composer (as in govCMS8) or git cloned.
+* This can either be required by composer (as in govCMS8-project) or git cloned.
 
 ### [govCMS8-project](https://github.com/govCMS/govCMS8-project)
 * This is a Composer based installer, intended for end-user/theme developer installation of govCMS8.
 * For theme and custom module developers, this is the best way to install govCMS8.
+* This is the entry point for most users to govCMS8.
 
 ### [govCMS8-UI](https://github.com/govCMS/govCMS8-ui)
 * This is a [Drupal 8 theme](https://www.drupal.org/project/govcms8_ui), built into govCMS8, but usable on any Drupal 8 site.
