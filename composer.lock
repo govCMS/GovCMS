@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4517b8df79447db6fcd9b33b648add57",
+    "content-hash": "87759811388a4b9496b7ad44da0ede45",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1466,54 +1466,6 @@
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
             "time": "2017-12-06T22:45:30+00:00"
-        },
-        {
-            "name": "drupal/csv_serialization",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupal.org/project/csv_serialization",
-                "reference": "8.x-1.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/csv_serialization-8.x-1.0.zip",
-                "reference": "8.x-1.0",
-                "shasum": "90023afb1a9296598c3d8ac9c8c81df4d00a2663"
-            },
-            "require": {
-                "drupal/core": "^8.0.4",
-                "league/csv": "^7.1"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-1.0",
-                    "datestamp": "1470405718",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "grasmash",
-                    "homepage": "https://www.drupal.org/user/455714"
-                }
-            ],
-            "description": "Provides CSV as a serialization format.",
-            "homepage": "https://www.drupal.org/project/csv_serialization",
-            "support": {
-                "source": "http://cgit.drupalcode.org/csv_serialization"
-            }
         },
         {
             "name": "drupal/ctools",
@@ -4199,17 +4151,17 @@
         },
         {
             "name": "drupal/video_embed_field",
-            "version": "1.5.0",
+            "version": "2.0.0-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/video_embed_field",
-                "reference": "8.x-1.5"
+                "reference": "8.x-2.0-alpha2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/video_embed_field-8.x-1.5.zip",
-                "reference": "8.x-1.5",
-                "shasum": "f54d470ef7f863604e51e6ae98cd40ef25de5f79"
+                "url": "https://ftp.drupal.org/files/projects/video_embed_field-8.x-2.0-alpha2.zip",
+                "reference": "8.x-2.0-alpha2",
+                "shasum": "45b67ad5e0092f2ec9c2873ceabc85ff3a5e9620"
             },
             "require": {
                 "drupal/core": "*"
@@ -4222,14 +4174,14 @@
             "type": "drupal-module",
             "extra": {
                 "branch-alias": {
-                    "dev-1.x": "1.x-dev"
+                    "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
                     "version": "8.x-1.x",
-                    "datestamp": "1510132373",
+                    "datestamp": "1512694688",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
                     },
                     "package": "Field types"
                 }
@@ -4256,74 +4208,6 @@
             "homepage": "https://www.drupal.org/project/video_embed_field",
             "support": {
                 "source": "http://cgit.drupalcode.org/video_embed_field"
-            }
-        },
-        {
-            "name": "drupal/views_data_export",
-            "version": "1.0.0-alpha4",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupal.org/project/views_data_export",
-                "reference": "8.x-1.0-alpha4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_data_export-8.x-1.0-alpha4.zip",
-                "reference": "8.x-1.0-alpha4",
-                "shasum": "d279137d6de1f8514c7ca69725b305ab58e30ed7"
-            },
-            "require": {
-                "drupal/core": "*",
-                "drupal/csv_serialization": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-1.0-alpha4",
-                    "datestamp": "1482169083",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Steven Jones",
-                    "homepage": "https://www.drupal.org/user/99644"
-                },
-                {
-                    "name": "amoebanath",
-                    "homepage": "https://www.drupal.org/user/2810799"
-                },
-                {
-                    "name": "james.williams",
-                    "homepage": "https://www.drupal.org/user/592268"
-                },
-                {
-                    "name": "jamsilver",
-                    "homepage": "https://www.drupal.org/user/476732"
-                },
-                {
-                    "name": "jhedstrom",
-                    "homepage": "https://www.drupal.org/user/208732"
-                },
-                {
-                    "name": "nerdstein",
-                    "homepage": "https://www.drupal.org/user/1557710"
-                }
-            ],
-            "description": "Plugin to export views data into various file formats.",
-            "homepage": "https://www.drupal.org/project/views_data_export",
-            "support": {
-                "source": "http://cgit.drupalcode.org/views_data_export"
             }
         },
         {
@@ -4796,63 +4680,6 @@
                 "jwt"
             ],
             "time": "2017-09-01T08:23:26+00:00"
-        },
-        {
-            "name": "league/csv",
-            "version": "7.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/thephpleague/csv.git",
-                "reference": "69bafa6ff924fbf9effe4275d6eb16be81a853ef"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/csv/zipball/69bafa6ff924fbf9effe4275d6eb16be81a853ef",
-                "reference": "69bafa6ff924fbf9effe4275d6eb16be81a853ef",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mbstring": "*",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "fabpot/php-cs-fixer": "^1.9",
-                "phpunit/phpunit": "^4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "7.2-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "League\\Csv\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ignace Nyamagana Butera",
-                    "email": "nyamsprod@gmail.com",
-                    "homepage": "https://github.com/nyamsprod/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Csv data manipulation made easy in PHP",
-            "homepage": "http://csv.thephpleague.com",
-            "keywords": [
-                "csv",
-                "export",
-                "filter",
-                "import",
-                "read",
-                "write"
-            ],
-            "time": "2015-11-02T07:36:25+00:00"
         },
         {
             "name": "league/event",
