@@ -30,6 +30,7 @@ php:
 matrix:
   allow_failures:
   - php:          7.2
+  fast_finish:    true
 
 before_install:
   # Tweak PHP configuration.
@@ -75,6 +76,9 @@ install:
   # Create the MySQL database and add a user for testing.
   - mysql -u root -e "CREATE DATABASE govcms8; CREATE USER 'govcms'@'localhost' IDENTIFIED BY 'govcms'; GRANT ALL ON govcms8.* TO 'govcms'@'localhost';"
 
+  # Validate composer.json file.
+  - composer validate composer.json --no-check-all --ansi --no-interaction
+
   # Install govCMS codes.
   - travis_retry composer --verbose update
 
@@ -91,9 +95,5 @@ before_script:
   - sleep 5
 
 script:
-  - composer validate composer.json --no-check-all --ansi --no-interaction
   - phing test:phpunit
   - behat --strict --stop-on-failure --config tests/behat/behat.travis.yml
-
-matrix:
-  fast_finish:    true
