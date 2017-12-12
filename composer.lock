@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d21a94e6671ab08e04c77b9e253c6a45",
+    "content-hash": "83ce97f7958c80944991f810ba87e90f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4426,17 +4426,17 @@
         },
         {
             "name": "drupal/webform",
-            "version": "5.0.0-beta24",
+            "version": "5.0.0-beta25",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/webform",
-                "reference": "8.x-5.0-beta24"
+                "reference": "8.x-5.0-beta25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.0-beta24.zip",
-                "reference": "8.x-5.0-beta24",
-                "shasum": "bb2df75e466c6bd6fbf552bff183574bd628f33f"
+                "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.0-beta25.zip",
+                "reference": "8.x-5.0-beta25",
+                "shasum": "e384d069bc0e61a30115f366e3ac0eb2ae3ff6ff"
             },
             "require": {
                 "drupal/core": "*"
@@ -4447,7 +4447,7 @@
                     "dev-5.x": "5.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-5.0-beta24",
+                    "version": "8.x-5.0-beta25",
                     "datestamp": "1513003985",
                     "security-coverage": {
                         "status": "not-covered",

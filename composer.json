@@ -87,7 +87,7 @@
         "drupal/username_enumeration_prevention": "^1.0",
         "drupal/video_embed_field": "^1.5",
         "drupal/views_data_export": "^1.0",
-        "drupal/webform": "5.0-beta24",
+        "drupal/webform": "5.0-beta25",
         "oomphinc/composer-installers-extender": "^1.1"
     },
     "require-dev": {
