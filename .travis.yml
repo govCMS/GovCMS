@@ -24,8 +24,8 @@ cache:
     - "$HOME/.npm"
 
 php:
-  - '7.1'
-  - '7.2'
+  - 7.1
+  - 7.2
 
 matrix:
   allow_failures:
