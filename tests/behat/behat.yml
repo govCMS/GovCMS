@@ -21,7 +21,7 @@ default:
       browser_name:         chrome
     Drupal\DrupalExtension:
       blackbox:             ~
-      api_driver:           'drush'
+      api_driver:           'drupal'
       drush:
         alias:              'local'
         root:               'docroot'
