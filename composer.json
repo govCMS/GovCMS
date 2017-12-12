@@ -41,7 +41,6 @@
     "require": {
         "php": "^7.1",
         "bower-asset/dropzone": "^5.1",
-        "composer/installers": "^1.4",
         "cweagans/composer-patches": "^1.6",
         "drupal-composer/drupal-scaffold": "^2.4",
         "drupal/admin_toolbar": "1.21",
