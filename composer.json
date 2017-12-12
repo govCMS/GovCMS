@@ -24,9 +24,9 @@
     ],
     "homepage": "https://www.govcms.gov.au",
     "support": {
-        "issues:": "https://github.com/govCMS/govCMS8-core/issues",
-        "wik": "https://github.com/govCMS/govCMS8-core/wiki",
-        "source": "https://github.com/govCMS/govCMS8-core/releases"
+        "issues:": "https://github.com/govCMS/govCMS8/issues",
+        "wik": "https://github.com/govCMS/govCMS8/wiki",
+        "source": "https://github.com/govCMS/govCMS8/releases"
     },
     "repositories": [
         {
