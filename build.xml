@@ -133,7 +133,7 @@
   </target>
 
   <!-- PHPUnit tests. -->
-  <target name="tests:phpunit" description="PHPUnit tests">
+  <target name="test:phpunit" description="PHPUnit tests">
     <!-- Prepare PHPUnit. -->
     <mkdir dir="${docroot}/modules"/>
     <mkdir dir="${docroot}/themes"/>
