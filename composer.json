@@ -60,7 +60,7 @@
         "drupal/features": "^3.5",
         "drupal/field_group": "^3.0",
         "drupal/google_analytics": "^2.2",
-        "drupal/govcms8_ui": "1.x-dev",
+        "drupal/govcms8_ui": "~1.0",
         "drupal/graphql": "^3.0@beta",
         "drupal/honeypot": "^1.27",
         "drupal/inline_entity_form": "^1.0",
