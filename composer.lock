@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "dcdf2fa49cfdc47aa9db22c3aae7ebb2",
+    "content-hash": "34113d7c70eba13f2e8eea6d17d95fdf",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2369,11 +2369,17 @@
         },
         {
             "name": "drupal/govcms8_ui",
-            "version": "dev-1.x",
+            "version": "1.0.0-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/govcms8_ui",
-                "reference": "1fdda45349e34667a00834cb41feb80bbd8ef3a6"
+                "reference": "8.x-1.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/govcms8_ui-8.x-1.0-alpha1.zip",
+                "reference": "8.x-1.0-alpha1",
+                "shasum": "ec17e9f9e105cf2b3356866c5a5aab6e133321c7"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2384,8 +2390,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.x-dev",
-                    "datestamp": "1509352385",
+                    "version": "8.x-1.0-alpha1",
+                    "datestamp": "1513834687",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -2417,8 +2423,7 @@
             "homepage": "https://www.drupal.org/project/govcms8_ui",
             "support": {
                 "source": "http://cgit.drupalcode.org/govcms8_ui"
-            },
-            "time": "2017-11-21T04:34:51+00:00"
+            }
         },
         {
             "name": "drupal/graphql",
