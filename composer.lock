@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f973aaa9297ac23ec60ff1f0d5b114ce",
+    "content-hash": "44bddfc8910764e264dc23ff94af33bb",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2601,22 +2601,24 @@
         },
         {
             "name": "drupal/jsonapi",
-            "version": "1.4.0",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/jsonapi",
-                "reference": "8.x-1.4"
+                "reference": "8.x-1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jsonapi-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "ba38178daaecac2e6b88a5180fccb3edecd00b67"
+                "url": "https://ftp.drupal.org/files/projects/jsonapi-8.x-1.7.zip",
+                "reference": "8.x-1.7",
+                "shasum": "550b1ffcbe3dbf57452b48aa58385db191e9487f"
             },
             "require": {
-                "drupal/core": "^8.2"
+                "drupal/core": "^8.3"
             },
             "require-dev": {
+                "drupal/schemata": "1.x-dev#8325d172e1d6880aa24073f8f751ef089282cf9a",
+                "drupal/schemata_json_schema": "*",
                 "justinrainbow/json-schema": "^4.1"
             },
             "type": "drupal-module",
@@ -2625,8 +2627,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.4",
-                    "datestamp": "1512815585",
+                    "version": "8.x-1.7",
+                    "datestamp": "1514646784",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
