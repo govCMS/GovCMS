@@ -51,7 +51,7 @@
         "drupal/core": "8.4.4",
         "drupal/dropzonejs": "2.0.0-alpha3",
         "drupal/ds": "^3.1",
-        "drupal/entity_browser": "1.4",
+        "drupal/entity_browser": "2.0-alpha2",
         "drupal/entity_embed": "^1.0@beta",
         "drupal/entity_reference_revisions": "1.4",
         "drupal/environment_indicator": "^3.2",
