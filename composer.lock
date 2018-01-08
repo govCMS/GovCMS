@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "44bddfc8910764e264dc23ff94af33bb",
+    "content-hash": "906acb3ef081449f18b0375b1e17c4da",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3682,20 +3682,20 @@
         },
         {
             "name": "drupal/search_api",
-            "version": "1.5.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/search_api",
-                "reference": "8.x-1.5"
+                "reference": "8.x-1.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.5.zip",
-                "reference": "8.x-1.5",
-                "shasum": "e03324c0e2fede8d283db83ec4a5f2ed4b818934"
+                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.6.zip",
+                "reference": "8.x-1.6",
+                "shasum": "c590bfb9752f39087e66ea9ff6c98ad103508f0b"
             },
             "require": {
-                "drupal/core": "^8.3"
+                "drupal/core": "^8.4"
             },
             "require-dev": {
                 "drupal/search_api_autocomplete": "@dev",
@@ -3707,11 +3707,16 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.5",
-                    "datestamp": "1507989244",
+                    "version": "8.x-1.6",
+                    "datestamp": "1514109785",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9"
                     }
                 }
             },
