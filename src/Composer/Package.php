@@ -187,14 +187,24 @@ class Package {
    *   The generated make structure.
    */
   protected function buildPackage(array $package) {
-    $info = [
-      'download' => [
-        'type' => 'git',
-        'url' => $package['source']['url'],
-        'branch' => $package['version'],
-        'revision' => $package['source']['reference'],
-      ],
-    ];
+    if (isset($package['source'])) {
+      $info = [
+        'download' => [
+          'type' => 'git',
+          'url' => $package['source']['url'],
+          'branch' => $package['version'],
+          'revision' => $package['source']['reference'],
+        ],
+      ];
+    } elseif (isset($package['dist'])) {
+      $info = [
+        'download' => [
+          'type' => 'get',
+          'url' => $package['dist']['url'],
+        ],
+      ];
+    }
+
     if (isset($package['extra']['patches_applied'])) {
       $info['patch'] = array_values($package['extra']['patches_applied']);
     }

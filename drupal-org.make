@@ -106,3 +106,6 @@ libraries[dropzone][download][type] = git
 libraries[dropzone][download][url] = https://github.com/enyo/dropzone.git
 libraries[dropzone][download][branch] = v5.1.1
 libraries[dropzone][download][revision] = 7d0792d1346d83a8b0c0d2919121bdd2b8e7fee4
+libraries[chosen][type] = library
+libraries[chosen][download][type] = get
+libraries[chosen][download][url] = https://github.com/harvesthq/chosen/releases/download/v1.8.2/chosen_v1.8.2.zip
