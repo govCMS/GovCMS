@@ -42,7 +42,7 @@ Composer will create a new directory called MY_PROJECT containing a docroot dire
 
 ### Installation from source
 
-    git clone -b 8.4.x git@github.com:govCMS/govCMS8.git
+    git clone -b 1.x git@github.com:govCMS/govCMS8.git
     cd govCMS8
     composer install
     
