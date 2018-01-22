@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9b146851e1978f8b4742f85510e33e0f",
+    "content-hash": "752b10567eddc3bcf425a80636b47d40",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -63,7 +63,7 @@
             "version": "v5.1.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/enyo/dropzone.git",
+                "url": "git@github.com:enyo/dropzone.git",
                 "reference": "7d0792d1346d83a8b0c0d2919121bdd2b8e7fee4"
             },
             "dist": {
@@ -2117,17 +2117,17 @@
         },
         {
             "name": "drupal/facets",
-            "version": "1.0.0-beta1",
+            "version": "1.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/facets",
-                "reference": "8.x-1.0-beta1"
+                "reference": "8.x-1.0-beta2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/facets-8.x-1.0-beta1.zip",
-                "reference": "8.x-1.0-beta1",
-                "shasum": "3bd5e8f22f7f4077d666b1eca27a176d96342814"
+                "url": "https://ftp.drupal.org/files/projects/facets-8.x-1.0-beta2.zip",
+                "reference": "8.x-1.0-beta2",
+                "shasum": "3dfeb0a353039ee8a6554bad9f6d02ec7cadee24"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2141,8 +2141,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta1",
-                    "datestamp": "1512228488",
+                    "version": "8.x-1.0-beta2",
+                    "datestamp": "1516303685",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
