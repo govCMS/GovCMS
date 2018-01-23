@@ -3,7 +3,7 @@
     "description": "govCMS8 Drupal Distribution",
     "keywords": ["govCMS", "govCMS8"],
     "type": "drupal-profile",
-    "license": "GPL-2.0+",
+    "license": "GPL-2.0-or-later",
     "homepage": "https://www.govcms.gov.au",
     "support": {
         "issues:": "https://github.com/govCMS/govCMS8/issues",
