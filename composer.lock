@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8121fb1527a6d1c5202caf5683e57bf6",
+    "content-hash": "8d959aab707d4db6477fb1dd549b884d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4427,11 +4427,6 @@
         {
             "name": "govcms-asset/dropzone",
             "version": "v5.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/enyo/dropzone.git",
-                "reference": "7d0792d1346d83a8b0c0d2919121bdd2b8e7fee4"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://github.com/enyo/dropzone/archive/v5.1.1.zip",
