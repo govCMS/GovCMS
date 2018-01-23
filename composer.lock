@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "89467a40dacbe99d28d142aa29f6e52e",
+    "content-hash": "8121fb1527a6d1c5202caf5683e57bf6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1268,16 +1268,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "8.4.4",
+            "version": "8.5.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "c6585ffaea5df4ed529e2bdf4371850f8fc3b88c"
+                "reference": "5d11c6fd9376f900033d282b865e78ea6cf68dc3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/c6585ffaea5df4ed529e2bdf4371850f8fc3b88c",
-                "reference": "c6585ffaea5df4ed529e2bdf4371850f8fc3b88c",
+                "url": "https://api.github.com/repos/drupal/core/zipball/5d11c6fd9376f900033d282b865e78ea6cf68dc3",
+                "reference": "5d11c6fd9376f900033d282b865e78ea6cf68dc3",
                 "shasum": ""
             },
             "require": {
@@ -1307,7 +1307,7 @@
                 "symfony/translation": "~3.2.8",
                 "symfony/validator": "~3.2.8",
                 "symfony/yaml": "~3.2.8",
-                "twig/twig": "^1.23.1",
+                "twig/twig": "^1.35.0",
                 "zendframework/zend-diactoros": "^1.1",
                 "zendframework/zend-feed": "^2.4"
             },
@@ -1377,6 +1377,7 @@
                 "drupal/image": "self.version",
                 "drupal/inline_form_errors": "self.version",
                 "drupal/language": "self.version",
+                "drupal/layout_builder": "self.version",
                 "drupal/layout_discovery": "self.version",
                 "drupal/link": "self.version",
                 "drupal/locale": "self.version",
@@ -1426,9 +1427,9 @@
                 "jcalderonzumba/mink-phantomjs-driver": "^0.3.1",
                 "mikey179/vfsstream": "^1.2",
                 "phpspec/prophecy": "^1.4",
-                "phpunit/phpunit": ">=4.8.35 <5",
+                "phpunit/phpunit": "^4.8.35 || ^6.1",
                 "symfony/css-selector": "~3.2.8",
-                "symfony/phpunit-bridge": "~3.2.8"
+                "symfony/phpunit-bridge": "^3.4.3"
             },
             "type": "drupal-core",
             "autoload": {
@@ -1452,7 +1453,7 @@
                 "GPL-2.0+"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "time": "2018-01-03T19:27:53+00:00"
+            "time": "2018-01-16T19:01:37+00:00"
         },
         {
             "name": "drupal/ctools",
@@ -11847,6 +11848,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/contact_storage": 10,
+        "drupal/core": 20,
         "drupal/entity_embed": 10
     },
     "prefer-stable": true,
