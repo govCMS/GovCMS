@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "752b10567eddc3bcf425a80636b47d40",
+    "content-hash": "310cb726b41663e5cde20712f95c4812",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2426,21 +2426,21 @@
         },
         {
             "name": "drupal/graphql",
-            "version": "3.0.0-beta2",
+            "version": "3.0.0-beta3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/graphql",
-                "reference": "8.x-3.0-beta2"
+                "reference": "8.x-3.0-beta3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/graphql-8.x-3.0-beta2.zip",
-                "reference": "8.x-3.0-beta2",
-                "shasum": "082a42aafc2d27f18f7dfc7b22e4a2a260ff013b"
+                "url": "https://ftp.drupal.org/files/projects/graphql-8.x-3.0-beta3.zip",
+                "reference": "8.x-3.0-beta3",
+                "shasum": "abbbec1f833849c48762bc8c138567da5aa6f86b"
             },
             "require": {
                 "drupal/core": "~8.0",
-                "youshido/graphql": "~1.5"
+                "youshido/graphql": "1.5.3"
             },
             "type": "drupal-module",
             "extra": {
@@ -2448,8 +2448,8 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.0-beta2",
-                    "datestamp": "1513314785",
+                    "version": "8.x-3.0-beta3",
+                    "datestamp": "1516381985",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -6317,16 +6317,16 @@
         },
         {
             "name": "youshido/graphql",
-            "version": "v1.5.2",
+            "version": "v1.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Youshido/GraphQL.git",
-                "reference": "627de161919059821a5411b9f3d58c26afb81683"
+                "reference": "e941e8f208e780b529948fa10c502bc59c9fa644"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Youshido/GraphQL/zipball/627de161919059821a5411b9f3d58c26afb81683",
-                "reference": "627de161919059821a5411b9f3d58c26afb81683",
+                "url": "https://api.github.com/repos/Youshido/GraphQL/zipball/e941e8f208e780b529948fa10c502bc59c9fa644",
+                "reference": "e941e8f208e780b529948fa10c502bc59c9fa644",
                 "shasum": ""
             },
             "require": {
@@ -6356,7 +6356,7 @@
                 }
             ],
             "description": "Pure PHP GraphQL",
-            "time": "2017-10-20T11:25:48+00:00"
+            "time": "2018-01-16T15:26:05+00:00"
         },
         {
             "name": "zendframework/zend-diactoros",
