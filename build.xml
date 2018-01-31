@@ -28,12 +28,13 @@
   <property name="version" value="HEAD"/>
   <property name="fixture" value="${project.basedir}/tests/fixtures/${version}.sql"/>
 
+  <!-- Profile rsync settings. -->
+  <property name="sync.push.exclude.file" value="${project.basedir}/build/config/sync.push.exclude.txt"/>
+
   <!-- The following allows local overrides. -->
   <property file="${project.basedir}/build.properties" override="true"/>
 
-  <!--               -->
-  <!-- Filesets      -->
-  <!-- ============= -->
+  <!-- Filesets. -->
   <fileset dir="${project.basedir}" id="custom.modules" expandsymboliclinks="true">
     <include name="modules/custom/core/**"/>
     <include name="modules/custom/optional/**"/>
@@ -80,7 +81,7 @@
     <!-- Create the destination if it doesn't exist. -->
     <mkdir dir="${profile}"/>
     <!-- rsync the profile, excluding developer flotsam. -->
-    <filesync destinationDir="${profile}" rsyncPath="${rsync}" sourceDir="." verbose="false" exclude=".idea,bin,build.xml,.git,.gitignore,${docroot},karma.conf.js,*.make,node_modules,.travis.yml,vendor"/>
+    <filesync destinationDir="${profile}" rsyncPath="${rsync}" sourceDir="." verbose="false" excludefile="${sync.push.exclude.file}"/>
   </target>
 
   <!-- Pull the updated profile into govCMS distribtuion. -->

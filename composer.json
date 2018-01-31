@@ -177,15 +177,16 @@
         "post-install-cmd": [
             "PhantomInstaller\\Installer::installPhantomJS",
             "@composer drupal-scaffold",
-            "./bin/phing push"
+            "@composer push"
         ],
         "post-update-cmd": [
             "PhantomInstaller\\Installer::installPhantomJS",
-            "./bin/phing push",
+            "@composer push",
             "@composer package"
         ],
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
         "package": "govCMS\\Core\\Composer\\Package::execute",
+        "push": "./bin/phing push",
         "nuke": "rm -r -f bin docroot vendor"
     },
     "suggest": {
