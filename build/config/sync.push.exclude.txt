@@ -1,4 +1,5 @@
 _darcs
+.circleci
 .cfignore
 .DS_Store
 .hg
