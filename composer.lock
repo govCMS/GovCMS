@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "15f3fbe4b326f21f61fb615284902a81",
+    "content-hash": "b9f1cc1c1f5c789d2d04f1dc072bd09f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -794,17 +794,17 @@
         },
         {
             "name": "drupal/admin_toolbar",
-            "version": "1.22.0",
+            "version": "1.23.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/admin_toolbar",
-                "reference": "8.x-1.22"
+                "reference": "8.x-1.23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.22.zip",
-                "reference": "8.x-1.22",
-                "shasum": "a0dd52e0e9405fef3f8d32ee308ed298dfba99ad"
+                "url": "https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.23.zip",
+                "reference": "8.x-1.23",
+                "shasum": "46d7ed18a9154c35e765ae43ce43aa292c025d65"
             },
             "require": {
                 "drupal/core": "*"
@@ -815,7 +815,7 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.22",
+                    "version": "8.x-1.23",
                     "datestamp": "1517936581",
                     "security-coverage": {
                         "status": "covered",
