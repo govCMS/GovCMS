@@ -106,7 +106,7 @@
         "drupal/robotstxt": "^1.1",
         "drupal/search_api": "1.6",
         "drupal/seckit": "^1.0",
-        "drupal/shield": "^1.1",
+        "drupal/shield": "1.2",
         "drupal/simple_oauth": "3.5",
         "drupal/simple_sitemap": "2.11.0",
         "drupal/swiftmailer": "^1.0",
