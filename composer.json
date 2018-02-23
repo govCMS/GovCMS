@@ -145,7 +145,7 @@
         "jcalderonzumba/mink-phantomjs-driver": "~0.3",
         "mikey179/vfsStream": "^1.6",
         "phing/phing": "^2.16",
-        "phpunit/phpunit": ">=4.8.36 <5",
+        "phpunit/phpunit": "^4.8.35 || ^6.1",
         "se/selenium-server-standalone": "^3.6",
         "squizlabs/php_codesniffer": "^2.9"
     },
