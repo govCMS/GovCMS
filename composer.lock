@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5095864f0556a5ef6b91c7bcb54c289d",
+    "content-hash": "f0262dcfb63c989ba57513206eb7b884",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2479,17 +2479,17 @@
         },
         {
             "name": "drupal/graphql",
-            "version": "3.0.0-beta3",
+            "version": "3.0.0-beta5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/graphql",
-                "reference": "8.x-3.0-beta3"
+                "reference": "8.x-3.0-beta5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/graphql-8.x-3.0-beta3.zip",
-                "reference": "8.x-3.0-beta3",
-                "shasum": "abbbec1f833849c48762bc8c138567da5aa6f86b"
+                "url": "https://ftp.drupal.org/files/projects/graphql-8.x-3.0-beta5.zip",
+                "reference": "8.x-3.0-beta5",
+                "shasum": "46048351613449892f4de9715cfc526df1dc2cf7"
             },
             "require": {
                 "drupal/core": "~8.0",
@@ -2501,8 +2501,8 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.0-beta3",
-                    "datestamp": "1517825280",
+                    "version": "8.x-3.0-beta5",
+                    "datestamp": "1518194880",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
