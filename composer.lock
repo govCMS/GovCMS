@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b9f1cc1c1f5c789d2d04f1dc072bd09f",
+    "content-hash": "5095864f0556a5ef6b91c7bcb54c289d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2119,17 +2119,17 @@
         },
         {
             "name": "drupal/environment_indicator",
-            "version": "3.2.0",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/environment_indicator",
-                "reference": "8.x-3.2"
+                "reference": "8.x-3.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/environment_indicator-8.x-3.2.zip",
-                "reference": "8.x-3.2",
-                "shasum": "12291652b86726f26df8a548238a5d333e25a2ef"
+                "url": "https://ftp.drupal.org/files/projects/environment_indicator-8.x-3.3.zip",
+                "reference": "8.x-3.3",
+                "shasum": "3059b8d4fb2b87af4842c45b9770d927e640eb30"
             },
             "require": {
                 "drupal/core": "*"
@@ -2140,7 +2140,7 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.2",
+                    "version": "8.x-3.3",
                     "datestamp": "1518331981",
                     "security-coverage": {
                         "status": "covered",
