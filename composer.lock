@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "62e9dc9837b6a36a463bdc7f064da92c",
+    "content-hash": "7920074513968b5b5363ea5c0b3037ea",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4560,6 +4560,17 @@
             "dist": {
                 "type": "zip",
                 "url": "https://github.com/enyo/dropzone/archive/v5.1.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "drupal-library"
+        },
+        {
+            "name": "govcms-asset/swiftmailer",
+            "version": "v5.4.9",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/swiftmailer/swiftmailer/archive/v5.4.9.zip",
                 "reference": null,
                 "shasum": null
             },

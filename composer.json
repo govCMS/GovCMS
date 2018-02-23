@@ -63,6 +63,18 @@
                     "url": "https://github.com/enyo/dropzone/archive/v5.1.1.zip"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "type": "drupal-library",
+                "name": "govcms-asset/swiftmailer",
+                "version": "v5.4.9",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/swiftmailer/swiftmailer/archive/v5.4.9.zip"
+                }
+            }
         }
     ],
     "require": {
@@ -116,6 +128,7 @@
         "drupal/webform": "5.0-rc3",
         "govcms-asset/chosen": "^1.8",
         "govcms-asset/dropzone": "^5.1",
+        "govcms-asset/swiftmailer": "^5.4",
         "oomphinc/composer-installers-extender": "^1.1"
     },
     "require-dev": {

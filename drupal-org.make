@@ -109,3 +109,6 @@ libraries[chosen][download][url] = https://github.com/harvesthq/chosen/releases/
 libraries[dropzone][type] = library
 libraries[dropzone][download][type] = get
 libraries[dropzone][download][url] = https://github.com/enyo/dropzone/archive/v5.1.1.zip
+libraries[swiftmailer][type] = library
+libraries[swiftmailer][download][type] = get
+libraries[swiftmailer][download][url] = https://github.com/swiftmailer/swiftmailer/archive/v5.4.9.zip
