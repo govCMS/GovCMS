@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f0262dcfb63c989ba57513206eb7b884",
+    "content-hash": "fdb15ba5f451a64168599792f1e4be9f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3922,17 +3922,17 @@
         },
         {
             "name": "drupal/simple_oauth",
-            "version": "3.4.0",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/simple_oauth",
-                "reference": "8.x-3.4"
+                "reference": "8.x-3.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/simple_oauth-8.x-3.4.zip",
-                "reference": "8.x-3.4",
-                "shasum": "cf3f1d4c25cb083c355299cb2006c712f8f15711"
+                "url": "https://ftp.drupal.org/files/projects/simple_oauth-8.x-3.5.zip",
+                "reference": "8.x-3.5",
+                "shasum": "e96fe600c7ddc075cbd3412a5452989f21d52829"
             },
             "require": {
                 "drupal/consumers": "*",
@@ -3945,7 +3945,7 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.4",
+                    "version": "8.x-3.5",
                     "datestamp": "1517905684",
                     "security-coverage": {
                         "status": "covered",
