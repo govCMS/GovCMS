@@ -129,7 +129,8 @@
         "govcms-asset/chosen": "^1.8",
         "govcms-asset/dropzone": "^5.1",
         "govcms-asset/swiftmailer": "^5.4",
-        "oomphinc/composer-installers-extender": "^1.1"
+        "oomphinc/composer-installers-extender": "^1.1",
+        "symfony/phpunit-bridge": "^3.4.6"
     },
     "require-dev": {
         "bex/behat-screenshot": "^1.2",
