@@ -41,21 +41,6 @@
             "type": "package",
             "package": {
                 "type": "drupal-library",
-                "name": "govcms-asset/chosen",
-                "version": "v1.8.2",
-                "dist": {
-                    "url": "https://github.com/harvesthq/chosen/releases/download/v1.8.2/chosen_v1.8.2.zip",
-                    "type": "zip"
-                },
-                "require": {
-                    "composer/installers": "^1.2.0"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "type": "drupal-library",
                 "name": "govcms-asset/dropzone",
                 "version": "v5.1.1",
                 "dist": {
@@ -79,6 +64,7 @@
     ],
     "require": {
         "php": "^7.1",
+        "bower-asset/chosen": "1.8.3",
         "cweagans/composer-patches": "^1.6",
         "drupal-composer/drupal-scaffold": "^2.4",
         "drupal/admin_toolbar": "1.23",
@@ -121,12 +107,11 @@
         "drupal/shield": "1.2",
         "drupal/simple_oauth": "3.5",
         "drupal/simple_sitemap": "2.11.0",
-        "drupal/swiftmailer": "^1.0",
+        "drupal/swiftmailer": "1.0-beta2",
         "drupal/token": "1.1.0",
         "drupal/username_enumeration_prevention": "^1.0",
         "drupal/video_embed_field": "2.0-alpha2",
         "drupal/webform": "5.0-rc3",
-        "govcms-asset/chosen": "^1.8",
         "govcms-asset/dropzone": "^5.1",
         "govcms-asset/swiftmailer": "^5.4",
         "oomphinc/composer-installers-extender": "^1.1",
