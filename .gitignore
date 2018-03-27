@@ -27,6 +27,7 @@ console/cache/
 
 # DrupalVM
 .vagrant/
+behat.vm.yml
 
 # PHPStorm
 .idea/

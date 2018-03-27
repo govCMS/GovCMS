@@ -1,10 +1,11 @@
-@api
 Feature: User
-  govCMS site user behavior
+  govCMS site user testing
 
+  @api @javascript
   Scenario: Create user
     Given users:
       | name | mail |
       | Tim Junior | tim.junior@example.com |
-    When I am logged in as "Tim Junior"
-    Then I should see "Commonwealth of Australia"
+    And I am logged in as a user with the "Administer users" permission
+    When I visit "admin/people"
+    Then I should see the text "Tim Junior"
