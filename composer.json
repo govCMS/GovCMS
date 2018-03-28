@@ -125,7 +125,7 @@
         "drupal/token": "1.1.0",
         "drupal/username_enumeration_prevention": "^1.0",
         "drupal/video_embed_field": "2.0-alpha2",
-        "drupal/webform": "5.0-rc3",
+        "drupal/webform": "5.0.0-rc7",
         "govcms-asset/chosen": "^1.8",
         "govcms-asset/dropzone": "^5.1",
         "govcms-asset/swiftmailer": "^5.4",
