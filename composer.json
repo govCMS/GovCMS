@@ -114,7 +114,7 @@
         "drupal/panels": "4.3",
         "drupal/paragraphs": "^1.2",
         "drupal/password_policy": "^3.0",
-        "drupal/pathauto": "1.1",
+        "drupal/pathauto": "1.2",
         "drupal/redirect": "1.1",
         "drupal/restui": "^1.15",
         "drupal/robotstxt": "^1.1",
