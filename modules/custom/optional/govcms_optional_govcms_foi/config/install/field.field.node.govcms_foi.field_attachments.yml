@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_attachments
-    - media.type.document
+    - media.type.file
     - node.type.govcms_foi
 id: node.govcms_foi.field_attachments
 field_name: field_attachments
@@ -19,9 +19,9 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      document: document
+      file: file
     sort:
       field: _none
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: file
 field_type: entity_reference
