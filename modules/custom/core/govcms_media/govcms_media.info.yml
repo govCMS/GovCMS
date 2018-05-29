@@ -1,0 +1,13 @@
+name: 'govCMS Media '
+description: 'Provide media management functionality.'
+type: module
+core: 8.x
+dependencies:
+  - content_moderation
+  - field
+  - field_layout
+  - file
+  - image
+  - layout_discovery
+  - media
+  - path
