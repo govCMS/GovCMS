@@ -13,7 +13,6 @@ dependencies:
     - content_moderation
     - datetime
     - field_layout
-    - file
     - layout_discovery
     - path
     - text
@@ -42,11 +41,13 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_attachments:
-    weight: 122
+    weight: 128
     settings:
-      progress_indicator: throbber
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: file_generic
+    type: entity_reference_autocomplete
     region: content
   field_foi_date_listed:
     weight: 123

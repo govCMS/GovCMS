@@ -4,15 +4,20 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.govcms_foi.body
-    - field.field.node.govcms_foi.field_attachments
     - field.field.node.govcms_foi.field_foi_date_listed
     - field.field.node.govcms_foi.field_foi_log_reference_id
     - field.field.node.govcms_foi.field_foi_proposed_deletion_date
     - field.field.node.govcms_foi.field_foi_release_type
     - node.type.govcms_foi
   module:
+    - field_layout
+    - layout_discovery
     - text
     - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 id: node.govcms_foi.teaser
 targetEntityType: node
 bundle: govcms_foi
@@ -30,7 +35,6 @@ content:
     weight: 100
     region: content
 hidden:
-  field_attachments: true
   field_foi_date_listed: true
   field_foi_log_reference_id: true
   field_foi_proposed_deletion_date: true

@@ -7,13 +7,10 @@ dependencies:
     - field.field.node.govcms_news_and_media.field_featured_image
     - field.field.node.govcms_news_and_media.field_media_release_type
     - field.field.node.govcms_news_and_media.field_news_categories
-    - image.style.thumbnail
     - node.type.govcms_news_and_media
   module:
     - content_moderation
     - field_layout
-    - file
-    - image
     - layout_discovery
     - path
     - text
@@ -42,19 +39,22 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_attachments:
-    weight: 122
+    weight: 126
     settings:
-      progress_indicator: throbber
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: file_generic
+    type: entity_reference_autocomplete
     region: content
   field_featured_image:
-    weight: 123
+    weight: 127
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: image_image
+    type: entity_reference_autocomplete
     region: content
   field_media_release_type:
     weight: 125

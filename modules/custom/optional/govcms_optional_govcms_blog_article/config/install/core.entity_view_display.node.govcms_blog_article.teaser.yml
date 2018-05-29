@@ -4,13 +4,17 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.govcms_blog_article.body
-    - field.field.node.govcms_blog_article.field_attachments
     - field.field.node.govcms_blog_article.field_blog_article_categories
-    - field.field.node.govcms_blog_article.field_featured_image
     - node.type.govcms_blog_article
   module:
+    - field_layout
+    - layout_discovery
     - text
     - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 id: node.govcms_blog_article.teaser
 targetEntityType: node
 bundle: govcms_blog_article
@@ -28,6 +32,4 @@ content:
     weight: 100
     region: content
 hidden:
-  field_attachments: true
   field_blog_article_categories: true
-  field_featured_image: true

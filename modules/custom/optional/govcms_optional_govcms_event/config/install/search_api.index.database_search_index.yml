@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_event_date
-    - field.storage.node.field_event_categories
     - field.storage.node.field_event_location
     - field.storage.node.body
     - search_api.server.database_search
@@ -33,14 +32,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_event_date
-  field_event_:
-    label: 'Event categories'
-    datasource_id: 'entity:node'
-    property_path: field_event_categories
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_event_categories
   title:
     label: Title
     datasource_id: 'entity:node'
@@ -76,11 +67,12 @@ datasource_settings:
       default: true
       selected: {  }
 processor_settings:
+  rendered_item: {  }
   add_url: {  }
   aggregated_field: {  }
-  rendered_item: {  }
 tracker_settings:
-  default: {  }
+  default:
+    indexing_order: fifo
 options:
   index_directly: true
   cron_limit: 50
