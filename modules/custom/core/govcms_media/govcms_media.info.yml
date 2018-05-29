@@ -11,3 +11,4 @@ dependencies:
   - layout_discovery
   - media
   - path
+  - user

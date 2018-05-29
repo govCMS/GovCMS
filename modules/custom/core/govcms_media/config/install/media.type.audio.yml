@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies: {  }
+id: audio
+label: Audio
+description: 'Used for uploading local audio files.'
+source: audio_file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_audio_file
+field_map: {  }
