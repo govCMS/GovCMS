@@ -4,11 +4,15 @@ type: module
 core: 8.x
 dependencies:
   - content_moderation
+  - dropzonejs_eb_widget
+  - entity_browser
   - field
   - field_layout
   - file
   - image
+  - inline_entity_form
   - layout_discovery
   - media
   - path
   - user
+  - views
