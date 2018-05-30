@@ -4,6 +4,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.govcms_news_and_media.body
+    - field.field.node.govcms_news_and_media.field_attachments
+    - field.field.node.govcms_news_and_media.field_featured_image
     - field.field.node.govcms_news_and_media.field_media_release_type
     - field.field.node.govcms_news_and_media.field_news_categories
     - node.type.govcms_news_and_media
@@ -52,4 +54,6 @@ content:
       link: true
     third_party_settings: {  }
 hidden:
+  field_attachments: true
+  field_featured_image: true
   links: true

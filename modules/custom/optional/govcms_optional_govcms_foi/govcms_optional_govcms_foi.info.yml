@@ -5,6 +5,7 @@ core: 8.x
 dependencies:
   - content_moderation
   - datetime
+  - entity_browser
   - field
   - field_layout
   - file

@@ -4,9 +4,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.govcms_event.body
+    - field.field.node.govcms_event.field_attachments
     - field.field.node.govcms_event.field_event_categories
     - field.field.node.govcms_event.field_event_date
     - field.field.node.govcms_event.field_event_location
+    - field.field.node.govcms_event.field_featured_image
     - node.type.govcms_event
   module:
     - field_layout
@@ -34,7 +36,9 @@ content:
     weight: 100
     region: content
 hidden:
+  field_attachments: true
   field_event_: true
   field_event_categories: true
   field_event_date: true
   field_event_location: true
+  field_featured_image: true

@@ -6,6 +6,7 @@ dependencies:
   - block
   - content_moderation
   - datetime_range
+  - entity_browser
   - facets
   - field
   - field_layout

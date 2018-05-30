@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.govcms_media_image_browser
     - field.field.node.govcms_blog_article.body
     - field.field.node.govcms_blog_article.field_attachments
     - field.field.node.govcms_blog_article.field_blog_article_categories
@@ -9,6 +10,7 @@ dependencies:
     - node.type.govcms_blog_article
   module:
     - content_moderation
+    - entity_browser
     - field_layout
     - layout_discovery
     - path
@@ -40,11 +42,16 @@ content:
   field_attachments:
     weight: 126
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      entity_browser: govcms_media_file_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: entity_browser_entity_reference
     region: content
   field_blog_article_categories:
     weight: 125
@@ -58,11 +65,16 @@ content:
   field_featured_image:
     weight: 127
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      entity_browser: govcms_media_image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: entity_browser_entity_reference
     region: content
   moderation_state:
     type: moderation_state_default
