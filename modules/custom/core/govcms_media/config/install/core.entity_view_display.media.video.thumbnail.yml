@@ -2,37 +2,41 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.thumbnail
     - field.field.media.video.field_media_video_file
+    - image.style.thumbnail
     - media.type.video
   module:
     - field_layout
-    - file
+    - image
     - layout_discovery
 third_party_settings:
   field_layout:
     id: layout_onecol
     settings: {  }
-id: media.video.default
+id: media.video.thumbnail
 targetEntityType: media
 bundle: video
-mode: default
+mode: thumbnail
 content:
-  field_media_video_file:
-    type: file_video
+  name:
+    type: string
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  thumbnail:
+    type: image
     weight: 0
     label: hidden
     settings:
-      controls: true
-      multiple_file_display_type: tags
-      width: 640
-      height: 480
-      autoplay: false
-      loop: false
-      muted: false
-    third_party_settings: {  }
+      image_style: thumbnail
+      image_link: ''
     region: content
+    third_party_settings: {  }
 hidden:
   created: true
-  name: true
-  thumbnail: true
+  field_media_video_file: true
   uid: true
