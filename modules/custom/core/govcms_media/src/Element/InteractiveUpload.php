@@ -10,7 +10,8 @@ use Drupal\file\Entity\File;
 /**
  * A form element for uploading or deleting files interactively.
  *
- * Code from \Drupal\lightning_media\Element\InteractiveUpload in lightning_media 8.x-2.3 submodule.
+ * Code from \Drupal\lightning_media\Element\InteractiveUpload
+ * in lightning_media 8.x-2.3 submodule.
  *
  * @FormElement("interactive_upload")
  */
@@ -38,7 +39,7 @@ class InteractiveUpload extends FormElement {
    *
    * @param array $element
    *   The unprocessed element.
-   * @param FormStateInterface $form_state
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
    *   The current form state.
    *
    * @return array

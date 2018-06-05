@@ -8,7 +8,8 @@ use Drupal\media\MediaTypeInterface;
 /**
  * Implements InputMatchInterface for media types that use a file field.
  *
- * Code from \Drupal\lightning_media\FileInputExtensionMatchTrait in lightning_media 8.x-2.3 submodule.
+ * Code from \Drupal\lightning_media\FileInputExtensionMatchTrait
+ * in lightning_media 8.x-2.3 submodule.
  */
 trait FileInputExtensionMatchTrait {
 

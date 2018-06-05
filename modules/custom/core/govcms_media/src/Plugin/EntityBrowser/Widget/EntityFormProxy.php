@@ -14,7 +14,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Base class for EB widgets which wrap around an (inline) entity form.
  *
- * Code from \Drupal\lightning_media\Plugin\EntityBrowser\Widget\EntityFormProxy in lightning_media 8.x-2.3 submodule.
+ * Code from \Drupal\lightning_media\Plugin\EntityBrowser\Widget\EntityFormProxy
+ * in lightning_media 8.x-2.3 submodule.
  */
 abstract class EntityFormProxy extends WidgetBase {
 
@@ -74,7 +75,9 @@ abstract class EntityFormProxy extends WidgetBase {
    *   returned array will be empty.
    */
   protected function getAllowedBundles(FormStateInterface $form_state) {
-    return (array) $form_state->get(['entity_browser', 'widget_context', 'target_bundles']);
+    return (array) $form_state->get(['entity_browser', 'widget_context',
+      'target_bundles',
+    ]);
   }
 
   /**
@@ -165,7 +168,7 @@ abstract class EntityFormProxy extends WidgetBase {
    *
    * @param array $form
    *   The complete form.
-   * @param FormStateInterface $form_state
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
    *   The current form state.
    *
    * @return \Drupal\Core\Ajax\AjaxResponse

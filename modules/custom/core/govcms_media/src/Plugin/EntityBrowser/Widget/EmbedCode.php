@@ -7,7 +7,8 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * An Entity Browser widget for creating media entities from embed codes.
  *
- * Code from \Drupal\lightning_media\Plugin\EntityBrowser\Widget\EmbedCode in lightning_media 8.x-2.3 submodule.
+ * Code from \Drupal\lightning_media\Plugin\EntityBrowser\Widget\EmbedCode
+ * in lightning_media 8.x-2.3 submodule.
  *
  * @EntityBrowserWidget(
  *   id = "embed_code",

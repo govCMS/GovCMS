@@ -12,7 +12,8 @@ use Drupal\media\MediaInterface;
 /**
  * An Entity Browser widget for creating media entities from uploaded files.
  *
- * Code from \Drupal\lightning_media\Plugin\EntityBrowser\Widget\FileUpload in lightning_media 8.x-2.3 submodule.
+ * Code from \Drupal\lightning_media\Plugin\EntityBrowser\Widget\FileUpload
+ * in lightning_media 8.x-2.3 submodule.
  *
  * @EntityBrowserWidget(
  *   id = "file_upload",
@@ -61,7 +62,9 @@ class FileUpload extends EntityFormProxy {
       ],
     ];
 
-    $validators = $form_state->get(['entity_browser', 'widget_context', 'upload_validators']) ?: [];
+    $validators = $form_state->get(['entity_browser',
+      'widget_context', 'upload_validators',
+    ]) ?: [];
 
     // If the widget context didn't specify any file extension validation, add
     // it as the first validator, allowing it to accept only file extensions
@@ -125,7 +128,7 @@ class FileUpload extends EntityFormProxy {
    *
    * @param array $element
    *   The upload element.
-   * @param FormStateInterface $form_state
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
    *   The current form state.
    *
    * @return array
