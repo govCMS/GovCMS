@@ -6,6 +6,8 @@ use Drupal\Core\Entity\EntityTypeInterface;
 
 /**
  * Helps tweak and override implementations of various things.
+ *
+ * Code from \Drupal\lightning_core\OverrideHelper in lightning_core 8.x-2.6 submodule.
  */
 class OverrideHelper {
 

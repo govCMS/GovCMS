@@ -13,6 +13,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * A form for uploading multiple media assets at once.
+ *
+ * Code from \Drupal\lightning_media_bulk_upload\Form\BulkUploadForm in lightning_media 8.x-2.3 submodule.
  */
 class BulkUploadForm extends FormBase {
 

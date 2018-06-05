@@ -19,6 +19,8 @@ use Drupal\file\FileInterface;
 
 /**
  * Implements hook_media_source_info_alter().
+ *
+ * Code from hook_media_source_info_alter in lightning_media 8.x-2.3 submodule.
  */
 function govcms_media_media_source_info_alter(array &$sources) {
   $sources['file']['input_match']['field_types'] = ['file'];
@@ -47,6 +49,8 @@ function govcms_media_media_source_info_alter(array &$sources) {
 
 /**
  * Implements hook_entity_type_alter().
+ *
+ * Code from lightning_media_entity_type_alter() in lightning_media 8.x-2.3 submodule.
  */
 function govcms_media_entity_type_alter(array &$entity_types) {
   if (\Drupal::moduleHandler()->moduleExists('media')) {
@@ -61,6 +65,8 @@ function govcms_media_entity_type_alter(array &$entity_types) {
 
 /**
  * Validates a file using media entity source field criteria.
+ *
+ * Code from lightning_media_validate_upload() in lightning_media 8.x-2.3 submodule.
  *
  * @param \Drupal\file\FileInterface $file
  *   The file to validate.

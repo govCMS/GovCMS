@@ -8,6 +8,8 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * An interactive, AJAX-ey file upload form element.
  *
+ * Code from \Drupal\lightning_media\Element\AjaxUpload in lightning_media 8.x-2.3 submodule.
+ *
  * @FormElement("ajax_upload")
  */
 class AjaxUpload extends InteractiveUpload {

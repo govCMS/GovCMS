@@ -6,6 +6,8 @@ use Drupal\Core\Entity\EntityInterface;
 
 /**
  * Exception thrown if no bundle can be determined from an input value.
+ *
+ * Code from \Drupal\lightning_media\Exception\IndeterminateBundleException in lightning_media 8.x-2.3 submodule.
  */
 class IndeterminateBundleException extends \UnexpectedValueException {
 

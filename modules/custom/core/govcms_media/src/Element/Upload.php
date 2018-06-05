@@ -10,6 +10,8 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 /**
  * A form element to handle file uploads.
  *
+ * Code from \Drupal\lightning_media\Element\Upload in lightning_media 8.x-2.3 submodule.
+ *
  * @FormElement("upload")
  */
 class Upload extends FileElement {

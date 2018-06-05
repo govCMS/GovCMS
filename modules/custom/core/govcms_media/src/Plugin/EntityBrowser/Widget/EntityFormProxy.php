@@ -13,6 +13,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Base class for EB widgets which wrap around an (inline) entity form.
+ *
+ * Code from \Drupal\lightning_media\Plugin\EntityBrowser\Widget\EntityFormProxy in lightning_media 8.x-2.3 submodule.
  */
 abstract class EntityFormProxy extends WidgetBase {
 

@@ -12,6 +12,8 @@ use Drupal\media\MediaInterface;
 /**
  * An Entity Browser widget for creating media entities from uploaded files.
  *
+ * Code from \Drupal\lightning_media\Plugin\EntityBrowser\Widget\FileUpload in lightning_media 8.x-2.3 submodule.
+ *
  * @EntityBrowserWidget(
  *   id = "file_upload",
  *   label = @Translation("File Upload"),

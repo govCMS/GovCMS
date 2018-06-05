@@ -58,6 +58,7 @@ dependencies:
 
   # govCMS core modules
   - govcms_search
+  - govcms_media
 
 dependencies_optional:
   - govcms_optional_govcms_blog_article

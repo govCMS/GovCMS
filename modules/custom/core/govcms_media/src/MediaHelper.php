@@ -10,6 +10,8 @@ use Drupal\media\MediaInterface;
 
 /**
  * Provides helper methods for dealing with media entities.
+ *
+ * Code from \Drupal\lightning_media\MediaHelper in lightning_media 8.x-2.3 submodule.
  */
 class MediaHelper {
 

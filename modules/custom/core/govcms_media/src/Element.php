@@ -6,6 +6,8 @@ use Drupal\Core\Render\Element as RenderElement;
 
 /**
  * Helpful functions for dealing with renderable arrays and elements.
+ *
+ * Code from \Drupal\lightning_core\Element in lightning_core 8.x-2.6 submodule.
  */
 class Element {
 
