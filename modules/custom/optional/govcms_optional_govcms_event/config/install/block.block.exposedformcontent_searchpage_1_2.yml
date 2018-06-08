@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.content_search
+  module:
+    - system
+    - views
+  theme:
+    - govcms8_uikit_starter
+id: exposedformcontent_searchpage_1_2
+theme: govcms8_uikit_starter
+region: content
+weight: -4
+provider: null
+plugin: 'views_exposed_filter_block:content_search-page_1'
+settings:
+  id: 'views_exposed_filter_block:content_search-page_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: "/search\r\n/search/*"
+    negate: false
+    context_mapping: {  }

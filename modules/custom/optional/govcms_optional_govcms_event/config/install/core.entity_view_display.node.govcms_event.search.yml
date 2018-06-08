@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.search
     - field.field.node.govcms_event.body
     - field.field.node.govcms_event.field_attachments
     - field.field.node.govcms_event.field_components
@@ -14,9 +15,8 @@ dependencies:
     - node.type.govcms_event
   module:
     - datetime_range
-    - entity_reference_revisions
+    - ds
     - field_layout
-    - file
     - panelizer
     - text
     - user
@@ -29,35 +29,44 @@ third_party_settings:
     custom: false
     allow: false
     default: default
-id: node.govcms_event.default
+  ds:
+    layout:
+      id: search
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings: {  }
+    regions:
+      title:
+        - node_title
+      info:
+        - field_event_date
+        - field_event_location
+      summary:
+        - body
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: ''
+          class: ''
+id: node.govcms_event.search
 targetEntityType: node
 bundle: govcms_event
-mode: default
+mode: search
 content:
   body:
+    type: text_summary_or_trimmed
+    weight: 3
+    region: summary
     label: hidden
-    type: text_default
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
-    region: content
-  field_attachments:
-    weight: 2
-    label: above
     settings:
-      use_description_as_link_text: true
+      trim_length: 160
     third_party_settings: {  }
-    type: file_default
-    region: content
-  field_components:
-    weight: 107
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
-    region: content
   field_event_:
     weight: 106
     label: above
@@ -67,44 +76,28 @@ content:
     type: entity_reference_label
     region: content
   field_event_date:
-    weight: 5
-    label: above
+    type: daterange_default
+    weight: 1
+    region: info
+    label: hidden
     settings:
       separator: '-'
-      format_type: medium
       timezone_override: ''
+      format_type: standard_date_time
     third_party_settings: {  }
-    type: daterange_default
-    region: content
   field_event_location:
-    weight: 4
-    label: above
+    type: string
+    weight: 2
+    region: info
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
-    region: content
-  field_featured_image:
-    weight: 108
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_thumbnail:
-    weight: 109
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  links:
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
+  field_attachments: true
+  field_components: true
   field_event_categories: true
+  field_featured_image: true
+  field_thumbnail: true
+  links: true
   panelizer: true
