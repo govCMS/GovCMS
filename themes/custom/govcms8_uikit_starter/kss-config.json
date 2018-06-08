@@ -1,0 +1,26 @@
+{
+  "title": "GovCMS 8 UI-Kit Starter Style Guide",
+  "builder": "GovCMS-kss-template",
+  "homepage": "kss-homepage.md",
+
+  "//": "The source and destination paths are relative to this file.",
+  "source": [
+    "assets/scss"
+  ],
+
+  "destination":  "styleguide/",
+
+  "//": "The css and js paths are URLs relative to the generated style guide.",
+  "css": [
+    "../css/style.css"
+  ],
+
+  "js": [
+    "../js/animate.js",
+    "../js/accordion.js"
+  ],
+
+  "namespace": [
+    "govcms8_uikit:../govcms8_uikit"
+  ]
+}

@@ -1,0 +1,175 @@
+<?php
+
+/**
+ * @file
+ * GovCMS 8 UI-Kit Starter main theme file.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatch;
+use Drupal\block\Entity\Block;
+
+/**
+ * Implements hook_form_system_theme_settings_alter().
+ */
+function govcms8_uikit_starter_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+  // Create a section for My Theme settings.
+  $form['govcms8_uikit_starter_settings'] = [
+    '#type'         => 'details',
+    '#title'        => t('Custom Settings'),
+    '#description'  => t('Configure GovCMS 8 UI-Kit Starter options'),
+    '#weight' => -1000,
+    '#open' => TRUE,
+  ];
+
+  $form['govcms8_uikit_starter_settings']['theme__highlighted_layouts'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Layout highlighter'),
+    '#description' => t('Default GovCMS 8 layouts get borders for easier debugging. Do not forgot to turn off before going live.'),
+    '#default_value' => theme_get_setting('theme__highlighted_layouts'),
+  ];
+
+  $form['govcms8_uikit_starter_settings']['header_style'] = [
+    '#type' => 'select',
+    '#title' => t('Header style'),
+    '#options'       => [
+      '' => t('-none-'),
+      'theme__header--dark' => t('Dark'),
+      'theme__header--alt' => t('Alt'),
+      'theme__header--dark-alt' => t('Dark alt'),
+    ],
+    '#description' => t('Set style for header.'),
+    '#default_value' => theme_get_setting('header_style'),
+  ];
+
+  $form['govcms8_uikit_starter_settings']['footer_style'] = [
+    '#type' => 'select',
+    '#title' => t('Footer style'),
+    '#options'       => [
+      '' => t('-none-'),
+      'theme__footer--dark' => t('Dark'),
+      'theme__footer--alt' => t('Alt'),
+      'theme__footer--dark-alt' => t('Dark alt'),
+    ],
+    '#description' => t('Set style for footer.'),
+    '#default_value' => theme_get_setting('footer_style'),
+  ];
+
+  $form['govcms8_uikit_starter_settings']['local_task_style'] = [
+    '#type' => 'select',
+    '#title' => t('Local task style'),
+    '#options'       => [
+      '' => t('-none-'),
+      'theme__local-task--dark' => t('Dark'),
+      'theme__local-task--alt' => t('Alt'),
+      'theme__local-task--dark-alt' => t('Dark alt'),
+    ],
+    '#description' => t('Set style for local task.'),
+    '#default_value' => theme_get_setting('local_task_style'),
+  ];
+
+  $form['govcms8_uikit_starter_settings']['logo_width'] = [
+    '#type' => 'number',
+    '#title' => t('Logo width (px)'),
+    '#description' => t('Set the width for logo in pixels.'),
+    '#default_value' => theme_get_setting('logo_width'),
+  ];
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function govcms8_uikit_starter_preprocess_page(&$variables) {
+  $theme_settings_mappings = [
+    'header_style' => [
+      'theme__header--dark' => 'au-body--dark au-header--dark',
+      'theme__header--alt' => 'au-body--alt au-header--alt',
+      'theme__header--dark-alt' => 'au-body--dark au-header--dark au-header--alt',
+    ],
+    'footer_style' => [
+      'theme__footer--dark' => 'au-body--dark au-footer--dark',
+      'theme__footer--alt' => 'au-body--alt au-footer--alt',
+      'theme__footer--dark-alt' => 'au-body--dark au-footer--dark au-footer--alt',
+    ],
+    'theme__highlighted_layouts' => [
+      1 => 'highlighted-layouts',
+    ],
+  ];
+  govcms8_uikit_starter_theme_settings_mappings($variables, $theme_settings_mappings);
+
+  // Check if current page is defined by Page manager.
+  $route = RouteMatch::createFromRequest(\Drupal::request());
+  $parameters = $route->getParameters();
+
+  // Check if node is panelized.
+  if ($parameters->has('node')) {
+    /** @var \Drupal\node\Entity\Node $node */
+    $node = $parameters->get('node');
+    // If Panelizer is enabled for this node type.
+    if (is_object($node) && $node->hasField('panelizer')) {
+      // Set is_panelized variable.
+      $variables['is_panelized'] = TRUE;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function govcms8_uikit_starter_preprocess_block(&$variables) {
+  $theme_settings_mappings = [
+    'local_task_style' => [
+      'theme__local-task--dark' => 'au-body--dark',
+      'theme__local-task--alt' => 'au-body--alt',
+      'theme__local-task--dark-alt' => 'au-body--dark au-body--alt',
+    ],
+  ];
+  govcms8_uikit_starter_theme_settings_mappings($variables, $theme_settings_mappings);
+
+  // Prepare a variable for logo width to be used in the branding block template.
+  $logo_width = theme_get_setting('logo_width');
+  if ($logo_width) {
+    $variables['theme__logo_width'] = $logo_width . 'px';
+  }
+  else {
+    $variables['theme__logo_width'] = 'auto';
+  }
+
+  // Add a region variable to a block.
+  if (isset($variables["elements"]["#id"])) {
+    $block_id = $variables["elements"]["#id"];
+    $block = \Drupal\block\Entity\Block::load($block_id);
+
+    if ($block) {
+      $variables["content"]["#attributes"]["region"] = $block->getRegion();
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_menu_alter().
+ */
+function govcms8_uikit_starter_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
+  if (isset($variables["attributes"]["region"])) {
+    $suggestions[] = $variables["theme_hook_original"] . "__" . $variables["attributes"]["region"];
+  }
+}
+
+/**
+ * Maps theme settings to variables usable in twig templates.
+ *
+ * @param array $variables
+ *   Theme variables array.
+ *
+ * @param array $theme_settings_mappings
+ *   Array of mapping.
+ */
+function govcms8_uikit_starter_theme_settings_mappings(array &$variables, array $theme_settings_mappings) {
+  foreach ($theme_settings_mappings as $variable => $options) {
+    $setting = theme_get_setting($variable);
+
+    if (isset($options[$setting])) {
+      $variables[$variable] = $options[$setting];
+    }
+  }
+}

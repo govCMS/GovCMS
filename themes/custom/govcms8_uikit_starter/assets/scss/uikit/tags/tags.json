@@ -1,0 +1,13 @@
+{
+  "items": [
+    {"text": "foo"},
+    {"text": "<a href='#'>bar</a>"},
+    {"text": "<a href='#'>baz</a>"},
+    {"text": "<a href='#'>bloop</a>"},
+    {"text": "blip"},
+    {"text": "wallop"},
+    {"text": "doodle"},
+    {"text": "pear ice cream"},
+    {"text": "baz"}
+  ]
+}

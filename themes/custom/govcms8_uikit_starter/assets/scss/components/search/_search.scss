@@ -1,0 +1,76 @@
+// Search block.
+
+form#views-exposed-form-content-search-page-1 {
+  display: flex;
+
+  // This is the text input wrapper.
+  .form-item-keys {
+    display: block;
+    width: 100%;
+    flex: 1 1 100%;
+
+    label {
+      @include AU-sronly();
+    }
+  }
+
+  // This is the button wrapper.
+  .form-wrapper {
+    display: block;
+    width: auto;
+    flex: 0;
+  }
+
+  .form-text {
+    @include AU-fontgrid( xs, nospace );
+    @include AU-space( padding, 0.8unit 2unit 0.8unit 1unit );
+    @include AU-space( border-top-right-radius, 0 );
+    @include AU-space( border-bottom-right-radius, 0 );
+    appearance: none;
+    background-color: $AU-color-background;
+    border-right: 0;
+    box-sizing: border-box;
+    color: $AU-color-foreground-text;
+    display: block;
+    margin: 0;
+    width: 100%;
+
+    @include AU-media( sm ) {
+      @include AU-fontgrid( sm, nospace);
+    }
+
+    &.form-autocomplete {
+      background-position: right .5rem center;
+    }
+
+    &::placeholder {
+      color: $AU-color-foreground-muted-suggestion;
+      opacity: 1;
+    }
+
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: $AU-color-foreground-muted-suggestion;
+      opacity: 1;
+    }
+
+    &::-moz-placeholder { /* Firefox 19+ */
+      color: $AU-color-foreground-muted-suggestion;
+      opacity: 1;
+    }
+
+    &:-ms-input-placeholder { /* IE 10+ */
+      color: $AU-color-foreground-muted-suggestion;
+      opacity: 1;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+      color: $AU-color-foreground-muted-suggestion;
+      opacity: 1;
+    }
+  }
+
+  .form-submit {
+    @include AU-space( border-top-left-radius, 0 );
+    @include AU-space( border-bottom-left-radius, 0 );
+  }
+}

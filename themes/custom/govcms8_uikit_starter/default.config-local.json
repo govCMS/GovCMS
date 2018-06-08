@@ -1,0 +1,6 @@
+{
+  "name": "govcms8_uikit_starter",
+  "description": "GovCMS 8 UI Kit Starter local config file.",
+  "browserSyncProxy" : "your_local_url",
+  "browserSyncPort" : 3000
+}

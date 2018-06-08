@@ -1,0 +1,10 @@
+// We use the values for the hero styling here from gov.au Header component.
+.paragraph {
+  &.style--hero {
+    @include AU-space( padding, 3unit $AU-grid-12-gutter-width/2 3.5unit $AU-grid-12-gutter-width/2 );
+
+    @include AU-media( sm ) {
+      @include AU-space( padding, 6unit $AU-grid-12-gutter-width/2 6.5unit $AU-grid-12-gutter-width/2 );
+    }
+  }
+}

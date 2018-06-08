@@ -1,0 +1,8 @@
+.node--type-govcms_standard_page {
+  &.node--view-mode-full {
+
+    div[class*="block-entity-fieldnode"] + div[class*="block-entity-fieldnode"] {
+      @include AU-space(margin-top, 1unit);
+    }
+  }
+}

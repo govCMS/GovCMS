@@ -1,0 +1,37 @@
+// UI-Kit Page alerts
+//
+// Tags to apply a taxonomy and link to similar content.
+//
+// .au-page-alerts--info - Page alert info.
+// .au-page-alerts--warning - Page alert warning.
+// .au-page-alerts--error - Page alert error.
+// .au-page-alerts--success - Page alert success.
+//
+// Markup: page_alerts.twig
+//
+// Style guide: UI-Kit.page-alerts
+//
+
+.au-page-alerts {
+  @include AU-space(margin, 1rem auto);
+
+  @include AU-media( sm ) {
+    width: $AU-media-sm - $AU-grid-12-gutter-width * 2;
+  }
+  @include AU-media( md ) {
+    width: $AU-media-md - $AU-grid-12-gutter-width * 2;
+  }
+  @include AU-media( lg ) {
+    width: $AU-media-lg - $AU-grid-12-gutter-width * 2;
+  }
+}
+
+.au-body--dark .au-page-alerts {
+  @extend .au-page-alerts--dark !optional;
+}
+.au-body--alt .au-page-alerts {
+  @extend .au-page-alerts--alt !optional;
+}
+.au-body--dark.au-body--alt .au-page-alerts {
+  @extend .au-page-alerts--dark.au-page-alerts--alt !optional;
+}

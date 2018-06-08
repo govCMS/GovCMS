@@ -1,0 +1,12 @@
+// UI-Kit Progress indicator
+//
+// Tags to apply a taxonomy and link to similar content.
+//
+// Markup: progress_indicator.twig
+//
+// Style guide: UI-Kit.progress-indicator
+//
+
+.au-body--dark .au-progress-indicator {
+  @extend .au-progress-indicator--dark !optional;
+}

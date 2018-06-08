@@ -1,0 +1,48 @@
+// Paragraph content needs to be separated.
+.paragraph .paragraph-content {
+  @include AU-space(padding-bottom, $AU-grid-12-gutter-width);
+  @include AU-space(padding-top, $AU-grid-12-gutter-width);
+  position: relative;
+  z-index: 101;
+}
+// But no need for vertical padding on paragraph content if the paragraph has background color.
+.modifiers-has-background > .paragraph-content {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+
+// Paragraphs on edgy layout.
+.page-layout--edgy {
+  .paragraph-content {
+    @include AU-clearfix;
+    box-sizing: border-box;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: floor(($AU-grid-12-gutter-width / 2));
+    padding-right: ceil(($AU-grid-12-gutter-width / 2));
+    width: 100%;
+
+    @include AU-media(sm) {
+      max-width: ($AU-media-sm - $AU-grid-12-gutter-width);
+    }
+
+    @include AU-media(md) {
+      max-width: ($AU-media-md - $AU-grid-12-gutter-width);
+    }
+
+    @include AU-media(lg) {
+      max-width: ($AU-media-lg - $AU-grid-12-gutter-width);
+    }
+  }
+  // No need for horizontal padding on paragraph content if the paragraph has background color.
+  .modifiers-has-background > .paragraph-content {
+    padding-left: 0;
+    padding-right: 0;
+
+    @include AU-media(sm) {
+      padding-left: floor(($AU-grid-12-gutter-width / 2));
+      padding-right: ceil(($AU-grid-12-gutter-width / 2));
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.stack {
+  color: $AU-color-foreground-text;
+  background: $white;
+  box-shadow: 0 0 20px $govcms8-color-shadow;
+  height: 100%;
+
+  a {
+    color: $AU-color-foreground-action;
+  }
+}
+
+.stack__content {
+  @include AU-space(padding, 1unit);
+
+  // All regions has one third unit gap between them.
+  *[class^='stack__'] + *[class^='stack__'] {
+    @include AU-space(margin-top, .3unit);
+  }
+  // Title has a full unit gap bellow.
+  h3.stack__title {
+    @include AU-space(margin-bottom, 1unit);
+  }
+}
+
+// Stack looks the same on all backgrounds.
+.au-body--alt,
+.au-body--dark,
+.au-body--dark.au-body--alt,
+.color--alt,
+.color--dark,
+.color--dark-alt {
+  .stack {
+    color: $AU-color-foreground-text;
+
+    a {
+      color: $AU-color-foreground-action;
+
+      &:hover {
+        color: $AU-color-foreground-text;
+      }
+    }
+  }
+}

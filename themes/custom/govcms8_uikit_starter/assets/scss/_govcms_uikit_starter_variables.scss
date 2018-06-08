@@ -1,0 +1,19 @@
+////
+// MAIN MENU
+////
+$main-menu-border: 6px;
+$main-menu-border-negative: -$main-menu-border;
+
+////
+// COLORS
+////
+$white: #FFFFFF;
+$black: #000000;
+$govcms8-color-shadow: transparentize($black, 0.85);
+
+// Calendar item colors
+$govcms8-calendar-item-foreground: #313131;
+$govcms8-calendar-item-background: #ededed;
+$govcms8-calendar-item-background-current: #f2fbfd;
+$govcms8-calendar-item-background-past: #fafafa;
+$govcms8-calendar-item-foreground-past: #737373;

@@ -1,0 +1,68 @@
+// Table styles
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+  td,
+  th {
+    @include AU-space(padding, .5unit 1unit);
+  }
+
+  thead th {
+    border-bottom: 2px solid $AU-color-background-alt-shade-suggestion;
+  }
+
+  &.table-bordered {
+    td,
+    th {
+      border: 1px solid $AU-color-background-alt-shade-suggestion;
+    }
+
+    thead th {
+      border-bottom-width: 2px;
+    }
+  }
+
+  &.table-alt {
+    th {
+      background: $AU-color-background-alt;
+    }
+  }
+
+  &.table-dark {
+    th {
+      background: $AU-colordark-background;
+      color: $AU-colordark-foreground-text;
+    }
+  }
+
+  &.table-dark.table-alt {
+    th {
+      background: $AU-colordark-background-alt;
+    }
+  }
+
+  &.table-striped tbody {
+    tr:nth-child(odd) {
+      background: $AU-color-background-alt-suggestion;
+    }
+
+    tr:nth-child(even) {
+      background: $white;
+    }
+  }
+
+  &.table-sm {
+    td,
+    th {
+      @include AU-space(padding, .25unit .5unit);
+    }
+  }
+}
+
+// Style for responsive table wrapper div.
+.table-responsive {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+}

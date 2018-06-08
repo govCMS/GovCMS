@@ -1,0 +1,10 @@
+.teaser__content {
+  // All regions has one third unit gap between them.
+  *[class^='teaser__'] + *[class^='teaser__'] {
+    @include AU-space(margin-top, .3unit);
+  }
+  // Title has a full unit gap bellow.
+  h3.teaser__title {
+    @include AU-space(margin-bottom, 1unit);
+  }
+}

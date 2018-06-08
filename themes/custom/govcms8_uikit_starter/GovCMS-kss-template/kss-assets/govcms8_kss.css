@@ -1,0 +1,9 @@
+/* Custom styling for GovCMS styleguide. */
+.kss-markup {
+  clear: both;
+}
+
+/* Styleguide example block should not move horizontally. */
+.au-body--dark.col-sm-6:not(.au-body--alt) {
+  clear: left;
+}

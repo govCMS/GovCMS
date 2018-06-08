@@ -1,0 +1,22 @@
+name: 'GovCMS 8 UI-Kit Starter'
+description: 'Starter theme with basic implementation of GovCMS 8 UI-Kit. Cloning this theme is recommended, if you need more customization.'
+
+base theme: govcms8_uikit
+core: 8.x
+type: theme
+libraries:
+  - govcms8_uikit_starter/global-styling
+regions:
+  logo: 'Logo'
+  navigation: 'Navigation'
+  search: 'Search'
+  help: 'Help'
+  admin: 'Admin'
+  content_top: 'Content top'
+  content: 'Content'
+  sidebar: 'Sidebar'
+  postscript_1: 'Postscript 1'
+  postscript_2: 'Postscript 2'
+  postscript_3: 'Postscript 3'
+  postscript_4: 'Postscript 4'
+  legal: 'Legal'

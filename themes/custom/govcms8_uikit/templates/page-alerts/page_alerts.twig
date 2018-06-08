@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Component for messages.
+ *
+ * Variables:
+ * - modifier_class: [string] Classes to modify the default component styling.
+ * - heading: [string] Accessible heading.
+ * - attributes: [string] HTML attributes for the wrapping element.
+ * - messages: [array] The messages. Each item in the array is a string.
+ */
+#}
+<div class="au-body au-page-alerts {{ modifier_class }}" {% if heading %}aria-label="{{ heading }}"{% endif %} {{ attributes }} role="alert">
+  {% block heading %}
+    {% if heading %}
+      <h3 class="visually-hidden">{{ heading }}</h3>
+    {% endif %}
+  {% endblock heading %}
+
+  {% block content %}
+    {% if messages|length > 1 %}
+      <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      {{ messages|first }}
+    {% endif %}
+  {% endblock content %}
+</div>

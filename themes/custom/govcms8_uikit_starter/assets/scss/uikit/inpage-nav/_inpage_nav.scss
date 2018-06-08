@@ -1,0 +1,12 @@
+// UI-Kit Inpage-Nav
+//
+// Tags to apply a taxonomy and link to similar content.
+//
+// Markup: inpage_nav.twig
+//
+// Style guide: UI-Kit.inpage-nav
+//
+
+.au-body--dark .au-inpage-nav-links {
+  @extend .au-inpage-nav-links--dark !optional;
+}

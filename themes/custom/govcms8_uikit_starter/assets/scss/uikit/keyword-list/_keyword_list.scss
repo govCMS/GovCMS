@@ -1,0 +1,12 @@
+// UI-Kit Keyword List
+//
+// Tags to apply a taxonomy and link to similar content.
+//
+// Markup: keyword_list.twig
+//
+// Style guide: UI-Kit.keyword-list
+//
+
+.au-body--dark .au-keyword-list {
+  @extend .au-keyword-list--dark !optional;
+}

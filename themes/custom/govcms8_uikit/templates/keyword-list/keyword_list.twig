@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Component for keyword list.
+ *
+ * Variables:
+ * - item: [array] The keyword list items. Each item is an object containing:
+ *   - text: [string] Text of the item.
+ *   - url: [string] URL of the item (optional).
+ *   - small: [string] Small writing above the main text of the item.
+ */
+#}
+<ul class="au-keyword-list au-link-list">
+  {% for item in items %}
+    <li>
+      {% if item.url %}
+        <a href="{{ item.url }}">
+          <small class="au-keyword-list__small">{{ item.small }}</small>
+          {{ item.text }}
+        </a>
+      {% else %}
+        <small class="au-keyword-list__small">{{ item.small }}</small>
+        {{ item.text }}
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

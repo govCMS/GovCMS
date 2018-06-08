@@ -1,0 +1,23 @@
+{% extends "block.html.twig" %}
+{#
+/**
+ * @file
+ * Theme override for tabs.
+ */
+#}
+
+{% block content %}
+  {% set classes = [
+     'au-body',
+     'tabs',
+    local_task_style ? local_task_style,
+   ]
+  %}
+  {% if content %}
+    <nav{{ attributes.addClass(classes) }} role="navigation" aria-label="{{ 'Tabs'|t }}">
+      <div class="container">
+        {{ content }}
+      </div>
+    </nav>
+  {% endif %}
+{% endblock %}

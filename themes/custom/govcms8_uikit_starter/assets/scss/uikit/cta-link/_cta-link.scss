@@ -1,0 +1,12 @@
+// UI-Kit CTA Link
+//
+// Click to action link.
+//
+// Markup: cta_link.twig
+//
+// Style guide: UI-Kit.cta-link
+//
+
+.au-body--dark .au-cta-link {
+  @extend .au-cta-link--dark !optional;
+}

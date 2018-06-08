@@ -1,0 +1,18 @@
+// UI-Kit Button
+//
+// Form buttons.
+//
+// .au-btn--secondary - Button --secondary.
+// .au-btn--tertiary - Button --tertiary.
+// .au-btn--block - Button --block.
+//
+// Markup: button.twig
+//
+// Style guide: UI-Kit.button
+//
+
+.au-body--dark .au-btn,
+.color--dark .au-btn,
+.color--dark-alt .au-btn {
+  @extend .au-btn--dark !optional;
+}

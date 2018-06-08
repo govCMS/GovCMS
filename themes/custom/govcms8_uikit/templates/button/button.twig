@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * Component for a button.
+ *
+ * Variables:
+ * - content: [string] Text on the button.
+ */
+#}
+{% set classes=[
+  'au-btn',
+]
+%}
+{% block button %}
+  <button class="{{classes}}">{{ content }}</button>
+{% endblock %}

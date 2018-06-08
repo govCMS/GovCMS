@@ -1,0 +1,46 @@
+<h3>Single accordion open fast by default</h3>
+{%
+  include '@govcms8_uikit/templates/accordion/accordion.twig' with {
+  id: id_1,
+  title: title_1,
+  body: body_1,
+  orientation: orientation_1,
+  speed: speed_1
+} only
+%}
+
+<h3>Accordion group</h3>
+
+<button class="au-btn au-btn--secondary accordion-group__control" onclick="return AU.accordion.Open( document.querySelectorAll('.accordion-group .au-accordion__title') )">Open All</button>
+<button class="au-btn au-btn--secondary accordion-group__control" onclick="return AU.accordion.Close( document.querySelectorAll('.accordion-group .au-accordion__title') )">Close All</button>
+<button class="au-btn au-btn--secondary accordion-group__control" onclick="return AU.accordion.Toggle( document.querySelectorAll('.accordion-group .au-accordion__title') )">Toggle All</button>
+
+<div class="accordion-group">
+  {%
+    include '@govcms8_uikit/templates/accordion/accordion.twig' with {
+    id: id_2,
+    title: title_2,
+    body: body_2,
+    orientation: orientation_2,
+    speed: speed_2
+  } only
+  %}
+  {%
+    include '@govcms8_uikit/templates/accordion/accordion.twig' with {
+    id: id_3,
+    title: title_3,
+    body: body_3,
+    orientation: orientation_3,
+    speed: speed_3
+  } only
+  %}
+  {%
+    include '@govcms8_uikit/templates/accordion/accordion.twig' with {
+    id: id_4,
+    title: title_4,
+    body: body_4,
+    orientation: orientation_4,
+    speed: speed_4
+  } only
+  %}
+</div>

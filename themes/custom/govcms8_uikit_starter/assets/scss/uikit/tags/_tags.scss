@@ -1,0 +1,18 @@
+// UI-Kit Tags
+//
+// Tags to apply a taxonomy and link to similar content.
+//
+// Markup: tags.twig
+//
+// Style guide: UI-Kit.tags
+//
+
+.au-body--dark .au-tags {
+  @extend .au-tags.au-tags--dark !optional;
+}
+
+.au-tags {
+  a {
+    word-break: break-all;
+  }
+}

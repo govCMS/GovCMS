@@ -1,0 +1,125 @@
+{#
+/**
+ * @file
+ * Theme override to display a single page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template in this directory.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ *
+ * Page content (in order of occurrence in the default page.html.twig):
+ * - node: Fully loaded node, if there is an automatically-loaded node
+ *   associated with the page and the node ID is the second argument in the
+ *   page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - page.header: Items for the header region.
+ * - page.primary_menu: Items for the primary menu region.
+ * - page.secondary_menu: Items for the secondary menu region.
+ * - page.highlighted: Items for the highlighted content region.
+ * - page.help: Dynamic help text, mostly for admin pages.
+ * - page.content: The main content of the current page.
+ * - page.sidebar_first: Items for the first sidebar.
+ * - page.sidebar_second: Items for the second sidebar.
+ * - page.footer: Items for the footer region.
+ * - page.breadcrumb: Items for the breadcrumb region.
+ *
+ * @see template_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+{%
+  set classes = [
+  'au-body',
+  'au-grid',
+  'layout-container',
+  theme__highlighted_layouts ? theme__highlighted_layouts,
+  is_panelized ? 'is-panelized',
+]
+%}
+
+<div{{ attributes.addClass(classes)}}>
+  {# Header element #}
+  {% include '@govcms8_uikit_starter/inc/page_header.html.twig' %}
+
+  {% if page.help %}
+    <div class="page-help">
+      <div class="container">
+        {{ page.help }}
+      </div>
+    </div>
+  {% endif %}
+
+  {% if page.admin|render|striptags|trim %}
+    <div class="page-admin">
+      {{ page.admin }}
+    </div>
+  {% endif %}
+
+  {# Page title and breadcrumbs for all pages except the panelized ones. #}
+  {% if not is_panelized %}
+    {% if page.content_top|render|striptags|trim is not empty %}
+      <div class="content-top">
+        <div class="container">
+          {{ page.content_top }}
+        </div>
+      </div>
+    {% endif %}
+  {% endif %}
+
+  {# Main content area of the page. #}
+  <main role="main">
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+
+    {# Template for panelized node pages. #}
+    {% if is_panelized %}
+      <div class="main-content">
+        {{ page.content }}
+      </div>{# /.layout-content #}
+
+    {% else %}
+      {# Default layout for all pages except the panelized ones, with optional sidebar. #}
+
+      <div class="container">
+
+        {% if page.sidebar|render|striptags|trim %}
+          <div class="row">
+            <div class="main-content col-sm-8">
+              {{ page.content }}
+            </div>{# /.layout-content #}
+
+            <aside class="layout-sidebar col-sm-4" role="complementary">
+              {{ page.sidebar }}
+            </aside>
+          </div>
+
+        {% else %}
+          <div class="main-content">
+          {{ page.content }}
+          </div>{# /.layout-content #}
+
+        {% endif %}
+      </div>
+
+    {% endif %}
+  </main>
+
+  {# Footer element. #}
+  {%  include '@govcms8_uikit_starter/inc/page_footer.html.twig' %}
+
+  <div id="back-to-top"><button title="Back to top" class="back-to-top__link au-direction-link au-direction-link--up">Back to top</button></div>
+</div>{# /.layout-container #}

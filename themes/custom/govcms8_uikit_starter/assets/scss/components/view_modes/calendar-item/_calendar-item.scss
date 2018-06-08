@@ -1,0 +1,55 @@
+.calendar-item {
+  background: $govcms8-calendar-item-background;
+  color: $govcms8-calendar-item-foreground;
+
+  .calendar-item__date {
+    @include AU-space(padding, .5unit);
+    @include AU-fontgrid( sm );
+    color: $govcms8-calendar-item-foreground;
+    line-height: .8;
+    text-align: center;
+    text-transform: uppercase;
+
+    .field {
+      width: 100%;
+    }
+  }
+
+  .calendar-date {
+    @include AU-space(margin, 0 auto);
+    color: $govcms8-calendar-item-foreground;
+
+    span {
+      @include AU-fontgrid( xl );
+      color: $AU-color-foreground-action;
+      font-weight: 700;
+      display: block;
+      margin: 0;
+    }
+  }
+
+  .calendar-item__content {
+    @include AU-space(padding, .5unit);
+    border-left: 2px solid $AU-color-background;
+
+    // All regions has one third unit gap between them.
+    *[class^='calendar-item__'] + *[class^='calendar-item__'] {
+      @include AU-space(margin-top, .3unit);
+    }
+  }
+
+  &.calendar-item--current {
+    background: $govcms8-calendar-item-background-current;
+  }
+
+  &.calendar-item--past {
+    background: $govcms8-calendar-item-background-past;
+    color: $govcms8-calendar-item-foreground-past;
+
+    .calendar-date,
+    span,
+    a {
+      color: $govcms8-calendar-item-foreground-past;
+    }
+  }
+}

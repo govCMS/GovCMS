@@ -1,0 +1,5 @@
+.region-legal {
+  @include AU-space(margin-top, 1unit);
+  @include AU-space(padding-top, 1unit);
+  border-top: 1px solid transparentize($black, 0.8);
+}

@@ -1,0 +1,42 @@
+// UI-Kit Accordion
+//
+// Accordion component.
+//
+// Markup: accordion.twig
+//
+// Style guide: UI-Kit.accordion
+//
+
+.au-body--dark .au-accordion,
+.color--dark .au-accordion,
+.color--dark-alt .au-accordion {
+  @extend .au-accordion.au-accordion--dark !optional;
+}
+
+// Accordion item title on dark background cannot be extended, so direct style copy follows.
+.au-body--dark .au-accordion .au-accordion__title,
+.color--dark  .au-accordion .au-accordion__title,
+.color--dark-alt  .au-accordion .au-accordion__title {
+  color: $AU-colordark-foreground-action;
+  background-color: $AU-colordark-background-shade;
+
+  &:hover {
+    color: $AU-colordark-foreground-text;
+
+    &:after {
+      background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+					'	<path fill="#{ $AU-colordark-foreground-text }" d="M64 0l64 64-16 16-64-64"/>' +
+					'	<path fill="#{ $AU-colordark-foreground-text }" d="M64 0l16 16-64 64L0 64"/>' +
+					'</svg>');
+    }
+  }
+
+  @include AU-focus( 'dark' );
+
+  &:after{
+    background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+				'	<path fill="#{ $AU-colordark-foreground-action }" d="M64 0l64 64-16 16-64-64"/>' +
+				'	<path fill="#{ $AU-colordark-foreground-action }" d="M64 0l16 16-64 64L0 64"/>' +
+				'</svg>');
+  }
+}

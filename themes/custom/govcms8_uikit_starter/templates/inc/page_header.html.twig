@@ -1,0 +1,40 @@
+{# Prepare header attributes. #}
+{% set header_attributes = create_attribute() %}
+
+{# Add header classes. #}
+{%
+  set header_classes = [
+  'au-header',
+  'au-body',
+  header_style ? header_style,
+]
+%}
+
+<header{{ header_attributes.addClass(header_classes) }} role="banner">
+  <div class="container">
+    <div class="row header--vertical-align">
+
+      {% if page.logo|render|striptags('<img><a>')|trim %}
+        <div class="logo col-sm-6">
+          {{ page.logo }}
+        </div>
+      {% endif %} {# /.logo #}
+
+      {% if page.search|render|striptags|trim %}
+        <div class="search col-sm-6">
+          {{ page.search }}
+        </div>
+      {% endif %}{# /.search #}
+
+    </div>
+  </div>
+
+  {% if page.navigation|render|striptags|trim %}
+    <div class="navigation">
+      <div class="container">
+        {{ page.navigation }}
+      </div>
+    </div>
+  {% endif %}{# /.navigation #}
+
+</header>

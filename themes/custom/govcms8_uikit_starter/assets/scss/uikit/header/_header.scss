@@ -1,0 +1,20 @@
+// UI-Kit Header
+//
+// Tags to apply a taxonomy and link to similar content.
+//
+// .au-header--hero - Hero header with bigger paddings.
+//
+// Markup: header.twig
+//
+// Style guide: UI-Kit.header
+//
+
+.au-body--dark .au-header {
+  @extend .au-header--dark !optional;
+}
+.au-body--alt .au-header {
+  @extend .au-header--alt !optional;
+}
+.au-body--dark.au-body--alt .au-header {
+  @extend .au-header--dark !optional;
+}

@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * Component for a header area.
+ *
+ * Variables:
+ * - modifier_class: [string] Ussed by KSS-node for variations.
+ * - content: [string] Text of the heading.
+ */
+#}
+{% block header %}
+  <header class="au-header" role="banner">
+    <h1 class="au-header-heading {{ modifier_class }}">{{ content }}</h1>
+  </header>
+{% endblock %}
+

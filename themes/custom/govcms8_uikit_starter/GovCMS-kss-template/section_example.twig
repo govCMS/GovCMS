@@ -1,0 +1,25 @@
+<div class="kss-modifier__wrapper">
+  {% if section.modifiers is not empty %}
+    <div class="kss-modifier__default-name">
+      Default styling
+    </div>
+  {% endif %}
+
+  <div class="kss-modifier__example">
+    {{ section.example|raw }}
+    <div class="kss-modifier__example-footer"></div>
+  </div>
+
+  {% for modifier in section.modifiers %}
+    <div class="kss-modifier__name">
+      {{ modifier.name }}
+    </div>
+    <div class="kss-modifier__description">
+      {{ modifier.description|raw }}
+    </div>
+    <div class="kss-modifier__example">
+      {{ modifier.markup|raw }}
+      <div class="kss-modifier__example-footer"></div>
+    </div>
+  {% endfor %}
+</div>

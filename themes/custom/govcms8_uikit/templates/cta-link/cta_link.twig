@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Component for a click to action (CTA) link.
+ *
+ * Variables:
+ * - text: [string] Text of the item.
+ * - url: [string] URL of the item.
+ */
+#}
+{% set classes = [
+  'au-cta-link',
+]
+%}
+{% block cta_link %}
+  <a class="{{ classes }}" href="{{ url }}">{{ text }}</a>
+{% endblock %}

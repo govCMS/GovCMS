@@ -1,0 +1,13 @@
+/**
+* Styling for header region.
+ */
+.au-header {
+  @include AU-space(padding-bottom, 0unit);
+}
+
+// Logo and search box should be aligned.
+.header--vertical-align {
+  display: flex;
+  align-items: center;
+}
+

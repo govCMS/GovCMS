@@ -1,0 +1,30 @@
+{
+  "name": "govcms8_uikit_starter",
+  "description": "GovCMS 8 UI Kit Starter theme based on UI Kit.",
+  "css": {
+    "file" : "style.scss",
+    "src": [
+      "./assets/scss/**/*.scss"
+    ],
+    "dest": "css"
+  },
+  "js": {
+    "file" : "govcms8_uikit_starter.js",
+    "src": [
+      "./assets/js/**/*.js"
+    ],
+    "dest": "js"
+  },
+  "uikit_js": {
+    "src": [
+      "./assets/uikit/js/*.js"
+    ],
+    "dest": "js"
+  },
+  "images": {
+    "src": [
+      "./assets/images/**/*"
+    ],
+    "dest": "images"
+  }
+}

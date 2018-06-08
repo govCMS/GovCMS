@@ -1,0 +1,12 @@
+// UI-Kit Breadcrumbs
+//
+// Tags to apply a taxonomy and link to similar content.
+//
+// Markup: breadcrumb.twig
+//
+// Style guide: UI-Kit.breadcrumb
+//
+
+.au-body--dark .au-breadcrumbs {
+  @extend .au-breadcrumbs.au-breadcrumbs--dark !optional;
+}

@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Component for a breadcrumb navigation.
+ *
+ * Variables:
+ * - heading: [string] Accessible heading.
+ * - breadcrumb: [array] The breadcrumb items. Each item is an object containing:
+ *   - text: [string] Text of the item.
+ *   - url: [string] URL of the item (optional).
+ */
+#}
+<nav class="au-breadcrumbs" role="navigation" aria-label="breadcrumb">
+  <h2 id="breadcrumb" class="visually-hidden">{{ heading|default('You are here') }}</h2>
+  <ol class="au-link-list au-link-list--inline">
+    {% for item in items %}
+      <li>
+        {% if item.url %}
+          <a href="{{ item.url }}">{{ item.text }}</a>
+        {% else %}
+          {{ item.text }}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ol>
+</nav>

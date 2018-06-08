@@ -1,0 +1,106 @@
+// Styling for menu in sidebar.
+.sidebar {
+  .menu {
+    @include AU-space(padding, 0);
+
+    li {
+      @include AU-space(margin, 0);
+      border-top: 1px solid $AU-color-background-alt-shade-suggestion;
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+      border-left: 6px solid transparent;
+      transition: border 900ms ease-in-out;
+
+      &:hover {
+        text-decoration: underline;
+        border-left: 6px solid $AU-colordark-foreground-action;
+        transition: border 300ms ease-in-out;
+      }
+
+      &.is-active {
+        background-color: $AU-color-background-alt-shade-suggestion;
+        color: $AU-color-foreground-text;
+        font-weight: bold;
+        border: none;
+        margin-top: -1px;
+        margin-bottom: -1px;
+        border-left: 6px solid $AU-colordark-foreground-action;
+      }
+    }
+
+    &.menu-level-0 {
+      // Menu level 1
+      // This is the border for the entire menu tree.
+      border-left: 8px solid $AU-color-background-shade-suggestion;
+
+      > li {
+        // This is the only time this is needed.
+        @include AU-space( margin-left, 0.5unit );
+
+        > a {
+          @include AU-space( padding, 1unit 0.5unit 1unit 1unit );
+          @include AU-space( margin-left, -1unit );
+
+          &:hover {
+            @include AU-space( margin-left, -1unit );
+            @include AU-space( padding-left, 1unit );
+          }
+
+          &.is-active {
+            @include AU-space( margin-left, -1unit );
+            @include AU-space( padding-left, 1unit );
+          }
+        }
+      }
+    }
+    
+    &.menu-level-1 {
+      // Menu level 2
+      > li {
+        &.menu-item--active-trail.menu-item--expanded > a {
+          font-weight: bold;
+        }
+
+        > a {
+          @include AU-space( padding, 1unit 0.5unit 1unit 2.5unit );
+          @include AU-space( margin-left, -1unit );
+
+          &.is-active {
+            @include AU-space( padding-left, 3unit);
+          }
+        }
+      }
+    }
+
+    &.menu-level-2 {
+      // Menu level 3
+      > li {
+        > a {
+          @include AU-space( padding, 1unit 0.5unit 1unit 3.5unit );
+          @include AU-space( margin-left, -1unit );
+
+          &.is-active {
+            @include AU-space( padding-left, 4unit );
+          }
+        }
+      }
+    }
+
+    &.menu-level-3 {
+      // Menu level 4!
+      > li {
+        > a {
+          @include AU-space( padding, 1unit 0.5unit 1unit 4.5unit );
+          @include AU-space( margin-left, -1unit );
+
+          &.is-active {
+            @include AU-space( padding-left, 5unit );
+          }
+        }
+      }
+    }
+  }
+}

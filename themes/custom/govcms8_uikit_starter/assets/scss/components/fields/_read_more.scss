@@ -1,0 +1,13 @@
+.paragraph-content {
+  .au-cta-link {
+    @include AU-space(margin-top, 1unit);
+    display: inline-block;
+  }
+
+  // CTA-link on UI-Kit dark or dark alt background.
+  .color--dark & {
+    .au-cta-link {
+      @extend .au-cta-link--dark;
+    }
+  }
+}

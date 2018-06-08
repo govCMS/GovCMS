@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Component for list of links.
+ *
+ * Variables:
+ * - modifier_class: [string] Ussed by KSS-node for variations.
+ * - item: [array] The link list items. Each item is an object containing:
+ *   - text: [string] Text of the item.
+ *   - url: [string] URL of the item.
+ */
+#}
+<ul class="au-link-list {{ modifier_class  }}">
+  {% for item in items %}
+    <li>
+      <a href="{{ item.url }}">
+        {{ item.text }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

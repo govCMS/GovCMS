@@ -1,0 +1,97 @@
+{
+  "name": "govcms8_uikit_starter",
+  "version": "1.0.0",
+  "description": "Starter theme for GovCMS 8 integrating UI Kit.",
+  "main": "gulpfile.js",
+  "author": "morpht.com",
+  "scripts": {
+    "setup": "npm install",
+    "styleguide": "kss --config kss-config.json"
+  },
+  "devDependencies": {
+    "autoprefixer": "^8.5.1",
+    "browser-sync": "^2.24.4",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-jshint": "^2.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-rename": "^1.2.3",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-sass-glob": "^1.0.8",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "jshint": "^2.9.5",
+    "kss": "3.0.0-beta.18"
+  },
+  "dependencies": {
+    "@gov.au/core": "latest",
+    "@gov.au/accordion": "latest",
+    "@gov.au/animate": "latest",
+    "@gov.au/body": "latest",
+    "@gov.au/breadcrumbs": "latest",
+    "@gov.au/buttons": "latest",
+    "@gov.au/callout": "latest",
+    "@gov.au/control-input": "latest",
+    "@gov.au/cta-link": "latest",
+    "@gov.au/direction-links": "latest",
+    "@gov.au/footer": "latest",
+    "@gov.au/grid-12": "latest",
+    "@gov.au/header": "latest",
+    "@gov.au/headings": "latest",
+    "@gov.au/inpage-nav": "latest",
+    "@gov.au/keyword-list": "latest",
+    "@gov.au/link-list": "latest",
+    "@gov.au/page-alerts": "latest",
+    "@gov.au/progress-indicator": "latest",
+    "@gov.au/responsive-media": "latest",
+    "@gov.au/select": "latest",
+    "@gov.au/skip-link": "latest",
+    "@gov.au/tags": "latest",
+    "@gov.au/text-inputs": "latest"
+  },
+  "pancake": {
+    "auto-save": true,
+    "plugins": true,
+    "ignore": [],
+    "json": {
+      "enable": false,
+      "location": "assets/uikit",
+      "name": "uikit",
+      "content": {
+        "name": true,
+        "version": true,
+        "dependencies": true,
+        "path": true,
+        "settings": true
+      }
+    },
+    "css": {
+      "minified": true,
+      "modules": false,
+      "browsers": [
+        "last 2 versions",
+        "ie 10"
+      ],
+      "location": "assets/uikit/css/",
+      "name": "uikit.min.css"
+    },
+    "sass": {
+      "modules": false,
+      "location": "assets/uikit/sass/",
+      "name": "uikit.scss"
+    },
+    "js": {
+      "minified": true,
+      "modules": true,
+      "location": "assets/uikit/js/",
+      "name": "uikit.min.js"
+    },
+    "react": {
+      "location": "assets/uikit/react/"
+    }
+  }
+}

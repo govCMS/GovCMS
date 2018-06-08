@@ -1,0 +1,11 @@
+.paragraph {
+  &.color--alt {
+    @extend .au-body.au-body--alt, .modifiers-has-background;
+  }
+  &.color--dark {
+    @extend .au-body.au-body--dark, .modifiers-has-background;
+  }
+  &.color--dark-alt {
+    @extend .au-body.au-body--dark, .au-body.au-body--dark.au-body--alt, .modifiers-has-background;
+  }
+}

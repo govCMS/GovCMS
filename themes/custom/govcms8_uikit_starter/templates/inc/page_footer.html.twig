@@ -1,0 +1,81 @@
+{% if page.postscript_1|render|striptags|trim or page.postscript_2|render|striptags|trim or page.postscript_3|render|striptags|trim or page.postscript_4|render|striptags|trim or page.legal|render|striptags|trim %}
+
+  {# Prepare footer attributes. #}
+  {% set footer_attributes = create_attribute() %}
+
+  {# Add footer classes. #}
+  {%
+    set footer_classes = [
+    'au-footer',
+    'au-body',
+    footer_style ? footer_style,
+  ]
+  %}
+
+  {# Create a count variable used for dynamic postscript columns sizing. #}
+  {% set count = 0 %}
+
+  {% if page.postscript_1 is defined and page.postscript_1 | render | striptags | trim %}
+    {% set count = count + 1 %}
+  {% endif %}
+  {% if page.postscript_2 is defined and page.postscript_2 | render | striptags | trim %}
+    {% set count = count + 1 %}
+  {% endif %}
+  {% if page.postscript_3 is defined and page.postscript_3 | render | striptags | trim %}
+    {% set count = count + 1 %}
+  {% endif %}
+  {% if page.postscript_4 is defined and page.postscript_4 | render | striptags | trim %}
+    {% set count = count + 1 %}
+  {% endif %}
+
+<footer{{ footer_attributes.addClass(footer_classes) }} role="contentinfo">
+  <div class="container">
+
+    {% if count > 0 %}
+      {% set postscript_column_md_class = 12 / count %}
+      {% set postscript_column_sm_class = 6 %}
+
+      {% if count == 1 %}
+        {% set postscript_column_sm_class = 12 %}
+      {% endif %}
+
+      <div class="postscript row">
+
+      {% if page.postscript_1 is defined and page.postscript_1 | render | striptags | trim %}
+        <div class="postscript-1 col-sm-{{postscript_column_sm_class}} col-md-{{ postscript_column_md_class }}">
+          {{ page.postscript_1 }}
+        </div>
+      {% endif %}{# /.postscript-1 #}
+
+      {% if page.postscript_2 is defined and page.postscript_2 | render | striptags | trim %}
+        <div class="postscript-2 col-sm-{{postscript_column_sm_class}} col-md-{{ postscript_column_md_class }}">
+          {{ page.postscript_2 }}
+        </div>
+      {% endif %}{# /.postscript-3 #}
+
+      {% if page.postscript_3 is defined and page.postscript_3 | render | striptags | trim %}
+        <div class="postscript-3 col-sm-{{postscript_column_sm_class}} col-md-{{ postscript_column_md_class }}">
+          {{ page.postscript_3 }}
+        </div>
+      {% endif %}{# /.postscript-3 #}
+
+      {% if page.postscript_4 is defined and page.postscript_4 | render | striptags | trim %}
+        <div class="postscript-4 col-sm-{{postscript_column_sm_class}} col-md-{{ postscript_column_md_class }}">
+          {{ page.postscript_4 }}
+        </div>
+      {% endif %}{# /.postscript-4 #}
+
+      </div>{# /.postscript #}
+    {% endif %}
+
+    {% if page.legal|render|striptags|trim %}
+      <div class="row">
+        <div class="legal col-sm-12">
+          {{ page.legal }}
+        </div>
+      </div>
+    {% endif %}{# /.legal #}
+
+  </div>
+  </footer>{# /.footer #}
+{% endif %}

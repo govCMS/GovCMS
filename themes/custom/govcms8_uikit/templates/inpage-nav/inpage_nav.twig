@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Component for an inpage navigation.
+ *
+ * Variables:
+ * - item: [array] The inpage navigation items. Each item is an object containing:
+ *   - text: [string] Text of the item.
+ *   - url: [string] URL of the item.
+ */
+#}
+<nav class="au-inpage-nav-links">
+  <h2 class="au-inpage-nav-links__heading">Contents</h2>
+  <ul class="au-link-list">
+    {% for item in items %}
+      <li>
+        <a href="{{ item.url }}">{{ item.text }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+
+

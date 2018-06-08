@@ -1,0 +1,19 @@
+.paragraph--type--accordion-group {
+  .field--name-field-body {
+    @include AU-space(margin-bottom, 1unit);
+  }
+}
+
+.accordion-group__control {
+  @include AU-space(margin-bottom, 1unit);
+}
+
+.accordion-group {
+  > .paragraph > .paragraph-content {
+    @include AU-space(padding, 0unit);
+  }
+
+  .paragraph + .paragraph > .paragraph-content .au-accordion {
+    border-top: 0;
+  }
+}

@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Component for progress indicator.
+ *
+ * Variables:
+ * - item: [array] The progress indicator items. Each item is an object containing:
+ *   - text: [string] Text of the item.
+ *   - url: [string] URL of the item.
+ *   - status: [string] Status of the item.
+ */
+#}
+<ul class="au-progress-indicator">
+  {% for item in items %}
+    {% set link_classes = [
+      'au-progress-indicator__link--' ~ item.status|lower,
+    ]
+    %}
+    <li>
+      <a href="{{ item.url }}" class="au-progress-indicator__link {{ link_classes }}">
+        <span class="au-progress-indicator__status">{{ item.status }}</span>
+        {{ item.text }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

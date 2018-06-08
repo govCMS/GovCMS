@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Theme override for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ */
+#}
+{% extends '@govcms8_uikit/button/button.twig' %}
+{# Completely overrides the button.twig template until following issue is solved.
+# https://www.drupal.org/project/drupal/issues/1671190
+#}
+
+{% block button %}
+  <input{{ attributes.addClass(classes).removeClass('button', 'button--primary') }} />{{ children }}
+{% endblock %}

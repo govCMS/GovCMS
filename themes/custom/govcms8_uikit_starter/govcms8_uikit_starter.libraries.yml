@@ -1,0 +1,17 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/govcms8_uikit_starter.js: {}
+
+uikit-animate:
+  version: 1.0.2
+  js:
+    js/animate.js: {}
+
+uikit-accordion:
+  version: 3.0.0
+  js:
+    js/accordion.js: {}

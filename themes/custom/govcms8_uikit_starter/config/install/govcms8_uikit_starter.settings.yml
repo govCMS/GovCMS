@@ -1,0 +1,4 @@
+header_style: theme__header--alt
+footer_style: theme__footer--dark-alt
+local_task_style: theme__local-task--alt
+logo_width: 250

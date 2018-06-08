@@ -1,0 +1,32 @@
+{#
+/**
+* Release type field should have the tags component styling.
+*/
+#}
+{% extends '@govcms8_uikit/tags/tags.twig' %}
+{%
+  set classes = [
+  'field',
+  'field--name-' ~ field_name|clean_class,
+  'field--type-' ~ field_type|clean_class,
+  'field--label-' ~ label_display,
+]
+%}
+{%
+  set title_classes = [
+  label_display == 'visually_hidden' ? 'sr-only',
+  label_display == 'above' ? 'position-above',
+  label_display == 'inline' ? 'position-inline',
+]
+%}
+
+{% block tags %}
+  <div{{ attributes.addClass(classes) }}>
+    {% if not label_hidden %}
+      <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
+    {% endif %}
+
+    {{ parent() }}
+
+  </div>
+{% endblock %}

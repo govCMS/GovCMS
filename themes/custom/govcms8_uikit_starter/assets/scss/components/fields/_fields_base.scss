@@ -1,0 +1,13 @@
+.field--label-inline {
+  > .field__label {
+    display: inline-block;
+    font-weight: bold;
+
+    &:after {
+      content: ": ";
+    }
+  }
+  > .field__item {
+    display: inline-block;
+  }
+}
