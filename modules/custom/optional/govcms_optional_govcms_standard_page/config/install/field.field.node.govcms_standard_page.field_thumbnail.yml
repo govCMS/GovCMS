@@ -2,15 +2,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_featured_image
+    - field.storage.node.field_thumbnail
     - media.type.image
     - node.type.govcms_standard_page
-id: node.govcms_standard_page.field_featured_image
-field_name: field_featured_image
+id: node.govcms_standard_page.field_thumbnail
+field_name: field_thumbnail
 entity_type: node
 bundle: govcms_standard_page
-label: 'Featured image'
-description: 'Main image for the content.'
+label: Thumbnail
+description: 'Image used in content lists.'
 required: false
 translatable: true
 default_value: {  }

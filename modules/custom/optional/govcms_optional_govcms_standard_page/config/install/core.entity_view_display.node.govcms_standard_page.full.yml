@@ -1,0 +1,647 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.govcms_standard_page.body
+    - field.field.node.govcms_standard_page.field_attachments
+    - field.field.node.govcms_standard_page.field_components
+    - field.field.node.govcms_standard_page.field_featured_image
+    - field.field.node.govcms_standard_page.panelizer
+    - node.type.govcms_standard_page
+  module:
+    - field_layout
+    - file
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+  panelizer:
+    enable: true
+    custom: false
+    allow: true
+    default: page_8_4
+    displays:
+      page_edgy:
+        blocks:
+          83d382a7-5a6d-4a7e-a3bf-c0cd3a583d1a:
+            id: 'entity_field:node:body'
+            label: Body
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            region: content
+            weight: -2
+            uuid: 83d382a7-5a6d-4a7e-a3bf-c0cd3a583d1a
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          0fc69805-b3df-4d8e-90a3-50df946f71bf:
+            id: 'entity_field:node:field_featured_image'
+            label: 'Featured image'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: entity_reference_entity_view
+              settings:
+                view_mode: featured
+              third_party_settings: {  }
+              weight: 0
+            region: content
+            weight: -3
+            uuid: 0fc69805-b3df-4d8e-90a3-50df946f71bf
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          bdda22e9-1d7e-4cf7-a329-a1f40435c5b1:
+            id: 'entity_field:node:field_attachments'
+            label: Attachments
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: file_default
+              settings:
+                use_description_as_link_text: true
+              third_party_settings: {  }
+              weight: 0
+            region: content_bottom
+            weight: -9
+            uuid: bdda22e9-1d7e-4cf7-a329-a1f40435c5b1
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          7c4e22ed-03f6-49f0-b5af-fc7c49478cf0:
+            id: 'entity_field:node:field_components'
+            label: Components
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: entity_reference_revisions_entity_view
+              settings:
+                view_mode: default
+              third_party_settings: {  }
+              weight: 0
+            region: content
+            weight: -1
+            uuid: 7c4e22ed-03f6-49f0-b5af-fc7c49478cf0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          2c029f40-368e-4c4a-9420-c89e4bbb2ca8:
+            id: 'system_menu_block:main'
+            label: 'Main navigation'
+            provider: system
+            label_display: '0'
+            level: 1
+            depth: 0
+            region: sidebar
+            weight: 0
+            uuid: 2c029f40-368e-4c4a-9420-c89e4bbb2ca8
+            context_mapping: {  }
+          16ea25d3-ad43-4e76-bf6b-d24ac2d0d389:
+            id: system_breadcrumb_block
+            label: Breadcrumbs
+            provider: system
+            label_display: '0'
+            region: header
+            weight: 0
+            uuid: 16ea25d3-ad43-4e76-bf6b-d24ac2d0d389
+            context_mapping: {  }
+          92029806-68ec-44ae-ae0d-a34a2582b58f:
+            id: 'entity_field:node:title'
+            label: Title
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: string
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+              weight: 0
+            region: header
+            weight: 0
+            uuid: 92029806-68ec-44ae-ae0d-a34a2582b58f
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+        id: panels_variant
+        uuid: b85f666c-7586-4f49-8f8e-d38e9a1953e2
+        label: 'Edge to edge'
+        weight: 0
+        layout: page_edgy
+        layout_settings: {  }
+        page_title: '[node:title]'
+        storage_type: panelizer_default
+        storage_id: 'node:govcms_standard_page:full:page_edgy'
+        pattern: panelizer
+        builder: standard
+        static_context: {  }
+      page_12_12:
+        blocks:
+          f5f991be-b138-4c6b-921a-0213a3611489:
+            id: 'entity_field:node:body'
+            label: Body
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            region: content
+            weight: -2
+            uuid: f5f991be-b138-4c6b-921a-0213a3611489
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          af582ee0-65f8-4cff-b534-ede77ca5a197:
+            id: 'entity_field:node:field_featured_image'
+            label: 'Featured image'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: entity_reference_entity_view
+              settings:
+                view_mode: featured
+              third_party_settings: {  }
+              weight: 0
+            region: content
+            weight: -3
+            uuid: af582ee0-65f8-4cff-b534-ede77ca5a197
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          8ea16ddc-a696-461d-b7be-18e0211acde0:
+            id: 'entity_field:node:field_attachments'
+            label: Attachments
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: file_default
+              settings:
+                use_description_as_link_text: true
+              third_party_settings: {  }
+              weight: 0
+            region: content_bottom
+            weight: -9
+            uuid: 8ea16ddc-a696-461d-b7be-18e0211acde0
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          b11b38c5-d051-4038-b034-0543def65558:
+            id: 'entity_field:node:field_components'
+            label: Components
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: entity_reference_revisions_entity_view
+              settings:
+                view_mode: default
+              third_party_settings: {  }
+              weight: 0
+            region: content
+            weight: -1
+            uuid: b11b38c5-d051-4038-b034-0543def65558
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          86ec24d6-3d21-46bc-94c3-04d6c2ea633b:
+            id: 'system_menu_block:main'
+            label: 'Main navigation'
+            provider: system
+            label_display: '0'
+            level: 1
+            depth: 0
+            region: sidebar
+            weight: 0
+            uuid: 86ec24d6-3d21-46bc-94c3-04d6c2ea633b
+            context_mapping: {  }
+          59d57858-ac68-4f6c-8f1b-ef5e14ee8795:
+            id: system_breadcrumb_block
+            label: Breadcrumbs
+            provider: system
+            label_display: '0'
+            region: header
+            weight: 0
+            uuid: 59d57858-ac68-4f6c-8f1b-ef5e14ee8795
+            context_mapping: {  }
+          f5142486-4447-410b-93ba-790605724836:
+            id: 'entity_field:node:title'
+            label: Title
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: string
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+              weight: 0
+            region: header
+            weight: 0
+            uuid: f5142486-4447-410b-93ba-790605724836
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+        id: panels_variant
+        uuid: b49cb18c-055a-4a92-8dd4-c8820bfaf678
+        label: Stacked
+        weight: 0
+        layout: page_12_12
+        layout_settings: {  }
+        page_title: '[node:title]'
+        storage_type: panelizer_default
+        storage_id: 'node:govcms_standard_page:full:page_12_12'
+        pattern: panelizer
+        builder: standard
+        static_context: {  }
+      page_8_4:
+        blocks:
+          802c0275-39da-4be4-8845-af1fc5e38c6d:
+            id: 'entity_field:node:body'
+            label: Body
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            region: content
+            weight: -2
+            uuid: 802c0275-39da-4be4-8845-af1fc5e38c6d
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          6a25b7c2-940c-4b79-bf7b-734e4b52c3ea:
+            id: 'entity_field:node:field_components'
+            label: Components
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: entity_reference_revisions_entity_view
+              settings:
+                view_mode: default
+              third_party_settings: {  }
+              weight: 0
+            region: content
+            weight: -1
+            uuid: 6a25b7c2-940c-4b79-bf7b-734e4b52c3ea
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          862cfbac-09ee-4df1-9c78-65722cf24613:
+            id: 'entity_field:node:field_attachments'
+            label: Attachments
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: file_default
+              settings:
+                use_description_as_link_text: true
+              third_party_settings: {  }
+              weight: 0
+            region: content_bottom
+            weight: -9
+            uuid: 862cfbac-09ee-4df1-9c78-65722cf24613
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          f6611f4d-dba7-40c2-9ac7-7c1307cbd959:
+            id: 'entity_field:node:field_featured_image'
+            label: 'Featured image'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: entity_reference_entity_view
+              settings:
+                view_mode: featured
+              third_party_settings: {  }
+              weight: 0
+            region: content
+            weight: -3
+            uuid: f6611f4d-dba7-40c2-9ac7-7c1307cbd959
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          44f7ad6e-10a9-4398-9b87-ecd7f8d28e09:
+            id: system_breadcrumb_block
+            label: Breadcrumbs
+            provider: system
+            label_display: '0'
+            region: header
+            weight: -10
+            uuid: 44f7ad6e-10a9-4398-9b87-ecd7f8d28e09
+            context_mapping: {  }
+          cc794927-2cfa-48bb-abf9-56efe6450006:
+            id: 'entity_field:node:title'
+            label: Title
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: string
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+              weight: 0
+            region: header
+            weight: -9
+            uuid: cc794927-2cfa-48bb-abf9-56efe6450006
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          7f32b55c-9266-40ff-8af3-05ec6e0bf870:
+            id: 'system_menu_block:main'
+            label: 'Main navigation'
+            provider: system
+            label_display: '0'
+            level: 1
+            depth: 0
+            region: sidebar
+            weight: -3
+            uuid: 7f32b55c-9266-40ff-8af3-05ec6e0bf870
+            context_mapping: {  }
+        id: panels_variant
+        uuid: e0b5be02-019d-43e1-a7ba-4ea1d06f9d4d
+        label: 'Sidebar Right  (2:1)'
+        weight: 0
+        layout: page_8_4
+        layout_settings: {  }
+        page_title: '[node:title]'
+        storage_type: panelizer_default
+        storage_id: 'node:govcms_standard_page:full:page_8_4'
+        pattern: panelizer
+        builder: standard
+        static_context: {  }
+      page_4_8:
+        blocks:
+          5eafd789-9259-4e5b-9cb0-c53641d2bd1f:
+            id: 'entity_field:node:body'
+            label: Body
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            region: content
+            weight: -2
+            uuid: 5eafd789-9259-4e5b-9cb0-c53641d2bd1f
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          cbaf6e70-586b-4551-8d96-ffffa40ab4db:
+            id: 'entity_field:node:field_attachments'
+            label: Attachments
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: file_default
+              settings:
+                use_description_as_link_text: true
+              third_party_settings: {  }
+              weight: 0
+            region: content_bottom
+            weight: -9
+            uuid: cbaf6e70-586b-4551-8d96-ffffa40ab4db
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          8c36edbc-90aa-4a4a-b8ea-fe018be9ccaa:
+            id: 'entity_field:node:field_components'
+            label: Components
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: entity_reference_revisions_entity_view
+              settings:
+                view_mode: default
+              third_party_settings: {  }
+              weight: 0
+            region: content
+            weight: -1
+            uuid: 8c36edbc-90aa-4a4a-b8ea-fe018be9ccaa
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          02c8181f-ed2e-46c7-b582-98467bb4f59d:
+            id: 'entity_field:node:field_featured_image'
+            label: 'Featured image'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: entity_reference_entity_view
+              settings:
+                view_mode: featured
+              third_party_settings: {  }
+              weight: 0
+            region: content
+            weight: -3
+            uuid: 02c8181f-ed2e-46c7-b582-98467bb4f59d
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          9c314c43-37df-4650-b270-78576507020d:
+            id: system_breadcrumb_block
+            label: Breadcrumbs
+            provider: system
+            label_display: '0'
+            region: header
+            weight: 0
+            uuid: 9c314c43-37df-4650-b270-78576507020d
+            context_mapping: {  }
+          26764e21-baed-478d-b720-1bb39ee2252c:
+            id: 'entity_field:node:title'
+            label: Title
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: string
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+              weight: 0
+            region: header
+            weight: 0
+            uuid: 26764e21-baed-478d-b720-1bb39ee2252c
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          3607be4a-dae9-4ca0-90a2-d9d66765f667:
+            id: 'system_menu_block:main'
+            label: 'Main navigation'
+            provider: system
+            label_display: '0'
+            level: 1
+            depth: 0
+            region: sidebar
+            weight: 0
+            uuid: 3607be4a-dae9-4ca0-90a2-d9d66765f667
+            context_mapping: {  }
+        id: panels_variant
+        uuid: dcaf068b-f073-4308-9b02-c6f4f66fd985
+        label: 'Sidebar Left (1:2)'
+        weight: 0
+        layout: page_4_8
+        layout_settings: {  }
+        page_title: '[node:title]'
+        storage_type: panelizer_default
+        storage_id: 'node:govcms_standard_page:full:page_4_8'
+        pattern: panelizer
+        builder: standard
+        static_context: {  }
+      page_6_6:
+        blocks:
+          bafbb352-2a50-4d15-97be-7086e2670d96:
+            id: 'entity_field:node:body'
+            label: Body
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            region: content
+            weight: -2
+            uuid: bafbb352-2a50-4d15-97be-7086e2670d96
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          3db20daa-c125-4d35-a67e-9ad024e30655:
+            id: 'entity_field:node:field_attachments'
+            label: Attachments
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: file_default
+              settings:
+                use_description_as_link_text: true
+              third_party_settings: {  }
+              weight: 0
+            region: content_bottom
+            weight: -9
+            uuid: 3db20daa-c125-4d35-a67e-9ad024e30655
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          47c391b0-672d-45fb-8d97-ab74236aa133:
+            id: 'entity_field:node:field_components'
+            label: Components
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: entity_reference_revisions_entity_view
+              settings:
+                view_mode: default
+              third_party_settings: {  }
+              weight: 0
+            region: content
+            weight: -1
+            uuid: 47c391b0-672d-45fb-8d97-ab74236aa133
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          639e3c2c-2f9c-4c88-a15f-0a6e184bc723:
+            id: 'entity_field:node:field_featured_image'
+            label: 'Featured image'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: entity_reference_entity_view
+              settings:
+                view_mode: featured
+              third_party_settings: {  }
+              weight: 0
+            region: content
+            weight: -3
+            uuid: 639e3c2c-2f9c-4c88-a15f-0a6e184bc723
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          365f9800-34a1-4911-b1ef-85280c84c529:
+            id: system_breadcrumb_block
+            label: Breadcrumbs
+            provider: system
+            label_display: '0'
+            region: header
+            weight: 0
+            uuid: 365f9800-34a1-4911-b1ef-85280c84c529
+            context_mapping: {  }
+          edcba972-bae9-4869-a192-e41156b13ab7:
+            id: 'entity_field:node:title'
+            label: Title
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: string
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+              weight: 0
+            region: header
+            weight: 0
+            uuid: edcba972-bae9-4869-a192-e41156b13ab7
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+          335860f9-b9dc-4156-868a-c2a1b9bd4d3a:
+            id: 'system_menu_block:main'
+            label: 'Main navigation'
+            provider: system
+            label_display: '0'
+            level: 1
+            depth: 0
+            region: sidebar
+            weight: -3
+            uuid: 335860f9-b9dc-4156-868a-c2a1b9bd4d3a
+            context_mapping: {  }
+        id: panels_variant
+        uuid: 862bc2d7-fe9f-4b91-b460-0b0e88092caf
+        label: 'Two Columns (1:1)'
+        weight: 0
+        layout: page_6_6
+        layout_settings: {  }
+        page_title: '[node:title]'
+        storage_type: panelizer_default
+        storage_id: 'node:govcms_standard_page:full:page_6_6'
+        pattern: panelizer
+        builder: standard
+        static_context: {  }
+id: node.govcms_standard_page.full
+targetEntityType: node
+bundle: govcms_standard_page
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_attachments:
+    weight: 102
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_components: true
+  field_featured_image: true
+  field_thumbnail: true
+  panelizer: true

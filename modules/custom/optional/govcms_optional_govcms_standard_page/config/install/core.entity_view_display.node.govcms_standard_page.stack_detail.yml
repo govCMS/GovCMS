@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.stack_detail
     - field.field.node.govcms_standard_page.body
     - field.field.node.govcms_standard_page.field_attachments
     - field.field.node.govcms_standard_page.field_components
@@ -28,7 +28,7 @@ third_party_settings:
     default: default
   ds:
     layout:
-      id: teaser
+      id: stack_detail
       library: null
       disable_css: false
       entity_classes: all_classes
@@ -57,26 +57,26 @@ third_party_settings:
           link: true
           wrapper: ''
           class: ''
-id: node.govcms_standard_page.teaser
+id: node.govcms_standard_page.stack_detail
 targetEntityType: node
 bundle: govcms_standard_page
-mode: teaser
+mode: stack_detail
 content:
   body:
+    label: hidden
     type: text_summary_or_trimmed
     weight: 2
-    region: summary
-    label: hidden
     settings:
       trim_length: 160
     third_party_settings: {  }
+    region: summary
   field_thumbnail:
     type: entity_reference_entity_view
     weight: 0
     region: image
     label: hidden
     settings:
-      view_mode: square
+      view_mode: landscape
       link: false
     third_party_settings:
       linked_field:
