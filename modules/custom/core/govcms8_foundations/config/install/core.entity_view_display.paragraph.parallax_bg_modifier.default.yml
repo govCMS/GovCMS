@@ -1,0 +1,60 @@
+uuid: e7513559-f840-4989-b57a-8286cc24d8ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.parallax_bg_modifier.field_mod_bgp_color_val
+    - field.field.paragraph.parallax_bg_modifier.field_mod_media_query
+    - field.field.paragraph.parallax_bg_modifier.field_mod_parallax
+    - field.field.paragraph.parallax_bg_modifier.field_mod_parallax_speed
+    - paragraphs.paragraphs_type.parallax_bg_modifier
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.parallax_bg_modifier.default
+targetEntityType: paragraph
+bundle: parallax_bg_modifier
+mode: default
+content:
+  field_mod_bgp_color_val:
+    type: string
+    weight: 2
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_mod_media_query:
+    type: string
+    weight: 3
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_mod_parallax:
+    type: entity_reference_label
+    weight: 0
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_mod_parallax_speed:
+    type: number_decimal
+    weight: 1
+    region: content
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  uid: true

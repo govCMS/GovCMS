@@ -1,0 +1,27 @@
+uuid: f4710e31-85dd-4037-b16a-9d248d4a0947
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_accordion_speed
+field_name: field_accordion_speed
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: fast
+      label: Fast
+    -
+      value: slow
+      label: Slow
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,50 @@
+uuid: 112aa9ff-4d47-4733-8f90-182499228534
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.relative_height_modifier.field_mod_media_query
+    - field.field.paragraph.relative_height_modifier.field_mod_relative_height
+    - field.field.paragraph.relative_height_modifier.field_mod_vertical_align
+    - paragraphs.paragraphs_type.relative_height_modifier
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+_core:
+  default_config_hash: h9mnkhKukCT7CN6MeOhNL-gfR9N-k2RGyWHjHdN_FkY
+id: paragraph.relative_height_modifier.default
+targetEntityType: paragraph
+bundle: relative_height_modifier
+mode: default
+content:
+  field_mod_media_query:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_mod_relative_height:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_mod_vertical_align:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

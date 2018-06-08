@@ -1,0 +1,68 @@
+uuid: 1356cadd-40f1-48df-b8b6-bb15651615fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val
+    - field.field.paragraph.image_bg_modifier.field_mod_image
+    - field.field.paragraph.image_bg_modifier.field_mod_image_position
+    - field.field.paragraph.image_bg_modifier.field_mod_image_style
+    - field.field.paragraph.image_bg_modifier.field_mod_media_query
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.image_bg_modifier
+  module:
+    - field_layout
+    - layout_discovery
+    - media
+    - options
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.image_bg_modifier.default
+targetEntityType: paragraph
+bundle: image_bg_modifier
+mode: default
+content:
+  field_mod_bgi_color_val:
+    weight: 1
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_mod_image:
+    type: media_thumbnail
+    weight: 0
+    label: inline
+    settings:
+      image_style: thumbnail
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+  field_mod_image_position:
+    weight: 3
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_mod_image_style:
+    weight: 2
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_mod_media_query:
+    weight: 4
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  created: true
+  uid: true

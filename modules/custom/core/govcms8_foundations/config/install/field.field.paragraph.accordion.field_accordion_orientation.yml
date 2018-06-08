@@ -1,0 +1,23 @@
+uuid: 87c7fbd4-029c-414a-8e63-d8d52e2edcea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_accordion_orientation
+    - paragraphs.paragraphs_type.accordion
+  module:
+    - options
+id: paragraph.accordion.field_accordion_orientation
+field_name: field_accordion_orientation
+entity_type: paragraph
+bundle: accordion
+label: Orientation
+description: 'The initial orientation of the accordion, open or closed, default=closed.'
+required: true
+translatable: false
+default_value:
+  -
+    value: closed
+default_value_callback: ''
+settings: {  }
+field_type: list_string

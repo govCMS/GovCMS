@@ -1,0 +1,28 @@
+uuid: 93feb846-e29b-404d-a07e-c31e7e7a0511
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mod_parallax
+    - media.type.image
+    - paragraphs.paragraphs_type.parallax_bg_modifier
+id: paragraph.parallax_bg_modifier.field_mod_parallax
+field_name: field_mod_parallax
+entity_type: paragraph
+bundle: parallax_bg_modifier
+label: Parallax
+description: 'Select the parallax image.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

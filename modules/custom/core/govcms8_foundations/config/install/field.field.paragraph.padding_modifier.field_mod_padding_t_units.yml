@@ -1,0 +1,21 @@
+uuid: 6f527443-fe49-48ce-aa0b-5c56ce71b7d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mod_padding_t_units
+    - paragraphs.paragraphs_type.padding_modifier
+  module:
+    - options
+id: paragraph.padding_modifier.field_mod_padding_t_units
+field_name: field_mod_padding_t_units
+entity_type: paragraph
+bundle: padding_modifier
+label: 'Top Padding Units'
+description: 'The units for the top padding.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,23 @@
+uuid: 17d68c5b-23da-473a-b158-276e120dd689
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mod_media_query
+    - paragraphs.paragraphs_type.relative_height_modifier
+_core:
+  default_config_hash: Gvw5lamHR-AmAvPcDSuen_g9A2kVz5STyQRZkxCDWeU
+id: paragraph.relative_height_modifier.field_mod_media_query
+field_name: field_mod_media_query
+entity_type: paragraph
+bundle: relative_height_modifier
+label: 'Media Query'
+description: 'Set the media query for this modifier - e.g. "(min-width:768px)". If there are multiple modifiers of the same type, one without the media query have to be at the top.'
+required: false
+translatable: true
+default_value:
+  -
+    value: '(min-width:768px)'
+default_value_callback: ''
+settings: {  }
+field_type: string

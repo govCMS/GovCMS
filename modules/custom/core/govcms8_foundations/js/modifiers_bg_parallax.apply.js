@@ -1,0 +1,40 @@
+/**
+ * @file
+ * Initializes modification based on provided configuration.
+ */
+
+(function (ParallaxBgModifier) {
+
+  'use strict';
+
+  ParallaxBgModifier.apply = function (selector, media, config) {
+
+    var element = document.querySelector(selector);
+    if (!element) {
+      return;
+    }
+    
+    var pluginConfig = {
+      speed: (typeof config.speed !== 'undefined' ? config.speed : 0.5)
+    };
+
+    toggle(element, media, pluginConfig);
+
+    window.addEventListener('resize', function () {
+      toggle(element, media, pluginConfig);
+    });
+
+  };
+
+  function toggle(element, media, pluginConfig) {
+
+    if (window.matchMedia(media).matches) {
+      jarallax(element, pluginConfig);
+    }
+    else {
+      jarallax(element, 'destroy');
+    }
+
+  }
+
+})(window.ParallaxBgModifier = window.ParallaxBgModifier || {});

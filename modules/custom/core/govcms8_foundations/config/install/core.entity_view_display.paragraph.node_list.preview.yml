@@ -1,0 +1,36 @@
+uuid: 820b2629-81cc-421f-a6db-1ea893045403
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.node_list.field_heading
+    - field.field.paragraph.node_list.field_nl_nodes
+    - field.field.paragraph.node_list.field_title
+    - paragraphs.paragraphs_type.node_list
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.node_list.preview
+targetEntityType: paragraph
+bundle: node_list
+mode: preview
+content:
+  field_title:
+    weight: 0
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_heading: true
+  field_nl_colour_classes: true
+  field_nl_nodes: true
+  field_nl_style_classes: true
+  field_nl_view_mode: true

@@ -1,0 +1,23 @@
+uuid: 171a5247-294e-4526-a654-2e12f0a80320
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mod_padding_t_size
+    - paragraphs.paragraphs_type.padding_modifier
+id: paragraph.padding_modifier.field_mod_padding_t_size
+field_name: field_mod_padding_t_size
+entity_type: paragraph
+bundle: padding_modifier
+label: 'Top Padding Size'
+description: 'The size of the top padding.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

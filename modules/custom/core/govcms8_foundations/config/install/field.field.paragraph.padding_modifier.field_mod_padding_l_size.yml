@@ -1,0 +1,23 @@
+uuid: 24f62c66-bb72-4161-b7bd-2c5c41304ea5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mod_padding_l_size
+    - paragraphs.paragraphs_type.padding_modifier
+id: paragraph.padding_modifier.field_mod_padding_l_size
+field_name: field_mod_padding_l_size
+entity_type: paragraph
+bundle: padding_modifier
+label: 'Left Padding Size'
+description: 'The size of the left padding.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

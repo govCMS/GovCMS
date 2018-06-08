@@ -1,0 +1,19 @@
+uuid: c3dc1e76-d401-4b46-9b5c-982a68115108
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mod_bgi_color_val
+    - paragraphs.paragraphs_type.image_bg_modifier
+id: paragraph.image_bg_modifier.field_mod_bgi_color_val
+field_name: field_mod_bgi_color_val
+entity_type: paragraph
+bundle: image_bg_modifier
+label: 'Background Color'
+description: 'Image background fallback color.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

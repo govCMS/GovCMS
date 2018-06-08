@@ -1,0 +1,19 @@
+uuid: ceef67fe-9748-4596-be85-71f9771aea30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mod_media_query
+    - paragraphs.paragraphs_type.padding_modifier
+id: paragraph.padding_modifier.field_mod_media_query
+field_name: field_mod_media_query
+entity_type: paragraph
+bundle: padding_modifier
+label: 'Media Query'
+description: 'Set the media query for this modifier - e.g. "(min-width:768px)". If there are multiple modifiers of the same type, one without the media query have to be at the top.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

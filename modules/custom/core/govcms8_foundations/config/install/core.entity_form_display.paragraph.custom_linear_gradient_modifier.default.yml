@@ -1,0 +1,49 @@
+uuid: a954243a-1e10-4b63-951b-0ac47805f5dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.custom_linear_gradient_modifier.field_mod_cl_gradient_colors
+    - field.field.paragraph.custom_linear_gradient_modifier.field_mod_cl_gradient_direction
+    - field.field.paragraph.custom_linear_gradient_modifier.field_mod_media_query
+    - paragraphs.paragraphs_type.custom_linear_gradient_modifier
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.custom_linear_gradient_modifier.default
+targetEntityType: paragraph
+bundle: custom_linear_gradient_modifier
+mode: default
+content:
+  field_mod_cl_gradient_colors:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_mod_cl_gradient_direction:
+    type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_mod_media_query:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  moderation_state: true
+  status: true
+  uid: true

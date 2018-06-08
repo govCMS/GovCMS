@@ -1,0 +1,38 @@
+uuid: 41ef6153-fc90-4a68-9b9a-9b8b2eec04ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.accordion_group.field_accordions
+    - field.field.paragraph.accordion_group.field_ag_colour_classes
+    - field.field.paragraph.accordion_group.field_ag_style_classes
+    - field.field.paragraph.accordion_group.field_body
+    - field.field.paragraph.accordion_group.field_heading
+    - field.field.paragraph.accordion_group.field_show_close_all
+    - field.field.paragraph.accordion_group.field_show_open_all
+    - field.field.paragraph.accordion_group.field_show_toggle_all
+    - field.field.paragraph.accordion_group.field_title
+    - paragraphs.paragraphs_type.accordion_group
+id: paragraph.accordion_group.preview
+targetEntityType: paragraph
+bundle: accordion_group
+mode: preview
+content:
+  field_title:
+    type: string
+    weight: 0
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  field_accordions: true
+  field_ag_colour_classes: true
+  field_ag_style_classes: true
+  field_body: true
+  field_heading: true
+  field_show_close_all: true
+  field_show_open_all: true
+  field_show_toggle_all: true

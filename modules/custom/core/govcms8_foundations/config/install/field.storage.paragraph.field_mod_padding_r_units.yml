@@ -1,0 +1,66 @@
+uuid: 3190ea31-5043-4236-8150-61fc12a0ca0c
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_mod_padding_r_units
+field_name: field_mod_padding_r_units
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: em
+      label: em
+    -
+      value: ex
+      label: ex
+    -
+      value: ch
+      label: ch
+    -
+      value: rem
+      label: rem
+    -
+      value: vw
+      label: vw
+    -
+      value: vh
+      label: vh
+    -
+      value: vmin
+      label: vmin
+    -
+      value: vmax
+      label: vmax
+    -
+      value: '%'
+      label: '%'
+    -
+      value: cm
+      label: cm
+    -
+      value: mm
+      label: mm
+    -
+      value: in
+      label: in
+    -
+      value: px
+      label: px
+    -
+      value: pt
+      label: pt
+    -
+      value: pc
+      label: pc
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

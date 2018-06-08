@@ -1,0 +1,24 @@
+uuid: 7418d21c-242f-42b8-ae9d-3b7568efeee5
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_ag_style_classes
+field_name: field_ag_style_classes
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: style--hero
+      label: Hero
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

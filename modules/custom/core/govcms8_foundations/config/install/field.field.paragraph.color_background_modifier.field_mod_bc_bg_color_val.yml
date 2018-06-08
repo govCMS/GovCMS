@@ -1,0 +1,19 @@
+uuid: 52d5b44c-f56f-452d-b69e-072dfe747c75
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mod_bc_bg_color_val
+    - paragraphs.paragraphs_type.color_background_modifier
+id: paragraph.color_background_modifier.field_mod_bc_bg_color_val
+field_name: field_mod_bc_bg_color_val
+entity_type: paragraph
+bundle: color_background_modifier
+label: 'Background Color'
+description: 'Every valid CSS color format is possible. E.g. #FFFFFF, or RGBA(255,255,255,1).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

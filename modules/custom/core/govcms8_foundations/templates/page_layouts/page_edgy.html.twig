@@ -1,0 +1,56 @@
+{#
+/**
+* Template for 1 column layout.
+* Sidebar is bellow the content.
+* Everything goes edge to edge.
+*/
+#}
+{%
+  set classes = [
+  'page-layout',
+  'page-layout--edgy',
+]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  {% if content.content_top|render|striptags|trim or content.content|render|striptags|trim or content.content_bottom|render|striptags|trim %}
+    <section class="content-section">
+      {% if content.content_top|render|trim %}
+        <div class="row">
+          <div class="content-top">
+            <div class="row-edgy">
+              {{ content.content_top }}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+      {% if content.content|render|striptags|trim %}
+        <div class="row">
+          <main class="content">
+            <div class="row-edgy">
+              {{ content.content }}
+            </div>
+          </main>
+        </div>
+      {% endif %}
+      {% if content.content_bottom|render|striptags|trim %}
+        <div class="row">
+          <div class="content-bottom">
+            <div class="row-edgy">
+              {{ content.content_bottom }}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    </section>
+  {% endif %}
+  {% if content.footer|render|striptags|trim %}
+    <section class="footer-section">
+      <div class="row">
+        <div class="footer">
+          {{ content.footer }}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+</div>

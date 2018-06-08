@@ -1,0 +1,36 @@
+uuid: 3c5e6955-7b81-4749-a9ec-94b987dbaa8b
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_mod_image_style
+field_name: field_mod_image_style
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: stretch
+      label: Stretch
+    -
+      value: no-repeat
+      label: 'No repeat'
+    -
+      value: repeat
+      label: Repeat
+    -
+      value: repeat-x
+      label: 'Repeat X'
+    -
+      value: repeat-y
+      label: 'Repeat Y'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

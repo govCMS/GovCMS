@@ -1,0 +1,23 @@
+uuid: 8afcff81-94af-4bef-abcb-e16d852511a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_show_open_all
+    - paragraphs.paragraphs_type.accordion_group
+id: paragraph.accordion_group.field_show_open_all
+field_name: field_show_open_all
+entity_type: paragraph
+bundle: accordion_group
+label: 'Show "Open All"'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

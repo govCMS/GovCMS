@@ -1,0 +1,21 @@
+uuid: 7e9d5dbe-59e3-45c7-a42a-c044a465d46c
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_mod_bc_bg_h_color_val
+field_name: field_mod_bc_bg_h_color_val
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

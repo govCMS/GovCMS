@@ -1,0 +1,58 @@
+uuid: 2949a88c-84bb-460b-9ace-3f40dab8a6b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.color_background_modifier.field_mod_bc_bg_color_val
+    - field.field.paragraph.color_background_modifier.field_mod_bc_bg_h_color_val
+    - field.field.paragraph.color_background_modifier.field_mod_media_query
+    - field.field.paragraph.color_background_modifier.field_mod_transition_duration
+    - paragraphs.paragraphs_type.color_background_modifier
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.color_background_modifier.default
+targetEntityType: paragraph
+bundle: color_background_modifier
+mode: default
+content:
+  field_mod_bc_bg_color_val:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_mod_bc_bg_h_color_val:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_mod_media_query:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_mod_transition_duration:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  moderation_state: true
+  status: true
+  uid: true

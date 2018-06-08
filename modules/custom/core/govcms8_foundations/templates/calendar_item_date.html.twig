@@ -1,0 +1,17 @@
+{#
+/**
+* Field template used by the Calendar Item Date Formatter.
+*/
+#}
+{% set classes = [
+  "calendar-date"
+]
+%}
+
+{% if datetime %}
+  <time datetime={{ datetime }} {{ attributes.addClass(classes) }}>
+    {{ day_textual }}
+    <span class="calendar-number">{{ day_number }}</span>
+    {{ month }}
+  </time>
+{% endif %}

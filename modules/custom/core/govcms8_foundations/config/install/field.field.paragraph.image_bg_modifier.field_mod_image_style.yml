@@ -1,0 +1,23 @@
+uuid: e9926997-81f8-48e8-a2f5-e3fc7df47f5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mod_image_style
+    - paragraphs.paragraphs_type.image_bg_modifier
+  module:
+    - options
+id: paragraph.image_bg_modifier.field_mod_image_style
+field_name: field_mod_image_style
+entity_type: paragraph
+bundle: image_bg_modifier
+label: 'Image style'
+description: 'Define how the background image should be styled.'
+required: false
+translatable: false
+default_value:
+  -
+    value: stretch
+default_value_callback: ''
+settings: {  }
+field_type: list_string

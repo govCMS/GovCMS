@@ -1,0 +1,19 @@
+uuid: 79e4a846-cf42-48f6-bdc2-0a7e66500363
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mod_bgp_color_val
+    - paragraphs.paragraphs_type.parallax_bg_modifier
+id: paragraph.parallax_bg_modifier.field_mod_bgp_color_val
+field_name: field_mod_bgp_color_val
+entity_type: paragraph
+bundle: parallax_bg_modifier
+label: 'Background Color'
+description: 'Parallax background fallback color.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

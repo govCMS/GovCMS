@@ -1,0 +1,111 @@
+uuid: 77954337-e5f9-4a32-9e33-443a931682bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.padding_modifier.field_mod_media_query
+    - field.field.paragraph.padding_modifier.field_mod_padding_b_size
+    - field.field.paragraph.padding_modifier.field_mod_padding_b_units
+    - field.field.paragraph.padding_modifier.field_mod_padding_l_size
+    - field.field.paragraph.padding_modifier.field_mod_padding_l_units
+    - field.field.paragraph.padding_modifier.field_mod_padding_r_size
+    - field.field.paragraph.padding_modifier.field_mod_padding_r_units
+    - field.field.paragraph.padding_modifier.field_mod_padding_t_size
+    - field.field.paragraph.padding_modifier.field_mod_padding_t_units
+    - paragraphs.paragraphs_type.padding_modifier
+  module:
+    - field_layout
+    - layout_discovery
+    - options
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.padding_modifier.default
+targetEntityType: paragraph
+bundle: padding_modifier
+mode: default
+content:
+  field_mod_media_query:
+    weight: 9
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_mod_padding_b_size:
+    weight: 5
+    label: inline
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_mod_padding_b_units:
+    weight: 6
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_mod_padding_l_size:
+    weight: 7
+    label: inline
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_mod_padding_l_units:
+    weight: 8
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_mod_padding_r_size:
+    weight: 3
+    label: inline
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_mod_padding_r_units:
+    weight: 4
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_mod_padding_t_size:
+    weight: 1
+    label: inline
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_mod_padding_t_units:
+    weight: 2
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden:
+  created: true
+  uid: true

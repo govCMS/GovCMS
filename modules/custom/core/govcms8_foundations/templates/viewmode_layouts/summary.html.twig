@@ -1,0 +1,58 @@
+{#
+/**
+* Summary. Same as teaser, without image.
+*
+* List of regions: title, info, summary, tags.
+*/
+#}
+
+{%
+  set classes = [
+  'summary',
+]
+%}
+
+<div {{ attributes.addClass(classes) }}>
+  {{ title_suffix.contextual_links }}
+
+  {% block content %}
+    {% if content %}
+      <div class="summary__content">
+
+        {% block title %}
+          {% if content.title|render|striptags|trim %}
+            <h3 class="summary__title">
+              {{ content.title }}
+            </h3>
+          {% endif %}
+        {% endblock %}
+
+        {% block info %}
+          {% if content.info|render|striptags|trim %}
+            <div class="summary__info">
+              {{ content.info }}
+            </div>
+          {% endif %}
+        {% endblock %}
+
+        {% block summary %}
+          {% if content.summary|render|striptags|trim %}
+            <div class="summary__summary">
+              {{ content.summary }}
+            </div>
+          {% endif %}
+        {% endblock %}
+
+        {% block tags %}
+          {% if content.tags|render|striptags|trim %}
+            <div class="summary__tags">
+              {{ content.tags }}
+            </div>
+          {% endif %}
+        {% endblock %}
+
+      </div>
+    {% endif %}
+  {% endblock %}
+
+</div>

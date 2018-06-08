@@ -1,0 +1,21 @@
+uuid: e854e2bc-d7b5-43fd-9a32-ede57c36f9a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_item_summary
+    - paragraphs.paragraphs_type.item
+  module:
+    - text
+id: paragraph.item.field_item_summary
+field_name: field_item_summary
+entity_type: paragraph
+bundle: item
+label: Summary
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,49 @@
+uuid: 669a3548-f4e1-4a31-a539-d20c3cffd162
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.relative_height_modifier.field_mod_media_query
+    - field.field.paragraph.relative_height_modifier.field_mod_relative_height
+    - field.field.paragraph.relative_height_modifier.field_mod_vertical_align
+    - paragraphs.paragraphs_type.relative_height_modifier
+  module:
+    - field_layout
+    - layout_discovery
+    - options
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+_core:
+  default_config_hash: nANjU2eWnkY1SRh2QvwMwQPwjOkh4lNg6v-Dq3fuAsU
+id: paragraph.relative_height_modifier.default
+targetEntityType: paragraph
+bundle: relative_height_modifier
+mode: default
+content:
+  field_mod_media_query:
+    weight: 3
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_mod_relative_height:
+    weight: 1
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_mod_vertical_align:
+    weight: 2
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden:
+  created: true
+  uid: true

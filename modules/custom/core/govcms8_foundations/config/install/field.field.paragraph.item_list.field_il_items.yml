@@ -1,0 +1,40 @@
+uuid: 00cf1e06-eca3-4d93-9ba7-87758ca7d360
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_il_items
+    - paragraphs.paragraphs_type.item
+    - paragraphs.paragraphs_type.item_list
+  module:
+    - entity_reference_revisions
+id: paragraph.item_list.field_il_items
+field_name: field_il_items
+entity_type: paragraph
+bundle: item_list
+label: Items
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      item: item
+    target_bundles_drag_drop:
+      content:
+        weight: 5
+        enabled: false
+      item:
+        enabled: true
+        weight: 6
+      item_list:
+        weight: 7
+        enabled: false
+      node_list:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions

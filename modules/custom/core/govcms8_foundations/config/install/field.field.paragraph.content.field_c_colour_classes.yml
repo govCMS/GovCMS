@@ -1,0 +1,21 @@
+uuid: cfcc1638-7e1c-439d-93b7-90d6a104e00b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_c_colour_classes
+    - paragraphs.paragraphs_type.content
+  module:
+    - options
+id: paragraph.content.field_c_colour_classes
+field_name: field_c_colour_classes
+entity_type: paragraph
+bundle: content
+label: 'Colour Palette'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

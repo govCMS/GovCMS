@@ -1,0 +1,20 @@
+uuid: 492dd084-a7bd-4d87-abd2-d42a83ba59b6
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_mod_padding_r_size
+field_name: field_mod_padding_r_size
+entity_type: paragraph
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

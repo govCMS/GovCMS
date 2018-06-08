@@ -1,0 +1,96 @@
+uuid: bc4dcea5-2d7d-4b94-8eba-be3072cee55c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.item_list.field_body
+    - field.field.paragraph.item_list.field_heading
+    - field.field.paragraph.item_list.field_il_colour_classes
+    - field.field.paragraph.item_list.field_il_items
+    - field.field.paragraph.item_list.field_il_layout_classes
+    - field.field.paragraph.item_list.field_il_style_classes
+    - field.field.paragraph.item_list.field_il_view_mode
+    - field.field.paragraph.item_list.field_modifiers
+    - field.field.paragraph.item_list.field_read_more
+    - field.field.paragraph.item_list.field_title
+    - paragraphs.paragraphs_type.item_list
+  module:
+    - ds
+    - entity_class_formatter
+    - entity_reference_display
+    - field_layout
+    - link
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.item_list.default
+targetEntityType: paragraph
+bundle: item_list
+mode: default
+content:
+  field_body:
+    type: text_default
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_il_colour_classes:
+    type: entity_class_formatter
+    weight: 4
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_il_items:
+    type: entity_reference_display_default
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      display_field: ''
+      view_mode: default
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+  field_il_layout_classes:
+    type: entity_class_formatter
+    weight: 6
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_il_style_classes:
+    type: entity_class_formatter
+    weight: 5
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_read_more:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  field_il_view_mode: true
+  field_modifiers: true
+  field_title: true

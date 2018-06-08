@@ -1,0 +1,39 @@
+uuid: 12d8c455-4728-4630-9155-7a60a8a5afca
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val
+    - field.field.paragraph.image_bg_modifier.field_mod_image
+    - field.field.paragraph.image_bg_modifier.field_mod_image_position
+    - field.field.paragraph.image_bg_modifier.field_mod_image_style
+    - field.field.paragraph.image_bg_modifier.field_mod_media_query
+    - paragraphs.paragraphs_type.image_bg_modifier
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.image_bg_modifier.preview
+targetEntityType: paragraph
+bundle: image_bg_modifier
+mode: preview
+content:
+  field_mod_media_query:
+    weight: 0
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  created: true
+  field_mod_bgi_color_val: true
+  field_mod_image: true
+  field_mod_image_position: true
+  field_mod_image_style: true
+  uid: true

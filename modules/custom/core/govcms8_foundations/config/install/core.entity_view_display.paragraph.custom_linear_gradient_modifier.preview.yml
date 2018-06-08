@@ -1,0 +1,26 @@
+uuid: 30583fd8-4305-4ff9-8777-1658e359008c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.custom_linear_gradient_modifier.field_mod_cl_gradient_colors
+    - field.field.paragraph.custom_linear_gradient_modifier.field_mod_cl_gradient_direction
+    - field.field.paragraph.custom_linear_gradient_modifier.field_mod_media_query
+    - paragraphs.paragraphs_type.custom_linear_gradient_modifier
+id: paragraph.custom_linear_gradient_modifier.preview
+targetEntityType: paragraph
+bundle: custom_linear_gradient_modifier
+mode: preview
+content:
+  field_mod_media_query:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_mod_cl_gradient_colors: true
+  field_mod_cl_gradient_direction: true

@@ -1,0 +1,28 @@
+uuid: 7eb3cd53-ccef-493f-b601-6629ba94b4e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.color_background_modifier.field_mod_bc_bg_color_val
+    - field.field.paragraph.color_background_modifier.field_mod_bc_bg_h_color_val
+    - field.field.paragraph.color_background_modifier.field_mod_media_query
+    - field.field.paragraph.color_background_modifier.field_mod_transition_duration
+    - paragraphs.paragraphs_type.color_background_modifier
+id: paragraph.color_background_modifier.preview
+targetEntityType: paragraph
+bundle: color_background_modifier
+mode: preview
+content:
+  field_mod_media_query:
+    type: string
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  field_mod_bc_bg_color_val: true
+  field_mod_h_background_color_val: true
+  field_mod_transition_duration: true

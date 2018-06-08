@@ -1,0 +1,9 @@
+uuid: aa7bc43b-36aa-490e-9896-555030baf8a6
+langcode: en
+status: true
+dependencies: {  }
+id: item_list
+label: 'Item List'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

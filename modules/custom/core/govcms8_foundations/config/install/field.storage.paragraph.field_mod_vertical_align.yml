@@ -1,0 +1,32 @@
+uuid: 88dd72ba-47f5-4ca9-93b0-4eaaa06569b6
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+_core:
+  default_config_hash: yht6o7MxDh8LUKszlectiPDNgR3zlkRVSau0RTtd9dQ
+id: paragraph.field_mod_vertical_align
+field_name: field_mod_vertical_align
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: top
+      label: Top
+    -
+      value: middle
+      label: Middle
+    -
+      value: bottom
+      label: Bottom
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

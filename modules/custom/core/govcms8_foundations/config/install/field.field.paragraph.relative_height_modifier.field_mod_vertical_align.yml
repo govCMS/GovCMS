@@ -1,0 +1,23 @@
+uuid: 9f48e7f7-e018-4109-8346-bb6e8e134394
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mod_vertical_align
+    - paragraphs.paragraphs_type.relative_height_modifier
+  module:
+    - options
+_core:
+  default_config_hash: r8VT9jMWVh4qYcXYrNAfsiNr8MfQ03z-ACBhUQz9R2U
+id: paragraph.relative_height_modifier.field_mod_vertical_align
+field_name: field_mod_vertical_align
+entity_type: paragraph
+bundle: relative_height_modifier
+label: 'Vertical Align'
+description: 'Vertically align the content.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

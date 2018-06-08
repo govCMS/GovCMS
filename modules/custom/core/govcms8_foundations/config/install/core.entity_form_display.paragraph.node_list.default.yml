@@ -1,0 +1,115 @@
+uuid: e5045b0a-1340-46b0-b2fa-ab19f981b626
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.node_list.field_body
+    - field.field.paragraph.node_list.field_heading
+    - field.field.paragraph.node_list.field_modifiers
+    - field.field.paragraph.node_list.field_nl_colour_classes
+    - field.field.paragraph.node_list.field_nl_layout_classes
+    - field.field.paragraph.node_list.field_nl_nodes
+    - field.field.paragraph.node_list.field_nl_style_classes
+    - field.field.paragraph.node_list.field_nl_view_mode
+    - field.field.paragraph.node_list.field_read_more
+    - field.field.paragraph.node_list.field_title
+    - paragraphs.paragraphs_type.node_list
+  module:
+    - field_layout
+    - layout_discovery
+    - link
+    - paragraphs
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.node_list.default
+targetEntityType: paragraph
+bundle: node_list
+mode: default
+content:
+  field_body:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_heading:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_modifiers:
+    weight: 9
+    settings:
+      title: Modifier
+      title_plural: Modifiers
+      edit_mode: closed
+      closed_mode: preview
+      autocollapse: none
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    type: paragraphs
+    region: content
+  field_nl_colour_classes:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_nl_layout_classes:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_nl_nodes:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_nl_style_classes:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_nl_view_mode:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_read_more:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  moderation_state: true
+  status: true
+  uid: true

@@ -1,0 +1,9 @@
+uuid: 9c52fcdd-a926-47fb-8f91-b47a0abf87d4
+langcode: en
+status: true
+dependencies: {  }
+id: color_background_modifier
+label: 'Colour Background Modifier'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
