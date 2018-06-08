@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.teaser_small
     - node.type.govcms_blog_article
     - system.menu.main
   module:
@@ -71,7 +71,8 @@ display:
       row:
         type: 'entity:node'
         options:
-          view_mode: teaser
+          relationship: none
+          view_mode: teaser_small
       fields:
         title:
           id: title
@@ -218,10 +219,10 @@ display:
           id: 0
           total_pages: null
           tags:
-            previous: ‹‹
-            next: ››
-            first: '« First'
-            last: 'Last »'
+            previous: Previous
+            next: Next
+            first: First
+            last: Last
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -234,6 +235,7 @@ display:
       defaults:
         pager: false
         empty: false
+        css_class: false
       empty:
         node_listing_empty:
           id: node_listing_empty
@@ -245,6 +247,7 @@ display:
           empty: true
           entity_type: node
           plugin_id: node_listing_empty
+      css_class: 'views--layout views--layout--full-width'
     cache_metadata:
       max-age: -1
       contexts:

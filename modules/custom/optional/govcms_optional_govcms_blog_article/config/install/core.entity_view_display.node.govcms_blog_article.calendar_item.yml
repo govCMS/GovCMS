@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.calendar_item
     - field.field.node.govcms_blog_article.body
     - field.field.node.govcms_blog_article.field_attachments
     - field.field.node.govcms_blog_article.field_blog_article_categories
@@ -14,7 +14,6 @@ dependencies:
   module:
     - ds
     - field_layout
-    - linked_field
     - panelizer
     - text
     - user
@@ -29,7 +28,7 @@ third_party_settings:
     default: default
   ds:
     layout:
-      id: teaser
+      id: calendar_item
       library: null
       disable_css: false
       entity_classes: all_classes
@@ -37,18 +36,16 @@ third_party_settings:
     regions:
       title:
         - node_title
-      info:
-        - node_post_date
       summary:
         - body
-      image:
-        - field_thumbnail
+      date:
+        - calendar_item_date
     fields:
-      node_post_date:
-        plugin_id: node_post_date
-        weight: 1
+      calendar_item_date:
+        plugin_id: calendar_item_date
+        weight: 2
         label: hidden
-        formatter: ds_post_date_standard_date
+        formatter: default
       node_title:
         plugin_id: node_title
         weight: 0
@@ -58,37 +55,24 @@ third_party_settings:
           link: true
           wrapper: ''
           class: ''
-id: node.govcms_blog_article.teaser
+id: node.govcms_blog_article.calendar_item
 targetEntityType: node
 bundle: govcms_blog_article
-mode: teaser
+mode: calendar_item
 content:
   body:
     type: text_summary_or_trimmed
-    weight: 2
+    weight: 1
     region: summary
     label: hidden
     settings:
       trim_length: 160
     third_party_settings: {  }
-  field_thumbnail:
-    type: entity_reference_entity_view
-    weight: 3
-    region: image
-    label: hidden
-    settings:
-      view_mode: square
-      link: false
-    third_party_settings:
-      linked_field:
-        linked: '1'
-        type: custom
-        destination: '[node:url]'
-        advanced: {  }
 hidden:
   field_attachments: true
   field_blog_article_categories: true
   field_components: true
   field_featured_image: true
+  field_thumbnail: true
   links: true
   panelizer: true

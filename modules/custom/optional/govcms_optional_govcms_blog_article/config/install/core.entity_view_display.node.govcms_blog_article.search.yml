@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.search
     - field.field.node.govcms_blog_article.body
     - field.field.node.govcms_blog_article.field_attachments
     - field.field.node.govcms_blog_article.field_blog_article_categories
@@ -14,7 +14,6 @@ dependencies:
   module:
     - ds
     - field_layout
-    - linked_field
     - panelizer
     - text
     - user
@@ -29,7 +28,7 @@ third_party_settings:
     default: default
   ds:
     layout:
-      id: teaser
+      id: search
       library: null
       disable_css: false
       entity_classes: all_classes
@@ -41,8 +40,6 @@ third_party_settings:
         - node_post_date
       summary:
         - body
-      image:
-        - field_thumbnail
     fields:
       node_post_date:
         plugin_id: node_post_date
@@ -58,10 +55,10 @@ third_party_settings:
           link: true
           wrapper: ''
           class: ''
-id: node.govcms_blog_article.teaser
+id: node.govcms_blog_article.search
 targetEntityType: node
 bundle: govcms_blog_article
-mode: teaser
+mode: search
 content:
   body:
     type: text_summary_or_trimmed
@@ -71,24 +68,11 @@ content:
     settings:
       trim_length: 160
     third_party_settings: {  }
-  field_thumbnail:
-    type: entity_reference_entity_view
-    weight: 3
-    region: image
-    label: hidden
-    settings:
-      view_mode: square
-      link: false
-    third_party_settings:
-      linked_field:
-        linked: '1'
-        type: custom
-        destination: '[node:url]'
-        advanced: {  }
 hidden:
   field_attachments: true
   field_blog_article_categories: true
   field_components: true
   field_featured_image: true
+  field_thumbnail: true
   links: true
   panelizer: true
