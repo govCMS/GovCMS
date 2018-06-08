@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.teaser_small
     - field.field.node.govcms_news_and_media.body
     - field.field.node.govcms_news_and_media.field_attachments
     - field.field.node.govcms_news_and_media.field_components
@@ -30,7 +30,7 @@ third_party_settings:
     settings: {  }
   ds:
     layout:
-      id: teaser
+      id: teaser_small
       library: null
       disable_css: false
       entity_classes: all_classes
@@ -59,10 +59,10 @@ third_party_settings:
           link: true
           wrapper: ''
           class: ''
-id: node.govcms_news_and_media.teaser
+id: node.govcms_news_and_media.teaser_small
 targetEntityType: node
 bundle: govcms_news_and_media
-mode: teaser
+mode: teaser_small
 content:
   body:
     type: text_summary_or_trimmed

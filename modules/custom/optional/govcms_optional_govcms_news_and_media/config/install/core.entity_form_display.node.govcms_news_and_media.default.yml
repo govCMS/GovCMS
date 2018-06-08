@@ -2,18 +2,22 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.govcms_media_image_browser
     - field.field.node.govcms_news_and_media.body
     - field.field.node.govcms_news_and_media.field_attachments
+    - field.field.node.govcms_news_and_media.field_components
     - field.field.node.govcms_news_and_media.field_featured_image
     - field.field.node.govcms_news_and_media.field_media_release_type
     - field.field.node.govcms_news_and_media.field_news_categories
+    - field.field.node.govcms_news_and_media.field_thumbnail
+    - field.field.node.govcms_news_and_media.panelizer
     - node.type.govcms_news_and_media
   module:
     - content_moderation
-    - entity_browser
     - field_layout
+    - file
     - layout_discovery
+    - panelizer
+    - paragraphs
     - path
     - text
 third_party_settings:
@@ -27,7 +31,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 121
+    weight: 9
     settings:
       rows: 9
       summary_rows: 3
@@ -36,46 +40,55 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   field_attachments:
-    weight: 126
+    weight: 10
     settings:
-      entity_browser: govcms_media_file_browser
-      field_widget_display: rendered_entity
-      field_widget_edit: true
-      field_widget_remove: true
-      open: true
-      selection_mode: selection_append
-      field_widget_display_settings:
-        view_mode: thumbnail
+      progress_indicator: throbber
     third_party_settings: {  }
-    type: entity_browser_entity_reference
+    type: file_generic
+    region: content
+  field_components:
+    weight: 15
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: preview
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
     region: content
   field_featured_image:
-    weight: 127
+    weight: 11
     settings:
-      entity_browser: govcms_media_image_browser
-      field_widget_display: rendered_entity
-      field_widget_edit: true
-      field_widget_remove: true
-      open: true
-      selection_mode: selection_append
-      field_widget_display_settings:
-        view_mode: thumbnail
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: entity_browser_entity_reference
+    type: entity_reference_autocomplete
     region: content
   field_media_release_type:
-    weight: 125
+    weight: 13
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_news_categories:
-    weight: 124
+    weight: 12
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_thumbnail:
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60
@@ -85,13 +98,19 @@ content:
     region: content
   moderation_state:
     type: moderation_state_default
-    weight: 100
+    weight: 7
     settings: {  }
     region: content
     third_party_settings: {  }
+  panelizer:
+    type: panelizer
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -99,26 +118,26 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 4
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
+    weight: 8
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 5
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -126,7 +145,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 2
     settings:
       match_operator: CONTAINS
       size: 60

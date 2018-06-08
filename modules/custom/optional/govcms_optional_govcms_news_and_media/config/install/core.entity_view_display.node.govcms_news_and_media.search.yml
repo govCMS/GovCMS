@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.search
     - field.field.node.govcms_news_and_media.body
     - field.field.node.govcms_news_and_media.field_attachments
     - field.field.node.govcms_news_and_media.field_components
@@ -15,7 +15,7 @@ dependencies:
   module:
     - ds
     - field_layout
-    - linked_field
+    - options
     - panelizer
     - text
     - user
@@ -30,7 +30,7 @@ third_party_settings:
     settings: {  }
   ds:
     layout:
-      id: teaser
+      id: search
       library: null
       disable_css: false
       entity_classes: all_classes
@@ -40,10 +40,9 @@ third_party_settings:
         - node_title
       info:
         - node_post_date
+        - field_media_release_type
       summary:
         - body
-      image:
-        - field_thumbnail
     fields:
       node_post_date:
         plugin_id: node_post_date
@@ -59,38 +58,31 @@ third_party_settings:
           link: true
           wrapper: ''
           class: ''
-id: node.govcms_news_and_media.teaser
+id: node.govcms_news_and_media.search
 targetEntityType: node
 bundle: govcms_news_and_media
-mode: teaser
+mode: search
 content:
   body:
     type: text_summary_or_trimmed
-    weight: 2
+    weight: 3
     region: summary
     label: hidden
     settings:
       trim_length: 160
     third_party_settings: {  }
-  field_thumbnail:
-    type: entity_reference_entity_view
-    weight: 3
-    region: image
+  field_media_release_type:
+    type: list_default
+    weight: 2
+    region: info
     label: hidden
-    settings:
-      view_mode: square
-      link: false
-    third_party_settings:
-      linked_field:
-        linked: '1'
-        type: custom
-        destination: '[node:url]'
-        advanced: {  }
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   field_attachments: true
   field_components: true
   field_featured_image: true
-  field_media_release_type: true
   field_news_categories: true
+  field_thumbnail: true
   links: true
   panelizer: true
