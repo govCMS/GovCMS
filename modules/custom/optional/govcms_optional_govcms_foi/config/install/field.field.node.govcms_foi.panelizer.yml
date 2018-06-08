@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.panelizer
+    - node.type.govcms_foi
+  module:
+    - panelizer
+id: node.govcms_foi.panelizer
+field_name: panelizer
+entity_type: node
+bundle: govcms_foi
+label: Panelizer
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: panelizer
