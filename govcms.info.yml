@@ -51,6 +51,7 @@ dependencies:
   - login_security
   - module_filter
   - panelizer
+  - paragraphs
   - password_policy
   - password_policy_length
   - password_policy_characters
