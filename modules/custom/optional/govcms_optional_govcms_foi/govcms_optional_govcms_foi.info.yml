@@ -11,6 +11,7 @@ dependencies:
   - file
   - govcms_fields_attachment
   - govcms_media
+  - govcms8_foundations
   - layout_discovery
   - menu_ui
   - node

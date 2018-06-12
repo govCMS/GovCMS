@@ -44,10 +44,13 @@ dependencies:
   - entity_embed
   - features_ui
   - field_group
+  - focal_point
   - honeypot
   - linkit
+  - linked_field
   - login_security
   - module_filter
+  - panelizer
   - password_policy
   - password_policy_length
   - password_policy_characters
@@ -59,7 +62,6 @@ dependencies:
   # govCMS core modules
   - govcms_search
   - govcms_media
-  - govcms8_foundations
 
 dependencies_optional:
   - govcms_optional_govcms_blog_article

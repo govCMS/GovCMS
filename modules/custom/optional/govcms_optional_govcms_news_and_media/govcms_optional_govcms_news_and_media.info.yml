@@ -11,6 +11,7 @@ dependencies:
   - govcms_fields_attachment
   - govcms_fields_featured_image
   - govcms_media
+  - govcms8_foundations
   - image
   - layout_discovery
   - menu_ui
