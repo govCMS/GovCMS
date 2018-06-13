@@ -1,0 +1,16 @@
+minimum_single: 10
+minimum_multiple: 10
+disable_search_threshold: 20
+minimum_width: 0
+jquery_selector: 'select:visible'
+search_contains: true
+disable_search: false
+allow_single_deselect: false
+placeholder_text_multiple: 'Choose some options'
+placeholder_text_single: 'Choose an option'
+no_results_text: 'No results match'
+disabled_themes:
+  seven: '0'
+  adminimal_theme: '0'
+  govcmsui: '0'
+chosen_include: 2
