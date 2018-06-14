@@ -4,11 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_nl_nodes
-    - node.type.govcms_blog_article
-    - node.type.govcms_event
-    - node.type.govcms_foi
-    - node.type.govcms_news_and_media
-    - node.type.govcms_standard_page
     - paragraphs.paragraphs_type.node_list
 id: paragraph.node_list.field_nl_nodes
 field_name: field_nl_nodes
@@ -21,16 +16,10 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:node'
+  handler: views
   handler_settings:
-    target_bundles:
-      govcms_blog_article: govcms_blog_article
-      govcms_event: govcms_event
-      govcms_foi: govcms_foi
-      govcms_news_and_media: govcms_news_and_media
-      govcms_standard_page: govcms_standard_page
-    sort:
-      field: _none
-    auto_create: false
-    auto_create_bundle: govcms_news_and_media
+    view:
+      view_name: node_list_reference
+      display_name: node_list_entity_reference
+      arguments: {  }
 field_type: entity_reference
