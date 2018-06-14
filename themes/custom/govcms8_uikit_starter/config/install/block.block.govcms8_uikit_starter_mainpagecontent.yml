@@ -1,0 +1,22 @@
+uuid: 88252faa-f3b3-4f03-b0e5-5aed3be8f6d0
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - govcms8_uikit_starter
+_core:
+  default_config_hash: SN5O4USMIjJN3W2ACICn7niq8JUUgNoMRGwhwmjMfkw
+id: govcms8_uikit_starter_mainpagecontent
+theme: govcms8_uikit_starter
+region: content
+weight: -3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

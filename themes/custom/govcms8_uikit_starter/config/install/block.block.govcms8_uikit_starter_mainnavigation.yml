@@ -1,0 +1,26 @@
+uuid: b8bb56f2-1db1-48b8-85e4-b56fc0369160
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - govcms8_uikit_starter
+_core:
+  default_config_hash: gzKW3peziFFKkgU-xg6a6O51EpiNpsTamkcBEo-_tg8
+id: govcms8_uikit_starter_mainnavigation
+theme: govcms8_uikit_starter
+region: navigation
+weight: -3
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility: {  }

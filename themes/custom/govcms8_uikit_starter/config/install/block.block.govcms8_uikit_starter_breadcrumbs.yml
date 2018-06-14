@@ -1,0 +1,22 @@
+uuid: fcf82466-70ea-46b9-bac8-976d6aa32476
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - govcms8_uikit_starter
+_core:
+  default_config_hash: zvf5j5naiAUccbWEtfTkk6T8_d1eY3BDsGGpt9Py374
+id: govcms8_uikit_starter_breadcrumbs
+theme: govcms8_uikit_starter
+region: content_top
+weight: -4
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.calendar_item
+label: 'Calendar Item'
+targetEntityType: node
+cache: true

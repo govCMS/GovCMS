@@ -15,10 +15,3 @@ jarallax:
 modifiers_bg_parallax_apply:
   js:
     js/modifiers_bg_parallax.apply.js: {}
-
-calendar_item:
-  js:
-    js/calendar_item.js: {}
-  dependencies:
-    - core/jquery
-    - core/jquery.once

@@ -16,7 +16,7 @@ dependencies:
   module:
     - ds
     - field_layout
-    - govcms8_foundations
+    - govcms8_calendar_item
     - panelizer
     - text
     - user
