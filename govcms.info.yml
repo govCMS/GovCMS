@@ -41,6 +41,7 @@ dependencies:
   - adminimal_admin_toolbar
   - admin_toolbar_tools
   - ds
+  - chosen
   - entity_browser
   - entity_embed
   - features_ui
