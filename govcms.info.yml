@@ -40,6 +40,7 @@ dependencies:
   # Contrib modules
   - adminimal_admin_toolbar
   - admin_toolbar_tools
+  - chosen
   - entity_browser
   - entity_embed
   - features_ui
