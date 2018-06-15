@@ -21,14 +21,12 @@ function govcms8_default_content_default_paragraph() {
         'title' => 'About GovCMS',
       ],
       'field_modifiers' =>
-        ['starter-demo-information--mod-colors-modifier'],
+        ['starter-demo-information--mod-color-background-modifier'],
     ],
-    'starter-demo-information--mod-colors-modifier' => [
-      'type' => 'custom_colors_modifier',
-      'field_mod_background_color_val' => '#135E70',
-      'field_mod_text_color_val' => '#FFFFFF',
-      'field_mod_h_background_color_val' => '#0A343F',
-      'field_mod_h_text_color_val' => '#FFFFFF',
+    'starter-demo-information--mod-color-background-modifier' => [
+      'type' => 'color_background_modifier',
+      'field_mod_bc_bg_color_val' => '#135E70',
+      'field_mod_bc_bg_h_color_val' => '#0d414d',
       'field_mod_transition_duration' => '0.30',
     ],
     'starter-demo-info' => [
@@ -92,14 +90,14 @@ function govcms8_default_content_default_paragraph() {
       'type' => 'content',
       'field_title' => 'Test page',
       'field_body' => '<h2>GovCMS Test page</h2>',
+      'field_c_colour_classes' => 'color--dark',
       'field_modifiers' => ['test-test-page--mod-relative-height-modifier',
         'test-test-page--mod-linear-gradient-modifier',
-        'test-test-page--mod-colors-modifier',
       ],
     ],
     'test-test-page--mod-relative-height-modifier' => [
       'type' => 'relative_height_modifier',
-      'field_mod_relative_height' => '4',
+      'field_mod_relative_height' => '3',
       'field_mod_vertical_align' => 'middle',
       'field_mod_media_query' => '(min-width:768px)',
     ],
@@ -110,10 +108,6 @@ function govcms8_default_content_default_paragraph() {
         '#0A343F',
       ],
       'field_mod_cl_gradient_direction' => '90.00',
-    ],
-    'test-test-page--mod-colors-modifier' => [
-      'type' => 'custom_colors_modifier',
-      'field_mod_text_color_val' => '#FFFFFF',
     ],
     'test-comp-view-mode-teaser' => [
       'type' => 'node_list',
@@ -446,7 +440,7 @@ function govcms8_default_content_default_paragraph() {
       'field_title' => 'Modifier: Relative Height',
       'field_heading' => 'Modifier: Relative Height',
       'field_body' => '<p dir="ltr">Content component with Relative Height modifier (and Colours modifier).</p><p dir="ltr">Set to 4:1 ratio.</p>',
-      'field_modifiers' => ['test-comp-modifier-relative-height--mod-relative-height-modifier', 'test-comp-modifier-relative-height--mod-colors-modifier'],
+      'field_modifiers' => ['test-comp-modifier-relative-height--mod-relative-height-modifier'],
     ],
     'test-comp-modifier-relative-height--mod-relative-height-modifier' => [
       'type' => 'relative_height_modifier',
@@ -454,19 +448,15 @@ function govcms8_default_content_default_paragraph() {
       'field_mod_vertical_align' => 'middle',
       'field_mod_media_query' => '(min-width:768px)',
     ],
-    'test-comp-modifier-relative-height--mod-colors-modifier' => [
-      'type' => 'custom_colors_modifier',
-      'field_mod_background_color_val' => '#F5F5F5',
-    ],
     'test-comp-modifier-background-parallax' => [
       'type' => 'content',
       'field_title' => 'Modifier: Background Parallax',
       'field_heading' => 'Modifier: Background Parallax',
       'field_body' => 'Content component with Background Parallax modifier. Content component with Background Parallax modifier. Content component with Background Parallax modifier. Content component with Background Parallax modifier. Content component with Background Parallax modifier. Content component with Background Parallax modifier. Content component with Background Parallax modifier. Content component with Background Parallax modifier. Content component with Background Parallax modifier. Content component with Background Parallax modifier. Content component with Background Parallax modifier. Content component with Background Parallax modifier.',
+      'field_c_colour_classes' => 'color--dark',
       'field_modifiers' =>
         [
           'test-comp-modifier-background-parallax--mod-background-image-modifier',
-          'test-comp-modifier-background-parallax--mod-colors-modifier',
         ],
     ],
     'test-comp-modifier-background-parallax--mod-background-image-modifier' => [
@@ -475,19 +465,15 @@ function govcms8_default_content_default_paragraph() {
       'field_mod_bgp_color_val' => '#EBEBEB',
       'field_mod_parallax_speed' => '0.45',
     ],
-    'test-comp-modifier-background-parallax--mod-colors-modifier' => [
-      'type' => 'custom_colors_modifier',
-      'field_mod_text_color_val' => '#FFFFFF',
-    ],
     'test-comp-modifier-linear-gradient' => [
       'type' => 'content',
       'field_title' => 'Modifier: Linear Gradient',
       'field_heading' => 'Modifier: Linear Gradient',
       'field_body' => 'Content component with Linear Gradient modifier. Content component with Linear Gradient modifier. Content component with Linear Gradient modifier. Content component with Linear Gradient modifier. Content component with Linear Gradient modifier. Content component with Linear Gradient modifier. Content component with Linear Gradient modifier. Content component with Linear Gradient modifier. Content component with Linear Gradient modifier. Content component with Linear Gradient modifier. Content component with Linear Gradient modifier. Content component with Linear Gradient modifier. Content component with Linear Gradient modifier. Content component with Linear Gradient modifier.',
+      'field_c_colour_classes' => 'color--dark',
       'field_modifiers' =>
         [
           'test-comp-modifier-linear-gradient--mod-linear-gradient-modifier',
-          'test-comp-modifier-linear-gradient--mod-colors-modifier',
         ],
     ],
     'test-comp-modifier-linear-gradient--mod-linear-gradient-modifier' => [
@@ -497,10 +483,6 @@ function govcms8_default_content_default_paragraph() {
         '#0A343F',
       ],
       'field_mod_cl_gradient_direction' => '90.00',
-    ],
-    'test-comp-modifier-linear-gradient--mod-colors-modifier' => [
-      'type' => 'custom_colors_modifier',
-      'field_mod_text_color_val' => '#FFFFFF',
     ],
     'test-comp-modifier-colour-background' => [
       'type' => 'content',

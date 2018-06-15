@@ -1,0 +1,5 @@
+services:
+  govcms8_default_content.commands:
+    class: \Drupal\govcms8_default_content\Commands\Govcms8DefaultContentCommands
+    tags:
+      - { name: drush.command }
