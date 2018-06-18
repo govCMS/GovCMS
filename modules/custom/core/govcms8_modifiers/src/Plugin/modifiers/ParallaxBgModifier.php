@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\govcms8_foundations\Plugin\modifiers;
+namespace Drupal\govcms8_modifiers\Plugin\modifiers;
 
 use Drupal\modifiers\Modification;
 use Drupal\modifiers\ModifierPluginBase;
@@ -27,8 +27,8 @@ class ParallaxBgModifier extends ModifierPluginBase {
       $css[$media][$selector][] = 'background-image:url("' . $config['parallax'] . '")';
 
       $libraries = [
-        'govcms8_foundations/jarallax',
-        'govcms8_foundations/modifiers_bg_parallax_apply',
+        'govcms8_modifiers/jarallax',
+        'govcms8_modifiers/modifiers_bg_parallax_apply',
       ];
       $settings = [
         'namespace' => 'ParallaxBgModifier',

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\govcms8_foundations\Plugin\modifiers;
+namespace Drupal\govcms8_modifiers\Plugin\modifiers;
 
 use Drupal\modifiers\Modification;
 use Drupal\modifiers\ModifierPluginBase;

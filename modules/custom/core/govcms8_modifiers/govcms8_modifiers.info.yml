@@ -1,10 +1,9 @@
-name: GovCMS 8 Foundations
+name: GovCMS 8 Modifiers
 type: module
-description: Provides layouts and modifiers for the distribution.
+description: Provides modifiers for the distribution.
 package: GovCMS
 core: 8.x
 dependencies:
-  - ds
   - paragraphs
   - modifiers
   - entity_class_formatter
