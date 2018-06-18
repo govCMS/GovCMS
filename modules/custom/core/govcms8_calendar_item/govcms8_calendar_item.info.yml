@@ -1,5 +1,5 @@
-name: 'govcms8_calendar_item'
+name: GovCMS 8 Calendar Item
 type: module
-description: 'My Awesome Module'
+description: Provides custom calendar item formatter and DS field for UI-Kit.
+package: GovCMS
 core: 8.x
-package: 'Custom'
