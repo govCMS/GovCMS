@@ -65,6 +65,12 @@ dependencies:
   # govCMS core modules
   - govcms_search
   - govcms_media
+  - govcms_core
+  - govcms_optional_govcms_blog_article
+  - govcms_optional_govcms_event
+  - govcms_optional_govcms_foi
+  - govcms_optional_govcms_news_and_media
+  - govcms_optional_govcms_standard_page
 
 dependencies_optional:
   - govcms_optional_govcms_blog_article
