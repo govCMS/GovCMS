@@ -3,3 +3,5 @@ type: module
 description: Core GovCMS Module.
 package: govCMS
 core: 8.x
+dependencies:
+  - govcms8_layout
