@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Module stores customisations for the GovCMS8 calendar item work.
+ */
+
 use Drupal\Core\Datetime\DrupalDateTime;
 
 /**
