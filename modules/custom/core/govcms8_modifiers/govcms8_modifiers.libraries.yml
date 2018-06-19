@@ -10,7 +10,7 @@ jarallax:
     url: https://github.com/nk-o/jarallax/blob/master/LICENSE
     gpl-compatible: true
   js:
-    /libraries/jarallax/dist/jarallax.min.js: {}
+    js/jarallax/jarallax.min.js: {}
 
 modifiers_bg_parallax_apply:
   js:
