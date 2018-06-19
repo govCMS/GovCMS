@@ -78,7 +78,7 @@ function govcms_install() {
     ->set('logo', [
       'path' => $govcms_path . '/logo.svg',
       'url' => '',
-      'use_default' => FALSE,
+      'use_default' => TRUE,
     ])
     ->set('favicon', [
       'mimetype' => 'image/vnd.microsoft.icon',
