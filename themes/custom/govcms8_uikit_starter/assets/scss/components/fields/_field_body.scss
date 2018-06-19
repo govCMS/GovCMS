@@ -1,0 +1,6 @@
+// Body field on Edge to edge page needs its own container.
+.page-layout--edgy {
+  .block-entity-fieldnodebody {
+    @extend .container;
+  }
+}

@@ -1,13 +1,13 @@
 {
   "items": [
-    {"text": "foo"},
-    {"text": "<a href='#'>bar</a>"},
-    {"text": "<a href='#'>baz</a>"},
-    {"text": "<a href='#'>bloop</a>"},
-    {"text": "blip"},
-    {"text": "wallop"},
-    {"text": "doodle"},
-    {"text": "pear ice cream"},
-    {"text": "baz"}
+    {"content": "foo"},
+    {"content": "<a href='#'>bar</a>"},
+    {"content": "<a href='#'>baz</a>"},
+    {"content": "<a href='#'>bloop</a>"},
+    {"content": "blip"},
+    {"content": "wallop"},
+    {"content": "doodle"},
+    {"content": "pear ice cream"},
+    {"content": "baz"}
   ]
 }
