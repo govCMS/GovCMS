@@ -3,14 +3,12 @@ status: true
 dependencies:
   config:
     - field.field.media.audio.field_media_audio_file
-    - image.style.thumbnail
+    - field.field.media.audio.field_tags
     - media.type.audio
   module:
     - field_layout
     - file
-    - image
     - layout_discovery
-    - user
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -20,19 +18,9 @@ targetEntityType: media
 bundle: audio
 mode: default
 content:
-  created:
-    label: hidden
-    type: timestamp
-    weight: 0
-    region: content
-    settings:
-      date_format: medium
-      custom_date_format: ''
-      timezone: ''
-    third_party_settings: {  }
   field_media_audio_file:
     type: file_audio
-    weight: 6
+    weight: 0
     label: above
     settings:
       controls: true
@@ -41,21 +29,9 @@ content:
       multiple_file_display_type: tags
     third_party_settings: {  }
     region: content
-  thumbnail:
-    type: image
-    weight: 5
-    label: hidden
-    settings:
-      image_style: thumbnail
-      image_link: ''
-    region: content
-    third_party_settings: {  }
-  uid:
-    label: hidden
-    type: author
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
+  created: true
+  field_tags: true
   name: true
+  thumbnail: true
+  uid: true
