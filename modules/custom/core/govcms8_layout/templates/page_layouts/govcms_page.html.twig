@@ -12,11 +12,11 @@
 
 <div{{ attributes.addClass(classes) }}>
   {% if content.header|render|striptags|trim %}
-    <section class="header-section">
-      <div class="row">
-        <div class="header">
-          <div class="container">
-          {{ content.header }}
+    <section class="content-header-section">
+      <div class="container">
+        <div class="row">
+          <div class="content-header">
+            {{ content.header }}
           </div>
         </div>
       </div>
@@ -51,10 +51,12 @@
     </section>
   {% endif %}
   {% if content.footer|render|striptags|trim %}
-    <section class="footer-section">
-      <div class="row">
-        <div class="footer">
-          {{ content.footer }}
+    <section class="content-footer-section">
+      <div class="container">
+        <div class="row">
+          <div class="content-footer">
+            {{ content.footer }}
+          </div>
         </div>
       </div>
     </section>
