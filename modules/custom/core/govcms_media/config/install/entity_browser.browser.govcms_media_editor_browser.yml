@@ -1,0 +1,48 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.govcms_media_entity_browser
+  module:
+    - govcms_media
+    - views
+name: govcms_media_editor_browser
+label: 'GovCMS Media Editor Browser'
+display: iframe
+display_configuration:
+  width: '800'
+  height: '600'
+  link_text: 'Select entities'
+  auto_open: true
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  fb1f8c3f-f582-485d-9be0-afb9a8dd6b2e:
+    settings:
+      view: govcms_media_entity_browser
+      view_display: entity_embed_browser
+      submit_text: Place
+      auto_select: false
+    uuid: fb1f8c3f-f582-485d-9be0-afb9a8dd6b2e
+    weight: -10
+    label: View
+    id: view
+  45a99542-5ee5-49f8-bdd5-b718b0b57842:
+    settings:
+      submit_text: Place
+      form_mode: media_browser
+    uuid: 45a99542-5ee5-49f8-bdd5-b718b0b57842
+    weight: -8
+    label: 'Embed code'
+    id: embed_code
+  ad2f2928-14d2-434a-8b70-3efbc71dced0:
+    settings:
+      submit_text: Place
+      form_mode: summary
+      return_file: 0
+    uuid: ad2f2928-14d2-434a-8b70-3efbc71dced0
+    weight: -9
+    label: Upload
+    id: file_upload

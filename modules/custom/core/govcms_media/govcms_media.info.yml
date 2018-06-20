@@ -1,0 +1,24 @@
+name: 'govCMS Media '
+description: 'Provide media management functionality.'
+type: module
+core: 8.x
+dependencies:
+  - content_moderation
+  - dropzonejs_eb_widget
+  - embed
+  - entity_browser
+  - entity_embed
+  - field
+  - field_layout
+  - file
+  - govcms_media
+  - image
+  - inline_entity_form
+  - layout_discovery
+  - media
+  - path
+  - taxonomy
+  - user
+  - video_embed_field
+  - video_embed_media
+  - views

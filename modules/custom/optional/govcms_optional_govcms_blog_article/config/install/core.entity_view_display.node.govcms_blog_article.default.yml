@@ -8,10 +8,20 @@ dependencies:
     - field.field.node.govcms_blog_article.field_featured_image
     - node.type.govcms_blog_article
   module:
-    - file
-    - image
+    - field_layout
+    - layout_discovery
+    - panelizer
     - text
     - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 id: node.govcms_blog_article.default
 targetEntityType: node
 bundle: govcms_blog_article
@@ -20,19 +30,21 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
   field_attachments:
-    weight: 102
+    weight: 3
     label: above
-    settings: {  }
+    settings:
+      link: true
+      view_mode: default
     third_party_settings: {  }
-    type: file_default
+    type: entity_reference_entity_view
     region: content
   field_blog_article_categories:
-    weight: 105
+    weight: 2
     label: above
     settings:
       link: true
@@ -40,15 +52,17 @@ content:
     type: entity_reference_label
     region: content
   field_featured_image:
-    weight: 103
-    label: above
+    weight: 0
+    label: hidden
     settings:
-      image_style: ''
-      image_link: ''
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    type: image
+    type: entity_reference_entity_view
     region: content
   links:
-    weight: 100
+    weight: 4
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }

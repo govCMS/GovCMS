@@ -6,17 +6,20 @@ dependencies:
   - block
   - content_moderation
   - datetime_range
+  - entity_browser
   - facets
   - field
   - field_layout
   - file
   - govcms_fields_attachment
   - govcms_fields_featured_image
+  - govcms_media
   - govcms_search
   - image
   - layout_discovery
   - menu_ui
   - node
+  - panelizer
   - path
   - pathauto
   - search_api

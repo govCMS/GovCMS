@@ -1,0 +1,7 @@
+govcms_media.bulk_upload:
+  path: '/admin/content/media/bulk-upload'
+  defaults:
+    _title: 'Bulk upload'
+    _form: '\Drupal\govcms_media\Form\BulkUploadForm'
+  requirements:
+    _permission: 'dropzone upload files,create media'

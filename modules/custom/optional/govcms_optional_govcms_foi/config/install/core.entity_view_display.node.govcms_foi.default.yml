@@ -11,9 +11,20 @@ dependencies:
     - node.type.govcms_foi
   module:
     - datetime
-    - file
+    - field_layout
+    - layout_discovery
+    - panelizer
     - text
     - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 id: node.govcms_foi.default
 targetEntityType: node
 bundle: govcms_foi
@@ -27,11 +38,13 @@ content:
     third_party_settings: {  }
     region: content
   field_attachments:
-    weight: 102
+    weight: 108
     label: above
-    settings: {  }
+    settings:
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    type: file_default
+    type: entity_reference_entity_view
     region: content
   field_foi_date_listed:
     weight: 103
@@ -70,4 +83,6 @@ content:
   links:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }

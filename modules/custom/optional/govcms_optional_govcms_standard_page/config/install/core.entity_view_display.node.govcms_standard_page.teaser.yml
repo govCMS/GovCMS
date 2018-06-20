@@ -8,8 +8,14 @@ dependencies:
     - field.field.node.govcms_standard_page.field_featured_image
     - node.type.govcms_standard_page
   module:
+    - field_layout
+    - layout_discovery
     - text
     - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 id: node.govcms_standard_page.teaser
 targetEntityType: node
 bundle: govcms_standard_page

@@ -1,0 +1,5 @@
+govcms_media.bulk_upload:
+  route_name: govcms_media.bulk_upload
+  title: 'Bulk upload'
+  appears_on:
+    - entity.media.collection

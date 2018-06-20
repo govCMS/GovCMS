@@ -1,0 +1,120 @@
+<?php
+
+/**
+ * @file
+ * Support for media assets in GovCMS.
+ */
+
+use Drupal\govcms_media\OverrideHelper as Override;
+use Drupal\govcms_media\Plugin\media\Source\File;
+use Drupal\govcms_media\Plugin\media\Source\Image;
+use Drupal\govcms_media\Plugin\media\Source\AudioFile;
+use Drupal\govcms_media\Plugin\media\Source\VideoFile;
+use Drupal\govcms_media\Plugin\media\Source\RemoteVideo;
+use Drupal\govcms_media\Form\MediaForm;
+use Drupal\image\Plugin\Field\FieldType\ImageItem;
+use Drupal\govcms_media\MediaHelper;
+use Drupal\govcms_media\Exception\IndeterminateBundleException;
+use Drupal\file\FileInterface;
+
+/**
+ * Implements hook_media_source_info_alter().
+ *
+ * Code from hook_media_source_info_alter in lightning_media 8.x-2.3 submodule.
+ */
+function govcms_media_media_source_info_alter(array &$sources) {
+  $sources['file']['input_match']['field_types'] = ['file'];
+  Override::pluginClass($sources['file'], File::class);
+
+  $sources['image']['input_match']['field_types'] = ['image'];
+  Override::pluginClass($sources['image'], Image::class);
+
+  $sources['audio_file']['input_match']['field_types'] = ['audio_file'];
+  Override::pluginClass($sources['audio_file'], AudioFile::class);
+
+  $sources['video_file']['input_match']['field_types'] = ['video_file'];
+  Override::pluginClass($sources['video_file'], VideoFile::class);
+
+  $sources['video_embed_field']['input_match'] = [
+    'field_types' => [
+      'string',
+      'string_long',
+      'video_embed_field',
+    ],
+  ];
+  $sources['video_embed_field']['preview'] = TRUE;
+
+  Override::pluginClass($sources['video_embed_field'], RemoteVideo::class);
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ *
+ * Code from lightning_media_entity_type_alter() in lightning_media 8.x-2.3
+ * submodule.
+ */
+function govcms_media_entity_type_alter(array &$entity_types) {
+  if (\Drupal::moduleHandler()->moduleExists('media')) {
+
+    // Use our specialized entity form for adding and editing media assets in
+    // order to support dynamic preview generation.
+    Override::entityForm($entity_types['media'], MediaForm::class);
+    Override::entityForm($entity_types['media'], MediaForm::class, 'edit');
+
+  }
+}
+
+/**
+ * Validates a file using media entity source field criteria.
+ *
+ * Code from lightning_media_validate_upload() in lightning_media 8.x-2.3
+ * submodule.
+ *
+ * @param \Drupal\file\FileInterface $file
+ *   The file to validate.
+ * @param string[] $bundles
+ *   (optional) A set of media bundle IDs which might match the input. If
+ *   omitted, all bundles to which the user has create access will be checked.
+ *
+ * @return string[]
+ *   An array of errors. If empty, the file passed validation.
+ */
+function govcms_media_validate_upload(FileInterface $file, array $bundles = []) {
+  try {
+    $entity = \Drupal::service('govcms_media.media_helper')->createFromInput($file, $bundles);
+  }
+  catch (IndeterminateBundleException $e) {
+    return [];
+  }
+
+  /** @var \Drupal\file\Plugin\Field\FieldType\FileItem $item */
+  $item = MediaHelper::getSourceField($entity)->first();
+
+  $validators = [
+    // It's maybe a bit overzealous to run this validator, but hey...better
+    // safe than screwed over by script kiddies.
+    'file_validate_name_length' => [],
+  ];
+  $validators = array_merge($validators, $item->getUploadValidators());
+  // This function is only called by the custom FileUpload widget, which runs
+  // file_validate_extensions before this function. So there's no need to
+  // validate the extensions again.
+  unset($validators['file_validate_extensions']);
+
+  // If this is an image field, add image validation. Against all sanity,
+  // this is normally done by ImageWidget, not ImageItem, which is why we
+  // need to facilitate this a bit.
+  if ($item instanceof ImageItem) {
+    // Validate that this is, indeed, a supported image.
+    $validators['file_validate_is_image'] = [];
+
+    $settings = $item->getFieldDefinition()->getSettings();
+    if ($settings['max_resolution'] || $settings['min_resolution']) {
+      $validators['file_validate_image_resolution'] = [
+        $settings['max_resolution'],
+        $settings['min_resolution'],
+      ];
+    }
+  }
+  return file_validate($file, $validators);
+}

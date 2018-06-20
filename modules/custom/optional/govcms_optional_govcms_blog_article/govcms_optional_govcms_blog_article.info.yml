@@ -4,15 +4,18 @@ type: module
 core: 8.x
 dependencies:
   - content_moderation
+  - entity_browser
   - field
   - field_layout
   - file
   - govcms_fields_attachment
   - govcms_fields_featured_image
+  - govcms_media
   - image
   - layout_discovery
   - menu_ui
   - node
+  - panelizer
   - path
   - pathauto
   - taxonomy
