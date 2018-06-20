@@ -75,7 +75,7 @@
         "drupal/graphql": "3.0-beta7",
         "drupal/honeypot": "1.27",
         "drupal/inline_entity_form": "1.0-rc1",
-        "drupal/jsonapi": "1.16",
+        "drupal/jsonapi": "1.20.0",
         "drupal/linked_field": "1.1.0",
         "drupal/linkit": "5.0-beta7",
         "drupal/login_security": "1.4.0",
