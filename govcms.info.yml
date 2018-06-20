@@ -40,6 +40,7 @@ dependencies:
   # Contrib modules
   - adminimal_admin_toolbar
   - admin_toolbar_tools
+  - chosen
   - entity_browser
   - entity_embed
   - features_ui
@@ -58,6 +59,7 @@ dependencies:
 
   # govCMS core modules
   - govcms_search
+  - govcms_media
 
 dependencies_optional:
   - govcms_optional_govcms_blog_article

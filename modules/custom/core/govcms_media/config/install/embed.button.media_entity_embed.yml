@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.audio
+    - media.type.file
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video
+  module:
+    - entity_embed
+    - media
+label: 'Media Entity Embed'
+id: media_entity_embed
+type_id: entity
+type_settings:
+  entity_type: media
+  bundles:
+    - audio
+    - file
+    - image
+    - remote_video
+    - video
+  display_plugins:
+    - 'view_mode:media.embed'
+    - 'entity_reference:media_thumbnail'
+  entity_browser: govcms_media_editor_browser
+  entity_browser_settings:
+    display_review: false
+icon_uuid: null

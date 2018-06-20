@@ -11,8 +11,14 @@ dependencies:
     - field.field.node.govcms_foi.field_foi_release_type
     - node.type.govcms_foi
   module:
+    - field_layout
+    - layout_discovery
     - text
     - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 id: node.govcms_foi.teaser
 targetEntityType: node
 bundle: govcms_foi

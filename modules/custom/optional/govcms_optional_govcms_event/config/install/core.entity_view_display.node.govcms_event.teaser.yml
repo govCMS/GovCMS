@@ -11,8 +11,14 @@ dependencies:
     - field.field.node.govcms_event.field_featured_image
     - node.type.govcms_event
   module:
+    - field_layout
+    - layout_discovery
     - text
     - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 id: node.govcms_event.teaser
 targetEntityType: node
 bundle: govcms_event

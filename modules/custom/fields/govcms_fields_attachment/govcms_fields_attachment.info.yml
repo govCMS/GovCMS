@@ -5,6 +5,7 @@ core: 8.x
 dependencies:
   - field
   - file
+  - media
   - node
 version: 8.x-1.0-alpha1
 package: 'govCMS Fields'

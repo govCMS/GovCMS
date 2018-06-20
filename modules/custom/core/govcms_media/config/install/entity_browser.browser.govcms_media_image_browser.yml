@@ -1,0 +1,52 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.image
+    - views.view.govcms_media_entity_browser
+  module:
+    - dropzonejs_eb_widget
+    - media
+    - views
+name: govcms_media_image_browser
+label: 'GovCMS Media Image Browser'
+display: modal
+display_configuration:
+  width: '800'
+  height: '600'
+  link_text: 'Select image(s)'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  c306756d-c5f5-455c-ba22-15652e3acaa6:
+    settings:
+      view: govcms_media_entity_browser
+      view_display: image_browser
+      submit_text: 'Select image(s)'
+      auto_select: false
+    uuid: c306756d-c5f5-455c-ba22-15652e3acaa6
+    weight: 1
+    label: Library
+    id: view
+  da20b711-c933-403e-a9bd-8e9bd0889a8b:
+    settings:
+      form_mode: summary
+      media_type: image
+      upload_location: 'public://[date:custom:Y]-[date:custom:m]'
+      dropzone_description: 'Drop files here to upload them'
+      max_filesize: 32M
+      extensions: 'jpg jpeg gif png svg webp'
+      clientside_resize: false
+      resize_width: null
+      resize_height: null
+      resize_quality: !!float 1
+      resize_method: contain
+      thumbnail_method: contain
+      submit_text: 'Select image(s)'
+    uuid: da20b711-c933-403e-a9bd-8e9bd0889a8b
+    weight: 2
+    label: Upload
+    id: dropzonejs_media_entity_inline_entity_form

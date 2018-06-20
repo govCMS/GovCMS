@@ -7,10 +7,20 @@ dependencies:
     - field.field.node.govcms_standard_page.field_featured_image
     - node.type.govcms_standard_page
   module:
-    - file
-    - image
+    - field_layout
+    - layout_discovery
+    - panelizer
     - text
     - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 id: node.govcms_standard_page.default
 targetEntityType: node
 bundle: govcms_standard_page
@@ -19,27 +29,31 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
   field_attachments:
-    weight: 102
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: file_default
-    region: content
-  field_featured_image:
-    weight: 103
+    type: entity_reference_entity_view
+    weight: 2
     label: above
     settings:
-      image_style: ''
-      image_link: ''
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    type: image
+    region: content
+  field_featured_image:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
     region: content
   links:
-    weight: 100
+    weight: 3
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }

@@ -2,18 +2,17 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.govcms_media_image_browser
     - field.field.node.govcms_news_and_media.body
     - field.field.node.govcms_news_and_media.field_attachments
     - field.field.node.govcms_news_and_media.field_featured_image
     - field.field.node.govcms_news_and_media.field_media_release_type
     - field.field.node.govcms_news_and_media.field_news_categories
-    - image.style.thumbnail
     - node.type.govcms_news_and_media
   module:
     - content_moderation
+    - entity_browser
     - field_layout
-    - file
-    - image
     - layout_discovery
     - path
     - text
@@ -42,19 +41,32 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_attachments:
-    weight: 122
+    weight: 126
     settings:
-      progress_indicator: throbber
+      entity_browser: govcms_media_file_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
     third_party_settings: {  }
-    type: file_generic
+    type: entity_browser_entity_reference
     region: content
   field_featured_image:
-    weight: 123
+    weight: 127
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      entity_browser: govcms_media_image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
     third_party_settings: {  }
-    type: image_image
+    type: entity_browser_entity_reference
     region: content
   field_media_release_type:
     weight: 125

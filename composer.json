@@ -41,21 +41,6 @@
             "type": "package",
             "package": {
                 "type": "drupal-library",
-                "name": "govcms-asset/chosen",
-                "version": "v1.8.2",
-                "dist": {
-                    "url": "https://github.com/harvesthq/chosen/releases/download/v1.8.2/chosen_v1.8.2.zip",
-                    "type": "zip"
-                },
-                "require": {
-                    "composer/installers": "^1.2.0"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "type": "drupal-library",
                 "name": "govcms-asset/dropzone",
                 "version": "v5.1.1",
                 "dist": {
@@ -79,11 +64,13 @@
     ],
     "require": {
         "php": "^7.1",
+        "bower-asset/chosen": "1.8.2",
         "cweagans/composer-patches": "^1.6",
         "drupal-composer/drupal-scaffold": "^2.4",
         "drupal/admin_toolbar": "1.23",
         "drupal/adminimal_admin_toolbar": "^1.5",
         "drupal/adminimal_theme": "^1.3",
+        "drupal/chosen": "2.5.0",
         "drupal/config_filter": "1.2",
         "drupal/config_split": "1.3",
         "drupal/consumers": "1.0.0-beta3",
@@ -92,23 +79,28 @@
         "drupal/dropzonejs": "2.0.0-alpha3",
         "drupal/ds": "^3.1",
         "drupal/entity_browser": "2.0-alpha2",
+        "drupal/entity_class_formatter": "1.0.0",
         "drupal/entity_embed": "^1.0@beta",
+        "drupal/entity_reference_display": "1.2.0",
         "drupal/entity_reference_revisions": "1.4",
         "drupal/environment_indicator": "3.3",
         "drupal/facets": "1.0-beta2",
         "drupal/features": "3.7",
         "drupal/field_group": "^3.0",
+        "drupal/focal_point": "1.0-beta6",
         "drupal/google_analytics": "^2.2",
         "drupal/govcms8_ui": "1.0.0-alpha1",
         "drupal/graphql": "3.0-beta7",
         "drupal/honeypot": "1.27",
         "drupal/inline_entity_form": "^1.0",
         "drupal/jsonapi": "1.16",
+        "drupal/linked_field": "1.1.0",
         "drupal/linkit": "5.0-beta7",
         "drupal/login_security": "1.4.0",
         "drupal/memcache": "^2.0",
         "drupal/menu_trail_by_path": "^1.1",
         "drupal/metatag": "1.5",
+        "drupal/modifiers": "1.1.0",
         "drupal/module_filter": "^3.1",
         "drupal/panelizer": "4.1",
         "drupal/panels": "4.3",
@@ -128,7 +120,6 @@
         "drupal/username_enumeration_prevention": "^1.0",
         "drupal/video_embed_field": "2.0",
         "drupal/webform": "5.0-rc12",
-        "govcms-asset/chosen": "^1.8",
         "govcms-asset/dropzone": "^5.1",
         "govcms-asset/swiftmailer": "^5.4",
         "oomphinc/composer-installers-extender": "^1.1",

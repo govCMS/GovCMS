@@ -1,0 +1,5 @@
+services:
+  govcms_media.media_helper:
+    class: '\Drupal\govcms_media\MediaHelper'
+    arguments:
+      - '@entity_type.manager'

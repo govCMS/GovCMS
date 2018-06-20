@@ -8,10 +8,10 @@ dependencies:
     - field.field.node.govcms_news_and_media.field_featured_image
     - field.field.node.govcms_news_and_media.field_media_release_type
     - field.field.node.govcms_news_and_media.field_news_categories
-    - image.style.medium
     - node.type.govcms_news_and_media
   module:
-    - image
+    - field_layout
+    - layout_discovery
     - options
     - panelizer
     - text
@@ -22,6 +22,9 @@ third_party_settings:
     custom: false
     allow: false
     default: default
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 id: node.govcms_news_and_media.teaser
 targetEntityType: node
 bundle: govcms_news_and_media
@@ -35,15 +38,6 @@ content:
       trim_length: 300
     third_party_settings: {  }
     region: content
-  field_featured_image:
-    type: image
-    weight: 1
-    region: content
-    label: hidden
-    settings:
-      image_style: medium
-      image_link: content
-    third_party_settings: {  }
   field_media_release_type:
     type: list_default
     weight: 0
@@ -61,4 +55,5 @@ content:
     third_party_settings: {  }
 hidden:
   field_attachments: true
+  field_featured_image: true
   links: true

@@ -1,18 +1,18 @@
-langcode:             en
-status:               true
+langcode: en
+status: true
 dependencies:
   config:
     - filter.format.rich_text
   module:
     - ckeditor
-format:               rich_text
-editor:               ckeditor
+format: rich_text
+editor: ckeditor
 settings:
   toolbar:
     rows:
       -
         -
-          name:       Formatting
+          name: Formatting
           items:
             - Bold
             - Italic
@@ -26,39 +26,40 @@ settings:
             - Subscript
             - Format
         -
-          name:       Links
+          name: Links
           items:
             - DrupalLink
             - DrupalUnlink
         -
-          name:       Lists
+          name: Lists
           items:
             - Table
             - BulletedList
             - NumberedList
         -
-          name:       Media
+          name: Media
           items:
             - Blockquote
             - DrupalImage
+            - media_entity_embed
         -
-          name:       Tools
+          name: Tools
           items:
             - PasteFromWord
             - Source
   plugins:
+    stylescombo:
+      styles: ''
     drupallink:
       linkit_enabled: true
       linkit_profile: default
     language:
-      language_list:  un
-    stylescombo:
-      styles:         ''
+      language_list: un
 image_upload:
-  status:             false
-  scheme:             public
-  directory:          inline-images
-  max_size:           ''
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
   max_dimensions:
-    width:            null
-    height:           null
+    width: null
+    height: null
