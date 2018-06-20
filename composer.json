@@ -93,7 +93,7 @@
         "drupal/restui": "1.15",
         "drupal/robotstxt": "1.2",
         "drupal/search_api": "1.8",
-        "drupal/seckit": "^1.0",
+        "drupal/seckit": "1.0-alpha2",
         "drupal/shield": "1.2",
         "drupal/simple_oauth": "3.6",
         "drupal/simple_sitemap": "2.12",
