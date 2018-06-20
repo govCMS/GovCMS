@@ -90,7 +90,7 @@
         "drupal/password_policy": "3.0-alpha4",
         "drupal/pathauto": "1.2",
         "drupal/redirect": "1.1",
-        "drupal/restui": "^1.15",
+        "drupal/restui": "1.15",
         "drupal/robotstxt": "1.2",
         "drupal/search_api": "1.8",
         "drupal/seckit": "^1.0",
