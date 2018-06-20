@@ -90,7 +90,7 @@
         "drupal/focal_point": "1.0-beta6",
         "drupal/google_analytics": "^2.2",
         "drupal/govcms8_ui": "1.0.0-alpha1",
-        "drupal/graphql": "3.0-beta7",
+        "drupal/graphql": "3.0.0-beta8",
         "drupal/honeypot": "1.27",
         "drupal/inline_entity_form": "^1.0",
         "drupal/jsonapi": "1.16",
