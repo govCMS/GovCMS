@@ -1,7 +1,7 @@
 {
     "name": "govcms/govcms",
-    "description": "govCMS8 Drupal Distribution",
-    "keywords": ["govCMS", "govCMS8"],
+    "description": "GovCMS8 Drupal Distribution",
+    "keywords": ["GovCMS", "GovCMS8"],
     "type": "drupal-profile",
     "license": "GPL-2.0-or-later",
     "homepage": "https://www.govcms.gov.au",
@@ -10,24 +10,6 @@
         "wik": "https://github.com/govCMS/govCMS8/wiki",
         "source": "https://github.com/govCMS/govCMS8/releases"
     },
-    "authors": [
-        {
-            "name": "Joseph Zhao",
-            "email": "joseph.zhao@xing.net.au"
-        },
-        {
-            "name": "Jason Guo",
-            "email": "jason.guo@xing.net.au"
-        },
-        {
-            "name": "Tim Hurley",
-            "email": "tim@timhurley.net"
-        },
-        {
-            "name": "ruwanl",
-            "email": "ruwan.lk@gmail.com"
-        }
-    ],
     "repositories": [
         {
             "type": "composer",
