@@ -23,18 +23,6 @@
             "type": "package",
             "package": {
                 "type": "drupal-library",
-                "name": "govcms-asset/dropzone",
-                "version": "v5.1.1",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://github.com/enyo/dropzone/archive/v5.1.1.zip"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "type": "drupal-library",
                 "name": "govcms-asset/swiftmailer",
                 "version": "v5.4.9",
                 "dist": {
@@ -102,7 +90,7 @@
         "drupal/username_enumeration_prevention": "1.0-beta1",
         "drupal/video_embed_field": "2.0",
         "drupal/webform": "5.0-rc12",
-        "govcms-asset/dropzone": "^5.1",
+        "bower-asset/dropzone": "^5.1",
         "govcms-asset/swiftmailer": "^5.4",
         "oomphinc/composer-installers-extender": "^1.1",
         "symfony/phpunit-bridge": "^3.4.6"
