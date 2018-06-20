@@ -86,7 +86,7 @@
         "drupal/environment_indicator": "3.3",
         "drupal/facets": "1.0-beta2",
         "drupal/features": "3.7",
-        "drupal/field_group": "^3.0",
+        "drupal/field_group": "3.0-beta1",
         "drupal/focal_point": "1.0-beta6",
         "drupal/google_analytics": "2.2",
         "drupal/govcms8_ui": "1.0.0-alpha1",
