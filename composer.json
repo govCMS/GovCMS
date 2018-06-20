@@ -99,7 +99,7 @@
         "drupal/simple_sitemap": "2.12",
         "drupal/swiftmailer": "1.0-beta2",
         "drupal/token": "1.1.0",
-        "drupal/username_enumeration_prevention": "^1.0",
+        "drupal/username_enumeration_prevention": "1.0-beta1",
         "drupal/video_embed_field": "2.0",
         "drupal/webform": "5.0-rc12",
         "govcms-asset/dropzone": "^5.1",
