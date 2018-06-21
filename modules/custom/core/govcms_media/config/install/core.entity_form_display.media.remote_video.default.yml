@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.media.remote_video.field_media_video_embed_field
+    - field.field.media.remote_video.field_tags
     - media.type.remote_video
   module:
     - field_layout
@@ -28,6 +29,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: video_embed_field_textfield
+    region: content
+  field_tags:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
     region: content
   name:
     type: string_textfield

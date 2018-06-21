@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.media.video.field_media_video_file
+    - field.field.media.video.field_tags
     - media.type.video
   module:
     - field_layout
@@ -33,6 +34,7 @@ content:
     region: content
 hidden:
   created: true
+  field_tags: true
   name: true
   thumbnail: true
   uid: true

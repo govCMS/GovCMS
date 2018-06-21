@@ -4,6 +4,7 @@ dependencies:
   config:
     - core.entity_form_mode.media.summary
     - field.field.media.file.field_media_file
+    - field.field.media.file.field_tags
     - media.type.file
   module:
     - field_layout
@@ -25,6 +26,15 @@ content:
     third_party_settings: {  }
     type: file_generic
     region: content
+  field_tags:
+    type: entity_reference_autocomplete_tags
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   name:
     type: string_textfield
     weight: 0

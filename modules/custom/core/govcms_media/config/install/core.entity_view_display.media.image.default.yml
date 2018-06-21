@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.media.image.field_media_image
+    - field.field.media.image.field_tags
     - media.type.image
   module:
     - field_layout
@@ -28,6 +29,7 @@ content:
     region: content
 hidden:
   created: true
+  field_tags: true
   name: true
   thumbnail: true
   uid: true

@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.media.video.field_media_video_file
+    - field.field.media.video.field_tags
     - media.type.video
   module:
     - field_layout
@@ -29,6 +30,15 @@ content:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
+    region: content
+  field_tags:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
     region: content
   name:
     type: string_textfield

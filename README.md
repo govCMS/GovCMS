@@ -1,11 +1,11 @@
 # govCMS8
 <img src="https://www.drupal.org/files/styles/grid-3/public/project-images/govcms8.png" alt="govCMS8 logo" align="right"/>
 
-[![Build Status](https://travis-ci.org/govCMS/govCMS8.svg?branch=8.4.x)](https://travis-ci.org/govCMS/govCMS8)
+[![Build Status](https://travis-ci.org/govCMS/govCMS8.svg?branch=1.x)](https://travis-ci.org/govCMS/govCMS8)
 
 govCMS8 is the Drupal 8-specific version of the govCMS distribution.
 
-[govCMS](https://www.govcms.gov.au) is an open source web content management and hosting service, based on Drupal and developed to help agencies create modern, affordable and responsive websites, whilst making it easier to collaborate and innovate. govCMS also helps reduce the technology and compliance burden on government agencies.  govCMS is mananged by the Australian Government Department of Finance. 
+[govCMS](https://www.govcms.gov.au) is an open source web content management and hosting service, based on Drupal and developed to help agencies create modern, affordable and responsive websites, whilst making it easier to collaborate and innovate. govCMS also helps reduce the technology and compliance burden on government agencies. GovCMS is managed by the Australian Government Department of Finance.
 
 ## Installation - End User
 
@@ -14,12 +14,12 @@ A copy of govCMS8 can be installed in a number of different ways:
 ### Acquia Cloud ([Free](https://insight.acquia.com/free/register)/[Professional](https://www.acquia.com/cloud-pricing#hardware=c3.large&storage=25&subscription=5bc0ff4a-8bea-7ea4-b175-59ba508af636&region=ap-southeast-2)/Enterprise)
 
 Once you have provisioned an environment (you may have to select "None" as a distribution when you first provision it), you can follow the instructions at https://docs.acquia.com/acquia-cloud/create/install and in the `Install Drupal from URL` dialog, enter the URL:
-    
-    https://ftp.drupal.org/files/projects/govcms8-8.x-4.x-dev-core.tar.gz
+
+    https://ftp.drupal.org/files/projects/govcms8-8.x-5.x-dev-core.tar.gz
 
 ### simplytest.me
 
-For a quick demo instance, you can launch a (24-hour only) sandbox at http://simplytest.me/project/govcms8/8.x-4.x
+For a quick demo instance, you can launch a (24-hour only) sandbox at http://simplytest.me/project/govcms8/8.x-5.x
 
 **[Back to top](#govcms8)**
 ## Installation - Developer
@@ -45,7 +45,7 @@ Composer will create a new directory called MY_PROJECT containing a docroot dire
     git clone -b 1.x git@github.com:govCMS/govCMS8.git
     cd govCMS8
     composer install
-    
+
 To develop on or patch against govCMS8, the source files should be downloaded and the project built.
 
 ### Other Platforms
