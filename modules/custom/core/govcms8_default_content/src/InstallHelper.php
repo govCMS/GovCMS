@@ -108,10 +108,13 @@ class InstallHelper implements ContainerInjectionInterface {
         // Fields mapping starts.
         // Set Body Field.
         if (!empty($item['body'])) {
-          $values['body'] = [
-            'value' => $item['body'],
-            'format' => 'rich_text',
-          ];
+          $body = $this->getBodyData($item['body']);
+          if ($body !== FALSE) {
+            $values['body'] = [
+              'value' => $body,
+              'format' => 'rich_text',
+            ];
+          }
         }
 
         if (!empty($item['summary'])) {
@@ -227,6 +230,7 @@ class InstallHelper implements ContainerInjectionInterface {
    * Import paragraphs.
    */
   public function importParagraphs(array $paragraphs) {
+
     $data = $this->loadDataArray('paragraph');
     $paragraph_items = [];
     $uuids = [];
@@ -240,12 +244,14 @@ class InstallHelper implements ContainerInjectionInterface {
           'type' => $item['type'],
         ];
 
-        // Common fields on most paragraphs.
         if (!empty($item['field_body'])) {
-          $values['field_body'] = [
-            'value' => $item['field_body'],
-            'format' => 'rich_text',
-          ];
+          $body = $this->getBodyData($item['field_body']);
+          if ($body !== FALSE) {
+            $values['field_body'] = [
+              'value' => $body,
+              'format' => 'rich_text',
+            ];
+          }
         }
 
         if (!empty($item['field_title'])) {
@@ -272,6 +278,32 @@ class InstallHelper implements ContainerInjectionInterface {
     $this->storeCreatedContentUuids($uuids);
 
     return $paragraph_items;
+  }
+
+  /**
+   * Retrieves the body data from the array value or an HTML file.
+   *
+   * @param mixed $body
+   *   Body field.
+   *
+   * @return mixed
+   *   An array of data.
+   */
+  public function getBodyData($body) {
+    $module_path = $this->moduleHandler->getModule('govcms8_default_content')->getPath();
+    if (!empty($body)) {
+      if (is_array($body) && !empty($body['file'])) {
+        $file = $body['file'];
+        $body_path = $module_path . '/import/html_body/' . $file;
+        $body_html = file_get_contents($body_path);
+        if ($body_html !== FALSE) {
+          return $body_html;
+        }
+      }
+      else {
+        return $body;
+      }
+    }
   }
 
   /**

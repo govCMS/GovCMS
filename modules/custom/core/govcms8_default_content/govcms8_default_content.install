@@ -18,7 +18,7 @@ function govcms8_default_content_install() {
     $menu_link = MenuLinkContent::create([
       'title' => 'Styleguide',
       'link' => [
-        'uri' => 'internal:/themes/custom/govcms8_uikit_starter/styleguide/'
+        'uri' => 'internal:/profiles/govcms/themes/custom/govcms8_uikit_starter/styleguide/'
       ],
       'menu_name' => 'main',
       'weight' => '5',
