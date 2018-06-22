@@ -1,5 +1,0 @@
-name: GovCMS 8 Default Content
-type: module
-description: Provides default content for G8BT.
-package: GovCMS
-core: 8.x
