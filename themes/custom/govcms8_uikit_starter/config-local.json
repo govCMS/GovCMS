@@ -1,6 +1,0 @@
-{
-  "name": "govcms8_uikit_starter",
-  "description": "GovCMS 8 UI Kit Starter local config file",
-  "browserSyncProxy" : "http://loc-g8bt.morpht.net",
-  "browserSyncPort" : 3000
-}
