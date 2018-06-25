@@ -3,11 +3,17 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.govcms_media_image_browser
     - field.field.paragraph.parallax_bg_modifier.field_mod_bgp_color_val
     - field.field.paragraph.parallax_bg_modifier.field_mod_media_query
     - field.field.paragraph.parallax_bg_modifier.field_mod_parallax
     - field.field.paragraph.parallax_bg_modifier.field_mod_parallax_speed
     - paragraphs.paragraphs_type.parallax_bg_modifier
+  module:
+    - content_moderation
+    - entity_browser
+    - field_layout
+    - layout_discovery
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -36,11 +42,16 @@ content:
   field_mod_parallax:
     weight: 0
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      entity_browser: govcms_media_image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: entity_browser_entity_reference
     region: content
   field_mod_parallax_speed:
     type: number

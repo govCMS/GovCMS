@@ -3,12 +3,18 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.govcms_media_image_browser
     - field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val
     - field.field.paragraph.image_bg_modifier.field_mod_image
     - field.field.paragraph.image_bg_modifier.field_mod_image_position
     - field.field.paragraph.image_bg_modifier.field_mod_image_style
     - field.field.paragraph.image_bg_modifier.field_mod_media_query
     - paragraphs.paragraphs_type.image_bg_modifier
+  module:
+    - content_moderation
+    - entity_browser
+    - field_layout
+    - layout_discovery
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -29,11 +35,16 @@ content:
   field_mod_image:
     weight: 0
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      entity_browser: govcms_media_image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: entity_browser_entity_reference
     region: content
   field_mod_image_position:
     weight: 3
