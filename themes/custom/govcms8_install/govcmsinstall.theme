@@ -5,8 +5,6 @@
  * Functions to support theming in the govcms install theme.
  */
 
-use Drupal\Core\Form\FormStateInterface;
-
 /**
  * Implements hook_preprocess_install_page().
  */

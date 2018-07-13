@@ -14,7 +14,7 @@
   <header role="banner">
     {% if site_name %}
       <h1 class="page-title">
-				<img src="{{ base_path ~ directory }}/logo.svg" alt="{{ site_name }}" width=85 height=85>
+        <img src="{{ base_path ~ directory }}/logo.svg" alt="{{ site_name }}" width=210 height=39>
         {% if site_version %}
           <span class="site-version">{{ site_version }}</span>
         {% endif %}
@@ -24,7 +24,7 @@
 
   {% if page.sidebar_first %}
     <aside class="layout-sidebar-first" role="complementary">
-      {{ page.sidebar_first }}
+    {{ page.sidebar_first }}
     </aside>{# /.layout-sidebar-first #}
   {% endif %}
 
@@ -38,7 +38,7 @@
 
   {% if page.sidebar_second %}
     <aside class="layout-sidebar-second" role="complementary">
-      {{ page.sidebar_second }}
+    {{ page.sidebar_second }}
     </aside>{# /.layout-sidebar-second #}
   {% endif %}
 

@@ -5,20 +5,8 @@
 * Unfortunately we have to make our styling quite strong, to override the
 * .maintenance-page styling.
 */
-{
-background-color: #1275b2;
-background-image:
-  url(../../images/noise-low.png),
-  -webkit-radial-gradient(hsl(203, 80%, 45%), hsl(203, 80%, 32%));
-background-image:
-  url(../../images/noise-low.png),
-  radial-gradient(hsl(203, 80%, 45%), hsl(203, 80%, 32%));
-background-repeat: repeat;
-background-position: left top, 50% 50%; /* LTR */
-min-height: 100%;
-}
 [dir="rtl"]  {
-background-position: right top, 50% 50%;
+	background-position: right top, 50% 50%;
 }
 
 /**
@@ -26,90 +14,99 @@ background-position: right top, 50% 50%;
 */
 .password-parent,
 .confirm-parent {
-width: auto;
+	width: auto;
 }
+
 .form-item .password-suggestions {
-float: none;
-width: auto;
+	float: none;
+	width: auto;
 }
+
 table td {
-word-break: break-all;
+	word-break: break-all;
 }
+
 .site-version {
 	vertical-align: super;
-	font-size: 0.5em;
+	font-size: .5em;
 	color: #595959;
 }
+
 @media all and (max-width: 1010px) and (min-width: 48em) {
- .password-strength,
- .confirm-parent {
-	  width: 100%;
+	.password-strength,
+	.confirm-parent {
+		width: 100%;
 	}
+
 	.install-configure-form .form-type-password {
-	  width: 100%;
+		width: 100%;
 	}
+
 	.password-confirm,
 	.password-field {
-	  float: none;
+		float: none;
 	}
+
 	.password-confirm-match {
-	  float: none;
-	  width: auto;
-	  max-width: 100%;
+		float: none;
+		width: auto;
+		max-width: 100%;
 	}
 }
-
-
-
-
-
-
-
 
 /*
-govCMS distro install page styles
-- To give govCMS look and feel
+GovCMS distro install page styles
+- To give GovCMS look and feel
 - Tim Hurley, Oct. 2017
+- Petr Illek, May 2018 (UI-Kit colors update)
 */
-
 .page-title {
 	display: block;
-	color: #395C6D;
+	color: #135E70;
 }
+
 .install-page {
-	background: linear-gradient(11deg,#24d4dc,#395C6D);
+	background: linear-gradient(11deg,#135E70,#0A343F);
 }
+
 .site-version {
 	float: right;
-	color: #395C6D;
+	color: #135E70;
 	font-size: 1em;
 	font-weight: 200;
 }
+
 .heading-a {
-	color: #395C6D;
+	color: #135E70;
 }
+
 #error {
-	color: #BB271A;
+	color: #ff635c;
 }
+
 #warning {
-	color: #AB5F22;
+	color: #f69900;
 }
+
 #ok {
-	color: #327357;
+	color: #0cac78;
 }
+
 .system-status-report:last-of-type {
 	margin-bottom: 2em;
 }
+
 main > a[href$="?rewrite=ok"] {
 	text-decoration: underline;
 }
+
 .button,
 .form-submit,
 main > a:not([href$="?rewrite=ok"]) {
 	display: inline-block;
 	padding: 6px 9px;
-	border: 1px solid #395C6D;
-	color: #395C6D;
+	border: 1px solid #135E70;
+	color: #135E70;
 	background: transparent;
 	border-radius: 3px;
 	margin: 5px 0;
@@ -119,45 +116,51 @@ main > a:not([href$="?rewrite=ok"]) {
 	font-weight: 600;
   font-size: 1.3em;
 }
+
 .button:active,
 .button:focus,
 main > a:not([href$="?rewrite=ok"]):focus,
 main > a:not([href$="?rewrite=ok"]):active {
-	background: #24d4dc;
+	background: #61daff;
 	color: #111;
 	text-decoration: none;
 }
+
 .button:hover,
 main > a:not([href$="?rewrite=ok"]):hover {
-	background: #395C6D;
+	background: #135E70;
 	color: #fff;
 	text-decoration: none;
 }
+
 @media (min-width: 48em) {
 	.task-list li {
-		color: #395C6D;
+		color: #135E70;
 	}
+
 	.task-list .done {
-	  color: #696969;
+		color: #696969;
 	}
+
 	.task-list .is-active {
-	  background: #395C6D;
+		background: #135E70;
 		color: #fff;
 	}
+
 	.task-list .is-active:after {
-	  border-left-color: #395C6D;
+		border-left-color: #135E70;
 		border-width: 1.3em;
 	}
 }
+
 .progress__bar {
-	border-color: #395C6D;
-	background: #24d4dc;
-	background-image: /*linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)),*/
-										linear-gradient(90deg, #24d4dc 0%, #4F8A97 50%, #24d4dc 100%);
+	border-color: #135E70;
+	background: #61daff;
+	background-image: linear-gradient(90deg, #61daff 0%, #135E70 50%, #61daff 100%);
 }
+
 pre,
 .backtrace {
-	background-color: #f0f3f5;
 	display: block;
 	padding: 9.5px;
 	margin: 1em 0 1px;
@@ -170,6 +173,7 @@ pre,
 	border: 1px solid #ccc;
 	border-radius: 4px;
 }
+
 .placeholder,
 code {
 	padding: 2px 4px;
@@ -178,58 +182,71 @@ code {
 	background-color: #f9f2f4;
 	border-radius: 4px;
 }
+
 .progress__bar,
 .progress__track {
 	border-radius: 3px;
 }
+
 .password-suggestions,
 .messages {
-  background: transparent;
-  border: 0;
-  border-radius: 1px;
-  -webkit-box-shadow: 0 0 8px #bbb;
-  box-shadow: 0 0 8px #bbb;
-  color: #333;
-  padding: 1.2em;
-  margin: 0 0 2em 0 !important;
+	background: transparent;
+	border: 0;
+	border-radius: 1px;
+	-webkit-box-shadow: 0 0 8px #bbb;
+	box-shadow: 0 0 8px #bbb;
+	color: #333;
+	padding: 1.2em;
+	margin: 0 0 2em 0 !important;
 }
+
 .messages--status {
-  border-left: 0.4em solid #007554 !important;
+	border-left: 0.4em solid #007554 !important;
 }
+
 .form-item-account-pass-pass2 {
 	margin-bottom: 0;
 }
+
 .password-suggestions {
-  margin-bottom: 2em;
-	border-left: 0.4em solid #24d4dc;
+	margin-bottom: 2em;
+	border-left: 0.4em solid #61daff;
 	color: #333 !important;
 }
+
 .password-suggestions ul {
-  padding: 0 15px;
+	padding: 0 15px;
 }
+
 .password-strength__indicator.is-strong {
-  background-color: #24d4dc;
+	background-color: #61daff;
 	width: 100% !important;
 }
+
 .password-strength__indicator.is-good {
-  background-color: #007554;
+	background-color: #0cac78;
 }
+
 .password-strength__indicator {
-  background-color: #395C6D;
+	background-color: #135E70;
 }
+
 .password-strength__indicator.is-fair {
-  background-color: #F1C85C;
+	background-color: #f69900;
 }
+
 .password-strength__indicator.is-weak {
-  background-color: #BB271A;
+	background-color: #ff635c;
 }
+
 ul.tips,
 div.description,
 .form-item .description {
-  color: #696969;
+	color: #696969;
 }
+
 .install-configure-form .form-text,
 .install-configure-form .password-strength,
 .install-configure-form .chosen-container {
-  width: 100% !important;
+	width: 100% !important;
 }
