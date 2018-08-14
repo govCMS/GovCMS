@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: content_approver
+label: 'Content Approver'
+weight: 2
+is_admin: null
