@@ -1,5 +1,5 @@
-# GovCMS 8 Layout
+# GovCMS8 Layouts
 
-The "GovCMS 8 Layout" module is used to ship layouts for GovCMS.
+The "GovCMS8 Layouts" module is used to ship layouts for GovCMS.
 
-These layouts are for content types and view modes. 
+These layouts are for content types and view modes.
