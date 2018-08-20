@@ -11,5 +11,5 @@ dependencies:
   - search_api
   - search_api_db
   - system
-package: 'govCMS Optional'
+package: 'GovCMS Content'
 version: 8.x-1.0-alpha2
