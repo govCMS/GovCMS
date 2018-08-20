@@ -10,7 +10,7 @@ It also create a test which can be used to showcase all the different paragraph 
 
 The content will be imported when the module is  **installed**.
 
-If you **uninstall** the module the content will be deleted (rolled back).
+If you **uninstall** the module the content will stay.
 
 Two Drush commands were created to import and rollback content:
 
