@@ -9,7 +9,7 @@ dependencies:
     - node
     - user
 id: govcms_blog_article_views
-label: 'govCMS Blog Article Views'
+label: 'GovCMS Blog Article Views'
 module: views
 description: ''
 tag: ''

@@ -1,5 +1,5 @@
 name: 'Featured image'
-description: 'Provides featured image field type for govCMS optional modules'
+description: 'Provides featured image field type for GovCMS Content Types'
 package: 'GovCMS Fields'
 type: module
 core: 8.x

@@ -9,7 +9,7 @@ dependencies:
     - node
     - user
 id: govcms_foi_views
-label: 'govCMS FOI Views'
+label: 'GovCMS FOI Views'
 module: views
 description: ''
 tag: ''

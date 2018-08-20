@@ -12,7 +12,7 @@ dependencies:
     - search_api
     - text
 id: govcms_views_searchapi_events
-label: 'govCMS Events Views'
+label: 'GovCMS Events Views'
 module: views
 description: ''
 tag: ''
