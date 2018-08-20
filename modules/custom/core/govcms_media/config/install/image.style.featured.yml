@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: featured
+label: Featured
+effects:
+  9db5d62f-c134-4dc6-bb77-eda136ac9b86:
+    uuid: 9db5d62f-c134-4dc6-bb77-eda136ac9b86
+    id: image_scale
+    weight: 1
+    data:
+      width: 1200
+      height: null
+      upscale: false

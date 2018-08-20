@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.featured
+label: Featured
+targetEntityType: media
+cache: true
