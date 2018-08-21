@@ -12,6 +12,7 @@ dependencies:
   - field
   - field_layout
   - file
+  - focal_point
   - image
   - inline_entity_form
   - layout_discovery

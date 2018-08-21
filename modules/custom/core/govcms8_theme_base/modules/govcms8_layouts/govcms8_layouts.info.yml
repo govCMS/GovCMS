@@ -5,4 +5,3 @@ package: GovCMS
 core: 8.x
 dependencies:
   - layout_discovery
-  - govcms8_theme_base

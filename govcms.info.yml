@@ -25,6 +25,7 @@ dependencies:
   - image
   - inline_form_errors
   - layout_discovery
+  - media
   - menu_ui
   - node
   - options
