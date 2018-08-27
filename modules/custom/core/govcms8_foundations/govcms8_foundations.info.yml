@@ -1,6 +1,6 @@
-name: 'GovCMS8 Theme Base'
+name: 'GovCMS8 Foundations'
 type: module
-description: GovCMS Theme Base Module.
+description: GovCMS8 Foundations Module.
 package: GovCMS
 core: 8.x
 dependencies:

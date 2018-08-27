@@ -4,7 +4,7 @@ description: "Provides example content and structure to build a sample OOTB site
 package: 'GovCMS Content'
 core: 8.x
 dependencies:
-  - govcms8_theme_base
+  - govcms8_foundations
   - govcms_media
   - govcms_content_types
   - govcms_blog_article
