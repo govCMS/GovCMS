@@ -17,6 +17,7 @@ dependencies:
   - panelizer
   - path
   - pathauto
+  - simple_sitemap
   - taxonomy
   - text
   - user
