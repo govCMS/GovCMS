@@ -106,7 +106,7 @@
         "drupal/redirect": "1.2.0",
         "drupal/restui": "1.15",
         "drupal/robotstxt": "1.2",
-        "drupal/search_api": "1.8",
+        "drupal/search_api": "1.10",
         "drupal/seckit": "1.0-alpha2",
         "drupal/shield": "1.2",
         "drupal/simple_oauth": "3.8.0",
