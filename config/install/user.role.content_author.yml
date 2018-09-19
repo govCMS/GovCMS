@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: content_author
+label: 'Content Author'
+weight: 3
+is_admin: null
