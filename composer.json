@@ -92,7 +92,7 @@
         "drupal/jsonapi": "2.0-beta1",
         "drupal/linked_field": "1.1.0",
         "drupal/linkit": "5.0-beta7",
-        "drupal/login_security": "1.4.0",
+        "drupal/login_security": "1.5",
         "drupal/memcache": "2.0-alpha5",
         "drupal/menu_trail_by_path": "1.1",
         "drupal/metatag": "1.5",
