@@ -59,6 +59,7 @@
     "require": {
         "php": "^7.1",
         "bower-asset/chosen": "1.8.2",
+        "bower-asset/dropzone": "5.5.0",
         "cweagans/composer-patches": "^1.6",
         "drupal-composer/drupal-scaffold": "^2.4",
         "drupal/admin_toolbar": "1.24.0",
@@ -114,7 +115,6 @@
         "drupal/username_enumeration_prevention": "1.0-beta1",
         "drupal/video_embed_field": "2.0",
         "drupal/webform": "5.0.0-rc15",
-        "bower-asset/dropzone": "^5.1",
         "govcms-asset/swiftmailer": "^5.4",
         "govcms-custom/govcms8_uikit": "^1.0",
         "govcms-custom/govcms8_uikit_starter": "^1.0",
