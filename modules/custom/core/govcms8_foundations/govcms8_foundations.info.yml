@@ -1,0 +1,13 @@
+name: 'GovCMS8 Foundations'
+type: module
+description: GovCMS8 Foundations Module.
+package: GovCMS
+core: 8.x
+dependencies:
+  - ds
+  - govcms8_calendar_item
+  - govcms8_layouts
+  - govcms8_modifiers
+  - entity_class_formatter
+  - entity_reference_display
+  - panelizer

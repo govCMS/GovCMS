@@ -1,0 +1,7 @@
+name: GovCMS8 Layouts
+type: module
+description: Provides layouts for the distribution.
+package: GovCMS
+core: 8.x
+dependencies:
+  - layout_discovery

@@ -1,11 +1,9 @@
-name: govCMS Search
+name: GovCMS Search
 type: module
 description: Provide default search functions.
-package: govCMS
+package: GovCMS
 core: 8.x
 dependencies:
-  - govcms_fields_attachment
-  - govcms_fields_featured_image
   - block
   - datetime_range
   - search_api

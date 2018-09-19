@@ -1,0 +1,9 @@
+name: 'News and Media'
+description: 'Provides News and Media content type and related configuration.'
+type: module
+core: 8.x
+dependencies:
+  - govcms_content_types
+  - options
+version: 8.x-1.0-alpha1
+package: 'GovCMS Content'

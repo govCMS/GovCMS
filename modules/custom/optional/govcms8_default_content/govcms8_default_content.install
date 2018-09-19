@@ -26,12 +26,3 @@ function govcms8_default_content_install() {
     $menu_link->save();
   }
 }
-
-/**
- * Implements hook_uninstall().
- */
-function govcms8_default_content_uninstall() {
-  if (!\Drupal::service('config.installer')->isSyncing()) {
-    \Drupal::classResolver()->getInstanceFromDefinition(InstallHelper::class)->deleteImportedContent();
-  }
-}

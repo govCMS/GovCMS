@@ -1,0 +1,5 @@
+name: GovCMS8 Calendar Item
+type: module
+description: Provides custom calendar item formatter and DS field for UI-Kit.
+package: GovCMS
+core: 8.x

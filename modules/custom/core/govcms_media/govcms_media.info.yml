@@ -1,5 +1,6 @@
-name: 'govCMS Media '
+name: 'GovCMS Media '
 description: 'Provide media management functionality.'
+package: GovCMS
 type: module
 core: 8.x
 dependencies:
@@ -11,7 +12,7 @@ dependencies:
   - field
   - field_layout
   - file
-  - govcms_media
+  - focal_point
   - image
   - inline_entity_form
   - layout_discovery

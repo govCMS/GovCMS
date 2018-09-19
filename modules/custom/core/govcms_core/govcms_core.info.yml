@@ -1,9 +1,0 @@
-name: 'GovCMS Core'
-type: module
-description: Core GovCMS Module.
-package: govCMS
-core: 8.x
-dependencies:
-  - govcms8_calendar_item
-  - govcms8_layout
-  - govcms8_modifiers

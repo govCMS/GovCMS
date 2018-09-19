@@ -1,0 +1,15 @@
+name: Event
+description: 'Provides Event content type and related configuration. '
+type: module
+core: 8.x
+dependencies:
+  - block
+  - datetime_range
+  - facets
+  - govcms_content_types
+  - govcms_search
+  - search_api
+  - search_api_db
+  - system
+package: 'GovCMS Content'
+version: 8.x-1.0-alpha2

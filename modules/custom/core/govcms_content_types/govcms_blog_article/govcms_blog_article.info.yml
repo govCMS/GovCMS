@@ -1,0 +1,8 @@
+name: 'Blog article'
+description: 'Provides Blog article content type and related configuration.'
+type: module
+core: 8.x
+dependencies:
+  - govcms_content_types
+version: 8.x-1.0-alpha1
+package: 'GovCMS Content'

@@ -1,0 +1,12 @@
+name: GovCMS8 Modifiers
+type: module
+description: Provides modifiers for the distribution.
+package: GovCMS
+core: 8.x
+dependencies:
+  - paragraphs
+  - modifiers
+  - entity_browser
+  - entity_class_formatter
+  - entity_reference_display
+  - govcms_media

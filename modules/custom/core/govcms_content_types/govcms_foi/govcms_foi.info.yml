@@ -1,0 +1,9 @@
+name: FOI
+description: 'Provides FOI content type and related configuration.'
+type: module
+core: 8.x
+dependencies:
+  - datetime
+  - govcms_content_types
+version: 8.x-1.0-alpha1
+package: 'GovCMS Content'
