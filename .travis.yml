@@ -12,8 +12,9 @@ addons:
     - govcms8.local
 
 branches:
-  except:
-     - master
+  only:
+     # Only run Travis on major branches (1.x, 8.x-5.x etc) to avoid double builds
+     - /^\d\.x(-\d\.x)?(-\S*)?$/
 
 cache:
   bundler:        true
