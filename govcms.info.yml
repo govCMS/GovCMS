@@ -1,10 +1,10 @@
-name:                   govCMS
+name:                   GovCMS
 type:                   profile
-description:            'A govCMS Drupal Distribution for government and the public sector in Australia.'
+description:            'A GovCMS Drupal Distribution for government and the public sector in Australia.'
 core:                   8.x
 
 distribution:
-  name:                 govCMS
+  name:                 GovCMS
   langcode:             en
   install:
     theme:              govcmsinstall
