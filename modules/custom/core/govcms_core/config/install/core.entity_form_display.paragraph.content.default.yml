@@ -1,0 +1,97 @@
+uuid: 63d1168e-96b9-43ce-9a05-1ff2909edeb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.content.field_body
+    - field.field.paragraph.content.field_c_colour_classes
+    - field.field.paragraph.content.field_c_style_classes
+    - field.field.paragraph.content.field_heading
+    - field.field.paragraph.content.field_modifiers
+    - field.field.paragraph.content.field_read_more
+    - field.field.paragraph.content.field_title
+    - paragraphs.paragraphs_type.content
+  module:
+    - content_moderation
+    - field_layout
+    - layout_discovery
+    - link
+    - paragraphs
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.content.default
+targetEntityType: paragraph
+bundle: content
+mode: default
+content:
+  field_body:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_c_colour_classes:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_c_style_classes:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_heading:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_modifiers:
+    type: paragraphs
+    weight: 6
+    region: content
+    settings:
+      title: Modifiers
+      title_plural: Modifier
+      edit_mode: closed
+      closed_mode: preview
+      autocollapse: none
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+  field_read_more:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 7
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

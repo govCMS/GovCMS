@@ -1,0 +1,20 @@
+uuid: 8f73b573-d1ea-434b-b59d-122745f4c64e
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+id: paragraph.field_mod_parallax
+field_name: field_mod_parallax
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

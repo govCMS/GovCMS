@@ -1,0 +1,66 @@
+{#
+/**
+* Calendar item with date region.
+*
+* List of regions: date, title, info, summary, tags.
+*/
+#}
+
+{%
+  set classes = [
+  'calendar-item',
+]
+%}
+
+<div {{ attributes.addClass(classes) }}>
+  {{ title_suffix.contextual_links }}
+
+  {% block date %}
+    {% if content.date|render|striptags|trim %}
+      <div class="calendar-item__date">
+        {{ content.date }}
+      </div>
+    {% endif %}
+  {% endblock %}
+
+  {% block content %}
+    {% if content %}
+      <div class="calendar-item__content">
+
+        {% block title %}
+          {% if content.title|render|striptags|trim %}
+            <h3 class="calendar-item__title">
+              {{ content.title }}
+            </h3>
+          {% endif %}
+        {% endblock %}
+
+        {% block info %}
+          {% if content.info|render|striptags|trim %}
+            <div class="calendar-item__info">
+              {{ content.info }}
+            </div>
+          {% endif %}
+        {% endblock %}
+
+        {% block summary %}
+          {% if content.summary|render|striptags|trim %}
+            <div class="calendar-item__summary">
+              {{ content.summary }}
+            </div>
+          {% endif %}
+        {% endblock %}
+
+        {% block tags %}
+          {% if content.tags|render|striptags|trim %}
+            <div class="calendar-item__tags">
+              {{ content.tags }}
+            </div>
+          {% endif %}
+        {% endblock %}
+
+      </div>
+    {% endif %}
+  {% endblock %}
+
+</div>

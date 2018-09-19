@@ -1,0 +1,23 @@
+uuid: c36b3a1f-ad35-4171-9a1f-d7a1aeae2454
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mod_padding_r_size
+    - paragraphs.paragraphs_type.padding_modifier
+id: paragraph.padding_modifier.field_mod_padding_r_size
+field_name: field_mod_padding_r_size
+entity_type: paragraph
+bundle: padding_modifier
+label: 'Right Padding Size'
+description: 'The size of the right padding.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

@@ -40,15 +40,20 @@ dependencies:
   # Contrib modules
   - adminimal_admin_toolbar
   - admin_toolbar_tools
+  - ds
   - chosen
   - entity_browser
   - entity_embed
   - features_ui
   - field_group
+  - focal_point
   - honeypot
   - linkit
+  - linked_field
   - login_security
   - module_filter
+  - panelizer
+  - paragraphs
   - password_policy
   - password_policy_length
   - password_policy_characters
@@ -60,6 +65,7 @@ dependencies:
   # govCMS core modules
   - govcms_search
   - govcms_media
+  - govcms_core
 
 dependencies_optional:
   - govcms_optional_govcms_blog_article
@@ -67,7 +73,10 @@ dependencies_optional:
   - govcms_optional_govcms_foi
   - govcms_optional_govcms_news_and_media
   - govcms_optional_govcms_standard_page
+  - govcms8_default_content
 
 themes:
   - adminimal_theme
   - govcmsui
+  - govcms8_uikit_starter
+  - govcms8_uikit

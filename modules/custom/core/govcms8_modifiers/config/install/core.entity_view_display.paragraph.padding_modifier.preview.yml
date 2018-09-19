@@ -1,0 +1,47 @@
+uuid: 85a6bb06-2c08-4618-99d3-3e546b8adc1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.padding_modifier.field_mod_media_query
+    - field.field.paragraph.padding_modifier.field_mod_padding_b_size
+    - field.field.paragraph.padding_modifier.field_mod_padding_b_units
+    - field.field.paragraph.padding_modifier.field_mod_padding_l_size
+    - field.field.paragraph.padding_modifier.field_mod_padding_l_units
+    - field.field.paragraph.padding_modifier.field_mod_padding_r_size
+    - field.field.paragraph.padding_modifier.field_mod_padding_r_units
+    - field.field.paragraph.padding_modifier.field_mod_padding_t_size
+    - field.field.paragraph.padding_modifier.field_mod_padding_t_units
+    - paragraphs.paragraphs_type.padding_modifier
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.padding_modifier.preview
+targetEntityType: paragraph
+bundle: padding_modifier
+mode: preview
+content:
+  field_mod_media_query:
+    weight: 0
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  created: true
+  field_mod_padding_b_size: true
+  field_mod_padding_b_units: true
+  field_mod_padding_l_size: true
+  field_mod_padding_l_units: true
+  field_mod_padding_r_size: true
+  field_mod_padding_r_units: true
+  field_mod_padding_t_size: true
+  field_mod_padding_t_units: true
+  uid: true

@@ -1,0 +1,21 @@
+uuid: 20b37844-967a-4937-bd97-46ba13e8ae8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mod_padding_r_units
+    - paragraphs.paragraphs_type.padding_modifier
+  module:
+    - options
+id: paragraph.padding_modifier.field_mod_padding_r_units
+field_name: field_mod_padding_r_units
+entity_type: paragraph
+bundle: padding_modifier
+label: 'Right Padding Units'
+description: 'The units for the right padding.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

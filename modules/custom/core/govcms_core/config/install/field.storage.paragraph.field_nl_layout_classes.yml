@@ -1,0 +1,39 @@
+uuid: 5f3e7e04-8277-44c4-ad12-97c348359577
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_nl_layout_classes
+field_name: field_nl_layout_classes
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: list-layout--12
+      label: 'Full width'
+    -
+      value: list-layout--equal
+      label: 'Equal (dynamic up to 6 item)'
+    -
+      value: list-layout--6-6
+      label: Halves
+    -
+      value: list-layout--4-4-4
+      label: Thirds
+    -
+      value: list-layout--3-3-3-3
+      label: Quarters
+    -
+      value: list-layout--2-2-2-2-2-2
+      label: Sixths
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

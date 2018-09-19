@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.summary
     - node.type.govcms_foi
     - system.menu.main
   module:
@@ -71,7 +71,8 @@ display:
       row:
         type: 'entity:node'
         options:
-          view_mode: teaser
+          relationship: none
+          view_mode: summary
       fields:
         title:
           id: title
@@ -164,6 +165,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      css_class: 'views--layout views--layout--full-width'
     cache_metadata:
       max-age: -1
       contexts:
@@ -218,10 +220,10 @@ display:
           id: 0
           total_pages: null
           tags:
-            previous: ‹‹
-            next: ››
-            first: '« First'
-            last: 'Last »'
+            previous: Previous
+            next: Next
+            first: First
+            last: Last
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'

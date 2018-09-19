@@ -4,15 +4,19 @@ dependencies:
   config:
     - field.field.node.govcms_foi.body
     - field.field.node.govcms_foi.field_attachments
+    - field.field.node.govcms_foi.field_components
     - field.field.node.govcms_foi.field_foi_date_listed
     - field.field.node.govcms_foi.field_foi_log_reference_id
     - field.field.node.govcms_foi.field_foi_proposed_deletion_date
     - field.field.node.govcms_foi.field_foi_release_type
+    - field.field.node.govcms_foi.field_thumbnail
+    - field.field.node.govcms_foi.panelizer
     - node.type.govcms_foi
   module:
     - datetime
+    - entity_reference_revisions
     - field_layout
-    - layout_discovery
+    - file
     - panelizer
     - text
     - user
@@ -33,21 +37,29 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
   field_attachments:
-    weight: 108
+    weight: 2
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_components:
+    weight: 7
     label: above
     settings:
       view_mode: default
-      link: false
+      link: ''
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    type: entity_reference_revisions_entity_view
     region: content
   field_foi_date_listed:
-    weight: 103
+    weight: 3
     label: above
     settings:
       format_type: medium
@@ -56,7 +68,7 @@ content:
     type: datetime_default
     region: content
   field_foi_log_reference_id:
-    weight: 105
+    weight: 5
     label: above
     settings:
       link_to_entity: false
@@ -64,7 +76,7 @@ content:
     type: string
     region: content
   field_foi_proposed_deletion_date:
-    weight: 107
+    weight: 6
     label: above
     settings:
       format_type: medium
@@ -73,16 +85,25 @@ content:
     type: datetime_default
     region: content
   field_foi_release_type:
-    weight: 104
+    weight: 4
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
+  field_thumbnail:
+    weight: 8
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
   links:
-    weight: 100
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  panelizer: true

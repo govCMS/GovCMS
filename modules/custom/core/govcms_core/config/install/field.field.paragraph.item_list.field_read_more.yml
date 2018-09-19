@@ -1,0 +1,23 @@
+uuid: fa063dc5-ad5c-442a-9de2-6d1e0f6ce70c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_read_more
+    - paragraphs.paragraphs_type.item_list
+  module:
+    - link
+id: paragraph.item_list.field_read_more
+field_name: field_read_more
+entity_type: paragraph
+bundle: item_list
+label: 'Read more'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

@@ -1,0 +1,23 @@
+uuid: eee1a751-d705-4ed4-ae39-d544f4999753
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mod_padding_b_size
+    - paragraphs.paragraphs_type.padding_modifier
+id: paragraph.padding_modifier.field_mod_padding_b_size
+field_name: field_mod_padding_b_size
+entity_type: paragraph
+bundle: padding_modifier
+label: 'Bottom Padding Size'
+description: 'The size of the bottom padding.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

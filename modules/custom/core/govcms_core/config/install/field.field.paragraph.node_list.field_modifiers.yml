@@ -1,0 +1,77 @@
+uuid: acab242b-9490-489d-be96-2f823712c7ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_modifiers
+    - paragraphs.paragraphs_type.color_background_modifier
+    - paragraphs.paragraphs_type.custom_linear_gradient_modifier
+    - paragraphs.paragraphs_type.image_bg_modifier
+    - paragraphs.paragraphs_type.node_list
+    - paragraphs.paragraphs_type.padding_modifier
+    - paragraphs.paragraphs_type.parallax_bg_modifier
+    - paragraphs.paragraphs_type.relative_height_modifier
+  module:
+    - entity_reference_revisions
+id: paragraph.node_list.field_modifiers
+field_name: field_modifiers
+entity_type: paragraph
+bundle: node_list
+label: Modifiers
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      image_bg_modifier: image_bg_modifier
+      color_background_modifier: color_background_modifier
+      custom_linear_gradient_modifier: custom_linear_gradient_modifier
+      padding_modifier: padding_modifier
+      parallax_bg_modifier: parallax_bg_modifier
+      relative_height_modifier: relative_height_modifier
+    target_bundles_drag_drop:
+      content:
+        weight: 12
+        enabled: false
+      image_bg_modifier:
+        enabled: true
+        weight: 13
+      accordion:
+        weight: 14
+        enabled: false
+      item:
+        weight: 14
+        enabled: false
+      accordion_group:
+        weight: 15
+        enabled: false
+      item_list:
+        weight: 15
+        enabled: false
+      color_background_modifier:
+        enabled: true
+        weight: 17
+      custom_linear_gradient_modifier:
+        enabled: true
+        weight: 17
+      node_list:
+        weight: 17
+        enabled: false
+      custom_colors_modifier:
+        weight: 18
+        enabled: false
+      padding_modifier:
+        enabled: true
+        weight: 18
+      parallax_bg_modifier:
+        enabled: true
+        weight: 19
+      relative_height_modifier:
+        enabled: true
+        weight: 20
+field_type: entity_reference_revisions

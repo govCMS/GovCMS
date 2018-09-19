@@ -1,0 +1,102 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search
+    - field.field.node.govcms_foi.body
+    - field.field.node.govcms_foi.field_attachments
+    - field.field.node.govcms_foi.field_components
+    - field.field.node.govcms_foi.field_foi_date_listed
+    - field.field.node.govcms_foi.field_foi_log_reference_id
+    - field.field.node.govcms_foi.field_foi_proposed_deletion_date
+    - field.field.node.govcms_foi.field_foi_release_type
+    - field.field.node.govcms_foi.field_thumbnail
+    - field.field.node.govcms_foi.panelizer
+    - node.type.govcms_foi
+  module:
+    - datetime
+    - ds
+    - field_layout
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+  ds:
+    layout:
+      id: search
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings: {  }
+    regions:
+      title:
+        - node_title
+      info:
+        - field_foi_date_listed
+        - field_foi_log_reference_id
+        - field_foi_release_type
+      summary:
+        - body
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: ''
+          class: ''
+id: node.govcms_foi.search
+targetEntityType: node
+bundle: govcms_foi
+mode: search
+content:
+  body:
+    type: text_summary_or_trimmed
+    weight: 4
+    region: summary
+    label: hidden
+    settings:
+      trim_length: 160
+    third_party_settings: {  }
+  field_foi_date_listed:
+    type: datetime_default
+    weight: 1
+    region: info
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: standard_date
+    third_party_settings: {  }
+  field_foi_log_reference_id:
+    type: string
+    weight: 2
+    region: info
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_foi_release_type:
+    type: string
+    weight: 3
+    region: info
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  field_attachments: true
+  field_components: true
+  field_foi_proposed_deletion_date: true
+  field_thumbnail: true
+  links: true
+  panelizer: true

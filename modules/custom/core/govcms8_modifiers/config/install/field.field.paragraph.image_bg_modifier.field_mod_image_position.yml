@@ -1,0 +1,21 @@
+uuid: d0f28612-6eb7-4401-9d64-487f79839bdd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mod_image_position
+    - paragraphs.paragraphs_type.image_bg_modifier
+  module:
+    - options
+id: paragraph.image_bg_modifier.field_mod_image_position
+field_name: field_mod_image_position
+entity_type: paragraph
+bundle: image_bg_modifier
+label: 'Image position'
+description: 'Define background image position.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

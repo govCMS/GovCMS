@@ -4,15 +4,19 @@ dependencies:
   config:
     - field.field.node.govcms_event.body
     - field.field.node.govcms_event.field_attachments
+    - field.field.node.govcms_event.field_components
     - field.field.node.govcms_event.field_event_categories
     - field.field.node.govcms_event.field_event_date
     - field.field.node.govcms_event.field_event_location
     - field.field.node.govcms_event.field_featured_image
+    - field.field.node.govcms_event.field_thumbnail
+    - field.field.node.govcms_event.panelizer
     - node.type.govcms_event
   module:
     - datetime_range
+    - entity_reference_revisions
     - field_layout
-    - layout_discovery
+    - file
     - panelizer
     - text
     - user
@@ -38,13 +42,21 @@ content:
     third_party_settings: {  }
     region: content
   field_attachments:
-    weight: 4
+    weight: 2
     label: above
     settings:
-      link: true
-      view_mode: default
+      use_description_as_link_text: true
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    type: file_default
+    region: content
+  field_components:
+    weight: 107
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
     region: content
   field_event_:
     weight: 106
@@ -55,7 +67,7 @@ content:
     type: entity_reference_label
     region: content
   field_event_date:
-    weight: 3
+    weight: 5
     label: above
     settings:
       separator: '-'
@@ -65,7 +77,7 @@ content:
     type: daterange_default
     region: content
   field_event_location:
-    weight: 2
+    weight: 4
     label: above
     settings:
       link_to_entity: false
@@ -73,18 +85,26 @@ content:
     type: string
     region: content
   field_featured_image:
-    weight: 0
-    label: hidden
+    weight: 108
+    label: above
     settings:
       link: true
-      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    type: entity_reference_label
+    region: content
+  field_thumbnail:
+    weight: 109
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   links:
-    weight: 5
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   field_event_categories: true
+  panelizer: true

@@ -1,0 +1,30 @@
+uuid: e4ddfdf3-fbb1-48a5-8a72-0a007e2c94b1
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_il_colour_classes
+field_name: field_il_colour_classes
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: color--alt
+      label: Alt
+    -
+      value: color--dark
+      label: Dark
+    -
+      value: color--dark-alt
+      label: 'Dark Alt'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

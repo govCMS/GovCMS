@@ -1,0 +1,94 @@
+uuid: d645532b-f110-43b1-9d1a-a5dfade2a4fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.padding_modifier.field_mod_media_query
+    - field.field.paragraph.padding_modifier.field_mod_padding_b_size
+    - field.field.paragraph.padding_modifier.field_mod_padding_b_units
+    - field.field.paragraph.padding_modifier.field_mod_padding_l_size
+    - field.field.paragraph.padding_modifier.field_mod_padding_l_units
+    - field.field.paragraph.padding_modifier.field_mod_padding_r_size
+    - field.field.paragraph.padding_modifier.field_mod_padding_r_units
+    - field.field.paragraph.padding_modifier.field_mod_padding_t_size
+    - field.field.paragraph.padding_modifier.field_mod_padding_t_units
+    - paragraphs.paragraphs_type.padding_modifier
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.padding_modifier.default
+targetEntityType: paragraph
+bundle: padding_modifier
+mode: default
+content:
+  field_mod_media_query:
+    weight: 14
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_mod_padding_b_size:
+    weight: 10
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_mod_padding_b_units:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_mod_padding_l_size:
+    weight: 12
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_mod_padding_l_units:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_mod_padding_r_size:
+    weight: 8
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_mod_padding_r_units:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_mod_padding_t_size:
+    weight: 6
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_mod_padding_t_units:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

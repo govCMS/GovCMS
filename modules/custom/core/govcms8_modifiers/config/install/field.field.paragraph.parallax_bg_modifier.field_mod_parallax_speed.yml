@@ -1,0 +1,23 @@
+uuid: 9ff1eb4a-67eb-4104-b347-9b780d988923
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mod_parallax_speed
+    - paragraphs.paragraphs_type.parallax_bg_modifier
+id: paragraph.parallax_bg_modifier.field_mod_parallax_speed
+field_name: field_mod_parallax_speed
+entity_type: paragraph
+bundle: parallax_bg_modifier
+label: 'Parallax Speed'
+description: 'Select the scroll speed in range from -1.0 to 2.0. (Set 1 for image scroll same speed as page. Set 0 for static image.)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

@@ -1,0 +1,4 @@
+services:
+  plugin.manager.import_processor:
+    class: Drupal\govcms8_default_content\ImportProcessorManager
+    parent: default_plugin_manager

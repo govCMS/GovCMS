@@ -1,0 +1,76 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search
+    - field.field.node.govcms_standard_page.body
+    - field.field.node.govcms_standard_page.field_attachments
+    - field.field.node.govcms_standard_page.field_components
+    - field.field.node.govcms_standard_page.field_featured_image
+    - field.field.node.govcms_standard_page.field_thumbnail
+    - field.field.node.govcms_standard_page.panelizer
+    - node.type.govcms_standard_page
+  module:
+    - ds
+    - field_layout
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+  ds:
+    layout:
+      id: search
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings: {  }
+    regions:
+      title:
+        - node_title
+      info:
+        - node_post_date
+      summary:
+        - body
+    fields:
+      node_post_date:
+        plugin_id: node_post_date
+        weight: 1
+        label: hidden
+        formatter: ds_post_date_standard_date
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: ''
+          class: ''
+id: node.govcms_standard_page.search
+targetEntityType: node
+bundle: govcms_standard_page
+mode: search
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 2
+    settings:
+      trim_length: 160
+    third_party_settings: {  }
+    region: summary
+hidden:
+  field_attachments: true
+  field_components: true
+  field_featured_image: true
+  field_thumbnail: true
+  links: true
+  panelizer: true

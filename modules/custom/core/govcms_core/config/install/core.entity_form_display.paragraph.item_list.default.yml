@@ -1,0 +1,118 @@
+uuid: 7b934799-f8f0-4b5a-b157-e0d6444d3e1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.item_list.field_body
+    - field.field.paragraph.item_list.field_heading
+    - field.field.paragraph.item_list.field_il_colour_classes
+    - field.field.paragraph.item_list.field_il_items
+    - field.field.paragraph.item_list.field_il_layout_classes
+    - field.field.paragraph.item_list.field_il_style_classes
+    - field.field.paragraph.item_list.field_il_view_mode
+    - field.field.paragraph.item_list.field_modifiers
+    - field.field.paragraph.item_list.field_read_more
+    - field.field.paragraph.item_list.field_title
+    - paragraphs.paragraphs_type.item_list
+  module:
+    - field_layout
+    - layout_discovery
+    - link
+    - paragraphs
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.item_list.default
+targetEntityType: paragraph
+bundle: item_list
+mode: default
+content:
+  field_body:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_heading:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_il_colour_classes:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_il_items:
+    type: entity_reference_paragraphs
+    weight: 3
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: preview
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: item
+    third_party_settings: {  }
+    region: content
+  field_il_layout_classes:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_il_style_classes:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_il_view_mode:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_modifiers:
+    weight: 9
+    settings:
+      title: Modifier
+      title_plural: Modifiers
+      edit_mode: closed
+      closed_mode: preview
+      autocollapse: none
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    type: paragraphs
+    region: content
+  field_read_more:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  moderation_state: true
+  status: true
+  uid: true

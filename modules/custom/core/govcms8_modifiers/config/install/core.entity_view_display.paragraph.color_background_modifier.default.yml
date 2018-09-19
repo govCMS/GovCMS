@@ -1,0 +1,59 @@
+uuid: b4b68fed-0624-43b5-817b-e3a46636017b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.color_background_modifier.field_mod_bc_bg_color_val
+    - field.field.paragraph.color_background_modifier.field_mod_bc_bg_h_color_val
+    - field.field.paragraph.color_background_modifier.field_mod_media_query
+    - field.field.paragraph.color_background_modifier.field_mod_transition_duration
+    - paragraphs.paragraphs_type.color_background_modifier
+id: paragraph.color_background_modifier.default
+targetEntityType: paragraph
+bundle: color_background_modifier
+mode: default
+content:
+  field_mod_bc_bg_color_val:
+    type: string
+    weight: 0
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_mod_bc_bg_h_color_val:
+    type: string
+    weight: 1
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_mod_media_query:
+    type: string
+    weight: 3
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_mod_mod_bc_bg_val:
+    type: string
+    weight: 0
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_mod_transition_duration:
+    type: number_decimal
+    weight: 2
+    region: content
+    label: inline
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,23 @@
+uuid: 0fe4dfe4-b6f5-4046-83b5-e7f6e3448492
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nl_layout_classes
+    - paragraphs.paragraphs_type.node_list
+  module:
+    - options
+id: paragraph.node_list.field_nl_layout_classes
+field_name: field_nl_layout_classes
+entity_type: paragraph
+bundle: node_list
+label: Layout
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: list-layout--12
+default_value_callback: ''
+settings: {  }
+field_type: list_string

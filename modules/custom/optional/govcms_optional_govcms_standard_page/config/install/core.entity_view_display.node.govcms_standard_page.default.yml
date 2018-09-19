@@ -4,11 +4,15 @@ dependencies:
   config:
     - field.field.node.govcms_standard_page.body
     - field.field.node.govcms_standard_page.field_attachments
+    - field.field.node.govcms_standard_page.field_components
     - field.field.node.govcms_standard_page.field_featured_image
+    - field.field.node.govcms_standard_page.field_thumbnail
+    - field.field.node.govcms_standard_page.panelizer
     - node.type.govcms_standard_page
   module:
+    - entity_reference_revisions
     - field_layout
-    - layout_discovery
+    - file
     - panelizer
     - text
     - user
@@ -29,31 +33,47 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 1
+    weight: 101
     settings: {  }
     third_party_settings: {  }
     region: content
   field_attachments:
-    type: entity_reference_entity_view
-    weight: 2
+    weight: 102
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_components:
+    type: entity_reference_revisions_entity_view
+    weight: 106
     label: above
     settings:
       view_mode: default
-      link: false
+      link: ''
     third_party_settings: {  }
     region: content
   field_featured_image:
-    type: entity_reference_entity_view
-    weight: 0
-    label: hidden
+    weight: 107
+    label: above
     settings:
-      view_mode: default
-      link: false
+      link: true
     third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_thumbnail:
+    weight: 108
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   links:
-    weight: 3
+    weight: 100
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  panelizer: true

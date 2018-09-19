@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.teaser_small
     - node.type.govcms_news_and_media
     - system.menu.main
   module:
@@ -230,7 +231,7 @@ display:
         style: false
         row: false
       hide_attachment_summary: true
-      css_class: list-group
+      css_class: 'views--layout views--layout--full-width'
       pager:
         type: full
         options:
@@ -239,10 +240,10 @@ display:
           id: 0
           total_pages: null
           tags:
-            previous: ‹‹
-            next: ››
-            first: '« First'
-            last: 'Last »'
+            previous: Previous
+            next: Next
+            first: First
+            last: Last
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -255,14 +256,14 @@ display:
       style:
         type: default
         options:
-          row_class: list-group-item
+          row_class: views-row
           default_row_class: false
           uses_fields: false
       row:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: teaser
+          view_mode: teaser_small
     cache_metadata:
       max-age: -1
       contexts:

@@ -1,0 +1,33 @@
+uuid: 4b5ef3c9-e25d-48cd-a368-83ecf24be8e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.content.field_body
+    - field.field.paragraph.content.field_heading
+    - field.field.paragraph.content.field_title
+    - paragraphs.paragraphs_type.content
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.content.preview
+targetEntityType: paragraph
+bundle: content
+mode: preview
+content:
+  field_title:
+    type: string
+    weight: 0
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  field_body: true
+  field_heading: true

@@ -1,0 +1,202 @@
+####
+# Page layouts
+####
+page_12_12:
+  label: Stacked
+  category: "GovCMS: Page"
+  template: templates/page_layouts/page_12_12
+  icon: templates/page_layouts/images/page_12_12.png
+  regions:
+    header:
+      label: Header
+    content_top:
+      label: Content top
+    content:
+      label: Content
+    sidebar:
+      label: Sidebar
+    content_bottom:
+      label: Content bottom
+    footer:
+      label: Footer
+page_edgy:
+  label: Edge to edge
+  category: "GovCMS: Page"
+  template: templates/page_layouts/page_edgy
+  icon: templates/page_layouts/images/page_edgy.png
+  regions:
+    header:
+      label: Header
+    content_top:
+      label: Content top
+    content:
+      label: Content
+    sidebar:
+      label: Sidebar
+    content_bottom:
+      label: Content bottom
+    footer:
+      label: Footer
+page_6_6:
+  label: Two columns (1:1)
+  category: "GovCMS: Page"
+  template: templates/page_layouts/page_6_6
+  icon: templates/page_layouts/images/page_6_6.png
+  regions:
+    header:
+      label: Header
+    content_top:
+      label: Content top
+    content:
+      label: Content
+    sidebar:
+      label: Sidebar
+    content_bottom:
+      label: Content bottom
+    footer:
+      label: Footer
+page_8_4:
+  label: Sidebar Right (2:1)
+  category: "GovCMS: Page"
+  template: templates/page_layouts/page_8_4
+  icon: templates/page_layouts/images/page_8_4.png
+  regions:
+    header:
+      label: Header
+    content_top:
+      label: Content top
+    content:
+      label: Content
+    sidebar:
+      label: Sidebar
+    content_bottom:
+      label: Content bottom
+    footer:
+      label: Footer
+page_4_8:
+  label: Sidebar Left (1:2)
+  category: "GovCMS: Page"
+  template: templates/page_layouts/page_4_8
+  icon: templates/page_layouts/images/page_4_8.png
+  regions:
+    header:
+      label: Header
+    content_top:
+      label: Content top
+    content:
+      label: Content
+    sidebar:
+      label: Sidebar
+    content_bottom:
+      label: Content bottom
+    footer:
+      label: Footer
+####
+# Viewmode layouts
+####
+calendar_item:
+  label: Calendar Item
+  category: "GovCMS: Viewmode"
+  template: templates/viewmode_layouts/calendar_item
+  icon: templates/viewmode_layouts/images/calendar_item.png
+  regions:
+    title:
+      label: Title
+    info:
+      label: Info
+    summary:
+      label: Summary
+    tags:
+      label: Tags
+    date:
+      label: Date
+search:
+  label: Search
+  category: "GovCMS: Viewmode"
+  template: templates/viewmode_layouts/search
+  icon: templates/viewmode_layouts/images/search.png
+  regions:
+    title:
+      label: Title
+    info:
+      label: Info
+    summary:
+      label: Summary
+    tags:
+      label: Tags
+stack_simple:
+  label: Stack simple
+  category: "GovCMS: Viewmode"
+  template: templates/viewmode_layouts/stack_simple
+  icon: templates/viewmode_layouts/images/stack_simple.png
+  regions:
+    title:
+      label: Title
+    info:
+      label: Info
+    tags:
+      label: Tags
+    image:
+      label: Image
+stack_detail:
+  label: Stack detail
+  category: "GovCMS: Viewmode"
+  template: templates/viewmode_layouts/stack_detail
+  icon: templates/viewmode_layouts/images/stack_detail.png
+  regions:
+    title:
+      label: Title
+    info:
+      label: Info
+    summary:
+      label: Summary
+    tags:
+      label: Tags
+    image:
+      label: Image
+summary:
+  label: Summary
+  category: "GovCMS: Viewmode"
+  template: templates/viewmode_layouts/summary
+  icon: templates/viewmode_layouts/images/summary.png
+  regions:
+    title:
+      label: Title
+    info:
+      label: Info
+    summary:
+      label: Summary
+    tags:
+      label: Tags
+teaser_small:
+  label: Teaser small
+  category: "GovCMS: Viewmode"
+  template: templates/viewmode_layouts/teaser_small
+  icon: templates/viewmode_layouts/images/teaser_small.png
+  regions:
+    title:
+      label: Title
+    info:
+      label: Info
+    summary:
+      label: Summary
+    tags:
+      label: Tags
+    image:
+      label: Image
+teaser:
+  label: Teaser
+  category: "GovCMS: Viewmode"
+  template: templates/viewmode_layouts/teaser
+  icon: templates/viewmode_layouts/images/teaser.png
+  regions:
+    title:
+      label: Title
+    info:
+      label: Info
+    summary:
+      label: Summary
+    tags:
+      label: Tags
+    image:
+      label: Image

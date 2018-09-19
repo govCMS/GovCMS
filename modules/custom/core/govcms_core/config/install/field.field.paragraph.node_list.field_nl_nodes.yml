@@ -1,0 +1,25 @@
+uuid: ea2a30c2-9edc-4ac6-96ed-5a8345d5a11b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nl_nodes
+    - paragraphs.paragraphs_type.node_list
+id: paragraph.node_list.field_nl_nodes
+field_name: field_nl_nodes
+entity_type: paragraph
+bundle: node_list
+label: Nodes
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: node_list_reference
+      display_name: node_list_entity_reference
+      arguments: {  }
+field_type: entity_reference

@@ -1,0 +1,19 @@
+uuid: 6b579455-90cd-457e-8cf0-730d85a45138
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mod_media_query
+    - paragraphs.paragraphs_type.parallax_bg_modifier
+id: paragraph.parallax_bg_modifier.field_mod_media_query
+field_name: field_mod_media_query
+entity_type: paragraph
+bundle: parallax_bg_modifier
+label: 'Media Query'
+description: 'Set the media query for this modifier - e.g. "(min-width:768px)". If there are multiple modifiers of the same type, one without the media query have to be at the top.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

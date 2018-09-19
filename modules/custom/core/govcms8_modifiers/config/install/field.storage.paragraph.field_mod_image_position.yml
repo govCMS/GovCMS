@@ -1,0 +1,48 @@
+uuid: 3c089820-e240-4c60-80fe-318e81b26f43
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_mod_image_position
+field_name: field_mod_image_position
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: left-top
+      label: 'Left Top'
+    -
+      value: left-center
+      label: 'Left Center'
+    -
+      value: left-bottom
+      label: 'Left Bottom'
+    -
+      value: center-top
+      label: 'Center Top'
+    -
+      value: center-center
+      label: 'Center Center'
+    -
+      value: center-bottom
+      label: 'Center Bottom'
+    -
+      value: right-top
+      label: 'Right Top'
+    -
+      value: right-center
+      label: 'Right Center'
+    -
+      value: right-bottom
+      label: 'Right Bottom'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

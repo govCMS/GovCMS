@@ -1,0 +1,23 @@
+uuid: 5eefd48e-52dc-476c-876d-72b583011ccf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_show_close_all
+    - paragraphs.paragraphs_type.accordion_group
+id: paragraph.accordion_group.field_show_close_all
+field_name: field_show_close_all
+entity_type: paragraph
+bundle: accordion_group
+label: 'Show "Close All"'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

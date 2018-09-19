@@ -1,0 +1,21 @@
+uuid: a0002d24-fb52-442d-aae2-571151996846
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_il_colour_classes
+    - paragraphs.paragraphs_type.item_list
+  module:
+    - options
+id: paragraph.item_list.field_il_colour_classes
+field_name: field_il_colour_classes
+entity_type: paragraph
+bundle: item_list
+label: 'Colour Palette'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

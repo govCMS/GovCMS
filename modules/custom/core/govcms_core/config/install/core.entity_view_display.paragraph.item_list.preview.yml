@@ -1,0 +1,34 @@
+uuid: 0dced142-e669-4181-a06e-88eef7048774
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.item_list.field_il_items
+    - field.field.paragraph.item_list.field_il_view_mode
+    - field.field.paragraph.item_list.field_title
+    - paragraphs.paragraphs_type.item_list
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.item_list.preview
+targetEntityType: paragraph
+bundle: item_list
+mode: preview
+content:
+  field_title:
+    type: string
+    weight: 0
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  field_il_items: true
+  field_il_layout_classes: true
+  field_il_view_mode: true

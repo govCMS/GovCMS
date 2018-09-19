@@ -5,13 +5,19 @@ dependencies:
     - entity_browser.browser.govcms_media_image_browser
     - field.field.node.govcms_standard_page.body
     - field.field.node.govcms_standard_page.field_attachments
+    - field.field.node.govcms_standard_page.field_components
     - field.field.node.govcms_standard_page.field_featured_image
+    - field.field.node.govcms_standard_page.field_thumbnail
+    - field.field.node.govcms_standard_page.panelizer
     - node.type.govcms_standard_page
   module:
     - content_moderation
     - entity_browser
     - field_layout
+    - file
     - layout_discovery
+    - panelizer
+    - paragraphs
     - path
     - text
 third_party_settings:
@@ -25,7 +31,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 121
+    weight: 9
     settings:
       rows: 9
       summary_rows: 3
@@ -34,12 +40,12 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   field_attachments:
-    weight: 122
+    weight: 10
     settings:
       entity_browser: govcms_media_file_browser
       field_widget_display: rendered_entity
@@ -52,8 +58,34 @@ content:
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content
+  field_components:
+    type: entity_reference_paragraphs
+    weight: 13
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: preview
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: content
   field_featured_image:
-    weight: 123
+    weight: 11
+    settings:
+      entity_browser: govcms_media_image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+  field_thumbnail:
+    weight: 1
     settings:
       entity_browser: govcms_media_image_browser
       field_widget_display: rendered_entity
@@ -68,13 +100,19 @@ content:
     region: content
   moderation_state:
     type: moderation_state_default
-    weight: 100
+    weight: 7
     settings: {  }
     region: content
     third_party_settings: {  }
+  panelizer:
+    type: panelizer
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -82,26 +120,26 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 4
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
+    weight: 8
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 5
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -109,7 +147,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 2
     settings:
       match_operator: CONTAINS
       size: 60

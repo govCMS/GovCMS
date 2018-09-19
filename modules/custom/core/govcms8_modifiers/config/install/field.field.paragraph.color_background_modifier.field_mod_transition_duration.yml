@@ -1,0 +1,23 @@
+uuid: 5c2965b3-d107-4e19-8917-ec6aa737aa52
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mod_transition_duration
+    - paragraphs.paragraphs_type.color_background_modifier
+id: paragraph.color_background_modifier.field_mod_transition_duration
+field_name: field_mod_transition_duration
+entity_type: paragraph
+bundle: color_background_modifier
+label: Duration
+description: 'Specify the transition duration in seconds.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: s
+field_type: decimal

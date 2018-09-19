@@ -1,0 +1,62 @@
+uuid: ca086311-d95f-434f-838a-eed020f2b7c1
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+_core:
+  default_config_hash: TCT12Hu91QmDQRvRuSh_6vdUrUL6wQu8142C8KMNhkY
+id: paragraph.field_mod_relative_height
+field_name: field_mod_relative_height
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '4'
+      label: 'Polyvision (4)'
+    -
+      value: '3'
+      label: 'Thrillarama (3)'
+    -
+      value: '2.76'
+      label: 'Ultra Panavision 70 (2.76)'
+    -
+      value: '2.414'
+      label: 'Silver (2.414)'
+    -
+      value: '2.334'
+      label: 'Cinemascope 21:9 (2.334)'
+    -
+      value: '2.000'
+      label: 'Universium 2:1 (2.000)'
+    -
+      value: '1.778'
+      label: 'Widescreen 16:9 (1.778)'
+    -
+      value: '1.618'
+      label: 'Golden (1.618)'
+    -
+      value: '1.500'
+      label: 'Classic 3:2 (1.500)'
+    -
+      value: '1.414'
+      label: 'Lichtenberg (1.414)'
+    -
+      value: '1.334'
+      label: 'Standard 4:3 (1.334)'
+    -
+      value: '1.000'
+      label: 'Square 1:1 (1.000)'
+    -
+      value: 100%
+      label: 'Full (100%)'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

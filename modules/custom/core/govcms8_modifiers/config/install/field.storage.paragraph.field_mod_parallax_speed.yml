@@ -1,0 +1,20 @@
+uuid: 47effce7-6040-412b-87ba-0b1a12acd6de
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_mod_parallax_speed
+field_name: field_mod_parallax_speed
+entity_type: paragraph
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

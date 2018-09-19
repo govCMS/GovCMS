@@ -1,0 +1,13 @@
+name: GovCMS 8 Default Content
+type: module
+description: "Provides example content and structure to build a sample OOTB site, complete with a Styleguide and a 'kitchen sink' page."
+package: GovCMS
+core: 8.x
+dependencies:
+  - govcms_core
+  - govcms_media
+  - govcms_optional_govcms_blog_article
+  - govcms_optional_govcms_event
+  - govcms_optional_govcms_foi
+  - govcms_optional_govcms_news_and_media
+  - govcms_optional_govcms_standard_page

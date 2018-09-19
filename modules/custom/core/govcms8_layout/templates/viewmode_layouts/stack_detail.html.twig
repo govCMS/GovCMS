@@ -1,0 +1,67 @@
+{#
+/**
+* Stack detail. Same as Stack simple but with added summary.
+*
+* List of regions: title, info, summary, tags, image.
+*/
+#}
+
+{%
+  set classes = [
+  'stack',
+  'stack--detail',
+]
+%}
+
+<div {{ attributes.addClass(classes) }}>
+  {{ title_suffix.contextual_links }}
+
+  {% block image %}
+    {% if content.image|render|striptags('<img>')|trim %}
+      <div class="stack__image">
+        {{ content.image }}
+      </div>
+    {% endif %}
+  {% endblock %}
+
+  {% block content %}
+    {% if content %}
+      <div class="stack__content">
+
+        {% block title %}
+          {% if content.title|render|striptags|trim %}
+            <h3 class="stack__title">
+              {{ content.title }}
+            </h3>
+          {% endif %}
+        {% endblock %}
+
+        {% block info %}
+          {% if content.info|render|striptags|trim %}
+            <div class="stack__info">
+              {{ content.info }}
+            </div>
+          {% endif %}
+        {% endblock %}
+
+        {% block summary %}
+          {% if content.summary|render|striptags|trim %}
+            <div class="stack__summary">
+              {{ content.summary }}
+            </div>
+          {% endif %}
+        {% endblock %}
+
+        {% block tags %}
+          {% if content.tags|render|striptags|trim %}
+            <div class="stack__tags">
+              {{ content.tags }}
+            </div>
+          {% endif %}
+        {% endblock %}
+
+      </div>
+    {% endif %}
+  {% endblock %}
+
+</div>

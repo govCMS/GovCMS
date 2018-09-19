@@ -1,0 +1,25 @@
+uuid: 736137df-2671-4ed5-b6ba-4d9e00e38bd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mod_relative_height
+    - paragraphs.paragraphs_type.relative_height_modifier
+  module:
+    - options
+_core:
+  default_config_hash: Ajhb-dZTjHO8VUML7k09VIZ6Jd690H8Q8UR3MUmnnJo
+id: paragraph.relative_height_modifier.field_mod_relative_height
+field_name: field_mod_relative_height
+entity_type: paragraph
+bundle: relative_height_modifier
+label: 'Relative height'
+description: 'Select the relative height.'
+required: false
+translatable: false
+default_value:
+  -
+    value: '1.778'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

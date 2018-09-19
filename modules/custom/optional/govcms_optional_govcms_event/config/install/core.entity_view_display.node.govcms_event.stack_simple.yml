@@ -1,0 +1,109 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.stack_simple
+    - field.field.node.govcms_event.body
+    - field.field.node.govcms_event.field_attachments
+    - field.field.node.govcms_event.field_components
+    - field.field.node.govcms_event.field_event_categories
+    - field.field.node.govcms_event.field_event_date
+    - field.field.node.govcms_event.field_event_location
+    - field.field.node.govcms_event.field_featured_image
+    - field.field.node.govcms_event.field_thumbnail
+    - field.field.node.govcms_event.panelizer
+    - node.type.govcms_event
+  module:
+    - datetime_range
+    - ds
+    - field_layout
+    - linked_field
+    - panelizer
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+  ds:
+    layout:
+      id: stack_simple
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings: {  }
+    regions:
+      title:
+        - node_title
+      info:
+        - field_event_date
+        - field_event_location
+      image:
+        - field_thumbnail
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: ''
+          class: ''
+id: node.govcms_event.stack_simple
+targetEntityType: node
+bundle: govcms_event
+mode: stack_simple
+content:
+  field_event_:
+    weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_event_date:
+    type: daterange_default
+    weight: 1
+    region: info
+    label: hidden
+    settings:
+      separator: '-'
+      timezone_override: ''
+      format_type: standard_date_time
+    third_party_settings: {  }
+  field_event_location:
+    type: string
+    weight: 2
+    region: info
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_thumbnail:
+    type: entity_reference_entity_view
+    weight: 3
+    region: image
+    label: hidden
+    settings:
+      view_mode: landscape
+      link: false
+    third_party_settings:
+      linked_field:
+        linked: '1'
+        type: custom
+        destination: '[node:url]'
+        advanced: {  }
+hidden:
+  body: true
+  field_attachments: true
+  field_components: true
+  field_event_categories: true
+  field_featured_image: true
+  links: true
+  panelizer: true

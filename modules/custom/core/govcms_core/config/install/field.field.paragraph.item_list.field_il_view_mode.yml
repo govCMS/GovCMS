@@ -1,0 +1,31 @@
+uuid: 6f58ada2-e11e-46aa-b326-4139cb6f517b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_il_view_mode
+    - paragraphs.paragraphs_type.item_list
+  module:
+    - entity_reference_display
+id: paragraph.item_list.field_il_view_mode
+field_name: field_il_view_mode
+entity_type: paragraph
+bundle: item_list
+label: 'View Mode'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  exclude:
+    default: default
+    calendar_item: calendar_item
+    compact: compact
+    full: full
+    preview: preview
+    rss: rss
+    search_index: search_index
+    search_result: search_result
+    token: token
+field_type: entity_reference_display

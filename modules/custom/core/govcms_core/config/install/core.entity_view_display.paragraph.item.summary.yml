@@ -1,0 +1,66 @@
+uuid: 421406c1-6157-4485-94da-d4c78e63d10e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.summary
+    - field.field.paragraph.item.field_heading
+    - field.field.paragraph.item.field_item_info
+    - field.field.paragraph.item.field_item_summary
+    - field.field.paragraph.item.field_item_url
+    - field.field.paragraph.item.field_title
+    - paragraphs.paragraphs_type.item
+  module:
+    - ds
+    - field_layout
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+  ds:
+    layout:
+      id: summary
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings: {  }
+    regions:
+      title:
+        - field_heading
+      info:
+        - field_item_info
+      summary:
+        - field_item_summary
+id: paragraph.item.summary
+targetEntityType: paragraph
+bundle: item
+mode: summary
+content:
+  field_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: title
+  field_item_info:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: info
+  field_item_summary:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: summary
+hidden:
+  field_item_image: true
+  field_item_url: true
+  field_title: true

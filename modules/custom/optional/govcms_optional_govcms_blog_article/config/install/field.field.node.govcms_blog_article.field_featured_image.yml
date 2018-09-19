@@ -10,9 +10,9 @@ field_name: field_featured_image
 entity_type: node
 bundle: govcms_blog_article
 label: 'Featured image'
-description: ''
+description: 'Main image for the content.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

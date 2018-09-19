@@ -1,0 +1,17 @@
+modifiers_relative_height_apply:
+  js:
+    js/modifiers_relative_height.apply.js: {}
+
+jarallax:
+  remote: https://github.com/nk-o/jarallax
+  version: 1.10.3
+  license:
+    name: MIT
+    url: https://github.com/nk-o/jarallax/blob/master/LICENSE
+    gpl-compatible: true
+  js:
+    js/jarallax/jarallax.min.js: {}
+
+modifiers_bg_parallax_apply:
+  js:
+    js/modifiers_bg_parallax.apply.js: {}

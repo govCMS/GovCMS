@@ -1,0 +1,21 @@
+uuid: c9bd9910-b951-496a-9710-3b0690e93d44
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ag_colour_classes
+    - paragraphs.paragraphs_type.accordion_group
+  module:
+    - options
+id: paragraph.accordion_group.field_ag_colour_classes
+field_name: field_ag_colour_classes
+entity_type: paragraph
+bundle: accordion_group
+label: 'Colour Palette'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,78 @@
+uuid: 44e2324f-35ab-40ba-b260-1559bc687d5e
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.govcms_media_image_browser
+    - field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val
+    - field.field.paragraph.image_bg_modifier.field_mod_image
+    - field.field.paragraph.image_bg_modifier.field_mod_image_position
+    - field.field.paragraph.image_bg_modifier.field_mod_image_style
+    - field.field.paragraph.image_bg_modifier.field_mod_media_query
+    - paragraphs.paragraphs_type.image_bg_modifier
+  module:
+    - content_moderation
+    - entity_browser
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.image_bg_modifier.default
+targetEntityType: paragraph
+bundle: image_bg_modifier
+mode: default
+content:
+  field_mod_bgi_color_val:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_mod_image:
+    weight: 0
+    settings:
+      entity_browser: govcms_media_image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+  field_mod_image_position:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_mod_image_style:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_mod_media_query:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

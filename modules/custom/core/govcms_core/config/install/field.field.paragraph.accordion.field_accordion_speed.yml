@@ -1,0 +1,23 @@
+uuid: 62d142cc-950e-46dd-a500-6c75c9ab80ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_accordion_speed
+    - paragraphs.paragraphs_type.accordion
+  module:
+    - options
+id: paragraph.accordion.field_accordion_speed
+field_name: field_accordion_speed
+entity_type: paragraph
+bundle: accordion
+label: Speed
+description: 'The speed of the open and close, fast or slow, default=fast.'
+required: true
+translatable: false
+default_value:
+  -
+    value: fast
+default_value_callback: ''
+settings: {  }
+field_type: list_string

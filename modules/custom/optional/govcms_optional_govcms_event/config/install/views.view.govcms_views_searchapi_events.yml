@@ -54,6 +54,9 @@ display:
           offset: 0
           id: 0
           total_pages: null
+          tags:
+            previous: Previous
+            next: Next
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -62,13 +65,18 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          tags:
-            previous: ‹‹
-            next: ››
       style:
         type: default
       row:
-        type: fields
+        type: search_api
+        options:
+          view_modes:
+            'entity:node':
+              govcms_blog_article: default
+              govcms_event: teaser_small
+              govcms_foi: default
+              govcms_news_and_media: default
+              govcms_standard_page: default
       fields:
         title:
           id: title
@@ -531,6 +539,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      css_class: 'views--layout views--layout--full-width'
     cache_metadata:
       max-age: -1
       contexts:

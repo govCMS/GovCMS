@@ -1,0 +1,97 @@
+uuid: 14cff82c-931f-41ff-a228-fc6ef673a1be
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.accordion_group.field_accordions
+    - field.field.paragraph.accordion_group.field_ag_colour_classes
+    - field.field.paragraph.accordion_group.field_ag_style_classes
+    - field.field.paragraph.accordion_group.field_body
+    - field.field.paragraph.accordion_group.field_heading
+    - field.field.paragraph.accordion_group.field_show_close_all
+    - field.field.paragraph.accordion_group.field_show_open_all
+    - field.field.paragraph.accordion_group.field_show_toggle_all
+    - field.field.paragraph.accordion_group.field_title
+    - paragraphs.paragraphs_type.accordion_group
+  module:
+    - ds
+    - entity_class_formatter
+    - entity_reference_revisions
+    - text
+id: paragraph.accordion_group.default
+targetEntityType: paragraph
+bundle: accordion_group
+mode: default
+content:
+  field_accordions:
+    type: entity_reference_revisions_entity_view
+    weight: 5
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    region: content
+  field_ag_colour_classes:
+    type: entity_class_formatter
+    weight: 6
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_ag_style_classes:
+    type: entity_class_formatter
+    weight: 7
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_body:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_show_close_all:
+    type: boolean
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      format: custom
+      format_custom_true: 'Close All'
+      format_custom_false: ''
+    third_party_settings: {  }
+  field_show_open_all:
+    type: boolean
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      format: custom
+      format_custom_true: 'Open All'
+      format_custom_false: ''
+    third_party_settings: {  }
+  field_show_toggle_all:
+    type: boolean
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      format: custom
+      format_custom_true: 'Toggle All'
+      format_custom_false: ''
+    third_party_settings: {  }
+hidden:
+  field_title: true

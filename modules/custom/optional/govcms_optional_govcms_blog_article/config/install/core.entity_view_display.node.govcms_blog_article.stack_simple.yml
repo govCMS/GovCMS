@@ -1,0 +1,84 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.stack_simple
+    - field.field.node.govcms_blog_article.body
+    - field.field.node.govcms_blog_article.field_attachments
+    - field.field.node.govcms_blog_article.field_blog_article_categories
+    - field.field.node.govcms_blog_article.field_components
+    - field.field.node.govcms_blog_article.field_featured_image
+    - field.field.node.govcms_blog_article.field_thumbnail
+    - field.field.node.govcms_blog_article.panelizer
+    - node.type.govcms_blog_article
+  module:
+    - ds
+    - field_layout
+    - linked_field
+    - panelizer
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+  ds:
+    layout:
+      id: stack_simple
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings: {  }
+    regions:
+      title:
+        - node_title
+      info:
+        - node_post_date
+      image:
+        - field_thumbnail
+    fields:
+      node_post_date:
+        plugin_id: node_post_date
+        weight: 1
+        label: hidden
+        formatter: ds_post_date_standard_date
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: ''
+          class: ''
+id: node.govcms_blog_article.stack_simple
+targetEntityType: node
+bundle: govcms_blog_article
+mode: stack_simple
+content:
+  field_thumbnail:
+    type: entity_reference_entity_view
+    weight: 2
+    region: image
+    label: hidden
+    settings:
+      view_mode: landscape
+      link: false
+    third_party_settings:
+      linked_field:
+        linked: '1'
+        type: custom
+        destination: '[node:url]'
+        advanced: {  }
+hidden:
+  body: true
+  field_attachments: true
+  field_blog_article_categories: true
+  field_components: true
+  field_featured_image: true
+  links: true
+  panelizer: true

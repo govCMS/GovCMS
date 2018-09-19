@@ -1,0 +1,71 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_components
+    - node.type.govcms_event
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.accordion_group
+    - paragraphs.paragraphs_type.content
+    - paragraphs.paragraphs_type.item_list
+    - paragraphs.paragraphs_type.node_list
+  module:
+    - entity_reference_revisions
+id: node.govcms_event.field_components
+field_name: field_components
+entity_type: node
+bundle: govcms_event
+label: Components
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      content: content
+      item_list: item_list
+      node_list: node_list
+      accordion: accordion
+      accordion_group: accordion_group
+    target_bundles_drag_drop:
+      content:
+        enabled: true
+        weight: 5
+      item:
+        weight: 6
+        enabled: false
+      item_list:
+        enabled: true
+        weight: 7
+      node_list:
+        enabled: true
+        weight: 8
+      accordion:
+        enabled: true
+        weight: 13
+      image_bg_modifier:
+        weight: 13
+        enabled: false
+      accordion_group:
+        enabled: true
+        weight: 14
+      custom_colors_modifier:
+        weight: 16
+        enabled: false
+      custom_linear_gradient_modifier:
+        weight: 17
+        enabled: false
+      padding_modifier:
+        weight: 18
+        enabled: false
+      parallax_bg_modifier:
+        weight: 19
+        enabled: false
+      relative_height_modifier:
+        weight: 20
+        enabled: false
+field_type: entity_reference_revisions

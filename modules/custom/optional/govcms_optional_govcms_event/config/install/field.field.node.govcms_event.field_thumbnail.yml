@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_thumbnail
+    - media.type.image
+    - node.type.govcms_event
+id: node.govcms_event.field_thumbnail
+field_name: field_thumbnail
+entity_type: node
+bundle: govcms_event
+label: Thumbnail
+description: 'Image used in content lists.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

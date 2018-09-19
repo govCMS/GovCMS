@@ -1,0 +1,21 @@
+uuid: e19b81e6-16cd-42eb-b00f-d8d4354b599d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ag_style_classes
+    - paragraphs.paragraphs_type.accordion_group
+  module:
+    - options
+id: paragraph.accordion_group.field_ag_style_classes
+field_name: field_ag_style_classes
+entity_type: paragraph
+bundle: accordion_group
+label: Style
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,19 @@
+uuid: 7008d997-c91b-463f-8f62-0bf6cd78e288
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mod_bc_bg_h_color_val
+    - paragraphs.paragraphs_type.color_background_modifier
+id: paragraph.color_background_modifier.field_mod_bc_bg_h_color_val
+field_name: field_mod_bc_bg_h_color_val
+entity_type: paragraph
+bundle: color_background_modifier
+label: 'Hover Background Color'
+description: 'Pick the background hover color.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

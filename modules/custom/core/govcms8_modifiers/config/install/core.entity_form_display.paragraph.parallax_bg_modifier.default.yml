@@ -1,0 +1,72 @@
+uuid: 24a85abc-4268-4917-be32-55327a6edb08
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.govcms_media_image_browser
+    - field.field.paragraph.parallax_bg_modifier.field_mod_bgp_color_val
+    - field.field.paragraph.parallax_bg_modifier.field_mod_media_query
+    - field.field.paragraph.parallax_bg_modifier.field_mod_parallax
+    - field.field.paragraph.parallax_bg_modifier.field_mod_parallax_speed
+    - paragraphs.paragraphs_type.parallax_bg_modifier
+  module:
+    - content_moderation
+    - entity_browser
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.parallax_bg_modifier.default
+targetEntityType: paragraph
+bundle: parallax_bg_modifier
+mode: default
+content:
+  field_mod_bgp_color_val:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_mod_media_query:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_mod_parallax:
+    weight: 0
+    settings:
+      entity_browser: govcms_media_image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+  field_mod_parallax_speed:
+    type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true
