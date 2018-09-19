@@ -15,11 +15,11 @@ A copy of govCMS8 can be installed in a number of different ways:
 
 Once you have provisioned an environment (you may have to select "None" as a distribution when you first provision it), you can follow the instructions at https://docs.acquia.com/acquia-cloud/create/install and in the `Install Drupal from URL` dialog, enter the URL:
 
-    https://ftp.drupal.org/files/projects/govcms8-8.x-5.x-dev-core.tar.gz
+    https://ftp.drupal.org/files/projects/govcms8-8.x-6.x-dev-core.tar.gz
 
 ### simplytest.me
 
-For a quick demo instance, you can launch a (24-hour only) sandbox at http://simplytest.me/project/govcms8/8.x-5.x
+For a quick demo instance, you can launch a (24-hour only) sandbox at http://simplytest.me/project/govcms8/8.x-6.x
 
 **[Back to top](#govcms8)**
 ## Installation - Developer
