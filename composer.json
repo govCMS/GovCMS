@@ -87,7 +87,7 @@
         "drupal/google_analytics": "3.0-beta1",
         "drupal/govcms8_ui": "1.0.0-alpha1",
         "drupal/graphql": "3.0-rc1",
-        "drupal/honeypot": "1.27",
+        "drupal/honeypot": "1.29",
         "drupal/inline_entity_form": "1.0-rc1",
         "drupal/jsonapi": "1.20.0",
         "drupal/linked_field": "1.1.0",
