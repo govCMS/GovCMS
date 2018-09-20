@@ -110,6 +110,7 @@
         "drupal/restui": "1.15",
         "drupal/robotstxt": "1.2",
         "drupal/search_api": "1.10",
+        "drupal/search_api_solr": "2.2",
         "drupal/seckit": "1.0",
         "drupal/shield": "1.2",
         "drupal/simple_oauth": "3.10",
