@@ -18,7 +18,7 @@ use Drupal\contact\Entity\ContactForm;
  */
 function govcms_form_install_configure_form_alter(&$form, FormStateInterface $form_state) {
   // Add a placeholder as example that one can choose an arbitrary site name.
-  $form['site_information']['site_name']['#attributes']['placeholder'] = t('govCMS');
+  $form['site_information']['site_name']['#attributes']['placeholder'] = t('GovCMS');
 }
 
 /**
@@ -41,7 +41,7 @@ function govcms_form_user_login_form_alter(&$form, &$form_state) {
 function govcms_page_attachments_alter(array &$page) {
   foreach ($page['#attached']['html_head'] as $key => $value) {
     if ($value[1] == 'system_meta_generator') {
-      $page['#attached']['html_head'][$key][0]['#attributes']['content'] = 'Drupal 8 (http://drupal.org) + govCMS (http://govcms.gov.au)';
+      $page['#attached']['html_head'][$key][0]['#attributes']['content'] = 'Drupal 8 (http://drupal.org) + GovCMS (http://govcms.gov.au)';
     }
   }
 }
