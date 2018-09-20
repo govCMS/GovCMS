@@ -25,7 +25,7 @@ dependencies:
   - image
   - inline_form_errors
   - layout_discovery
-  - media
+  - media_library
   - menu_ui
   - node
   - options
@@ -52,6 +52,7 @@ dependencies:
   - linkit
   - linked_field
   - login_security
+  - metatag
   - module_filter
   - panelizer
   - paragraphs
@@ -62,6 +63,10 @@ dependencies:
   - password_policy_history
   - password_policy_username
   - pathauto
+  - seckit
+  - shield
+  - simple_sitemap
+  - username_enumeration_prevention
 
   # govCMS core modules
   - govcms_search
