@@ -30,30 +30,6 @@
                     "url": "https://github.com/swiftmailer/swiftmailer/archive/v5.4.9.zip"
                 }
             }
-        },
-        {
-            "type": "package",
-            "package": {
-                "type": "drupal-theme",
-                "name": "govcms-custom/govcms8_uikit",
-                "version": "v1.0",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://github.com/govCMS/govcms8_uikit/archive/1.x.zip"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "type": "drupal-theme",
-                "name": "govcms-custom/govcms8_uikit_starter",
-                "version": "v1.0",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://github.com/govCMS/govcms8_uikit_starter/archive/1.x.zip"
-                }
-            }
         }
     ],
     "require": {
@@ -121,8 +97,7 @@
         "drupal/video_embed_field": "2.0",
         "drupal/webform": "5.0.0-rc21",
         "govcms-asset/swiftmailer": "^5.4",
-        "govcms-custom/govcms8_uikit": "^1.0",
-        "govcms-custom/govcms8_uikit_starter": "^1.0",
+        "drupal/govcms8_uikit_starter": "1.x-dev",
         "oomphinc/composer-installers-extender": "^1.1",
         "symfony/phpunit-bridge": "^3.4.6"
     },
