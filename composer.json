@@ -97,7 +97,7 @@
         "drupal/memcache": "2.0-beta1",
         "drupal/menu_trail_by_path": "1.1",
         "drupal/metatag": "1.7",
-        "drupal/modifiers": "1.1.0",
+        "drupal/modifiers": "1.2.0",
         "drupal/module_filter": "3.1",
         "drupal/panelizer": "4.1",
         "drupal/panels": "4.3",
