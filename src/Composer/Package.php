@@ -242,6 +242,11 @@ class Package {
    *   TRUE if the package is an asset library, otherwise FALSE.
    */
   protected function isLibrary(array $package) {
+    // Add Swiftmailer support.
+    if ($package['name'] == 'swiftmailer/swiftmailer') {
+      $package['type'] = 'drupal-library';
+    }
+
     $package_types = [
       'drupal-library',
       'bower-asset',
