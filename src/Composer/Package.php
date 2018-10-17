@@ -1,25 +1,31 @@
 <?php
+
 namespace govCMS\Core\Composer;
+
 use govCMS\Core\IniEncoder;
 use Composer\Package\Locker;
 use Composer\Package\RootPackageInterface;
 use Composer\Script\Event;
+
 /**
  * Generates Drush make files for drupal.org's ancient packaging system.
  */
 class Package {
+
   /**
    * The root Composer package (i.e., this composer.json).
    *
    * @var \Composer\Package\RootPackageInterface
    */
   protected $rootPackage;
+
   /**
    * The locker.
    *
    * @var \Composer\Package\Locker
    */
   protected $locker;
+
   /**
    * Package constructor.
    *
@@ -32,6 +38,7 @@ class Package {
     $this->rootPackage = $root_package;
     $this->locker = $locker;
   }
+
   /**
    * Script entry point.
    *
@@ -50,6 +57,7 @@ class Package {
     file_put_contents('drupal-org-core.make', $encoder->encode($core));
     file_put_contents('drupal-org.make', $encoder->encode($make));
   }
+
   /**
    * Extracts a core-only make file from a complete make file.
    *
@@ -70,6 +78,7 @@ class Package {
       ],
     ];
   }
+
   /**
    * Generates a complete make file structure from the root package.
    *
@@ -101,12 +110,13 @@ class Package {
       elseif ($this->isLibrary($package)) {
         $info['libraries'][$name] = $this->buildLibrary($package);
       }
-      elseif ($this->isgovCMSTheme($package)) {
+      elseif ($this->isGovCMSTheme($package)) {
         $info['projects'][$name] = $this->buildProject($package);
       }
     }
     return $info;
   }
+
   /**
    * Builds a make structure for a library (i.e., not a Drupal project).
    *
@@ -122,6 +132,7 @@ class Package {
     ];
     return $info + $this->buildPackage($package);
   }
+
   /**
    * Builds a make structure for a Drupal module, theme, profile, or core.
    *
@@ -177,6 +188,7 @@ class Package {
     }
     return $info;
   }
+
   /**
    * Builds a make structure for any kind of package.
    *
@@ -196,7 +208,8 @@ class Package {
           'revision' => $package['source']['reference'],
         ],
       ];
-    } elseif (isset($package['dist'])) {
+    }
+    elseif (isset($package['dist'])) {
       $info = [
         'download' => [
           'type' => 'get',
@@ -210,6 +223,7 @@ class Package {
     }
     return $info;
   }
+
   /**
    * Determines if a package is a Drupal core, module, theme, or profile.
    *
@@ -232,6 +246,7 @@ class Package {
       in_array($package['type'], $package_types)
     );
   }
+
   /**
    * Determines if a package is an asset library.
    *
@@ -242,6 +257,11 @@ class Package {
    *   TRUE if the package is an asset library, otherwise FALSE.
    */
   protected function isLibrary(array $package) {
+    // Add Swiftmailer support.
+    if ($package['name'] == 'swiftmailer/swiftmailer') {
+      $package['type'] = 'drupal-library';
+    }
+
     $package_types = [
       'drupal-library',
       'bower-asset',
@@ -252,7 +272,22 @@ class Package {
       array_key_exists($package['name'], $this->rootPackage->getRequires())
     );
   }
-  protected function isgovCMSTheme (array $package) {
+
+  /**
+   * Determines if a package is a GovCMS theme.
+   *
+   * @param array $package
+   *   The package info.
+   *
+   * @return bool
+   *   True if the package is a GovCMS theme, otherwise FALSE.
+   */
+  protected function isGovCMSTheme(array $package) {
+    // Exlucde package theme from custom repos.
+    if ($package['name'] == 'govcms-custom/govcms8_uikit' || $package['name'] == 'govcms-custom/govcms8_uikit_starter') {
+      return FALSE;
+    }
+
     $package_types = [
       'drupal-theme',
     ];

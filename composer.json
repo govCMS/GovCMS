@@ -18,18 +18,6 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
-        },
-        {
-            "type": "package",
-            "package": {
-                "type": "drupal-library",
-                "name": "govcms-asset/swiftmailer",
-                "version": "v5.4.9",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://github.com/swiftmailer/swiftmailer/archive/v5.4.9.zip"
-                }
-            }
         }
     ],
     "require": {
@@ -52,7 +40,7 @@
         "drupal/dropzonejs": "2.0.0-alpha3",
         "drupal/ds": "3.1",
         "drupal/entity_browser": "2.0",
-        "drupal/entity_class_formatter": "1.0.0",
+        "drupal/entity_class_formatter": "1.1.0",
         "drupal/entity_embed": "1.0-beta2",
         "drupal/entity_reference_display": "1.2.0",
         "drupal/entity_reference_revisions": "1.5.0",
@@ -63,7 +51,7 @@
         "drupal/focal_point": "1.0-beta6",
         "drupal/google_analytics": "3.0-beta1",
         "drupal/govcms8_ui": "1.0.0-alpha1",
-        "drupal/graphql": "3.0-rc1",
+        "drupal/graphql": "3.0.0-rc2",
         "drupal/honeypot": "1.29",
         "drupal/inline_entity_form": "1.0-rc1",
         "drupal/jsonapi": "2.0-beta1",
@@ -96,9 +84,9 @@
         "drupal/username_enumeration_prevention": "1.0-beta2",
         "drupal/video_embed_field": "2.0",
         "drupal/webform": "5.0.0-rc21",
-        "govcms-asset/swiftmailer": "^5.4",
         "drupal/govcms8_uikit_starter": "1.x-dev",
         "oomphinc/composer-installers-extender": "^1.1",
+        "swiftmailer/swiftmailer": "5.4.12",
         "symfony/phpunit-bridge": "^3.4.6"
     },
     "require-dev": {
@@ -170,7 +158,7 @@
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
         "package": "govCMS\\Core\\Composer\\Package::execute",
         "push": "./bin/phing push",
-        "nuke": "rm -r -f bin docroot vendor"
+        "nuke": "rm -r -f composer.lock bin docroot vendor"
     },
     "suggest": {
         "hirak/prestissimo": "^0.3"
