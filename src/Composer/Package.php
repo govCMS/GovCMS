@@ -1,25 +1,31 @@
 <?php
+
 namespace govCMS\Core\Composer;
+
 use govCMS\Core\IniEncoder;
 use Composer\Package\Locker;
 use Composer\Package\RootPackageInterface;
 use Composer\Script\Event;
+
 /**
  * Generates Drush make files for drupal.org's ancient packaging system.
  */
 class Package {
+
   /**
    * The root Composer package (i.e., this composer.json).
    *
    * @var \Composer\Package\RootPackageInterface
    */
   protected $rootPackage;
+
   /**
    * The locker.
    *
    * @var \Composer\Package\Locker
    */
   protected $locker;
+
   /**
    * Package constructor.
    *
@@ -32,6 +38,7 @@ class Package {
     $this->rootPackage = $root_package;
     $this->locker = $locker;
   }
+
   /**
    * Script entry point.
    *
@@ -50,6 +57,7 @@ class Package {
     file_put_contents('drupal-org-core.make', $encoder->encode($core));
     file_put_contents('drupal-org.make', $encoder->encode($make));
   }
+
   /**
    * Extracts a core-only make file from a complete make file.
    *
@@ -70,6 +78,7 @@ class Package {
       ],
     ];
   }
+
   /**
    * Generates a complete make file structure from the root package.
    *
@@ -107,6 +116,7 @@ class Package {
     }
     return $info;
   }
+
   /**
    * Builds a make structure for a library (i.e., not a Drupal project).
    *
@@ -122,6 +132,7 @@ class Package {
     ];
     return $info + $this->buildPackage($package);
   }
+
   /**
    * Builds a make structure for a Drupal module, theme, profile, or core.
    *
@@ -177,6 +188,7 @@ class Package {
     }
     return $info;
   }
+
   /**
    * Builds a make structure for any kind of package.
    *
@@ -196,7 +208,8 @@ class Package {
           'revision' => $package['source']['reference'],
         ],
       ];
-    } elseif (isset($package['dist'])) {
+    }
+    elseif (isset($package['dist'])) {
       $info = [
         'download' => [
           'type' => 'get',
@@ -210,6 +223,7 @@ class Package {
     }
     return $info;
   }
+
   /**
    * Determines if a package is a Drupal core, module, theme, or profile.
    *
@@ -232,6 +246,7 @@ class Package {
       in_array($package['type'], $package_types)
     );
   }
+
   /**
    * Determines if a package is an asset library.
    *
@@ -257,7 +272,8 @@ class Package {
       array_key_exists($package['name'], $this->rootPackage->getRequires())
     );
   }
-  protected function isgovCMSTheme (array $package) {
+
+  protected function isgovCMSTheme(array $package) {
     $package_types = [
       'drupal-theme',
     ];
