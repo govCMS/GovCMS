@@ -283,6 +283,11 @@ class Package {
    *   True if the package is a GovCMS theme, otherwise FALSE.
    */
   protected function isGovCMSTheme(array $package) {
+    // Exlucde package theme from custom repos.
+    if ($package['name'] == 'govcms-custom/govcms8_uikit' || $package['name'] == 'govcms-custom/govcms8_uikit_starter') {
+      return FALSE;
+    }
+
     $package_types = [
       'drupal-theme',
     ];
