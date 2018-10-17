@@ -195,7 +195,7 @@
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
         "package": "govCMS\\Core\\Composer\\Package::execute",
         "push": "./bin/phing push",
-        "nuke": "rm -r -f bin docroot vendor"
+        "nuke": "rm -r -f composer.lock bin docroot vendor"
     },
     "suggest": {
         "hirak/prestissimo": "^0.3"
