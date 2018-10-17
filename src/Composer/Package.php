@@ -110,7 +110,7 @@ class Package {
       elseif ($this->isLibrary($package)) {
         $info['libraries'][$name] = $this->buildLibrary($package);
       }
-      elseif ($this->isgovCMSTheme($package)) {
+      elseif ($this->isGovCMSTheme($package)) {
         $info['projects'][$name] = $this->buildProject($package);
       }
     }
@@ -273,7 +273,16 @@ class Package {
     );
   }
 
-  protected function isgovCMSTheme(array $package) {
+  /**
+   * Determines if a package is a GovCMS theme.
+   *
+   * @param array $package
+   *   The package info.
+   *
+   * @return bool
+   *   True if the package is a GovCMS theme, otherwise FALSE.
+   */
+  protected function isGovCMSTheme(array $package) {
     $package_types = [
       'drupal-theme',
     ];
