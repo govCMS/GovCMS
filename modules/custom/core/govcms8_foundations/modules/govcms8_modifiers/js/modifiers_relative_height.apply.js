@@ -7,9 +7,9 @@
 
   'use strict';
 
-  RelativeHeightModifier.apply = function (selector, media, config) {
+  RelativeHeightModifier.apply = function (context, selector, media, config) {
 
-    var element = document.querySelector(selector);
+    var element = context.querySelector(selector);
     if (!element) {
       return;
     }

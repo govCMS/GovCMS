@@ -7,9 +7,9 @@
 
   'use strict';
 
-  ParallaxBgModifier.apply = function (selector, media, config) {
+  ParallaxBgModifier.apply = function (context, selector, media, config) {
 
-    var element = document.querySelector(selector);
+    var element = context.querySelector(selector);
     if (!element) {
       return;
     }
