@@ -14,24 +14,24 @@
 
 <div{{ attributes.addClass(classes) }}>
   {% if content.content_top|render|striptags|trim or content.content|render|striptags|trim or content.content_bottom|render|striptags|trim %}
-    <section class="content-section">
+    <section class="page-layout__content-section">
       {% if content.content_top|render|trim %}
         <div class="row">
-          <div class="content-top">
+          <div class="page-layout__content-top">
             {{ content.content_top }}
           </div>
         </div>
       {% endif %}
       {% if content.content|render|striptags|trim %}
         <div class="row">
-          <main class="content">
+          <main class="page-layout__content">
             {{ content.content }}
           </main>
         </div>
       {% endif %}
       {% if content.content_bottom|render|striptags|trim %}
         <div class="row">
-          <div class="content-bottom">
+          <div class="page-layout__content-bottom">
             {{ content.content_bottom }}
           </div>
         </div>
@@ -39,9 +39,9 @@
     </section>
   {% endif %}
   {% if content.footer|render|striptags|trim %}
-    <section class="content-footer-section">
+    <section class="page-layout__content-footer-section">
       <div class="row">
-        <div class="content-footer">
+        <div class="page-layout__content-footer">
           {{ content.footer }}
         </div>
       </div>
