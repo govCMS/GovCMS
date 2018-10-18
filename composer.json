@@ -130,7 +130,7 @@
         "phing/phing": "^2.16",
         "phpunit/phpunit": "^4.8.35 || ^6.5",
         "se/selenium-server-standalone": "^3.6",
-        "squizlabs/php_codesniffer": "^3.0"
+        "squizlabs/php_codesniffer": "^3.3"
     },
     "extra": {
         "drupal-scaffold": {
