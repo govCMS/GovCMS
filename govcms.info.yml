@@ -65,6 +65,7 @@ dependencies:
   - password_policy_history
   - password_policy_username
   - pathauto
+  - redirect
   - seckit
   - shield
   - simple_sitemap
