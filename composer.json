@@ -18,30 +18,6 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
-        },
-        {
-            "type": "package",
-            "package": {
-                "type": "drupal-theme",
-                "name": "govcms-custom/govcms8_uikit",
-                "version": "v1.0",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://github.com/govCMS/govcms8_uikit/archive/1.x.zip"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "type": "drupal-theme",
-                "name": "govcms-custom/govcms8_uikit_starter",
-                "version": "v1.0",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://github.com/govCMS/govcms8_uikit_starter/archive/1.x.zip"
-                }
-            }
         }
     ],
     "require": {
