@@ -49,6 +49,7 @@ dependencies:
   - features_ui
   - field_group
   - focal_point
+  - google_analytics
   - honeypot
   - linkit
   - linked_field
