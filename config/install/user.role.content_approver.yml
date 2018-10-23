@@ -3,5 +3,5 @@ status: true
 dependencies: {  }
 id: content_approver
 label: 'Content Approver'
-weight: 2
+weight: 3
 is_admin: null
