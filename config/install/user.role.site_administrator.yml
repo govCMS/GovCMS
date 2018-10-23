@@ -1,7 +1,7 @@
-langcode: en
-status: true
+langcode:     en
+status:       true
 dependencies: {  }
-id: site_administrator
-label: 'Site Administrator'
-weight: 4
-is_admin: null
+id:           site_administrator
+label:        'Site Administrator'
+weight:       4
+is_admin:     true
