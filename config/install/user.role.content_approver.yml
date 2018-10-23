@@ -1,7 +1,16 @@
-langcode: en
-status: true
+langcode:     en
+status:       true
 dependencies: {  }
-id: content_approver
-label: 'Content Approver'
-weight: 3
-is_admin: null
+id:           content_approver
+label:        'Content Approver'
+weight:       3
+is_admin:     null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access site in maintenance mode'
+  - 'access toolbar'
+  - 'view all revisions'
+  - 'view the administration theme'
+  - 'view unpublished paragraphs'
