@@ -1,0 +1,1 @@
+FROM amazeeio/mariadb-drupal
