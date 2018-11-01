@@ -15,7 +15,8 @@
     }
     
     var pluginConfig = {
-      speed: (typeof config.speed !== 'undefined' ? config.speed : 0.5)
+      speed: (typeof config.speed !== 'undefined' ? config.speed : 0.5),
+      zIndex: 0
     };
 
     toggle(element, media, pluginConfig);
