@@ -1,0 +1,67 @@
+---
+ahoyapi: v2
+
+commands:
+  up:
+    usage: Build project.
+    cmd: docker-compose up -d "$@"
+
+  down:
+    usage: Delete project.
+    cmd: docker-compose down
+
+  build:
+    usage: Build project.
+    cmd: docker-compose up -d --build "$@"
+
+  cli:
+    usage: Start a shell inside TEST container.
+    cmd: docker-compose exec test bash
+
+  run:
+    usage: Run command inside TEST container.
+    cmd: docker-compose exec -T test bash -c "$@"
+
+  drush:
+    usage: Run drush commands in TEST container.
+    cmd: docker-compose exec -T test drush "$@"
+
+  logs:
+    usage: Show Docker logs.
+    cmd: docker-compose logs "$@"
+
+  ps:
+    usage: List running Docker containers.
+    cmd: docker-compose ps
+
+  restart:
+    usage: Restart Docker containers.
+    cmd: docker-compose restart
+
+  stop:
+    usage: Stop Docker containers.
+    cmd: docker-compose stop "$@"
+
+  install:
+    usage: Install the profile.
+    cmd: docker-compose exec -T test drush si -y govcms "$@"
+
+  login:
+    usage: Login to a website.
+    cmd: docker-compose exec -T test drush uli "$@"
+
+  pull:
+    usage: Pull latest docker images.
+    cmd: docker image ls --format \"{{.Repository}}:{{.Tag}}\" | grep govcms8dev/ | grep -v none | xargs -n1 docker pull | cat
+
+  push:
+    usage: Push all docker images (beta).
+    cmd: |
+      export $(grep -v '^#' .env.default | xargs)
+      . .docker/push.sh
+
+  release:
+    usage: Push all docker images (latest release).
+    cmd: |
+      export $(grep -v '^#' .env.default | xargs)
+      . .docker/release.sh

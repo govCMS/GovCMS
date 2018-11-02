@@ -1,0 +1,88 @@
+version: '2.3'
+
+x-volumes:
+  &default-volumes
+    volumes:
+      - files:/app/web/sites/default/files
+
+x-environment:
+  &default-environment
+    LAGOON_ROUTE: ${LOCALDEV_URL:-http://govcms8.docker.amazee.io}
+
+volumes:
+  files: {}
+
+services:
+
+  cli: # cli container, will be used for executing composer and any local commands (drush, drupal, etc.)
+    build:
+      context: .
+      dockerfile: $PWD/.docker/Dockerfile.govcms8
+    image: ${DOCKERHUB_NAMESPACE:-govcms8}/govcms8
+    << : *default-volumes # loads the defined volumes from the top
+    environment:
+      << : *default-environment
+
+  test:
+    build:
+      context: .
+      dockerfile: $PWD/.docker/Dockerfile.test
+      args:
+        CLI_IMAGE: ${DOCKERHUB_NAMESPACE:-govcms8}/govcms8
+    image: ${DOCKERHUB_NAMESPACE:-govcms8}/test
+    << : *default-volumes
+    depends_on:
+      - cli
+    environment:
+      << : *default-environment
+
+  nginx:
+    build:
+      context: .
+      dockerfile: $PWD/.docker/Dockerfile.nginx-drupal
+      args:
+        CLI_IMAGE: ${DOCKERHUB_NAMESPACE:-govcms8}/govcms8
+    image: ${DOCKERHUB_NAMESPACE:-govcms8}/nginx-drupal
+    << : *default-volumes
+    environment:
+      << : *default-environment
+    networks:
+      - amazeeio-network
+      - default
+
+  php:
+    build:
+      context: .
+      dockerfile: $PWD/.docker/Dockerfile.php
+      args:
+        CLI_IMAGE: ${DOCKERHUB_NAMESPACE:-govcms8}/govcms8
+    image: ${DOCKERHUB_NAMESPACE:-govcms8}/php
+    << : *default-volumes
+    environment:
+      << : *default-environment
+
+  mariadb:
+    build:
+      context: .
+      dockerfile: $PWD/.docker/Dockerfile.mariadb-drupal
+    image: ${DOCKERHUB_NAMESPACE:-govcms8}/mariadb-drupal
+    ports:
+      - "3306" # Find port on host with `docker-compose port mariadb 3306`
+    environment:
+      << : *default-environment
+
+  solr:
+    build:
+      context: .
+      dockerfile: $PWD/.docker/Dockerfile.solr
+      args:
+        CLI_IMAGE: ${DOCKERHUB_NAMESPACE:-govcms8}/govcms8
+    image: ${DOCKERHUB_NAMESPACE:-govcms8}/solr
+    ports:
+      - "8983" # Find port on host with `docker-compose port solr 8983`
+    environment:
+      << : *default-environment
+
+networks:
+  amazeeio-network:
+    external: true
