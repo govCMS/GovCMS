@@ -1,0 +1,7 @@
+.lagoon.yml
+composer.lock
+docker-compose.yml
+docroot
+tests
+vendor
+web/sites/default/files

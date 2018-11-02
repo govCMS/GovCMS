@@ -1,0 +1,5 @@
+ARG CLI_IMAGE
+FROM ${CLI_IMAGE} as cli
+
+FROM amazeeio/solr:6.6-drupal
+COPY --from=cli /app/web/modules/contrib/search_api_solr/solr-conf/6.x/ /solr-conf/conf/

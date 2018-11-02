@@ -1,0 +1,53 @@
+version: 2
+jobs:
+  build:
+    working_directory: /app
+    docker:
+      - image: integratedexperts/circleci2-builder
+        environment:
+          COMPOSER_ALLOW_SUPERUSER: 1
+          COMPOSE_PROJECT_NAME: govcms8
+          DEPLOY_BRANCH: 8.x-6.x
+    steps:
+      - checkout
+      - run:
+          name: Docker-compose validate
+          command: docker-compose config -q
+      - run:
+          name: Update codebase to follow CI configuration
+          command: |
+            sed -i -e "/###/d" docker-compose.yml
+            cp .env.default .env
+      - setup_remote_docker
+      - run:
+          name: Start amazeeio-network
+          command: docker network prune -f && docker network create amazeeio-network || true
+      - run:
+          name: Build project
+          command: |
+            ahoy -v build
+            docker-compose exec test dockerize -wait tcp://mariadb:3306 -timeout 1m
+      - run:
+          name: Install site
+          command: ahoy -v install -- install_configure_form.enable_update_status_module=NULL install_configure_form.enable_update_status_emails=NULL
+      - run:
+          name: Push Docker images to Dockerhub
+          command: |
+            if [ "${DEPLOY_ANY_BRANCH}" != "" ] || [ "${CIRCLE_BRANCH}" == "${DEPLOY_BRANCH}" ]; then
+              echo "IMAGE_VERSION_TAG=$CIRCLE_TAG">>.env
+              docker login -u $DOCKER_USER -p $DOCKER_PASS
+              export $(grep -v '^#' .env | xargs)
+              ahoy push
+            else
+              echo "Skipping deployment"
+            fi
+workflows:
+  version: 2
+  main:
+    jobs:
+      - build:
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              only: /.*/

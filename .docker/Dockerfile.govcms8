@@ -1,0 +1,36 @@
+FROM amazeeio/php:7.1-cli-drupal as builder
+
+COPY . /src
+COPY composer-lagoon.json /app/composer.json
+COPY config /app/config
+COPY scripts /app/scripts
+RUN composer install --no-dev \
+    && mkdir -p /app/config/default
+
+FROM amazeeio/php:7.1-cli-drupal
+COPY --from=builder /app /app
+
+# Add composer bin to PATH
+ENV PATH="/app/bin:${PATH}"
+
+# Define where the Drupal Root is located
+ENV WEBROOT=web
+
+RUN fix-permissions /home/.drush \
+  && cp /app/web/sites/default/default.settings.php /app/web/sites/default/settings.php \
+  && { \
+    echo ; \
+    echo "\$databases['default']['default'] = array ("; \
+    echo "  'driver' => 'mysql',"; \
+    echo "  'database' => getenv('MARIADB_DATABASE') ?: 'drupal',"; \
+    echo "  'username' => getenv('MARIADB_USERNAME') ?: 'drupal',"; \
+    echo "  'password' => getenv('MARIADB_PASSWORD') ?: 'drupal',"; \
+    echo "  'host' => getenv('MARIADB_HOST') ?: 'mariadb',"; \
+    echo "  'port' => '3306',"; \
+    echo "  'prefix' => '',"; \
+    echo ");"; \
+    echo ; \
+    echo "\$settings['hash_salt'] = getenv('DRUPAL_HASH_SALT') ?: 'changeme';"; \
+    echo "\$config_directories[CONFIG_SYNC_DIRECTORY] = '/app/config/default';"; \
+    } | tee -a "/app/web/sites/default/settings.php" \
+    && chmod 444 /app/web/sites/default/settings.php
