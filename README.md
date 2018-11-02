@@ -66,6 +66,13 @@ govCMS8 comprises a number of repositories and projects:
 * For theme and custom module developers, this is the best way to install govCMS8.
 * This is the entry point for most users to govCMS8.
 
+### [govCMS8-uikit-starter](https://github.com/govCMS/govcms8_uikit_starter)
+* Implements the [DTA Design System UI Kit](https://designsystem.gov.au/)
+* Is bundled as as part of building a govCMS8-project
+* Theme developers should inherit designs/components from the UI Kit to take advantage of future/upstream updates
+
+Old/archived projects that were once part of the govCMS8 distro
+
 ### [govCMS8-UI](https://github.com/govCMS/govCMS8-ui)
 * This is a [Drupal 8 theme](https://www.drupal.org/project/govcms8_ui), built into govCMS8, but usable on any Drupal 8 site.
 * Anyone who wants to use, develop from, or contribute to the default govCMS8 theme should start here.
