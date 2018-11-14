@@ -21,7 +21,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: Start amazeeio-network
-          command: docker network prune -f && docker network create amazeeio-network || true
+          command: docker network prune -f && docker network inspect amazeeio-network >/dev/null || docker network create amazeeio-network
       - run:
           name: Build project
           command: |
