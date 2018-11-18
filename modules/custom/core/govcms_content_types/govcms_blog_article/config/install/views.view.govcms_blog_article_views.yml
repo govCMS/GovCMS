@@ -255,6 +255,20 @@ display:
           entity_type: node
           plugin_id: node_listing_empty
       css_class: 'views--layout views--layout--full-width'
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: '<h2 class="visually-hidden">List of Blogs</h2>'
+            format: rich_text
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:

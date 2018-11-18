@@ -267,6 +267,20 @@ display:
         options:
           relationship: none
           view_mode: teaser_small
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: '<h2 class="visually-hidden">List of News and Media</h2>'
+            format: rich_text
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:
