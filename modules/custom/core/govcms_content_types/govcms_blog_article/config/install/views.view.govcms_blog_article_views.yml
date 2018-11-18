@@ -243,6 +243,7 @@ display:
         pager: false
         empty: false
         css_class: false
+        header: false
       empty:
         node_listing_empty:
           id: node_listing_empty
@@ -266,7 +267,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: '<h2 class="visually-hidden">List of Blogs</h2>'
+            value: '<h2 class="visually-hidden">List of Blog Articles</h2>'
             format: rich_text
           plugin_id: text
     cache_metadata:
