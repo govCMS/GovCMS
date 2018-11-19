@@ -12,5 +12,6 @@ permissions:
   - 'access site in maintenance mode'
   - 'access toolbar'
   - 'view all revisions'
+  - 'view all scheduled transitions'
   - 'view the administration theme'
   - 'view unpublished paragraphs'
