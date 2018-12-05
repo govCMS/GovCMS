@@ -9,3 +9,17 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
     && rm dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz
 
 COPY --from=cli /app /app
+
+COPY tests/behat/ /app/tests/behat
+
+COPY tests/composer.json tests/composer.lock /app/tests/
+
+COPY .docker/scripts/behat .docker/scripts/lint-theme /usr/bin/
+
+RUN mkdir /app/tests/behat/screenshots \
+&& echo "memory_limit=-1" >> /usr/local/etc/php/conf.d/memory.ini \
+&& composer install -d /app/tests -n --ansi --prefer-dist --no-suggest \
+&& rm -rf /usr/local/etc/php/conf.d/memory.ini \
+&& chmod +x /usr/bin/behat \
+&& chmod +x /usr/bin/lint-theme \
+

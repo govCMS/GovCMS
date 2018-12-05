@@ -1,29 +1,56 @@
 default:
-  autoload:
-    '':                     %paths.base%/bootstrap
+  autoload: [ %paths.base%/bootstrap ]
+  gherkin:
+    filters:
+      # Allow skipping tests by tagging them with "@skipped"
+      tags: "~@skipped"
   suites:
     default:
+      paths: [ %paths.base%/features ]
       contexts:
-        - '\Drupal\DrupalExtension\Context\DrupalContext'
-        - '\Drupal\DrupalExtension\Context\MinkContext'
-        - '\Drupal\DrupalExtension\Context\MessageContext'
-        - '\Drupal\DrupalExtension\Context\DrushContext'
-      paths:
-        features:           %paths.base%/features
+      - FeatureContext
+      - Drupal\DrupalExtension\Context\MinkContext
+      - Drupal\DrupalExtension\Context\MarkupContext
+      - Drupal\DrupalExtension\Context\MessageContext
+      - IntegratedExperts\BehatScreenshotExtension\Context\ScreenshotContext
+
   extensions:
     Behat\MinkExtension:
-      base_url:             'http://govcms8.local'
-      goutte:               ~
+      goutte: ~
+      base_url: http://nginx:8080
+      files_path: %paths.base%/fixtures
+      browser_name: chrome
       selenium2:
-        wd_host:            'http://localhost:4444/wd/hub'
-        browser:            chrome
-      javascript_session:   selenium2
-      browser_name:         chrome
+        wd_host: "http://chrome:4444/wd/hub"
+        capabilities: { "browser": "chrome", "version": "*", "marionette": true }
+      javascript_session: selenium2
+    # Provides integration with Drupal APIs.
     Drupal\DrupalExtension:
-      blackbox:             ~
-      api_driver:           'drupal'
-      drush:
-        alias:              'local'
-        root:               'docroot'
+      blackbox: ~
+      api_driver: drupal
+      drush_driver: drush
       drupal:
-        drupal_root:        'docroot'
+        drupal_root: web
+      drush:
+        root: web
+      selectors:
+        message_selector: '.messages'
+        error_message_selector: '.messages.error'
+        success_message_selector: '.messages.status'
+        warning_message_selector: '.messages.warning'
+    # Allows to capture HTML and JPG screenshots (based on the driver used).
+    IntegratedExperts\BehatScreenshotExtension:
+      dir: %paths.base%/screenshots
+      fail: true
+      purge: false
+    # Show explicit fail information and continue the test run.
+    IntegratedExperts\BehatFormatProgressFail\FormatExtension: ~
+
+p0:
+  gherkin:
+    filters:
+      tags: "@p0&&~@skipped"
+p1:
+  gherkin:
+    filters:
+      tags: "@p1&&~@skipped"
