@@ -12,17 +12,20 @@ use Drupal\menu_link_content\Entity\MenuLinkContent;
  * Implements hook_install().
  */
 function govcms8_default_content_install() {
+  print "Validate:" . \Drupal::service('config.installer')->isSyncing();
   if (!\Drupal::service('config.installer')->isSyncing()) {
     \Drupal::classResolver()->getInstanceFromDefinition(InstallHelper::class)->importContent();
 
+    print "Before create menu";
     $menu_link = MenuLinkContent::create([
-      'title' => 'Styleguide',
+      'title' => 'Styleguide2',
       'link' => [
-        'uri' => 'internal:/themes/contrib/govcms8_uikit_starter/styleguide/'
+        'uri' => 'internal:/themes/contrib/govcms8_uikit_starter/styleguide/index.html'
       ],
       'menu_name' => 'main',
       'weight' => '5',
     ]);
     $menu_link->save();
+    print "after create menu";
   }
 }
