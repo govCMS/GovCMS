@@ -44,7 +44,7 @@ commands:
 
   install:
     usage: Install the profile.
-    cmd: docker-compose exec -T test drush si -y govcms --site-name="GovCMS8 default install" "$@"
+    cmd: docker-compose exec -T test drush si -y govcms --site-name="Welcome to GovCMS" "$@"
 
   login:
     usage: Login to a website.
