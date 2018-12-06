@@ -64,7 +64,8 @@ To develop on or patch against govCMS8, the source files should be downloaded an
         pygmy up
 
   It's likely sudo would be needed to achieve this on macOS (gem installation of pygmy).
-  Linux users may need to know about the --no-resolver flag; more [information](https://github.com/amazeeio/pygmy/blob/master/bin/pygmy#L25).
+
+  Linux users may need to use the option --no-resolver flag; more [information](https://github.com/amazeeio/pygmy/blob/master/bin/pygmy#L25).
 
 * [Windows](https://docs.amazee.io/local_docker_development/windows.html):
 
