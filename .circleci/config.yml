@@ -38,7 +38,7 @@ jobs:
           command: ahoy test-behat -- --format=progress_fail || ahoy test-behat -- --format=progress_fail --rerun
       - run:
           name: Copy artifacts
-          command: mkdir -p /tmp/artifacts/behat && docker cp $(docker-compose -p govcms ps -q test):/app/tests/behat/screenshots /tmp/artifacts/behat
+          command: mkdir -p /tmp/artifacts/behat && docker cp $(docker-compose -p govcms8 ps -q test):/app/tests/behat/screenshots /tmp/artifacts/behat
           when: always
       - store_artifacts:
           path: /tmp/artifacts
