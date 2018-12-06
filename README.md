@@ -54,10 +54,17 @@ To develop on or patch against govCMS8, the source files should be downloaded an
 
 * [Docker](https://docs.docker.com/install/) - Follow documentation at https://docs.amazee.io/local_docker_development/local_docker_development.html to configure local development environment.
 
+* Create local network
+
+        docker network create amazeeio-network
+
 * [Mac/Linux](https://docs.amazee.io/local_docker_development/pygmy.html) - Make sure you don't have anything running on port 80 on the host machine (like a web server):
 
         gem install pygmy
         pygmy up
+
+  It's likely sudo would be needed to achieve this on macOS (gem installation of pygmy).
+  Linux users may need to know about the --no-resolver flag; more [information](https://github.com/amazeeio/pygmy/blob/master/bin/pygmy#L25).
 
 * [Windows](https://docs.amazee.io/local_docker_development/windows.html):
 
