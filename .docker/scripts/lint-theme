@@ -8,7 +8,7 @@ PROFILE_DIR=${PROFILE_DIR:-${APP_DIR}/web}
 ${APP_DIR}/tests/vendor/bin/parallel-lint --exclude /app/tests/vendor -e php,inc,module,theme,install,profile,test ${PROFILE_DIR}/themes/custom
 
 # Check code standards.
-${APP_DIR}/tests/vendor/bin/phpcs --standard=${APP_DIR}/phpcs.xml ${PROFILE_DIR}/themes/custom
+${APP_DIR}/tests/vendor/bin/phpcs --standard=${APP_DIR}/tests/phpcs.xml ${PROFILE_DIR}/themes/custom
 
 # Check code mess.
 ${APP_DIR}/tests/vendor/bin/phpmd ${PROFILE_DIR}/themes/custom text codesize,unusedcode,cleancode
