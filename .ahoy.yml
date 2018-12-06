@@ -44,11 +44,19 @@ commands:
 
   install:
     usage: Install the profile.
-    cmd: docker-compose exec -T test drush si -y govcms "$@"
+    cmd: docker-compose exec -T test drush si -y govcms --site-name="GovCMS8 default install" "$@"
 
   login:
     usage: Login to a website.
     cmd: docker-compose exec -T test drush uli "$@"
+
+  lint:
+    usage: Lint code
+    cmd: docker-compose exec -T test lint-theme
+
+  test-behat:
+    usage: Run Behat tests.
+    cmd: docker-compose exec -T test behat "$@"
 
   pull:
     usage: Pull latest docker images.
