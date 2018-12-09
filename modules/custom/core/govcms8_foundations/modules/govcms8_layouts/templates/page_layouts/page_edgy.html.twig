@@ -13,6 +13,17 @@
 %}
 
 <div{{ attributes.addClass(classes) }}>
+  {% if content.header|render|striptags|trim %}
+    <section class="page-layout__content-header-section">
+      <div class="container">
+        <div class="row">
+          <div class="page-layout__content-header">
+            {{ content.header }}
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
   {% if content.content_top|render|striptags|trim or content.content|render|striptags|trim or content.content_bottom|render|striptags|trim %}
     <section class="page-layout__content-section">
       {% if content.content_top|render|trim %}

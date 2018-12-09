@@ -113,32 +113,6 @@ third_party_settings:
             uuid: ff030d74-4ed3-47d4-a5de-1996cad53064
             context_mapping:
               entity: '@panelizer.entity_context:entity'
-          53c3efb2-63fe-424e-8402-720925e3553c:
-            id: system_breadcrumb_block
-            label: Breadcrumbs
-            provider: system
-            label_display: '0'
-            region: header
-            weight: -10
-            uuid: 53c3efb2-63fe-424e-8402-720925e3553c
-            context_mapping: {  }
-          ce6ca4b2-3989-4fcc-967a-d075e833f7bf:
-            id: 'entity_field:node:title'
-            label: Title
-            provider: ctools_block
-            label_display: '0'
-            formatter:
-              label: hidden
-              type: string
-              settings:
-                link_to_entity: false
-              third_party_settings: {  }
-              weight: 0
-            region: header
-            weight: -9
-            uuid: ce6ca4b2-3989-4fcc-967a-d075e833f7bf
-            context_mapping:
-              entity: '@panelizer.entity_context:entity'
           288540c3-5ba1-4161-9a9a-514c5e89ff3a:
             id: 'system_menu_block:main'
             label: 'Main navigation'
