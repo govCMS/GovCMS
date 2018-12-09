@@ -152,32 +152,6 @@ third_party_settings:
             uuid: d26b3291-0ad5-4068-a7e6-8c70ca5ed7f8
             context_mapping:
               entity: '@panelizer.entity_context:entity'
-          6c29f34b-955e-480d-9440-6e3b431a704c:
-            id: system_breadcrumb_block
-            label: Breadcrumbs
-            provider: system
-            label_display: '0'
-            region: header
-            weight: -10
-            uuid: 6c29f34b-955e-480d-9440-6e3b431a704c
-            context_mapping: {  }
-          40090fb3-d729-44e4-9d28-cff0a9fd5798:
-            id: 'entity_field:node:title'
-            label: Title
-            provider: ctools_block
-            label_display: '0'
-            formatter:
-              label: above
-              type: string
-              settings:
-                link_to_entity: false
-              third_party_settings: {  }
-              weight: 0
-            region: header
-            weight: -9
-            uuid: 40090fb3-d729-44e4-9d28-cff0a9fd5798
-            context_mapping:
-              entity: '@panelizer.entity_context:entity'
           435ed3f1-3335-4625-80e1-d62ce9c0325a:
             id: 'system_menu_block:main'
             label: 'Main navigation'

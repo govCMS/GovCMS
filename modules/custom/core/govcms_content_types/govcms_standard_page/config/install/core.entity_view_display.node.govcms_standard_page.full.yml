@@ -105,32 +105,6 @@ third_party_settings:
             weight: 0
             uuid: 2c029f40-368e-4c4a-9420-c89e4bbb2ca8
             context_mapping: {  }
-          16ea25d3-ad43-4e76-bf6b-d24ac2d0d389:
-            id: system_breadcrumb_block
-            label: Breadcrumbs
-            provider: system
-            label_display: '0'
-            region: header
-            weight: 0
-            uuid: 16ea25d3-ad43-4e76-bf6b-d24ac2d0d389
-            context_mapping: {  }
-          92029806-68ec-44ae-ae0d-a34a2582b58f:
-            id: 'entity_field:node:title'
-            label: Title
-            provider: ctools_block
-            label_display: '0'
-            formatter:
-              label: hidden
-              type: string
-              settings:
-                link_to_entity: false
-              third_party_settings: {  }
-              weight: 0
-            region: header
-            weight: 0
-            uuid: 92029806-68ec-44ae-ae0d-a34a2582b58f
-            context_mapping:
-              entity: '@panelizer.entity_context:entity'
         id: panels_variant
         uuid: b85f666c-7586-4f49-8f8e-d38e9a1953e2
         label: 'Edge to edge'
