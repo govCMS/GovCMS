@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Install file.
+ */
+
+use Drupal\workflows\Entity\Workflow;
+
+/**
+ * Implements hook_install().
+ */
+function govcms_foi_install() {
+  // Enable FOI in Editorial workflow if enabled.
+  /** @var \Drupal\Core\Extension\ModuleHandlerInterface $moduleHandler */
+  $moduleHandler = \Drupal::service('module_handler');
+  if ($moduleHandler->moduleExists('content_moderation')) {
+    $editorial_workflow = Workflow::load('editorial');
+    if ($editorial_workflow) {
+      $editorial_workflow->getTypePlugin()->addEntityTypeAndBundle('node', 'govcms_foi');
+      $editorial_workflow->save();
+    }
+  }
+}
