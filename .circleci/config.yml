@@ -7,7 +7,7 @@ jobs:
         environment:
           COMPOSER_ALLOW_SUPERUSER: 1
           COMPOSE_PROJECT_NAME: govcms8
-          DEPLOY_BRANCH: 8.x-6.x
+          DEPLOY_BRANCH: 1.x
     steps:
       - checkout
       - run:
