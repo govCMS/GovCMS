@@ -21,7 +21,7 @@ mode: summary
 content:
   field_media_oembed_video:
     type: oembed_textfield
-    weight: 2
+    weight: 1
     region: content
     settings:
       size: 60
@@ -29,7 +29,7 @@ content:
     third_party_settings: {  }
   field_tags:
     type: entity_reference_autocomplete_tags
-    weight: 3
+    weight: 2
     region: content
     settings:
       match_operator: CONTAINS

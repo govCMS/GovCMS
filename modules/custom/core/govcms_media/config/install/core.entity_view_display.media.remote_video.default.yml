@@ -19,7 +19,7 @@ mode: default
 content:
   field_media_oembed_video:
     type: oembed
-    weight: 1
+    weight: 0
     region: content
     label: hidden
     settings:
@@ -27,7 +27,7 @@ content:
       max_height: 0
     third_party_settings: {  }
   field_tags:
-    weight: 2
+    weight: 1
     label: above
     settings:
       link: true
