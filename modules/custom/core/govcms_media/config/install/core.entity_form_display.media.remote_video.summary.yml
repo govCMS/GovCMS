@@ -1,33 +1,38 @@
+uuid: 942e6f5a-2657-45bd-9d43-0de60e3d299e
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_form_mode.media.summary
-    - field.field.media.remote_video.field_media_video_embed_field
+    - field.field.media.remote_video.field_media_oembed_video
     - field.field.media.remote_video.field_tags
     - media.type.remote_video
   module:
     - field_layout
     - layout_discovery
-    - video_embed_field
+    - media
 third_party_settings:
   field_layout:
     id: layout_onecol
     settings: {  }
+_core:
+  default_config_hash: U9HO5eWeL7mV4jD25Eh61--b7D9xcVJNL2GQg0-cXeo
 id: media.remote_video.summary
 targetEntityType: media
 bundle: remote_video
 mode: summary
 content:
-  field_media_video_embed_field:
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
-    type: video_embed_field_textfield
+  field_media_oembed_video:
+    type: oembed_textfield
+    weight: 2
     region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_tags:
     type: entity_reference_autocomplete_tags
-    weight: 2
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS
