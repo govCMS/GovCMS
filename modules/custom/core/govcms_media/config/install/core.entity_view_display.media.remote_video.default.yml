@@ -1,4 +1,3 @@
-uuid: 1858c1cf-a5cd-4cb6-9667-c69016ad4116
 langcode: en
 status: true
 dependencies:
@@ -13,8 +12,6 @@ third_party_settings:
   field_layout:
     id: layout_onecol
     settings: {  }
-_core:
-  default_config_hash: a4Vxi1o1pyxIhr-dbsHiZXB1iqR2O_fRR_j8v30tAMQ
 id: media.remote_video.default
 targetEntityType: media
 bundle: remote_video
