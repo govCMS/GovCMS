@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Behat testing.
+
+APP_DIR=${APP_DIR:-/app}
+BEHAT_PROFILE=${BEHAT_PROFILE:-}
+
+${APP_DIR}/tests/vendor/bin/behat --config ${APP_DIR}/tests/behat/behat.yml --strict --colors $BEHAT_PROFILE "$@"
