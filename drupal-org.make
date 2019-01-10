@@ -57,6 +57,7 @@ projects[focal_point][type] = module
 projects[focal_point][version] = 1.0-beta6
 projects[google_analytics][type] = module
 projects[google_analytics][version] = 3.0-beta1
+projects[google_analytics][patch][] = "https://www.drupal.org/files/issues/2018-06-18/patch_google_analytics.patch"
 projects[govcms8_ui][type] = theme
 projects[govcms8_ui][version] = 1.0-alpha1
 projects[govcms8_uikit_starter][type] = theme
