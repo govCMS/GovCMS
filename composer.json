@@ -58,7 +58,7 @@
         "drupal/inline_entity_form": "1.0-rc1",
         "drupal/jsonapi": "2.0",
         "drupal/linked_field": "1.1.0",
-        "drupal/linkit": "5.0-beta7",
+        "drupal/linkit": "5.0-beta8",
         "drupal/login_security": "1.5",
         "drupal/memcache": "2.0",
         "drupal/menu_trail_by_path": "1.1",
