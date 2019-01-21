@@ -84,7 +84,7 @@
         "drupal/token": "1.5",
         "drupal/username_enumeration_prevention": "1.0-beta2",
         "drupal/video_embed_field": "2.0",
-        "drupal/webform": "5.0-rc24",
+        "drupal/webform": "5.1",
         "oomphinc/composer-installers-extender": "^1.1",
         "swiftmailer/swiftmailer": "5.4.12",
         "symfony/phpunit-bridge": "^3.4.6"
