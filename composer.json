@@ -33,6 +33,7 @@
         "drupal/components": "1.0.0",
         "drupal/config_filter": "1.4",
         "drupal/config_split": "1.4",
+        "drupal/config_update": "1.6",
         "drupal/consumers": "1.4",
         "drupal/contact_storage": "1.0-beta9",
         "drupal/context": "4.0-beta2",
