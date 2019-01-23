@@ -27,7 +27,7 @@
         "drupal/console": "^1.0.2",
         "drupal/core": "8.6.7",
         "drush/drush": "^9.0.0",
-        "govcms/govcms": "*",
+        "govcms/govcms": "1.0.0-beta1",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3"
     },
