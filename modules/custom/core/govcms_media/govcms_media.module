@@ -35,16 +35,11 @@ function govcms_media_media_source_info_alter(array &$sources) {
   $sources['video_file']['input_match']['field_types'] = ['video_file'];
   Override::pluginClass($sources['video_file'], VideoFile::class);
 
-  $sources['video_embed_field']['input_match'] = [
-    'field_types' => [
-      'string',
-      'string_long',
-      'video_embed_field',
-    ],
+  $sources['oembed:video']['input_match']['field_types'] = [
+    'string',
+    'string_long',
   ];
-  $sources['video_embed_field']['preview'] = TRUE;
-
-  Override::pluginClass($sources['video_embed_field'], RemoteVideo::class);
+  Override::pluginClass($sources['oembed:video'], RemoteVideo::class);
 }
 
 /**
