@@ -15,6 +15,7 @@ dependencies:
   - menu_ui
   - node
   - panelizer
+  - paragraphs
   - path
   - pathauto
   - simple_sitemap

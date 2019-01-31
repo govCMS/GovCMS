@@ -33,9 +33,9 @@
       {% endif %}
       {% if content.content|render|striptags|trim or content.sidebar|render|striptags|trim %}
         <div class="row">
-          <main class="page-layout__content">
+          <div class="page-layout__content">
             {{ content.content }}
-          </main>
+          </div>
           <aside class="page-layout__sidebar">
             {{ content.sidebar }}
           </aside>

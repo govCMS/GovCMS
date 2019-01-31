@@ -8,4 +8,4 @@ includes[] = drupal-org-core.make
 projects[govcms8][type] = profile
 projects[govcms8][download][type] = git
 projects[govcms8][download][branch] = 8.x-6.x
-projects[govcms8][version] = 6.x-dev
+projects[govcms8][version] = 8.x-1.0-beta1
