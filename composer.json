@@ -46,6 +46,7 @@
         "drupal/entity_reference_display": "1.2.0",
         "drupal/entity_reference_revisions": "1.6",
         "drupal/environment_indicator": "3.5",
+        "drupal/events_log_track": "^1.1",
         "drupal/facets": "1.2",
         "drupal/features": "3.8",
         "drupal/field_group": "3.0-beta1",
@@ -129,7 +130,16 @@
             "docroot/libraries/{$name}": ["type:drupal-library", "type:bower-asset", "type:npm-asset"],
             "drush/contrib/{$name}": ["type:drupal-drush"]
         },
-        "patches": {}
+        "enable-patching":true,
+        "patches": {
+            "drupal/events_log_track": {
+                "Events Log Track breaks Entity Browser #5 - https://www.drupal.org/project/events_log_track/issues/2934036": "https://www.drupal.org/files/issues/2018-04-19/2934036-check_empty_submit-5.patch",
+                "Entities with title longer than 50 characters - https://www.drupal.org/project/events_log_track/issues/2930817": "https://www.drupal.org/files/issues/increase-character-length-2930817-2.patch",
+                "Event logs for change in workflows - https://www.drupal.org/project/events_log_track/issues/2974170": "https://www.drupal.org/files/issues/2018-06-26/events_log_track-add-workflows-2974170-7.patch",
+                "Add handlers for file and media entities - https://www.drupal.org/project/events_log_track/issues/2959769": "https://www.drupal.org/files/issues/2018-06-26/events-log-track_add-file-media-2959769-9.patch",
+                "Skip password logging during failed authentication attempt - https://www.drupal.org/project/events_log_track/issues/3027463": "https://www.drupal.org/files/issues/2019-01-22/event-log-track-auth-3027463-2.patch"
+            }
+        }
     },
     "autoload": {
         "psr-4": {
