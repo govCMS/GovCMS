@@ -62,7 +62,7 @@
         "drupal/login_security": "1.5",
         "drupal/memcache": "2.0",
         "drupal/menu_trail_by_path": "1.1",
-        "drupal/metatag": "1.7",
+        "drupal/metatag": "1.8",
         "drupal/modifiers": "1.2",
         "drupal/module_filter": "3.1",
         "drupal/panelizer": "4.1",
