@@ -144,4 +144,3 @@ libraries[swiftmailer][type] = library
 libraries[swiftmailer][download][type] = git
 libraries[swiftmailer][download][url] = https://github.com/swiftmailer/swiftmailer.git
 libraries[swiftmailer][download][branch] = v5.4.12
-libraries[swiftmailer][download][revision] = 181b89f18a90f8925ef805f950d47a7190e9b950
