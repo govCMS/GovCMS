@@ -77,10 +77,6 @@ Old/archived projects that were once part of the govCMS8 distro
 * This is a [Drupal 8 theme](https://www.drupal.org/project/govcms8_ui), built into govCMS8, but usable on any Drupal 8 site.
 * Anyone who wants to use, develop from, or contribute to the default govCMS8 theme should start here.
 
-### [UI-Kit-bootstrap](https://github.com/govCMS/uikit-bootstrap)
-* This is a bootstrap stylesheet based on the DTA's [UI-Kit 2.0](https://github.com/govau/uikit/) that is the basis for govCMS8-UI.
-* Developers looking to add or improve functionality to themes using the stylesheet should start here.
-
 **[Back to top](#govcms8)**
 ## Server Requirements
 
