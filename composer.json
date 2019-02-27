@@ -80,7 +80,7 @@
         "drupal/seckit": "1.1",
         "drupal/shield": "1.2",
         "drupal/simple_oauth": "3.11",
-        "drupal/simple_sitemap": "2.12",
+        "drupal/simple_sitemap": "3.0",
         "drupal/swiftmailer": "1.0-beta2",
         "drupal/token": "1.5",
         "drupal/username_enumeration_prevention": "1.0-beta2",
