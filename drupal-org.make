@@ -84,6 +84,7 @@ projects[menu_trail_by_path][type] = module
 projects[menu_trail_by_path][version] = 1.1
 projects[metatag][type] = module
 projects[metatag][version] = 1.8
+projects[metatag][patch][] = "https://www.drupal.org/files/issues/2019-02-28/metatag-unset-2735195-40.patch"
 projects[modifiers][type] = module
 projects[modifiers][version] = 1.2
 projects[module_filter][type] = module
