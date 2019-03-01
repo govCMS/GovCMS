@@ -3,5 +3,5 @@ langcode: en
 status: true
 dependencies: {  }
 id: administer_site_information
-label: 'Administer site information'
+label: 'administer site information'
 path: /admin/config/system/site-information
