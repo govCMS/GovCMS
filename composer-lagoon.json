@@ -13,6 +13,10 @@
             "url": "https://asset-packagist.org"
         },
         {
+            "type": "vcs",
+            "url": "git@github.com:govcms/govcms8_uikit_starter.git"
+        },
+        {
             "type": "path",
             "url": "/src",
             "options": {
