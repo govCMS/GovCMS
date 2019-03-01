@@ -62,6 +62,7 @@
         "patchLevel": {
             "drupal/core": "-p2"
         },
+        "enable-patching": true,
         "installer-types": ["bower-asset", "npm-asset"],
         "installer-paths": {
             "web/core": [

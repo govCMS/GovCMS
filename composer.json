@@ -32,6 +32,7 @@
         "drupal/chosen": "2.6.0",
         "drupal/components": "1.0.0",
         "drupal/config_filter": "1.4",
+        "drupal/config_ignore": "2.1",
         "drupal/config_split": "1.4",
         "drupal/config_update": "1.6",
         "drupal/consumers": "1.4",
@@ -129,7 +130,12 @@
             "docroot/libraries/{$name}": ["type:drupal-library", "type:bower-asset", "type:npm-asset"],
             "drush/contrib/{$name}": ["type:drupal-drush"]
         },
-        "patches": {}
+        "enable-patching": true,
+        "patches": {
+            "drupal/config_ignore": {
+                "Offset error within IgnoreFilter::activeReadMultiple() - https://www.drupal.org/project/config_ignore/issues/2972302": "https://www.drupal.org/files/issues/2018-07-31/offset-error-within-2972302-13.patch"
+            }
+        }
     },
     "autoload": {
         "psr-4": {
