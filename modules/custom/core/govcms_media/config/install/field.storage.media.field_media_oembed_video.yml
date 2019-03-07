@@ -3,13 +3,15 @@ status: true
 dependencies:
   module:
     - media
-    - video_embed_field
-id: media.field_media_video_embed_field
-field_name: field_media_video_embed_field
+id: media.field_media_oembed_video
+field_name: field_media_oembed_video
 entity_type: media
-type: video_embed_field
-settings: {  }
-module: video_embed_field
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

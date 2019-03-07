@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: /app
     docker:
-      - image: integratedexperts/circleci2-builder
+      - image: integratedexperts/ci-builder
         environment:
           COMPOSER_ALLOW_SUPERUSER: 1
           COMPOSE_PROJECT_NAME: govcms8
