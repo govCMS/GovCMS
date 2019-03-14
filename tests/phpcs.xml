@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<ruleset name="vahiscv">
+  <description>PHPCS Standard for a GoVCMS8 website, based on Drupal standards.
+  </description>
+
+  <rule ref="Drupal"/>
+  <rule ref="DrupalPractice"/>
+  <rule ref="Generic.Debug.ESLint"/>
+
+  <arg name="extensions" value="css,inc,info,install,js,module,php,profile,test,theme"/>
+
+  <file>tests</file>
+  <file>web/themes/custom</file>
+  <file>web/sites/default/settings.php</file>
+
+  <!-- Exclude custom profile info YAML files. -->
+  <exclude-pattern>web/profiles/custom*\.info\.yml</exclude-pattern>
+
+  <!-- Exclude all minified files. -->
+  <exclude-pattern>*\.min\.js</exclude-pattern>
+  <exclude-pattern>*\.css</exclude-pattern>
+
+  <!-- Exclude all JS library files. -->
+  <exclude-pattern>*library*\.js</exclude-pattern>
+  <exclude-pattern>*libraries*\.js</exclude-pattern>
+
+  <!-- Exclude all features-generated files. -->
+  <exclude-pattern>*\.bean\.*</exclude-pattern>
+  <exclude-pattern>*\.context\.*</exclude-pattern>
+  <exclude-pattern>*\.current_search\.*</exclude-pattern>
+  <exclude-pattern>*\.custom_formatters\.*</exclude-pattern>
+  <exclude-pattern>*\.ds\.*</exclude-pattern>
+  <exclude-pattern>*\.facetapi_defaults\.*</exclude-pattern>
+  <exclude-pattern>*\.feeds_*\.*</exclude-pattern>
+  <exclude-pattern>*\.features\.*</exclude-pattern>
+  <exclude-pattern>*\.field_group\.*</exclude-pattern>
+  <exclude-pattern>*\.file_default_displays\.*</exclude-pattern>
+  <exclude-pattern>*\.file_type\.*</exclude-pattern>
+  <exclude-pattern>*\.heartbeat\.*</exclude-pattern>
+  <exclude-pattern>*\.layouts\.*</exclude-pattern>
+  <exclude-pattern>*\.linkit_profiles\.*</exclude-pattern>
+  <exclude-pattern>*\.pages_default\.*</exclude-pattern>
+  <exclude-pattern>*\.panels_default\.*</exclude-pattern>
+  <exclude-pattern>*\.rules_defaults\.*</exclude-pattern>
+  <exclude-pattern>*\.strongarm\.*</exclude-pattern>
+  <exclude-pattern>*\.views_default\.*</exclude-pattern>
+  <exclude-pattern>*\.quicktabs\.*</exclude-pattern>
+
+  <!--Force short array syntax.-->
+  <rule ref="Generic.Arrays.DisallowLongArraySyntax.Found">
+    <type>warning</type>
+  </rule>
+
+  <!--Allow global variables in settings file.-->
+  <rule ref="DrupalPractice.CodeAnalysis.VariableAnalysis.UndefinedVariable">
+    <exclude-pattern>settings\.php</exclude-pattern>
+  </rule>
+
+  <!--Allow section separators in settings.php file.-->
+  <rule ref="DrupalPractice.Commenting.CommentEmptyLine.SpacingAfter">
+    <exclude-pattern>settings\.php</exclude-pattern>
+  </rule>
+  <rule ref="Drupal.Commenting.InlineComment.InvalidEndChar">
+    <exclude-pattern>settings\.php</exclude-pattern>
+  </rule>
+  <rule ref="Drupal.Commenting.InlineComment.NoSpaceBefore">
+    <exclude-pattern>settings\.php</exclude-pattern>
+  </rule>
+  <rule ref="Drupal.Commenting.InlineComment.SpacingAfter">
+    <exclude-pattern>settings\.php</exclude-pattern>
+  </rule>
+
+  <!--Allow arrays with and without specified keys in install files.-->
+  <rule ref="Squiz.Arrays.ArrayDeclaration.KeySpecified">
+    <exclude-pattern>*\.install</exclude-pattern>
+  </rule>
+  <rule ref="Squiz.Arrays.ArrayDeclaration.NoKeySpecified">
+    <exclude-pattern>*\.install</exclude-pattern>
+  </rule>
+
+  <!--Allow version in custom modules.-->
+  <rule ref="Drupal.InfoFiles.AutoAddedKeys.Version">
+    <exclude-pattern>custom/*.info</exclude-pattern>
+  </rule>
+
+  <!--Allow uncommented functions in tests as they usually provide enough
+  information from their names.-->
+  <rule ref="Drupal.Commenting.DocComment.MissingShort">
+    <exclude-pattern>tests/behat/bootstrap/*\.php</exclude-pattern>
+    <exclude-pattern>tests/unit/*.Test\.php</exclude-pattern>
+    <exclude-pattern>tests/unit/*.TestCase\.php</exclude-pattern>
+  </rule>
+  <rule ref="Drupal.Commenting.FunctionComment.Missing">
+    <exclude-pattern>tests/unit/*.Test\.php</exclude-pattern>
+    <exclude-pattern>tests/unit/*.TestCase\.php</exclude-pattern>
+  </rule>
+
+  <rule ref="Squiz.Arrays.ArrayDeclaration.NoKeySpecified">
+    <exclude-pattern>*</exclude-pattern>
+  </rule>
+</ruleset>

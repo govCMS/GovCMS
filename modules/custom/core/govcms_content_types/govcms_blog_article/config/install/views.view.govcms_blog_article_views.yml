@@ -67,7 +67,14 @@ display:
             previous: ‹‹
             next: ››
       style:
-        type: default
+        type: html_list
+        options:
+          row_class: views-row
+          default_row_class: true
+          uses_fields: false
+          type: ul
+          wrapper_class: views-list
+          class: ''
       row:
         type: 'entity:node'
         options:

@@ -3,13 +3,13 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.media.summary
-    - field.field.media.remote_video.field_media_video_embed_field
+    - field.field.media.remote_video.field_media_oembed_video
     - field.field.media.remote_video.field_tags
     - media.type.remote_video
   module:
     - field_layout
     - layout_discovery
-    - video_embed_field
+    - media
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -19,12 +19,14 @@ targetEntityType: media
 bundle: remote_video
 mode: summary
 content:
-  field_media_video_embed_field:
+  field_media_oembed_video:
+    type: oembed_textfield
     weight: 1
-    settings: {  }
-    third_party_settings: {  }
-    type: video_embed_field_textfield
     region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_tags:
     type: entity_reference_autocomplete_tags
     weight: 2

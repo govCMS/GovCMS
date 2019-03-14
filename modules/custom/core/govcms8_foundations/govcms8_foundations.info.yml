@@ -10,4 +10,3 @@ dependencies:
   - govcms8_modifiers
   - entity_class_formatter
   - entity_reference_display
-  - panelizer
