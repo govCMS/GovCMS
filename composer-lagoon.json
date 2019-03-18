@@ -25,11 +25,12 @@
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/console": "^1.0.2",
-        "drupal/core": "8.6.10",
+        "drupal/core": "8.6.12",
         "drush/drush": "^9.0.0",
         "govcms/govcms": "*",
         "webflo/drupal-finder": "^1.0.0",
-        "webmozart/path-util": "^2.3"
+        "webmozart/path-util": "^2.3",
+        "webflo/drupal-core-strict": "8.6.12"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -62,6 +63,7 @@
         "patchLevel": {
             "drupal/core": "-p2"
         },
+        "enable-patching": true,
         "installer-types": ["bower-asset", "npm-asset"],
         "installer-paths": {
             "web/core": [

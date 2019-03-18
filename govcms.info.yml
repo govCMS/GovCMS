@@ -46,6 +46,15 @@ dependencies:
   - components
   - entity_browser
   - entity_embed
+  - events_log_track:event_log_track
+  - events_log_track:event_log_track_auth
+  - events_log_track:event_log_track_node
+  - events_log_track:event_log_track_taxonomy
+  - events_log_track:event_log_track_menu
+  - events_log_track:event_log_track_file
+  - events_log_track:event_log_track_media
+  - events_log_track:event_log_track_user
+  - events_log_track:event_log_track_workflows
   - features_ui
   - field_group
   - focal_point
