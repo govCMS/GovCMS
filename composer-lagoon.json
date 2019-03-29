@@ -30,7 +30,7 @@
         "govcms/govcms": "*",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
-        "webflo/drupal-core-strict": "8.6.12"
+        "webflo/drupal-core-strict": "8.6.13"
     },
     "conflict": {
         "drupal/drupal": "*"
