@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.govcms_news_and_media.panelizer
     - node.type.govcms_news_and_media
   module:
+    - datetime
     - entity_reference_revisions
     - field_layout
     - file
@@ -88,7 +89,7 @@ content:
       format_type: medium
       timezone_override: ''
     third_party_settings: {  }
-    type: datetime_timestamp
+    type: datetime_default
     region: content
   field_thumbnail:
     weight: 109
