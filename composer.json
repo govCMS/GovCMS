@@ -54,7 +54,7 @@
         "drupal/focal_point": "1.0-beta6",
         "drupal/google_analytics": "3.0",
         "drupal/govcms8_ui": "1.0.0-alpha1",
-        "govcms/govcms8_uikit_starter": "dev-feature/accessibility-combined#fb0265dcd81698174018ee275281990df3852a0c",
+        "drupal/govcms8_uikit_starter": "1.0-alpha2",
         "drupal/graphql": "3.0.0-rc2",
         "drupal/honeypot": "1.29",
         "drupal/inline_entity_form": "1.0-rc1",
