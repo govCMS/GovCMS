@@ -15,7 +15,6 @@ dependencies:
     - node.type.govcms_news_and_media
   module:
     - content_moderation
-    - datetime
     - entity_browser
     - field_layout
     - file
@@ -107,7 +106,7 @@ content:
     weight: 51
     settings: {  }
     third_party_settings: {  }
-    type: datetime_default
+    type: datetime_timestamp
     region: content
   field_thumbnail:
     weight: 1

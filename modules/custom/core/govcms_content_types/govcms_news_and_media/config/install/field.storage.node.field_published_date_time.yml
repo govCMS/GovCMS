@@ -7,10 +7,9 @@ dependencies:
 id: node.field_published_date_time
 field_name: field_published_date_time
 entity_type: node
-type: datetime
-settings:
-  datetime_type: datetime
-module: datetime
+type: timestamp
+settings: {  }
+module: core
 locked: false
 cardinality: 1
 translatable: true
