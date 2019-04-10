@@ -132,8 +132,11 @@
             "docroot/libraries/{$name}": ["type:drupal-library", "type:bower-asset", "type:npm-asset"],
             "drush/contrib/{$name}": ["type:drupal-drush"]
         },
-        "enable-patching":true,
+        "enable-patching": true,
         "patches": {
+            "drupal/metatag": {
+                "Unset link rel: shortlink, edit-form, version-history and revision, and meta name: Generator, MobileOptimized, HandheldFriendly, viewport from <head> - https://www.drupal.org/project/metatag/issues/2735195#comment-12991008": "https://www.drupal.org/files/issues/2019-02-28/metatag-unset-2735195-42.patch"
+            },
             "drupal/events_log_track": {
                 "Events Log Track breaks Entity Browser #5 - https://www.drupal.org/project/events_log_track/issues/2934036": "https://www.drupal.org/files/issues/2018-04-19/2934036-check_empty_submit-5.patch",
                 "Entities with title longer than 50 characters - https://www.drupal.org/project/events_log_track/issues/2930817": "https://www.drupal.org/files/issues/increase-character-length-2930817-2.patch",
