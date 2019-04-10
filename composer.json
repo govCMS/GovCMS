@@ -32,6 +32,7 @@
         "drupal/chosen": "2.6.0",
         "drupal/components": "1.0.0",
         "drupal/config_filter": "1.4",
+        "drupal/config_ignore": "2.1",
         "drupal/config_split": "1.4",
         "drupal/config_update": "1.6",
         "drupal/consumers": "1.9",
@@ -134,6 +135,9 @@
         },
         "enable-patching": true,
         "patches": {
+            "drupal/config_ignore": {
+                "Offset error within IgnoreFilter::activeReadMultiple() - https://www.drupal.org/project/config_ignore/issues/2972302": "https://www.drupal.org/files/issues/2018-07-31/offset-error-within-2972302-13.patch"
+            },
             "drupal/metatag": {
                 "Unset link rel: shortlink, edit-form, version-history and revision, and meta name: Generator, MobileOptimized, HandheldFriendly, viewport from <head> - https://www.drupal.org/project/metatag/issues/2735195#comment-12991008": "https://www.drupal.org/files/issues/2019-02-28/metatag-unset-2735195-42.patch"
             },

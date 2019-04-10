@@ -44,6 +44,7 @@ dependencies:
   - ds
   - chosen
   - components
+  - config_ignore:config_ignore
   - entity_browser
   - entity_embed
   - events_log_track:event_log_track
