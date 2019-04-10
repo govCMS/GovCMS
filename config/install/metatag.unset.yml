@@ -1,0 +1,17 @@
+unset_by_rel: true
+unset_by_name: false
+rel_list:
+    - delete-form
+    - edit-form
+    - version-history
+    - revision
+    - display
+    - drupal:content-translation-overview
+    - drupal:content-translation-add
+    - drupal:content-translation-edit
+    - drupal:content-translation-delete
+name_list:
+    - Generator
+    - MobileOptimized
+    - HandheldFriendly
+    - viewport
