@@ -63,6 +63,7 @@
         "drupal/linkit": "5.0-beta8",
         "drupal/login_security": "1.5",
         "drupal/memcache": "2.0",
+        "drupal/menu_block": "1.5",
         "drupal/menu_trail_by_path": "1.1",
         "drupal/metatag": "1.8",
         "drupal/modifiers": "1.2",
