@@ -540,7 +540,20 @@ display:
           plugin_id: search_api_options
       sorts: {  }
       title: Events
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: '<h2 class="visually-hidden">List of Events</h2>'
+            format: rich_text
+          plugin_id: text
       footer: {  }
       empty: {  }
       relationships: {  }
