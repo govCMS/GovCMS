@@ -106,7 +106,7 @@
         "grasmash/drupal-security-warning": "^1.1",
         "jakoch/phantomjs-installer": "^2.1",
         "jcalderonzumba/mink-phantomjs-driver": "~0.3",
-        "mikey179/vfsStream": "^1.6",
+        "mikey179/vfsstream": "^1.6",
         "phing/phing": "^2.16",
         "phpunit/phpunit": "^4.8.35 || ^6.5",
         "se/selenium-server-standalone": "^3.6",
