@@ -81,7 +81,7 @@ install:
   - composer validate composer.json --no-check-all --ansi --no-interaction
 
   # Install govCMS codes.
-  - travis_retry php -d memory_limit=-1 composer --verbose install
+  - COMPOSER_MEMORY_LIMIT=-1 travis_retry composer --verbose install
 
   # Install govCMS site.
   - phing site:install -Ddb.database=govcms8 -Ddb.user=govcms -Ddb.password=govcms -Ddb.host=127.0.0.1 -Durl==http://127.0.0.1:8080
