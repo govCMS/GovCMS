@@ -31,8 +31,6 @@ page_edgy:
       label: Content top
     content:
       label: Content
-    sidebar:
-      label: Sidebar
     content_bottom:
       label: Content bottom
     footer:

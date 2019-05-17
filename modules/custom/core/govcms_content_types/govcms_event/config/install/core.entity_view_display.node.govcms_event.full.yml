@@ -152,17 +152,6 @@ third_party_settings:
             uuid: d26b3291-0ad5-4068-a7e6-8c70ca5ed7f8
             context_mapping:
               entity: '@panelizer.entity_context:entity'
-          435ed3f1-3335-4625-80e1-d62ce9c0325a:
-            id: 'system_menu_block:main'
-            label: 'Main navigation'
-            provider: system
-            label_display: '0'
-            level: 1
-            depth: 0
-            region: sidebar
-            weight: -10
-            uuid: 435ed3f1-3335-4625-80e1-d62ce9c0325a
-            context_mapping: {  }
         id: panels_variant
         uuid: b72fa946-f404-4c14-a385-402b8a994eb6
         label: 'Edge to edge'

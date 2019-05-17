@@ -135,6 +135,8 @@ class InstallHelper implements ContainerInjectionInterface {
 
         // Create Node.
         $node = $this->entityTypeManager->getStorage('node')->create($values);
+        $node->setPublished(TRUE);
+        $node->set('moderation_state', "published");
         $node->save();
 
         // Create menu links.
