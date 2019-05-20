@@ -18,7 +18,6 @@ dependencies:
   - config
   - content_moderation
   - datetime_range
-  - field_layout
   - field_ui
   - help
   - history

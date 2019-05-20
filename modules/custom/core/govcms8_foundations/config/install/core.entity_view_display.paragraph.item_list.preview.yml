@@ -9,12 +9,7 @@ dependencies:
     - field.field.paragraph.item_list.field_title
     - paragraphs.paragraphs_type.item_list
   module:
-    - field_layout
     - layout_discovery
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 id: paragraph.item_list.preview
 targetEntityType: paragraph
 bundle: item_list

@@ -15,14 +15,9 @@ dependencies:
     - paragraphs.paragraphs_type.accordion_group
   module:
     - content_moderation
-    - field_layout
     - layout_discovery
     - paragraphs
     - text
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 id: paragraph.accordion_group.default
 targetEntityType: paragraph
 bundle: accordion_group
