@@ -81,6 +81,7 @@ projects[inline_entity_form][version] = 1.0-rc1
 projects[linked_field][type] = module
 projects[linked_field][version] = 1.1
 projects[linkit][type] = module
+projects[linkit][patch][] = https://www.drupal.org/files/issues/2019-05-03/linkit-media-87-3040749-8.patch
 projects[linkit][version] = 5.0-beta8
 projects[login_security][type] = module
 projects[login_security][version] = 1.5
