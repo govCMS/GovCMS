@@ -13,6 +13,9 @@
 %}
 
 <div{{ attributes.addClass(classes) }}>
+  {% if content['#title'] %}
+    <h1 class="au-header-heading visually-hidden">{{ content['#title'] }}</h1>
+  {% endif %}
   {% if content.content_top|render|striptags|trim or content.content|render|striptags|trim or content.content_bottom|render|striptags|trim %}
     <section class="page-layout__content-section">
       {% if content.content_top|render|trim %}

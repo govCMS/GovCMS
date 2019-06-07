@@ -152,43 +152,6 @@ third_party_settings:
             uuid: 10ab74e2-8a63-43f8-8ba8-911ba29b17c1
             context_mapping:
               entity: '@panelizer.entity_context:entity'
-          7b5c9ffc-c493-402d-957b-c9a2588f11fe:
-            id: system_breadcrumb_block
-            label: Breadcrumbs
-            provider: system
-            label_display: '0'
-            region: header
-            weight: 0
-            uuid: 7b5c9ffc-c493-402d-957b-c9a2588f11fe
-            context_mapping: {  }
-          ce27bdd6-0904-4ce0-83e7-f82d57df64cf:
-            id: 'entity_field:node:title'
-            label: Title
-            provider: ctools_block
-            label_display: '0'
-            formatter:
-              label: hidden
-              type: string
-              settings:
-                link_to_entity: false
-              third_party_settings: {  }
-              weight: 0
-            region: header
-            weight: 0
-            uuid: ce27bdd6-0904-4ce0-83e7-f82d57df64cf
-            context_mapping:
-              entity: '@panelizer.entity_context:entity'
-          124fcfba-5bcf-485b-9138-b6294147589d:
-            id: 'system_menu_block:main'
-            label: 'Main navigation'
-            provider: system
-            label_display: '0'
-            level: 1
-            depth: 0
-            region: sidebar
-            weight: 0
-            uuid: 124fcfba-5bcf-485b-9138-b6294147589d
-            context_mapping: {  }
         id: panels_variant
         uuid: 7be1f53a-8078-43b3-8a47-7a7f96e6236d
         label: 'Edge to edge'

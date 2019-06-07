@@ -2,13 +2,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.remote_video.field_media_video_embed_field
+    - field.field.media.remote_video.field_media_oembed_video
     - field.field.media.remote_video.field_tags
     - media.type.remote_video
   module:
     - field_layout
-    - layout_discovery
-    - video_embed_field
+    - media
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -18,17 +17,15 @@ targetEntityType: media
 bundle: remote_video
 mode: default
 content:
-  field_media_video_embed_field:
+  field_media_oembed_video:
+    type: oembed
     weight: 0
+    region: content
     label: hidden
     settings:
-      responsive: true
-      width: 854
-      height: 480
-      autoplay: false
+      max_width: 0
+      max_height: 0
     third_party_settings: {  }
-    type: video_embed_field_video
-    region: content
   field_tags:
     weight: 1
     label: above

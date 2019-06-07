@@ -67,7 +67,14 @@ display:
             previous: ‹‹
             next: ››
       style:
-        type: default
+        type: html_list
+        options:
+          row_class: views-row
+          default_row_class: true
+          uses_fields: false
+          type: ul
+          wrapper_class: views-list
+          class: ''
       row:
         type: 'entity:node'
         options:
@@ -236,6 +243,7 @@ display:
         pager: false
         empty: false
         css_class: false
+        header: false
       empty:
         node_listing_empty:
           id: node_listing_empty
@@ -248,6 +256,20 @@ display:
           entity_type: node
           plugin_id: node_listing_empty
       css_class: 'views--layout views--layout--full-width'
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: '<h2 class="visually-hidden">List of Blog Articles</h2>'
+            format: rich_text
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:

@@ -113,17 +113,6 @@ third_party_settings:
             uuid: 53285e4a-7da8-4d5e-9bc6-b60aa820ce10
             context_mapping:
               entity: '@panelizer.entity_context:entity'
-          766ea1ef-5c0f-406c-8ba0-485bf52b7518:
-            id: 'system_menu_block:main'
-            label: 'Main navigation'
-            provider: system
-            label_display: '0'
-            level: 1
-            depth: 0
-            region: sidebar
-            weight: 0
-            uuid: 766ea1ef-5c0f-406c-8ba0-485bf52b7518
-            context_mapping: {  }
           43685b2f-4fd6-4561-8c0e-b56fc0c29287:
             id: 'entity_field:node:field_attachments'
             label: Attachments
@@ -141,32 +130,6 @@ third_party_settings:
             uuid: 43685b2f-4fd6-4561-8c0e-b56fc0c29287
             context_mapping:
               entity: '@panelizer.entity_context:entity'
-          842291a2-0f0b-489f-8c38-90be98865738:
-            id: 'entity_field:node:title'
-            label: Title
-            provider: ctools_block
-            label_display: '0'
-            formatter:
-              label: hidden
-              type: string
-              settings:
-                link_to_entity: false
-              third_party_settings: {  }
-              weight: 0
-            region: header
-            weight: -9
-            uuid: 842291a2-0f0b-489f-8c38-90be98865738
-            context_mapping:
-              entity: '@panelizer.entity_context:entity'
-          8ffcfc1a-ffc7-408a-ba70-74d7dbe37a3d:
-            id: system_breadcrumb_block
-            label: Breadcrumbs
-            provider: system
-            label_display: '0'
-            region: header
-            weight: -10
-            uuid: 8ffcfc1a-ffc7-408a-ba70-74d7dbe37a3d
-            context_mapping: {  }
         id: panels_variant
         uuid: 7a3a01ee-5edc-4fa8-95d4-8c548a134c60
         label: 'Edge to edge'

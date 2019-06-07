@@ -230,6 +230,7 @@ display:
         pager: false
         style: false
         row: false
+        header: false
       hide_attachment_summary: true
       css_class: 'views--layout views--layout--full-width'
       pager:
@@ -254,16 +255,33 @@ display:
             offset_label: Offset
           quantity: 9
       style:
-        type: default
+        type: html_list
         options:
           row_class: views-row
           default_row_class: false
           uses_fields: false
+          type: ul
+          wrapper_class: views-list
+          class: ''
       row:
         type: 'entity:node'
         options:
           relationship: none
           view_mode: teaser_small
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: '<h2 class="visually-hidden">List of News and Media Articles</h2>'
+            format: rich_text
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:

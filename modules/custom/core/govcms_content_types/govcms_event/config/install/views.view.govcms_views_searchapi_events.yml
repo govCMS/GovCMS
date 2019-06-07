@@ -66,7 +66,14 @@ display:
             offset: false
             offset_label: Offset
       style:
-        type: default
+        type: html_list
+        options:
+          row_class: views-row
+          default_row_class: true
+          uses_fields: false
+          type: ul
+          wrapper_class: views-list
+          class: ''
       row:
         type: search_api
         options:
@@ -533,7 +540,20 @@ display:
           plugin_id: search_api_options
       sorts: {  }
       title: Events
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: '<h2 class="visually-hidden">List of Events</h2>'
+            format: rich_text
+          plugin_id: text
       footer: {  }
       empty: {  }
       relationships: {  }
