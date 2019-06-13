@@ -52,7 +52,7 @@ before_install:
   - sleep 3
 
     # Download Chrome Driver
-  - LATEST_CHROMEDRIVER=$(wget -q -O - http://chromedriver.storage.googleapis.com/LATEST_RELEASE)
+  - LATEST_CHROMEDRIVER=$(wget -q -O - http://chromedriver.storage.googleapis.com/LATEST_RELEASE_74)
   - wget http://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip
   - chmod +x chromedriver
@@ -81,7 +81,7 @@ install:
   - composer validate composer.json --no-check-all --ansi --no-interaction
 
   # Install govCMS codes.
-  - travis_retry composer --verbose install
+  - COMPOSER_MEMORY_LIMIT=-1 travis_retry composer --verbose install
 
   # Install govCMS site.
   - phing site:install -Ddb.database=govcms8 -Ddb.user=govcms -Ddb.password=govcms -Ddb.host=127.0.0.1 -Durl==http://127.0.0.1:8080
