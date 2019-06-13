@@ -52,7 +52,7 @@ before_install:
   - sleep 3
 
     # Download Chrome Driver
-  - LATEST_CHROMEDRIVER=$(wget -q -O - http://chromedriver.storage.googleapis.com/LATEST_RELEASE)
+  - LATEST_CHROMEDRIVER=$(wget -q -O - http://chromedriver.storage.googleapis.com/LATEST_RELEASE_74)
   - wget http://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip
   - chmod +x chromedriver
