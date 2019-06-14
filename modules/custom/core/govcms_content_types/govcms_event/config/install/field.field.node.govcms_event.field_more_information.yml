@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_more_information
+    - node.type.govcms_event
+  module:
+    - link
+id: node.govcms_event.field_more_information
+field_name: field_more_information
+entity_type: node
+bundle: govcms_event
+label: 'More Information'
+description: 'Provide a link to an internal or external resource that provides additional information such as ticket sales.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

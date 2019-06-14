@@ -19,6 +19,7 @@ permissions:
   - 'use editorial transition publish'
   - 'use editorial transition send_back_to_draft'
   - 'view all revisions'
+  - 'view all scheduled transitions'
   - 'view any unpublished content'
   - 'view latest version'
   - 'view the administration theme'
