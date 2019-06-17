@@ -161,12 +161,10 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "PhantomInstaller\\Installer::installPhantomJS",
             "@composer drupal-scaffold",
             "@composer push"
         ],
         "post-update-cmd": [
-            "PhantomInstaller\\Installer::installPhantomJS",
             "@composer push",
             "@composer package"
         ],
