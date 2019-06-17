@@ -101,7 +101,8 @@
         "symfony/phpunit-bridge": "^3.4.6"
     },
     "require-dev": {
-        "grasmash/drupal-security-warning": "^1.1"
+        "grasmash/drupal-security-warning": "^1.1",
+        "phing/phing": "^2.16"
     },
     "extra": {
         "drupal-scaffold": {
