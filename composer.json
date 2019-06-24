@@ -129,6 +129,9 @@
             "drupal/config_ignore": {
                 "Offset error within IgnoreFilter::activeReadMultiple() - https://www.drupal.org/project/config_ignore/issues/2972302": "https://www.drupal.org/files/issues/2018-07-31/offset-error-within-2972302-13.patch"
             },
+            "drupal/panelizer": {
+              "PanelizerWizardContextForm calls parent constructor without enough arguments under CTools 3.1 - https://www.drupal.org/project/panelizer/issues/3031671": "https://www.drupal.org/files/issues/2019-04-03/3031671-8.patch"
+            },
             "drupal/metatag": {
                 "Unset link rel: shortlink, edit-form, version-history and revision, and meta name: Generator, MobileOptimized, HandheldFriendly, viewport from <head> - https://www.drupal.org/project/metatag/issues/2735195#comment-12991008": "https://www.drupal.org/files/issues/2019-02-28/metatag-unset-2735195-42.patch"
             },

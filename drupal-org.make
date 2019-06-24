@@ -106,6 +106,7 @@ projects[modifiers][version] = 1.2
 projects[module_filter][type] = module
 projects[module_filter][version] = 3.1
 projects[panelizer][type] = module
+projects[panelizer][patch][] = https://www.drupal.org/files/issues/2019-04-03/3031671-8.patch
 projects[panelizer][version] = 4.1
 projects[panels][type] = module
 projects[panels][version] = 4.4
