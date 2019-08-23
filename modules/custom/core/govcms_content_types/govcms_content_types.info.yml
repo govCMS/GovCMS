@@ -17,6 +17,7 @@ dependencies:
   - paragraphs
   - path
   - pathauto
+  - scheduled_transitions
   - simple_sitemap
   - taxonomy
   - text

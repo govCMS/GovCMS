@@ -5,9 +5,7 @@ language:         php
 addons:
   apt:
       packages:
-        # Dependencies for Chrome.
-        - libappindicator1
-        - fonts-liberation
+        - parallel
   hosts:
     - govcms8.local
 
@@ -21,8 +19,6 @@ cache:
   apt:            true
   directories:
     - "$HOME/.composer/cache"
-    - "$HOME/.drush/cache"
-    - "$HOME/.npm"
 
 php:
   - 7.1
@@ -30,7 +26,7 @@ php:
 
 matrix:
   allow_failures:
-  - php:          7.2
+    - php:        7.2
   fast_finish:    true
 
 before_install:
@@ -39,33 +35,15 @@ before_install:
   - echo 'max_execution_time = 180' >> govcms.php.ini;
   - echo 'sendmail_path = /bin/true' >> govcms.php.ini;
   - phpenv config-add govcms.php.ini
-  - phpenv config-rm xdebug.ini
+  - phpenv config-rm xdebug.ini || echo "xdebug not available"
   - phpenv rehash
 
   # Composer
   - composer self-update
   - composer --version
 
-  # Initialize xvfb (see https://docs.travis-ci.com/user/gui-and-headless-browsers)
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-  - sleep 3
-
-    # Download Chrome Driver
-  - LATEST_CHROMEDRIVER=$(wget -q -O - http://chromedriver.storage.googleapis.com/LATEST_RELEASE)
-  - wget http://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER/chromedriver_linux64.zip
-  - unzip chromedriver_linux64.zip
-  - chmod +x chromedriver
-  - mkdir -p $HOME/.composer/vendor/bin
-  - mv -f chromedriver $HOME/.composer/vendor/bin/
-  - rm chromedriver_linux64.zip
-
-  # Update Chrome.
-  - export CHROME_BIN=/usr/bin/google-chrome
-  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  - sudo dpkg -i google-chrome-stable_current_amd64.deb
-  - rm google-chrome-stable_current_amd64.deb
-  - google-chrome --version
+  # Validate composer.json file.
+  - composer validate composer.json --no-check-all --ansi --no-interaction
 
 install:
   # Add Composer's local bin directory to the PATH.
@@ -74,27 +52,8 @@ install:
   # composer install should fail on bad patches.
   - export COMPOSER_EXIT_ON_PATCH_FAILURE=1
 
-  # Create the MySQL database and add a user for testing.
-  - mysql -u root -e "CREATE DATABASE govcms8; CREATE USER 'govcms'@'localhost' IDENTIFIED BY 'govcms'; GRANT ALL ON govcms8.* TO 'govcms'@'localhost';"
-
-  # Validate composer.json file.
-  - composer validate composer.json --no-check-all --ansi --no-interaction
-
-  # Install govCMS codes.
-  - travis_retry composer --verbose install
-
-  # Install govCMS site.
-  - phing site:install -Ddb.database=govcms8 -Ddb.user=govcms -Ddb.password=govcms -Ddb.host=127.0.0.1 -Durl==http://127.0.0.1:8080
-
-before_script:
-  - drush runserver --default-server=builtin 8080 &>/dev/null &
-  - cd $TRAVIS_BUILD_DIR
-  - jdk_switcher use oraclejdk8
-  # Start Selenium and dump its ginormous log into a temporary file.
-  - mkdir tmp
-  - selenium-server-standalone -port 4444 -log tmp/selenium2.log &
-  - sleep 5
+  # Install GovCMS codes.
+  - COMPOSER_MEMORY_LIMIT=-1 travis_retry composer --verbose install
 
 script:
-  - phing test:phpunit
-  - behat --strict --stop-on-failure --config tests/behat/behat.travis.yml
+  - ls -D $TRAVIS_BUILD_DIR
