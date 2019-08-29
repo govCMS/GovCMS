@@ -132,6 +132,8 @@ class BulkUploadForm extends FormBase {
       foreach ($errors as $error) {
         $form_state->setErrorByName('dropzone', $error);
       }
+      // Remove the new file as error occured.
+      $file->delete();
     }
     
     // Call parent's validation function.
