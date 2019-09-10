@@ -14,5 +14,5 @@ RUN sed -i -e "s#SEARCH_API_SOLR_MIN_SCHEMA_VERSION#8.3.8#g" /solr-conf/conf/sch
     && sed -i -e "s#drupal-8.3.4#drupal-8.3.8#g" /opt/solr/server/solr/mycores/drupal/conf/solrconfig.xml
 
 USER solr
-RUN precreate-core drupal /solr-conf/conf
+RUN precreate-core drupal /solr-conf
 CMD ["solr-foreground"]
