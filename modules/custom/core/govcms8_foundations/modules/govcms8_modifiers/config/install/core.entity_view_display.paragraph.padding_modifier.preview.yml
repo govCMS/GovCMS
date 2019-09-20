@@ -15,12 +15,7 @@ dependencies:
     - field.field.paragraph.padding_modifier.field_mod_padding_t_units
     - paragraphs.paragraphs_type.padding_modifier
   module:
-    - field_layout
     - layout_discovery
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 id: paragraph.padding_modifier.preview
 targetEntityType: paragraph
 bundle: padding_modifier

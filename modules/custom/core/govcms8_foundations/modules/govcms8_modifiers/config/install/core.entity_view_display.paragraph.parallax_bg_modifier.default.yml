@@ -9,12 +9,7 @@ dependencies:
     - field.field.paragraph.parallax_bg_modifier.field_mod_parallax_speed
     - paragraphs.paragraphs_type.parallax_bg_modifier
   module:
-    - field_layout
     - layout_discovery
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 id: paragraph.parallax_bg_modifier.default
 targetEntityType: paragraph
 bundle: parallax_bg_modifier
