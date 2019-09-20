@@ -65,6 +65,7 @@ projects[events_log_track][patch][] = "https://www.drupal.org/files/issues/incre
 projects[events_log_track][patch][] = "https://www.drupal.org/files/issues/2018-06-26/events_log_track-add-workflows-2974170-7.patch"
 projects[events_log_track][patch][] = "https://www.drupal.org/files/issues/2018-06-26/events-log-track_add-file-media-2959769-9.patch"
 projects[events_log_track][patch][] = "https://www.drupal.org/files/issues/2019-01-22/event-log-track-auth-3027463-2.patch"
+projects[events_log_track][patch][] = "https://www.drupal.org/files/issues/2019-06-11/3060838-4.patch"
 projects[facets][type] = module
 projects[facets][version] = 1.3
 projects[features][type] = module
