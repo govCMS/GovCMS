@@ -11,11 +11,6 @@ dependencies:
     - field.field.paragraph.item.field_title
     - paragraphs.paragraphs_type.item
   module:
-    - field_layout
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 id: paragraph.item.preview
 targetEntityType: paragraph
 bundle: item

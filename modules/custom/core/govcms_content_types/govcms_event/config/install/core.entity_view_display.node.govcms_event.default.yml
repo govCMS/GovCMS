@@ -9,21 +9,19 @@ dependencies:
     - field.field.node.govcms_event.field_event_date
     - field.field.node.govcms_event.field_event_location
     - field.field.node.govcms_event.field_featured_image
+    - field.field.node.govcms_event.field_more_information
     - field.field.node.govcms_event.field_thumbnail
     - field.field.node.govcms_event.panelizer
     - node.type.govcms_event
   module:
     - datetime_range
     - entity_reference_revisions
-    - field_layout
     - file
+    - link
     - panelizer
     - text
     - user
 third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
   panelizer:
     enable: false
     custom: false
@@ -38,6 +36,11 @@ content:
     label: hidden
     type: text_default
     weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: -20
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -91,6 +94,18 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_more_information:
+    weight: 110
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
     region: content
   field_thumbnail:
     weight: 109

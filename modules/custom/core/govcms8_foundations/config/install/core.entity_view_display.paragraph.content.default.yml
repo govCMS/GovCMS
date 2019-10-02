@@ -13,13 +13,8 @@ dependencies:
     - paragraphs.paragraphs_type.content
   module:
     - entity_class_formatter
-    - field_layout
     - link
     - text
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 id: paragraph.content.default
 targetEntityType: paragraph
 bundle: content
