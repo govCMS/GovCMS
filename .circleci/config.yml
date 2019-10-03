@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: /app
     docker:
-      - image: quay.io/tobybellwood/govcms-ci
+      - image: quay.io/govcms/govcms-ci
         environment:
           COMPOSER_ALLOW_SUPERUSER: 1
           COMPOSE_PROJECT_NAME: govcms8
@@ -38,10 +38,10 @@ jobs:
             docker-compose exec -T test drush pml
       - run:
           name: Lint code
-          command: docker-compose exec -T test -v lint || true
+          command: docker-compose exec -T test lint-theme || true
       - run:
           name: Run Behat tests with rerun
-          command: docker-compose exec -T test test-behat -- --format=progress_fail || ahoy test-behat -- --format=progress_fail --rerun
+          command: docker-compose exec -T test behat --format=progress_fail || docker-compose exec -T test behat --format=progress_fail --rerun
       - run:
           name: Copy artifacts
           command: mkdir -p /tmp/artifacts/behat && docker cp $(docker-compose -p govcms8 ps -q test):/app/tests/behat/screenshots /tmp/artifacts/behat
