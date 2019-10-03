@@ -4,7 +4,7 @@ COPY . /src
 COPY composer-lagoon.json /app/composer.json
 COPY config /app/config
 COPY scripts /app/scripts
-RUN composer install --no-dev \
+RUN composer --profile install --no-dev \
     && mkdir -p /app/config/default
 
 FROM amazeeio/php:7.1-cli-drupal
