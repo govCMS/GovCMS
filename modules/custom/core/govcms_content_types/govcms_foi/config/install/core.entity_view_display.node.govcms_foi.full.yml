@@ -15,15 +15,11 @@ dependencies:
   module:
     - datetime
     - entity_reference_revisions
-    - field_layout
     - file
     - panelizer
     - text
     - user
 third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
   panelizer:
     enable: true
     custom: false
@@ -152,17 +148,6 @@ third_party_settings:
             uuid: 10ab74e2-8a63-43f8-8ba8-911ba29b17c1
             context_mapping:
               entity: '@panelizer.entity_context:entity'
-          124fcfba-5bcf-485b-9138-b6294147589d:
-            id: 'system_menu_block:main'
-            label: 'Main navigation'
-            provider: system
-            label_display: '0'
-            level: 1
-            depth: 0
-            region: sidebar
-            weight: 0
-            uuid: 124fcfba-5bcf-485b-9138-b6294147589d
-            context_mapping: {  }
         id: panels_variant
         uuid: 7be1f53a-8078-43b3-8a47-7a7f96e6236d
         label: 'Edge to edge'

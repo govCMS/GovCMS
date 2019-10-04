@@ -13,13 +13,9 @@ dependencies:
     - paragraphs.paragraphs_type.item
   module:
     - ds
-    - field_layout
     - linked_field
     - text
 third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
   ds:
     layout:
       id: stack_detail

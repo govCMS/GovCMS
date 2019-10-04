@@ -8,13 +8,8 @@ dependencies:
     - field.field.paragraph.relative_height_modifier.field_mod_vertical_align
     - paragraphs.paragraphs_type.relative_height_modifier
   module:
-    - field_layout
     - layout_discovery
     - options
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 _core:
   default_config_hash: nANjU2eWnkY1SRh2QvwMwQPwjOkh4lNg6v-Dq3fuAsU
 id: paragraph.relative_height_modifier.default

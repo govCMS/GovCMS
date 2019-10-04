@@ -16,14 +16,10 @@ dependencies:
   module:
     - datetime_range
     - ds
-    - field_layout
     - panelizer
     - text
     - user
 third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
   panelizer:
     enable: false
     custom: false

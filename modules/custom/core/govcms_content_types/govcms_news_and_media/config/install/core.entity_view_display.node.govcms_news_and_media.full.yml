@@ -12,16 +12,12 @@ dependencies:
     - field.field.node.govcms_news_and_media.panelizer
     - node.type.govcms_news_and_media
   module:
-    - field_layout
     - file
     - options
     - panelizer
     - text
     - user
 third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
   panelizer:
     enable: true
     custom: false
@@ -113,17 +109,6 @@ third_party_settings:
             uuid: 53285e4a-7da8-4d5e-9bc6-b60aa820ce10
             context_mapping:
               entity: '@panelizer.entity_context:entity'
-          766ea1ef-5c0f-406c-8ba0-485bf52b7518:
-            id: 'system_menu_block:main'
-            label: 'Main navigation'
-            provider: system
-            label_display: '0'
-            level: 1
-            depth: 0
-            region: sidebar
-            weight: 0
-            uuid: 766ea1ef-5c0f-406c-8ba0-485bf52b7518
-            context_mapping: {  }
           43685b2f-4fd6-4561-8c0e-b56fc0c29287:
             id: 'entity_field:node:field_attachments'
             label: Attachments

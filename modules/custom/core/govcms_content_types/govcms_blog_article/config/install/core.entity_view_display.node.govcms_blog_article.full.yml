@@ -12,15 +12,11 @@ dependencies:
     - node.type.govcms_blog_article
   module:
     - entity_reference_revisions
-    - field_layout
     - file
     - panelizer
     - text
     - user
 third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
   panelizer:
     enable: true
     custom: false
@@ -113,17 +109,6 @@ third_party_settings:
             uuid: ff030d74-4ed3-47d4-a5de-1996cad53064
             context_mapping:
               entity: '@panelizer.entity_context:entity'
-          288540c3-5ba1-4161-9a9a-514c5e89ff3a:
-            id: 'system_menu_block:main'
-            label: 'Main navigation'
-            provider: system
-            label_display: '0'
-            level: 1
-            depth: 0
-            region: sidebar
-            weight: -4
-            uuid: 288540c3-5ba1-4161-9a9a-514c5e89ff3a
-            context_mapping: {  }
         id: panels_variant
         uuid: 8add7043-6ffa-483f-957e-fc6607931bc9
         label: 'Edge to edge'

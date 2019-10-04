@@ -25,12 +25,12 @@
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/console": "^1.0.2",
-        "drupal/core": "8.6.12",
+        "drupal/core": "8.7.7",
         "drush/drush": "^9.0.0",
         "govcms/govcms": "*",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
-        "webflo/drupal-core-strict": "8.6.12"
+        "webflo/drupal-core-strict": "8.7.7"
     },
     "conflict": {
         "drupal/drupal": "*"

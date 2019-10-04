@@ -10,13 +10,8 @@ dependencies:
     - field.field.paragraph.accordion.field_title
     - paragraphs.paragraphs_type.accordion
   module:
-    - field_layout
     - layout_discovery
     - text
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 id: paragraph.accordion.default
 targetEntityType: paragraph
 bundle: accordion

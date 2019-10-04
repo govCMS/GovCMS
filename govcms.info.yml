@@ -18,7 +18,6 @@ dependencies:
   - config
   - content_moderation
   - datetime_range
-  - field_layout
   - field_ui
   - help
   - history
@@ -44,6 +43,8 @@ dependencies:
   - ds
   - chosen
   - components
+  - config_perms
+  - config_ignore:config_ignore
   - entity_browser
   - entity_embed
   - events_log_track:event_log_track
