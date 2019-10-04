@@ -17,7 +17,6 @@ dependencies:
     - content_moderation
     - entity_browser
     - file
-    - field_layout
     - layout_discovery
     - panelizer
     - paragraphs
