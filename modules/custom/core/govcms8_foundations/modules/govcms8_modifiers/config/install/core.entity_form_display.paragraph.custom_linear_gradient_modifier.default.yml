@@ -8,12 +8,7 @@ dependencies:
     - field.field.paragraph.custom_linear_gradient_modifier.field_mod_media_query
     - paragraphs.paragraphs_type.custom_linear_gradient_modifier
   module:
-    - field_layout
     - layout_discovery
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 id: paragraph.custom_linear_gradient_modifier.default
 targetEntityType: paragraph
 bundle: custom_linear_gradient_modifier

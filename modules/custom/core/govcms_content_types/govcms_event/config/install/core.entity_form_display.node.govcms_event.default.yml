@@ -10,24 +10,21 @@ dependencies:
     - field.field.node.govcms_event.field_event_date
     - field.field.node.govcms_event.field_event_location
     - field.field.node.govcms_event.field_featured_image
+    - field.field.node.govcms_event.field_more_information
     - field.field.node.govcms_event.field_thumbnail
     - field.field.node.govcms_event.panelizer
     - node.type.govcms_event
   module:
     - content_moderation
-    - entity_browser
     - datetime_range
-    - field_layout
     - file
+    - entity_browser
     - layout_discovery
+    - link
     - panelizer
     - paragraphs
     - path
     - text
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 id: node.govcms_event.default
 targetEntityType: node
 bundle: govcms_event
@@ -120,6 +117,14 @@ content:
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content
+  field_more_information:
+    weight: 127
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
   field_thumbnail:
     weight: 1
     settings:
@@ -190,4 +195,9 @@ content:
       placeholder: ''
     region: content
     third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden: {  }

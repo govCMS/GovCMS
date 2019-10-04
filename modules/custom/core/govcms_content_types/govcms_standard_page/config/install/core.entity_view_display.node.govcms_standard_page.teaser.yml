@@ -12,15 +12,11 @@ dependencies:
     - node.type.govcms_standard_page
   module:
     - ds
-    - field_layout
     - linked_field
     - panelizer
     - text
     - user
 third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
   panelizer:
     enable: false
     custom: false

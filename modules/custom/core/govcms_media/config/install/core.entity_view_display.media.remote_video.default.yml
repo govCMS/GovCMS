@@ -6,12 +6,7 @@ dependencies:
     - field.field.media.remote_video.field_tags
     - media.type.remote_video
   module:
-    - field_layout
     - media
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 id: media.remote_video.default
 targetEntityType: media
 bundle: remote_video

@@ -12,16 +12,12 @@ dependencies:
     - field.field.node.govcms_news_and_media.panelizer
     - node.type.govcms_news_and_media
   module:
-    - field_layout
     - file
     - options
     - panelizer
     - text
     - user
 third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
   panelizer:
     enable: true
     custom: false

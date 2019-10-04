@@ -9,3 +9,8 @@ Feature: User
     And I am logged in as a user with the "Administer users" permission
     When I visit "admin/people"
     Then I should see the text "Tim Junior"
+  @api @javascript
+  Scenario: As a Site Administrator I should have access to Basic site settings
+    Given I am logged in as a user with the "site_administrator" role
+    When I go to "admin/config/system/site-information"
+    Then I should see "Basic site settings"
