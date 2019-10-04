@@ -6,13 +6,8 @@ dependencies:
     - field.field.media.audio.field_tags
     - media.type.audio
   module:
-    - field_layout
     - file
     - layout_discovery
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 id: media.audio.default
 targetEntityType: media
 bundle: audio

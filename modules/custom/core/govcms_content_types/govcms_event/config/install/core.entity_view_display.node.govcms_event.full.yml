@@ -15,15 +15,11 @@ dependencies:
   module:
     - datetime_range
     - entity_reference_revisions
-    - field_layout
     - file
     - panelizer
     - text
     - user
 third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
   panelizer:
     enable: true
     custom: false

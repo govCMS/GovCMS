@@ -110,6 +110,35 @@ class BulkUploadForm extends FormBase {
     }
     return $bytes . ' ' . reset($units);
   }
+  
+  /**
+   * {@inheritdoc}
+   */
+  public function validateForm(array &$form, FormStateInterface $form_state) {
+    $uploads = $form_state->getValue(['dropzone', 'uploaded_files']);
+    $errors = [];
+    
+    foreach ($uploads as $upload) {
+      // A new file uploaded by dropzone.
+      $file = $this->entityTypeManager->getStorage('file')->create([
+        'uri' => $upload['path'],
+      ]);
+      
+      // Let other modules perform validation on the new file.
+      $errors = array_merge($errors, \Drupal::moduleHandler()->invokeAll('file_validate', [$file]));
+    }   
+    
+    if (!empty($errors)) {
+      foreach ($errors as $error) {
+        $form_state->setErrorByName('dropzone', $error);
+      }
+      // Remove the new file as error occured.
+      $file->delete();
+    }
+    
+    // Call parent's validation function.
+    parent::validateForm($form, $form_state);
+  }
 
   /**
    * {@inheritdoc}

@@ -10,15 +10,11 @@ dependencies:
     - field.field.node.govcms_standard_page.panelizer
     - node.type.govcms_standard_page
   module:
-    - field_layout
     - file
     - panelizer
     - text
     - user
 third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
   panelizer:
     enable: true
     custom: false
