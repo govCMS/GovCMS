@@ -7,10 +7,6 @@ dependencies:
     - field.field.paragraph.relative_height_modifier.field_mod_relative_height
     - field.field.paragraph.relative_height_modifier.field_mod_vertical_align
     - paragraphs.paragraphs_type.relative_height_modifier
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 _core:
   default_config_hash: h9mnkhKukCT7CN6MeOhNL-gfR9N-k2RGyWHjHdN_FkY
 id: paragraph.relative_height_modifier.default

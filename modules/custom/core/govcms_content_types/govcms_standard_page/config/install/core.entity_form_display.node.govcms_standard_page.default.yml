@@ -13,17 +13,12 @@ dependencies:
   module:
     - content_moderation
     - entity_browser
-    - field_layout
     - file
     - layout_discovery
     - panelizer
     - paragraphs
     - path
     - text
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 id: node.govcms_standard_page.default
 targetEntityType: node
 bundle: govcms_standard_page

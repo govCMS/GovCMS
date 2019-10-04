@@ -14,7 +14,6 @@ dependencies:
     - node.type.govcms_news_and_media
   module:
     - ds
-    - field_layout
     - options
     - panelizer
     - text
@@ -25,9 +24,6 @@ third_party_settings:
     custom: false
     allow: false
     default: default
-  field_layout:
-    id: layout_onecol
-    settings: {  }
   ds:
     layout:
       id: search

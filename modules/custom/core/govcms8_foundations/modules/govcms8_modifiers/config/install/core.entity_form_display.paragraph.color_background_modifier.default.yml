@@ -9,12 +9,7 @@ dependencies:
     - field.field.paragraph.color_background_modifier.field_mod_transition_duration
     - paragraphs.paragraphs_type.color_background_modifier
   module:
-    - field_layout
     - layout_discovery
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 id: paragraph.color_background_modifier.default
 targetEntityType: paragraph
 bundle: color_background_modifier
