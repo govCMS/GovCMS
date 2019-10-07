@@ -9,12 +9,7 @@ dependencies:
     - field.field.paragraph.node_list.field_title
     - paragraphs.paragraphs_type.node_list
   module:
-    - field_layout
     - layout_discovery
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 id: paragraph.node_list.preview
 targetEntityType: paragraph
 bundle: node_list

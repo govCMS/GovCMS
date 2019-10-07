@@ -10,7 +10,6 @@ dependencies:
   - entity_browser
   - entity_embed
   - field
-  - field_layout
   - file
   - focal_point
   - image
