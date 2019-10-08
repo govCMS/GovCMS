@@ -6,7 +6,6 @@ dependencies:
   - content_moderation
   - entity_browser
   - field
-  - field_layout
   - file
   - govcms_media
   - govcms8_foundations
@@ -18,6 +17,7 @@ dependencies:
   - paragraphs
   - path
   - pathauto
+  - scheduled_transitions
   - simple_sitemap
   - taxonomy
   - text

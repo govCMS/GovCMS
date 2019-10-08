@@ -15,15 +15,11 @@ dependencies:
     - node.type.govcms_event
   module:
     - ds
-    - field_layout
     - govcms8_calendar_item
     - panelizer
     - text
     - user
 third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
   panelizer:
     enable: false
     custom: false

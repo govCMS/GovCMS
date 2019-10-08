@@ -6,13 +6,8 @@ dependencies:
     - field.field.media.image.field_tags
     - media.type.image
   module:
-    - field_layout
     - image
     - layout_discovery
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 id: media.image.default
 targetEntityType: media
 bundle: image

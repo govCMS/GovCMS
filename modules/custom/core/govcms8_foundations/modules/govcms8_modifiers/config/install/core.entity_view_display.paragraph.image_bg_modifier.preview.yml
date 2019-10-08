@@ -11,12 +11,7 @@ dependencies:
     - field.field.paragraph.image_bg_modifier.field_mod_media_query
     - paragraphs.paragraphs_type.image_bg_modifier
   module:
-    - field_layout
     - layout_discovery
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 id: paragraph.image_bg_modifier.preview
 targetEntityType: paragraph
 bundle: image_bg_modifier

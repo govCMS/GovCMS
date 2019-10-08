@@ -8,6 +8,7 @@ dependencies:
   - facets
   - govcms_content_types
   - govcms_search
+  - link
   - search_api
   - search_api_db
   - system
