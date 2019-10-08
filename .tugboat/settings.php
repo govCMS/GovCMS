@@ -39,10 +39,6 @@ if (PHP_SAPI === 'cli') {
   ini_set('memory_limit', '256M');
 }
 
-if (drupal_is_cli()) { 
-  ini_set('memory_limit', '512M');
-}
-
 $settings['trusted_host_patterns'] = ['.*'];
 
 $config['system.logging']['error_level'] = 'verbose';
