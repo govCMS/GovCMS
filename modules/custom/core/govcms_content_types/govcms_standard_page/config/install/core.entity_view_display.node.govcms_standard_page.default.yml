@@ -11,15 +11,11 @@ dependencies:
     - node.type.govcms_standard_page
   module:
     - entity_reference_revisions
-    - field_layout
     - file
     - panelizer
     - text
     - user
 third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
   panelizer:
     enable: false
     custom: false

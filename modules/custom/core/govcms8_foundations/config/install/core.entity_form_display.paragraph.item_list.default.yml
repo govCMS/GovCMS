@@ -15,15 +15,10 @@ dependencies:
     - field.field.paragraph.item_list.field_title
     - paragraphs.paragraphs_type.item_list
   module:
-    - field_layout
     - layout_discovery
     - link
     - paragraphs
     - text
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 id: paragraph.item_list.default
 targetEntityType: paragraph
 bundle: item_list

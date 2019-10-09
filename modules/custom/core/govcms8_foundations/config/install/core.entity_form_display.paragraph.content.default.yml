@@ -13,15 +13,10 @@ dependencies:
     - paragraphs.paragraphs_type.content
   module:
     - content_moderation
-    - field_layout
     - layout_discovery
     - link
     - paragraphs
     - text
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 id: paragraph.content.default
 targetEntityType: paragraph
 bundle: content

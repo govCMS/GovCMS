@@ -8,12 +8,7 @@ dependencies:
     - image.style.landscape
     - media.type.image
   module:
-    - field_layout
     - image
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 id: media.image.landscape
 targetEntityType: media
 bundle: image

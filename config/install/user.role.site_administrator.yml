@@ -6,6 +6,7 @@ label:        'Site Administrator'
 weight:       4
 is_admin:     null
 permissions:
+  - 'administer site information'
   - 'access administration pages'
   - 'access content'
   - 'access content overview'
