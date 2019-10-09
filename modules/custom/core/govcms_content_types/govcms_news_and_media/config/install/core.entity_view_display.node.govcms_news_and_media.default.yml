@@ -8,10 +8,12 @@ dependencies:
     - field.field.node.govcms_news_and_media.field_featured_image
     - field.field.node.govcms_news_and_media.field_media_release_type
     - field.field.node.govcms_news_and_media.field_news_categories
+    - field.field.node.govcms_news_and_media.field_published_date_time
     - field.field.node.govcms_news_and_media.field_thumbnail
     - field.field.node.govcms_news_and_media.panelizer
     - node.type.govcms_news_and_media
   module:
+    - datetime
     - entity_reference_revisions
     - file
     - options
@@ -75,6 +77,15 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_published_date_time:
+    weight: 110
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
     region: content
   field_thumbnail:
     weight: 109
