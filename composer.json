@@ -148,6 +148,9 @@
             },
             "drupal/google_analytics": {
                "Fatal error when there is a view with the path search/node":  "https://www.drupal.org/files/issues/2018-06-18/patch_google_analytics.patch"
+            },
+            "drupal/linkit": {
+                "Drupal 8.7 no longer has a dedicated canonical route for media entities, breaks entity matcher deriver - https://www.drupal.org/project/linkit/issues/3040749": "https://www.drupal.org/files/issues/2019-05-03/linkit-media-87-3040749-8.patch"
             }
         }
     },
