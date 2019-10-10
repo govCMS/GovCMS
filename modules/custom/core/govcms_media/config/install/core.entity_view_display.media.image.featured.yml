@@ -8,12 +8,7 @@ dependencies:
     - image.style.featured
     - media.type.image
   module:
-    - field_layout
     - image
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 id: media.image.featured
 targetEntityType: media
 bundle: image

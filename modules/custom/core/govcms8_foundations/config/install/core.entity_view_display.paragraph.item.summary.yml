@@ -12,12 +12,8 @@ dependencies:
     - paragraphs.paragraphs_type.item
   module:
     - ds
-    - field_layout
     - text
 third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
   ds:
     layout:
       id: summary

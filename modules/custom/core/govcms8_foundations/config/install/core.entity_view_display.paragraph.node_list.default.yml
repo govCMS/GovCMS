@@ -17,13 +17,8 @@ dependencies:
   module:
     - entity_class_formatter
     - entity_reference_display
-    - field_layout
     - link
     - text
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 id: paragraph.node_list.default
 targetEntityType: paragraph
 bundle: node_list

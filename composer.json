@@ -39,16 +39,17 @@
         "drupal/consumers": "1.9",
         "drupal/contact_storage": "1.0-beta9",
         "drupal/context": "4.0-beta2",
-        "drupal/core": "8.7.6",
+        "drupal/core": "8.7.8",
         "drupal/ctools": "3.2.0",
         "drupal/diff": "1.0-rc2",
         "drupal/devel": "2.0",
         "drupal/dropzonejs": "2.0.0-alpha3",
         "drupal/ds": "3.2",
         "drupal/encrypt": "3.0-rc2",
+        "drupal/dynamic_entity_reference": "1.7.0",
         "drupal/entity_browser": "2.1",
         "drupal/entity_class_formatter": "1.1.0",
-        "drupal/entity_embed": "1.0-beta2",
+        "drupal/entity_embed": "1.0",
         "drupal/entity_reference_display": "1.2.0",
         "drupal/entity_reference_revisions": "1.6",
         "drupal/environment_indicator": "3.5",
@@ -72,8 +73,9 @@
         "drupal/menu_block": "1.5",
         "drupal/menu_trail_by_path": "1.1",
         "drupal/metatag": "1.9",
-        "drupal/modifiers": "1.2",
+        "drupal/modifiers": "1.3",
         "drupal/module_filter": "3.1",
+        "drupal/page_manager": "4.0-beta4",
         "drupal/panelizer": "4.1",
         "drupal/panels": "4.4.0",
         "drupal/paragraphs": "1.6",
@@ -102,7 +104,8 @@
         "drupal/webform": "5.1",
         "oomphinc/composer-installers-extender": "^1.1",
         "swiftmailer/swiftmailer": "5.4.12",
-        "symfony/phpunit-bridge": "^3.4.6"
+        "symfony/phpunit-bridge": "^3.4.6",
+        "zaporylie/composer-drupal-optimizations": "^1.1"
     },
     "require-dev": {
         "grasmash/drupal-security-warning": "^1.1",
@@ -148,7 +151,8 @@
                 "Entities with title longer than 50 characters - https://www.drupal.org/project/events_log_track/issues/2930817": "https://www.drupal.org/files/issues/increase-character-length-2930817-2.patch",
                 "Event logs for change in workflows - https://www.drupal.org/project/events_log_track/issues/2974170": "https://www.drupal.org/files/issues/2018-06-26/events_log_track-add-workflows-2974170-7.patch",
                 "Add handlers for file and media entities - https://www.drupal.org/project/events_log_track/issues/2959769": "https://www.drupal.org/files/issues/2018-06-26/events-log-track_add-file-media-2959769-9.patch",
-                "Skip password logging during failed authentication attempt - https://www.drupal.org/project/events_log_track/issues/3027463": "https://www.drupal.org/files/issues/2019-01-22/event-log-track-auth-3027463-2.patch"
+                "Skip password logging during failed authentication attempt - https://www.drupal.org/project/events_log_track/issues/3027463": "https://www.drupal.org/files/issues/2019-01-22/event-log-track-auth-3027463-2.patch",
+                "Fix fatal error when we request password with non-existing users/emails on the Events Log Track User Authentication - https://www.drupal.org/project/events_log_track/issues/3060838#comment-13141212": "https://www.drupal.org/files/issues/2019-06-11/3060838-4.patch"
             },
             "drupal/google_analytics": {
                "Fatal error when there is a view with the path search/node":  "https://www.drupal.org/files/issues/2018-06-18/patch_google_analytics.patch"
@@ -157,6 +161,8 @@
                 "The tfa.settings route should use the permission 'admin tfa settings' - https://www.drupal.org/project/tfa/issues/2943972": "https://www.drupal.org/files/issues/2943972-2.patch",
                 "Bad UX around 'required to setup TFA' concept and users who have skipped validation too many times - https://www.drupal.org/project/tfa/issues/2937336": "https://www.drupal.org/files/issues/2019-03-01/2937336-17.patch",
                 "Users' recovery codes exposed to admin users - https://www.drupal.org/project/tfa/issues/3075304": "https://www.drupal.org/files/issues/2019-08-16/tfa-3075304_2.patch"
+            "drupal/linkit": {
+                "Drupal 8.7 no longer has a dedicated canonical route for media entities, breaks entity matcher deriver - https://www.drupal.org/project/linkit/issues/3040749": "https://www.drupal.org/files/issues/2019-05-03/linkit-media-87-3040749-8.patch"
             }
         }
     },
