@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: /app
     docker:
-      - image: integratedexperts/ci-builder
+      - image: quay.io/govcms/govcms-ci
         environment:
           COMPOSER_ALLOW_SUPERUSER: 1
           COMPOSE_PROJECT_NAME: govcms8
@@ -25,34 +25,29 @@ jobs:
       - run:
           name: Build project
           command: |
-            ahoy -v build
+            docker-compose up -d --build
             docker-compose exec test dockerize -wait tcp://mariadb:3306 -timeout 1m
       - run:
           name: Install site
-          command: ahoy -v install -- install_configure_form.enable_update_status_module=NULL install_configure_form.enable_update_status_emails=NULL
+          command: docker-compose exec -T test drush si -y govcms --site-name="Welcome to GovCMS" install_configure_form.enable_update_status_module=NULL install_configure_form.enable_update_status_emails=NULL
+      - run:
+          name: Get site and module version status
+          command: |
+            docker-compose exec -T test php -v
+            docker-compose exec -T test drush st
+            docker-compose exec -T test drush pml
       - run:
           name: Lint code
-          command: ahoy -v lint || true
+          command: docker-compose exec -T test lint-theme || true
       - run:
           name: Run Behat tests with rerun
-          command: ahoy test-behat -- --format=progress_fail || ahoy test-behat -- --format=progress_fail --rerun
+          command: docker-compose exec -T test behat --format=progress_fail || docker-compose exec -T test behat --format=progress_fail --rerun
       - run:
           name: Copy artifacts
           command: mkdir -p /tmp/artifacts/behat && docker cp $(docker-compose -p govcms8 ps -q test):/app/tests/behat/screenshots /tmp/artifacts/behat
           when: always
       - store_artifacts:
           path: /tmp/artifacts
-      - run:
-          name: Push Docker images to Dockerhub
-          command: |
-            if [ "${DEPLOY_ANY_BRANCH}" != "" ] || [ "${CIRCLE_BRANCH}" == "${DEPLOY_BRANCH}" ] || [ ! -z ${CIRCLE_TAG} ]; then
-              echo "IMAGE_VERSION_TAG=$CIRCLE_TAG">>.env
-              docker login -u $DOCKER_USER -p $DOCKER_PASS
-              export $(grep -v '^#' .env | xargs)
-              ahoy push
-            else
-              echo "Skipping deployment"
-            fi
 workflows:
   version: 2
   main:
