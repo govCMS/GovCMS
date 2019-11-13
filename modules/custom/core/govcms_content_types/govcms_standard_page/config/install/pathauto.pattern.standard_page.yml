@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: standard_page
+label: Standard Page
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria:
+  3541b888-ba9c-41b5-85a4-a16148c9c5b4:
+    id: node_type
+    bundles:
+      govcms_standard_page: govcms_standard_page
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 3541b888-ba9c-41b5-85a4-a16148c9c5b4
+selection_logic: and
+weight: -5
+relationships: {  }
