@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Implements hook_form_alter().
+ *
+ * @inheritDoc
+ */
+function govcms_content_types_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+  // Author information shouldn't be displayed by default for new content types.
+  // If desired, it can be enabled however ISM states individual employees
+  // shouldn't have their names or details present on the website.
+  if ($form_id === "node_type_add_form") {
+    $form['display']['display_submitted']['#default_value'] = 0;
+  }
+
+}
