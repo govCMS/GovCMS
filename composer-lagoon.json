@@ -29,7 +29,7 @@
         "drush/drush": "^9.0.0",
         "govcms/govcms": "*",
         "webflo/drupal-finder": "^1.0.0",
-        "webmozart/path-util": "^2.3",
+        "webmozart/path-util": "^2.3"
     },
     "conflict": {
         "drupal/drupal": "*"
