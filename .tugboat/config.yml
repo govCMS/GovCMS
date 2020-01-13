@@ -24,7 +24,7 @@ services:
       init:
         # Tooling.
         - apt-get update
-        - apt-get install -y libbz2-dev
+        - apt-get install -y libbz2-dev libzip-dev
         - docker-php-ext-install opcache bz2 zip
         - a2enmod headers rewrite
         - wget -O /usr/local/bin/drush https://github.com/drush-ops/drush-launcher/releases/download/0.6.0/drush.phar && chmod +x /usr/local/bin/drush
