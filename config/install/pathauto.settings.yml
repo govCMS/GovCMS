@@ -42,3 +42,10 @@ reduce_ascii:         true
 case:                 true
 ignore_words:         'a, an, as, at, before, but, by, for, from, is, in, into, like, of, off, on, onto, per, since, than, the, this, that, to, up, via, with'
 update_action:        2
+safe_tokens:
+  - alias
+  - path
+  - join-path
+  - login-url
+  - url
+  - url-brief
