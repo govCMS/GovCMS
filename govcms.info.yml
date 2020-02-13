@@ -75,6 +75,7 @@ dependencies:
   - password_policy_history
   - password_policy_username
   - pathauto
+  - real_aes
   - redirect
   - seckit
   - shield
