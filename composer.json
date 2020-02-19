@@ -66,6 +66,7 @@
         "drupal/linked_field": "1.1.0",
         "drupal/linkit": "5.0-beta9",
         "drupal/login_security": "1.5",
+        "drupal/media_entity_file_replace": "1.0-beta2",
         "drupal/memcache": "2.0",
         "drupal/menu_block": "1.5",
         "drupal/menu_trail_by_path": "1.1",
