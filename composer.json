@@ -45,6 +45,7 @@
         "drupal/devel": "2.0",
         "drupal/dropzonejs": "2.0.0-alpha3",
         "drupal/ds": "3.2",
+        "drupal/encrypt": "3.0-rc2",
         "drupal/dynamic_entity_reference": "1.7.0",
         "drupal/entity_browser": "2.1",
         "drupal/entity_class_formatter": "1.1.0",
@@ -57,15 +58,19 @@
         "drupal/features": "3.8",
         "drupal/field_group": "3.0-rc1",
         "drupal/focal_point": "1.2",
+        "drupal/ga_login": "1.0-alpha4",
         "drupal/google_analytics": "3.0",
+        "drupal/govcms_dlm": "1.3",
         "drupal/govcms8_ui": "1.0.0-alpha1",
         "drupal/govcms8_uikit_starter": "1.0-alpha2",
         "drupal/graphql": "3.0.0-rc2",
         "drupal/honeypot": "1.29",
         "drupal/inline_entity_form": "1.0-rc1",
+        "drupal/key": "1.12",
         "drupal/linked_field": "1.1.0",
         "drupal/linkit": "5.0-beta9",
         "drupal/login_security": "1.5",
+        "drupal/media_entity_file_replace": "1.0-beta2",
         "drupal/memcache": "2.0",
         "drupal/menu_block": "1.5",
         "drupal/menu_trail_by_path": "1.1",
@@ -75,10 +80,11 @@
         "drupal/page_manager": "4.0-beta4",
         "drupal/panelizer": "4.1",
         "drupal/panels": "4.4.0",
-        "drupal/paragraphs": "1.6",
+        "drupal/paragraphs": "1.10",
         "drupal/password_policy": "3.0-alpha4",
         "drupal/pathauto": "1.6.0",
         "drupal/permissions_by_term": "2.12",
+        "drupal/real_aes": "2.2",
         "drupal/recaptcha": "2.4",
         "drupal/redirect": "1.3",
         "drupal/restui": "1.16.0",
@@ -92,11 +98,12 @@
         "drupal/simple_oauth": "3.14",
         "drupal/simple_sitemap": "3.0",
         "drupal/swiftmailer": "1.0-beta2",
+        "drupal/tfa":"1.0-alpha4",
         "drupal/token": "1.5",
         "drupal/update_notifications_disable": "1.0",
         "drupal/username_enumeration_prevention": "1.0-beta2",
         "drupal/video_embed_field": "2.0",
-        "drupal/webform": "5.1",
+        "drupal/webform": "5.8",
         "oomphinc/composer-installers-extender": "^1.1",
         "swiftmailer/swiftmailer": "5.4.12",
         "symfony/phpunit-bridge": "^3.4.6",
@@ -132,6 +139,9 @@
             "drupal/config_ignore": {
                 "Offset error within IgnoreFilter::activeReadMultiple() - https://www.drupal.org/project/config_ignore/issues/2972302": "https://www.drupal.org/files/issues/2018-07-31/offset-error-within-2972302-13.patch"
             },
+            "drupal/ga_login": {
+                "TOTP taking very-old verification codes - https://www.drupal.org/project/ga_login/issues/3022921": "https://www.drupal.org/files/issues/2018-12-28/3022921-2-time-skew-confusing.patch"
+            },
             "drupal/panelizer": {
               "PanelizerWizardContextForm calls parent constructor without enough arguments under CTools 3.1 - https://www.drupal.org/project/panelizer/issues/3031671": "https://www.drupal.org/files/issues/2019-04-03/3031671-8.patch"
             },
@@ -148,6 +158,11 @@
             },
             "drupal/google_analytics": {
                "Fatal error when there is a view with the path search/node":  "https://www.drupal.org/files/issues/2018-06-18/patch_google_analytics.patch"
+            },
+            "drupal/tfa": {
+                "The tfa.settings route should use the permission 'admin tfa settings' - https://www.drupal.org/project/tfa/issues/2943972": "https://www.drupal.org/files/issues/2943972-2.patch",
+                "Bad UX around 'required to setup TFA' concept and users who have skipped validation too many times - https://www.drupal.org/project/tfa/issues/2937336": "https://www.drupal.org/files/issues/2019-03-01/2937336-17.patch",
+                "Users' recovery codes exposed to admin users - https://www.drupal.org/project/tfa/issues/3075304": "https://www.drupal.org/files/issues/2019-08-16/tfa-3075304_2.patch"
             }
         }
     },
