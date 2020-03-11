@@ -182,17 +182,10 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "@composer drupal-scaffold",
-            "@composer push"
-        ],
-        "post-update-cmd": [
-            "@composer push",
-            "@composer package"
+            "@composer drupal-scaffold"
         ],
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-        "package": "govCMS\\Core\\Composer\\Package::execute",
-        "push": "./bin/phing push",
-        "nuke": "rm -r -f composer.lock bin docroot vendor"
+        "nuke": "rm -r -f composer.lock bin app vendor"
     },
     "suggest": {
         "hirak/prestissimo": "^0.3"
