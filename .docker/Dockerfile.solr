@@ -8,9 +8,11 @@ USER root
 RUN sed -i -e "s#<dataDir>\${solr.data.dir:}#<dataDir>/var/solr/\${solr.core.name}#g" /solr-conf/conf/solrconfig.xml \
     && sed -i -e "s#solr.lock.type:native#solr.lock.type:none#g" /solr-conf/conf/solrconfig.xml
 
-RUN sed -i -e "s#drupal-8.3.4#drupal-8.3.10#g" /solr-conf/conf/schema.xml \
-    && sed -i -e "s#drupal-8.3.4#drupal-8.3.10#g" /solr-conf/conf/solrconfig.xml \
+RUN sed -i -e "s#SEARCH_API_SOLR_MIN_SCHEMA_VERSION#8.3.10#g" /solr-conf/conf/schema.xml \
+    && sed -i -e "s#SEARCH_API_SOLR_MIN_SCHEMA_VERSION#8.3.10#g" /solr-conf/conf/schema.xml \
     && sed -i -e "s#drupal-8.3.4#drupal-8.3.10#g" /opt/solr/server/solr/mycores/drupal/conf/schema.xml \
+    && sed -i -e "s#SEARCH_API_SOLR_BRANCH#7.x#g" /solr-conf/conf/solrconfig.xml \
+    && sed -i -e "s#SEARCH_API_SOLR_BRANCH#7.x#g" /solr-conf/conf/solrconfig.xml \
     && sed -i -e "s#drupal-8.3.4#drupal-8.3.10#g" /opt/solr/server/solr/mycores/drupal/conf/solrconfig.xml
 
 USER solr
