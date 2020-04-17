@@ -136,9 +136,6 @@
         },
         "enable-patching": true,
         "patches": {
-            "drupal/drupal": {
-                "Allow symfony/event-dispatcher 4+ to be installed in Drupal 8": "https://www.drupal.org/files/issues/2019-08-16/2876675-17.drupal.Fix-symfony-version-requirements-for-symfonyeventdispatcher.patch"
-            },
             "drupal/config_ignore": {
                 "Offset error within IgnoreFilter::activeReadMultiple() - https://www.drupal.org/project/config_ignore/issues/2972302": "https://www.drupal.org/files/issues/2018-07-31/offset-error-within-2972302-13.patch"
             },
