@@ -4,7 +4,7 @@ services:
     image: tugboatqa/mysql:5
 
   app:
-    image: tugboatqa/php:7.2-apache
+    image: tugboatqa/php:7.3-apache
     # Set this as the default service. This does a few things
     #   1. Clones the git repository into the service container
     #   2. Exposes port 80 to the Tugboat HTTP proxy
