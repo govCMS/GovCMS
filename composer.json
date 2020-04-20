@@ -106,6 +106,7 @@
         "drupal/webform": "5.8",
         "oomphinc/composer-installers-extender": "^1.1",
         "swiftmailer/swiftmailer": "5.4.12",
+        "symfony/event-dispatcher": "4.3.11 as 3.4.35",
         "symfony/phpunit-bridge": "^3.4.6",
         "zaporylie/composer-drupal-optimizations": "^1.1"
     },

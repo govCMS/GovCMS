@@ -28,6 +28,7 @@
         "drupal/core-recommended": "8.8.5",
         "drush/drush": "^9.0.0",
         "govcms/govcms": "*",
+        "symfony/event-dispatcher": "4.3.11 as 3.4.35",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3"
     },
