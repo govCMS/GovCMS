@@ -139,6 +139,9 @@
             "drupal/config_ignore": {
                 "Offset error within IgnoreFilter::activeReadMultiple() - https://www.drupal.org/project/config_ignore/issues/2972302": "https://www.drupal.org/files/issues/2018-07-31/offset-error-within-2972302-13.patch"
             },
+            "drupal/core": {
+                "Private file download returns access denied, when file attached to revision other than current - https://www.drupal.org/project/drupal/issues/1452100#comment-13392351": "https://www.drupal.org/files/issues/2019-12-16/1452100-92.patch"
+            },
             "drupal/ga_login": {
                 "TOTP taking very-old verification codes - https://www.drupal.org/project/ga_login/issues/3022921": "https://www.drupal.org/files/issues/2018-12-28/3022921-2-time-skew-confusing.patch"
             },
