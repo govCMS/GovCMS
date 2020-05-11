@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Code linting for SaaS project.
+set -e
 
 APP_DIR=${APP_DIR:-/app}
 PROFILE_DIR=${PROFILE_DIR:-${APP_DIR}/web}
