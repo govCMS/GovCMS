@@ -4,3 +4,25 @@
  * @file
  * Contains install and update functions for the module.
  */
+
+/**
+ * Reset the 'is_admin' flag to false for all user roles.
+ */
+
+function govcms_security_update_8001() {
+  $config_factory = \Drupal::configFactory();
+  // All roles.
+  $roles = $config_factory->listAll('user.role');
+  if ($roles) {
+    // Update all roles
+    foreach ($roles as $role) {
+      // Role setting object.
+      $role_setting = $config_factory->getEditable($role);
+      if ($role_setting) {
+        // No role should be admin.
+        $role_setting->set('is_admin', false);
+        $role_setting->save(TRUE);
+      }
+    }
+  }
+}
