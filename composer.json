@@ -169,7 +169,9 @@
                 "Users' recovery codes exposed to admin users - https://www.drupal.org/project/tfa/issues/3075304": "https://www.drupal.org/files/issues/2019-08-16/tfa-3075304_2.patch"
             },
             "drupal/webform": {
-                "Undefined index: messages - https://www.drupal.org/files/issues/2020-05-18/3137625-3.patch" :"https://www.drupal.org/files/issues/2020-05-18/3137625-3.patch"
+                "Undefined index: messages - https://www.drupal.org/project/webform/issues/3137625" :"https://www.drupal.org/files/issues/2020-05-18/3137625-3.patch",
+                "Email from name cannot be longer than 128 characters - https://www.drupal.org/project/webform/issues/3142807": "https://www.drupal.org/files/issues/2020-05-26/3142807-9.patch",
+                "Email confirmation clientside validation not working - https://www.drupal.org/project/webform/issues/3138266": "https://www.drupal.org/files/issues/2020-05-20/3138266-5.patch"
             }
         }
     },
