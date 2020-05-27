@@ -4,7 +4,7 @@ services:
     image: tugboatqa/mysql:5
 
   app:
-    image: tugboatqa/php:7.2-apache
+    image: tugboatqa/php:7.3-apache
     # Set this as the default service. This does a few things
     #   1. Clones the git repository into the service container
     #   2. Exposes port 80 to the Tugboat HTTP proxy
@@ -45,6 +45,7 @@ services:
         # Tell the GovCMS project to use this "tugboat-latest" tag above to build GovCMS distro in the scaffold.
         - rm -Rf /var/govcms
         - composer create-project -n --no-install govcms/govcms8-project /var/govcms
+        - composer --working-dir=/var/govcms require --no-update symfony/event-dispatcher:"4.3.11 as 3.4.35"
         - composer --working-dir=/var/govcms config repositories.local path "${TUGBOAT_ROOT}"
         - composer --profile --working-dir=/var/govcms require govcms/govcms:dev-tugboat-latest
         - ln -snf "/var/govcms/docroot" "${DOCROOT}"
