@@ -1,7 +1,0 @@
-services:
-  govcms_security.CachedStorage:
-    class: Drupal\govcms_security\GovcmsCachedStorage
-    public: false
-    decorates: config.storage
-    decoration_priority: 10
-    arguments: ['@govcms_security.CachedStorage.inner']
