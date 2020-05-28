@@ -4,7 +4,3 @@
  * @file
  * Contains install and update functions for the module.
  */
-
-/**
- * Reset the 'is_admin' flag to false for all user roles.
- */
