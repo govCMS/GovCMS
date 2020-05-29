@@ -97,7 +97,7 @@
         "drupal/search_api_attachments": "1.0-beta16",
         "drupal/seckit": "1.1",
         "drupal/shield": "1.2",
-        "drupal/simple_oauth": "3.14",
+        "drupal/simple_oauth": "4.5",
         "drupal/simple_sitemap": "3.0",
         "drupal/swiftmailer": "1.0-beta2",
         "drupal/tfa":"1.0-alpha4",
@@ -168,6 +168,9 @@
             },
             "drupal/google_analytics": {
                "Fatal error when there is a view with the path search/node":  "https://www.drupal.org/files/issues/2018-06-18/patch_google_analytics.patch"
+            },
+            "drupal/simple_oauth": {
+              "Drupal 9 Readiness": "https://www.drupal.org/files/issues/2020-05-21/3138497-6.patch"
             },
             "drupal/tfa": {
                 "The tfa.settings route should use the permission 'admin tfa settings' - https://www.drupal.org/project/tfa/issues/2943972": "https://www.drupal.org/files/issues/2943972-2.patch",
