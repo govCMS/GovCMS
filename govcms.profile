@@ -51,7 +51,7 @@ function govcms_page_attachments_alter(array &$page) {
  */
 function govcms_system_breadcrumb_alter(Breadcrumb $breadcrumb, RouteMatchInterface $route_match, array $context) {
   // Append the current page title to the breadcrumb for non-admin routes.
-  if ($breadcrumb && !\Drupal::service('router.admin_context')->isAdminRoute()) {
+  if (!empty($route_match->getRouteObject()) && $breadcrumb && !\Drupal::service('router.admin_context')->isAdminRoute()) {
     $title = \Drupal::service('title_resolver')->getTitle(\Drupal::request(), $route_match->getRouteObject());
     if (!empty($title)) {
       $breadcrumb->addLink(Link::createFromRoute($title, '<none>'));

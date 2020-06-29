@@ -90,6 +90,7 @@ dependencies:
   - govcms_foi
   - govcms_news_and_media
   - govcms_standard_page
+  - govcms_security
 
 dependencies_optional:
   - govcms8_default_content

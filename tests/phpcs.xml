@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<ruleset name="vahiscv">
-  <description>PHPCS Standard for a GoVCMS8 website, based on Drupal standards.
+<ruleset name="govcms8">
+  <description>PHPCS Standard for a GovCMS8 website, based on Drupal standards.
   </description>
 
   <rule ref="Drupal"/>
@@ -23,6 +23,9 @@
   <!-- Exclude all JS library files. -->
   <exclude-pattern>*library*\.js</exclude-pattern>
   <exclude-pattern>*libraries*\.js</exclude-pattern>
+
+  <!-- Exclude node_modules directory. -->
+  <exclude-pattern>web/themes/custom/*/node_modules/*</exclude-pattern>
 
   <!-- Exclude all features-generated files. -->
   <exclude-pattern>*\.bean\.*</exclude-pattern>

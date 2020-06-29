@@ -4,3 +4,15 @@
  * @file
  * Contains install and update functions.
  */
+
+/**
+ * Implement hook_form_FORM_ID_alter()
+ */
+function govcms_security_form_user_admin_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if (isset($form['admin_role']['user_admin_role'])) {
+    // Disable the administrator role setting.
+    $form['admin_role']['user_admin_role']['#disabled'] = 'disabled';
+    // There should be no administrator role.
+    $form['admin_role']['user_admin_role']['#default_value'] = '';
+  }
+}
