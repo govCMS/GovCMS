@@ -1,101 +1,49 @@
-name:                   GovCMS
-type:                   profile
-description:            'A GovCMS Drupal Distribution for government and the public sector in Australia.'
-core:                   8.x
+name: GovCMS
+type: profile
+description: 'A GovCMS Drupal Distribution for government and the public sector in Australia.'
+project: govcms
+core_version_requirement: ^9
+version: '2.x-dev'
 
 distribution:
-  name:                 GovCMS
-  langcode:             en
+  name: GovCMS
+  langcode: en
   install:
-    theme:              govcmsinstall
+    theme: govcmsinstall
 
-dependencies:
-  # Drupal Core modules
+install:
+  - big_pipe
   - block_content
-  - block_place
-  - breakpoint
   - ckeditor
   - config
-  - content_moderation
+  - contextual
   - datetime_range
+  - dynamic_page_cache
+  - field_layout
   - field_ui
   - help
-  - history
-  - image
-  - inline_form_errors
-  - layout_discovery
+  - layout_builder
   - media_library
   - menu_ui
   - node
   - options
+  - page_cache
+  - path
   - quickedit
   - rdf
-  - responsive_image
+  - settings_tray
   - shortcut
-  - syslog
   - taxonomy
   - telephone
+  - toolbar
+  - views
   - views_ui
 
-  # Contrib modules
-  - adminimal_admin_toolbar
-  - admin_toolbar_tools
-  - ds
-  - chosen
-  - components
-  - config_perms
-  - config_ignore:config_ignore
-  - entity_browser
-  - entity_embed
-  - events_log_track:event_log_track
-  - events_log_track:event_log_track_auth
-  - events_log_track:event_log_track_node
-  - events_log_track:event_log_track_taxonomy
-  - events_log_track:event_log_track_menu
-  - events_log_track:event_log_track_file
-  - events_log_track:event_log_track_media
-  - events_log_track:event_log_track_user
-  - events_log_track:event_log_track_workflows
-  - features_ui
-  - field_group
-  - focal_point
-  - google_analytics
-  - honeypot
-  - linkit
-  - linked_field
-  - login_security
-  - metatag
-  - module_filter
-  - panelizer
-  - paragraphs
-  - password_policy
-  - password_policy_length
-  - password_policy_characters
-  - password_policy_character_types
-  - password_policy_history
-  - password_policy_username
-  - pathauto
-  - redirect
-  - seckit
-  - shield
-  - simple_sitemap
-  - username_enumeration_prevention
-
-  # govCMS core modules
-  - govcms_search
-  - govcms_media
-  - govcms8_foundations
-  - govcms_blog_article
-  - govcms_event
-  - govcms_foi
-  - govcms_news_and_media
-  - govcms_standard_page
-  - govcms_security
-
-dependencies_optional:
-  - govcms8_default_content
+dependencies:
+  - node
+  - block
+  - views
 
 themes:
-  - adminimal_theme
-  - govcmsui
-  - govcms8_uikit_starter
+  - claro
+  - govcms_bartik

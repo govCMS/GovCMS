@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Blog article categories'
+vid: govcms_blog_article_categories
+description: ''
+weight: 0

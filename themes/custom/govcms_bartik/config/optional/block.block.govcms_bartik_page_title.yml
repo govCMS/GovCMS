@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  theme:
+    - govcms_bartik
+id: govcms_bartik_page_title
+theme: govcms_bartik
+region: content
+weight: 0
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

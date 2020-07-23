@@ -4,6 +4,8 @@ tests/screenshots/*
 
 # Ignore drupal core.
 docroot/
+web/
+app/
 
 # Ignore build artifacts
 /deploy

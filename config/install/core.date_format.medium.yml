@@ -1,7 +1,7 @@
-langcode:     en
-status:       true
+langcode: en
+status: true
 dependencies: {  }
-id:           medium
-label:        'Default medium date'
-locked:       false
-pattern:      'D, Y-m-d H:i'
+id: medium
+label: 'Default medium date'
+locked: false
+pattern: 'D, Y-m-d H:i'

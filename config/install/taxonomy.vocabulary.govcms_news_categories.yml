@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'News categories'
+vid: govcms_news_categories
+description: ''
+weight: 0

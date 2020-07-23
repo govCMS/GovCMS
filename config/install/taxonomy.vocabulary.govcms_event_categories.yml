@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Event categories'
+vid: govcms_event_categories
+description: ''
+weight: 0

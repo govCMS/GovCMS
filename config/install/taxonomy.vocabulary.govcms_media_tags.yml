@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Media tags'
+vid: govcms_media_tags
+description: ''
+weight: 0

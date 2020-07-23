@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: govcms_content_approver
+label: 'Content Approver'
+weight: -7
+is_admin: null
+permissions:
+  - 'use text format rich_text'

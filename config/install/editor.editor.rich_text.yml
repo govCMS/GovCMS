@@ -16,15 +16,14 @@ settings:
           items:
             - Bold
             - Italic
-            - JustifyLeft
-            - JustifyCenter
-            - JustifyRight
-            - JustifyBlock
             - Underline
             - Strike
             - Superscript
             - Subscript
-            - Format
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - JustifyBlock
         -
           name: Links
           items:
@@ -41,20 +40,16 @@ settings:
           items:
             - Blockquote
             - DrupalImage
-            - media_entity_embed
         -
           name: Tools
           items:
             - PasteFromWord
             - Source
   plugins:
-    stylescombo:
-      styles: ''
-    drupallink:
-      linkit_enabled: true
-      linkit_profile: default
     language:
       language_list: un
+    stylescombo:
+      styles: ''
 image_upload:
   status: false
   scheme: public

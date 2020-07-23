@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: govcms_site_administrator
+label: 'Site Administrator'
+weight: -6
+is_admin: null
+permissions:
+  - 'use text format rich_text'

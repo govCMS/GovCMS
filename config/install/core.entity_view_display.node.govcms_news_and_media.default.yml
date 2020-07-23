@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.govcms_news_and_media.body
+    - node.type.govcms_news_and_media
+  module:
+    - text
+    - user
+id: node.govcms_news_and_media.default
+targetEntityType: node
+bundle: govcms_news_and_media
+mode: default
+content:
+  body:
+    type: text_default
+    weight: 1
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

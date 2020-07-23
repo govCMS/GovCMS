@@ -2,34 +2,49 @@
 
 /**
  * @file
- * Install, update and uninstall hooks for the govCMS profile.
+ * Install, update and uninstall functions for the GovCMS installation profile.
  */
 
-use Drupal\user\Entity\User;
-use Drupal\user\RoleInterface;
+use Drupal\node\Entity\Node;
 use Drupal\shortcut\Entity\Shortcut;
+use Drupal\menu_link_content\Entity\MenuLinkContent;
 
 /**
  * Define a default theme constant.
  */
-define('GOVCMS_DEFAULT_THEME', 'govcms8_uikit_starter');
+define('GOVCMS_DEFAULT_THEME', 'govcms_bartik');
 
 /**
  * Define the admin theme.
  */
-define('GOVCMS_DEFAULT_ADMIN_THEME', 'adminimal_theme');
+define('GOVCMS_DEFAULT_ADMIN_THEME', 'claro');
 
 /**
  * Implements hook_install().
  *
- * Perform actions to set up the site for govCMS Profile.
+ * Perform actions to set up the site for GovCMS Profile.
  *
  * @see system_install()
  */
 function govcms_install() {
   // Restrict user registration to admin role creation.
-  $user_settings = \Drupal::configFactory()->getEditable('user.settings');
-  $user_settings->set('register', USER_REGISTER_ADMINISTRATORS_ONLY)->save(TRUE);
+  \Drupal::configFactory()
+    ->getEditable('user.settings')
+    ->set('register', \Drupal\user\UserInterface::REGISTER_ADMINISTRATORS_ONLY)
+    ->save(TRUE);
+
+  // Create default node.
+  Node::create([
+    'type' => 'govcms_standard_page',
+    'title' => 'Welcome to GovCMS',
+    'body' => 'GovCMS is a content management systems maintained by the Australian Government Department of Finance and available to all levels of the Australian government.',
+  ])->save();
+
+  // Set front page to "node".
+  \Drupal::configFactory()
+    ->getEditable('system.site')
+    ->set('page.front', '/node/1')
+    ->save(TRUE);
 
   // Allow all users to use search.
   user_role_grant_permissions(RoleInterface::ANONYMOUS_ID, ['search content']);
@@ -37,6 +52,7 @@ function govcms_install() {
 
   // Allow authenticated users to use shortcuts.
   user_role_grant_permissions(RoleInterface::AUTHENTICATED_ID, ['access shortcuts']);
+
   // Populate the default shortcut set.
   Shortcut::create(
     [
@@ -47,10 +63,54 @@ function govcms_install() {
     ]
   )->save();
 
+  MenuLinkContent::create(
+    [
+      'title' => 'Accessibility',
+      'link' => ['uri' => 'internal:/node/1'],
+      'menu_name' => 'footer',
+    ]
+  )->save();
+
+  MenuLinkContent::create(
+    [
+      'title' => 'Copyright',
+      'link' => ['uri' => 'internal:/node/1'],
+      'menu_name' => 'footer',
+    ]
+  )->save();
+
+  MenuLinkContent::create(
+    [
+      'title' => 'Disclaimers',
+      'link' => ['uri' => 'internal:/node/1'],
+      'menu_name' => 'footer',
+    ]
+  )->save();
+
+  MenuLinkContent::create(
+    [
+      'title' => 'Privacy',
+      'link' => ['uri' => 'internal:/node/1'],
+      'menu_name' => 'footer',
+    ]
+  )->save();
+
+  MenuLinkContent::create([
+    'title' => 'Our community',
+    'link' => ['uri' => 'https://www.govcms.gov.au/our-community'],
+    'menu_name' => 'govcms-community',
+  ])->save();
+
+  MenuLinkContent::create([
+    'title' => 'About GovCMS',
+    'link' => ['uri' => 'https://www.govcms.gov.au/about'],
+    'menu_name' => 'govcms-about',
+  ])->save();
+
   // Don't do anything else during config sync.
-   if (\Drupal::isConfigSyncing()) {
-     return;
-   }
+  if (\Drupal::isConfigSyncing()) {
+    return;
+  }
 
   // Set front page to "node".
   \Drupal::configFactory()
@@ -87,20 +147,6 @@ function govcms_install() {
       'use_default' => FALSE,
     ])
     ->save(TRUE);
-}
 
-/**
- * Implements hook_install_tasks().
- */
-function govcms_install_tasks(&$install_state) {
-  $tasks = [];
-
-  // Install optional modules.
-  $tasks['govcms_install_optional'] = [
-    'display_name' => t('Install optional modules'),
-    'type' => 'form',
-    'function' => 'Drupal\govcms\Installer\Form\optionalForm',
-  ];
-
-  return $tasks;
+  drupal_flush_all_caches();
 }

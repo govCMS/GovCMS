@@ -1,7 +1,7 @@
-langcode:     en
-status:       true
+langcode: en
+status: true
 dependencies: {  }
-id:           short
-label:        'Default short date'
-locked:       false
-pattern:      'd/m/Y - g:ia'
+id: short
+label: 'Default short date'
+locked: false
+pattern: 'd/m/Y - g:ia'
