@@ -91,7 +91,7 @@
         "drupal/update_notifications_disable": "1.1",
         "drupal/username_enumeration_prevention": "1.1",
         "drupal/video_embed_field": "2.4",
-        "drupal/webform": "5.19",
+        "drupal/webform": "6.0.0-alpha12",
         "swiftmailer/swiftmailer": "6.2.3",
         "webflo/drupal-finder": "^1.2"
     },
