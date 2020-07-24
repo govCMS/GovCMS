@@ -60,7 +60,7 @@ commands:
 
   pull:
     usage: Pull latest docker images.
-    cmd: docker image ls --format \"{{.Repository}}:{{.Tag}}\" | grep govcms8dev/ | grep -v none | xargs -n1 docker pull | cat
+    cmd: docker image ls --format \"{{.Repository}}:{{.Tag}}\" | grep govcmspoc/ | grep -v none | xargs -n1 docker pull | cat
 
   push:
     usage: Push all docker images (beta).

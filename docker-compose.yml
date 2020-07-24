@@ -7,7 +7,7 @@ x-volumes:
 
 x-environment:
   &default-environment
-    LAGOON_ROUTE: ${LOCALDEV_URL:-http://govcms8.docker.amazee.io}
+    LAGOON_ROUTE: ${LOCALDEV_URL:-http://govcms-poc.docker.amazee.io}
 
 volumes:
   files: {}
@@ -17,8 +17,8 @@ services:
   cli: # cli container, will be used for executing composer and any local commands (drush, drupal, etc.)
     build:
       context: .
-      dockerfile: $PWD/.docker/Dockerfile.govcms8
-    image: ${DOCKERHUB_NAMESPACE:-govcms8}/govcms8
+      dockerfile: $PWD/.docker/Dockerfile.govcms
+    image: ${DOCKERHUB_NAMESPACE:-govcmspoc}/govcms
     << : *default-volumes # loads the defined volumes from the top
     environment:
       << : *default-environment
@@ -28,8 +28,8 @@ services:
       context: .
       dockerfile: $PWD/.docker/Dockerfile.test
       args:
-        CLI_IMAGE: ${DOCKERHUB_NAMESPACE:-govcms8}/govcms8
-    image: ${DOCKERHUB_NAMESPACE:-govcms8}/test
+        CLI_IMAGE: ${DOCKERHUB_NAMESPACE:-govcmspoc}/govcms
+    image: ${DOCKERHUB_NAMESPACE:-govcmspoc}/test
     << : *default-volumes
     depends_on:
       - cli
@@ -41,8 +41,8 @@ services:
       context: .
       dockerfile: $PWD/.docker/Dockerfile.nginx-drupal
       args:
-        CLI_IMAGE: ${DOCKERHUB_NAMESPACE:-govcms8}/govcms8
-    image: ${DOCKERHUB_NAMESPACE:-govcms8}/nginx-drupal
+        CLI_IMAGE: ${DOCKERHUB_NAMESPACE:-govcmspoc}/govcms
+    image: ${DOCKERHUB_NAMESPACE:-govcmspoc}/nginx-drupal
     << : *default-volumes
     environment:
       << : *default-environment
@@ -55,8 +55,8 @@ services:
       context: .
       dockerfile: $PWD/.docker/Dockerfile.php
       args:
-        CLI_IMAGE: ${DOCKERHUB_NAMESPACE:-govcms8}/govcms8
-    image: ${DOCKERHUB_NAMESPACE:-govcms8}/php
+        CLI_IMAGE: ${DOCKERHUB_NAMESPACE:-govcmspoc}/govcms
+    image: ${DOCKERHUB_NAMESPACE:-govcmspoc}/php
     << : *default-volumes
     environment:
       << : *default-environment
@@ -65,7 +65,7 @@ services:
     build:
       context: .
       dockerfile: $PWD/.docker/Dockerfile.mariadb-drupal
-    image: ${DOCKERHUB_NAMESPACE:-govcms8}/mariadb-drupal
+    image: ${DOCKERHUB_NAMESPACE:-govcmspoc}/mariadb-drupal
     ports:
       - "3306" # Find port on host with `docker-compose port mariadb 3306`
     environment:
@@ -76,8 +76,8 @@ services:
       context: .
       dockerfile: $PWD/.docker/Dockerfile.solr
       args:
-        CLI_IMAGE: ${DOCKERHUB_NAMESPACE:-govcms8}/govcms8
-    image: ${DOCKERHUB_NAMESPACE:-govcms8}/solr
+        CLI_IMAGE: ${DOCKERHUB_NAMESPACE:-govcmspoc}/govcms
+    image: ${DOCKERHUB_NAMESPACE:-govcmspoc}/solr
     ports:
       - "8983" # Find port on host with `docker-compose port solr 8983`
     environment:

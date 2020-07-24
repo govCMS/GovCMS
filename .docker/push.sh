@@ -4,7 +4,7 @@
 #
 
 # Namespace for the image.
-DOCKERHUB_NAMESPACE=${DOCKERHUB_NAMESPACE:-govcms8}
+DOCKERHUB_NAMESPACE=${DOCKERHUB_NAMESPACE:-govcmspoc}
 # Docker image version tag.
 IMAGE_VERSION_TAG=${IMAGE_VERSION_TAG:-}
 # Docker image tag prefix to be stripped from tag. Use " " (space) value to

@@ -4,7 +4,7 @@
 #
 
 # Namespace for the image.
-DOCKERHUB_NAMESPACE=${DOCKERHUB_NAMESPACE:-govcms8}
+DOCKERHUB_NAMESPACE=${DOCKERHUB_NAMESPACE:-govcmspoc}
 # Docker image edge tag.
 IMAGE_TAG_EDGE=${IMAGE_TAG_EDGE:-beta}
 

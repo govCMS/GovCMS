@@ -1,7 +1,7 @@
 ---
 name: Module request
-about: Suggest an module for addition to GovCMS8
-title: Add XXXX module to GovCMS8
+about: Suggest an module for addition to GovCMS
+title: Add XXXX module to GovCMS
 labels: enhancement
 assignees: ''
 
