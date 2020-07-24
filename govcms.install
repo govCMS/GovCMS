@@ -46,13 +46,6 @@ function govcms_install() {
     ->set('page.front', '/node/1')
     ->save(TRUE);
 
-  // Allow all users to use search.
-  user_role_grant_permissions(RoleInterface::ANONYMOUS_ID, ['search content']);
-  user_role_grant_permissions(RoleInterface::AUTHENTICATED_ID, ['search content']);
-
-  // Allow authenticated users to use shortcuts.
-  user_role_grant_permissions(RoleInterface::AUTHENTICATED_ID, ['access shortcuts']);
-
   // Populate the default shortcut set.
   Shortcut::create(
     [
