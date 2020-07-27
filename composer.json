@@ -83,7 +83,7 @@
         "drupal/panelizer": "4.1",
         "drupal/panels": "4.4.0",
         "drupal/paragraphs": "1.12",
-        "drupal/password_policy": "3.0-alpha4",
+        "drupal/password_policy": "3.0-beta1",
         "drupal/pathauto": "1.6.0",
         "drupal/permissions_by_term": "2.12",
         "drupal/real_aes": "2.2",
@@ -149,15 +149,6 @@
             "drupal/core": {
                 "Private file download returns access denied, when file attached to revision other than current - https://www.drupal.org/project/drupal/issues/1452100#comment-13392351": "https://www.drupal.org/files/issues/2019-12-16/1452100-92.patch"
             },
-            "drupal/ga_login": {
-                "TOTP taking very-old verification codes - https://www.drupal.org/project/ga_login/issues/3022921": "https://www.drupal.org/files/issues/2018-12-28/3022921-2-time-skew-confusing.patch"
-            },
-            "drupal/panelizer": {
-              "PanelizerWizardContextForm calls parent constructor without enough arguments under CTools 3.1 - https://www.drupal.org/project/panelizer/issues/3031671": "https://www.drupal.org/files/issues/2019-04-03/3031671-8.patch"
-            },
-            "drupal/metatag": {
-                "Unset link rel: shortlink, edit-form, version-history and revision, and meta name: Generator, MobileOptimized, HandheldFriendly, viewport from <head> - https://www.drupal.org/project/metatag/issues/2735195#comment-12991008": "https://www.drupal.org/files/issues/2019-02-28/metatag-unset-2735195-42.patch"
-            },
             "drupal/events_log_track": {
                 "Events Log Track breaks Entity Browser #5 - https://www.drupal.org/project/events_log_track/issues/2934036": "https://www.drupal.org/files/issues/2018-04-19/2934036-check_empty_submit-5.patch",
                 "Entities with title longer than 50 characters - https://www.drupal.org/project/events_log_track/issues/2930817": "https://www.drupal.org/files/issues/increase-character-length-2930817-2.patch",
@@ -166,8 +157,22 @@
                 "Skip password logging during failed authentication attempt - https://www.drupal.org/project/events_log_track/issues/3027463": "https://www.drupal.org/files/issues/2019-01-22/event-log-track-auth-3027463-2.patch",
                 "Fix fatal error when we request password with non-existing users/emails on the Events Log Track User Authentication - https://www.drupal.org/project/events_log_track/issues/3060838#comment-13141212": "https://www.drupal.org/files/issues/2019-06-11/3060838-4.patch"
             },
+            "drupal/ga_login": {
+                "TOTP taking very-old verification codes - https://www.drupal.org/project/ga_login/issues/3022921": "https://www.drupal.org/files/issues/2018-12-28/3022921-2-time-skew-confusing.patch"
+            },
             "drupal/google_analytics": {
                "Fatal error when there is a view with the path search/node":  "https://www.drupal.org/files/issues/2018-06-18/patch_google_analytics.patch"
+            },
+            "drupal/metatag": {
+                "Unset link rel: shortlink, edit-form, version-history and revision, and meta name: Generator, MobileOptimized, HandheldFriendly, viewport from <head> - https://www.drupal.org/project/metatag/issues/2735195#comment-12991008": "https://www.drupal.org/files/issues/2019-02-28/metatag-unset-2735195-42.patch"
+            },
+            "drupal/panelizer": {
+              "PanelizerWizardContextForm calls parent constructor without enough arguments under CTools 3.1 - https://www.drupal.org/project/panelizer/issues/3031671": "https://www.drupal.org/files/issues/2019-04-03/3031671-8.patch"
+            },
+            "drupal/password_policy" : {
+                "Can't edit user profile because password policy validates even when password unchanged - https://www.drupal.org/project/password_policy/issues/2971079": "https://www.drupal.org/files/issues/2020-03-19/password_policy-empty-password-skip-validation-2971079-37.patch",
+                "PasswordPolicyValidator detects role change when there isn't one - https://www.drupal.org/project/password_policy/issues/3153875": "https://www.drupal.org/files/issues/2020-07-09/password_policy-validator_detects_incorrect_role_change-3153875-6.patch",
+                "Refactor hook_install logic to expire passwords for existing users - https://www.drupal.org/project/password_policy/issues/2983448": "https://www.drupal.org/files/issues/2020-03-23/Do_not_set_user_fields_on_install-2983448-17.patch"
             },
             "drupal/simple_oauth": {
               "Drupal 9 Readiness": "https://www.drupal.org/files/issues/2020-05-21/3138497-6.patch"
