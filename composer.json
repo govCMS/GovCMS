@@ -27,6 +27,7 @@
         "cweagans/composer-patches": "dev-master",
         "drupal/admin_toolbar": "2.3.0",
         "drupal/adminimal_admin_toolbar": "1.11.0",
+        "drupal/block_place": "1.0",
         "drupal/chosen": "2.9.0",
         "drupal/components": "2.0-beta3",
         "drupal/config_filter": "1.5",
