@@ -9,7 +9,7 @@ distribution:
   name: GovCMS
   langcode: en
   install:
-    theme: govcmsinstall
+    theme: govcms_install
 
 install:
   - big_pipe

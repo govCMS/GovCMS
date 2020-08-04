@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the GovCMS install theme.
+ */
+
+/**
+ * Implements hook_preprocess_install_page().
+ */
+function govcms_install_preprocess_install_page(&$variables) {
+  // Seven has custom styling for the install page.
+  $variables['#attached']['library'][] = 'govcms_install/install-page';
+}
+
+/**
+ * Implements hook_preprocess_maintenance_page().
+ */
+function govcms_install_preprocess_maintenance_page(&$variables) {
+  // Seven has custom styling for the maintenance page.
+  $variables['#attached']['library'][] = 'govcms_install/maintenance-page';
+}

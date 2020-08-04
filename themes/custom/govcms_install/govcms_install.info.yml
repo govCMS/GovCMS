@@ -1,9 +1,9 @@
 # This theme is for GovCMS distro install only
-name: 'GovCMS Install'
+name: 'GovCMS install theme'
 type: theme
 base theme: seven
 description: 'Warning: Used for GovCMS distro install only.'
-core: 8.x
+core_version_requirement: ^9
 regions:
   header: 'Header'
   pre_content: 'Pre-content'
