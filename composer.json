@@ -146,8 +146,9 @@
               "Update code deprecated in 8.8": "https://www.drupal.org/files/issues/2020-04-10/3081195-21-PASS.patch",
               "Replace deprecated AllowedTagsXssTrait": "https://www.drupal.org/files/issues/2020-04-17/3128413-10.patch"
             },
-            "drupal/core" : {
-                "Private file download returns access denied, when file attached to revision other than current - https://www.drupal.org/project/drupal/issues/1452100#comment-13653216" : "https://www.drupal.org/files/issues/2020-05-29/1452100-file-access-97.patch"
+            "drupal/core": {
+                "Private file download returns access denied, when file attached to revision other than current - https://www.drupal.org/project/drupal/issues/1452100#comment-13653216": "https://www.drupal.org/files/issues/2020-05-29/1452100-file-access-97.patch",
+                "Unrecognised entity operation passed to Menu Link Content throws exceptions - https://www.drupal.org/project/drupal/issues/3016038": "https://www.drupal.org/files/issues/2020-07-23/3016038-32.patch"
             },
             "drupal/events_log_track": {
                 "Events Log Track breaks Entity Browser #5 - https://www.drupal.org/project/events_log_track/issues/2934036": "https://www.drupal.org/files/issues/2018-04-19/2934036-check_empty_submit-5.patch",
