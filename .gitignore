@@ -1,4 +1,4 @@
-# Ignore govCMS build files.
+# Ignore GovCMS build files.
 build.properties
 tests/screenshots/*
 

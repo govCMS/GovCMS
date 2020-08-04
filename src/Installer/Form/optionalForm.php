@@ -11,7 +11,7 @@ use Symfony\Component\Yaml\Yaml;
 /**
  * Class optionalForm.
  *
- * @package Drupal\govCMS\Installer\Form
+ * @package Drupal\GovCMS\Installer\Form
  */
 class optionalForm extends FormBase {
 
@@ -23,7 +23,7 @@ class optionalForm extends FormBase {
   protected $moduleInstaller;
 
   /**
-   * govCMSInstallerForm constructor.
+   * GovCMSInstallerForm constructor.
    *
    * @param ModuleInstallerInterface $module_installer
    */

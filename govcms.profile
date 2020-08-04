@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Enables modules and site configuration for the govCMS profile.
+ * Enables modules and site configuration for the GovCMS profile.
  */
 
 use Drupal\Core\Form\FormStateInterface;

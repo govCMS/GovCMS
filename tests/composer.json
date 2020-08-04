@@ -1,6 +1,6 @@
 {
   "name": "govcms/govcms8",
-  "description": "govCMS Drupal 8 profile",
+  "description": "GovCMS Drupal 8 profile",
   "license": "GPL-2.0-or-later",
   "require-dev": {
     "fabpot/goutte": "^3.2",

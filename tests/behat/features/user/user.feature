@@ -1,5 +1,5 @@
 Feature: User
-  govCMS site user testing
+  GovCMS site user testing
 
   @api @javascript
   Scenario: Create user
