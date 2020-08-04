@@ -5,14 +5,34 @@
  * Contains install and update functions.
  */
 
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Site\Settings;
+
 /**
  * Implement hook_form_FORM_ID_alter()
  */
-function govcms_security_form_user_admin_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-  if (isset($form['admin_role']['user_admin_role'])) {
-    // Disable the administrator role setting.
-    $form['admin_role']['user_admin_role']['#disabled'] = 'disabled';
-    // There should be no administrator role.
-    $form['admin_role']['user_admin_role']['#default_value'] = '';
+function govcms_security_form_user_admin_settings_alter(&$form, FormStateInterface $form_state) {
+  $form['admin_role']['#access'] = FALSE;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function govcms_security_form_user_form_alter(&$form, FormStateInterface $form_state) {
+  if (Settings::get('govcms_security_super_ui')) {
+    return;
+  }
+
+  $user_id = $form_state->getBuildInfo()['callback_object']->getEntity()->id();
+  if ($user_id == 1) {
+    $user = \Drupal::currentUser();
+    // Allow user/1 to edit own details.
+    if ($user->id() != 1) {
+      drupal_set_message(t('You must log in as this user (user/1) to modify the name, email address, and password for this account.'), 'warning');
+      $form['account']['name']['#access'] = FALSE;
+      $form['account']['mail']['#access'] = FALSE;
+      $form['account']['pass']['#access'] = FALSE;
+      $form['account']['current_pass']['#access'] = FALSE;
+    }
   }
 }
