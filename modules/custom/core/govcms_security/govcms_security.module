@@ -7,6 +7,9 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Site\Settings;
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Session\AccountInterface;
 
 /**
  * Implement hook_form_FORM_ID_alter()
@@ -16,23 +19,12 @@ function govcms_security_form_user_admin_settings_alter(&$form, FormStateInterfa
 }
 
 /**
- * Implements hook_form_FORM_ID_alter().
+ * Implements hook_ENTITY_TYPE_access().
  */
-function govcms_security_form_user_form_alter(&$form, FormStateInterface $form_state) {
-  if (Settings::get('govcms_security_super_ui')) {
-    return;
+function govcms_security_user_access(EntityInterface $entity, $operation, AccountInterface $account) {
+  if ($entity->id() == 1 && !Settings::get('govcms_security_super_ui')) {
+    return AccessResult::forbidden();
   }
 
-  $user_id = $form_state->getBuildInfo()['callback_object']->getEntity()->id();
-  if ($user_id == 1) {
-    $user = \Drupal::currentUser();
-    // Allow user/1 to edit own details.
-    if ($user->id() != 1) {
-      drupal_set_message(t('You must log in as this user (user/1) to modify the name, email address, and password for this account.'), 'warning');
-      $form['account']['name']['#access'] = FALSE;
-      $form['account']['mail']['#access'] = FALSE;
-      $form['account']['pass']['#access'] = FALSE;
-      $form['account']['current_pass']['#access'] = FALSE;
-    }
-  }
+  return AccessResult::neutral();
 }

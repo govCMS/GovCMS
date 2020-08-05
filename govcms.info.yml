@@ -43,6 +43,7 @@ dependencies:
   - node
   - block
   - views
+  - govcms_security
 
 themes:
   - claro

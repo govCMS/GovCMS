@@ -2,5 +2,4 @@ name: GovCMS Security Kit
 type: module
 description: Enhance security of GovCMS websites.
 package: GovCMS
-core: 8.x
 core_version_requirement: ^8 || ^9
