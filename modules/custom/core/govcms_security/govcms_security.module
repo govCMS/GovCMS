@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains install and update functions.
+ * Module file.
  */
 
 use Drupal\Core\Form\FormStateInterface;
