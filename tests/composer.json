@@ -1,32 +1,30 @@
 {
-  "name": "govcms/govcms8",
-  "description": "GovCMS Drupal 8 profile",
-  "license": "GPL-2.0-or-later",
-  "require-dev": {
-    "fabpot/goutte": "^3.2",
-    "phploc/phploc": "^2.0",
-    "phpmd/phpmd": "^2.6",
-    "phpunit/phpunit": "^5.7",
-    "sebastian/phpcpd": "^3",
-    "behat/behat": "^3.4",
-    "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
-    "drupal/coder": "^8.2.12",
-    "drupal/console": "^1.0",
-    "drupal/drupal-extension": "^v3.4",
-    "integratedexperts/behat-format-progress-fail": "^0.2",
-    "integratedexperts/behat-screenshot": "^0.7",
-    "integratedexperts/behat-steps": "^0.1.1",
-    "integratedexperts/robo-git-artefact": "^0.2.4",
-    "jakub-onderka/php-parallel-lint": "^1.0",
-    "symfony/filesystem": "^3.2.8",
-    "wimg/php-compatibility": "^8.1"
-  },
-  "config": {
-    "preferred-install": "dist",
-    "secure-http": false,
-    "sort-packages": true,
-    "optimize-autoloader": true
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+    "name": "govcms/tests",
+    "description": "GovCMS Drupal Distribution Tests.",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+        "drupal/coder": "^8.3",
+        "drupal/drupal-extension": "^4.1",
+        "integratedexperts/behat-format-progress-fail": "^0.2.1",
+        "integratedexperts/behat-screenshot": "^0.7.3",
+        "integratedexperts/behat-steps": "^0.1.10",
+        "integratedexperts/robo-git-artefact": "^0.4.1",
+        "php-parallel-lint/php-console-highlighter": "^0.5.0",
+        "php-parallel-lint/php-parallel-lint": "^1.2",
+        "phploc/phploc": "^6.0",
+        "phpmd/phpmd": "^2.8",
+        "sebastian/phpcpd": "^5.0"
+    },
+    "config": {
+        "preferred-install": "dist",
+        "secure-http": false,
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "scripts": {
+        "nuke": "rm -r -f composer.lock bin vendor"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
