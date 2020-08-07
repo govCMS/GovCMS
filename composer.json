@@ -84,7 +84,7 @@
         "drupal/panels": "4.4.0",
         "drupal/paragraphs": "1.12",
         "drupal/password_policy": "3.0-beta1",
-        "drupal/pathauto": "1.6.0",
+        "drupal/pathauto": "1.8.0",
         "drupal/permissions_by_term": "2.12",
         "drupal/real_aes": "2.2",
         "drupal/recaptcha": "2.4",
