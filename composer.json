@@ -107,7 +107,7 @@
         "drupal/video_embed_field": "2.0",
         "drupal/webform": "5.13",
         "oomphinc/composer-installers-extender": "^1.1",
-        "swiftmailer/swiftmailer": "5.4.12",
+        "swiftmailer/swiftmailer": "6.2.3",
         "symfony/event-dispatcher": "4.3.11 as 3.4.41",
         "symfony/phpunit-bridge": "^3.4.6",
         "zaporylie/composer-drupal-optimizations": "^1.1"
