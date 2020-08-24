@@ -26,8 +26,8 @@
         "bower-asset/dropzone": "5.5.0",
         "cweagans/composer-patches": "^1.6",
         "drupal-composer/drupal-scaffold": "^2.4",
-        "drupal/admin_toolbar": "2.0",
-        "drupal/adminimal_admin_toolbar": "1.9.0",
+        "drupal/admin_toolbar": "2.3",
+        "drupal/adminimal_admin_toolbar": "1.11.0",
         "drupal/adminimal_theme": "1.4",
         "drupal/chosen": "2.6.0",
         "drupal/components": "1.0.0",
@@ -39,7 +39,7 @@
         "drupal/consumers": "1.9",
         "drupal/contact_storage": "1.0.0",
         "drupal/context": "4.0-beta2",
-        "drupal/core-recommended": "8.9.1",
+        "drupal/core-recommended": "8.9.2",
         "drupal/crop":"2.1",
         "drupal/ctools": "3.2.0",
         "drupal/diff": "1.0-rc2",
@@ -58,7 +58,7 @@
         "drupal/facets": "1.3",
         "drupal/features": "3.8",
         "drupal/field_group": "3.1",
-        "drupal/focal_point": "1.2",
+        "drupal/focal_point": "1.4",
         "drupal/ga_login": "1.0-alpha4",
         "drupal/google_analytics": "3.0",
         "drupal/govcms_dlm": "1.3",
@@ -84,13 +84,13 @@
         "drupal/panels": "4.4.0",
         "drupal/paragraphs": "1.12",
         "drupal/password_policy": "3.0-beta1",
-        "drupal/pathauto": "1.6.0",
+        "drupal/pathauto": "1.8.0",
         "drupal/permissions_by_term": "2.12",
         "drupal/real_aes": "2.2",
         "drupal/recaptcha": "2.4",
         "drupal/redirect": "1.3",
         "drupal/restui": "1.16.0",
-        "drupal/robotstxt": "1.2",
+        "drupal/robotstxt": "1.4",
         "drupal/scheduled_transitions": "1.0.0-rc1",
         "drupal/search_api": "1.16",
         "drupal/search_api_solr": "3.9",
@@ -139,6 +139,9 @@
         },
         "enable-patching": true,
         "patches": {
+            "drupal/admin_toolbar": {
+                "Vertical tab display bug after page reload - https://www.drupal.org/project/admin_toolbar/issues/3154104": "https://www.drupal.org/files/issues/2020-06-23/admin_toolbar-vertical-display-fix-3154104-2-D8.patch" 
+            },
             "drupal/config_ignore": {
                 "Offset error within IgnoreFilter::activeReadMultiple() - https://www.drupal.org/project/config_ignore/issues/2972302": "https://www.drupal.org/files/issues/2018-07-31/offset-error-within-2972302-13.patch"
             },
@@ -147,7 +150,8 @@
               "Replace deprecated AllowedTagsXssTrait": "https://www.drupal.org/files/issues/2020-04-17/3128413-10.patch"
             },
             "drupal/core": {
-                "Private file download returns access denied, when file attached to revision other than current - https://www.drupal.org/project/drupal/issues/1452100#comment-13392351": "https://www.drupal.org/files/issues/2019-12-16/1452100-92.patch"
+                "Private file download returns access denied, when file attached to revision other than current - https://www.drupal.org/project/drupal/issues/1452100#comment-13653216": "https://www.drupal.org/files/issues/2020-05-29/1452100-file-access-97.patch",
+                "Unrecognised entity operation passed to Menu Link Content throws exceptions - https://www.drupal.org/project/drupal/issues/3016038": "https://www.drupal.org/files/issues/2020-07-23/3016038-32.patch"
             },
             "drupal/events_log_track": {
                 "Events Log Track breaks Entity Browser #5 - https://www.drupal.org/project/events_log_track/issues/2934036": "https://www.drupal.org/files/issues/2018-04-19/2934036-check_empty_submit-5.patch",
@@ -180,7 +184,8 @@
             "drupal/tfa": {
                 "The tfa.settings route should use the permission 'admin tfa settings' - https://www.drupal.org/project/tfa/issues/2943972": "https://www.drupal.org/files/issues/2943972-2.patch",
                 "Bad UX around 'required to setup TFA' concept and users who have skipped validation too many times - https://www.drupal.org/project/tfa/issues/2937336": "https://www.drupal.org/files/issues/2019-03-01/2937336-17.patch",
-                "Users' recovery codes exposed to admin users - https://www.drupal.org/project/tfa/issues/3075304": "https://www.drupal.org/files/issues/2019-08-16/tfa-3075304_2.patch"
+                "Users' recovery codes exposed to admin users - https://www.drupal.org/project/tfa/issues/3075304": "https://www.drupal.org/files/issues/2019-08-16/tfa-3075304_2.patch",
+                "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2020-08-12/tfa-2930541-16.patch"
             },
             "drupal/webform": {
                 "Undefined index: messages - https://www.drupal.org/project/webform/issues/3137625" :"https://www.drupal.org/files/issues/2020-05-18/3137625-3.patch",
