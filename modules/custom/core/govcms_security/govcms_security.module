@@ -2,8 +2,13 @@
 
 /**
  * @file
- * Contains install and update functions.
+ * Module file.
  */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Site\Settings;
+use Drupal\Core\Access\AccessResult;
 
 /**
  * Implement hook_form_FORM_ID_alter()
@@ -15,4 +20,15 @@ function govcms_security_form_user_admin_settings_alter(&$form, \Drupal\Core\For
     // There should be no administrator role.
     $form['admin_role']['user_admin_role']['#default_value'] = '';
   }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_access().
+ */
+function govcms_security_user_access(EntityInterface $entity, $operation, AccountInterface $account) {
+  if ($entity->id() == 1 && !Settings::get('govcms_security_super_ui')) {
+    return AccessResult::forbidden();
+  }
+
+  return AccessResult::neutral();
 }
