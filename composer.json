@@ -86,7 +86,7 @@
         "drupal/search_api": "1.17",
         "drupal/search_api_attachments": "1.0-beta16",
         "drupal/search_api_solr": "4.1.4",
-        "drupal/seckit": "2.0.0-rc1",
+        "drupal/seckit": "2.0.0",
         "drupal/shield": "1.4",
         "drupal/simple_oauth": "4.5",
         "drupal/simple_sitemap": "3.7",
