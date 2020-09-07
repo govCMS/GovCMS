@@ -57,6 +57,7 @@
         "drupal/features": "3.11",
         "drupal/field_group": "3.1",
         "drupal/focal_point": "1.4",
+        "drupal/ga_login": "1.0.0-alpha5",
         "drupal/google_analytics": "3.1",
         "drupal/graphql": "4.0-beta1",
         "drupal/honeypot": "2.0.1",
