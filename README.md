@@ -2,9 +2,11 @@
 
 ## Before you start
 
-It is not in a stable state and only for testing purpose.
+2.x (GovCMS with Drupal 9) is not in a stable state and only for testing purpose.
 
 Caution: The database schema may change without hook_update_N being implemented. Usage and API may not be documented. Installing a new unstable release entails uninstalling the project, thereby losing all data. Only for those who want an early preview of the project. Not yet suitable for shared development.
+
+## About GovCMS
 
 <img src="https://www.drupal.org/files/styles/grid-3/public/project-images/govcms8.png" alt="GovCMS8 logo" align="right"/>
 
