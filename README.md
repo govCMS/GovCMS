@@ -1,5 +1,11 @@
 # GovCMS
 
+## Before you start
+
+It is not in a stable state and only for testing purpose.
+
+Caution: The database schema may change without hook_update_N being implemented. Usage and API may not be documented. Installing a new unstable release entails uninstalling the project, thereby losing all data. Only for those who want an early preview of the project. Not yet suitable for shared development.
+
 <img src="https://www.drupal.org/files/styles/grid-3/public/project-images/govcms8.png" alt="GovCMS8 logo" align="right"/>
 
 GovCMS is the Drupal specific version of the GovCMS distribution.
@@ -14,7 +20,7 @@ _For an easy, one-line, dev setup see ['Automated Default Dev Setup' wiki page](
 
 GovCMS utilizes [Composer](https://getcomposer.org/) to manage its dependencies. So, before using GovCMS, make sure you have Composer installed on your machine.
 
-For best performance, we recommend adding [Prestissimo](https://github.com/hirak/prestissimo) to your global Composer before installing GovCMS, as it enables dependencies to load in parallel, significantly reducing the install time.
+For best performance with composer 1.x, we recommend adding [Prestissimo](https://github.com/hirak/prestissimo) to your global Composer before installing GovCMS, as it enables dependencies to load in parallel, significantly reducing the install time.
 
     composer global require "hirak/prestissimo:^0.3"
 
@@ -46,7 +52,7 @@ Additional platform instructions are available in the wiki (https://github.com/G
 * MySQL 5.7.8+/MariaDB 10.3.7+/Percona Server 5.7.8+ or higher with PDO and an InnoDB-compatible primary storage engine
 * PostgreSQL 10 or higher with the pg_trgm extension.
 * SQLite 3.7.11 or higher
-* PHP Version 7.3.* or higher
+* PHP Version 7.4.* or higher
 * [Git](http://git-scm.com/)
 * [Composer](https://getcomposer.org/)
 
