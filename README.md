@@ -8,7 +8,7 @@ Caution: The database schema may change without hook_update_N being implemented.
 
 ## About GovCMS
 
-<img src="https://www.drupal.org/files/styles/grid-3/public/project-images/govcms8.png" alt="GovCMS8 logo" align="right"/>
+<img src="https://www.drupal.org/files/styles/grid-3/public/govcms-double-size_0.png?itok=8LVmjACw" alt="GovCMS8 logo" align="right"/>
 
 GovCMS is the Drupal specific version of the GovCMS distribution.
 
