@@ -37,7 +37,7 @@
         "drupal/config_update": "1.7",
         "drupal/consumers": "1.11",
         "drupal/contact_storage": "1.1.0",
-        "drupal/context": "4.0-beta3",
+        "drupal/context": "4.0.0-beta4",
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-recommended": "9.0.5",
         "drupal/crop": "2.1",
