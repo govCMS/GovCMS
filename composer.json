@@ -59,6 +59,7 @@
         "drupal/focal_point": "1.5.0",
         "drupal/ga_login": "1.0.0-alpha5",
         "drupal/google_analytics": "3.1",
+        "drupal/govcms_dlm": "1.4.0",
         "drupal/graphql": "4.0-beta1",
         "drupal/honeypot": "2.0.1",
         "drupal/inline_entity_form": "1.0.0-rc7",
