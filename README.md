@@ -6,6 +6,8 @@
 
 Caution: The database schema may change without hook_update_N being implemented. Usage and API may not be documented. Installing a new unstable release entails uninstalling the project, thereby losing all data. Only for those who want an early preview of the project. Not yet suitable for shared development.
 
+GovCMS9 Slack channel: https://govcmschat.slack.com/archives/C01BD9B3V5W
+
 ## About GovCMS
 
 <img src="https://www.drupal.org/files/styles/grid-3/public/govcms-double-size_0.png?itok=8LVmjACw" alt="GovCMS8 logo" align="right"/>
