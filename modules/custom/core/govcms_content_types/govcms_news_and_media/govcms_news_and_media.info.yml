@@ -2,6 +2,7 @@ name: 'News and Media'
 description: 'Provides News and Media content type and related configuration.'
 type: module
 core: 8.x
+core_version_requirement: ^8 || ^9
 dependencies:
   - govcms_content_types
   - options
