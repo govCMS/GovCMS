@@ -12,6 +12,20 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Session\AccountInterface;
 
 /**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function govcms_security_form_contact_message_contact_form_alter(&$form, FormStateInterface $form_state) {
+  $form['actions']['preview']['#access'] = FALSE;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function govcms_security_form_user_login_form_alter(&$form, &$form_state) {
+  $form['#attributes']['autocomplete'] = 'off';
+}
+
+/**
  * Implement hook_form_FORM_ID_alter()
  */
 function govcms_security_form_user_admin_settings_alter(&$form, FormStateInterface $form_state) {
