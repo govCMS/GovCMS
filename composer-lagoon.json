@@ -11,11 +11,15 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
+        },
+        {
+            "type": "composer",
+            "url": "https://packagist.org"
         }
     ],
     "require": {
         "drush/drush": "~10",
-        "govcms/govcms-poc": "*",
+        "govcms/govcms": "*",
         "webflo/drupal-finder": "^1.2"
     },
     "extra": {
