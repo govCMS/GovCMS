@@ -6,7 +6,7 @@
  * Most settings based on Drupal defaults.
  * Comments removed for brevity.
  *
- * @see https://git.drupalcode.org/project/drupal/blob/8.8.x/sites/default/default.settings.php
+ * @see https://git.drupalcode.org/project/drupal/blob/9.{*}.x/sites/default/default.settings.php
  */
 
 $databases['default']['default'] = [
@@ -24,9 +24,10 @@ $config_directories = [
   CONFIG_SYNC_DIRECTORY => 'sites/default/files/sync',
 ];
 
+// Use the TUGBOAT_REPO_ID to generate a hash salt for Tugboat sites.
+$settings['hash_salt'] = hash('sha256', getenv('TUGBOAT_REPO_ID'));
 $settings['entity_update_batch_size'] = 50;
 $settings['trusted_host_patterns'] = ['.*'];
-$settings['hash_salt'] = 'djfu983roawei90tk3;mva9023i9523';
 $settings['update_free_access'] = FALSE;
 $settings['file_scan_ignore_directories'] = [
   'node_modules',
