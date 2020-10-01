@@ -36,7 +36,7 @@
         "drupal/config_ignore": "2.1",
         "drupal/config_perms": "1.2.0",
         "drupal/config_split": "1.4",
-        "drupal/config_update": "1.6",
+        "drupal/config_update": "1.7",
         "drupal/consumers": "1.9",
         "drupal/contact_storage": "1.0.0",
         "drupal/context": "4.0-beta2",
