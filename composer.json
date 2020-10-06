@@ -42,7 +42,7 @@
         "drupal/core-recommended": "8.9.6",
         "drupal/crop":"2.1",
         "drupal/ctools": "3.2.0",
-        "drupal/diff": "1.0-rc2",
+        "drupal/diff": "1.0",
         "drupal/devel": "2.0",
         "drupal/dropzonejs": "2.1",
         "drupal/ds": "3.9",
