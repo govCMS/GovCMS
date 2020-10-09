@@ -99,7 +99,7 @@
         "drupal/seckit": "1.1",
         "drupal/shield": "1.4",
         "drupal/simple_oauth": "4.5",
-        "drupal/simple_sitemap": "3.4",
+        "drupal/simple_sitemap": "3.7",
         "drupal/swiftmailer": "1.0-beta2",
         "drupal/tfa":"1.0-alpha4",
         "drupal/token": "1.7",
