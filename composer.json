@@ -180,6 +180,10 @@
             "drupal/simple_oauth": {
               "Drupal 9 Readiness": "https://www.drupal.org/files/issues/2020-05-21/3138497-6.patch"
             },
+            "drupal/swiftmailer": {
+              "Exception on sending (probably when from/to malformed) - https://www.drupal.org/project/swiftmailer/issues/3167898":
+                "https://www.drupal.org/files/issues/2020-09-03/swiftmailer-3167898-03.patch"
+            },
             "drupal/tfa": {
                 "The tfa.settings route should use the permission 'admin tfa settings' - https://www.drupal.org/project/tfa/issues/2943972": "https://www.drupal.org/files/issues/2943972-2.patch",
                 "Bad UX around 'required to setup TFA' concept and users who have skipped validation too many times - https://www.drupal.org/project/tfa/issues/2937336": "https://www.drupal.org/files/issues/2019-03-01/2937336-17.patch",
