@@ -26,38 +26,40 @@
         "bower-asset/dropzone": "5.5.0",
         "cweagans/composer-patches": "^1.6",
         "drupal-composer/drupal-scaffold": "^2.4",
-        "drupal/admin_toolbar": "2.0",
-        "drupal/adminimal_admin_toolbar": "1.9.0",
+        "drupal/admin_toolbar": "2.3",
+        "drupal/adminimal_admin_toolbar": "1.11.0",
         "drupal/adminimal_theme": "1.4",
-        "drupal/chosen": "2.6.0",
+        "drupal/bigmenu": "2.0.0-rc1",
+        "drupal/chosen": "2.9.0",
         "drupal/components": "1.0.0",
-        "drupal/config_filter": "1.4",
+        "drupal/config_filter": "1.5",
         "drupal/config_ignore": "2.1",
         "drupal/config_perms": "1.2.0",
         "drupal/config_split": "1.4",
         "drupal/config_update": "1.6",
         "drupal/consumers": "1.9",
-        "drupal/contact_storage": "1.0-beta9",
+        "drupal/contact_storage": "1.0.0",
         "drupal/context": "4.0-beta2",
-        "drupal/core-recommended": "8.8.5",
+        "drupal/core-recommended": "8.9.6",
+        "drupal/crop":"2.1",
         "drupal/ctools": "3.2.0",
-        "drupal/diff": "1.0-rc2",
+        "drupal/diff": "1.0",
         "drupal/devel": "2.0",
         "drupal/dropzonejs": "2.1",
-        "drupal/ds": "3.2",
+        "drupal/ds": "3.9",
         "drupal/encrypt": "3.0-rc2",
         "drupal/dynamic_entity_reference": "1.7.0",
-        "drupal/entity_browser": "2.1",
-        "drupal/entity_class_formatter": "1.1.0",
+        "drupal/entity_browser": "2.5",
+        "drupal/entity_class_formatter": "1.3",
         "drupal/entity_embed": "1.0",
-        "drupal/entity_reference_display": "1.2.0",
-        "drupal/entity_reference_revisions": "1.6",
-        "drupal/environment_indicator": "3.5",
+        "drupal/entity_reference_display": "1.3",
+        "drupal/entity_reference_revisions": "1.8",
+        "drupal/environment_indicator": "4.0",
         "drupal/events_log_track": "1.1",
         "drupal/facets": "1.3",
         "drupal/features": "3.8",
-        "drupal/field_group": "3.0-rc1",
-        "drupal/focal_point": "1.2",
+        "drupal/field_group": "3.1",
+        "drupal/focal_point": "1.4",
         "drupal/ga_login": "1.0-alpha4",
         "drupal/google_analytics": "3.0",
         "drupal/govcms_dlm": "1.3",
@@ -65,48 +67,49 @@
         "drupal/govcms8_uikit_starter": "1.0-alpha2",
         "drupal/graphql": "3.0.0-rc2",
         "drupal/honeypot": "1.29",
-        "drupal/inline_entity_form": "1.0-rc1",
-        "drupal/key": "1.12",
-        "drupal/linked_field": "1.1.0",
+        "drupal/inline_entity_form": "1.0-rc7",
+        "drupal/key": "1.14",
+        "drupal/linked_field": "1.3.0",
         "drupal/linkit": "5.0-beta9",
         "drupal/login_security": "1.5",
         "drupal/media_entity_file_replace": "1.0-beta2",
         "drupal/memcache": "2.0",
-        "drupal/menu_block": "1.5",
+        "drupal/menu_block": "1.6",
         "drupal/menu_trail_by_path": "1.1",
         "drupal/metatag": "1.9",
-        "drupal/modifiers": "1.3",
+        "drupal/minisite": "1.3",
+        "drupal/modifiers": "1.4",
         "drupal/module_filter": "3.1",
         "drupal/page_manager": "4.0-beta4",
         "drupal/panelizer": "4.1",
         "drupal/panels": "4.4.0",
-        "drupal/paragraphs": "1.10",
-        "drupal/password_policy": "3.0-alpha4",
-        "drupal/pathauto": "1.6.0",
+        "drupal/paragraphs": "1.12",
+        "drupal/password_policy": "3.0-beta1",
+        "drupal/pathauto": "1.8.0",
         "drupal/permissions_by_term": "2.12",
-        "drupal/real_aes": "2.2",
+        "drupal/real_aes": "2.3",
         "drupal/recaptcha": "2.4",
         "drupal/redirect": "1.3",
         "drupal/restui": "1.16.0",
-        "drupal/robotstxt": "1.2",
-        "drupal/scheduled_transitions": "1.0.0-rc1",
+        "drupal/robotstxt": "1.4",
+        "drupal/scheduled_transitions": "2.0",
         "drupal/search_api": "1.16",
         "drupal/search_api_solr": "3.9",
         "drupal/search_api_attachments": "1.0-beta16",
         "drupal/seckit": "1.1",
-        "drupal/shield": "1.2",
-        "drupal/simple_oauth": "3.14",
-        "drupal/simple_sitemap": "3.0",
+        "drupal/shield": "1.4",
+        "drupal/simple_oauth": "4.5",
+        "drupal/simple_sitemap": "3.7",
         "drupal/swiftmailer": "1.0-beta2",
         "drupal/tfa":"1.0-alpha4",
-        "drupal/token": "1.5",
+        "drupal/token": "1.7",
         "drupal/update_notifications_disable": "1.0",
         "drupal/username_enumeration_prevention": "1.0-beta2",
         "drupal/video_embed_field": "2.0",
-        "drupal/webform": "5.8",
+        "drupal/webform": "5.13",
         "oomphinc/composer-installers-extender": "^1.1",
         "swiftmailer/swiftmailer": "5.4.12",
-        "symfony/event-dispatcher": "4.3.11 as 3.4.35",
+        "symfony/event-dispatcher": "4.3.11 as 3.4.41",
         "symfony/phpunit-bridge": "^3.4.6",
         "zaporylie/composer-drupal-optimizations": "^1.1"
     },
@@ -137,20 +140,18 @@
         },
         "enable-patching": true,
         "patches": {
+            "drupal/admin_toolbar": {
+                "Vertical tab display bug after page reload - https://www.drupal.org/project/admin_toolbar/issues/3154104": "https://www.drupal.org/files/issues/2020-06-23/admin_toolbar-vertical-display-fix-3154104-2-D8.patch" 
+            },
             "drupal/config_ignore": {
                 "Offset error within IgnoreFilter::activeReadMultiple() - https://www.drupal.org/project/config_ignore/issues/2972302": "https://www.drupal.org/files/issues/2018-07-31/offset-error-within-2972302-13.patch"
             },
+             "drupal/contact_storage": {
+              "Update code deprecated in 8.8": "https://www.drupal.org/files/issues/2020-04-10/3081195-21-PASS.patch",
+              "Replace deprecated AllowedTagsXssTrait": "https://www.drupal.org/files/issues/2020-04-17/3128413-10.patch"
+            },
             "drupal/core": {
-                "Private file download returns access denied, when file attached to revision other than current - https://www.drupal.org/project/drupal/issues/1452100#comment-13392351": "https://www.drupal.org/files/issues/2019-12-16/1452100-92.patch"
-            },
-            "drupal/ga_login": {
-                "TOTP taking very-old verification codes - https://www.drupal.org/project/ga_login/issues/3022921": "https://www.drupal.org/files/issues/2018-12-28/3022921-2-time-skew-confusing.patch"
-            },
-            "drupal/panelizer": {
-              "PanelizerWizardContextForm calls parent constructor without enough arguments under CTools 3.1 - https://www.drupal.org/project/panelizer/issues/3031671": "https://www.drupal.org/files/issues/2019-04-03/3031671-8.patch"
-            },
-            "drupal/metatag": {
-                "Unset link rel: shortlink, edit-form, version-history and revision, and meta name: Generator, MobileOptimized, HandheldFriendly, viewport from <head> - https://www.drupal.org/project/metatag/issues/2735195#comment-12991008": "https://www.drupal.org/files/issues/2019-02-28/metatag-unset-2735195-42.patch"
+                "Private file download returns access denied, when file attached to revision other than current - https://www.drupal.org/project/drupal/issues/1452100#comment-13653216": "https://www.drupal.org/files/issues/2020-05-29/1452100-file-access-97.patch"
             },
             "drupal/events_log_track": {
                 "Events Log Track breaks Entity Browser #5 - https://www.drupal.org/project/events_log_track/issues/2934036": "https://www.drupal.org/files/issues/2018-04-19/2934036-check_empty_submit-5.patch",
@@ -160,13 +161,41 @@
                 "Skip password logging during failed authentication attempt - https://www.drupal.org/project/events_log_track/issues/3027463": "https://www.drupal.org/files/issues/2019-01-22/event-log-track-auth-3027463-2.patch",
                 "Fix fatal error when we request password with non-existing users/emails on the Events Log Track User Authentication - https://www.drupal.org/project/events_log_track/issues/3060838#comment-13141212": "https://www.drupal.org/files/issues/2019-06-11/3060838-4.patch"
             },
+            "drupal/ga_login": {
+                "TOTP taking very-old verification codes - https://www.drupal.org/project/ga_login/issues/3022921": "https://www.drupal.org/files/issues/2018-12-28/3022921-2-time-skew-confusing.patch"
+            },
             "drupal/google_analytics": {
                "Fatal error when there is a view with the path search/node":  "https://www.drupal.org/files/issues/2018-06-18/patch_google_analytics.patch"
+            },
+            "drupal/metatag": {
+                "Unset link rel: shortlink, edit-form, version-history and revision, and meta name: Generator, MobileOptimized, HandheldFriendly, viewport from <head> - https://www.drupal.org/project/metatag/issues/2735195#comment-12991008": "https://www.drupal.org/files/issues/2019-02-28/metatag-unset-2735195-42.patch"
+            },
+            "drupal/panelizer": {
+              "PanelizerWizardContextForm calls parent constructor without enough arguments under CTools 3.1 - https://www.drupal.org/project/panelizer/issues/3031671": "https://www.drupal.org/files/issues/2019-04-03/3031671-8.patch"
+            },
+            "drupal/password_policy" : {
+                "Can't edit user profile because password policy validates even when password unchanged - https://www.drupal.org/project/password_policy/issues/2971079": "https://www.drupal.org/files/issues/2020-03-19/password_policy-empty-password-skip-validation-2971079-37.patch",
+                "PasswordPolicyValidator detects role change when there isn't one - https://www.drupal.org/project/password_policy/issues/3153875": "https://www.drupal.org/files/issues/2020-07-09/password_policy-validator_detects_incorrect_role_change-3153875-6.patch",
+                "Refactor hook_install logic to expire passwords for existing users - https://www.drupal.org/project/password_policy/issues/2983448": "https://www.drupal.org/files/issues/2020-03-23/Do_not_set_user_fields_on_install-2983448-17.patch"
+            },
+            "drupal/simple_oauth": {
+              "Drupal 9 Readiness": "https://www.drupal.org/files/issues/2020-05-21/3138497-6.patch"
+            },
+            "drupal/simple_sitemap": {
+              "Undefined index: changefreq Notice message - https://www.drupal.org/project/simple_sitemap/issues/3070132": "https://www.drupal.org/files/issues/2020-03-04/3070132-changefreq-notice-message.patch",
+              "Undefined index: include_images in FormHelper.php on line 361 - https://www.drupal.org/project/simple_sitemap/issues/3114593":
+              "https://www.drupal.org/files/issues/2020-02-19/include_images.patch"
             },
             "drupal/tfa": {
                 "The tfa.settings route should use the permission 'admin tfa settings' - https://www.drupal.org/project/tfa/issues/2943972": "https://www.drupal.org/files/issues/2943972-2.patch",
                 "Bad UX around 'required to setup TFA' concept and users who have skipped validation too many times - https://www.drupal.org/project/tfa/issues/2937336": "https://www.drupal.org/files/issues/2019-03-01/2937336-17.patch",
-                "Users' recovery codes exposed to admin users - https://www.drupal.org/project/tfa/issues/3075304": "https://www.drupal.org/files/issues/2019-08-16/tfa-3075304_2.patch"
+                "Users' recovery codes exposed to admin users - https://www.drupal.org/project/tfa/issues/3075304": "https://www.drupal.org/files/issues/2019-08-16/tfa-3075304_2.patch",
+                "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2020-08-12/tfa-2930541-16.patch"
+            },
+            "drupal/webform": {
+                "Undefined index: messages - https://www.drupal.org/project/webform/issues/3137625" :"https://www.drupal.org/files/issues/2020-05-18/3137625-3.patch",
+                "Email from name cannot be longer than 128 characters - https://www.drupal.org/project/webform/issues/3142807": "https://www.drupal.org/files/issues/2020-05-26/3142807-9.patch",
+                "Email confirmation clientside validation not working - https://www.drupal.org/project/webform/issues/3138266": "https://www.drupal.org/files/issues/2020-05-20/3138266-5.patch"
             }
         }
     },

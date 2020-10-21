@@ -51,11 +51,23 @@ function govcms_page_attachments_alter(array &$page) {
  */
 function govcms_system_breadcrumb_alter(Breadcrumb $breadcrumb, RouteMatchInterface $route_match, array $context) {
   // Append the current page title to the breadcrumb for non-admin routes.
-  if ($breadcrumb && !\Drupal::service('router.admin_context')->isAdminRoute()) {
+  if (!empty($route_match->getRouteObject()) && $breadcrumb && !\Drupal::service('router.admin_context')->isAdminRoute()) {
     $title = \Drupal::service('title_resolver')->getTitle(\Drupal::request(), $route_match->getRouteObject());
     if (!empty($title)) {
       $breadcrumb->addLink(Link::createFromRoute($title, '<none>'));
     }
     $breadcrumb->addCacheContexts(['route']);
   }
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ */
+function govcms_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
+  // In Drupal 7 `hook_field_widget_form_alter` could be implemented by the
+  // theme, but in Drupal 8 this hook changed to being module-only. This hook
+  // can be critical for improving the editor experience for things like
+  // paragraphs. Implementing themes can access the plugin ID via
+  // $context['widget']->getPluginId().
+  \Drupal::theme()->alter(['field_widget_form'], $element, $form_state, $context);
 }
