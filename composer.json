@@ -62,7 +62,7 @@
         "drupal/govcms_dlm": "1.4.0",
         "drupal/graphql": "4.0.0-beta2",
         "drupal/honeypot": "2.0.1",
-        "drupal/inline_entity_form": "1.0.0-rc7",
+        "drupal/inline_entity_form": "1.0.0-rc8",
         "drupal/key": "1.14",
         "drupal/linked_field": "1.3.0",
         "drupal/linkit": "6.0.0-beta1",
