@@ -15,6 +15,7 @@
     ],
     "require": {
         "drush/drush": "~10",
+        "govcms/govcms": "*",
         "govcms/govcms-poc": "*",
         "webflo/drupal-finder": "^1.2"
     },
