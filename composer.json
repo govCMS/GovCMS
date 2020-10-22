@@ -26,7 +26,7 @@
         "bower-asset/dropzone": "5.7.2",
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "dev-master",
-        "drupal/admin_toolbar": "2.3.0",
+        "drupal/admin_toolbar": "2.4.0",
         "drupal/adminimal_admin_toolbar": "1.11.0",
         "drupal/block_place": "1.0",
         "drupal/chosen": "3.0.0",
