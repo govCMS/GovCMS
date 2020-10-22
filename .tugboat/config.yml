@@ -65,6 +65,6 @@ services:
         # Install/update packages managed by composer, including drush.
         - COMPOSER_MEMORY_LIMIT=-1 composer install --profile
         - drush cache:rebuild
-        - drush config:import -y
+        - drush config:import --partial -y
         - drush updatedb -y
         - drush cache:rebuild
