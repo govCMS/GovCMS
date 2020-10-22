@@ -20,9 +20,7 @@ $databases['default']['default'] = [
   'driver' => 'mysql',
 ];
 
-$config_directories = [
-  CONFIG_SYNC_DIRECTORY => 'sites/default/files/sync',
-];
+$settings['config_sync_directory'] = 'sites/default/files/sync';
 
 // Use the TUGBOAT_REPO_ID to generate a hash salt for Tugboat sites.
 $settings['hash_salt'] = hash('sha256', getenv('TUGBOAT_REPO_ID'));
