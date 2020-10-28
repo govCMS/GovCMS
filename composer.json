@@ -31,7 +31,7 @@
         "drupal/adminimal_theme": "1.4",
         "drupal/bigmenu": "2.0.0-rc1",
         "drupal/chosen": "2.9.0",
-        "drupal/components": "1.0.0",
+        "drupal/components": "2.0-beta3",
         "drupal/config_filter": "1.5",
         "drupal/config_ignore": "2.1",
         "drupal/config_perms": "1.2.0",
