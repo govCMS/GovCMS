@@ -100,7 +100,7 @@
         "drupal/shield": "1.4",
         "drupal/simple_oauth": "4.5",
         "drupal/simple_sitemap": "3.7",
-        "drupal/swiftmailer": "1.0-beta2",
+        "drupal/swiftmailer": "2.0-beta1",
         "drupal/tfa":"1.0-alpha4",
         "drupal/token": "1.7",
         "drupal/update_notifications_disable": "1.0",
@@ -108,7 +108,7 @@
         "drupal/video_embed_field": "2.0",
         "drupal/webform": "5.13",
         "oomphinc/composer-installers-extender": "^1.1",
-        "swiftmailer/swiftmailer": "5.4.12",
+        "swiftmailer/swiftmailer": "6.2.3",
         "symfony/event-dispatcher": "4.3.11 as 3.4.41",
         "symfony/phpunit-bridge": "^3.4.6",
         "zaporylie/composer-drupal-optimizations": "^1.1"
@@ -185,6 +185,10 @@
               "Undefined index: changefreq Notice message - https://www.drupal.org/project/simple_sitemap/issues/3070132": "https://www.drupal.org/files/issues/2020-03-04/3070132-changefreq-notice-message.patch",
               "Undefined index: include_images in FormHelper.php on line 361 - https://www.drupal.org/project/simple_sitemap/issues/3114593":
               "https://www.drupal.org/files/issues/2020-02-19/include_images.patch"
+            },
+            "drupal/swiftmailer": {
+              "Exception on sending (probably when from/to malformed) - https://www.drupal.org/project/swiftmailer/issues/3167898":
+                "https://www.drupal.org/files/issues/2020-09-03/swiftmailer-3167898-03.patch"
             },
             "drupal/tfa": {
                 "The tfa.settings route should use the permission 'admin tfa settings' - https://www.drupal.org/project/tfa/issues/2943972": "https://www.drupal.org/files/issues/2943972-2.patch",
