@@ -37,7 +37,7 @@
         "drupal/config_perms": "1.2.0",
         "drupal/config_split": "1.4",
         "drupal/config_update": "1.6",
-        "drupal/consumers": "1.9",
+        "drupal/consumers": "1.11",
         "drupal/contact_storage": "1.0.0",
         "drupal/context": "4.0-beta5",
         "drupal/core-recommended": "8.9.7",
