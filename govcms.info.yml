@@ -13,7 +13,6 @@ distribution:
 
 install:
   - big_pipe
-  - block_content
   - ckeditor
   - config
   - contextual

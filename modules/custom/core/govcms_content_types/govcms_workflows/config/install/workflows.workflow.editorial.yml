@@ -1,6 +1,12 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.govcms_blog_article
+    - node.type.govcms_event
+    - node.type.govcms_foi
+    - node.type.govcms_news_and_media
+    - node.type.govcms_standard_page
   module:
   - content_moderation
 id: editorial
@@ -73,4 +79,10 @@ type_settings:
       - needs_review
       to: draft
       weight: -2
-  entity_types: {  }
+  entity_types:
+    node:
+      - govcms_blog_article
+      - govcms_event
+      - govcms_foi
+      - govcms_news_and_media
+      - govcms_standard_page
