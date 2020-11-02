@@ -4,7 +4,7 @@ services:
     image: tugboatqa/mysql:5
 
   app:
-    image: tugboatqa/php:7.3-apache
+    image: tugboatqa/php:7.4-apache
     # Set this as the default service. This does a few things
     #   1. Clones the git repository into the service container
     #   2. Exposes port 80 to the Tugboat HTTP proxy
@@ -27,40 +27,44 @@ services:
         - apt-get install -y libbz2-dev libzip-dev
         - docker-php-ext-install opcache bz2 zip
         - a2enmod headers rewrite
-        - wget -O /usr/local/bin/drush https://github.com/drush-ops/drush-launcher/releases/download/0.6.0/drush.phar && chmod +x /usr/local/bin/drush
 
         # Clean up. This keeps image storage tighter on Tugboat.
         - apt-get autoclean && apt-get clean
 
+        # Install drush-launcher.
+        - wget -O /usr/local/bin/drush https://github.com/drush-ops/drush-launcher/releases/download/0.6.0/drush.phar && chmod +x /usr/local/bin/drush
+
+        # Install/update packages managed by composer, including drush.
+        - COMPOSER_MEMORY_LIMIT=-1 composer install --profile
+
+        # Link the document root to the expected path.
+        - ln -snf "${TUGBOAT_ROOT}/web" "${DOCROOT}"
+
+        # Link the config and private files paths.
+        # - ln -snf "${TUGBOAT_ROOT}/config" "${DOCROOT}/../config"
+        # - ln -snf "${TUGBOAT_ROOT}/files-private" "${DOCROOT}/../files-private"
+
       # Commands when refreshing an existing preview.
       update:
-        # We have no external assets to update for testing the distro.
+        # Install/update packages managed by composer, including drush.
+        - COMPOSER_MEMORY_LIMIT=-1 composer install --profile
+
+        # Use the tugboat-specific Drupal settings.
+        - cp "${TUGBOAT_ROOT}/.tugboat/settings.php" "${DOCROOT}/sites/default/"
+
+        # Set file permissions such that Drupal will not complain
+        - chgrp -R www-data "${DOCROOT}/sites/default/files"
+        - find "${DOCROOT}/sites/default/files" -type d -exec chmod 2775 {} \;
+        - find "${DOCROOT}/sites/default/files" -type f -exec chmod 0664 {} \;
+
+        # Install the site.
+        - drush -r "${DOCROOT}" site:install govcms install_configure_form.update_status_module='array(FALSE,FALSE)' -y
 
       # Commands when building a new branch/PR update.
       build:
-        # Add a "tugboat-latest" branch we can reference via composer in our /var/govcms/ project.
-        - git branch -D tugboat-latest || true
-        - git checkout -b tugboat-latest
-
-        # Tell the GovCMS project to use this "tugboat-latest" tag above to build GovCMS distro in the scaffold.
-        - rm -Rf /var/govcms
-        - composer create-project -n --no-install govcms/govcms8-project /var/govcms
-        - composer --working-dir=/var/govcms require --no-update symfony/event-dispatcher:"4.3.11 as 3.4.41"
-        - composer --working-dir=/var/govcms config repositories.local path "${TUGBOAT_ROOT}"
-        - composer --profile --working-dir=/var/govcms require govcms/govcms:dev-tugboat-latest
-        - ln -snf "/var/govcms/docroot" "${DOCROOT}"
-
-        # Prepare for install.
-        - cp "${TUGBOAT_ROOT}/.tugboat/settings.php" /var/govcms/docroot/sites/default/
-        - mkdir -p "/var/govcms/docroot/sites/default/files"
-        - chgrp -R www-data "/var/govcms/docroot/sites/default/files"
-        - find "/var/govcms/docroot/sites/default/files" -type d -exec chmod 2775 {} \;
-        - find "/var/govcms/docroot/sites/default/files" -type f -exec chmod 0664 {} \;
-
-        # Install the site.
-        - rm -rf /var/govcms/docroot/profiles/govcms/config/sync # In some cases the sync directory is created and a re-install fails.
-        - cd /var/govcms && drush -r "${DOCROOT}" site:install govcms install_configure_form.update_status_module='array(FALSE,FALSE)' -y
-        - cd /var/govcms && drush -r "${DOCROOT}" pm:enable govcms8_default_content -y
-
-        # Cuts down on image size, although makes initial preview loading slower.
-        - cd /var/govcms && drush -r "${DOCROOT}" cr -y
+        # Install/update packages managed by composer, including drush.
+        - COMPOSER_MEMORY_LIMIT=-1 composer install --profile
+        - drush cache:rebuild
+        - drush config:import --partial -y
+        - drush updatedb -y
+        - drush cache:rebuild
