@@ -30,7 +30,7 @@
         "drupal/adminimal_admin_toolbar": "1.11.0",
         "drupal/adminimal_theme": "1.6.0",
         "drupal/block_place": "1.0",
-        "drupal/chosen": "3.0.0",
+        "drupal/chosen": "3.0.1",
         "drupal/components": "2.0-beta3",
         "drupal/config_filter": "2.2.0",
         "drupal/config_perms": "2.0",
