@@ -15,7 +15,7 @@ dependencies:
     - node.type.govcms_foi
   module:
     - ds
-    - govcms8_calendar_item
+    - govcms_calendar_item
     - panelizer
     - text
     - user

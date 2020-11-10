@@ -9,7 +9,7 @@ dependencies:
   - field
   - file
   - govcms_media
-  - govcms8_foundations
+  - govcms_foundations
   - image
   - layout_discovery
   - menu_ui
