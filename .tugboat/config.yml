@@ -35,6 +35,7 @@ services:
         - wget -O /usr/local/bin/drush https://github.com/drush-ops/drush-launcher/releases/download/0.6.0/drush.phar && chmod +x /usr/local/bin/drush
 
         # Install/update packages managed by composer, including drush.
+        - composer selfupdate && composer clear
         - COMPOSER_MEMORY_LIMIT=-1 composer install --prefer-dist
 
         # Link the document root to the expected path.
