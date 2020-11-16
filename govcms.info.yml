@@ -18,9 +18,12 @@ install:
   - contextual
   - datetime_range
   - dynamic_page_cache
-  - govcms_standard_page
   - field_layout
   - field_ui
+  - govcms_foundations
+  - govcms_layouts
+  - govcms_modifiers
+  - govcms_standard_page
   - help
   - layout_builder
   - media_library
