@@ -133,7 +133,7 @@
         "patches": {
             "drupal/tfa": {
                 "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541":
-                  "https://www.drupal.org/files/issues/2020-10-26/tfa-2930541-25-do-not-test.patch",
+                  "https://www.drupal.org/files/issues/2020-10-26/tfa-2930541-23.patch",
                 "Users' recovery codes exposed to admin users - https://www.drupal.org/project/tfa/issues/3075304":
                   "https://www.drupal.org/files/issues/2020-11-16/tfa-3075304-11.patch"
             }
