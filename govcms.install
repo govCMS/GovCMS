@@ -33,19 +33,6 @@ function govcms_install() {
     ->set('register', \Drupal\user\UserInterface::REGISTER_ADMINISTRATORS_ONLY)
     ->save(TRUE);
 
-  // Create default node.
-  Node::create([
-    'type' => 'govcms_standard_page',
-    'title' => 'Welcome to GovCMS',
-    'body' => 'GovCMS is a content management systems maintained by the Australian Government Department of Finance and available to all levels of the Australian government.',
-  ])->save();
-
-  // Set front page to "node".
-  \Drupal::configFactory()
-    ->getEditable('system.site')
-    ->set('page.front', '/node/1')
-    ->save(TRUE);
-
   // Populate the default shortcut set.
   Shortcut::create(
     [
@@ -59,7 +46,7 @@ function govcms_install() {
   MenuLinkContent::create(
     [
       'title' => 'Accessibility',
-      'link' => ['uri' => 'internal:/node/1'],
+      'link' => ['uri' => 'https://www.govcms.gov.au'],
       'menu_name' => 'footer',
     ]
   )->save();
@@ -67,7 +54,7 @@ function govcms_install() {
   MenuLinkContent::create(
     [
       'title' => 'Copyright',
-      'link' => ['uri' => 'internal:/node/1'],
+      'link' => ['uri' => 'https://www.govcms.gov.au'],
       'menu_name' => 'footer',
     ]
   )->save();
@@ -75,7 +62,7 @@ function govcms_install() {
   MenuLinkContent::create(
     [
       'title' => 'Disclaimers',
-      'link' => ['uri' => 'internal:/node/1'],
+      'link' => ['uri' => 'https://www.govcms.gov.au'],
       'menu_name' => 'footer',
     ]
   )->save();
@@ -83,7 +70,7 @@ function govcms_install() {
   MenuLinkContent::create(
     [
       'title' => 'Privacy',
-      'link' => ['uri' => 'internal:/node/1'],
+      'link' => ['uri' => 'https://www.govcms.gov.au'],
       'menu_name' => 'footer',
     ]
   )->save();
