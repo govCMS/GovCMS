@@ -29,6 +29,7 @@
         "drupal/admin_toolbar": "2.4.0",
         "drupal/adminimal_admin_toolbar": "1.11.0",
         "drupal/adminimal_theme": "1.6.0",
+        "drupal/bigmenu": "2.0.0-rc1",
         "drupal/block_place": "1.0",
         "drupal/chosen": "3.0.1",
         "drupal/components": "2.0-beta3",
@@ -133,7 +134,7 @@
         "patches": {
             "drupal/tfa": {
                 "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541":
-                  "https://www.drupal.org/files/issues/2020-10-26/tfa-2930541-23.patch",
+                  "https://www.drupal.org/files/issues/2020-10-19/tfa-2930541-22_0.patch",
                 "Users' recovery codes exposed to admin users - https://www.drupal.org/project/tfa/issues/3075304":
                   "https://www.drupal.org/files/issues/2020-11-16/tfa-3075304-11.patch"
             }
