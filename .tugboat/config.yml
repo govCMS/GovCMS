@@ -35,7 +35,8 @@ services:
         - wget -O /usr/local/bin/drush https://github.com/drush-ops/drush-launcher/releases/download/0.6.0/drush.phar && chmod +x /usr/local/bin/drush
 
         # Install/update packages managed by composer, including drush.
-        - COMPOSER_MEMORY_LIMIT=-1 composer install --profile
+        - composer selfupdate && composer clear
+        - COMPOSER_MEMORY_LIMIT=-1 composer install --prefer-dist
 
         # Link the document root to the expected path.
         - ln -snf "${TUGBOAT_ROOT}/web" "${DOCROOT}"
@@ -47,7 +48,7 @@ services:
       # Commands when refreshing an existing preview.
       update:
         # Install/update packages managed by composer, including drush.
-        - COMPOSER_MEMORY_LIMIT=-1 composer install --profile
+        - COMPOSER_MEMORY_LIMIT=-1 composer install --prefer-dist
 
         # Use the tugboat-specific Drupal settings.
         - cp "${TUGBOAT_ROOT}/.tugboat/settings.php" "${DOCROOT}/sites/default/"
@@ -63,7 +64,7 @@ services:
       # Commands when building a new branch/PR update.
       build:
         # Install/update packages managed by composer, including drush.
-        - COMPOSER_MEMORY_LIMIT=-1 composer install --profile
+        - COMPOSER_MEMORY_LIMIT=-1 composer install --prefer-dist
         - drush cache:rebuild
         - drush config:import --partial -y
         - drush updatedb -y
