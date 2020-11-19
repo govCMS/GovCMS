@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.govcms_foi.body
+    - node.type.govcms_foi
+  module:
+    - text
+    - user
+id: node.govcms_foi.default
+targetEntityType: node
+bundle: govcms_foi
+mode: default
+content:
+  body:
+    type: text_default
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

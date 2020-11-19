@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Event
+type: govcms_event
+description: 'Use <em>Event</em> to reach your target audience.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false
