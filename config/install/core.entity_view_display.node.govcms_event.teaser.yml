@@ -1,0 +1,48 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.govcms_event.body
+    - field.field.node.govcms_event.field_attachments
+    - field.field.node.govcms_event.field_event_categories
+    - field.field.node.govcms_event.field_event_date
+    - field.field.node.govcms_event.field_event_location
+    - field.field.node.govcms_event.field_featured_image
+    - field.field.node.govcms_event.field_more_information
+    - field.field.node.govcms_event.field_thumbnail
+    - node.type.govcms_event
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.govcms_event.teaser
+targetEntityType: node
+bundle: govcms_event
+mode: teaser
+content:
+  body:
+    type: text_trimmed
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      trim_length: 300
+    third_party_settings: {  }
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_attachments: true
+  field_event_categories: true
+  field_event_date: true
+  field_event_location: true
+  field_featured_image: true
+  field_more_information: true
+  field_thumbnail: true
