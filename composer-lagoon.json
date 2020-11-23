@@ -25,7 +25,7 @@
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/console": "^1.0.2",
-        "drupal/core-recommended": "8.9.7",
+        "drupal/core-recommended": "8.9.9",
         "drush/drush": "^9.0.0",
         "govcms/govcms": "*",
         "symfony/event-dispatcher": "4.3.11 as 3.4.41",
