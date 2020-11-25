@@ -73,19 +73,6 @@ var dblog = 0;
     cy.contains("The configuration options have been saved.")
   })
 
-    // it("enable Webform module", function() {
-    //
-    //   cy.contains("Extend").click()
-    //
-    //   //tick the checkbox of Consumers module
-    //       cy.get("form")
-    //         .find("#edit-modules-webform-enable")
-    //         .check({force:true})
-    //   //save the change
-    //       cy.get("#edit-submit")
-    //         .click()
-    // });
-
 it("Create a dummy user", function() {
   cy.visit("/admin/people/create")
   cy.get('#edit-mail').type("honeypot.test@email.a", {force:true})
@@ -131,10 +118,6 @@ it("Correct password reset form", function() {
     cy.contains("There was a problem with your form submission.")
   })
 
-// there are two cases that triggers honeypot.
-// 1 - if any entry is found in the element named 'myaddress'
-// 2 - if putting in a normal entry in less then 5 seconds.
-// it should be sufficent to check the error message "There was a problem with your form submission."/ or success message "Further instructions have been sent to your e-mail address."
 it ("check logs", function() {
   cy.visit("/admin/reports/dblog")
   cy.get('.views-field-type').contains("honeypot")
