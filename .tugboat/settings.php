@@ -22,6 +22,9 @@ $databases['default']['default'] = [
 
 $settings['config_sync_directory'] = 'sites/default/files/sync';
 
+// Private path.
+$settings['file_private_path'] = '/var/lib/tugboat/files-private';
+
 // Use the TUGBOAT_REPO_ID to generate a hash salt for Tugboat sites.
 $settings['hash_salt'] = hash('sha256', getenv('TUGBOAT_REPO_ID'));
 $settings['entity_update_batch_size'] = 50;
