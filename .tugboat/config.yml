@@ -41,14 +41,18 @@ services:
         # Link the document root to the expected path.
         - ln -snf "${TUGBOAT_ROOT}/web" "${DOCROOT}"
 
+        # Create the Drupal private and public files directories.
+        - mkdir -p "${TUGBOAT_ROOT}/files-private" "${DOCROOT}/sites/default/files"
+
         # Link the config and private files paths.
-        # - ln -snf "${TUGBOAT_ROOT}/config" "${DOCROOT}/../config"
-        # - ln -snf "${TUGBOAT_ROOT}/files-private" "${DOCROOT}/../files-private"
+        - ln -snf "${TUGBOAT_ROOT}/config" "${DOCROOT}/../config"
+        - ln -snf "${TUGBOAT_ROOT}/files-private" "${DOCROOT}/../files-private"
 
       # Commands when refreshing an existing preview.
       update:
+        - rm composer.lock
         # Install/update packages managed by composer, including drush.
-        - COMPOSER_MEMORY_LIMIT=-1 composer install --prefer-dist
+        - COMPOSER_MEMORY_LIMIT=-1 composer install --prefer-dist --optimize-autoloader
 
         # Use the tugboat-specific Drupal settings.
         - cp "${TUGBOAT_ROOT}/.tugboat/settings.php" "${DOCROOT}/sites/default/"
@@ -63,8 +67,9 @@ services:
 
       # Commands when building a new branch/PR update.
       build:
+        - rm composer.lock
         # Install/update packages managed by composer, including drush.
-        - COMPOSER_MEMORY_LIMIT=-1 composer install --prefer-dist
+        - COMPOSER_MEMORY_LIMIT=-1 composer install --prefer-dist --optimize-autoloader
         - drush cache:rebuild
         - drush config:import --partial -y
         - drush updatedb -y
