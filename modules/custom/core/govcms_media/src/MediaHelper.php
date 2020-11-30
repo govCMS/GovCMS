@@ -3,6 +3,7 @@
 namespace Drupal\govcms_media;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\File\FileSystemInterface;
 use Drupal\file\FileInterface;
 use Drupal\file\Plugin\Field\FieldType\FileItem;
 use Drupal\govcms_media\Exception\IndeterminateBundleException;
@@ -192,7 +193,7 @@ class MediaHelper {
     $item = static::getSourceField($entity)->first();
 
     $dir = $item->getUploadLocation();
-    $is_ready = file_prepare_directory($dir, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS);
+    $is_ready = \Drupal::service('file_system')->prepareDirectory($dir, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
 
     if ($is_ready) {
       return $dir;
