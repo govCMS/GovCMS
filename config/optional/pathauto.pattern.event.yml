@@ -6,7 +6,7 @@ dependencies:
 id: event
 label: Event
 type: 'canonical_entities:node'
-pattern: 'event/[node:title]'
+pattern: 'events/[node:title]'
 selection_criteria:
   3c4c0c98-2ed6-4a04-9067-1a97c961a5f0:
     id: node_type
@@ -15,7 +15,6 @@ selection_criteria:
     negate: false
     context_mapping:
       node: node
-    uuid: 3c4c0c98-2ed6-4a04-9067-1a97c961a5f0
 selection_logic: and
 weight: -5
 relationships: {  }

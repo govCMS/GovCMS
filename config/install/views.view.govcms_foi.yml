@@ -209,7 +209,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: foi
+      path: freedom-of-information
       menu:
         type: normal
         title: 'FOI Requests'
