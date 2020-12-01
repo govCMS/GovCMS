@@ -10,10 +10,6 @@ commands:
     usage: Delete project.
     cmd: docker-compose down
 
-  build:
-    usage: Build project.
-    cmd: docker-compose up -d --build "$@"
-
   cli:
     usage: Start a shell inside TEST container.
     cmd: docker-compose exec test bash

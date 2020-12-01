@@ -4,6 +4,7 @@ x-volumes:
   &default-volumes
     volumes:
       - files:/app/web/sites/default/files
+      - ./:/app/web/profiles/contrib/govcms:delegated
 
 x-environment:
   &default-environment
@@ -15,21 +16,13 @@ volumes:
 services:
 
   cli: # cli container, will be used for executing composer and any local commands (drush, drupal, etc.)
-    build:
-      context: .
-      dockerfile: $PWD/.docker/Dockerfile.govcms
-    image: ${DOCKERHUB_NAMESPACE:-govcms}/govcms
+    image: ${DOCKERHUB_NAMESPACE:-govcmslagoon}/govcms7:${DOCKERHUB_LABEL:-latest}
     << : *default-volumes # loads the defined volumes from the top
     environment:
       << : *default-environment
 
   test:
-    build:
-      context: .
-      dockerfile: $PWD/.docker/Dockerfile.test
-      args:
-        CLI_IMAGE: ${DOCKERHUB_NAMESPACE:-govcms}/govcms
-    image: ${DOCKERHUB_NAMESPACE:-govcms}/test
+    image: ${DOCKERHUB_NAMESPACE:-govcmslagoon}/test:${DOCKERHUB_LABEL:-latest}
     << : *default-volumes
     depends_on:
       - cli
@@ -37,12 +30,7 @@ services:
       << : *default-environment
 
   nginx:
-    build:
-      context: .
-      dockerfile: $PWD/.docker/Dockerfile.nginx-drupal
-      args:
-        CLI_IMAGE: ${DOCKERHUB_NAMESPACE:-govcms}/govcms
-    image: ${DOCKERHUB_NAMESPACE:-govcms}/nginx-drupal
+    image: ${DOCKERHUB_NAMESPACE:-govcmslagoon}/nginx-drupal:${DOCKERHUB_LABEL:-latest}
     << : *default-volumes
     environment:
       << : *default-environment
@@ -51,42 +39,26 @@ services:
       - default
 
   php:
-    build:
-      context: .
-      dockerfile: $PWD/.docker/Dockerfile.php
-      args:
-        CLI_IMAGE: ${DOCKERHUB_NAMESPACE:-govcms}/govcms
-    image: ${DOCKERHUB_NAMESPACE:-govcms}/php
+    image: ${DOCKERHUB_NAMESPACE:-govcmslagoon}/php:${DOCKERHUB_LABEL:-latest}
     << : *default-volumes
     environment:
       << : *default-environment
 
   mariadb:
-    build:
-      context: .
-      dockerfile: $PWD/.docker/Dockerfile.mariadb-drupal
-    image: ${DOCKERHUB_NAMESPACE:-govcms}/mariadb-drupal
+    image: ${DOCKERHUB_NAMESPACE:-govcmslagoon}/mariadb-drupal:${DOCKERHUB_LABEL:-latest}
     ports:
       - "3306" # Find port on host with `docker-compose port mariadb 3306`
     environment:
       << : *default-environment
 
   solr:
-    build:
-      context: .
-      dockerfile: $PWD/.docker/Dockerfile.solr
-      args:
-        CLI_IMAGE: ${DOCKERHUB_NAMESPACE:-govcms}/govcms
-    image: ${DOCKERHUB_NAMESPACE:-govcms}/solr
+    image: ${DOCKERHUB_NAMESPACE:-govcmslagoon}/solr:${DOCKERHUB_LABEL:-latest}
     ports:
       - "8983" # Find port on host with `docker-compose port solr 8983`
     environment:
       << : *default-environment
 
   chrome:
-    build:
-      context: .
-      dockerfile: $PWD/.docker/Dockerfile.chrome
     image: selenium/standalone-chrome
     shm_size: '1gb'
     depends_on:
