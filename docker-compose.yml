@@ -22,7 +22,7 @@ services:
       << : *default-environment
 
   test:
-    image: ${DOCKERHUB_NAMESPACE:-govcmslagoon}/test${DOCKERHUB_LABEL:-latest}
+    image: ${DOCKERHUB_NAMESPACE:-govcmslagoon}/test:${DOCKERHUB_LABEL:-latest}
     << : *default-volumes
     depends_on:
       - cli
@@ -30,7 +30,7 @@ services:
       << : *default-environment
 
   nginx:
-    image: ${DOCKERHUB_NAMESPACE:-govcmslagoon}/nginx-drupal${DOCKERHUB_LABEL:-latest}
+    image: ${DOCKERHUB_NAMESPACE:-govcmslagoon}/nginx-drupal:${DOCKERHUB_LABEL:-latest}
     << : *default-volumes
     environment:
       << : *default-environment
@@ -39,20 +39,20 @@ services:
       - default
 
   php:
-    image: ${DOCKERHUB_NAMESPACE:-govcmslagoon}/php${DOCKERHUB_LABEL:-latest}
+    image: ${DOCKERHUB_NAMESPACE:-govcmslagoon}/php:${DOCKERHUB_LABEL:-latest}
     << : *default-volumes
     environment:
       << : *default-environment
 
   mariadb:
-    image: ${DOCKERHUB_NAMESPACE:-govcmslagoon}/mariadb-drupal${DOCKERHUB_LABEL:-latest}
+    image: ${DOCKERHUB_NAMESPACE:-govcmslagoon}/mariadb-drupal:${DOCKERHUB_LABEL:-latest}
     ports:
       - "3306" # Find port on host with `docker-compose port mariadb 3306`
     environment:
       << : *default-environment
 
   solr:
-    image: ${DOCKERHUB_NAMESPACE:-govcmslagoon}/solr${DOCKERHUB_LABEL:-latest}
+    image: ${DOCKERHUB_NAMESPACE:-govcmslagoon}/solr:${DOCKERHUB_LABEL:-latest}
     ports:
       - "8983" # Find port on host with `docker-compose port solr 8983`
     environment:
