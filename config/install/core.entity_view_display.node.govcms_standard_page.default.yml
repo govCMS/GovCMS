@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.govcms_standard_page.body
+    - node.type.govcms_standard_page
+  module:
+    - text
+    - user
+id: node.govcms_standard_page.default
+targetEntityType: node
+bundle: govcms_standard_page
+mode: default
+content:
+  body:
+    weight: 101
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

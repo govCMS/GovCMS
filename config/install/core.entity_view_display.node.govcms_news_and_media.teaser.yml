@@ -1,0 +1,46 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.govcms_news_and_media.body
+    - field.field.node.govcms_news_and_media.field_attachments
+    - field.field.node.govcms_news_and_media.field_featured_image
+    - field.field.node.govcms_news_and_media.field_media_release_type
+    - field.field.node.govcms_news_and_media.field_news_categories
+    - field.field.node.govcms_news_and_media.field_published_date_time
+    - field.field.node.govcms_news_and_media.field_thumbnail
+    - node.type.govcms_news_and_media
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.govcms_news_and_media.teaser
+targetEntityType: node
+bundle: govcms_news_and_media
+mode: teaser
+content:
+  body:
+    type: text_trimmed
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      trim_length: 300
+    third_party_settings: {  }
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_attachments: true
+  field_featured_image: true
+  field_media_release_type: true
+  field_news_categories: true
+  field_published_date_time: true
+  field_thumbnail: true
