@@ -5,6 +5,7 @@ package: GovCMS
 core_version_requirement: ^8 || ^9
 dependencies:
   - drupal:honeypot
+  - drupal:login_security
   - drupal:password_policy
   - drupal:seckit
   - drupal:update_notifications_disable

@@ -209,11 +209,34 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: foi
+      path: freedom-of-information
       menu:
         type: normal
         title: 'FOI Requests'
         menu_name: main
+      pager:
+        type: full
+        options:
+          items_per_page: 10
+          offset: 0
+          id: 0
+          total_pages: null
+          tags:
+            previous: Previous
+            next: Next
+            first: First
+            last: Last
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
+      defaults:
+        pager: false
     cache_metadata:
       max-age: -1
       contexts:

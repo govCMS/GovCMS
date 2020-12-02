@@ -1,0 +1,46 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.govcms_foi.body
+    - field.field.node.govcms_foi.field_attachments
+    - field.field.node.govcms_foi.field_foi_date_listed
+    - field.field.node.govcms_foi.field_foi_log_reference_id
+    - field.field.node.govcms_foi.field_foi_proposed_deletion_date
+    - field.field.node.govcms_foi.field_foi_release_type
+    - field.field.node.govcms_foi.field_thumbnail
+    - node.type.govcms_foi
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.govcms_foi.teaser
+targetEntityType: node
+bundle: govcms_foi
+mode: teaser
+content:
+  body:
+    type: text_trimmed
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      trim_length: 300
+    third_party_settings: {  }
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_attachments: true
+  field_foi_date_listed: true
+  field_foi_log_reference_id: true
+  field_foi_proposed_deletion_date: true
+  field_foi_release_type: true
+  field_thumbnail: true

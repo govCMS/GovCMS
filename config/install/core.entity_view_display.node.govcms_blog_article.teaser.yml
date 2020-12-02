@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.govcms_blog_article.body
+    - field.field.node.govcms_blog_article.field_attachments
+    - field.field.node.govcms_blog_article.field_blog_article_categories
+    - field.field.node.govcms_blog_article.field_featured_image
+    - field.field.node.govcms_blog_article.field_thumbnail
+    - node.type.govcms_blog_article
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.govcms_blog_article.teaser
+targetEntityType: node
+bundle: govcms_blog_article
+mode: teaser
+content:
+  body:
+    type: text_trimmed
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      trim_length: 300
+    third_party_settings: {  }
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_attachments: true
+  field_blog_article_categories: true
+  field_featured_image: true
+  field_thumbnail: true

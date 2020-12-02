@@ -3,6 +3,10 @@ status: true
 dependencies:
   config:
     - field.field.node.govcms_blog_article.body
+    - field.field.node.govcms_blog_article.field_attachments
+    - field.field.node.govcms_blog_article.field_blog_article_categories
+    - field.field.node.govcms_blog_article.field_featured_image
+    - field.field.node.govcms_blog_article.field_thumbnail
     - node.type.govcms_blog_article
   module:
     - text
@@ -19,9 +23,27 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+  field_attachments:
+    type: entity_reference_label
+    weight: 3
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_blog_article_categories:
+    type: entity_reference_label
+    weight: 2
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
   links:
     weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_featured_image: true
+  field_thumbnail: true
