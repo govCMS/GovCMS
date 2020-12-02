@@ -7,7 +7,7 @@ Feature: Home Page
 
   @api @javascript
   Scenario: View the homepage content
-    And I should see "Welcome to GovCMS"
+    And I should see "GovCMS"
 
   Scenario: Check the homepage meta tag.
     Then the response should contain "<meta name=\"Generator\" content=\"Drupal 9 (http://drupal.org) + GovCMS (http://govcms.gov.au)\" />"

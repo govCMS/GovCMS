@@ -24,7 +24,7 @@ jobs:
           command: docker network prune -f && docker network inspect amazeeio-network >/dev/null || docker network create amazeeio-network
       - run:
           name: Install site
-          command: docker-compose exec -T test drush si -y govcms --site-name="Welcome to GovCMS" install_configure_form.enable_update_status_module=NULL install_configure_form.enable_update_status_emails=NULL
+          command: docker-compose exec -T test drush si -y govcms --site-name="GovCMS" install_configure_form.enable_update_status_module=NULL install_configure_form.enable_update_status_emails=NULL
       - run:
           name: Get site and module version status
           command: |
