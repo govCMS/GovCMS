@@ -41,12 +41,6 @@ jobs:
       - run:
           name: Lint code
           command: docker-compose exec -T test lint-theme || true
-      - run:
-          name: Copy artifacts
-          command: mkdir -p /tmp/artifacts/behat && docker cp $(docker-compose -p govcms8 ps -q test):/app/tests/behat/screenshots /tmp/artifacts/behat
-          when: always
-      - store_artifacts:
-          path: /tmp/artifacts
 workflows:
   version: 2
   main:
