@@ -23,6 +23,10 @@ vendor/.git
 # Node
 node_modules/
 
+# Cypress
+tests/cy/cypress/videos
+tests/cy/cypress/screenshots
+
 # Drupal console
 console/
 console/cache/

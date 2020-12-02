@@ -1,0 +1,42 @@
+{
+  "name": "govcms-tests",
+  "version": "1.0.0",
+  "description": "Cypress tests for GovCMS distribution",
+  "private": true,
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.json,.eslintrc .",
+    "lint:fix": "yarn lint --fix",
+    "stop-only": "npx stop-only --skip .cy,node_modules --exclude e2e.coffee"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "cypress": "^4.12.1",
+    "cypress-xpath": "^1.6.0"
+  },
+  "devDependencies": {
+    "@cypress/eslint-plugin-json": "^3.2.3",
+    "eslint": "^7.6.0",
+    "eslint-plugin-chai-friendly": "^0.6.0",
+    "eslint-plugin-cypress": "^2.11.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11"
+  },
+  "license": "GPL-2.0",
+  "lint-staged": {
+    "*.coffee": [
+      "yarn stop-only --folder",
+      "git add"
+    ],
+    "*.{js,jsx,ts,tsx,json,eslintrc}": [
+      "yarn stop-only --folder",
+      "yarn eslint --fix",
+      "git add"
+    ]
+  }
+}
