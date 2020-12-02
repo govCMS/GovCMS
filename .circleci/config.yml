@@ -23,10 +23,11 @@ jobs:
           name: Start amazeeio-network
           command: docker network prune -f && docker network inspect amazeeio-network >/dev/null || docker network create amazeeio-network
       - run:
-          name: Build project
-          command: |
-            docker-compose up -d --build
-            docker-compose exec test dockerize -wait tcp://mariadb:3306 -timeout 1m
+          name: Start GovCMS
+          command: docker-compose up -d
+      - run:
+          name: Wait for MariaDb to be ready
+          command: sleep 5
       - run:
           name: Install site
           command: docker-compose exec -T test drush si -y govcms --site-name="Welcome to GovCMS" install_configure_form.enable_update_status_module=NULL install_configure_form.enable_update_status_emails=NULL
