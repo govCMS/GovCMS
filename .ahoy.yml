@@ -50,22 +50,6 @@ commands:
     usage: Lint code
     cmd: docker-compose exec -T test lint-theme
 
-  test-behat:
-    usage: Run Behat tests.
-    cmd: docker-compose exec -T test behat "$@"
-
   pull:
     usage: Pull latest docker images.
     cmd: docker image ls --format \"{{.Repository}}:{{.Tag}}\" | grep govcms/ | grep -v none | xargs -n1 docker pull | cat
-
-  push:
-    usage: Push all docker images (beta).
-    cmd: |
-      export $(grep -v '^#' .env.default | xargs)
-      . .docker/push.sh
-
-  release:
-    usage: Push all docker images (latest release).
-    cmd: |
-      export $(grep -v '^#' .env.default | xargs)
-      . .docker/release.sh
