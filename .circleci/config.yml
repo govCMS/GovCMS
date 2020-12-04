@@ -23,8 +23,15 @@ jobs:
           name: Start amazeeio-network
           command: docker network prune -f && docker network inspect amazeeio-network >/dev/null || docker network create amazeeio-network
       - run:
+          name: Start GovCMS
+          command: docker-compose up -d
+      - run:
+          name: Wait for MariaDb to be ready
+          command: docker-compose exec test dockerize -wait tcp://mariadb:3306 -timeout 1m
+      - run:
+          # TODO: Ensure emails are not being sent.
           name: Install site
-          command: docker-compose exec -T test drush si -y govcms --site-name="Welcome to GovCMS" install_configure_form.enable_update_status_module=NULL install_configure_form.enable_update_status_emails=NULL
+          command: docker-compose exec test drush si -y govcms --site-name='Welcome to GovCMS' install_configure_form.enable_update_status_emails=NULL install_configure_form.enable_update_status_module=NULL || true
       - run:
           name: Get site and module version status
           command: |
@@ -34,15 +41,6 @@ jobs:
       - run:
           name: Lint code
           command: docker-compose exec -T test lint-theme || true
-      - run:
-          name: Run Behat tests with rerun
-          command: docker-compose exec -T test behat --format=progress_fail || docker-compose exec -T test behat --format=progress_fail --rerun
-      - run:
-          name: Copy artifacts
-          command: mkdir -p /tmp/artifacts/behat && docker cp $(docker-compose -p govcms8 ps -q test):/app/tests/behat/screenshots /tmp/artifacts/behat
-          when: always
-      - store_artifacts:
-          path: /tmp/artifacts
 workflows:
   version: 2
   main:
