@@ -33,6 +33,18 @@ function govcms_security_form_user_admin_settings_alter(&$form, FormStateInterfa
 }
 
 /**
+ * Implements hook_form_alter().
+ */
+function govcms_security_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Author information shouldn't be displayed by default for new content types.
+  // If desired, it can be enabled however ISM states individual employees
+  // shouldn't have their names or details present on the website.
+  if ($form_id === "node_type_add_form") {
+    $form['display']['display_submitted']['#default_value'] = 0;
+  }
+}
+
+/**
  * Implements hook_ENTITY_TYPE_access().
  */
 function govcms_security_user_access(EntityInterface $entity, $operation, AccountInterface $account) {
