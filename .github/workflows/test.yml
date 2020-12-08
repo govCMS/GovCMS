@@ -9,6 +9,7 @@ jobs:
     env:
       COMPOSER_ALLOW_SUPERUSER: 1
       COMPOSE_PROJECT_NAME: govcms8
+      COMPOSE_INTERACTIVE_NO_CLI: 1
       DEPLOY_BRANCH: 1.x
 
     steps:
