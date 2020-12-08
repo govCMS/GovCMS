@@ -27,7 +27,7 @@ jobs:
         run: docker network prune -f && docker network inspect amazeeio-network >/dev/null || docker network create amazeeio-network
 
       - name: Start GovCMS
-        command: docker-compose up -d
+        run: docker-compose up -d
 
       - name: Wait for MariaDb to be ready
         run: docker-compose exec test dockerize -wait tcp://mariadb:3306 -timeout 1m
