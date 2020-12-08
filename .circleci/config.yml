@@ -1,51 +1,90 @@
 version: 2
 jobs:
   build:
-    working_directory: /app
     docker:
-      - image: quay.io/govcms/govcms-ci
-        environment:
-          COMPOSER_ALLOW_SUPERUSER: 1
-          COMPOSE_PROJECT_NAME: govcms8
-          DEPLOY_BRANCH: 1.x
+      - image: circleci/php:7.4.9-cli
+    working_directory: ~/app
     steps:
       - checkout
       - run:
-          name: Docker-compose validate
-          command: docker-compose config -q
-      - run:
-          name: Update codebase to follow CI configuration
+          name: Install PHP extensions
           command: |
-            sed -i -e "/###/d" docker-compose.yml
-            cp .env.default .env
-      - setup_remote_docker
+            sudo apt-get update && sudo apt-get install -y libpng-dev rsync
+            sudo docker-php-ext-install gd
+            sudo sed -i 's/^zend_extension/;zend_extension/g' /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
       - run:
-          name: Start amazeeio-network
-          command: docker network prune -f && docker network inspect amazeeio-network >/dev/null || docker network create amazeeio-network
+          name: Install GovCMS dependencies
+          command: |
+            sudo composer self-update --2
+            COMPOSER_MEMORY_LIMIT=-1 composer install --profile --prefer-dist --optimize-autoloader
       - run:
-          name: Start GovCMS
-          command: docker-compose up -d
+          name: Get PHP and composer version status
+          command: |
+            php -v
+            composer --version
+            bin/drush version
+  test:
+    docker:
+      - image: circleci/php:7.4.9-apache
+      - image: circleci/mariadb:10.3
+        environment:
+          MYSQL_DATABASE: govcms
+          MYSQL_ROOT_PASSWORD: govcms
+          MYSQL_ROOT_HOST: "%"
+    working_directory: ~/app
+    steps:
+      - checkout
       - run:
-          name: Wait for MariaDb to be ready
-          command: docker-compose exec test dockerize -wait tcp://mariadb:3306 -timeout 1m
+          name: Install PHP extensions
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y libbz2-dev libzip-dev libpng-dev rsync mariadb-client
+            sudo docker-php-ext-install opcache bz2 zip gd pdo_mysql
+            sudo apt-get autoclean && sudo apt-get clean
+            sudo sed -i 's/^zend_extension/;zend_extension/g' /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
       - run:
-          # TODO: Ensure emails are not being sent.
-          name: Install site
-          command: docker-compose exec test drush si -y govcms --site-name='Welcome to GovCMS' install_configure_form.enable_update_status_emails=NULL install_configure_form.enable_update_status_module=NULL || true
+          name: Install GovCMS dependencies
+          command: |
+            sudo composer self-update --2 && composer clear
+            COMPOSER_MEMORY_LIMIT=-1 composer install --profile --prefer-dist --optimize-autoloader
+      - run:
+          name: Install GovCMS site
+          command: |
+            cd web
+            ../bin/drush site-install -y govcms --db-url=mysql://root:govcms@127.0.0.1:3306/govcms --site-name='GovCMS' install_configure_form.enable_update_status_emails=NULL install_configure_form.enable_update_status_module=NULL || true
       - run:
           name: Get site and module version status
           command: |
-            docker-compose exec -T test php -v
-            docker-compose exec -T test drush st
-            docker-compose exec -T test drush pml
+            php -v
+            composer --version
+            cd web
+            ../bin/drush status
+            ../bin/drush pm:list
       - run:
-          name: Lint code
-          command: docker-compose exec -T test lint-theme || true
+          name: Setup webserver
+          command: |
+            sudo cp ./.circleci/httpd.conf.circle /etc/apache2/sites-available/default.conf
+            sudo a2ensite default
+            echo "127.0.0.1 local.govcms.gov.au" | sudo tee --append /etc/hosts
+            sudo a2enmod headers rewrite
+            sudo service apache2 restart
+      - run:
+          name: Run Cypress tests
+          command: |
+            curl http://local.govcms.gov.au
 workflows:
   version: 2
   main:
     jobs:
       - build:
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              only: /.*/
+      - test:
+          requires:
+            - build
           filters:
             tags:
               only: /.*/
