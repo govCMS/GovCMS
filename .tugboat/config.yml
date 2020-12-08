@@ -50,9 +50,8 @@ services:
 
       # Commands when refreshing an existing preview.
       update:
-        - rm composer.lock
         # Install/update packages managed by composer, including drush.
-        - COMPOSER_MEMORY_LIMIT=-1 composer install --prefer-dist --optimize-autoloader
+        - COMPOSER_MEMORY_LIMIT=-1 composer update
 
         # Use the tugboat-specific Drupal settings.
         - cp "${TUGBOAT_ROOT}/.tugboat/settings.php" "${DOCROOT}/sites/default/"
@@ -67,9 +66,7 @@ services:
 
       # Commands when building a new branch/PR update.
       build:
-        - rm composer.lock
-        # Install/update packages managed by composer, including drush.
-        - COMPOSER_MEMORY_LIMIT=-1 composer install --prefer-dist --optimize-autoloader
+        - COMPOSER_MEMORY_LIMIT=-1 composer update
         - drush cache:rebuild
         - drush config:import --partial -y
         - drush updatedb -y
