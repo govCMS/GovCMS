@@ -34,7 +34,7 @@ jobs:
         run: docker-compose exec test -it dockerize -wait tcp://mariadb:3306 -timeout 1m || sleep 10
 
       - name: Install site
-        run: docker-compose exec test drush si -y govcms --site-name='Welcome to GovCMS' install_configure_form.enable_update_status_emails=NULL install_configure_form.enable_update_status_module=NULL || true
+        run: docker-compose exec test -it drush si -y govcms --site-name='Welcome to GovCMS' install_configure_form.enable_update_status_emails=NULL install_configure_form.enable_update_status_module=NULL
 
       - name: Get site and module version status
         run: |
