@@ -2,13 +2,41 @@ name: push
 on: [push, pull_request]
 
 jobs:
-  lint:
-    name: Lint
+  build:
+
     runs-on: ubuntu-latest
+    container: quay.io/govcms/govcms-ci
+
+    env:
+      COMPOSER_ALLOW_SUPERUSER: 1
+      COMPOSE_PROJECT_NAME: govcms8
+      DEPLOY_BRANCH: 1.x
+
+
     steps:
-    - uses: actions/checkout@v2
-    - uses: docker://golangci/golangci-lint:v1.23.8
-      with:
-        args: golangci-lint run
-      env:
-        CGO_ENABLED: 0
+
+      - name: Docker-compose validate
+        run: docker-compose config -q
+
+      - name: Update codebase to follow CI configuration
+        run: |
+              sed -i -e "/###/d" docker-compose.yml
+              cp .env.default .env
+      
+      - name: Start amazeeio-network
+        run: docker network prune -f && docker network inspect amazeeio-network >/dev/null || docker network create amazeeio-network
+
+      - name: Start GovCMS
+        command: docker-compose up -d
+
+      - name: Wait for MariaDb to be ready
+        run: docker-compose exec test dockerize -wait tcp://mariadb:3306 -timeout 1m
+
+      - name: Install site
+        run: docker-compose exec test drush si -y govcms --site-name='Welcome to GovCMS' install_configure_form.enable_update_status_emails=NULL install_configure_form.enable_update_status_module=NULL || true
+
+      - name: Get site and module version status
+        run: |
+            docker-compose exec -T test php -v
+            docker-compose exec -T test drush st
+            docker-compose exec -T test drush pml
