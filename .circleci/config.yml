@@ -23,6 +23,12 @@ jobs:
             php -v
             composer --version
             bin/drush version
+      - persist_to_workspace:
+          root: ~/app
+          paths:
+            - web
+            - vendor
+            - bin
   test:
     docker:
       - image: circleci/php:7.4.9-apache
@@ -34,19 +40,15 @@ jobs:
     working_directory: ~/app
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/app
       - run:
           name: Install PHP extensions
           command: |
             sudo apt-get update
-            sudo apt-get install -y libbz2-dev libzip-dev libpng-dev rsync mariadb-client
-            sudo docker-php-ext-install opcache bz2 zip gd pdo_mysql
-            sudo apt-get autoclean && sudo apt-get clean
+            sudo apt-get install -y libpng-dev rsync mariadb-client
+            sudo docker-php-ext-install gd pdo_mysql
             sudo sed -i 's/^zend_extension/;zend_extension/g' /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
-      - run:
-          name: Install GovCMS dependencies
-          command: |
-            sudo composer self-update --2 && composer clear
-            COMPOSER_MEMORY_LIMIT=-1 composer install --profile --prefer-dist --optimize-autoloader
       - run:
           name: Install GovCMS site
           command: |
@@ -55,8 +57,6 @@ jobs:
       - run:
           name: Get site and module version status
           command: |
-            php -v
-            composer --version
             cd web
             ../bin/drush status
             ../bin/drush pm:list
