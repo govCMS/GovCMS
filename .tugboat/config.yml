@@ -31,6 +31,9 @@ services:
 
         # Clean up. This keeps image storage tighter on Tugboat.
         - apt-get autoclean && apt-get clean
+        
+        # User composer 1.x
+        - composer self-update --1
 
       # Commands when refreshing an existing preview.
       update:
