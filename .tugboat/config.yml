@@ -60,6 +60,9 @@ services:
         - chgrp -R www-data "${DOCROOT}/sites/default/files"
         - find "${DOCROOT}/sites/default/files" -type d -exec chmod 2775 {} \;
         - find "${DOCROOT}/sites/default/files" -type f -exec chmod 0664 {} \;
+        - chgrp -R www-data "/var/lib/tugboat/files-private"
+        - chmod 2775 /var/lib/tugboat/files-private
+        - chmod 0664 ${DOCROOT}/sites/default/services.yml
 
         # Install the site.
         - drush -r "${DOCROOT}" site:install govcms install_configure_form.update_status_module='array(FALSE,FALSE)' -y
