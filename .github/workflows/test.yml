@@ -30,7 +30,7 @@ jobs:
         run: docker-compose up -d
 
       - name: Wait for MariaDb to be ready
-        run: docker-compose exec -T cli dockerize -wait tcp://mariadb:3306 -timeout 1m || sleep 10
+        run: docker-compose exec -T test dockerize -wait tcp://mariadb:3306 -timeout 1m
 
       - name: Install site
         run: docker-compose exec -T cli drush si -y govcms --site-name='Welcome to GovCMS' install_configure_form.enable_update_status_emails=NULL install_configure_form.enable_update_status_module=NULL
