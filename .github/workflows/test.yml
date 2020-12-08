@@ -9,7 +9,6 @@ jobs:
     env:
       COMPOSER_ALLOW_SUPERUSER: 1
       COMPOSE_PROJECT_NAME: govcms8
-      COMPOSE_INTERACTIVE_NO_CLI: 1
       DEPLOY_BRANCH: 1.x
 
     steps:
@@ -31,10 +30,10 @@ jobs:
         run: docker-compose up -d
 
       - name: Wait for MariaDb to be ready
-        run: docker-compose exec cli dockerize -wait tcp://mariadb:3306 -timeout 1m || sleep 10
+        run: docker-compose exec -T cli dockerize -wait tcp://mariadb:3306 -timeout 1m || sleep 10
 
       - name: Install site
-        run: docker-compose exec cli drush si -y govcms --site-name='Welcome to GovCMS' install_configure_form.enable_update_status_emails=NULL install_configure_form.enable_update_status_module=NULL
+        run: docker-compose exec -T cli drush si -y govcms --site-name='Welcome to GovCMS' install_configure_form.enable_update_status_emails=NULL install_configure_form.enable_update_status_module=NULL
 
       - name: Get site and module version status
         run: |
