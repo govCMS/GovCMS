@@ -152,7 +152,7 @@
               "Replace deprecated AllowedTagsXssTrait": "https://www.drupal.org/files/issues/2020-04-17/3128413-10.patch"
             },
              "drupal/context": {
-                 "Error: Call to a member function getCacheTags - https://www.drupal.org/project/context/issues/3173470" : "https://www.drupal.org/files/issues/2020-11-05/context-3173470-13.patch"
+                 "Error: Call to a member function getCacheTags - https://www.drupal.org/project/context/issues/3173470" : "https://www.drupal.org/files/issues/2020-11-10/context-3173470-16.patch"
              },
             "drupal/core": {
                 "Private file download returns access denied, when file attached to revision other than current - https://www.drupal.org/project/drupal/issues/1452100#comment-13653216": "https://www.drupal.org/files/issues/2020-05-29/1452100-file-access-97.patch"
