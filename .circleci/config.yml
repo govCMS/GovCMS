@@ -38,10 +38,9 @@ jobs:
       - run:
           name: Install PHP extensions
           command: |
-            sudo apt-get update
-            sudo apt-get install -y libpng-dev rsync mariadb-client
-            sudo docker-php-ext-install gd pdo_mysql
-            sudo sed -i 's/^zend_extension/;zend_extension/g' /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+            apt-get update
+            apt-get install -y mariadb-client
+            docker-php-ext-install pdo_mysql
       - run:
           name: Install GovCMS site
           command: |
@@ -56,11 +55,10 @@ jobs:
       - run:
           name: Setup webserver
           command: |
-            sudo cp ./.circleci/httpd.conf.circle /etc/apache2/sites-available/default.conf
-            sudo a2ensite default
+            cp ./.circleci/httpd.conf.circle /etc/apache2/sites-available/default.conf
+            a2ensite default
             echo "127.0.0.1 local.govcms.gov.au" | sudo tee --append /etc/hosts
-            sudo a2enmod headers rewrite
-            sudo service apache2 restart
+            service apache2 restart
       - run:
           name: Run Cypress tests
           command: |
