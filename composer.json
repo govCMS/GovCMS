@@ -100,7 +100,7 @@
         "drupal/video_embed_field": "2.4",
         "drupal/webform": "6.0.0-alpha20",
         "oomphinc/composer-installers-extender": "dev-master",
-        "swiftmailer/swiftmailer": "6.2.3",
+        "swiftmailer/swiftmailer": "6.2.4",
         "webflo/drupal-finder": "^1.2"
     },
     "require-dev": {
