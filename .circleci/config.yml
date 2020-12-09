@@ -36,12 +36,6 @@ jobs:
       - attach_workspace:
           at: ~/app
       - run:
-          name: Install PHP extensions
-          command: |
-            apt-get update
-            apt-get install -y mariadb-client
-            docker-php-ext-install pdo_mysql
-      - run:
           name: Install GovCMS site
           command: |
             cd web
