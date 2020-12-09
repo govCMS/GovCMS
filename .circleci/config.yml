@@ -2,21 +2,14 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/php:7.4.9-cli
+      - image: govcmstesting/php:7.4-cli
     working_directory: ~/app
     steps:
       - checkout
       - run:
-          name: Install PHP extensions
-          command: |
-            sudo apt-get update && sudo apt-get install -y libpng-dev rsync
-            sudo docker-php-ext-install gd
-            sudo sed -i 's/^zend_extension/;zend_extension/g' /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
-      - run:
           name: Install GovCMS dependencies
           command: |
-            sudo composer self-update --2
-            COMPOSER_MEMORY_LIMIT=-1 composer install --profile --prefer-dist --optimize-autoloader
+            composer install --profile --prefer-dist --optimize-autoloader
       - run:
           name: Get PHP and composer version status
           command: |
@@ -31,7 +24,7 @@ jobs:
             - bin
   test:
     docker:
-      - image: circleci/php:7.4.9-apache
+      - image: govcmstesting/php:7.4-apache
       - image: circleci/mariadb:10.3
         environment:
           MYSQL_DATABASE: govcms
