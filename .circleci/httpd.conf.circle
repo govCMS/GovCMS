@@ -1,9 +1,9 @@
 <VirtualHost *:80>
   ServerName local.govcms.gov.au
-  DocumentRoot /home/circleci/app/web
+  DocumentRoot /app/web
   DirectoryIndex index.php
 
-  <Directory /home/circleci/app/web/>
+  <Directory /app/web/>
     Options Indexes FollowSymLinks
     AllowOverride All
     Require all granted

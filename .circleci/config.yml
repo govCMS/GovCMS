@@ -30,11 +30,14 @@ jobs:
           MYSQL_DATABASE: govcms
           MYSQL_ROOT_PASSWORD: govcms
           MYSQL_ROOT_HOST: "%"
-    working_directory: ~/app
+    working_directory: /app
     steps:
       - checkout
       - attach_workspace:
-          at: ~/app
+          at: /app
+      - run:
+          name: Wait for MariaDb to be ready
+          command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
       - run:
           name: Install GovCMS site
           command: |
@@ -51,7 +54,7 @@ jobs:
           command: |
             cp ./.circleci/httpd.conf.circle /etc/apache2/sites-available/default.conf
             a2ensite default
-            echo "127.0.0.1 local.govcms.gov.au" | sudo tee --append /etc/hosts
+            echo "127.0.0.1 local.govcms.gov.au" | tee --append /etc/hosts
             service apache2 restart
       - run:
           name: Run Cypress tests
