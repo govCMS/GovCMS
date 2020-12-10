@@ -30,5 +30,5 @@
     "viewports_desktop": "macbook-15",
     "viewports_mobile": "iphone-6"
   },
-  "video": false
+  "video": true
 }
