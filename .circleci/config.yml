@@ -53,13 +53,6 @@ jobs:
             php -v
             bin/drush version
       - run:
-          name: Setup webserver
-          command: |
-            cp /app/.circleci/httpd.conf.circle /etc/apache2/sites-available/default.conf
-            a2ensite default
-            echo "127.0.0.1 local.govcms.gov.au" | tee --append /etc/hosts
-            service apache2 restart
-      - run:
           name: Wait for MariaDb to be ready
           command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
       - run:
@@ -73,10 +66,6 @@ jobs:
             cd web
             ../bin/drush status
             ../bin/drush pm:list --no-core
-      - run:
-          name: Run install tests
-          command: |
-            curl http://local.govcms.gov.au
   test-cypress:
     docker:
       - image: govcmstesting/php:7.4-apache
