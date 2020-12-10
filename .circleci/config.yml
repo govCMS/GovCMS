@@ -3,13 +3,26 @@ jobs:
   build:
     docker:
       - image: govcmstesting/php:7.4-cli
-    working_directory: ~/app
+    working_directory: /app
     steps:
       - checkout
+      - restore_cache:
+          name: Restore Composer Package Cache
+          keys:
+            - v1-deps-{{ .Branch }}-{{ checksum "composer.json" }}
+            - v1-deps-{{ .Branch }}
+            - v1-deps
       - run:
           name: Install GovCMS dependencies
           command: |
             composer install --profile --prefer-dist --optimize-autoloader
+      - save_cache:
+          name: Save Composer Package Cache
+          key: v1-deps-{{ .Branch }}-{{ checksum "composer.json" }}
+          paths:
+            - /tmp/cache
+            - /app/vendor
+            - /app/composer.lock
       - run:
           name: Get PHP and composer version status
           command: |
@@ -17,7 +30,7 @@ jobs:
             composer --version
             bin/drush version
       - persist_to_workspace:
-          root: ~/app
+          root: /app
           paths:
             - web
             - vendor
