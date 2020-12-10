@@ -13,6 +13,11 @@ jobs:
             - v1-govcms-deps-{{ .Branch }}
             - v1-govcms-deps
       - run:
+          name: Get PHP and composer version status
+          command: |
+            php -v
+            composer --version
+      - run:
           name: Install GovCMS dependencies
           command: |
             composer install --profile --prefer-dist --optimize-autoloader
@@ -23,12 +28,6 @@ jobs:
             - /tmp/cache
             - /app/vendor
             - /app/composer.lock
-      - run:
-          name: Get PHP and composer version status
-          command: |
-            php -v
-            composer --version
-            bin/drush version
       - persist_to_workspace:
           root: /app
           paths:
@@ -48,6 +47,11 @@ jobs:
       - checkout
       - attach_workspace:
           at: /app
+      - run:
+          name: Get PHP and drush version status
+          command: |
+            php -v
+            bin/drush version
       - run:
           name: Setup webserver
           command: |
