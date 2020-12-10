@@ -22,7 +22,7 @@ jobs:
             - web
             - vendor
             - bin
-  test:
+  test-basic:
     docker:
       - image: govcmstesting/php:7.4-apache
       - image: circleci/mariadb:10.3
@@ -57,10 +57,10 @@ jobs:
             ../bin/drush status
             ../bin/drush pm:list --no-core
       - run:
-          name: Run Cypress tests
+          name: Run install tests
           command: |
             curl http://local.govcms.gov.au
-  cypress:
+  test-cypress:
     docker:
       - image: govcmstesting/php:7.4-apache
       - image: circleci/mariadb:10.3
@@ -98,6 +98,10 @@ jobs:
           command: |
             cd tests/cy
             yarn cypress:run
+      - store_artifacts:
+          path: tests/cy/cypress/videos
+      - store_artifacts:
+          path: tests/cy/cypress/screenshots
 workflows:
   version: 2
   main:
@@ -108,7 +112,7 @@ workflows:
               only: /.*/
             branches:
               only: /.*/
-      - test:
+      - test-basic:
           requires:
             - build
           filters:
@@ -116,7 +120,7 @@ workflows:
               only: /.*/
             branches:
               only: /.*/
-      - cypress:
+      - test-cypress:
           requires:
             - build
           filters:
