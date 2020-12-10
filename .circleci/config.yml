@@ -89,7 +89,7 @@ jobs:
             cd web
             ../bin/drush site-install -y govcms --db-url=mysql://root:govcms@127.0.0.1:3306/govcms --site-name='GovCMS' install_configure_form.enable_update_status_emails=NULL install_configure_form.enable_update_status_module=NULL || true
       - run:
-          name: Get site and module version status
+          name: Install Cypress Dependencies
           command: |
             cd tests/cy
             yarn
