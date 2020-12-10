@@ -3,11 +3,11 @@ describe('Check user page', function () {
         cy.visit("user")
     })
 
-    it("Check login form should be visible for anonymous user", function () {
+    it("Check user login form should be visible for anonymous user", function () {
         cy.get('.user-login-form').should('be.visible')
     })
 
-    it("Test login", function () {
+    it("Test user login", function () {
         cy.login();
     })
 })
