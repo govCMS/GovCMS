@@ -96,7 +96,8 @@ jobs:
       - run:
           name: Run Cypress tests
           command: |
-            curl http://local.govcms.gov.au
+            cd tests/cy
+            yarn cypress:run
 workflows:
   version: 2
   main:
