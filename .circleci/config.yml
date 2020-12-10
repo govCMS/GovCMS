@@ -36,6 +36,13 @@ jobs:
       - attach_workspace:
           at: /app
       - run:
+          name: Setup webserver
+          command: |
+            cp /app/.circleci/httpd.conf.circle /etc/apache2/sites-available/default.conf
+            a2ensite default
+            echo "127.0.0.1 local.govcms.gov.au" | tee --append /etc/hosts
+            service apache2 restart
+      - run:
           name: Wait for MariaDb to be ready
           command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
       - run:
@@ -48,14 +55,44 @@ jobs:
           command: |
             cd web
             ../bin/drush status
-            ../bin/drush pm:list
+            ../bin/drush pm:list --no-core
+      - run:
+          name: Run Cypress tests
+          command: |
+            curl http://local.govcms.gov.au
+  cypress:
+    docker:
+      - image: govcmstesting/php:7.4-apache
+      - image: circleci/mariadb:10.3
+        environment:
+          MYSQL_DATABASE: govcms
+          MYSQL_ROOT_PASSWORD: govcms
+          MYSQL_ROOT_HOST: "%"
+    working_directory: /app
+    steps:
+      - checkout
+      - attach_workspace:
+          at: /app
       - run:
           name: Setup webserver
           command: |
-            cp ./.circleci/httpd.conf.circle /etc/apache2/sites-available/default.conf
+            cp /app/.circleci/httpd.conf.circle /etc/apache2/sites-available/default.conf
             a2ensite default
             echo "127.0.0.1 local.govcms.gov.au" | tee --append /etc/hosts
             service apache2 restart
+      - run:
+          name: Wait for MariaDb to be ready
+          command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
+      - run:
+          name: Install GovCMS site
+          command: |
+            cd web
+            ../bin/drush site-install -y govcms --db-url=mysql://root:govcms@127.0.0.1:3306/govcms --site-name='GovCMS' install_configure_form.enable_update_status_emails=NULL install_configure_form.enable_update_status_module=NULL || true
+      - run:
+          name: Get site and module version status
+          command: |
+            cd tests/cy
+            yarn --immutable
       - run:
           name: Run Cypress tests
           command: |
@@ -71,6 +108,14 @@ workflows:
             branches:
               only: /.*/
       - test:
+          requires:
+            - build
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              only: /.*/
+      - cypress:
           requires:
             - build
           filters:
