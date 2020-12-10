@@ -9,9 +9,9 @@ jobs:
       - restore_cache:
           name: Restore Composer Package Cache
           keys:
-            - v1-deps-{{ .Branch }}-{{ checksum "composer.json" }}
-            - v1-deps-{{ .Branch }}
-            - v1-deps
+            - v1-govcms-deps-{{ .Branch }}-{{ checksum "composer.json" }}
+            - v1-govcms-deps-{{ .Branch }}
+            - v1-govcms-deps
       - run:
           name: Install GovCMS dependencies
           command: |
