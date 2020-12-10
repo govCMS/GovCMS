@@ -92,7 +92,7 @@ jobs:
           name: Get site and module version status
           command: |
             cd tests/cy
-            yarn --immutable
+            yarn
       - run:
           name: Run Cypress tests
           command: |
