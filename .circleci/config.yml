@@ -77,6 +77,12 @@ jobs:
     working_directory: /app
     steps:
       - checkout
+      - restore_cache:
+          name: Restore Yarn/Cypress Package Cache
+          keys:
+            - v1-govcms-deps-{{ .Branch }}-{{ checksum "tests/cy/package.json" }}
+            - v1-govcms-deps-{{ .Branch }}
+            - v1-govcms-deps
       - attach_workspace:
           at: /app
       - run:
@@ -99,6 +105,11 @@ jobs:
           command: |
             cd tests/cy
             yarn
+      - save_cache:
+          name: Save Yarn/Cypress Package Cache
+          key: v1-govcms-deps-{{ .Branch }}-{{ checksum "tests/cy/package.json" }}
+          paths:
+            - ~/.cache
       - run:
           name: Run Cypress tests
           command: |
