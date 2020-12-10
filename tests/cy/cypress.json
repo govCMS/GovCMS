@@ -1,5 +1,5 @@
 {
-  "baseUrl": "http://govcms-testing.docker.amazee.io",
+  "baseUrl": "http://local.govcms.gov.au",
   "blacklistHosts": [
     "www.google-analytics.com"
   ],
