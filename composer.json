@@ -94,7 +94,7 @@
         "drupal/simple_sitemap": "3.7",
         "drupal/swiftmailer": "2.0-beta1",
         "drupal/tfa": "1.0.0-alpha5",
-        "drupal/token": "1.7",
+        "drupal/token": "1.8.0",
         "drupal/update_notifications_disable": "1.1",
         "drupal/username_enumeration_prevention": "1.1",
         "drupal/video_embed_field": "2.4",
