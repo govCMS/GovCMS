@@ -93,7 +93,7 @@
         "drupal/simple_oauth": "5.0.2",
         "drupal/simple_sitemap": "3.7",
         "drupal/swiftmailer": "2.0-beta1",
-        "drupal/tfa": "1.0.0-alpha5",
+        "drupal/tfa": "1.0.0-alpha7",
         "drupal/token": "1.7",
         "drupal/update_notifications_disable": "1.1",
         "drupal/username_enumeration_prevention": "1.1",
