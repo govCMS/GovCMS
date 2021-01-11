@@ -93,7 +93,7 @@
         "drupal/simple_oauth": "5.0.2",
         "drupal/simple_sitemap": "3.7",
         "drupal/swiftmailer": "2.0-beta1",
-        "drupal/tfa": "1.0.0-alpha5",
+        "drupal/tfa": "1.0.0-alpha7",
         "drupal/token": "1.7",
         "drupal/update_notifications_disable": "1.1",
         "drupal/username_enumeration_prevention": "1.1",
@@ -135,8 +135,8 @@
             "drupal/tfa": {
                 "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541":
                   "https://www.drupal.org/files/issues/2020-10-19/tfa-2930541-22_0.patch",
-                "Users' recovery codes exposed to admin users - https://www.drupal.org/project/tfa/issues/3075304":
-                  "https://www.drupal.org/files/issues/2020-11-16/tfa-3075304-11.patch"
+                "Use specific permissions to edit TFA for other accounts - https://www.drupal.org/project/tfa/issues/3089172":
+                  "https://www.drupal.org/files/issues/2020-02-05/3089172-9.patch"
             }
         }
     },
