@@ -28,6 +28,7 @@ install:
   - options
   - page_cache
   - path
+  - pathauto
   - quickedit
   - rdf
   - settings_tray
