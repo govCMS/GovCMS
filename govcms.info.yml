@@ -28,7 +28,6 @@ install:
   - options
   - page_cache
   - path
-  - pathauto
   - quickedit
   - rdf
   - settings_tray
@@ -40,10 +39,11 @@ install:
   - views_ui
 
 dependencies:
-  - node
   - block
-  - views
   - govcms_security
+  - node
+  - pathauto
+  - views
 
 themes:
   - claro
