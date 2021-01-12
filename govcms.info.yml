@@ -37,7 +37,7 @@ install:
   - toolbar
   - views
   - views_ui
-  - workflow
+  - workflows
 
 dependencies:
   - node
