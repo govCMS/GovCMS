@@ -7,6 +7,11 @@ dependencies:
   - drupal:honeypot
   - drupal:login_security
   - drupal:password_policy
+  - drupal:password_policy_characters
+  - drupal:password_policy_character_types
+  - drupal:password_policy_history
+  - drupal:password_policy_length
+  - drupal:password_policy_username
   - drupal:seckit
   - drupal:update_notifications_disable
   - drupal:username_enumeration_prevention
