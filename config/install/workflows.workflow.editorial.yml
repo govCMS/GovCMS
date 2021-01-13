@@ -79,7 +79,7 @@ type_settings:
       - needs_review
       to: draft
       weight: -2
-  entity_types:
+  entity_types: {}
     node:
       - govcms_blog_article
       - govcms_event
