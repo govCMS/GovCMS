@@ -15,6 +15,7 @@ install:
   - big_pipe
   - ckeditor
   - config
+  - content_moderation
   - contextual
   - datetime_range
   - dynamic_page_cache
