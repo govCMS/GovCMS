@@ -1,0 +1,15 @@
+<VirtualHost *:80>
+  ServerName local.govcms.gov.au
+  DocumentRoot /app/web
+  DirectoryIndex index.php
+
+  <Directory /app/web/>
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+  </Directory>
+
+  LogLevel warn
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>

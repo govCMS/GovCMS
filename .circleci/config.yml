@@ -1,51 +1,145 @@
 version: 2
 jobs:
   build:
-    working_directory: /app
     docker:
-      - image: quay.io/govcms/govcms-ci
-        environment:
-          COMPOSER_ALLOW_SUPERUSER: 1
-          COMPOSE_PROJECT_NAME: govcms8
-          DEPLOY_BRANCH: 1.x
+      - image: govcmstesting/php:7.4-cli
+    working_directory: /app
     steps:
       - checkout
+      - restore_cache:
+          name: Restore Composer Package Cache
+          keys:
+            - v1-govcms-deps-{{ .Branch }}-{{ checksum "composer.json" }}
+            - v1-govcms-deps-{{ .Branch }}
+            - v1-govcms-deps
       - run:
-          name: Docker-compose validate
-          command: docker-compose config -q
-      - run:
-          name: Update codebase to follow CI configuration
+          name: Get PHP and composer version status
           command: |
-            sed -i -e "/###/d" docker-compose.yml
-            cp .env.default .env
-      - setup_remote_docker
+            php -v
+            composer --version
       - run:
-          name: Start amazeeio-network
-          command: docker network prune -f && docker network inspect amazeeio-network >/dev/null || docker network create amazeeio-network
+          name: Install GovCMS dependencies
+          command: |
+            composer install --profile --prefer-dist --optimize-autoloader
+      - save_cache:
+          name: Save Composer Package Cache
+          key: v1-govcms-deps-{{ .Branch }}-{{ checksum "composer.json" }}
+          paths:
+            - /tmp/cache
+            - /app/vendor
+            - /app/composer.lock
+      - persist_to_workspace:
+          root: /app
+          paths:
+            - web
+            - vendor
+            - bin
+  test-basic:
+    docker:
+      - image: govcmstesting/php:7.4-apache
+      - image: circleci/mariadb:10.3
+        environment:
+          MYSQL_DATABASE: govcms
+          MYSQL_ROOT_PASSWORD: govcms
+          MYSQL_ROOT_HOST: "%"
+    working_directory: /app
+    steps:
+      - checkout
+      - attach_workspace:
+          at: /app
       - run:
-          name: Start GovCMS
-          command: docker-compose up -d
+          name: Get PHP and drush version status
+          command: |
+            php -v
+            bin/drush version
       - run:
           name: Wait for MariaDb to be ready
-          command: docker-compose exec test dockerize -wait tcp://mariadb:3306 -timeout 1m
+          command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
       - run:
-          # TODO: Ensure emails are not being sent.
-          name: Install site
-          command: docker-compose exec test drush si -y govcms --site-name='Welcome to GovCMS' install_configure_form.enable_update_status_emails=NULL install_configure_form.enable_update_status_module=NULL || true
+          name: Install GovCMS site
+          command: |
+            cd web
+            ../bin/drush site-install -y govcms --db-url=mysql://root:govcms@127.0.0.1:3306/govcms --site-name='GovCMS' install_configure_form.enable_update_status_emails=NULL install_configure_form.enable_update_status_module=NULL || true
       - run:
           name: Get site and module version status
           command: |
-            docker-compose exec -T test php -v
-            docker-compose exec -T test drush st
-            docker-compose exec -T test drush pml
+            cd web
+            ../bin/drush status
+            ../bin/drush pm:list --no-core
+  test-cypress:
+    docker:
+      - image: govcmstesting/php:7.4-apache
+      - image: circleci/mariadb:10.3
+        environment:
+          MYSQL_DATABASE: govcms
+          MYSQL_ROOT_PASSWORD: govcms
+          MYSQL_ROOT_HOST: "%"
+    working_directory: /app
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore Yarn/Cypress Package Cache
+          keys:
+            - v1-govcms-deps-{{ .Branch }}-{{ checksum "tests/cy/package.json" }}
+            - v1-govcms-deps-{{ .Branch }}
+            - v1-govcms-deps
+      - attach_workspace:
+          at: /app
       - run:
-          name: Lint code
-          command: docker-compose exec -T test lint-theme || true
+          name: Setup webserver
+          command: |
+            cp /app/.circleci/httpd.conf.circle /etc/apache2/sites-available/default.conf
+            a2ensite default
+            echo "127.0.0.1 local.govcms.gov.au" | tee --append /etc/hosts
+            service apache2 restart
+      - run:
+          name: Wait for MariaDb to be ready
+          command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
+      - run:
+          name: Install GovCMS site
+          command: |
+            cd web
+            ../bin/drush site-install -y govcms --db-url=mysql://root:govcms@127.0.0.1:3306/govcms --site-name='GovCMS' --account-pass=password install_configure_form.enable_update_status_emails=NULL install_configure_form.enable_update_status_module=NULL || true
+      - run:
+          name: Install Cypress Dependencies
+          command: |
+            cd tests/cy
+            yarn
+      - save_cache:
+          name: Save Yarn/Cypress Package Cache
+          key: v1-govcms-deps-{{ .Branch }}-{{ checksum "tests/cy/package.json" }}
+          paths:
+            - ~/.cache
+      - run:
+          name: Run Cypress tests
+          command: |
+            cd tests/cy
+            yarn cypress:run || true
+      - store_artifacts:
+          path: tests/cy/cypress/videos
+      - store_artifacts:
+          path: tests/cy/cypress/screenshots
 workflows:
   version: 2
   main:
     jobs:
       - build:
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              only: /.*/
+      - test-basic:
+          requires:
+            - build
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              only: /.*/
+      - test-cypress:
+          requires:
+            - build
           filters:
             tags:
               only: /.*/
