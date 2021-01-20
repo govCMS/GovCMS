@@ -9,9 +9,9 @@ jobs:
       - restore_cache:
           name: Restore Composer Package Cache
           keys:
-            - v1-govcms-deps-{{ .Branch }}-{{ checksum "composer.json" }}
-            - v1-govcms-deps-{{ .Branch }}
-            - v1-govcms-deps
+            - v2-govcms-deps-{{ .Branch }}-{{ checksum "composer.json" }}
+            - v2-govcms-deps-{{ .Branch }}
+            - v2-govcms-deps
       - run:
           name: Get PHP and composer version status
           command: |
@@ -23,11 +23,10 @@ jobs:
             composer install --profile --prefer-dist --optimize-autoloader
       - save_cache:
           name: Save Composer Package Cache
-          key: v1-govcms-deps-{{ .Branch }}-{{ checksum "composer.lock" }}
+          key: v2-govcms-deps-{{ .Branch }}-{{ checksum "composer.lock" }}
           paths:
             - /tmp/cache
             - /app/vendor
-            - /app/composer.lock
       - persist_to_workspace:
           root: /app
           paths:
