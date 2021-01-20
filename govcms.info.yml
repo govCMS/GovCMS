@@ -15,6 +15,7 @@ install:
   - big_pipe
   - ckeditor
   - config
+  - config_ignore:config_ignore
   - content_moderation
   - contextual
   - datetime_range
@@ -41,10 +42,11 @@ install:
   - workflows
 
 dependencies:
-  - node
   - block
-  - views
   - govcms_security
+  - node
+  - pathauto
+  - views
 
 themes:
   - claro
