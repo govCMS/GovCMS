@@ -11,4 +11,4 @@ dependencies:
   - govcms_news_and_media
   - govcms_standard_page
 version: 8.x-1.0-alpha1
-package: 'GovCMS Content'
+package: GovCMS8 [deprecated]
