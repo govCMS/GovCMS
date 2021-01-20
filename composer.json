@@ -136,7 +136,7 @@
                 "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541":
                   "https://www.drupal.org/files/issues/2020-10-19/tfa-2930541-22_0.patch",
                 "Users' recovery codes exposed to admin users - https://www.drupal.org/project/tfa/issues/3075304":
-                  "https://www.drupal.org/files/issues/2020-11-16/tfa-3075304-11.patch"
+                  "https://www.drupal.org/files/issues/2021-01-14/tfa-3075304-15.patch"
             }
         }
     },
