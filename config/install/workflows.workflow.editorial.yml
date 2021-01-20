@@ -1,14 +1,8 @@
 langcode: en
 status: true
 dependencies:
-  config:
-    - node.type.govcms_blog_article
-    - node.type.govcms_event
-    - node.type.govcms_foi
-    - node.type.govcms_news_and_media
-    - node.type.govcms_standard_page
   module:
-  - content_moderation
+    - content_moderation
 id: editorial
 label: Editorial
 type: content_moderation
@@ -38,19 +32,19 @@ type_settings:
     archive:
       label: Archive
       from:
-      - published
+        - published
       to: archived
       weight: 0
     archived_draft:
       label: 'Restore to Draft'
       from:
-      - archived
+        - archived
       to: draft
       weight: 1
     archived_published:
       label: Restore
       from:
-      - archived
+        - archived
       to: published
       weight: 2
     create_new_draft:
@@ -58,12 +52,12 @@ type_settings:
       to: draft
       weight: -4
       from:
-      - draft
-      - published
+        - draft
+        - published
     needs_review:
       label: 'Needs Review'
       from:
-      - draft
+        - draft
       to: needs_review
       weight: -3
     publish:
@@ -71,18 +65,13 @@ type_settings:
       to: published
       weight: -1
       from:
-      - needs_review
-      - published
+        - needs_review
+        - published
     send_back_to_draft:
       label: 'Send back to Draft'
       from:
-      - needs_review
+        - needs_review
       to: draft
       weight: -2
-  entity_types:
-    node:
-      - govcms_blog_article
-      - govcms_event
-      - govcms_foi
-      - govcms_news_and_media
-      - govcms_standard_page
+  entity_types: {}
+  default_moderation_state: draft

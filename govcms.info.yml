@@ -16,6 +16,7 @@ install:
   - ckeditor
   - config
   - config_ignore:config_ignore
+  - content_moderation
   - contextual
   - datetime_range
   - dynamic_page_cache
@@ -38,6 +39,7 @@ install:
   - toolbar
   - views
   - views_ui
+  - workflows
 
 dependencies:
   - block
