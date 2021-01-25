@@ -4,9 +4,14 @@ description: Enhance security of GovCMS websites.
 package: GovCMS
 core_version_requirement: ^8 || ^9
 dependencies:
-  - drupal:honeypot
-  - drupal:login_security
-  - drupal:password_policy
-  - drupal:seckit
-  - drupal:update_notifications_disable
-  - drupal:username_enumeration_prevention
+  - honeypot:honeypot
+  - login_security:login_security
+  - password_policy:password_policy
+  - password_policy:password_policy_characters
+  - password_policy:password_policy_character_types
+  - password_policy:password_policy_history
+  - password_policy:password_policy_length
+  - password_policy:password_policy_username
+  - seckit:seckit
+  - update_notifications_disable:update_notifications_disable
+  - username_enumeration_prevention:username_enumeration_prevention
