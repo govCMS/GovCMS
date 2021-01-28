@@ -1,5 +1,5 @@
 {
-    "name": "govcms-poc/govcms",
+    "name": "govcms/govcms",
     "description": "GovCMS Drupal Distribution",
     "keywords": ["GovCMS"],
     "type": "drupal-profile",
