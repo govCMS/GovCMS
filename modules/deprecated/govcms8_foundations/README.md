@@ -1,3 +1,3 @@
-# GovCMS Foundations
+# GovCMS8 Foundations
 
-The GovCMS Foundations module is used to store shared configuration and define dependencies.
+The GovCMS8 Foundations module is used to store shared configuration and define dependencies.

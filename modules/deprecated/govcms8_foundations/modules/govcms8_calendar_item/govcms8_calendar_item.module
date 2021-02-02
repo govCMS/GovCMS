@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Module stores customisations for the GovCMS calendar item work.
+ * Module stores customisations for the GovCMS8 calendar item work.
  */
 
 use Drupal\Core\Datetime\DrupalDateTime;
