@@ -140,7 +140,7 @@
                   "https://www.drupal.org/files/issues/2020-10-19/tfa-2930541-22_0.patch",
                 "Users' recovery codes exposed to admin users - https://www.drupal.org/project/tfa/issues/3075304":
                   "https://www.drupal.org/files/issues/2021-01-14/tfa-3075304-15.patch"
-            }
+            },
             "drupal/twig_tweak": {
               "sanitize input":
               "https://security.drupal.org/system/files/issues/twig_tweak-token-xss.patch"
