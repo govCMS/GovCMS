@@ -30,6 +30,7 @@
         "drupal/adminimal_admin_toolbar": "1.11.0",
         "drupal/adminimal_theme": "1.4",
         "drupal/bigmenu": "2.0.0-rc1",
+        "drupal/captcha": "1.1",
         "drupal/chosen": "2.9.0",
         "drupal/components": "2.0-beta3",
         "drupal/config_filter": "1.5",
