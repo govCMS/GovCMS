@@ -4,7 +4,7 @@ services:
     image: tugboatqa/mysql:5
 
   app:
-    image: tugboatqa/php:7.3-apache
+    image: tugboatqa/php:7.4-apache
     # Set this as the default service. This does a few things
     #   1. Clones the git repository into the service container
     #   2. Exposes port 80 to the Tugboat HTTP proxy
@@ -31,6 +31,9 @@ services:
 
         # Clean up. This keeps image storage tighter on Tugboat.
         - apt-get autoclean && apt-get clean
+        
+        # User composer 1.x
+        - composer self-update --1
 
       # Commands when refreshing an existing preview.
       update:
