@@ -104,3 +104,17 @@ function govcms_install_tasks(&$install_state) {
 
   return $tasks;
 }
+
+/**
+ * Set default sendmail mode to T.
+ */
+function govcms_update_8101() {
+  if (\Drupal::moduleHandler()->moduleExists('swiftmailer')) {
+    $config = Drupal::configFactory()->getEditable('swiftmailer.transport');
+    // The 'T' mode runs in piped mode with no feedback, but theoretically faster.
+    // The 'bs' mode is not working in some environments.
+    // @see https://swiftmailer.symfony.com/docs/sending.html#the-sendmail-transport
+    $config->set('sendmail_mode', 't');
+    $config->save();
+  }
+}
