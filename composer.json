@@ -69,7 +69,7 @@
         "drupal/inline_entity_form": "1.0-rc1",
         "drupal/key": "1.14",
         "drupal/linked_field": "1.1.0",
-        "drupal/linkit": "6.0-beta1",
+        "drupal/linkit": "6.0-beta2",
         "drupal/login_security": "1.5",
         "drupal/media_entity_file_replace": "1.0-beta2",
         "drupal/memcache": "2.0",
