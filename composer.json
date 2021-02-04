@@ -47,7 +47,7 @@
         "drupal/devel": "4.0.1",
         "drupal/dropzonejs": "2.1",
         "drupal/ds": "3.9",
-        "drupal/encrypt": "3.0-rc2",
+        "drupal/encrypt": "3.0",
         "drupal/dynamic_entity_reference": "1.10.0",
         "drupal/entity_browser": "2.5",
         "drupal/entity_class_formatter": "1.3",
