@@ -43,14 +43,9 @@ install:
 
 dependencies:
   - block
-  - encrypt
-  - ga_login
   - govcms_security
-  - key
   - node
   - pathauto
-  - real_aes
-  - tfa
   - views
 
 themes:
