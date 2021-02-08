@@ -21,7 +21,7 @@
         }
     ],
     "require": {
-        "php": "^7.1",
+        "php": "^7.3",
         "bower-asset/chosen": "1.8.7",
         "bower-asset/dropzone": "5.5.0",
         "cweagans/composer-patches": "^1.6",
