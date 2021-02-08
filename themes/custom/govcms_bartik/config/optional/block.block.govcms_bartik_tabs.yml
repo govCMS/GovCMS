@@ -10,7 +10,7 @@ weight: 0
 provider: null
 plugin: local_tasks_block
 settings:
-  id: local_tasks_block
+  id: govcms_local_tasks
   label: Tabs
   provider: core
   label_display: '0'
