@@ -142,8 +142,7 @@
                   "https://www.drupal.org/files/issues/2021-01-14/tfa-3075304-15.patch"
             },
             "drupal/twig_tweak": {
-              "sanitize input":
-              "https://www.drupal.org/files/issues/2021-02-03/twig_tweak-token-xss.patch"
+                "sanitize input": "https://www.drupal.org/files/issues/2021-02-03/twig_tweak-token-xss.patch"
             }
         }
     },
