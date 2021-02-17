@@ -72,7 +72,7 @@
         "drupal/linked_field": "1.3.0",
         "drupal/linkit": "5.0-beta9",
         "drupal/login_security": "2.0",
-        "drupal/media_entity_file_replace": "1.0-beta2",
+        "drupal/media_entity_file_replace": "1.0-beta3",
         "drupal/memcache": "2.0",
         "drupal/menu_block": "1.6",
         "drupal/menu_trail_by_path": "1.1",
