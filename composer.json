@@ -100,7 +100,7 @@
         "drupal/shield": "1.4",
         "drupal/simple_oauth": "4.5",
         "drupal/simple_sitemap": "3.7",
-        "drupal/swiftmailer": "2.0-beta1",
+        "drupal/swiftmailer": "2.0",
         "drupal/tfa":"1.0-alpha7",
         "drupal/token": "1.7",
         "drupal/update_notifications_disable": "1.0",
