@@ -16,7 +16,7 @@
     }
   },
   "dependencies": {
-    "cypress": "^4.12.1",
+    "cypress": "^6.5.0",
     "cypress-xpath": "^1.6.0"
   },
   "devDependencies": {
