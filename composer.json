@@ -21,7 +21,7 @@
         }
     ],
     "require": {
-        "php": "^7.1",
+        "php": "^7.3",
         "bower-asset/chosen": "1.8.7",
         "bower-asset/dropzone": "5.5.0",
         "cweagans/composer-patches": "^1.6",
@@ -30,8 +30,9 @@
         "drupal/adminimal_admin_toolbar": "1.11.0",
         "drupal/adminimal_theme": "1.4",
         "drupal/bigmenu": "2.0.0-rc1",
+        "drupal/captcha": "1.1",
         "drupal/chosen": "2.9.0",
-        "drupal/components": "2.0-beta3",
+        "drupal/components": "2.2",
         "drupal/config_filter": "1.5",
         "drupal/config_ignore": "2.1",
         "drupal/config_perms": "1.2.0",
@@ -40,14 +41,14 @@
         "drupal/consumers": "1.11",
         "drupal/contact_storage": "1.0.0",
         "drupal/context": "4.0-beta5",
-        "drupal/core-recommended": "8.9.11",
+        "drupal/core-recommended": "8.9.13",
         "drupal/crop":"2.1",
         "drupal/ctools": "3.4.0",
         "drupal/diff": "1.0",
         "drupal/devel": "4.0.1",
         "drupal/dropzonejs": "2.1",
         "drupal/ds": "3.9",
-        "drupal/encrypt": "3.0-rc2",
+        "drupal/encrypt": "3.0",
         "drupal/dynamic_entity_reference": "1.10.0",
         "drupal/entity_browser": "2.5",
         "drupal/entity_class_formatter": "1.3",
@@ -60,19 +61,19 @@
         "drupal/features": "3.8",
         "drupal/field_group": "3.1",
         "drupal/focal_point": "1.4",
-        "drupal/ga_login": "1.0-alpha4",
+        "drupal/ga_login": "1.0-alpha6",
         "drupal/google_analytics": "3.0",
         "drupal/govcms_dlm": "1.4",
         "drupal/govcms8_ui": "1.0.0-alpha1",
         "drupal/govcms8_uikit_starter": "1.0-alpha2",
         "drupal/graphql": "3.0.0-rc2",
         "drupal/honeypot": "2.0.1",
-        "drupal/inline_entity_form": "1.0-rc7",
+        "drupal/inline_entity_form": "1.0-rc8",
         "drupal/key": "1.14",
         "drupal/linked_field": "1.3.0",
-        "drupal/linkit": "5.0-beta9",
+        "drupal/linkit": "6.0-beta2",
         "drupal/login_security": "2.0",
-        "drupal/media_entity_file_replace": "1.0-beta2",
+        "drupal/media_entity_file_replace": "1.0-beta3",
         "drupal/memcache": "2.0",
         "drupal/menu_block": "1.6",
         "drupal/menu_trail_by_path": "1.1",
@@ -80,7 +81,7 @@
         "drupal/minisite": "1.3",
         "drupal/modifiers": "1.4",
         "drupal/module_filter": "3.1",
-        "drupal/page_manager": "4.0-beta4",
+        "drupal/page_manager": "4.0-beta6",
         "drupal/panelizer": "4.1",
         "drupal/panels": "4.4.0",
         "drupal/paragraphs": "1.12",
@@ -100,11 +101,11 @@
         "drupal/shield": "1.4",
         "drupal/simple_oauth": "4.5",
         "drupal/simple_sitemap": "3.7",
-        "drupal/swiftmailer": "2.0-beta1",
-        "drupal/tfa":"1.0-alpha4",
+        "drupal/swiftmailer": "2.0",
+        "drupal/tfa":"1.0-alpha7",
         "drupal/token": "1.7",
         "drupal/update_notifications_disable": "1.0",
-        "drupal/username_enumeration_prevention": "1.0-beta2",
+        "drupal/username_enumeration_prevention": "1.1",
         "drupal/video_embed_field": "2.0",
         "drupal/webform": "5.13",
         "oomphinc/composer-installers-extender": "^1.1",
@@ -164,9 +165,6 @@
                 "Skip password logging during failed authentication attempt - https://www.drupal.org/project/events_log_track/issues/3027463": "https://www.drupal.org/files/issues/2019-01-22/event-log-track-auth-3027463-2.patch",
                 "Fix fatal error when we request password with non-existing users/emails on the Events Log Track User Authentication - https://www.drupal.org/project/events_log_track/issues/3060838#comment-13141212": "https://www.drupal.org/files/issues/2019-06-11/3060838-4.patch"
             },
-            "drupal/ga_login": {
-                "TOTP taking very-old verification codes - https://www.drupal.org/project/ga_login/issues/3022921": "https://www.drupal.org/files/issues/2018-12-28/3022921-2-time-skew-confusing.patch"
-            },
             "drupal/google_analytics": {
                "Fatal error when there is a view with the path search/node":  "https://www.drupal.org/files/issues/2018-06-18/patch_google_analytics.patch"
             },
@@ -194,10 +192,10 @@
                 "https://www.drupal.org/files/issues/2020-09-03/swiftmailer-3167898-03.patch"
             },
             "drupal/tfa": {
-                "The tfa.settings route should use the permission 'admin tfa settings' - https://www.drupal.org/project/tfa/issues/2943972": "https://www.drupal.org/files/issues/2943972-2.patch",
-                "Bad UX around 'required to setup TFA' concept and users who have skipped validation too many times - https://www.drupal.org/project/tfa/issues/2937336": "https://www.drupal.org/files/issues/2019-03-01/2937336-17.patch",
-                "Users' recovery codes exposed to admin users - https://www.drupal.org/project/tfa/issues/3075304": "https://www.drupal.org/files/issues/2019-08-16/tfa-3075304_2.patch",
-                "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2020-08-12/tfa-2930541-16.patch"
+                 "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541":
+                  "https://www.drupal.org/files/issues/2020-10-19/tfa-2930541-22_0.patch",
+                "Users' recovery codes exposed to admin users - https://www.drupal.org/project/tfa/issues/3075304":
+                  "https://www.drupal.org/files/issues/2021-01-14/tfa-3075304-15.patch"
             },
             "drupal/webform": {
                 "Undefined index: messages - https://www.drupal.org/project/webform/issues/3137625" :"https://www.drupal.org/files/issues/2020-05-18/3137625-3.patch",
