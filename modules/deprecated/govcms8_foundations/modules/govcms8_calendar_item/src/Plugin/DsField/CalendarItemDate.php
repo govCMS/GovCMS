@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\govcms_calendar_item\Plugin\DsField;
+namespace Drupal\govcms8_calendar_item\Plugin\DsField;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\ds\Plugin\DsField\DsFieldBase;
@@ -79,7 +79,7 @@ class CalendarItemDate extends DsFieldBase {
         '#datetime' => $datetime,
         '#attached' => [
           'library' => [
-            'govcms_calendar_item/calendar_item',
+            'govcms8_calendar_item/calendar_item',
           ],
         ],
       ];

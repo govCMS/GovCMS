@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\govcms_modifiers\Plugin\modifiers;
+namespace Drupal\govcms8_modifiers\Plugin\modifiers;
 
 use Drupal\modifiers\Modification;
 use Drupal\modifiers\ModifierPluginBase;
@@ -37,7 +37,7 @@ class RelativeHeightModifier extends ModifierPluginBase {
         }
       }
       $libraries = [
-        'govcms_modifiers/modifiers_relative_height_apply',
+        'govcms8_modifiers/modifiers_relative_height_apply',
       ];
       $settings = [
         'namespace' => 'RelativeHeightModifier',
