@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\govcms_calendar_item\Plugin\Field\FieldFormatter;
+namespace Drupal\govcms8_calendar_item\Plugin\Field\FieldFormatter;
 
 use Drupal\Core\Field\FieldItemInterface;
 use Drupal\Core\Field\FieldItemListInterface;
@@ -55,7 +55,7 @@ class CalendarItemDateFormatter extends FormatterBase {
       '#datetime' => $value,
       '#attached' => [
         'library' => [
-          'govcms_calendar_item/calendar_item',
+          'govcms8_calendar_item/calendar_item',
         ],
       ],
     ];
