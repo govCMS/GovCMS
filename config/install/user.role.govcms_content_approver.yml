@@ -13,3 +13,4 @@ permissions:
   - 'view all media revisions'
   - 'view all revisions'
   - 'view the administration theme'
+  - 'setup own tfa'

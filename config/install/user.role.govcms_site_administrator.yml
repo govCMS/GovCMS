@@ -127,7 +127,6 @@ permissions:
   - 'edit terms in govcms_media_tags'
   - 'edit terms in govcms_news_categories'
   - 'link to any page'
-  - 'manage password reset'
   - 'revert all revisions'
   - 'revert govcms_blog_article revisions'
   - 'revert govcms_event revisions'
@@ -149,3 +148,4 @@ permissions:
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view the administration theme'
+  - 'setup own tfa'
