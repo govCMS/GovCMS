@@ -89,6 +89,7 @@
         "drupal/real_aes": "2.3",
         "drupal/recaptcha": "3.0",
         "drupal/redirect": "1.6",
+        "drupal/rest_menu_items": "3.0.2",
         "drupal/robotstxt": "1.4",
         "drupal/scheduled_transitions": "2.0.0",
         "drupal/search_api": "1.18.0",
