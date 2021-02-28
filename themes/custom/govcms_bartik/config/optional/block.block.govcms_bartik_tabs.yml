@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  theme:
+    - govcms_bartik
+id: govcms_bartik_tabs
+theme: govcms_bartik
+region: content
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: govcms_local_tasks
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }
