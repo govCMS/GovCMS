@@ -44,6 +44,9 @@ services:
         # Create the Drupal private and public files directories.
         - mkdir -p "${TUGBOAT_ROOT}/files-private" "${DOCROOT}/sites/default/files"
 
+        # Copy test configurations to install folder.
+        - cp -af "${TUGBOAT_ROOT}/config/test/." "${TUGBOAT_ROOT}/config/install/"
+
         # Link the config and private files paths.
         - ln -snf "${TUGBOAT_ROOT}/config" "${DOCROOT}/../config"
         - ln -snf "${TUGBOAT_ROOT}/files-private" "${DOCROOT}/../files-private"
@@ -55,9 +58,6 @@ services:
 
         # Use the tugboat-specific Drupal settings.
         - cp "${TUGBOAT_ROOT}/.tugboat/settings.php" "${DOCROOT}/sites/default/"
-
-        # Copy test configurations to install folder.
-        - cp -af "${TUGBOAT_ROOT}/config/test/." "${TUGBOAT_ROOT}/config/install/"
 
         # Set file permissions such that Drupal will not complain
         - chgrp -R www-data "${DOCROOT}/sites/default/files"
