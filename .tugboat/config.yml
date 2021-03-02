@@ -56,6 +56,9 @@ services:
         # Use the tugboat-specific Drupal settings.
         - cp "${TUGBOAT_ROOT}/.tugboat/settings.php" "${DOCROOT}/sites/default/"
 
+        # Copy test configurations to install folder.
+        - cp -f "${TUGBOAT_ROOT}/config/test/*.*" "${TUGBOAT_ROOT}/config/install/"
+
         # Set file permissions such that Drupal will not complain
         - chgrp -R www-data "${DOCROOT}/sites/default/files"
         - find "${DOCROOT}/sites/default/files" -type d -exec chmod 2775 {} \;
@@ -71,6 +74,7 @@ services:
       build:
         - COMPOSER_MEMORY_LIMIT=-1 composer update
         - drush cache:rebuild
-        - drush config-import --partial --source="${TUGBOAT_ROOT}/config/test" -y
+        # Partial importing is still having some issues with Druah 10 and Drupal 9.
+        #- drush config-import --partial --source="${TUGBOAT_ROOT}/config/test" -y
         - drush updatedb -y
         - drush cache:rebuild
