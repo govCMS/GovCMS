@@ -57,7 +57,7 @@ services:
         - cp "${TUGBOAT_ROOT}/.tugboat/settings.php" "${DOCROOT}/sites/default/"
 
         # Copy test configurations to install folder.
-        - cp -f "${TUGBOAT_ROOT}/config/test/*.*" "${TUGBOAT_ROOT}/config/install/"
+        - cp -af "${TUGBOAT_ROOT}/config/test/." "${TUGBOAT_ROOT}/config/install/"
 
         # Set file permissions such that Drupal will not complain
         - chgrp -R www-data "${DOCROOT}/sites/default/files"
