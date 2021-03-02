@@ -12,12 +12,12 @@ validation_plugin_settings:
     counter_window: 10
     site_name_prefix: 1
     name_prefix: TFA
-    issuer: Drupal
+    issuer: GovCMS
   ga_login_totp:
     time_skew: 2
     site_name_prefix: 1
     name_prefix: TFA
-    issuer: Drupal
+    issuer: GovCMS
   tfa_email_code:
     code_validity_period: 60
     email_setting:

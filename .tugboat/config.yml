@@ -72,5 +72,6 @@ services:
         - COMPOSER_MEMORY_LIMIT=-1 composer update
         - drush cache:rebuild
         - drush config:import --partial -y
+        - drush config-import --source="${TUGBOAT_ROOT}/config/test" -y
         - drush updatedb -y
         - drush cache:rebuild
