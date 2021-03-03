@@ -1,0 +1,28 @@
+custom_colors_modifier:
+  class: Drupal\govcms8_modifiers\Plugin\modifiers\CustomColorsModifier
+  label: 'Colors Modifier'
+  description: 'Provides a Modifier to set the colors on an element'
+color_background_modifier:
+  class: Drupal\govcms8_modifiers\Plugin\modifiers\ColorBackgroundModifier
+  label: 'Colour Background Modifier'
+  description: 'Provides a Modifier to set the background color on an element'
+linear_gradient_modifier:
+  class: Drupal\govcms8_modifiers\Plugin\modifiers\LinearGradientModifier
+  label: 'Linear Gradient Modifier'
+  description: 'Provides a Modifier to set the linear gradient on an element using colors from library'
+image_bg_modifier:
+  class: Drupal\govcms8_modifiers\Plugin\modifiers\ImageBgModifier
+  label: 'Image Background Modifier'
+  description: 'Provides a Modifier to set the image background on an element'
+parallax_bg_modifier:
+  class: Drupal\govcms8_modifiers\Plugin\modifiers\ParallaxBgModifier
+  label: 'Parallax Background Modifier'
+  description: 'Provides a Modifier to set the parallax background on an element'
+relative_height_modifier:
+  class: Drupal\govcms8_modifiers\Plugin\modifiers\RelativeHeightModifier
+  label: 'Relative Height Modifier'
+  description: 'Provides a Modifier to set the relative height on an element'
+padding_modifier:
+  class: Drupal\govcms8_modifiers\Plugin\modifiers\PaddingModifier
+  label: 'Padding Modifier'
+  description: 'Provides a Modifier to set the padding on an element'

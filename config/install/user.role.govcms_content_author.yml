@@ -95,3 +95,4 @@ permissions:
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view the administration theme'
+  - 'setup own tfa'

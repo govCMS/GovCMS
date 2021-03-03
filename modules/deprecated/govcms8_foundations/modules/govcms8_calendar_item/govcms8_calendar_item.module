@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Module stores customisations for the GovCMS8 calendar item work.
+ */
+
+use Drupal\Core\Datetime\DrupalDateTime;
+
+/**
+ * Implements hook_theme().
+ */
+function govcms8_calendar_item_theme($existing, $type, $theme, $path) {
+  return [
+    'calendar_item_date' => [
+      'variables' => [
+        'datetime' => [],
+      ],
+      'template' => 'calendar_item_date',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function govcms8_calendar_item_preprocess_calendar_item_date(&$variables) {
+  $item = $variables['datetime'];
+  if (!empty($item) && $item instanceof DrupalDateTime) {
+    $variables['datetime'] = $item->format('Y-m-d');
+    $variables['day_textual'] = $item->format('D');
+    $variables['day_number'] = $item->format('d');
+    $variables['month'] = $item->format('M');
+  }
+}
