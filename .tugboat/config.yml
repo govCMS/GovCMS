@@ -44,6 +44,9 @@ services:
         # Create the Drupal private and public files directories.
         - mkdir -p "${TUGBOAT_ROOT}/files-private" "${DOCROOT}/sites/default/files"
 
+        # Copy test configurations to install folder.
+        - cp -af "${TUGBOAT_ROOT}/config/test/." "${TUGBOAT_ROOT}/config/install/"
+
         # Link the config and private files paths.
         - ln -snf "${TUGBOAT_ROOT}/config" "${DOCROOT}/../config"
         - ln -snf "${TUGBOAT_ROOT}/files-private" "${DOCROOT}/../files-private"
@@ -71,6 +74,7 @@ services:
       build:
         - COMPOSER_MEMORY_LIMIT=-1 composer update
         - drush cache:rebuild
-        - drush config:import --partial -y
+        # Partial importing is still having some issues with Druah 10 and Drupal 9.
+        #- drush config-import --partial --source="${TUGBOAT_ROOT}/config/test" -y
         - drush updatedb -y
         - drush cache:rebuild
