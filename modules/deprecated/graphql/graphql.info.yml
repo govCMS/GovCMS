@@ -1,7 +1,0 @@
-name: GraphQL
-description: 'Base module for integrating GraphQL with Drupal.'
-type: module
-core: 8.x
-core_version_requirement: ^8 || ^9
-version: 8.x-1.0-alpha1
-package: GovCMS8 [deprecated]
