@@ -1,4 +1,4 @@
-FROM amazeeio/php:7.3-cli-drupal as builder
+FROM amazeeio/php:7.4-cli-drupal as builder
 
 COPY . /src
 COPY composer-lagoon.json /app/composer.json
@@ -7,7 +7,7 @@ COPY scripts /app/scripts
 RUN COMPOSER_MEMORY_LIMIT=-1 composer --profile install --no-dev \
     && mkdir -p /app/config/default
 
-FROM amazeeio/php:7.3-cli-drupal
+FROM amazeeio/php:7.4-cli-drupal
 COPY --from=builder /app /app
 
 # Add composer bin to PATH
