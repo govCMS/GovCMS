@@ -1,0 +1,44 @@
+enabled: 1
+required_roles:
+  authenticated: authenticated
+  govcms_content_author: '0'
+  govcms_content_approver: '0'
+  govcms_site_administrator: '0'
+send_plugins: {  }
+login_plugins: {  }
+default_validation_plugin: tfa_email_code
+validation_plugin_settings:
+  ga_login_hotp:
+    counter_window: 10
+    site_name_prefix: 1
+    name_prefix: TFA
+    issuer: GovCMS
+  ga_login_totp:
+    time_skew: 2
+    site_name_prefix: 1
+    name_prefix: TFA
+    issuer: GovCMS
+  tfa_email_code:
+    code_validity_period: 60
+    email_setting:
+      subject: '[site:name] Authentication code'
+      body: "[user:display-name],\r\n\r\nThis code is valid for [length] minutes. Your code is: [code]\r\n\r\nThis code will be expired after login."
+  tfa_recovery_code:
+    recovery_codes_amount: 10
+allowed_validation_plugins:
+  tfa_email_code: tfa_email_code
+help_text: 'Contact support to reset your access'
+validation_skip: 3
+encryption: tfa_encryption
+trust_cookie_expiration: 2592000
+cookie_name: TFA
+tfa_flood_uid_only: 1
+tfa_flood_window: 300
+tfa_flood_threshold: 6
+mail:
+  tfa_enabled_configuration:
+    subject: 'Your [site:name] account now has two-factor authentication'
+    body: "[user:display-name],\r\n\r\nThanks for configuring two-factor authentication on your [site:name] account!\r\n\r\nThis additional level of security will help to ensure that only you are able to log in to your account.\r\n\r\nIf you ever lose the device you configured, you should act quickly to delete its association with this account.\r\n\r\n--\r\n[site:name] team"
+  tfa_disabled_configuration:
+    subject: 'Your [site:name] account no longer has two-factor authentication'
+    body: "[user:display-name],\r\n\r\nTwo-factor authentication has been disabled on your [site:name] account.\r\n\r\nIf you did not take this action, please contact a site administrator immediately.\r\n\r\n--\r\n[site:name] team"

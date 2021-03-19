@@ -4,7 +4,10 @@ description: Enhance security of GovCMS websites.
 package: GovCMS
 core_version_requirement: ^8 || ^9
 dependencies:
+  - encrypt
+  - ga_login
   - honeypot:honeypot
+  - key
   - login_security:login_security
   - password_policy:password_policy
   - password_policy:password_policy_characters
@@ -12,6 +15,8 @@ dependencies:
   - password_policy:password_policy_history
   - password_policy:password_policy_length
   - password_policy:password_policy_username
+  - real_aes
   - seckit:seckit
+  - tfa
   - update_notifications_disable:update_notifications_disable
   - username_enumeration_prevention:username_enumeration_prevention
