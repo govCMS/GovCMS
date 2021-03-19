@@ -5,6 +5,10 @@ x-volumes:
     volumes:
       - files:/app/web/sites/default/files
       - ./:/app/web/profiles/contrib/govcms:delegated
+      # Do not include web & vendor (if composer installed) in the govmcms profiles folder,
+      # create a empty persistent docker volume instead.
+      - /app/web/profiles/contrib/govcms/web
+      - /app/web/profiles/contrib/govcms/vendor
 
 x-environment:
   &default-environment
