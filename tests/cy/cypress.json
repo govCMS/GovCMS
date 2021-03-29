@@ -4,6 +4,7 @@
     "www.google-analytics.com"
   ],
   "chromeWebSecurity": false,
+  "localEnv": "",
   "env": {
     "user": {
       "administrator": {
