@@ -8,8 +8,6 @@ version: '2.x-dev'
 distribution:
   name: GovCMS
   langcode: en
-  install:
-    theme: govcms_install
 
 install:
   - big_pipe
