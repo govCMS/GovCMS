@@ -27,9 +27,9 @@ Cypress.Commands.add("drupalDrushCommand", (command) => {
     var cmd = Cypress.env('drupalDrushCmdLine');
 
     if (cmd == null) {
-        if(Cypress.env('localEnv') === "lando"){
+        if (Cypress.env('localEnv') === "lando") {
             cmd = 'lando drush %command'
-        }else{
+        } else {
             cmd = 'drush %command'
         }
     }
@@ -49,10 +49,10 @@ Cypress.Commands.add("composerCommand", (command) => {
     var cmd = Cypress.env('composerCmdLine');
 
     if (cmd == null) {
-        if(Cypress.env('localEnv') === "lando"){
+        if (Cypress.env('localEnv') === "lando") {
             cmd = 'lando composer %command'
-        }else{
-            cmd = 'composer %command'
+        } else {
+            cmd = 'cd ../..; composer %command'
         }
     }
 
