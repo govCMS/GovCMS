@@ -97,6 +97,7 @@ jobs:
       - run:
           name: Install GovCMS site
           command: |
+            composer install --profile --prefer-dist --optimize-autoloader
             cd web
             ../bin/drush site-install -y govcms --db-url=mysql://root:govcms@127.0.0.1:3306/govcms --site-name='GovCMS' --account-pass=password install_configure_form.enable_update_status_emails=NULL install_configure_form.enable_update_status_module=NULL || true
       - run:
