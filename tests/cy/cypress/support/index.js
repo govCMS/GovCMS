@@ -16,6 +16,7 @@ import 'cypress-xpath'
 import './cypress'
 import './misc'
 import './authenticate'
+import './commands'
 
 let isSoftAssertion = false;
 let errors = [];
