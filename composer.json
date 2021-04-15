@@ -165,7 +165,8 @@
         "patches": {
             "drupal/tfa": {
                 "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2020-10-19/tfa-2930541-22_0.patch",
-                "Users' recovery codes exposed to admin users - https://www.drupal.org/project/tfa/issues/3075304": "https://www.drupal.org/files/issues/2021-01-14/tfa-3075304-15.patch"
+                "Users' recovery codes exposed to admin users - https://www.drupal.org/project/tfa/issues/3075304": "https://www.drupal.org/files/issues/2021-01-14/tfa-3075304-15.patch",
+                "Fatal error after exceeding login attempts with Drupal 9 - https://www.drupal.org/project/tfa/issues/3205297": "https://www.drupal.org/files/issues/2021-03-24/tfa-3205297-2.patch"
             },
             "drupal/username_enumeration_prevention": {
                 "Deprecated function User::getUsername": "https://www.drupal.org/files/issues/2020-09-01/fix-deprecated-getusername-3167106-2.patch"
