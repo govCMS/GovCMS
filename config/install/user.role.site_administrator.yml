@@ -210,7 +210,6 @@ permissions:
   - 'edit terms in media_tags'
   - 'edit terms in news_categories'
   - 'link to any page'
-  - 'manage password reset'
   - 'never autoplay videos'
   - 'notify of path changes'
   - 'opt-in or out of google analytics tracking'
