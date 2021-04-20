@@ -2,23 +2,18 @@
 
 Cypress end-to-end tests for GovCMS distribution
 
-## Docker setup with Ahoy
+## Using the CircleCI Local CLI
 
 ### Requirements
 * [Docker](https://docs.docker.com/install/)
+* [CircleCI CLI](https://circleci.com/docs/2.0/local-cli/)
 * [Homebrew](https://brew.sh/) (Optional but recommended, for MacOS)
-* [Ahoy](https://github.com/ahoy-cli/ahoy) (Optional)
 
 ### Run examples
 
-#### Run all tests
+#### Run Cypress tests
 ```
-ahoy run
-```
-
-#### Open Cypress UI
-```
-ahoy open
+circleci local execute --job test-cypress
 ```
 
 ## Alternative, Docker setup

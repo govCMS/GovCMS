@@ -195,11 +195,11 @@
         ],
         "post-install-cmd": [
             "GovCMS\\composer\\ScriptHandler::createRequiredFiles",
-            "rsync -av --delete --exclude 'web' --exclude '.git' --exclude '.tugboat' --exclude 'vendor' ./ web/profiles/govcms"
+            "rsync -av --delete --exclude 'web' --exclude '.git' --exclude '.tugboat' --exclude 'vendor' --exclude 'tests' ./ web/profiles/govcms"
         ],
         "post-update-cmd": [
             "GovCMS\\composer\\ScriptHandler::createRequiredFiles",
-            "rsync -av --delete --exclude 'web' --exclude '.git' --exclude '.tugboat' --exclude 'vendor' ./ web/profiles/govcms"
+            "rsync -av --delete --exclude 'web' --exclude '.git' --exclude '.tugboat' --exclude 'vendor' --exclude 'tests' ./ web/profiles/govcms"
         ],
         "nuke": "rm -r -f composer.lock bin app web vendor"
     },
