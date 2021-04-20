@@ -16,16 +16,17 @@
     }
   },
   "dependencies": {
-    "cypress": "^4.12.1",
-    "cypress-xpath": "^1.6.0"
+    "cypress": "^7.1.0",
+    "cypress-file-upload": "^5.0.6",
+    "cypress-xpath": "^1.6.2"
   },
   "devDependencies": {
     "@cypress/eslint-plugin-json": "^3.2.3",
-    "eslint": "^7.6.0",
+    "eslint": "^7.24.0",
     "eslint-plugin-chai-friendly": "^0.6.0",
     "eslint-plugin-cypress": "^2.11.1",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.11"
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4"
   },
   "license": "GPL-2.0",
   "lint-staged": {
