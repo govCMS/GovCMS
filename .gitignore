@@ -50,3 +50,6 @@ nbproject/*
 .DS_Store
 .AppleDouble
 .LSOverride
+
+# .lock files
+*.lock

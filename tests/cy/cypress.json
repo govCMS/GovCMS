@@ -1,6 +1,6 @@
 {
   "baseUrl": "http://local.govcms.gov.au",
-  "blacklistHosts": [
+  "blockHosts": [
     "www.google-analytics.com"
   ],
   "chromeWebSecurity": false,

@@ -1,4 +1,5 @@
-import 'cypress-file-upload'
+import 'cypress-file-upload';
+
 // ***********************************************
 // The Cypress recommendation is for selectors to use a variant of the following: <div data-cy="box"></div> to be used in tetst as cy.get('[data-cy=box]')
 // For the most part you will be fetching data-* constantly so aliasing these elements is useful this done by: cy.get('[data-cy=box]').as('box') and then you can use cy.get('@box')
@@ -15,7 +16,7 @@ Cypress.Commands.add("aliasAll", () =>
 )
 
 Cypress.Commands.add("createUser", (siteRole) => {
-  cy.fixture(`users/${siteRole}`).then((user) => {
+  cy.fixture(`users/${siteRole}.json`).then((user) => {
     const username = user.firstname + user.lastname
     const password = user.password
     const email = user.email
@@ -60,3 +61,4 @@ Cypress.Commands.add("type_ckeditor", (element, content) => {
       win.CKEDITOR.instances[element].setData(content);
     });
 });
+

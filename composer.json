@@ -34,7 +34,7 @@
         "drupal/bigmenu": "2.0.0-rc1",
         "drupal/block_place": "1.0",
         "drupal/chosen": "3.0.1",
-        "drupal/components": "2.0-beta3",
+        "drupal/components": "2.2.0",
         "drupal/config_filter": "2.2.0",
         "drupal/config_ignore": "2.3.0",
         "drupal/config_perms": "2.0",
@@ -44,7 +44,7 @@
         "drupal/contact_storage": "1.1.0",
         "drupal/context": "4.0.0-beta5",
         "drupal/core-composer-scaffold": "^9",
-        "drupal/core-recommended": "9.1.4",
+        "drupal/core-recommended": "9.1.6",
         "drupal/crop": "2.1",
         "drupal/ctools": "3.4.0",
         "drupal/devel": "4.0.1",
@@ -63,14 +63,14 @@
         "drupal/features": "3.11",
         "drupal/field_group": "3.1",
         "drupal/focal_point": "1.5.0",
-        "drupal/ga_login": "1.0.0-alpha5",
+        "drupal/ga_login": "1.0.0-alpha6",
         "drupal/google_analytics": "3.1",
         "drupal/govcms_dlm": "1.4.0",
         "drupal/honeypot": "2.0.1",
         "drupal/inline_entity_form": "1.0.0-rc8",
         "drupal/key": "1.14",
         "drupal/linked_field": "1.3.0",
-        "drupal/linkit": "6.0.0-beta1",
+        "drupal/linkit": "6.0.0-beta2",
         "drupal/login_security": "2.0.0",
         "drupal/media_entity_file_replace": "1.0-beta3",
         "drupal/menu_block": "1.6",
@@ -82,6 +82,7 @@
         "drupal/migrate_tools": "4.5",
         "drupal/minisite": "1.3",
         "drupal/modifiers": "1.4",
+        "drupal/module_permissions": "3.0",
         "drupal/panelizer": "4.4",
         "drupal/panels": "4.6.0",
         "drupal/paragraphs": "1.12",
@@ -93,14 +94,14 @@
         "drupal/rest_menu_items": "3.0.2",
         "drupal/robotstxt": "1.4",
         "drupal/scheduled_transitions": "2.0.0",
-        "drupal/search_api": "1.18.0",
-        "drupal/search_api_attachments": "1.0-beta16",
-        "drupal/search_api_solr": "4.1.7",
+        "drupal/search_api": "1.19.0",
+        "drupal/search_api_attachments": "1.0-beta17",
+        "drupal/search_api_solr": "4.1.11",
         "drupal/seckit": "2.0.0",
         "drupal/shield": "1.4",
         "drupal/simple_oauth": "5.0.2",
         "drupal/simple_sitemap": "3.7",
-        "drupal/swiftmailer": "2.0-beta1",
+        "drupal/swiftmailer": "2.0.0",
         "drupal/tfa": "1.0.0-alpha7",
         "drupal/token": "1.7",
         "drupal/twig_tweak": "2.9",
@@ -164,7 +165,8 @@
         "patches": {
             "drupal/tfa": {
                 "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2020-10-19/tfa-2930541-22_0.patch",
-                "Users' recovery codes exposed to admin users - https://www.drupal.org/project/tfa/issues/3075304": "https://www.drupal.org/files/issues/2021-01-14/tfa-3075304-15.patch"
+                "Users' recovery codes exposed to admin users - https://www.drupal.org/project/tfa/issues/3075304": "https://www.drupal.org/files/issues/2021-01-14/tfa-3075304-15.patch",
+                "Fatal error after exceeding login attempts with Drupal 9 - https://www.drupal.org/project/tfa/issues/3205297": "https://www.drupal.org/files/issues/2021-03-24/tfa-3205297-2.patch"
             },
             "drupal/username_enumeration_prevention": {
                 "Deprecated function User::getUsername": "https://www.drupal.org/files/issues/2020-09-01/fix-deprecated-getusername-3167106-2.patch"
@@ -193,11 +195,11 @@
         ],
         "post-install-cmd": [
             "GovCMS\\composer\\ScriptHandler::createRequiredFiles",
-            "rsync -av --delete --exclude 'web' --exclude '.git' --exclude '.tugboat' --exclude 'vendor' ./ web/profiles/govcms"
+            "rsync -av --delete --exclude 'web' --exclude '.git' --exclude '.tugboat' --exclude 'vendor' --exclude 'tests' ./ web/profiles/govcms"
         ],
         "post-update-cmd": [
             "GovCMS\\composer\\ScriptHandler::createRequiredFiles",
-            "rsync -av --delete --exclude 'web' --exclude '.git' --exclude '.tugboat' --exclude 'vendor' ./ web/profiles/govcms"
+            "rsync -av --delete --exclude 'web' --exclude '.git' --exclude '.tugboat' --exclude 'vendor' --exclude 'tests' ./ web/profiles/govcms"
         ],
         "nuke": "rm -r -f composer.lock bin app web vendor"
     },
