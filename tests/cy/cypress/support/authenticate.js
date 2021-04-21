@@ -27,9 +27,9 @@ Cypress.Commands.add("drupalDrushCommand", (command) => {
     var cmd = Cypress.env('drupalDrushCmdLine');
 
     if (cmd == null) {
-        if (Cypress.env('localEnv') === "lando") {
+        if(Cypress.env('localEnv') === "lando"){
             cmd = 'lando drush %command'
-        } else {
+        }else{
             cmd = 'drush %command'
         }
     }
