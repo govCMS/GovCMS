@@ -1,8 +1,7 @@
 {
-  "name": "govcms-tests",
+  "name": "govcms-testing-cypress",
   "version": "1.0.0",
-  "description": "Cypress tests for GovCMS distribution",
-  "private": true,
+  "description": "Cypress integration for GovCMS distribution",
   "scripts": {
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
@@ -16,7 +15,7 @@
     }
   },
   "dependencies": {
-    "cypress": "^4.12.1",
+    "cypress": "^6.5.0",
     "cypress-xpath": "^1.6.0"
   },
   "devDependencies": {
@@ -28,6 +27,8 @@
     "lint-staged": "^10.2.11"
   },
   "license": "GPL-2.0",
+  "repository": "https://github.com/govCMS/govcms-testing-cypress",
+  "author": "Joseph Zhao <pandaski@outlook.com.au>",
   "lint-staged": {
     "*.coffee": [
       "yarn stop-only --folder",

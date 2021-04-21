@@ -16,16 +16,7 @@ Cypress.Commands.add("drupalLogin", (user, password) => {
         }
     });
 });
-// Drupal login
-Cypress.Commands.add("login", () => {
-  // Visit the link.
-  cy.visit("user")
-  // Login the user with password.
-  cy.get("#edit-name").type(Cypress.env('user').super.username)
-  cy.get("#edit-pass").type(Cypress.env('user').super.password)
-  // Submit the form.
-  cy.get("#edit-submit").click()
-})
+
 // Drupal logout.
 Cypress.Commands.add('drupalLogout', () => {
     return cy.request('/user/logout');
@@ -36,7 +27,11 @@ Cypress.Commands.add("drupalDrushCommand", (command) => {
     var cmd = Cypress.env('drupalDrushCmdLine');
 
     if (cmd == null) {
-        cmd = 'drush %command'
+        if(Cypress.env('localEnv') === "lando"){
+            cmd = 'lando drush %command'
+        }else{
+            cmd = 'drush %command'
+        }
     }
 
     if (typeof command === 'string') {
@@ -46,4 +41,26 @@ Cypress.Commands.add("drupalDrushCommand", (command) => {
     const execCmd = cmd.replace('%command', command.join(' '));
 
     return cy.exec(execCmd);
+});
+
+
+// Composer command.
+Cypress.Commands.add("composerCommand", (command) => {
+    var cmd = Cypress.env('composerCmdLine');
+
+    if (cmd == null) {
+        if(Cypress.env('localEnv') === "lando"){
+            cmd = 'lando composer %command'
+        }else{
+            cmd = 'composer %command'
+        }
+    }
+
+    if (typeof command === 'string') {
+        command = [command];
+    }
+
+    const execCmd = cmd.replace('%command', command.join(' '));
+
+    return cy.exec(execCmd)
 });
