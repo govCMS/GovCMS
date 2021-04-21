@@ -6,33 +6,15 @@ jobs:
     working_directory: /app
     steps:
       - checkout
-      - restore_cache:
-          name: Restore Composer Package Cache
-          keys:
-            - v2-govcms-deps-{{ .Branch }}-{{ checksum "composer.json" }}
-            - v2-govcms-deps-{{ .Branch }}
-            - v2-govcms-deps
       - run:
-          name: Get PHP and composer version status
+          name: Get PHP and composer versions
           command: |
             php -v
             composer --version
       - run:
           name: Install GovCMS dependencies
           command: |
-            composer install --profile --prefer-dist --optimize-autoloader
-      - save_cache:
-          name: Save Composer Package Cache
-          key: v2-govcms-deps-{{ .Branch }}-{{ checksum "composer.lock" }}
-          paths:
-            - /tmp/cache
-            - /app/vendor
-      - persist_to_workspace:
-          root: /app
-          paths:
-            - web
-            - vendor
-            - bin
+            composer update --profile --prefer-dist --optimize-autoloader
   test-basic:
     docker:
       - image: govcmstesting/php:7.4-apache
@@ -44,12 +26,15 @@ jobs:
     working_directory: /app
     steps:
       - checkout
-      - attach_workspace:
-          at: /app
+      - run:
+          name: Install GovCMS dependencies
+          command: |
+            composer update --profile --prefer-dist --optimize-autoloader
       - run:
           name: Get PHP and drush version status
           command: |
             php -v
+            composer --version
             bin/drush version
       - run:
           name: Wait for MariaDb to be ready
@@ -76,14 +61,6 @@ jobs:
     working_directory: /app
     steps:
       - checkout
-      - restore_cache:
-          name: Restore Yarn/Cypress Package Cache
-          keys:
-            - v1-govcms-deps-{{ .Branch }}-{{ checksum "tests/cy/package.json" }}
-            - v1-govcms-deps-{{ .Branch }}
-            - v1-govcms-deps
-      - attach_workspace:
-          at: /app
       - run:
           name: Setup webserver
           command: |
@@ -97,7 +74,7 @@ jobs:
       - run:
           name: Install GovCMS site
           command: |
-            composer install --profile --prefer-dist --optimize-autoloader
+            composer update --profile --prefer-dist --optimize-autoloader
             cd web
             ../bin/drush site-install -y govcms --db-url=mysql://root:govcms@127.0.0.1:3306/govcms --site-name='GovCMS' --account-pass=password install_configure_form.enable_update_status_emails=NULL install_configure_form.enable_update_status_module=NULL || true
       - run:
@@ -105,16 +82,11 @@ jobs:
           command: |
             cd tests/cy
             yarn
-      - save_cache:
-          name: Save Yarn/Cypress Package Cache
-          key: v1-govcms-deps-{{ .Branch }}-{{ checksum "tests/cy/package.json" }}
-          paths:
-            - ~/.cache
       - run:
           name: Run Cypress tests
           command: |
             cd tests/cy
-            yarn cypress:run || true
+            yarn cypress:run
       - store_artifacts:
           path: tests/cy/cypress/videos
       - store_artifacts:

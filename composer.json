@@ -44,7 +44,7 @@
         "drupal/contact_storage": "1.1.0",
         "drupal/context": "4.0.0-beta5",
         "drupal/core-composer-scaffold": "^9",
-        "drupal/core-recommended": "9.1.4",
+        "drupal/core-recommended": "9.1.6",
         "drupal/crop": "2.1",
         "drupal/ctools": "3.4.0",
         "drupal/devel": "4.0.1",
@@ -195,11 +195,11 @@
         ],
         "post-install-cmd": [
             "GovCMS\\composer\\ScriptHandler::createRequiredFiles",
-            "rsync -av --delete --exclude 'web' --exclude '.git' --exclude '.tugboat' --exclude 'vendor' ./ web/profiles/govcms"
+            "rsync -av --delete --exclude 'web' --exclude '.git' --exclude '.tugboat' --exclude 'vendor' --exclude 'tests' ./ web/profiles/govcms"
         ],
         "post-update-cmd": [
             "GovCMS\\composer\\ScriptHandler::createRequiredFiles",
-            "rsync -av --delete --exclude 'web' --exclude '.git' --exclude '.tugboat' --exclude 'vendor' ./ web/profiles/govcms"
+            "rsync -av --delete --exclude 'web' --exclude '.git' --exclude '.tugboat' --exclude 'vendor' --exclude 'tests' ./ web/profiles/govcms"
         ],
         "nuke": "rm -r -f composer.lock bin app web vendor"
     },
