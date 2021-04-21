@@ -54,3 +54,11 @@ Cypress.Commands.add("userLogin", (siteRole) => {
 Cypress.Commands.add("userlogout", () => {
   cy.visit(`/user/logout`)
 })
+
+Cypress.Commands.add("type_ckeditor", (element, content) => {
+  cy.window()
+    .then(win => {
+      win.CKEDITOR.instances[element].setData(content);
+    });
+});
+
