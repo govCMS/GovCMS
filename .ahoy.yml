@@ -45,7 +45,12 @@ commands:
   login:
     usage: Login to a website.
     cmd: docker-compose exec -T test drush uli "$@"
-
+    
+  unloop:
+    usage: Fix local redirect loop
+    cmd: |
+      docker-compose exec -T cli drush ev '$u=\Drupal\user\Entity\User::load(1); $u->set("field_password_expiration", "0"); $u->save()' && \
+      docker-compose exec -T cli drush ev '$u=\Drupal\user\Entity\User::load(1); $u->set("field_last_password_reset", date("Y-m-d\TH:i:s")); $u->save()'
   lint:
     usage: Lint code
     cmd: docker-compose exec -T test lint-theme
