@@ -60,7 +60,7 @@
         "drupal/entity_reference_revisions": "1.8",
         "drupal/environment_indicator": "4.0.1",
         "drupal/facets": "1.5",
-        "drupal/features": "3.11",
+        "drupal/features": "3.12.0",
         "drupal/field_group": "3.1",
         "drupal/focal_point": "1.5.0",
         "drupal/ga_login": "1.0.0-alpha6",
