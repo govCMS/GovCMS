@@ -17,6 +17,7 @@ import './cypress'
 import './misc'
 import './authenticate'
 import './commands'
+import './media'
 
 let isSoftAssertion = false;
 let errors = [];
