@@ -1,20 +1,14 @@
 # GovCMS
 
-## Before you start
-
-2.x (GovCMS with Drupal 9) is not in a stable state and only for testing purpose.
-
-Caution: The database schema may change without hook_update_N being implemented. Usage and API may not be documented. Installing a new unstable release entails uninstalling the project, thereby losing all data. Only for those who want an early preview of the project. Not yet suitable for shared development.
-
-GovCMS9 Slack channel: https://govcmschat.slack.com/archives/C01BD9B3V5W
-
 ## About GovCMS
 
-<img src="https://www.drupal.org/files/styles/grid-3/public/govcms-double-size_0.png?itok=8LVmjACw" alt="GovCMS8 logo" align="right"/>
+<img src="logo.png" alt="GovCMS logo" align="right" width="220px"/>
 
 GovCMS is the Drupal specific version of the GovCMS distribution.
 
 [GovCMS](https://www.govcms.gov.au) is an open source web content management and hosting service, based on Drupal and developed to help agencies create modern, affordable and responsive websites, whilst making it easier to collaborate and innovate. GovCMS also helps reduce the technology and compliance burden on government agencies. GovCMS is managed by the Australian Government Department of Finance.
+
+GovCMS9 Slack channel: https://govcmschat.slack.com/archives/C01BD9B3V5W
 
 ---
 
@@ -38,7 +32,7 @@ Composer will create a new directory called MY_PROJECT containing a docroot dire
 
 ### Installation from source
 
-    git clone -b 2.x git@github.com:GovCMS/GovCMS.git
+    git clone -b 2.x-develop git@github.com:GovCMS/GovCMS.git
     cd GovCMS
     composer install
 
