@@ -16,7 +16,7 @@ describe('Check FOI landing page', () => {
                 // Set the viewport.
                 cy.setViewport(viewport)
                 // Visit the link.
-                cy.visit('foi')
+                cy.visit('freedom-of-information')
             })
             beforeEach(() => {
                 // Set the viewport.

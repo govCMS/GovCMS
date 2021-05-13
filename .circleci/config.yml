@@ -86,6 +86,7 @@ jobs:
           name: Run Cypress tests
           command: |
             cd tests/cy
+            cp /app/.circleci/cypress.env.json /app/tests/cy/cypress.env.json
             yarn cypress:run
       - store_artifacts:
           path: tests/cy/cypress/videos
