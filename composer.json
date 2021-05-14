@@ -43,7 +43,7 @@
         "drupal/context": "4.0-beta5",
         "drupal/core-recommended": "8.9.14",
         "drupal/crop":"2.1",
-        "drupal/ctools": "3.4.0",
+        "drupal/ctools": "3.6.0",
         "drupal/diff": "1.0",
         "drupal/devel": "4.0.1",
         "drupal/dropzonejs": "2.1",
