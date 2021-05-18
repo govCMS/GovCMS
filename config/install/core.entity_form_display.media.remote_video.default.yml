@@ -5,14 +5,8 @@ dependencies:
     - field.field.media.remote_video.field_media_oembed_video
     - media.type.remote_video
   module:
-    - field_layout
     - layout_discovery
     - path
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: media.remote_video.default
 targetEntityType: media
 bundle: remote_video

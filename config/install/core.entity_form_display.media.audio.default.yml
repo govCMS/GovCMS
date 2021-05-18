@@ -5,15 +5,9 @@ dependencies:
     - field.field.media.audio.field_media_audio_file
     - media.type.audio
   module:
-    - field_layout
     - file
     - layout_discovery
     - path
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: media.audio.default
 targetEntityType: media
 bundle: audio

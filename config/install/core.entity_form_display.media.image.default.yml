@@ -6,15 +6,9 @@ dependencies:
     - image.style.thumbnail
     - media.type.image
   module:
-    - field_layout
     - image
     - layout_discovery
     - path
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: media.image.default
 targetEntityType: media
 bundle: image
