@@ -18,7 +18,6 @@ install:
   - contextual
   - datetime_range
   - dynamic_page_cache
-  - field_layout
   - field_ui
   - help
   - layout_builder

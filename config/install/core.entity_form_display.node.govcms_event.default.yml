@@ -13,17 +13,11 @@ dependencies:
     - node.type.govcms_event
   module:
     - datetime_range
-    - field_layout
     - layout_discovery
     - link
     - media_library
     - path
     - text
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: node.govcms_event.default
 targetEntityType: node
 bundle: govcms_event
