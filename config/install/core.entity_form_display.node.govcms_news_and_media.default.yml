@@ -11,16 +11,10 @@ dependencies:
     - field.field.node.govcms_news_and_media.field_thumbnail
     - node.type.govcms_news_and_media
   module:
-    - field_layout
     - layout_discovery
     - media_library
     - path
     - text
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: node.govcms_news_and_media.default
 targetEntityType: node
 bundle: govcms_news_and_media
