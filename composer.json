@@ -28,7 +28,7 @@
         "bower-asset/dropzone": "5.7.2",
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
-        "drupal/admin_toolbar": "2.4.0",
+        "drupal/admin_toolbar": "3.0.1",
         "drupal/adminimal_admin_toolbar": "1.11.0",
         "drupal/adminimal_theme": "1.6.0",
         "drupal/bigmenu": "2.0.0-rc2",
