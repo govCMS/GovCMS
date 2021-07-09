@@ -127,6 +127,4 @@ function govcms_install() {
       'use_default' => FALSE,
     ])
     ->save(TRUE);
-
-  drupal_flush_all_caches();
 }
