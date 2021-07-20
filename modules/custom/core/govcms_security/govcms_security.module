@@ -33,6 +33,50 @@ function govcms_security_form_user_admin_settings_alter(&$form, FormStateInterfa
 }
 
 /**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function govcms_security_form_user_admin_permissions_alter(&$form, FormStateInterface $form_state) {
+  $banned_permissions = govcms_security_hide_permissions_default();
+  $permissions = \Drupal::service('user.permissions')->getPermissions();
+  $permissions_by_provider = [];
+  foreach ($permissions as $permission_name => $permission) {
+    $permissions_by_provider[$permission['provider']][$permission_name] = $permission;
+  }
+  $has_hidden = FALSE;
+  foreach ($permissions_by_provider as $provider => $provider_permissions) {
+    $hidden_count = 0;
+    foreach ($provider_permissions as $permission_name => $permission) {
+      // If the permission is banned, remove it.
+      if (in_array($permission_name, $banned_permissions)) {
+        unset($form['permissions'][$permission_name]);
+        $hidden_count++;
+        $has_hidden = TRUE;
+      }
+      // If the permission is restricted, lock it down for anonymous and
+      // authenticated.
+      elseif (!empty($permission['restrict access'])) {
+        foreach ([
+                   RoleInterface::ANONYMOUS_ID,
+                   RoleInterface::AUTHENTICATED_ID,
+                 ] as $rid) {
+          $form['permissions'][$permission_name][$rid]['#disabled'] = TRUE;
+          $form['permissions'][$permission_name][$rid]['#default_value'] = FALSE;
+        }
+      }
+    }
+    // If all permissions for a provider were hidden, remove the provider name.
+    if ($hidden_count == count($provider_permissions)) {
+      unset($form['permissions'][$provider]);
+    }
+  }
+  if ($has_hidden) {
+    \Drupal::messenger()
+      ->addMessage(t('To make this site more secure, some permissions have been removed from this form.'));
+  }
+  $form['#submit'][] = 'govcms_security_permissions_submit';
+}
+
+/**
  * Implements hook_form_alter().
  */
 function govcms_security_form_alter(&$form, FormStateInterface $form_state, $form_id) {
@@ -53,4 +97,48 @@ function govcms_security_user_access(EntityInterface $entity, $operation, Accoun
   }
 
   return AccessResult::neutral();
+}
+
+/**
+ * Implements hook_system_info_alter().
+ *
+ * Hide designated modules.
+ */
+function govcms_security_system_info_alter(array &$info, Extension $file, $type) {
+  $hidden_modules = govcms_security_hide_modules_default();
+  if ($type == 'module' && in_array($file->getName(), $hidden_modules)) {
+    $info['hidden'] = TRUE;
+  }
+}
+
+/**
+ * Default modules to be hidden.
+ */
+function govcms_security_hide_modules_default() {
+  return [
+    'module_permissions_ui'
+  ];
+}
+
+/**
+ * Remove risky permissions from any role.
+ */
+function govcms_security_permissions_submit($form, FormStateInterface $form_state) {
+  $banned_permissions = govcms_security_hide_permissions_default();
+  $roles = Role::loadMultiple();
+  foreach ($roles as $role) {
+    foreach ($banned_permissions as $permission) {
+      $role->revokePermission($permission);
+    }
+    $role->save();
+  }
+}
+
+/**
+ * Default risky permissions.
+ */
+function govcms_security_hide_permissions_default() {
+  return [
+    'administer managed modules permissions'
+  ];
 }
