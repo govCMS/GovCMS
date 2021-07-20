@@ -100,7 +100,7 @@
         "drupal/search_api_solr": "4.1.11",
         "drupal/seckit": "2.0.0",
         "drupal/shield": "1.4",
-        "drupal/simple_oauth": "5.0.2",
+        "drupal/simple_oauth": "5.0.4",
         "drupal/simple_sitemap": "3.7",
         "drupal/swiftmailer": "2.0.0",
         "drupal/tfa": "1.0.0-alpha7",
