@@ -142,6 +142,6 @@ function govcms_security_permissions_submit($form, FormStateInterface $form_stat
  */
 function govcms_security_hide_permissions_default() {
   return [
-    'administer managed modules permissions'
+    'administer module_permissions'
   ];
 }
