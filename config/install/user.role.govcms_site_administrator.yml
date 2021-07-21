@@ -27,6 +27,8 @@ permissions:
   - 'administer filters'
   - 'administer honeypot'
   - 'administer image styles'
+  - 'administer managed modules'
+  - 'administer managed modules permissions'
   - 'administer media'
   - 'administer media display'
   - 'administer media fields'
