@@ -75,8 +75,8 @@ services:
       build:
         - COMPOSER_MEMORY_LIMIT=-1 composer update
         - drush cache:rebuild
-        # Partial importing is still having some issues with Druah 10 and Drupal 9.
+        # Partial importing is still having some issues with Drush 10 and Drupal 9.
         #- drush config-import --partial --source="${TUGBOAT_ROOT}/config/test" -y
-        - drush en module_permissions
+        - drush en module_permissions -y
         - drush updatedb -y
         - drush cache:rebuild
