@@ -77,5 +77,6 @@ services:
         - drush cache:rebuild
         # Partial importing is still having some issues with Druah 10 and Drupal 9.
         #- drush config-import --partial --source="${TUGBOAT_ROOT}/config/test" -y
+        - drush en module_permissions
         - drush updatedb -y
         - drush cache:rebuild

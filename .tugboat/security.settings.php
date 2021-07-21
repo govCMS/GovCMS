@@ -6,11 +6,11 @@
  * Modules allow list for GovCMS module_permissions.
  */
 $config['module_permissions.settings']['managed_modules'] = [
-  'bigmenu',
-  'captcha',
-  'ctools_block',
-  'ctools_views',
-  'chosen',
+  "bigmenu",
+  "captcha",
+  "ctools_block",
+  "ctools_views",
+  "chosen",
   "chosen_field",
   "chosen_lib",
   "components",
@@ -41,7 +41,6 @@ $config['module_permissions.settings']['managed_modules'] = [
   "file",
   "focal_point",
   "govcms_dlm",
-  "honeypot",
   "basic_auth",
   "image",
   "image_captcha",
@@ -56,8 +55,8 @@ $config['module_permissions.settings']['managed_modules'] = [
   "menu_trail_by_path",
   "metatag",
   "minisite",
-  "modifiers",
   "options",
+  "paragraphs",
   "pathauto",
   "shield",
   "recaptcha",
@@ -74,7 +73,6 @@ $config['module_permissions.settings']['managed_modules'] = [
   "webform_access",
   "webform_attachment",
   "webform_image_select",
-  "webform_jqueryui_buttons",
   "webform_node",
   "webform_ui",
 ];
