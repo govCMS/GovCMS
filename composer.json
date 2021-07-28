@@ -41,7 +41,7 @@
         "drupal/consumers": "1.11",
         "drupal/contact_storage": "1.0.0",
         "drupal/context": "4.0-beta6",
-        "drupal/core-recommended": "8.9.16",
+        "drupal/core-recommended": "8.9.17",
         "drupal/crop":"2.1",
         "drupal/ctools": "3.7.0",
         "drupal/diff": "1.0",
