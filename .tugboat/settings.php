@@ -44,3 +44,10 @@ $config['system.logging']['error_level'] = 'verbose';
 error_reporting(E_COMPILE_ERROR | E_RECOVERABLE_ERROR | E_ERROR | E_CORE_ERROR);
 ini_set('display_errors', TRUE);
 ini_set('display_startup_errors', TRUE);
+
+/**
+ * Load security services definition file.
+ */
+if (file_exists($app_root . '/' . $site_path . '/security.settings.php')) {
+  include $app_root . '/' . $site_path . '/security.settings.php';
+}
