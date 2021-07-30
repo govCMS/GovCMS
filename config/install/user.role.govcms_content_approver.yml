@@ -24,3 +24,4 @@ permissions:
   - 'view latest version'
   - 'view the administration theme'
   - 'view unpublished paragraphs'
+  - 'setup own tfa'
