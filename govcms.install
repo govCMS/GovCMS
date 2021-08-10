@@ -106,6 +106,28 @@ function govcms_install_tasks(&$install_state) {
 }
 
 /**
+ * Helper function to remove premissions from a role.
+ *
+ * @param array $permissions
+ * @param string $role
+ */
+function _govcms_remove_permissions(array $permissions, string $role) {
+  $config_name = "user.role.$role";
+  $config = Drupal::configFactory()->getEditable($config_name);
+  if ($config) {
+    // Get the permissions.
+    $permit = $config->get('permissions');
+
+    // Remove the permissions.
+    $permit = array_diff($permit, $permissions);
+
+    $config->set('permissions', $permit);
+    // Save the change.
+    $config->save();
+  }
+}
+
+/**
  * Set default sendmail mode to T.
  */
 function govcms_update_8101() {
@@ -117,4 +139,11 @@ function govcms_update_8101() {
     $config->set('sendmail_mode', 't');
     $config->save();
   }
+}
+
+/**
+ * Remove 'Manage Password Reset' permission from Site admin role.
+ */
+function govcms_update_8102() {
+  _govcms_remove_permissions(['manage password reset'], 'site_administrator');
 }
