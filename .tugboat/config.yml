@@ -34,6 +34,7 @@ services:
         
         # Use composer 1.x
         - composer self-update --1  && composer clear
+        - composer global require "hirak/prestissimo:^0.3"
 
       # Commands when refreshing an existing preview.
       update:
