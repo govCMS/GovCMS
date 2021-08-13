@@ -171,6 +171,9 @@
             },
             "drupal/twig_tweak": {
                 "sanitize input": "https://www.drupal.org/files/issues/2021-02-03/twig_tweak-token-xss.patch"
+            },
+            "drupal/migrate_tools": {
+                "3217775 - You have requested a non-existent service entity.query": "https://www.drupal.org/files/issues/2021-07-14/you-have-requested-a-non-existent-service-entity-query-3217775-4.patch"
             }
         }
     },
