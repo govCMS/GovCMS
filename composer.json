@@ -87,7 +87,7 @@
         "drupal/panelizer": "4.4",
         "drupal/panels": "4.6.0",
         "drupal/paragraphs": "1.12",
-        "drupal/password_policy": "3.0-beta1",
+        "drupal/password_policy": "3.0",
         "drupal/pathauto": "1.8.0",
         "drupal/real_aes": "2.3",
         "drupal/recaptcha": "3.0",
@@ -164,9 +164,6 @@
         },
         "enable-patching": true,
         "patches": {
-            "drupal/password_policy": {
-                "password_policy-empty-password-skip-validation":"https://www.drupal.org/files/issues/2020-03-19/password_policy-empty-password-skip-validation-2971079-37.patch"
-            },
             "drupal/tfa": {
                 "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2020-10-19/tfa-2930541-22_0.patch",
                 "Users' recovery codes exposed to admin users - https://www.drupal.org/project/tfa/issues/3075304": "https://www.drupal.org/files/issues/2021-01-14/tfa-3075304-15.patch",
