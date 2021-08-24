@@ -87,7 +87,7 @@
         "drupal/panelizer": "4.4",
         "drupal/panels": "4.6.0",
         "drupal/paragraphs": "1.12",
-        "drupal/password_policy": "3.0-beta1",
+        "drupal/password_policy": "3.0",
         "drupal/pathauto": "1.8.0",
         "drupal/real_aes": "2.3",
         "drupal/recaptcha": "3.0",
