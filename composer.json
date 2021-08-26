@@ -50,7 +50,7 @@
         "drupal/devel": "4.1.1",
         "drupal/diff": "1.0.0",
         "drupal/dropzonejs": "2.5.0",
-        "drupal/ds": "3.9.0",
+        "drupal/ds": "3.13.0",
         "drupal/dynamic_entity_reference": "1.12.0",
         "drupal/encrypt": "3.0",
         "drupal/entity_browser": "2.6.0",
