@@ -17,4 +17,6 @@ Cypress.Commands.add('checkSiteErrors', () => {
     cy.get('.xdebug-error').should('not.exist')
     // Standard PHP error output.
     cy.contains('b', /Error|Warning|Notice|Deprecated/).should('not.exist')
+    // Drupal message
+    cy.get('h2#message-error-title,h2#message-warning-title').should('not.exist')
 });
