@@ -142,9 +142,6 @@
         },
         "enable-patching": true,
         "patches": {
-            "drupal/admin_toolbar": {
-                "Vertical tab display bug after page reload - https://www.drupal.org/project/admin_toolbar/issues/3154104": "https://www.drupal.org/files/issues/2020-06-23/admin_toolbar-vertical-display-fix-3154104-2-D8.patch" 
-            },
             "drupal/config_ignore": {
                 "Offset error within IgnoreFilter::activeReadMultiple() - https://www.drupal.org/project/config_ignore/issues/2972302": "https://www.drupal.org/files/issues/2018-07-31/offset-error-within-2972302-13.patch"
             },
