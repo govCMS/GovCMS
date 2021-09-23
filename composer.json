@@ -25,7 +25,7 @@
     "require": {
         "php": "^7.4",
         "bower-asset/chosen": "1.8.7",
-        "bower-asset/dropzone": "5.7.2",
+        "bower-asset/dropzone": "5.9.3",
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "3.0.2",
