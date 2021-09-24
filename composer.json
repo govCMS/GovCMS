@@ -172,6 +172,9 @@
             },
             "drupal/twig_tweak": {
                 "sanitize input": "https://www.drupal.org/files/issues/2021-02-03/twig_tweak-token-xss.patch"
+            },
+            "drupal/metatag": {
+                "Unsetting metatags": "https://www.drupal.org/files/issues/2021-04-29/metatag-unset-2735195-59.patch"
             }
         }
     },
