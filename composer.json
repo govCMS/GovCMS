@@ -25,7 +25,7 @@
     "require": {
         "php": "^7.4",
         "bower-asset/chosen": "1.8.7",
-        "bower-asset/dropzone": "5.7.2",
+        "npm-asset/dropzone": "5.9.3",
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "3.0.2",
@@ -42,9 +42,9 @@
         "drupal/config_update": "1.7",
         "drupal/consumers": "1.11",
         "drupal/contact_storage": "1.1.0",
-        "drupal/context": "4.0.0-beta6",
+        "drupal/context": "4.1.0",
         "drupal/core-composer-scaffold": "^9",
-        "drupal/core-recommended": "9.2.4",
+        "drupal/core-recommended": "9.2.6",
         "drupal/crop": "2.1",
         "drupal/ctools": "3.7.0",
         "drupal/devel": "4.1.1",
@@ -55,14 +55,14 @@
         "drupal/encrypt": "3.0",
         "drupal/entity_browser": "2.6.0",
         "drupal/entity_class_formatter": "1.3",
-        "drupal/entity_embed": "1.1",
+        "drupal/entity_embed": "1.2.0",
         "drupal/entity_hierarchy": "3.0.4",
         "drupal/entity_reference_display": "1.4.0",
         "drupal/entity_reference_revisions": "1.9.0",
         "drupal/environment_indicator": "4.0.3",
         "drupal/facets": "1.8.0",
         "drupal/features": "3.12.0",
-        "drupal/field_group": "3.1",
+        "drupal/field_group": "3.2.0",
         "drupal/focal_point": "1.5.0",
         "drupal/ga_login": "1.0.0-alpha6",
         "drupal/google_analytics": "3.1",
@@ -73,7 +73,7 @@
         "drupal/layout_builder_restrictions": "2.9",
         "drupal/layout_builder_modal": "1.1",
         "drupal/linked_field": "1.3.0",
-        "drupal/linkit": "6.0.0-beta2",
+        "drupal/linkit": "6.0.0-beta3",
         "drupal/login_security": "2.0.0",
         "drupal/media_entity_file_replace": "1.0",
         "drupal/menu_block": "1.7.0",
@@ -97,15 +97,15 @@
         "drupal/rest_menu_items": "3.0.2",
         "drupal/robotstxt": "1.4",
         "drupal/scheduled_transitions": "2.1.0",
-        "drupal/search_api": "1.19.0",
-        "drupal/search_api_attachments": "1.0-beta17",
+        "drupal/search_api": "1.20.0",
+        "drupal/search_api_attachments": "1.0.0-beta18",
         "drupal/search_api_solr": "4.2.1",
         "drupal/seckit": "2.0.0",
         "drupal/shield": "1.4",
-        "drupal/simple_oauth": "5.0.4",
+        "drupal/simple_oauth": "5.0.5",
         "drupal/simple_sitemap": "3.10.0",
         "drupal/swiftmailer": "2.0.0",
-        "drupal/tfa": "1.0.0-alpha7",
+        "drupal/tfa": "1.0.0-alpha8",
         "drupal/token": "1.9",
         "drupal/twig_tweak": "2.9",
         "drupal/update_notifications_disable": "1.1",
@@ -113,7 +113,7 @@
         "drupal/video_embed_field": "2.4",
         "drupal/webform": "6.0.5",
         "oomphinc/composer-installers-extender": "^2.0",
-        "swiftmailer/swiftmailer": "6.2.3",
+        "swiftmailer/swiftmailer": "6.2.7",
         "webflo/drupal-finder": "^1.2"
     },
     "require-dev": {
@@ -168,11 +168,13 @@
         "patches": {
             "drupal/tfa": {
                 "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2020-10-19/tfa-2930541-22_0.patch",
-                "Users' recovery codes exposed to admin users - https://www.drupal.org/project/tfa/issues/3075304": "https://www.drupal.org/files/issues/2021-01-14/tfa-3075304-15.patch",
-                "Fatal error after exceeding login attempts with Drupal 9 - https://www.drupal.org/project/tfa/issues/3205297": "https://www.drupal.org/files/issues/2021-03-24/tfa-3205297-2.patch"
+                "Users' recovery codes exposed to admin users - https://www.drupal.org/project/tfa/issues/3075304": "https://www.drupal.org/files/issues/2021-01-14/tfa-3075304-15.patch"
             },
             "drupal/twig_tweak": {
                 "sanitize input": "https://www.drupal.org/files/issues/2021-02-03/twig_tweak-token-xss.patch"
+            },
+            "drupal/metatag": {
+                "Unsetting metatags": "https://www.drupal.org/files/issues/2021-04-29/metatag-unset-2735195-59.patch"
             }
         }
     },
