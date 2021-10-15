@@ -50,7 +50,7 @@ services:
         - composer create-project -n --no-install govcms/govcms8-project /var/govcms
         - composer --working-dir=/var/govcms require --no-update symfony/event-dispatcher:"4.3.11 as 3.4.41"
         - composer --working-dir=/var/govcms config repositories.local path "${TUGBOAT_ROOT}"
-        - composer --profile --working-dir=/var/govcms require govcms/govcms:dev-tugboat-latest
+        - COMPOSER_MEMORY_LIMIT=-1 composer --profile --working-dir=/var/govcms require govcms/govcms:dev-tugboat-latest
         - ln -snf "/var/govcms/docroot" "${DOCROOT}"
 
         # Prepare for install.
