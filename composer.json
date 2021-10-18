@@ -114,7 +114,7 @@
         "drupal/video_embed_field": "2.4",
         "drupal/webform": "6.1.2",
         "oomphinc/composer-installers-extender": "^2.0",
-        "swiftmailer/swiftmailer": "6.2.7",
+        "swiftmailer/swiftmailer": "6.3.0",
         "webflo/drupal-finder": "^1.2"
     },
     "require-dev": {
