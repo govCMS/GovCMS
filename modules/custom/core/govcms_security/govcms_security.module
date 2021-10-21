@@ -103,6 +103,33 @@ function govcms_security_form_alter(&$form, FormStateInterface $form_state, $for
 }
 
 /**
+ * Implements hook_webform_element_configuration_form_alter().
+ */
+function govcms_security_webform_element_configuration_form_alter(array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $form_object = $form_state->getFormObject();
+  $element_plugin = $form_object->getWebformElementPlugin();
+  $element_type = $element_plugin->getTypeName();
+
+  if ($element_type == 'webform_signature') {
+    $scheme_options = $form['signature']['uri_scheme']['#options'];
+    if (isset($scheme_options['private'])) {
+      unset($scheme_options['public']);
+      $form['signature']['uri_scheme']['#options'] = $scheme_options;
+    }
+  }
+}
+
+/**
+ * Implements hook_webform_element_default_properties_alter().
+ */
+function govcms_security_webform_element_default_properties_alter(array &$properties, array &$definition) {
+  $scheme_options = ManagedFile::getVisibleStreamWrappers();
+  if (isset($scheme_options['private'])) {
+    $properties['uri_scheme'] = 'private';
+  }
+}
+
+/**
  * Implements hook_ENTITY_TYPE_access().
  */
 function govcms_security_user_access(EntityInterface $entity, $operation, AccountInterface $account) {
