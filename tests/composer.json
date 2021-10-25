@@ -3,18 +3,18 @@
     "description": "GovCMS Drupal Distribution Tests.",
     "license": "GPL-2.0-or-later",
     "require": {
-        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
         "drupal/coder": "^8.3",
         "drupal/drupal-extension": "^4.1",
-        "integratedexperts/behat-format-progress-fail": "^0.2.1",
-        "integratedexperts/behat-screenshot": "^0.7.3",
-        "integratedexperts/behat-steps": "^0.1.10",
+        "integratedexperts/behat-format-progress-fail": "^1.0",
+        "integratedexperts/behat-screenshot": "^1.1",
+        "integratedexperts/behat-steps": "^1.3",
         "integratedexperts/robo-git-artefact": "^0.4.1",
         "php-parallel-lint/php-console-highlighter": "^0.5.0",
-        "php-parallel-lint/php-parallel-lint": "^1.2",
-        "phploc/phploc": "^6.0",
-        "phpmd/phpmd": "^2.8",
-        "sebastian/phpcpd": "^5.0"
+        "php-parallel-lint/php-parallel-lint": "^1.3",
+        "phploc/phploc": "^7.0",
+        "phpmd/phpmd": "^2.10",
+        "sebastian/phpcpd": "^6.0"
     },
     "config": {
         "preferred-install": "dist",

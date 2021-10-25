@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ruleset name="govcms/d9">
+<ruleset name="govcms/distribution">
   <description>PHPCS Standard for a GovCMS website, based on Drupal standards.</description>
 
   <rule ref="Drupal"/>
@@ -8,9 +8,13 @@
 
   <arg name="extensions" value="css,inc,info,install,js,module,php,profile,test,theme"/>
 
-  <file>tests</file>
-  <file>web/themes/custom</file>
-  <file>web/sites/default/settings.php</file>
+  <file>../modules</file>
+  <file>../themes</file>
+  <file>../src</file>
+  <file>../tests</file>
+
+  <exclude-pattern>*vendor*</exclude-pattern>
+  <exclude-pattern>*cy*</exclude-pattern>
 
   <!-- Exclude custom profile info YAML files. -->
   <exclude-pattern>web/profiles/custom*\.info\.yml</exclude-pattern>
