@@ -4,7 +4,8 @@ updates:
   directory: "/"
   schedule:
     interval: daily
-    time: "16:00"
+    time: "06:00"
+    timezone: "Australia/Sydney"
   open-pull-requests-limit: 20
   target-branch: 2.x-develop
   reviewers:

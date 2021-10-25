@@ -13,6 +13,7 @@ use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Extension\Extension;
 use Drupal\user\Entity\Role;
 use Drupal\user\RoleInterface;
+use Drupal\webform\Plugin\WebformElement\ManagedFile;
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -82,9 +83,9 @@ function govcms_security_form_user_admin_permissions_alter(&$form, FormStateInte
 /**
  * Implement hook_form_FORM_ID_alter()
  */
-function govcms_security_form_tfa_settings_form_alter(&$form, FormStateInterface $form_state){
+function govcms_security_form_tfa_settings_form_alter(&$form, FormStateInterface $form_state) {
   // Remove site admin's ability to disable TFA from the Drupal UI and change the roles required to set up TFA
-  If (\Drupal::currentUser()->id() != 1) {
+  if (\Drupal::currentUser()->id() != 1) {
     $form['tfa_enabled']['#access'] = FALSE;
     $form['tfa_required_roles']['#access'] = FALSE;
   }
@@ -99,6 +100,33 @@ function govcms_security_form_alter(&$form, FormStateInterface $form_state, $for
   // shouldn't have their names or details present on the website.
   if ($form_id === "node_type_add_form") {
     $form['display']['display_submitted']['#default_value'] = 0;
+  }
+}
+
+/**
+ * Implements hook_webform_element_configuration_form_alter().
+ */
+function govcms_security_webform_element_configuration_form_alter(array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $form_object = $form_state->getFormObject();
+  $element_plugin = $form_object->getWebformElementPlugin();
+  $element_type = $element_plugin->getTypeName();
+
+  if ($element_type == 'webform_signature') {
+    $scheme_options = $form['signature']['uri_scheme']['#options'];
+    if (isset($scheme_options['private'])) {
+      unset($scheme_options['public']);
+      $form['signature']['uri_scheme']['#options'] = $scheme_options;
+    }
+  }
+}
+
+/**
+ * Implements hook_webform_element_default_properties_alter().
+ */
+function govcms_security_webform_element_default_properties_alter(array &$properties, array &$definition) {
+  $scheme_options = ManagedFile::getVisibleStreamWrappers();
+  if (isset($scheme_options['private'])) {
+    $properties['uri_scheme'] = 'private';
   }
 }
 
@@ -130,7 +158,7 @@ function govcms_security_system_info_alter(array &$info, Extension $file, $type)
  */
 function govcms_security_hide_modules_default() {
   return [
-    'module_permissions_ui'
+    'module_permissions_ui',
   ];
 }
 
@@ -153,6 +181,6 @@ function govcms_security_permissions_submit($form, FormStateInterface $form_stat
  */
 function govcms_security_hide_permissions_default() {
   return [
-    'administer module_permissions'
+    'administer module_permissions',
   ];
 }
