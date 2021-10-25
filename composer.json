@@ -28,6 +28,7 @@
         "npm-asset/dropzone": "5.9.3",
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
+        "drupal/address": "1.9",
         "drupal/admin_toolbar": "3.0.3",
         "drupal/adminimal_admin_toolbar": "1.11.0",
         "drupal/adminimal_theme": "1.6.0",
