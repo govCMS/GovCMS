@@ -105,7 +105,7 @@
         "drupal/shield": "1.4",
         "drupal/simple_oauth": "5.0.5",
         "drupal/simple_sitemap": "3.10.0",
-        "drupal/swiftmailer": "2.0.0",
+        "drupal/swiftmailer": "2.1.0",
         "drupal/tfa": "1.0.0-alpha8",
         "drupal/token": "1.9",
         "drupal/twig_tweak": "2.9",
