@@ -45,7 +45,7 @@
         "drupal/contact_storage": "1.1.0",
         "drupal/context": "4.1.0",
         "drupal/core-composer-scaffold": "^9",
-        "drupal/core-recommended": "9.2.7",
+        "drupal/core-recommended": "9.2.9",
         "drupal/crop": "2.1",
         "drupal/ctools": "3.7.0",
         "drupal/devel": "4.1.1",
@@ -112,7 +112,7 @@
         "drupal/update_notifications_disable": "1.1",
         "drupal/username_enumeration_prevention": "1.2.0",
         "drupal/video_embed_field": "2.4",
-        "drupal/webform": "6.0.5",
+        "drupal/webform": "6.1.2",
         "oomphinc/composer-installers-extender": "^2.0",
         "swiftmailer/swiftmailer": "6.2.7",
         "webflo/drupal-finder": "^1.2"
@@ -178,7 +178,7 @@
                 "Unsetting metatags": "https://www.drupal.org/files/issues/2021-04-29/metatag-unset-2735195-59.patch"
             },
             "drupal/webform": {
-                "Allow gennerate signature image in private scheme": "https://www.drupal.org/files/issues/2021-10-19/3241469-9.patch"
+                "Allow gennerate signature image in private scheme": "https://www.drupal.org/files/issues/2021-11-22/3241469-27.patch"
             }
         }
     },
