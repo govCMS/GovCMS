@@ -166,6 +166,7 @@
             ]
         },
         "enable-patching": true,
+        "composer-exit-on-patch-failure": true,
         "patches": {
             "drupal/tfa": {
                 "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2020-10-19/tfa-2930541-22_0.patch",
