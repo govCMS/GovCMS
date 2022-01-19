@@ -104,7 +104,7 @@
         "drupal/seckit": "2.0.0",
         "drupal/shield": "1.5.0",
         "drupal/simple_oauth": "5.2.0",
-        "drupal/simple_sitemap": "3.10.0",
+        "drupal/simple_sitemap": "4.0.1",
         "drupal/swiftmailer": "2.2.0",
         "drupal/tfa": "1.0.0-alpha8",
         "drupal/token": "1.10.0",
