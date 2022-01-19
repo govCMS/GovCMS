@@ -118,7 +118,7 @@
         "webflo/drupal-finder": "^1.2"
     },
     "require-dev": {
-        "drush/drush": "~10"
+        "drush/drush": "~11"
     },
     "extra": {
         "drupal-scaffold": {
