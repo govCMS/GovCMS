@@ -91,7 +91,7 @@
         "drupal/paragraphs": "1.12",
         "drupal/password_policy": "3.1.0",
         "drupal/pathauto": "1.8.0",
-        "drupal/real_aes": "2.3",
+        "drupal/real_aes": "2.4.0",
         "drupal/recaptcha": "3.0",
         "drupal/redirect": "1.7.0",
         "drupal/rest_menu_items": "3.0.2",
