@@ -23,7 +23,7 @@
         }
     ],
     "require": {
-        "php": "^7.4",
+        "php": "^7.4 || ^8",
         "bower-asset/chosen": "1.8.7",
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
