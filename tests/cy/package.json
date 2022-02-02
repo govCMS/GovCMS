@@ -15,17 +15,17 @@
     }
   },
   "dependencies": {
-    "cypress": "^7.3.0",
+    "cypress": "^9.4.1",
     "cypress-file-upload": "^5.0.7",
     "cypress-xpath": "^1.6.2"
   },
   "devDependencies": {
     "@cypress/eslint-plugin-json": "^3.2.3",
-    "eslint": "^7.26.0",
+    "eslint": "^8.8.0",
     "eslint-plugin-chai-friendly": "^0.7.1",
     "eslint-plugin-cypress": "^2.11.3",
-    "husky": "^6.0.0",
-    "lint-staged": "^11.0.0"
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.3"
   },
   "license": "GPL-2.0",
   "repository": "https://github.com/govCMS/govcms-testing-cypress",
