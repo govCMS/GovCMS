@@ -36,7 +36,7 @@ services:
 
         # Install/update packages managed by composer, including drush.
         - composer selfupdate && composer clear
-        - composer require php:"^7.4 | ^8"
+        - composer require php:"^7.4 || ^8"
         - COMPOSER_MEMORY_LIMIT=-1 composer install --prefer-dist
 
         # Link the document root to the expected path.
