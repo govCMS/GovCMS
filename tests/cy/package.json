@@ -28,7 +28,7 @@
     "lint-staged": "^12.3.3"
   },
   "license": "GPL-2.0",
-  "repository": "https://github.com/govCMS/govcms-testing-cypress",
+  "repository": "https://github.com/govCMS/GovCMS",
   "author": "Joseph Zhao <pandaski@outlook.com.au>",
   "lint-staged": {
     "*.coffee": [
