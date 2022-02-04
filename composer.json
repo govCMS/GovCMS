@@ -99,7 +99,7 @@
         "drupal/scheduled_transitions": "2.2.0",
         "drupal/search_api": "1.23.0",
         "drupal/search_api_attachments": "9.0.0",
-        "drupal/search_api_solr": "4.2.6",
+        "drupal/search_api_solr": "4.2.7",
         "drupal/seckit": "2.0.0",
         "drupal/shield": "1.5.0",
         "drupal/simple_oauth": "5.2.0",
