@@ -27,7 +27,6 @@ install:
   - options
   - page_cache
   - path
-  - quickedit
   - rdf
   - settings_tray
   - shortcut
