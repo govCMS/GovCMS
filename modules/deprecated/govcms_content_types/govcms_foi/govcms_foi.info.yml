@@ -1,8 +1,0 @@
-name: FOI
-description: 'Provides FOI content type and related configuration. [deprecated]'
-type: module
-dependencies:
-  - datetime
-package: GovCMS8 [deprecated]
-core: 8.x
-core_version_requirement: ^8 || ^9
