@@ -1,0 +1,6 @@
+name: 'Standard page'
+description: 'Provides Standard page content type and related configuration. [deprecated]'
+type: module
+package: GovCMS8 [deprecated]
+core: 8.x
+core_version_requirement: ^8 || ^9

@@ -1,0 +1,6 @@
+name: GovCMS Search
+type: module
+description: Provide default search functions.
+package: GovCMS8 [deprecated]
+core: 8.x
+core_version_requirement: ^8 || ^9

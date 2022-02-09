@@ -1,0 +1,8 @@
+name: 'News and Media'
+description: 'Provides News and Media content type and related configuration. [deprecated]'
+type: module
+dependencies:
+  - options
+package: GovCMS8 [deprecated]
+core: 8.x
+core_version_requirement: ^8 || ^9
