@@ -20,36 +20,6 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "govcmslib/fakeobjects",
-                "version": "4.17.1",
-                "type": "drupal-library",
-                "extra": {
-                    "installer-name": "fakeobjects"
-                },
-                "dist": {
-                    "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.17.1.zip",
-                    "type": "zip"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "govcmslib/link",
-                "version": "4.17.1",
-                "type": "drupal-library",
-                "extra": {
-                    "installer-name": "link"
-                },
-                "dist": {
-                    "url": "https://download.ckeditor.com/link/releases/link_4.17.1.zip",
-                    "type": "zip"
-                }
-            }
         }
     ],
     "require": {
@@ -61,7 +31,6 @@
         "drupal/admin_toolbar": "3.1.0",
         "drupal/adminimal_admin_toolbar": "1.11.0",
         "drupal/adminimal_theme": "1.6.0",
-        "drupal/anchor_link": "2.5.0",
         "drupal/bigmenu": "2.0.0-rc2",
         "drupal/block_place": "1.0",
         "drupal/chosen": "3.0.1",
@@ -92,7 +61,6 @@
         "drupal/entity_reference_revisions": "1.9.0",
         "drupal/environment_indicator": "4.0.3",
         "drupal/facets": "1.8.0",
-        "drupal/fakeobjects": "1.1.0",
         "drupal/features": "3.12.0",
         "drupal/field_group": "3.2.0",
         "drupal/focal_point": "1.5.0",
@@ -145,8 +113,6 @@
         "drupal/username_enumeration_prevention": "1.2.0",
         "drupal/video_embed_field": "2.4",
         "drupal/webform": "6.1.2",
-        "govcmslib/fakeobjects": "^4.17",
-        "govcmslib/link": "^4.17",
         "npm-asset/dropzone": "5.9.3",
         "oomphinc/composer-installers-extender": "^2.0",
         "swiftmailer/swiftmailer": "6.3.0",
@@ -224,7 +190,7 @@
         }
     },
     "config": {
-        "allow-plugins": {
+         "allow-plugins": {
             "composer/installers": true,
             "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
