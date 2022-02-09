@@ -38,6 +38,7 @@ $config['module_permissions.settings']['managed_modules'] = [
   'facets',
   'facets_range_widget',
   'field_group',
+  'field_ui',
   'file',
   'focal_point',
   'govcms_dlm',
