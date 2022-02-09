@@ -4,8 +4,8 @@
     "www.google-analytics.com"
   ],
   "chromeWebSecurity": false,
-  "localEnv": "ahoy",
   "env": {
+    "localEnv": "lagoon",
     "user": {
       "administrator": {
         "username": "administrator",
