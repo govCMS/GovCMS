@@ -190,7 +190,7 @@
         }
     },
     "config": {
-         "allow-plugins": {
+        "allow-plugins": {
             "composer/installers": true,
             "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
