@@ -183,6 +183,9 @@
             },
             "drupal/webform": {
                 "Allow gennerate signature image in private scheme": "https://www.drupal.org/files/issues/2021-11-22/3241469-27.patch"
+            },
+            "drupal/migrate_file": {
+                "Fragments in source path/url causes faulty destination filename - https://www.drupal.org/project/migrate_file/issues/3263179": "https://www.drupal.org/files/issues/2022-02-08/migrate_file-fix-fragments-filenames-3263179-1_0.patch"
             }
         }
     },
