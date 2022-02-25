@@ -128,3 +128,37 @@ function govcms_install() {
     ])
     ->save(TRUE);
 }
+
+/**
+ * Issue GOVCMSD9-598: Remove the stub modules from the distribution.
+ */
+function govcms_update_9001() {
+  $stub_modules = [
+    'govcms8_default_content',
+    'govcms_content_types',
+    'govcms_blog_article',
+    'govcms_event',
+    'govcms_foi',
+    'govcms_news_and_media',
+    'govcms_standard_page',
+    'govcms_search',
+    'govcms_workflows',
+  ];
+
+  $extension_config = \Drupal::configFactory()->getEditable('core.extension');
+  $module = $extension_config->get('module');
+
+  foreach($stub_modules as $stub_module) {
+    if (isset($module[$stub_module])) {
+      unset($module[$stub_module]);
+    }
+  }
+
+  $extension_config->set('module', $module);
+  $extension_config->save();
+
+  // Remove stub modules from system.schema.
+  foreach($stub_modules as $stub_module) {
+    \Drupal::keyValue('system.schema')->delete($stub_module);
+  }
+}

@@ -27,8 +27,8 @@
         "bower-asset/chosen": "1.8.7",
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
-        "drupal/address": "1.9",
-        "drupal/admin_toolbar": "3.0.3",
+        "drupal/address": "1.10.0",
+        "drupal/admin_toolbar": "3.1.0",
         "drupal/adminimal_admin_toolbar": "1.11.0",
         "drupal/adminimal_theme": "1.6.0",
         "drupal/bigmenu": "2.0.0-rc2",
@@ -91,15 +91,16 @@
         "drupal/paragraphs": "1.12",
         "drupal/password_policy": "3.1.0",
         "drupal/pathauto": "1.8.0",
-        "drupal/real_aes": "2.3",
+        "drupal/real_aes": "2.4.0",
         "drupal/recaptcha": "3.0",
         "drupal/redirect": "1.7.0",
         "drupal/rest_menu_items": "3.0.2",
         "drupal/robotstxt": "1.4",
-        "drupal/scheduled_transitions": "2.1.0",
-        "drupal/search_api": "1.21.0",
+        "drupal/role_delegation": "1.1.0",
+        "drupal/scheduled_transitions": "2.2.0",
+        "drupal/search_api": "1.23.0",
         "drupal/search_api_attachments": "9.0.0",
-        "drupal/search_api_solr": "4.2.1",
+        "drupal/search_api_solr": "4.2.7",
         "drupal/seckit": "2.0.0",
         "drupal/shield": "1.5.0",
         "drupal/simple_oauth": "5.2.0",
@@ -170,7 +171,9 @@
         "patches": {
             "drupal/tfa": {
                 "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2020-10-19/tfa-2930541-22_0.patch",
-                "Users' recovery codes exposed to admin users - https://www.drupal.org/project/tfa/issues/3075304": "https://www.drupal.org/files/issues/2021-01-14/tfa-3075304-15.patch"
+                "Users' recovery codes exposed to admin users - https://www.drupal.org/project/tfa/issues/3075304": "https://www.drupal.org/files/issues/2021-01-14/tfa-3075304-15.patch",
+                "Set upper limit for number of skipped validation": "https://www.drupal.org/files/issues/2022-02-09/3263289-set-upper-limit.patch"
+
             },
             "drupal/twig_tweak": {
                 "sanitize input": "https://www.drupal.org/files/issues/2021-02-03/twig_tweak-token-xss.patch"
@@ -189,6 +192,12 @@
         }
     },
     "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "cweagans/composer-patches": true,
+            "drupal/core-composer-scaffold": true,
+            "oomphinc/composer-installers-extender": true
+        },
         "bin-dir": "bin/",
         "sort-packages": true,
         "optimize-autoloader": true
