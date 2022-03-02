@@ -92,6 +92,16 @@ function govcms_security_form_tfa_settings_form_alter(&$form, FormStateInterface
 }
 
 /**
+ * Implement hook_form_FORM_ID_alter()
+ */
+function govcms_security_form_config_admin_import_form_alter(&$form, FormStateInterface $form_state) {
+  if (\Drupal::currentUser()->id() != 1) {
+    $form['actions']['submit']['#access'] = FALSE;
+    $form['#submit'] = ['govcms_security_config_sync_submit'];
+  }
+}
+
+/**
  * Implements hook_form_alter().
  */
 function govcms_security_form_alter(&$form, FormStateInterface $form_state, $form_id) {
@@ -174,6 +184,13 @@ function govcms_security_permissions_submit($form, FormStateInterface $form_stat
     }
     $role->save();
   }
+}
+
+/**
+ * Display a message around disabled config synchronization.
+ */
+function govcms_security_config_sync_submit() {
+  \Drupal::messenger()->addError("Configuration sync is blocked via govcms_security module.");
 }
 
 /**
