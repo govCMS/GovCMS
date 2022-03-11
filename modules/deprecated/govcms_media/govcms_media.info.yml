@@ -1,6 +1,6 @@
-name: 'GovCMS Media '
-description: 'Provide media management functionality.'
-package: GovCMS
+name: 'GovCMS Media'
+description: 'Provide media management functionality. [deprecated]'
+package: GovCMS8 [deprecated]
 type: module
 core: 8.x
 core_version_requirement: ^8 || ^9
