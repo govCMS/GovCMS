@@ -49,7 +49,7 @@
         "drupal/ctools": "3.7.0",
         "drupal/devel": "4.1.5",
         "drupal/diff": "1.0.0",
-        "drupal/dropzonejs": "2.5.0",
+        "drupal/dropzonejs": "2.6.0",
         "drupal/ds": "3.13.0",
         "drupal/dynamic_entity_reference": "1.16.0",
         "drupal/encrypt": "3.0",
