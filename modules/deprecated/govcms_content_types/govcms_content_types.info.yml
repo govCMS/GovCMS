@@ -1,5 +1,0 @@
-name: 'GovCMS Content Types'
-type: module
-description: 'Provides default content types and related configuration. [deprecated]'
-package: GovCMS8 [deprecated]
-core_version_requirement: ^8 || ^9
