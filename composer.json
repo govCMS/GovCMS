@@ -200,8 +200,10 @@
             },
             "drupal/metatag": {
                 "Unsetting metatags": "https://www.drupal.org/files/issues/2022-03-15/metatag-unset-2735195.patch"
+            },
+            "drupal/webform": {
+                "Allow gennerate signature image in private scheme": "https://www.drupal.org/files/issues/2021-11-22/3241469-27.patch"
             }
-
         }
     },
     "autoload": {
