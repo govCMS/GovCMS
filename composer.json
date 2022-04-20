@@ -21,11 +21,11 @@
             "type": "package",
             "package": {
                 "name": "harvesthq/chosen",
-                "version": "v1.7.0",
+                "version": "v1.8.7",
                 "type": "drupal-library",
                 "dist": {
                     "type": "zip",
-                    "url": "https://github.com/harvesthq/chosen/releases/download/v1.7.0/chosen_v1.7.0.zip"
+                    "url": "https://github.com/harvesthq/chosen/releases/download/v1.8.7/chosen_v1.8.7.zip"
                 }
             }
         },
@@ -133,7 +133,7 @@
         "drupal/username_enumeration_prevention": "1.2.0",
         "drupal/video_embed_field": "2.4",
         "drupal/webform": "6.1.2",
-        "harvesthq/chosen": "1.7.0",
+        "harvesthq/chosen": "1.8.7",
         "oomphinc/composer-installers-extender": "^2.0",
         "swiftmailer/swiftmailer": "6.3.0",
         "webflo/drupal-finder": "^1.2"
