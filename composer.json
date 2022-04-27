@@ -186,6 +186,9 @@
         "enable-patching": true,
         "composer-exit-on-patch-failure": true,
         "patches": {
+            "drupal/search_api": {
+                "Out of memory error when used with views, metatag and memcache modules -  https://www.drupal.org/project/search_api/issues/3258375": "https://www.drupal.org/files/issues/2022-03-18/3258375-19--problems_with_serialized_views_results.patch"
+            },
             "drupal/tfa": {
                 "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2020-10-19/tfa-2930541-22_0.patch",
                 "Users' recovery codes exposed to admin users - https://www.drupal.org/project/tfa/issues/3075304": "https://www.drupal.org/files/issues/2021-01-14/tfa-3075304-15.patch",
