@@ -43,7 +43,7 @@
         }
     ],
     "require": {
-        "php": "^7.4",
+        "php": "^7.4 || ^8",
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
         "dropzone/dropzone": "5.7.2",
