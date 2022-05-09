@@ -2,7 +2,7 @@ version: 2
 jobs:
   validate:code:
     docker:
-      - image: cimg/php:8.1.5
+      - image: cimg/php:8.1
     steps:
       - checkout
       - run:
@@ -12,7 +12,7 @@ jobs:
             ./vendor/bin/phpcs --standard=phpcs.govcms.xml -p || true
   build:
     docker:
-      - image: cimg/php:8.1.5
+      - image: cimg/php:8.1
     steps:
       - checkout
       - run:
