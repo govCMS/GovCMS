@@ -38,6 +38,7 @@ $config['module_permissions.settings']['managed_modules'] = [
   'environment_indicator_ui',
   'facets',
   'facets_range_widget',
+  "fakeobjects",
   'field_group',
   'field_ui',
   'file',
