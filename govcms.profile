@@ -9,6 +9,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Breadcrumb\Breadcrumb;
+use Drupal\Core\Site\Settings;
 
 /**
  * Implements hook_form_FORM_ID_alter() for install_configure_form().
@@ -121,4 +122,29 @@ function govcms_field_widget_complete_form_alter(array &$field_widget_complete_f
     'field_widget_complete_form',
     'field_widget_complete_' . $context['widget']->getPluginId() . '_form',
   ], $field_widget_complete_form, $form_state, $context);
+}
+
+/**
+ * Implements hook_preprocess_status_messages().
+ *
+ * Hide PHP 8 PHP notices that will get fixed by the module maintainers
+ * eventually.
+ */
+function govcms_preprocess_status_messages(&$variables, $hook) {
+  if (!Settings::get('govcms_show_php_deprecated_errors') && (\PHP_VERSION_ID >= 80000)) {
+    $messages = $variables['message_list'];
+    if (isset($messages['error'])) {
+      foreach ($messages['error'] as $error_id => $error_markup) {
+        if (strpos($error_markup, '<em class="placeholder">Deprecated function</em>') !== FALSE) {
+          unset($messages['error'][$error_id]);
+        }
+      }
+      // Do not show empty error container.
+      if (empty($messages['error'])) {
+        unset($messages['error']);
+      }
+    }
+    // Apply changes.
+    $variables['message_list'] = $messages;
+  }
 }
