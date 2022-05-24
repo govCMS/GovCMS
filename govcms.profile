@@ -135,7 +135,10 @@ function govcms_preprocess_status_messages(&$variables, $hook) {
     $messages = $variables['message_list'];
     if (isset($messages['error'])) {
       foreach ($messages['error'] as $error_id => $error_markup) {
-        if (strpos($error_markup, '<em class="placeholder">Deprecated function</em>') !== FALSE) {
+        $first_line_error = explode("\n", (string) $error_markup)[0];
+        if ((strpos($first_line_error, '<em class="placeholder">Deprecated function</em>') !== FALSE)
+          // Except messages from theme files.
+          && (!preg_match('/line <em class="placeholder">\d+<\/em> of <em class="placeholder">themes\/custom\//u', $first_line_error))) {
           unset($messages['error'][$error_id]);
         }
       }
