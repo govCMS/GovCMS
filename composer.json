@@ -126,6 +126,7 @@
         "drupal/search_api_attachments": "9.0.0",
         "drupal/search_api_solr": "4.2.7",
         "drupal/seckit": "2.0.0",
+        "drupal/securitytxt": "^1.2",
         "drupal/shield": "1.6.0",
         "drupal/simple_oauth": "5.2.0",
         "drupal/simple_sitemap": "4.1.1",

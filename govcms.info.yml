@@ -28,6 +28,7 @@ install:
   - page_cache
   - path
   - rdf
+  - securitytxt
   - settings_tray
   - shortcut
   - taxonomy
