@@ -191,6 +191,12 @@
         "enable-patching": true,
         "composer-exit-on-patch-failure": true,
         "patches": {
+            "drupal/google_analytics": {
+                "Fix deprecated warnings for PHP 8.1 compatibility - https://www.drupal.org/project/google_analytics/issues/3258588": "https://www.drupal.org/files/issues/2022-06-03/google_analytics-jsonserialize-code-standard-fixes-3258588-20.patch"
+            },
+            "drupal/metatag": {
+                "Unsetting metatags": "https://www.drupal.org/files/issues/2022-03-15/metatag-unset-2735195.patch"
+            },
             "drupal/search_api": {
                 "Out of memory error when used with views, metatag and memcache modules -  https://www.drupal.org/project/search_api/issues/3258375": "https://www.drupal.org/files/issues/2022-03-18/3258375-19--problems_with_serialized_views_results.patch"
             },
@@ -202,11 +208,9 @@
             },
             "drupal/twig_tweak": {
                 "sanitize input": "https://www.drupal.org/files/issues/2021-02-03/twig_tweak-token-xss.patch"
-            },
-            "drupal/metatag": {
-                "Unsetting metatags": "https://www.drupal.org/files/issues/2022-03-15/metatag-unset-2735195.patch"
             }
-
+            
+            
         }
     },
     "autoload": {
