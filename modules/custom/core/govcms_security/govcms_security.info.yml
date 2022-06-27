@@ -2,7 +2,7 @@ name: GovCMS Security Kit
 type: module
 description: Enhance security of GovCMS websites.
 package: GovCMS
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9
 dependencies:
   - encrypt
   - ga_login
@@ -17,6 +17,7 @@ dependencies:
   - password_policy:password_policy_username
   - real_aes
   - seckit:seckit
+  - securitytxt
   - tfa
   - update_notifications_disable:update_notifications_disable
   - username_enumeration_prevention:username_enumeration_prevention
