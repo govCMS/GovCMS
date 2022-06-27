@@ -205,8 +205,10 @@
             },
             "drupal/metatag": {
                 "Unsetting metatags": "https://www.drupal.org/files/issues/2022-03-15/metatag-unset-2735195.patch"
+            },
+            "drupal/google_analytics": {
+                "Fix deprecated warnings for PHP 8.1 compatibility": "https://www.drupal.org/files/issues/2022-06-03/google_analytics-jsonserialize-code-standard-fixes-3258588-20.patch"
             }
-
         }
     },
     "autoload": {
