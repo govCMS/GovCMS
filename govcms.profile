@@ -122,3 +122,51 @@ function govcms_field_widget_complete_form_alter(array &$field_widget_complete_f
     'field_widget_complete_' . $context['widget']->getPluginId() . '_form',
   ], $field_widget_complete_form, $form_state, $context);
 }
+
+/**
+ * Implements hook_field_widget_single_element_WIDGET_TYPE_form_alter().
+ *
+ * Prevent filenames with en-dash being uploaded due to backup ability.
+ *
+ * @see https://github.com/govCMS/GovCMS/issues/468
+ */
+function govcms_field_widget_single_element_file_generic_form_alter(array &$element, FormStateInterface $form_state, array $context) {
+  if (isset($element['#upload_validators'])
+    && is_array($element['#upload_validators'])) {
+    $element['#upload_validators']['govcms_validate_filename_upload'] = [];
+  }
+}
+
+/**
+ * GovCMS file validation callback.
+ *
+ * @param \Drupal\file\FileInterface $file
+ *   The file to validate.
+ *
+ * @return array
+ *   Array of errors, if any.
+ */
+function govcms_validate_filename_upload(FileInterface $file) {
+  $errors = [];
+  $not_allowed_substrings = [
+    // The en-dash character.
+    '–' => t('The en-dash character, "%char", can not be used on the govcms platform, please rename the file and try again. For more information see %link.', [
+      '%char' => '–',
+      '%link' => Link::fromTextAndUrl(
+        'https://github.com/govCMS/GovCMS/issues/468',
+        Url::fromUri(
+          'https://github.com/govCMS/GovCMS/issues/468',
+          [
+            'attributes' => ['target' => '_blank'],
+          ],
+        )
+      )->toString(),
+    ]),
+  ];
+  foreach (array_keys($not_allowed_substrings) as $substring) {
+    if (strpos($file->getFilename(), $substring) !== FALSE) {
+      $errors[] = $not_allowed_substrings[$substring];
+    }
+  }
+  return $errors;
+}
