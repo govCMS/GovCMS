@@ -160,9 +160,6 @@
                 "sites/development.services.yml"
             ]
         },
-        "installer-types": [
-
-        ],
         "installer-paths": {
             "web/core": [
                 "type:drupal-core"
@@ -212,9 +209,7 @@
             },
             "drupal/twig_tweak": {
                 "sanitize input": "https://www.drupal.org/files/issues/2021-02-03/twig_tweak-token-xss.patch"
-            }
-            
-            
+            }     
         }
     },
     "autoload": {
