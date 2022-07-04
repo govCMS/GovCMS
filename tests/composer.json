@@ -5,7 +5,7 @@
     "require": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
         "drupal/coder": "^8.3",
-        "drupal/drupal-extension": "^4.1",
+        "drupal/drupal-extension": "^4.2",
         "integratedexperts/behat-format-progress-fail": "^1.0",
         "integratedexperts/behat-screenshot": "^1.1",
         "integratedexperts/behat-steps": "^1.3",
