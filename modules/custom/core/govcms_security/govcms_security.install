@@ -10,30 +10,64 @@ use Drupal\user\RoleInterface;
  * Issue GOVCMSD9-713: Grant 'view securitytxt' permission from security.txt module to all users.
  */
 function govcms_security_update_9001() {
-  $module_handler = \Drupal::moduleHandler ();
+  $module_handler = \Drupal::moduleHandler();
   if ($module_handler) {
     // We have to make sure the security text module is installed.
-    if (! ($module_handler->moduleExists ( 'securitytxt' ))) {
-      if (! (\Drupal::service ( 'module_installer' )->install ( [
-        'securitytxt'
-      ] ))) {
-        return t ( '"security.txt" module has not been installed.' );
+    if (!($module_handler->moduleExists('securitytxt'))) {
+      if (!(\Drupal::service('module_installer')->install(['securitytxt']))) {
+        return t('"security.txt" module has not been installed.');
       }
     }
     // Grant the "view securitytxt" permission to all users by default.
-    if ($module_handler->moduleExists ( 'user' )) {
+    if ($module_handler->moduleExists('user')) {
       // Anonymous role.
-      user_role_grant_permissions ( RoleInterface::ANONYMOUS_ID, [
-        'view securitytxt'
-      ] );
+      user_role_grant_permissions(RoleInterface::ANONYMOUS_ID, [
+        'view securitytxt']);
       // Authenticated role.
-      user_role_grant_permissions ( RoleInterface::AUTHENTICATED_ID, [
-        'view securitytxt'
-      ] );
+      user_role_grant_permissions(RoleInterface::AUTHENTICATED_ID, [
+        'view securitytxt']);
     }
-  } else {
-    return t ( '"security.txt" permission is not granted.' );
+  }
+}
+
+/**
+ * Implements hook_requirements
+ */
+function govcms_security_requirements($phase) {
+  // We only check the requirements during the runtime.
+  if ($phase !== 'runtime') {
+    return [];
   }
 
-  return t ( 'The "view securitytxt" permission has benn granted to all users.' );
+  $requirements = [];
+
+  /* ************************************************************************ */
+  // Dependent modules.
+  /* ************************************************************************ */
+  // Warn if any dependent modules are not installed.
+  // @see system_requirements()
+  $info = \Drupal::service('extension.list.module')->getExtensionInfo('govcms_security');
+  $module_handler = \Drupal::moduleHandler();
+  $dependencies = $info['dependencies'];
+  // Modules list that haven't been enabled.
+  $disabled_modules = [];
+
+  if (is_array($dependencies)) {
+    foreach ($dependencies as $module_name) {
+      // Check if the dependent module has been enabled.
+      if (!($module_handler->moduleExists($module_name))) {
+        $disabled_modules[] = $module_name;
+      }
+    }
+
+    if (!empty($disabled_modules)) {
+      $requirements['govcms_security_dependencies'] = [
+        'title' => t("GovCMS Security"),
+        'value' => t('GovCMS security dependency error. Following module must be enable for security reason.'),
+        'description' => t('%module_list', [
+          '%module_list' => implode(', ', $disabled_modules)]),
+        'severity' => REQUIREMENT_ERROR];
+    }
+  }
+  return $requirements;
 }
