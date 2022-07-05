@@ -4,3 +4,36 @@
  * @file
  * Contains install and update functions for the module.
  */
+use Drupal\user\RoleInterface;
+
+/**
+ * Issue GOVCMSD9-713: Grant 'view securitytxt' permission from security.txt module to all users.
+ */
+function govcms_security_update_9001() {
+  $module_handler = \Drupal::moduleHandler ();
+  if ($module_handler) {
+    // We have to make sure the security text module is installed.
+    if (! ($module_handler->moduleExists ( 'securitytxt' ))) {
+      if (! (\Drupal::service ( 'module_installer' )->install ( [
+        'securitytxt'
+      ] ))) {
+        return t ( '"security.txt" module has not been installed.' );
+      }
+    }
+    // Grant the "view securitytxt" permission to all users by default.
+    if ($module_handler->moduleExists ( 'user' )) {
+      // Anonymous role.
+      user_role_grant_permissions ( RoleInterface::ANONYMOUS_ID, [
+        'view securitytxt'
+      ] );
+      // Authenticated role.
+      user_role_grant_permissions ( RoleInterface::AUTHENTICATED_ID, [
+        'view securitytxt'
+      ] );
+    }
+  } else {
+    return t ( '"security.txt" permission is not granted.' );
+  }
+
+  return t ( 'The "view securitytxt" permission has benn granted to all users.' );
+}
