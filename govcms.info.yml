@@ -3,7 +3,7 @@ type: profile
 description: 'A GovCMS Drupal Distribution for government and the public sector in Australia.'
 project: govcms
 core_version_requirement: ^9
-version: '2.16.0'
+version: '2.17.0'
 
 distribution:
   name: GovCMS
@@ -28,6 +28,7 @@ install:
   - page_cache
   - path
   - rdf
+  - securitytxt
   - settings_tray
   - shortcut
   - taxonomy
