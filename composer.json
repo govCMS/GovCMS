@@ -121,7 +121,7 @@
         "drupal/robotstxt": "1.4",
         "drupal/role_delegation": "1.2.0",
         "drupal/scheduled_transitions": "2.2.1",
-        "drupal/search_api": "1.23.0",
+        "drupal/search_api": "1.24.0",
         "drupal/search_api_attachments": "9.0.0",
         "drupal/search_api_solr": "4.2.7",
         "drupal/seckit": "2.0.0",
