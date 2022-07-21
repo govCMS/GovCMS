@@ -17,6 +17,9 @@
         "sebastian/phpcpd": "^6.0"
     },
     "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
         "preferred-install": "dist",
         "secure-http": false,
         "sort-packages": true,
