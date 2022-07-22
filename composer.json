@@ -121,7 +121,7 @@
         "drupal/robotstxt": "1.4",
         "drupal/role_delegation": "1.2.0",
         "drupal/scheduled_transitions": "2.2.1",
-        "drupal/search_api": "1.23.0",
+        "drupal/search_api": "1.25.0",
         "drupal/search_api_attachments": "9.0.0",
         "drupal/search_api_solr": "4.2.7",
         "drupal/seckit": "2.0.0",
@@ -193,9 +193,6 @@
             },
             "drupal/metatag": {
                 "Unsetting metatags": "https://www.drupal.org/files/issues/2022-03-15/metatag-unset-2735195.patch"
-            },
-            "drupal/search_api": {
-                "Out of memory error when used with views, metatag and memcache modules -  https://www.drupal.org/project/search_api/issues/3258375": "https://www.drupal.org/files/issues/2022-03-18/3258375-19--problems_with_serialized_views_results.patch"
             },
             "drupal/securitytxt": {
                 "Config variable contact_page_url doesn't exist in Form- https://www.drupal.org/project/securitytxt/issues/3292099": "https://www.drupal.org/files/issues/2022-06-23/3292099-config-variable-contactpageurl.patch"
