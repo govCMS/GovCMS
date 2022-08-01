@@ -14,7 +14,12 @@ function govcms_security_update_9001() {
   if ($module_handler) {
     // We have to make sure the security text module is installed.
     if (!($module_handler->moduleExists('securitytxt'))) {
+      // The Security Text module hasn't been installed,
+      // then we install that module here.
       if (!(\Drupal::service('module_installer')->install(['securitytxt']))) {
+        // In case the Security Text module wasn't installed successfully,
+        // maybe due to that module doesn't exist in the file system.
+        // Here return a message to indicate that the critical module isn't installed.
         return t('"security.txt" module has not been installed.');
       }
     }
