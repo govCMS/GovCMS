@@ -17,6 +17,7 @@ dependencies:
   - password_policy:password_policy_username
   - real_aes
   - seckit:seckit
+  - securitytxt
   - tfa
   - update_notifications_disable:update_notifications_disable
   - username_enumeration_prevention:username_enumeration_prevention
