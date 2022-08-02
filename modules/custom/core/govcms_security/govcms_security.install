@@ -58,7 +58,11 @@ function govcms_security_requirements($phase) {
   $disabled_modules = [];
 
   if (is_array($dependencies)) {
-    foreach ($dependencies as $module_name) {
+    foreach ($dependencies as $dependency_name) {
+      // The dependency name could be {module}:{submodule}
+      // or {module}:{module}.
+      $project_module_name = explode(':', $dependency_name);
+      $module_name = $project_module_name[1] ?? $project_module_name[0];
       // Check if the dependent module has been enabled.
       if (!($module_handler->moduleExists($module_name))) {
         $disabled_modules[] = $module_name;
