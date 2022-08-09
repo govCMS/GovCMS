@@ -189,7 +189,7 @@
         "composer-exit-on-patch-failure": true,
         "patches": {
           "drupal/captcha": {
-              "Captcha point add label": "https://www.drupal.org/files/issues/2022-07-04/add%20label-3293710-1.patch"
+              "Captcha point add label": "https://www.drupal.org/files/issues/2022-08-07/hook-3293710-3.patch"
           },
             "drupal/google_analytics": {
                 "Fix deprecated warnings for PHP 8.1 compatibility - https://www.drupal.org/project/google_analytics/issues/3258588": "https://www.drupal.org/files/issues/2022-06-03/google_analytics-jsonserialize-code-standard-fixes-3258588-20.patch"
