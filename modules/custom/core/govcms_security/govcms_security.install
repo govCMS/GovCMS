@@ -36,6 +36,33 @@ function govcms_security_update_9001() {
 }
 
 /**
+ * Issue GOVCMSD9-883: Grant 'administer securitytxt' permission to site administrator.
+ */
+function govcms_security_update_9002() {
+  $module_handler = \Drupal::moduleHandler();
+  if ($module_handler) {
+    // We have to make sure the security text module is installed,
+    // before granting the permission to user roles.
+    if (!($module_handler->moduleExists('securitytxt'))) {
+      // The Security Text module hasn't been installed,
+      // then we install that module here.
+      if (!(\Drupal::service('module_installer')->install(['securitytxt']))) {
+        // In case the Security Text module wasn't installed successfully,
+        // maybe due to that module doesn't exist in the file system.
+        // Here return a message to indicate that the critical module isn't installed.
+        return t('"security.txt" module has not been installed.');
+      }
+    }
+    // Grant the "administer securitytxt" permission to user roles.
+    if ($module_handler->moduleExists('user')) {
+      // Govcms site administrator role.
+      user_role_grant_permissions(GovcmsSecurityInterface::GOVCMS_SITE_ADMIN_ROLE, [
+        'administer securitytxt']);
+    }
+  }
+}
+
+/**
  * Implements hook_requirements
  */
 function govcms_security_requirements($phase) {
