@@ -39,6 +39,7 @@ permissions:
   - 'administer node fields'
   - 'administer node form display'
   - 'administer nodes'
+  - 'administer securitytxt'
   - 'administer shortcuts'
   - 'administer taxonomy'
   - 'administer taxonomy_term display'
