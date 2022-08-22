@@ -8,6 +8,7 @@
 use Drupal\node\Entity\Node;
 use Drupal\shortcut\Entity\Shortcut;
 use Drupal\menu_link_content\Entity\MenuLinkContent;
+use Drupal\user\RoleInterface;
 
 /**
  * Define a default theme constant.
@@ -127,6 +128,22 @@ function govcms_install() {
       'use_default' => FALSE,
     ])
     ->save(TRUE);
+
+  // Grant the "view securitytxt" permission to all users by default.
+  // The Security Text module is a dependency of GovCMS Security module,
+  // which should be installed already at this point.
+  // govcms_security_update_9001() is doing the same thing as here.
+  // We might remove all updates for GovCMS 10.
+  // That is why we duplicated them here.
+  $module_handler = \Drupal::moduleHandler();
+  if ($module_handler->moduleExists('user') && $module_handler->moduleExists('securitytxt')) {
+    // Anonymous role.
+    user_role_grant_permissions(RoleInterface::ANONYMOUS_ID, [
+      'view securitytxt']);
+    // Authenticated role.
+    user_role_grant_permissions(RoleInterface::AUTHENTICATED_ID, [
+      'view securitytxt']);
+  }
 }
 
 /**

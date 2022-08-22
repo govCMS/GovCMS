@@ -1,0 +1,13 @@
+enabled: true
+contact_email: ''
+contact_phone: ''
+contact_page_url: 'https://www.govcms.gov.au/support/security/disclosure'
+encryption_public_key_url: ''
+policy_page_url: ''
+acknowledgement_page_url: ''
+signature_text: ''
+contact_url: ''
+encryption_key_url: ''
+policy_url: ''
+acknowledgement_url: ''
+
