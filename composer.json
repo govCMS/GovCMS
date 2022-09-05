@@ -131,7 +131,7 @@
         "drupal/simple_sitemap": "4.1.2",
         "drupal/swiftmailer": "2.2.0",
         "drupal/tfa": "1.0.0-alpha8",
-        "drupal/token": "1.10.0",
+        "drupal/token": "1.11.0",
         "drupal/twig_tweak": "2.9",
         "drupal/update_notifications_disable": "1.1",
         "drupal/username_enumeration_prevention": "1.2.0",
