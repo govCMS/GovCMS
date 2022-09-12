@@ -53,6 +53,7 @@
         "drupal/adminimal_theme": "1.6.0",
         "drupal/bigmenu": "2.0.0-rc2",
         "drupal/block_place": "1.0",
+        "drupal/captcha": "1.4",
         "drupal/chosen": "3.0.3",
         "drupal/components": "2.4.0",
         "drupal/config_filter": "2.4.0",
