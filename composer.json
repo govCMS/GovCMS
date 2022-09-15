@@ -203,6 +203,9 @@
             },
             "drupal/twig_tweak": {
                 "sanitize input": "https://www.drupal.org/files/issues/2021-02-03/twig_tweak-token-xss.patch"
+            },
+            "drupal/entity_embed": {
+                "Construction of EntityEmbedDisplay plugin instances trigger strpos deprecation on PHP 8.1": "https://git.drupalcode.org/project/entity_embed/-/merge_requests/6.diff"
             }
         }
     },
