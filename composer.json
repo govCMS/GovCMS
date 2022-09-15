@@ -206,6 +206,9 @@
             },
             "drupal/entity_embed": {
                 "Construction of EntityEmbedDisplay plugin instances trigger strpos deprecation on PHP 8.1": "https://git.drupalcode.org/project/entity_embed/-/merge_requests/6.diff"
+            },
+            "drupal/linkit": {
+                "Deprecated function": "https://www.drupal.org/files/issues/2022-04-26/linkit-jsonserialize-3262401-11.patch"
             }
         }
     },
