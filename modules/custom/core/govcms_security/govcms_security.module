@@ -184,3 +184,23 @@ function govcms_security_hide_permissions_default() {
     'administer module_permissions',
   ];
 }
+
+/**
+ * Implements hook_update_projects_alter().
+ * Disables updates from all modules
+ */
+function govcms_security_update_projects_alter(&$projects) {
+  \Drupal::keyValueExpirable('update_available_releases')->deleteAll();
+  \Drupal::keyValueExpirable('update_available_releases')->setMultiple([]);
+  $projects = [];
+}
+
+/**
+ * Implements hook_cron().
+ *
+ * Make sure that when cron runs, available data is not fetched.
+ */
+function govcms_security_cron() {
+  \Drupal::keyValueExpirable('update_available_releases')->deleteAll();
+  \Drupal::keyValueExpirable('update_available_releases')->setMultiple([]);
+}

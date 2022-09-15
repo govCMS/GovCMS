@@ -179,3 +179,29 @@ function govcms_update_9001() {
     \Drupal::keyValue('system.schema')->delete($stub_module);
   }
 }
+
+/**
+ * Issue GOVCMSD9-695: Remove update_notifications_disable module from distribution.
+ */
+function govcms_update_9002() {
+  $disabling_modules = [
+    'update_notifications_disable',
+  ];
+
+  $extension_config = \Drupal::configFactory()->getEditable('core.extension');
+  $module = $extension_config->get('module');
+
+  foreach($disabling_modules as $disabling_module) {
+    if (isset($module[$disabling_module])) {
+      unset($module[$disabling_module]);
+    }
+  }
+
+  $extension_config->set('module', $module);
+  $extension_config->save();
+
+  // Remove update_notifications_disable module from system.schema.
+  foreach($disabling_modules as $disabling_module) {
+    \Drupal::keyValue('system.schema')->delete($disabling_module);
+  }
+}
