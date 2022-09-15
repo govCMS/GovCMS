@@ -86,7 +86,7 @@ function govcms_security_requirements($phase) {
  *
  * Ensure that the Available releases array is empty so it never checks them.
  */
-function update_notifications_disable_install($is_syncing) {
+function govcms_security_install($is_syncing) {
   \Drupal::keyValueExpirable('update_available_releases')->deleteAll();
   \Drupal::keyValueExpirable('update_available_releases')->setMultiple([]);
 }
