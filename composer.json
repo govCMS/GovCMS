@@ -73,7 +73,7 @@
         "drupal/dropzonejs": "2.6.0",
         "drupal/ds": "3.15.0",
         "drupal/dynamic_entity_reference": "1.16.0",
-        "drupal/embed": "1.5",
+        "drupal/embed": "1.6.0",
         "drupal/encrypt": "3.0",
         "drupal/entity_browser": "2.8.0",
         "drupal/entity_class_formatter": "1.3",
