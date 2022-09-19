@@ -21,6 +21,7 @@ install:
   - field_ui
   - help
   - layout_builder
+  - media_file_delete
   - media_library
   - menu_ui
   - node
