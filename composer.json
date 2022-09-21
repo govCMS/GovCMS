@@ -200,7 +200,7 @@
                 "Config variable contact_page_url doesn't exist in Form- https://www.drupal.org/project/securitytxt/issues/3292099": "https://www.drupal.org/files/issues/2022-06-23/3292099-config-variable-contactpageurl.patch"
             },
             "drupal/tfa": {
-                "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2020-10-19/tfa-2930541-22_0.patch",
+                "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2022-07-15/tfa-2930541-44.patch",
                 "Users' recovery codes exposed to admin users - https://www.drupal.org/project/tfa/issues/3075304": "https://www.drupal.org/files/issues/2021-01-14/tfa-3075304-15.patch",
                 "Set upper limit for number of skipped validation": "https://www.drupal.org/files/issues/2022-02-09/3263289-set-upper-limit.patch"
             },
