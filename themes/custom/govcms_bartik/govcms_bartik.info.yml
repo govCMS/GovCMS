@@ -1,7 +1,7 @@
 name: 'GovCMS Bartik'
 type: theme
 description: 'A prototype theme from Drupal Bartik.'
-core_version_requirement: ^9
+core_version_requirement: ^9 || ^10
 base theme: bartik
 package: 'GovCMS'
 regions:
