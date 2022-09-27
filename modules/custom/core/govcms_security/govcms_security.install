@@ -4,6 +4,7 @@
  * @file
  * Contains install and update functions for the module.
  */
+use Drupal\govcms_security\GovcmsSecurityInterface;
 use Drupal\user\RoleInterface;
 
 /**
