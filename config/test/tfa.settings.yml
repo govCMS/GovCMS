@@ -8,12 +8,12 @@ send_plugins: {  }
 login_plugins: {  }
 default_validation_plugin: tfa_email_code
 validation_plugin_settings:
-  tfa_hotp:
+  ga_login_hotp:
     counter_window: 10
     site_name_prefix: 1
     name_prefix: TFA
     issuer: GovCMS
-  tfa_totp:
+  ga_login_totp:
     time_skew: 2
     site_name_prefix: 1
     name_prefix: TFA
