@@ -5,7 +5,6 @@ package: GovCMS
 core_version_requirement: ^9
 dependencies:
   - encrypt
-  - ga_login
   - honeypot:honeypot
   - key
   - login_security:login_security
