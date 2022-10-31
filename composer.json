@@ -196,9 +196,6 @@
                 "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2022-10-26/tfa-2930541-48_3.patch",
                 "Drush command terminated abnormally - https://www.drupal.org/project/tfa/issues/3313938": "https://git.drupalcode.org/project/tfa/-/commit/4e4da3e.patch"
             },
-            "drupal/twig_tweak": {
-                "sanitize input": "https://www.drupal.org/files/issues/2021-02-03/twig_tweak-token-xss.patch"
-            },
             "drupal/entity_embed": {
                 "Construction of EntityEmbedDisplay plugin instances trigger strpos deprecation on PHP 8.1": "https://git.drupalcode.org/project/entity_embed/-/merge_requests/6.diff"
             },
