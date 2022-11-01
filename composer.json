@@ -148,10 +148,7 @@
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
-            },
-            "excludes": [
-                "sites/development.services.yml"
-            ]
+            }
         },
         "installer-paths": {
             "web/core": [
