@@ -148,14 +148,7 @@
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
-            },
-            "initial": {
-                "sites/default/default.services.yml": "sites/default/services.yml",
-                "sites/default/default.settings.php": "sites/default/settings.php"
-            },
-            "excludes": [
-                "sites/development.services.yml"
-            ]
+            }
         },
         "installer-paths": {
             "web/core": [
@@ -201,11 +194,6 @@
             }
         }
     },
-    "autoload": {
-        "psr-4": {
-            "GovCMS\\composer\\": "src/composer"
-        }
-    },
     "config": {
         "allow-plugins": {
             "composer/installers": true,
@@ -219,18 +207,10 @@
         "optimize-autoloader": true
     },
     "scripts": {
-        "pre-install-cmd": [
-            "GovCMS\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "pre-update-cmd": [
-            "GovCMS\\composer\\ScriptHandler::checkComposerVersion"
-        ],
         "post-install-cmd": [
-            "GovCMS\\composer\\ScriptHandler::createRequiredFiles",
             "rsync -av --delete --exclude 'web' --exclude '.git' --exclude '.tugboat' --exclude 'vendor' --exclude 'tests' ./ web/profiles/govcms"
         ],
         "post-update-cmd": [
-            "GovCMS\\composer\\ScriptHandler::createRequiredFiles",
             "rsync -av --delete --exclude 'web' --exclude '.git' --exclude '.tugboat' --exclude 'vendor' --exclude 'tests' ./ web/profiles/govcms"
         ],
         "nuke": "rm -r -f composer.lock bin app web vendor"
