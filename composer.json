@@ -61,7 +61,7 @@
         "drupal/config_perms": "2.0",
         "drupal/config_split": "1.5.0",
         "drupal/config_update": "1.7",
-        "drupal/consumers": "1.13.0",
+        "drupal/consumers": "1.15.0",
         "drupal/contact_storage": "1.2.0",
         "drupal/context": "4.1.0",
         "drupal/core-composer-scaffold": "^9",
