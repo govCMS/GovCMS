@@ -86,7 +86,7 @@
         "drupal/features": "3.12.0",
         "drupal/field_group": "3.3.0",
         "drupal/focal_point": "1.5.0",
-        "drupal/ga_login": "1.0.0-alpha6",
+        "drupal/ga_login": "1.0.0-alpha7",
         "drupal/google_analytics": "4.0.2",
         "drupal/honeypot": "2.1.2",
         "drupal/govcms_dlm": "2.0.0",
