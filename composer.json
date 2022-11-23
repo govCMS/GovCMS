@@ -186,7 +186,6 @@
                 "Config variable contact_page_url doesn't exist in Form- https://www.drupal.org/project/securitytxt/issues/3292099": "https://www.drupal.org/files/issues/2022-06-23/3292099-config-variable-contactpageurl.patch"
             },
             "drupal/tfa": {
-                "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2022-10-26/tfa-2930541-48_3.patch",
                 "Drush command terminated abnormally - https://www.drupal.org/project/tfa/issues/3313938": "https://git.drupalcode.org/project/tfa/-/commit/4e4da3e.patch"
             },
             "drupal/linkit": {
