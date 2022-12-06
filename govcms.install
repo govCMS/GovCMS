@@ -113,7 +113,7 @@ function govcms_install() {
     ->save(TRUE);
 
   // Set the path to the logo, favicon and README file based on install directory.
-  $govcms_path = drupal_get_path('profile', 'govcms');
+  $govcms_path = \Drupal::service('extension.list.profile')->getPath('govcms');
   \Drupal::configFactory()
     ->getEditable('system.theme.global')
     ->set('logo', [
