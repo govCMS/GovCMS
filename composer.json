@@ -66,7 +66,7 @@
         "drupal/context": "4.1.0",
         "drupal/core-composer-scaffold": "^9",
         "drupal/devel": "4.2.1",
-        "drupal/core-recommended": "9.4.8",
+        "drupal/core-recommended": "9.5.0",
         "drupal/crop": "2.3.0",
         "drupal/ctools": "3.13.0",
         "drupal/diff": "1.1.0",
