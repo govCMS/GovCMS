@@ -32,6 +32,7 @@ permissions:
   - 'administer media'
   - 'administer media display'
   - 'administer media fields'
+  - 'administer media file delete'
   - 'administer media form display'
   - 'administer media types'
   - 'administer menu'
