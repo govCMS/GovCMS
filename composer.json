@@ -123,7 +123,7 @@
         "drupal/scheduled_transitions": "2.2.1",
         "drupal/search_api": "1.27.0",
         "drupal/search_api_attachments": "9.0.0",
-        "drupal/search_api_solr": "4.2.8",
+        "drupal/search_api_solr": "4.2.9",
         "drupal/seckit": "2.0.0",
         "drupal/securitytxt": "1.2.0",
         "drupal/shield": "1.7.0",
