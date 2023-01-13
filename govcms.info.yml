@@ -24,17 +24,14 @@ install:
   - media_file_delete
   - media_library
   - menu_ui
-  - node
   - options
   - page_cache
   - path
-  - securitytxt
   - settings_tray
   - shortcut
   - taxonomy
   - telephone
   - toolbar
-  - views
   - views_ui
   - workflows
 
