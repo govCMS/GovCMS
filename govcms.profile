@@ -9,6 +9,8 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Breadcrumb\Breadcrumb;
+use Drupal\user\RoleInterface;
+use Drupal\user\Entity\Role;
 
 /**
  * Implements hook_form_FORM_ID_alter() for install_configure_form().
@@ -121,4 +123,45 @@ function govcms_field_widget_complete_form_alter(array &$field_widget_complete_f
     'field_widget_complete_form',
     'field_widget_complete_' . $context['widget']->getPluginId() . '_form',
   ], $field_widget_complete_form, $form_state, $context);
+}
+
+/**
+ * Implements hook_modules_installed().
+ */
+function govcms_modules_installed($modules, $is_syncing) {
+  $potential_conflicts = [
+    'govcms8_foundations',
+    'govcms_media',
+    'block_place',
+  ];
+  if (!empty(array_intersect($modules, $potential_conflicts))) {
+    \Drupal::messenger()
+      ->addWarning(t('Some modules are deprcated. See the <a href=":govcms-docs">GovCMS support documentation</a> for more information.', [
+        ':govcms-docs' => 'https://www.govcms.gov.au',
+      ]));
+  }
+
+  if (!$is_syncing) {
+    if (!in_array('securitytxt', $modules)) {
+      // Anonymous role.
+      user_role_grant_permissions(RoleInterface::ANONYMOUS_ID, ['view securitytxt']);
+      // Authenticated role.
+      user_role_grant_permissions(RoleInterface::AUTHENTICATED_ID, ['view securitytxt']);
+    }
+    if (!in_array('role_delegation', $modules)) {
+      if ($role = Role::load('govcms_site_administrator')) {
+        $role->grantPermission('assign govcms_content_approver role');
+        $role->grantPermission('assign govcms_content_author role');
+        $role->grantPermission('assign govcms_site_administrator role');
+        $role->save();
+      }
+    }
+    if (!in_array('module_permissions', $modules)) {
+      if ($role = Role::load('govcms_site_administrator')) {
+        $role->grantPermission('administer managed modules');
+        $role->grantPermission('administer managed modules permissions');
+        $role->save();
+      }
+    }
+  }
 }
