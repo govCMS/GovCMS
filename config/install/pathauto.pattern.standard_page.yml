@@ -4,7 +4,7 @@ dependencies:
   module:
     - node
 id: standard_page
-label: Standard Page
+label: 'Standard Page'
 type: 'canonical_entities:node'
 pattern: '[node:title]'
 selection_criteria:
