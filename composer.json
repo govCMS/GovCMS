@@ -64,7 +64,7 @@
         "drupal/consumers": "1.15.0",
         "drupal/contact_storage": "1.2.0",
         "drupal/context": "4.1.0",
-        "drupal/core-composer-scaffold": "^9",
+        "drupal/core-composer-scaffold": "^10",
         "drupal/devel": "5.0.2",
         "drupal/core-recommended": "9.4.9",
         "drupal/crop": "2.3.0",
