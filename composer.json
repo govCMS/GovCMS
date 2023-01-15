@@ -92,7 +92,7 @@
         "drupal/govcms_dlm": "2.0.0",
         "drupal/inline_entity_form": "1.0.0-rc14",
         "drupal/key": "1.16.0",
-        "drupal/layout_builder_modal": "1.1",
+        "drupal/layout_builder_modal": "1.2.0",
         "drupal/layout_builder_restrictions": "2.17.0",
         "drupal/linked_field": "1.3.0",
         "drupal/linkit": "6.0.0-beta3",
