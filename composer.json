@@ -103,7 +103,7 @@
         "drupal/menu_block": "1.10.0",
         "drupal/metatag": "1.22.0",
         "drupal/migrate_file": "2.1.1",
-        "drupal/migrate_plus": "6.0.0",
+        "drupal/migrate_plus": "6.0.1",
         "drupal/migrate_source_csv": "3.5.0",
         "drupal/migrate_tools": "6.0.0",
         "drupal/minisite": "1.3",
