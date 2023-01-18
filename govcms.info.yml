@@ -11,7 +11,7 @@ distribution:
 
 install:
   - big_pipe
-  - ckeditor
+  - ckeditor5
   - config
   - config_ignore:config_ignore
   - content_moderation
