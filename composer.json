@@ -118,7 +118,7 @@
         "drupal/recaptcha": "3.1.0",
         "drupal/redirect": "1.8.0",
         "drupal/rest_menu_items": "3.0.3",
-        "drupal/robotstxt": "1.4",
+        "drupal/robotstxt": "1.5.0",
         "drupal/role_delegation": "1.2.0",
         "drupal/scheduled_transitions": "2.2.1",
         "drupal/search_api": "1.28.0",
