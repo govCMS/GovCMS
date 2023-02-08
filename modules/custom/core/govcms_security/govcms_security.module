@@ -16,6 +16,15 @@ use Drupal\user\RoleInterface;
 use Drupal\webform\Plugin\WebformElement\ManagedFile;
 
 /**
+ * Implements hook_js_settings_alter().
+ */
+function govcms_security_js_settings_alter(array &$settings, \Drupal\Core\Asset\AttachedAssetsInterface $assets) {
+  if (isset($settings['password'])) {
+    $settings['password']['tooShort'] = t('Make it at least 14 characters');
+  }
+}
+
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function govcms_security_form_contact_message_contact_form_alter(&$form, FormStateInterface $form_state) {
