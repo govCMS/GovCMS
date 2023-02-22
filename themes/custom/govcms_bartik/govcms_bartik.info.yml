@@ -26,3 +26,5 @@ regions:
   footer_fifth: 'Footer fifth'
 libraries:
  - govcms_bartik/govcms-bartik-styling
+
+ckeditor5-stylesheets: false
