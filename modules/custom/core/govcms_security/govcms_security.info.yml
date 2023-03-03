@@ -15,6 +15,7 @@ dependencies:
   - event_log_track:event_log_track_node
   - event_log_track:event_log_track_syslog
   - event_log_track:event_log_track_taxonomy
+  - event_log_track:event_log_track_tfa
   - event_log_track:event_log_track_ui
   - event_log_track:event_log_track_user
   - event_log_track:event_log_track_workflows
