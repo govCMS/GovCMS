@@ -1,4 +1,4 @@
-track_time:                   0.1
+track_time:                   6
 user_wrong_count:             5
 host_wrong_count:             0
 host_wrong_count_hard:        0
@@ -12,8 +12,8 @@ login_activity_email_user:    ''
 notice_attempts_message:      'Unrecognised username or password. Have you <a href="/user/password">forgotten your password</a>?'
 host_soft_banned:             'This host is not allowed to log in to @site. Please contact your site administrator.'
 host_hard_banned:             'The IP address @ip is banned at @site, and will not be able to access any of its content from now on. Please contact the site administrator.'
-user_blocked:                 'The user @username has been blocked due to failed login attempts.'
-user_blocked_email_subject: '%site: The user @username has been blocked'
+user_blocked:                 ''
+user_blocked_email_subject:   '%site: The user @username has been blocked'
 user_blocked_email_body:      'The user @username (@edit_uri) has been blocked at @site due to the amount of failed login attempts.'
 login_activity_email_subject: 'Security information: Unexpected login activity has been detected at @site.'
 login_activity_email_body:    'The configured threshold of @activity_threshold logins has been reached with a total of @tracking_current_count invalid login attempts. You should review your log information about login attempts at @site.'
