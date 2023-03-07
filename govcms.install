@@ -226,7 +226,7 @@ function govcms_update_9003() {
   $extension_config->set('module', $module);
   $extension_config->save();
 
-  // Remove update_notifications_disable module from system.schema.
+  // Remove features & block_place module from system.schema.
   foreach($disabling_modules as $disabling_module) {
     \Drupal::keyValue('system.schema')->delete($disabling_module);
   }
