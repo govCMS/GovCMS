@@ -205,3 +205,29 @@ function govcms_update_9002() {
     \Drupal::keyValue('system.schema')->delete($disabling_module);
   }
 }
+/**
+ * Issue GOVCMSD9-1048 & GOVCMSD9-866: Remove features & block_place modules from distribution.
+ */
+function govcms_update_9003() {
+  $disabling_modules = [
+    'features',
+    'block_place'
+  ];
+
+  $extension_config = \Drupal::configFactory()->getEditable('core.extension');
+  $module = $extension_config->get('module');
+
+  foreach($disabling_modules as $disabling_module) {
+    if (isset($module[$disabling_module])) {
+      unset($module[$disabling_module]);
+    }
+  }
+
+  $extension_config->set('module', $module);
+  $extension_config->save();
+
+  // Remove update_notifications_disable module from system.schema.
+  foreach($disabling_modules as $disabling_module) {
+    \Drupal::keyValue('system.schema')->delete($disabling_module);
+  }
+}
