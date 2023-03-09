@@ -211,6 +211,7 @@ function govcms_update_9002() {
 function govcms_update_9003() {
   $disabling_modules = [
     'features',
+    'features_ui',
     'block_place'
   ];
 
