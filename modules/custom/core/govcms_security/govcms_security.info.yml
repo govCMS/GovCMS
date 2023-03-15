@@ -6,7 +6,6 @@ core_version_requirement: ^9 || ^10
 dependencies:
   - encrypt
   - event_log_track:event_log_track
-  - event_log_track:event_log_track_auth
   - event_log_track:event_log_track_config
   - event_log_track:event_log_track_menu
   - event_log_track:event_log_track_node

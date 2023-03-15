@@ -70,7 +70,6 @@ function govcms_security_update_9003() {
   $module_installer = \Drupal::service('module_installer');
   $modules_list = [
     'event_log_track',
-    'event_log_track_auth',
     'event_log_track_config',
     'event_log_track_menu',
     'event_log_track_node',
