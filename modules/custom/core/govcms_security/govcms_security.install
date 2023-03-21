@@ -90,6 +90,20 @@ function govcms_security_update_9003() {
 }
 
 /**
+ * Issue : Make sure the TFA validation skip not greater than 10.
+ */
+function govcms_security_update_9004() {
+  $config = \Drupal::configFactory()->getEditable('tfa.settings');
+  // Only change the skip limit to 10,
+  // if current setting is greater 10.
+  if ($config && $config->get('validation_skip') > 10) {
+    $config
+      ->set('validation_skip', 10)
+      ->save();
+  }
+}
+
+/**
  * Implements hook_requirements
  */
 function govcms_security_requirements($phase) {
