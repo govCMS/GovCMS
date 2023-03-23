@@ -1,8 +1,0 @@
-name: GovCMS8 Layouts
-type: module
-description: Provides layouts for the GovCMS8 distribution. [deprecated]
-package: GovCMS8 [deprecated]
-core: 8.x
-core_version_requirement: ^8 || ^9
-dependencies:
-  - layout_discovery
