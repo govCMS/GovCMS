@@ -14,7 +14,6 @@ install:
   - drupal:block
   - drupal:ckeditor5
   - drupal:config
-  - config_ignore:config_ignore
   - drupal:content_moderation
   - drupal:contextual
   - drupal:datetime_range
@@ -22,14 +21,12 @@ install:
   - drupal:field_ui
   - drupal:help
   - drupal:layout_builder
-  - media_file_delete:media_file_delete
   - drupal:media_library
   - drupal:menu_ui
   - drupal:node
   - drupal:options
   - drupal:page_cache
   - drupal:path
-  - pathauto:pathauto
   - drupal:settings_tray
   - drupal:shortcut
   - drupal:taxonomy
@@ -38,6 +35,9 @@ install:
   - drupal:views
   - drupal:views_ui
   - drupal:workflows
+  - config_ignore:config_ignore
+  - media_file_delete:media_file_delete
+  - pathauto:pathauto
 
 dependencies:
   - govcms_security

@@ -2,6 +2,7 @@
 .circleci
 .docker
 .dockerignore
+.DS_Store
 .editorconfig
 .env
 .git

@@ -4,7 +4,7 @@ description: Enhance security of GovCMS websites.
 package: GovCMS
 core_version_requirement: ^9 || ^10
 dependencies:
-  - encrypt
+  - encrypt:encrypt
   - event_log_track:event_log_track
   - event_log_track:event_log_track_auth
   - event_log_track:event_log_track_config
@@ -15,7 +15,7 @@ dependencies:
   - event_log_track:event_log_track_ui
   - event_log_track:event_log_track_user
   - honeypot:honeypot
-  - key
+  - key:key
   - login_security:login_security
   - password_policy:password_policy
   - password_policy:password_policy_characters
@@ -23,8 +23,8 @@ dependencies:
   - password_policy:password_policy_history
   - password_policy:password_policy_length
   - password_policy:password_policy_username
-  - real_aes
+  - real_aes:real_aes
   - seckit:seckit
-  - securitytxt
-  - tfa
+  - securitytxt:securitytxt
+  - tfa:tfa
   - username_enumeration_prevention:username_enumeration_prevention
