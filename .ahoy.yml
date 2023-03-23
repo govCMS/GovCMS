@@ -1,0 +1,41 @@
+---
+ahoyapi: v2
+
+commands:
+  up:
+    usage: Build project.
+    cmd: |
+      docker compose up -d "$@"
+
+  down:
+    usage: Delete project.
+    cmd: docker compose down
+
+  build:
+    usage: Build project.
+    cmd: |
+      docker compose build "$@"
+
+  restart:
+    usage: Restart Docker containers.
+    cmd: docker compose restart
+
+  stop:
+    usage: Stop Docker containers.
+    cmd: docker compose stop "$@"
+
+  cli:
+    usage: Start a shell.
+    cmd: docker compose exec govcms bash
+
+  rector:
+    usage: Analyze your code with Rector and review suggested changes.
+    cmd: docker compose exec govcms rector "$@"
+
+  phpunit:
+    usage: Run PHPUnit tests.
+    cmd: docker compose exec govcms phpunit "$@"
+
+  drupal-check:
+    usage: Static analysis tool to check for correctness and deprecation errors.
+    cmd: docker compose exec govcms drupal-check "$@"

@@ -1,4 +1,5 @@
 # Ignore GovCMS build files.
+.docker/auth.json
 build.properties
 tests/screenshots/*
 
