@@ -49,6 +49,7 @@
         "drupal/admin_toolbar": "3.3.0",
         "drupal/adminimal_admin_toolbar": "1.11.0",
         "drupal/adminimal_theme": "1.6.0",
+        "drupal/bartik": "1.0.2",
         "drupal/bigmenu": "2.0.0-rc2",
         "drupal/block_place": "1.0",
         "drupal/captcha": "1.9.0",
