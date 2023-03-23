@@ -24,14 +24,7 @@ function govcms_modules_installed($modules, $is_syncing) {
   }
 
   if (!$is_syncing) {
-    if (!in_array('securitytxt', $modules)) {
-      // Anonymous role.
-      user_role_grant_permissions(RoleInterface::ANONYMOUS_ID, ['view securitytxt']);
-      // Authenticated role.
-      user_role_grant_permissions(RoleInterface::AUTHENTICATED_ID, ['view securitytxt']);
-    }
-
-    if (!in_array('role_delegation', $modules)) {
+    if (in_array('role_delegation', $modules)) {
       // Site administrator.
       if ($role = Role::load('govcms_site_administrator')) {
         $role->grantPermission('assign govcms_content_approver role');
@@ -41,7 +34,7 @@ function govcms_modules_installed($modules, $is_syncing) {
       }
     }
 
-    if (!in_array('module_permissions', $modules)) {
+    if (in_array('module_permissions', $modules)) {
       // Site administrator.
       if ($role = Role::load('govcms_site_administrator')) {
         $role->grantPermission('administer managed modules');
