@@ -1,9 +1,7 @@
 {
     "name": "govcms/govcms",
     "description": "GovCMS Drupal Distribution",
-    "keywords": [
-        "GovCMS"
-    ],
+    "keywords": ["GovCMS"],
     "type": "drupal-profile",
     "license": "GPL-2.0-or-later",
     "homepage": "https://www.govcms.gov.au",
@@ -51,61 +49,64 @@
         "drupal/admin_toolbar": "3.3.0",
         "drupal/adminimal_admin_toolbar": "1.11.0",
         "drupal/adminimal_theme": "1.6.0",
+        "drupal/bartik": "1.0.2",
         "drupal/bigmenu": "2.0.0-rc2",
         "drupal/block_place": "1.0",
         "drupal/captcha": "1.9.0",
         "drupal/chosen": "3.0.5",
-        "drupal/components": "2.4.0",
+        "drupal/components": "3.0.0-beta3 as 2.4.0",
         "drupal/config_filter": "2.4.0",
-        "drupal/config_ignore": "2.3.0",
+        "drupal/config_ignore": "2.4.0",
         "drupal/config_perms": "2.0",
-        "drupal/config_split": "1.5.0",
-        "drupal/config_update": "1.7",
+        "drupal/config_split": "2.0.0-rc4 as 1.5.0",
+        "drupal/config_update": "2.0.0-alpha2 as 1.7.0",
         "drupal/consumers": "1.16.0",
-        "drupal/contact_storage": "1.2.0",
-        "drupal/context": "4.1.0",
-        "drupal/core-composer-scaffold": "^9",
-        "drupal/core-recommended": "9.5.3",
-        "drupal/devel": "5.1.1",
+        "drupal/contact_storage": "1.3.0 as 1.2.0",
+        "drupal/context": "5.0.0-rc1 as 4.1.0",
+        "drupal/core-composer-scaffold": "10.0.5 as 9.4.11",
+        "drupal/core-recommended": "10.0.5 as 9.4.11",
         "drupal/crop": "2.3.0",
         "drupal/ctools": "3.13.0",
+        "drupal/devel": "5.1.1",
         "drupal/diff": "1.1.0",
-        "drupal/dropzonejs": "2.7.0",
+        "drupal/dropzonejs": "2.8.0",
         "drupal/ds": "3.15.0",
-        "drupal/dynamic_entity_reference": "1.16.0",
+        "drupal/dynamic_entity_reference": "4.0.0-alpha2 as 1.16.0",
         "drupal/embed": "1.6.0",
         "drupal/encrypt": "3.1.0",
         "drupal/entity_browser": "2.9.0",
-        "drupal/entity_embed": "1.3.0",
         "drupal/entity_class_formatter": "2.0.0",
+        "drupal/entity_embed": "1.3.0",
         "drupal/entity_hierarchy": "3.3.4",
         "drupal/entity_reference_display": "2.0.0",
         "drupal/entity_reference_revisions": "1.10.0",
         "drupal/environment_indicator": "4.0.14",
+        "drupal/events_log_track": "3.1.4",
         "drupal/facets": "2.0.6",
         "drupal/features": "3.12.0",
         "drupal/field_group": "3.4.0",
-        "drupal/focal_point": "1.5.0",
+        "drupal/focal_point": "2.0.0-alpha2 as 1.5.0",
         "drupal/google_analytics": "4.0.2",
-        "drupal/honeypot": "2.1.2",
         "drupal/govcms_dlm": "2.0.0",
+        "drupal/honeypot": "2.1.2",
         "drupal/inline_entity_form": "1.0.0-rc14",
         "drupal/key": "1.17.0",
         "drupal/layout_builder_modal": "1.2.0",
         "drupal/layout_builder_restrictions": "2.17.0",
-        "drupal/linked_field": "1.3.0",
-        "drupal/linkit": "6.0.0-beta3",
+        "drupal/linked_field": "1.5.0",
+        "drupal/linkit": "6.0.0-beta4",
         "drupal/login_security": "2.0.1",
         "drupal/media_entity_file_replace": "1.1.0",
         "drupal/media_file_delete": "1.3.0",
-        "drupal/menu_trail_by_path": "2.0.0",
+        "drupal/media_vimeo_domain_privacy": "1.1",
         "drupal/menu_block": "1.10.0",
+        "drupal/menu_trail_by_path": "2.0.0",
         "drupal/metatag": "1.22.0",
         "drupal/migrate_file": "2.1.2",
         "drupal/migrate_plus": "6.0.1",
         "drupal/migrate_source_csv": "3.5.0",
         "drupal/migrate_tools": "6.0.1",
-        "drupal/minisite": "1.3",
+        "drupal/minisite": "2.0.0",
         "drupal/modifiers": "1.5.0",
         "drupal/module_permissions": "3.2.0",
         "drupal/panelizer": "4.4",
@@ -119,29 +120,41 @@
         "drupal/rest_menu_items": "3.0.3",
         "drupal/robotstxt": "1.5.0",
         "drupal/role_delegation": "1.2.0",
-        "drupal/scheduled_transitions": "2.2.1",
+        "drupal/scheduled_transitions": "2.3.0",
         "drupal/search_api": "1.28.0",
-        "drupal/search_api_attachments": "9.0.0",
+        "drupal/search_api_attachments": "9.0.1",
         "drupal/search_api_solr": "4.2.10",
         "drupal/seckit": "2.0.1",
         "drupal/securitytxt": "1.2.0",
         "drupal/shield": "1.7.0",
         "drupal/simple_oauth": "5.2.3",
-        "drupal/simple_sitemap": "4.1.3",
-        "drupal/swiftmailer": "2.2.0",
-        "drupal/tfa": "1.0.0",
+        "drupal/simple_sitemap": "4.1.4",
+        "drupal/swiftmailer": "2.4.0",
+        "drupal/tfa": "2.0.0-alpha2 as 1.0.0",
         "drupal/token": "1.11.0",
-        "drupal/twig_tweak": "3.2.0",
+        "drupal/twig_tweak": "3.2.1",
         "drupal/username_enumeration_prevention": "1.3.0",
-        "drupal/video_embed_field": "2.4",
-        "drupal/webform": "6.1.4",
+        "drupal/video_embed_field": "2.5.0 as 2.4.0",
+        "drupal/webform": "6.2.0-beta5 as 6.1.4",
         "harvesthq/chosen": "1.8.7",
         "oomphinc/composer-installers-extender": "^2.0",
         "swiftmailer/swiftmailer": "6.3.0",
         "webflo/drupal-finder": "^1.2"
     },
     "require-dev": {
-        "drush/drush": "~10"
+        "drush/drush": "~11"
+    },
+    "replace": {
+        "dropzone/dropzone": "*",
+        "drupal/securitytxt": "*",
+        "drupal/entity_embed": "*",
+        "drupal/features": "*",
+        "drupal/bigmenu": "*",
+        "drupal/panelizer": "*",
+        "drupal/config_perms": "*",
+        "drupal/block_place": "*",
+        "drupal/adminimal_theme": "*",
+        "drupal/adminimal_admin_toolbar": "*"
     },
     "extra": {
         "drupal-scaffold": {
@@ -150,30 +163,14 @@
             }
         },
         "installer-paths": {
-            "web/core": [
-                "type:drupal-core"
-            ],
-            "web/libraries/{$name}": [
-                "type:drupal-library"
-            ],
-            "web/modules/contrib/{$name}": [
-                "type:drupal-module"
-            ],
-            "web/profiles/contrib/{$name}": [
-                "type:drupal-profile"
-            ],
-            "web/themes/contrib/{$name}": [
-                "type:drupal-theme"
-            ],
-            "drush/Commands/contrib/{$name}": [
-                "type:drupal-drush"
-            ],
-            "web/modules/custom/{$name}": [
-                "type:drupal-custom-module"
-            ],
-            "web/themes/custom/{$name}": [
-                "type:drupal-custom-theme"
-            ]
+            "web/core": ["type:drupal-core"],
+            "web/modules/contrib/{$name}": ["type:drupal-module"],
+            "web/modules/custom/{$name}": ["type:drupal-custom-module"],
+            "web/profiles/{$name}": ["type:drupal-profile"],
+            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
+            "web/libraries/{$name}": ["type:drupal-library"],
+            "drush/contrib/{$name}": ["type:drupal-drush"]
         },
         "enable-patching": true,
         "composer-exit-on-patch-failure": true,
@@ -189,9 +186,6 @@
             },
             "drupal/tfa": {
                 "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2022-11-23/tfa-2930541-54_2.patch"
-            },
-            "drupal/linkit": {
-                "Deprecated function": "https://www.drupal.org/files/issues/2022-04-26/linkit-jsonserialize-3262401-11.patch"
             }
         }
     },

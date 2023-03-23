@@ -1,0 +1,41 @@
+FROM drupal:10-php8.1
+
+# Set timezone to Australia/Sydney by default
+RUN ln -sf /usr/share/zoneinfo/Australia/Sydney /etc/localtime
+
+RUN apt-get update && \
+    apt-get install -q -y libicu-dev sqlite3 mariadb-client git unzip rsync nano && \
+    apt-get autoclean && \
+    apt-get autoremove && \
+    rm -rf /var/lib/apt/lists/* && \
+    docker-php-ext-configure intl && \
+    docker-php-ext-install intl
+
+RUN echo "memory_limit = 512M" >> /usr/local/etc/php/conf.d/docker-php-ram-limit.ini && \
+    echo "upload_max_filesize = 100M" >> /usr/local/etc/php/conf.d/docker-php-upload-limit.ini && \
+    echo "post_max_size = 100M" >> /usr/local/etc/php/conf.d/docker-php-upload-limit.ini
+
+ENV COMPOSER_ALLOW_SUPERUSER=1
+ENV COMPOSER_MEMORY_LIMIT=-1
+ENV SIMPLETEST_BASE_URL="http://localhost"
+ENV SIMPLETEST_DB='mysql://drupal:drupal@mariadb/drupal'
+
+WORKDIR /app
+
+COPY . /app/
+
+# RUN --mount=type=secret,id=github_token,dst=/app/auth.json set -eux; \
+RUN set -eux; \
+    composer update; \
+    composer config --no-plugins allow-plugins.phpstan/extension-installer 1;\
+    composer require palantirnet/drupal-rector \
+                     drupal/core-dev:"^10.0" \
+                     mglaman/drupal-check --dev; \
+    cp vendor/palantirnet/drupal-rector/rector.php .;
+
+RUN set -eux; \
+    chown -R www-data:www-data web/sites web/modules web/themes; \
+    rm -rf /opt/drupal; \
+    ln -sf /app/web /var/www/html;
+
+ENV PATH=${PATH}:/app/bin
