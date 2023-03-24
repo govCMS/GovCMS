@@ -1,0 +1,31 @@
+securitytxt.configure:
+  path: '/admin/config/system/securitytxt'
+  defaults:
+    _form: '\Drupal\securitytxt\Form\SecuritytxtConfigureForm'
+    _title: 'Security.txt configure'
+  requirements:
+    _permission: 'administer securitytxt'
+
+securitytxt.sign:
+  path: '/admin/config/system/securitytxt/sign'
+  defaults:
+    _form: '\Drupal\securitytxt\Form\SecuritytxtSignForm'
+    _title: 'Security.txt sign'
+  requirements:
+    _permission: 'administer securitytxt'
+
+securitytxt.securitytxt_file:
+  path: '/.well-known/security.txt'
+  defaults:
+    _controller: '\Drupal\securitytxt\Controller\SecuritytxtController::securitytxtFile'
+    _disable_route_normalizer: 'TRUE'
+  requirements:
+    _permission: 'view securitytxt'
+
+securitytxt.securitytxt_signature:
+  path: '/.well-known/security.txt.sig'
+  defaults:
+    _controller: '\Drupal\securitytxt\Controller\SecuritytxtController::securitytxtSignature'
+    _disable_route_normalizer: 'TRUE'
+  requirements:
+    _permission: 'view securitytxt'
