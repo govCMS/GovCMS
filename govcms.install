@@ -14,9 +14,6 @@ const GOVCMS_DEFAULT_THEME = 'govcms_bartik';
 // Define the admin theme.
 const GOVCMS_DEFAULT_ADMIN_THEME = 'claro';
 
-// GovCMS install helper functions.
-include_once __DIR__ . '/includes/govcms.install.inc';
-
 // GovCMS update hooks.
 include_once __DIR__ . '/includes/govcms.update.inc';
 

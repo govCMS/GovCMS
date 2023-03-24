@@ -10,6 +10,9 @@ use Drupal\Core\Link;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Breadcrumb\Breadcrumb;
 
+// GovCMS install helper functions.
+include_once __DIR__ . '/includes/govcms.install.inc';
+
 /**
  * Implements hook_form_FORM_ID_alter() for install_configure_form().
  *
