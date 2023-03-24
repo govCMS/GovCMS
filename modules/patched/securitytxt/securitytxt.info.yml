@@ -1,0 +1,6 @@
+name: Security.txt
+type: module
+description: 'Provides a security.txt file for your site.'
+package: Security
+core_version_requirement: ^9.1 || ^10
+configure: securitytxt.configure

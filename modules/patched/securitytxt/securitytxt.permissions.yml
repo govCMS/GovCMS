@@ -1,0 +1,7 @@
+administer securitytxt:
+  title: 'Administer security.txt'
+  description: 'Allows configuring and signing of the security.txt file.'
+  restrict access: TRUE
+view securitytxt:
+  title: 'View security.txt'
+  description: 'Allows access to the security.txt and security.txt.sig files. You will almost certinaly want to grant this permission to both the Anonymous and Authenticated user roles.'

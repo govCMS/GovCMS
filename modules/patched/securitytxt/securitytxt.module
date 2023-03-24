@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * @file
+ * Module which implements the security.txt standard for drupal.
+ *
+ * @see https://securitytxt.org/
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+function securitytxt_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.securitytxt':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The Security.txt module provides an implementation of the new <a href=":site">Security.txt standard</a> which is currently a <a href=":rfc">draft RFC</a>. The purpose is to allow people to easily get in touch to report security issues.', [':site' => 'https://securitytxt.org', ':rfc' => 'https://tools.ietf.org/html/draft-foudil-securitytxt-02']) . '</p>';
+      $output .= '<h3>' . t('Uses') . '</h3>';
+      $output .= '<dl>';
+      $output .= '<dt>' . t('Configuring and signing security.txt') . '</dt>';
+      $output .= '<dd>' . t('The Security.txt module provides pages for <a href=":configure">configuring</a> and <a href=":sign">signing</a> a security.txt file. A user must have the <a href=":permission">\'Administer security.txt\' permission</a> to access these administration pages.',
+                 [
+                   ':configure' => Url::fromRoute('securitytxt.configure')->toString(),
+                   ':sign' => Url::fromRoute('securitytxt.sign')->toString(),
+                   ':permission' => Url::fromRoute('user.admin_permissions', [], ['fragment' => 'module-securitytxt'])->toString(),
+                 ]) . '</dd>';
+      $output .= '<dt>' . t('Viewing security.txt and security.txt.sig') . '</dt>';
+      $output .= '<dd>' . t('The Security.txt module, when correctly configured, provides the /.well-known/security.txt and /.well-known/security.txt.sig paths to users with the <a href=":permission">\'View security.txt\' permission</a>. <strong>You will almost certinaly want to grant this permission to both the Anonymous and Authenticated user roles.</strong>',
+                 [
+                   ':permission' => Url::fromRoute('user.admin_permissions', [], ['fragment' => 'module-securitytxt'])->toString(),
+                 ]) . '</dd>';
+      $output .= '</dl>';
+      return $output;
+
+    case 'securitytxt.configure':
+      return '<p>' . t('A security.txt file provides a standard way for people to find out how to safely report security issues with your site. The new <a href=":site">Security.txt standard</a> is currently a <a href=":rfc">draft RFC</a>.', [':site' => 'https://securitytxt.org', ':rfc' => 'https://tools.ietf.org/html/draft-foudil-securitytxt-02']) . '</p>';
+
+    case 'securitytxt.sign':
+      return '<p>' . t('In order to ensure the authenticity of your security.txt file, you should provide a signature.') . '</p>';
+  }
+}

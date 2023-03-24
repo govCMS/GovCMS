@@ -1,0 +1,9 @@
+securitytxt.configure:
+  route_name: securitytxt.configure
+  base_route: securitytxt.configure
+  title: "Configure"
+
+securitytxt.sign:
+  route_name: securitytxt.sign
+  base_route: securitytxt.configure
+  title: "Sign"
