@@ -12,6 +12,7 @@ distribution:
 install:
   - drupal:big_pipe
   - drupal:block
+  - drupal:block_content
   - drupal:ckeditor5
   - drupal:config
   - drupal:content_moderation

@@ -1,6 +1,44 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.rich_text
+    - media.type.audio
+    - media.type.document
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video
+    - node.type.govcms_blog_article
+    - node.type.govcms_event
+    - node.type.govcms_foi
+    - node.type.govcms_news_and_media
+    - node.type.govcms_standard_page
+    - taxonomy.vocabulary.govcms_blog_article_categories
+    - taxonomy.vocabulary.govcms_event_categories
+    - taxonomy.vocabulary.govcms_media_tags
+    - taxonomy.vocabulary.govcms_news_categories
+    - workflows.workflow.editorial
+  module:
+    - block
+    - content_moderation
+    - contextual
+    - field_ui
+    - file
+    - filter
+    - honeypot
+    - image
+    - layout_builder
+    - media
+    - media_file_delete
+    - node
+    - path
+    - securitytxt
+    - shortcut
+    - system
+    - taxonomy
+    - tfa
+    - toolbar
+    - views_ui
 id: govcms_site_administrator
 label: 'Site Administrator'
 weight: -6
@@ -10,7 +48,6 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access files overview'
-  - 'access in-place editing'
   - 'access media overview'
   - 'access shortcuts'
   - 'access site in maintenance mode'
@@ -27,8 +64,6 @@ permissions:
   - 'administer filters'
   - 'administer honeypot'
   - 'administer image styles'
-  - 'administer managed modules'
-  - 'administer managed modules permissions'
   - 'administer media'
   - 'administer media display'
   - 'administer media fields'
@@ -53,9 +88,6 @@ permissions:
   - 'administer user form display'
   - 'administer users'
   - 'administer views'
-  - 'assign govcms_content_approver role'
-  - 'assign govcms_content_author role'
-  - 'assign govcms_site_administrator role'
   - 'bypass honeypot protection'
   - 'bypass node access'
   - 'configure any layout'

@@ -1,6 +1,19 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.rich_text
+    - workflows.workflow.editorial
+  module:
+    - content_moderation
+    - contextual
+    - filter
+    - honeypot
+    - media
+    - node
+    - system
+    - tfa
+    - toolbar
 id: govcms_content_approver
 label: 'Content Approver'
 weight: -7
