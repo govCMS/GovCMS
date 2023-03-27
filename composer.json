@@ -121,7 +121,7 @@
         "drupal/rest_menu_items": "3.0.3",
         "drupal/robotstxt": "1.5.0",
         "drupal/role_delegation": "1.2.0",
-        "drupal/search_api": "1.28.0",
+        "drupal/search_api": "1.29.0",
         "drupal/search_api_attachments": "9.0.1",
         "drupal/scheduled_transitions": "2.3.0",
         "drupal/search_api_solr": "4.2.10",
