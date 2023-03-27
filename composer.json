@@ -145,7 +145,6 @@
         "drush/drush": "~11"
     },
     "replace": {
-        "dropzone/dropzone": "*",
         "drupal/securitytxt": "*",
         "drupal/entity_embed": "*",
         "drupal/features": "*",
