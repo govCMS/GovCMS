@@ -73,7 +73,7 @@ Follow the below steps to set up your local development environment for GovCMS:
     docker compose up -d
     ```
 
-5. The website should now be running at http://localhost:8000. You can access the website by opening this URL in your
+5. The website should now be running at http://localhost:8888. You can access the website by opening this URL in your
    browser.
 
 ## Running Tests
