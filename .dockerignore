@@ -11,6 +11,7 @@
 .gitignore
 .idea
 .tugboat
+DEVELOPMENT.md
 CHANGELOG.txt
 CONTRIBUTING.md
 LICENSE.txt
