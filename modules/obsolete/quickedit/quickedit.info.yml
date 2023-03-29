@@ -1,0 +1,7 @@
+name: Quick Edit
+type: module
+description: 'In-place content editing. [obsolete]'
+package: GovCMS [obsolete]
+core_version_requirement: ^9 || ^10
+lifecycle: obsolete
+lifecycle_link: 'https://github.com/GovCMS/GovCMS'

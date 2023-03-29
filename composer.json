@@ -51,7 +51,6 @@
         "drupal/adminimal_theme": "1.6.0",
         "drupal/bartik": "1.0.2",
         "drupal/bigmenu": "2.0.0-rc2",
-        "drupal/block_place": "1.0",
         "drupal/captcha": "1.9.0",
         "drupal/chosen": "3.0.5",
         "drupal/components": "3.0.0-beta3 as 2.4.0",
@@ -83,7 +82,6 @@
         "drupal/environment_indicator": "4.0.14",
         "drupal/events_log_track": "3.1.4",
         "drupal/facets": "2.0.6",
-        "drupal/features": "3.12.0",
         "drupal/field_group": "3.4.0",
         "drupal/focal_point": "2.0.0-alpha2 as 1.5.0",
         "drupal/google_analytics": "4.0.2",
@@ -147,11 +145,9 @@
     "replace": {
         "drupal/securitytxt": "*",
         "drupal/entity_embed": "*",
-        "drupal/features": "*",
         "drupal/bigmenu": "*",
         "drupal/panelizer": "*",
         "drupal/config_perms": "*",
-        "drupal/block_place": "*",
         "drupal/adminimal_theme": "*",
         "drupal/adminimal_admin_toolbar": "*"
     },
