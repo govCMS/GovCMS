@@ -28,6 +28,10 @@ commands:
     usage: Start a shell.
     cmd: docker compose exec govcms bash
 
+  composer:
+    usage: Start a composer command.
+    cmd: docker compose exec govcms composer "$@"
+
   rector:
     usage: Analyze your code with Rector and review suggested changes.
     cmd: docker compose exec govcms rector "$@"

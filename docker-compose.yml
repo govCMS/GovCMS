@@ -11,10 +11,11 @@ services:
     ports:
       - 8888:80
     volumes:
-      - $HOME/.composer:/root/.composer
+      - /root/.composer
       - /var/www/html/sites
-      - $PWD/app/sites/govcms/modules:/app/web/modules/develop
-      - $PWD/app/sites/govcms/themes:/app/web/themes/develop
+      - $PWD/web/develop/modules:/app/web/modules/develop
+      - $PWD/web/develop/themes:/app/web/themes/develop
+      #- $PWD/web/develop/profiles:/app/web/profiles
     environment:
       GITHUB_TOKEN: /run/secrets/github_token
     secrets:
@@ -31,7 +32,7 @@ services:
       MARIADB_USER: drupal
       MARIADB_PASSWORD: drupal
     volumes:
-      - $PWD/app/sites/database:/var/lib/mysql
+      - $PWD/web/develop/database:/var/lib/mysql
 
 secrets:
    github_token:
