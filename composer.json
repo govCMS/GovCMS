@@ -193,10 +193,10 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "rsync -av --delete --exclude 'web' --exclude '.git' --exclude '.tugboat' --exclude 'vendor' --exclude 'tests' ./ web/profiles/govcms"
+            "rsync -av --delete --exclude={'app','web','bin','tests','vendor','.*','docker-compose.yml'} ./ web/profiles/govcms"
         ],
         "post-update-cmd": [
-            "rsync -av --delete --exclude 'web' --exclude '.git' --exclude '.tugboat' --exclude 'vendor' --exclude 'tests' ./ web/profiles/govcms"
+            "rsync -av --delete --exclude={'app','web','bin','tests','vendor','.*','docker-compose.yml'} ./ web/profiles/govcms"
         ],
         "nuke": "rm -r -f composer.lock bin app web vendor"
     },
