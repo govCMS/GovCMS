@@ -1,0 +1,7 @@
+name: Adminimal Admin Toolbar
+type: module
+description: 'Adminimal styling brought to admin toolbar. [obsolete]'
+package: GovCMS [obsolete]
+core_version_requirement: ^9 || ^10
+lifecycle: obsolete
+lifecycle_link: 'https://github.com/GovCMS/GovCMS'

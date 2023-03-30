@@ -47,8 +47,6 @@
         "dropzone/dropzone": "5.7.2",
         "drupal/address": "1.11.0",
         "drupal/admin_toolbar": "3.3.0",
-        "drupal/adminimal_admin_toolbar": "1.11.0",
-        "drupal/adminimal_theme": "1.6.0",
         "drupal/bartik": "1.0.2",
         "drupal/bigmenu": "2.0.0-rc2",
         "drupal/captcha": "1.9.0",
@@ -147,8 +145,6 @@
         "drupal/bigmenu": "*",
         "drupal/panelizer": "*",
         "drupal/config_perms": "*",
-        "drupal/adminimal_theme": "*",
-        "drupal/adminimal_admin_toolbar": "*"
     },
     "config": {
         "allow-plugins": {
