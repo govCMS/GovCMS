@@ -1,0 +1,7 @@
+name: Entity Embed
+type: module
+description: 'Allows entities to be embedded using a text editor. [Drupal 10 compatibility]'
+package: GovCMS [Drupal 10 compatibility]
+core_version_requirement: ^9 || ^10
+lifecycle: deprecated
+lifecycle_link: 'https://www.drupal.org/project/entity_embed/issues/3272732'
