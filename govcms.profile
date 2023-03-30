@@ -29,7 +29,7 @@ function govcms_form_install_configure_form_alter(&$form, FormStateInterface $fo
 function govcms_page_attachments_alter(array &$page) {
   foreach ($page['#attached']['html_head'] as $key => $value) {
     if ($value[1] == 'system_meta_generator') {
-      $page['#attached']['html_head'][$key][0]['#attributes']['content'] = 'Drupal 9 (http://drupal.org) + GovCMS (http://govcms.gov.au)';
+      $page['#attached']['html_head'][$key][0]['#attributes']['content'] = 'Drupal 10 (http://drupal.org) + GovCMS (http://govcms.gov.au)';
     }
   }
 }
