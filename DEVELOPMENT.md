@@ -58,7 +58,7 @@ Follow the below steps to set up your local development environment for GovCMS:
     cd govcms
     ```
 
-3. Copy the auth.json.example file to auth.json (Optional only for Composer and GitHub API rate limit ):
+3. Copy the auth.json.example file to auth.json (for Composer and GitHub API rate limit ):
 
     ```console
     cd .docker
