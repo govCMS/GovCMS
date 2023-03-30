@@ -1,0 +1,7 @@
+name: RDF
+type: module
+description: 'Enriches your content with metadata to let other applications. [obsolete]'
+package: GovCMS [obsolete]
+core_version_requirement: ^9 || ^10
+lifecycle: obsolete
+lifecycle_link: 'https://github.com/GovCMS/GovCMS'

@@ -1,0 +1,7 @@
+name: Video Embed Media
+type: module
+description: 'Integrates video_embed_field with the Media module. [obsolete]'
+package: GovCMS [obsolete]
+core_version_requirement: ^9 || ^10
+lifecycle: obsolete
+lifecycle_link: 'https://github.com/GovCMS/GovCMS'
