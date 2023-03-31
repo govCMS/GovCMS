@@ -1,7 +1,7 @@
-name: Adminimal
+name: Stable
 type: theme
 base theme: false
-description: 'Drupal administration theme with modern minimalist design. [obsolete]'
+description: 'A base theme using Drupal 8.0.0 core markup and CSS. [obsolete]'
 package: GovCMS [obsolete]
 core_version_requirement: ^9 || ^10
 lifecycle: obsolete
