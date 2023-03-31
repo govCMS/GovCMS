@@ -4,169 +4,18 @@
  * @file
  * Contains install and update functions for the module.
  */
-use Drupal\govcms_security\GovcmsSecurityInterface;
-use Drupal\user\RoleInterface;
-
-/**
- * Issue GOVCMSD9-713: Grant 'view securitytxt' permission from security.txt module to all users.
- */
-function govcms_security_update_9001() {
-  $module_handler = \Drupal::moduleHandler();
-  if ($module_handler) {
-    // We have to make sure the security text module is installed.
-    if (!($module_handler->moduleExists('securitytxt'))) {
-      // The Security Text module hasn't been installed,
-      // then we install that module here.
-      if (!(\Drupal::service('module_installer')->install(['securitytxt']))) {
-        // In case the Security Text module wasn't installed successfully,
-        // maybe due to that module doesn't exist in the file system.
-        // Here return a message to indicate that the critical module isn't installed.
-        return t('"security.txt" module has not been installed.');
-      }
-    }
-    // Grant the "view securitytxt" permission to all users by default.
-    if ($module_handler->moduleExists('user')) {
-      // Anonymous role.
-      user_role_grant_permissions(RoleInterface::ANONYMOUS_ID, [
-        'view securitytxt']);
-      // Authenticated role.
-      user_role_grant_permissions(RoleInterface::AUTHENTICATED_ID, [
-        'view securitytxt']);
-    }
-  }
-}
-
-/**
- * Issue GOVCMSD9-883: Grant 'administer securitytxt' permission to site administrator.
- */
-function govcms_security_update_9002() {
-  $module_handler = \Drupal::moduleHandler();
-  if ($module_handler) {
-    // We have to make sure the security text module is installed,
-    // before granting the permission to user roles.
-    if (!($module_handler->moduleExists('securitytxt'))) {
-      // The Security Text module hasn't been installed,
-      // then we install that module here.
-      if (!(\Drupal::service('module_installer')->install(['securitytxt']))) {
-        // In case the Security Text module wasn't installed successfully,
-        // maybe due to that module doesn't exist in the file system.
-        // Here return a message to indicate that the critical module isn't installed.
-        return t('"security.txt" module has not been installed.');
-      }
-    }
-    // Grant the "administer securitytxt" permission to user roles.
-    if ($module_handler->moduleExists('user')) {
-      // Govcms site administrator role.
-      user_role_grant_permissions(GovcmsSecurityInterface::GOVCMS_SITE_ADMIN_ROLE, [
-        'administer securitytxt']);
-    }
-  }
-}
-
-/**
- * Issue GOVCMSD9-1028: Install Event Log Track and its sub modules for existing sites.
- */
-function govcms_security_update_9003() {
-  $module_installer = \Drupal::service('module_installer');
-  $modules_list = [
-    'event_log_track',
-    'event_log_track_auth',
-    'event_log_track_config',
-    'event_log_track_menu',
-    'event_log_track_node',
-    'event_log_track_syslog',
-    'event_log_track_tfa',
-    'event_log_track_ui',
-    'event_log_track_user',
-  ];
-  // Make sure all those modules are installed.
-  if ($module_installer) {
-    // Install the modules.
-    if (!($module_installer->install($modules_list))) {
-      // Module installation failed.
-      return t('Can not install Event Log Track and its sub modules.');
-    }
-  }
-}
-
-/**
- * GOVCMSD9-1065 : Increase Password Length to 14 Characters for existing sites
- */
-
-function govcms_security_update_9005(){
-  $config = Drupal::configFactory()->getEditable('password_policy.password_policy.austism');
-  $changed = FALSE;
-  if ($config) {
-    $constraints = $config->get('policy_constraints');
-    if ($constraints && is_array($constraints)) {
-       foreach ($constraints as &$cons) {
-         if (isset($cons['id']) && $cons['id'] === 'password_length') {
-           if ($cons['character_length'] < 14) {
-             $cons['character_length'] = 14;
-             $changed = TRUE;
-             }
-           break;
-           }
-         }
-       if ($changed) {
-          $config->set('policy_constraints', $constraints)->save();
-          }
-    }
-   }
- }
-
-/**
- * Implements hook_requirements
- */
-function govcms_security_requirements($phase) {
-  // We only check the requirements during the runtime.
-  if ($phase !== 'runtime') {
-    return [];
-  }
-
-  $requirements = [];
-
-  /* ************************************************************************ */
-  // Dependent modules.
-  /* ************************************************************************ */
-  // Warn if any dependent modules are not installed.
-  // @see system_requirements()
-  $info = \Drupal::service('extension.list.module')->getExtensionInfo('govcms_security');
-  $module_handler = \Drupal::moduleHandler();
-  $dependencies = $info['dependencies'] ?? [];
-  // Modules list that haven't been enabled.
-  $disabled_modules = [];
-
-  if (is_array($dependencies)) {
-    foreach ($dependencies as $dependency_name) {
-      // The dependency name could be {module}:{submodule}
-      // or {module}:{module}.
-      $project_module_name = explode(':', $dependency_name);
-      $module_name = $project_module_name[1] ?? $project_module_name[0];
-      // Check if the dependent module has been enabled.
-      if (!($module_handler->moduleExists($module_name))) {
-        $disabled_modules[] = $module_name;
-      }
-    }
-
-    if (!empty($disabled_modules)) {
-      $requirements['govcms_security_dependencies'] = [
-        'title' => t("GovCMS Security"),
-        'value' => t('GovCMS security dependency error. Following module must be enable for security reason.'),
-        'description' => t('%module_list', [
-          '%module_list' => implode(', ', $disabled_modules)]),
-        'severity' => REQUIREMENT_ERROR];
-    }
-  }
-  return $requirements;
-}
 
 /**
  * Implements hook_install().
- *
- * Ensure that the Available releases array is empty so it never checks them.
  */
 function govcms_security_install($is_syncing) {
   \Drupal::keyValueExpirable('update_available_releases')->deleteAll();
   \Drupal::keyValueExpirable('update_available_releases')->setMultiple([]);
+}
+
+/**
+ * Implements hook_update_last_removed().
+ */
+function govcms_security_update_last_removed() {
+  return 9005;
 }
