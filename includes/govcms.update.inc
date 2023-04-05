@@ -13,30 +13,31 @@ function govcms_update_10000() {
   if (!\Drupal::moduleHandler()->moduleExists('ckeditor5')) {
     // If the module is not installed, enable it.
     \Drupal::service('module_installer')->install(['ckeditor5']);
-    // Clear the caches after installing the module.
-    drupal_flush_all_caches();
   }
 }
 
 /**
- * Transfer Adminimal theme to Claro.
+ * Transfer Adminimal theme to Claro. (experimental/test only)
  */
 function govcms_update_10001() {
-  // Check if the current admin theme is adminimal.
+  // Load the system.theme config.
   $config = \Drupal::configFactory()->getEditable('system.theme');
   $admin_theme = $config->get('admin');
   if ($admin_theme == 'adminimal_theme') {
+    // Check if the Claro theme is installed.
+    $claro_theme = \Drupal::service('theme_handler')->themeExists('claro');
+    if (!$claro_theme) {
+      // Install the Claro theme.
+      \Drupal::service('theme_installer')->install(['claro']);
+    }
     // Set claro as the default admin theme.
     $config->set('admin', 'claro')->save();
-    // Enable claro theme.
-    \Drupal::service('theme_installer')->install(['claro']);
-    // Clear the caches after changing the theme settings.
-    drupal_flush_all_caches();
   }
 }
 
 /**
  * Removes the entity_embed filter from the rich_text format.
+ * (experimental/test only)
  */
 function govcms_update_10002() {
   // Check if the filter plugin exists.
@@ -49,13 +50,12 @@ function govcms_update_10002() {
     unset($filters[$plugin_id]);
     $filter_config->set('filters', $filters);
     $filter_config->save();
-    // Clear the caches after removing the filter.
-    drupal_flush_all_caches();
   }
 }
 
 /**
- * Replaces the ckeditor with ckeditor5 in the rich_text format. (experimental)
+ * Replaces the ckeditor with ckeditor5 in the rich_text format.
+ * (experimental/test only)
  */
 function govcms_update_10003() {
   // Get the rich_text configuration.
@@ -78,8 +78,36 @@ function govcms_update_10003() {
 }
 
 /**
- * Remove outdated modules from GovCMS Drupal 9.
+ * Update the pathauto.settings configuration if 'safe_tokens' is not set.
+ * (experimental/test only)
  */
 function govcms_update_10004() {
+  // Check if the pathauto module is enabled.
+  if (\Drupal::moduleHandler()->moduleExists('pathauto')) {
+    // Load the current pathauto settings configuration.
+    $config = \Drupal::configFactory()->getEditable('pathauto.settings');
+    // Check if 'safe_tokens' is not set.
+    if (!$config->get('safe_tokens')) {
+      // Set default safe tokens.
+      $safe_tokens = [
+        'alias',
+        'alias',
+        'path',
+        'join-path',
+        'login-url',
+        'url',
+        'url-brief',
+      ];
+      // Set 'safe_tokens'.
+      $config->set('safe_tokens', $safe_tokens)->save();
+    }
+  }
+}
+
+
+/**
+ * Uninstall outdated modules from GovCMS Drupal 9.
+ */
+function govcms_update_10005() {
   // Placeholder.
 }
