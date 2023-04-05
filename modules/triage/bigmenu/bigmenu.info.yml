@@ -1,7 +1,0 @@
-name: Big Menu
-type: module
-description: 'Scalable replacement for core menu management screen. [Drupal 10 compatibility]'
-package: GovCMS [Drupal 10 compatibility]
-core_version_requirement: ^9 || ^10
-lifecycle: deprecated
-lifecycle_link: 'https://github.com/GovCMS/GovCMS'
