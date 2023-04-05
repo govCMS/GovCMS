@@ -36,52 +36,10 @@ function govcms_update_10001() {
 }
 
 /**
- * Removes the entity_embed filter from the rich_text format.
- * (experimental/test only)
- */
-function govcms_update_10002() {
-  // Check if the filter plugin exists.
-  $plugin_id = 'entity_embed';
-  $filter_format_id = 'rich_text';
-  $filter_config = \Drupal::service('config.factory')->getEditable('filter.format.' . $filter_format_id);
-  $filters = $filter_config->get('filters');
-  if (isset($filters[$plugin_id])) {
-    // Remove the filter plugin.
-    unset($filters[$plugin_id]);
-    $filter_config->set('filters', $filters);
-    $filter_config->save();
-  }
-}
-
-/**
- * Replaces the ckeditor with ckeditor5 in the rich_text format.
- * (experimental/test only)
- */
-function govcms_update_10003() {
-  // Get the rich_text configuration.
-  $config = \Drupal::configFactory()->getEditable('editor.editor.rich_text');
-
-  // Set ckeditor5 as a dependency module.
-  $config->set('dependencies.module', ['ckeditor5']);
-
-  // Set the editor to ckeditor5.
-  $config->set('editor', 'ckeditor5');
-
-  // Set the default settings for ckeditor5.
-  $settings = [
-    // Add any additional settings as needed.
-  ];
-  $config->set('settings', $settings);
-
-  // Save the updated configuration.
-  $config->save();
-}
-
-/**
  * Update the pathauto.settings configuration if 'safe_tokens' is not set.
  * (experimental/test only)
  */
-function govcms_update_10004() {
+function govcms_update_10002() {
   // Check if the pathauto module is enabled.
   if (\Drupal::moduleHandler()->moduleExists('pathauto')) {
     // Load the current pathauto settings configuration.
@@ -108,6 +66,6 @@ function govcms_update_10004() {
 /**
  * Uninstall outdated modules from GovCMS Drupal 9.
  */
-function govcms_update_10005() {
+function govcms_update_10003() {
   // Placeholder.
 }
