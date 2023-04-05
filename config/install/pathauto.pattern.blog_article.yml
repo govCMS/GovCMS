@@ -8,13 +8,14 @@ label: 'Blog article'
 type: 'canonical_entities:node'
 pattern: 'blog/[node:title]'
 selection_criteria:
-  911a4dd0-8b1c-4916-8739-1613ae46de2e:
-    id: node_type
-    bundles:
-      govcms_blog_article: govcms_blog_article
+  345c924f-9f95-4ff3-9c73-52a68dc162b5:
+    id: 'entity_bundle:node'
     negate: false
+    uuid: 345c924f-9f95-4ff3-9c73-52a68dc162b5
     context_mapping:
       node: node
+    bundles:
+      govcms_blog_article: govcms_blog_article
 selection_logic: and
 weight: -5
 relationships: {  }
