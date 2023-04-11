@@ -116,7 +116,7 @@
         "drupal/password_policy": "4.0.0",
         "drupal/pathauto": "1.11.0",
         "drupal/real_aes": "2.5.0",
-        "drupal/recaptcha": "3.1.0",
+        "drupal/recaptcha": "3.2.0",
         "drupal/redirect": "1.8.0",
         "drupal/rest_menu_items": "3.0.3",
         "drupal/robotstxt": "1.5.0",
