@@ -4,17 +4,18 @@ dependencies:
   module:
     - node
 id: standard_page
-label: Standard Page
+label: 'Standard Page'
 type: 'canonical_entities:node'
 pattern: '[node:title]'
 selection_criteria:
-  3541b888-ba9c-41b5-85a4-a16148c9c5b4:
-    id: node_type
-    bundles:
-      govcms_standard_page: govcms_standard_page
+  62449796-04a9-4d56-81fe-98db31d1c9b2:
+    id: 'entity_bundle:node'
     negate: false
+    uuid: 62449796-04a9-4d56-81fe-98db31d1c9b2
     context_mapping:
       node: node
+    bundles:
+      govcms_standard_page: govcms_standard_page
 selection_logic: and
 weight: -5
 relationships: {  }

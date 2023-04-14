@@ -3,18 +3,19 @@ status: true
 dependencies:
   module:
     - node
-id: news_and_media
-label: 'News and Media'
+id: event
+label: Event
 type: 'canonical_entities:node'
-pattern: 'news-and-media/[node:title]'
+pattern: 'events/[node:title]'
 selection_criteria:
-  d780c6f8-8995-47cf-ac48-0edb7e55d92d:
-    id: node_type
-    bundles:
-      govcms_news_and_media: govcms_news_and_media
+  294bc8e2-52a2-44de-a44a-545f0ed006e0:
+    id: 'entity_bundle:node'
     negate: false
+    uuid: 294bc8e2-52a2-44de-a44a-545f0ed006e0
     context_mapping:
       node: node
+    bundles:
+      govcms_event: govcms_event
 selection_logic: and
 weight: -5
 relationships: {  }
