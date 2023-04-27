@@ -104,11 +104,13 @@ function govcms_security_form_user_admin_permissions_alter(&$form, FormStateInte
  * Implement hook_form_FORM_ID_alter()
  */
 function govcms_security_form_tfa_settings_form_alter(&$form, FormStateInterface $form_state) {
-  // Remove site admin's ability to disable TFA from the Drupal UI and change the roles required to set up TFA
+  // Remove site admin's ability to disable TFA from the Drupal UI and change the roles required to set up TFA.
   if (\Drupal::currentUser()->id() != 1) {
     $form['tfa_enabled']['#access'] = FALSE;
     $form['tfa_required_roles']['#access'] = FALSE;
   }
+  // Limit the max validation skip to 10.
+  $form['validation_skip']['#max'] = 10;
 }
 
 /**
