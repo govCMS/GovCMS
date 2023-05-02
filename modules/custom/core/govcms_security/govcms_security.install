@@ -90,10 +90,23 @@ function govcms_security_update_9003() {
 }
 
 /**
- * GOVCMSD9-1065 : Increase Password Length to 14 Characters for existing sites
+ * Issue GOVCMSD9-1051: Make sure the TFA validation skip not greater than 10.
  */
+function govcms_security_update_9004() {
+  $config = \Drupal::configFactory()->getEditable('tfa.settings');
+  // Only change the skip limit to 10,
+  // if current setting is greater 10.
+  if ($config && $config->get('validation_skip') > 10) {
+    $config
+      ->set('validation_skip', 10)
+      ->save();
+  }
+}
 
-function govcms_security_update_9005(){
+/**
+ * Issue GOVCMSD9-1065 : Increase Password Length to 14 Characters for existing sites.
+ */
+function govcms_security_update_9005() {
   $config = Drupal::configFactory()->getEditable('password_policy.password_policy.austism');
   $changed = FALSE;
   if ($config) {
@@ -104,16 +117,16 @@ function govcms_security_update_9005(){
            if ($cons['character_length'] < 14) {
              $cons['character_length'] = 14;
              $changed = TRUE;
-             }
-           break;
            }
+           break;
          }
+       }
        if ($changed) {
           $config->set('policy_constraints', $constraints)->save();
-          }
+       }
     }
-   }
- }
+  }
+}
 
 /**
  * Implements hook_requirements
