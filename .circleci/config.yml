@@ -27,7 +27,7 @@ jobs:
   test:basic:
     docker:
       - image: govcmstesting/php:8.1-apache
-      - image: circleci/mariadb:10.3
+      - image: cimg/mariadb:10.11
         environment:
           MYSQL_DATABASE: govcms
           MYSQL_ROOT_PASSWORD: govcms
@@ -62,7 +62,7 @@ jobs:
   test:cypress:
     docker:
       - image: govcmstesting/php:8.1-apache
-      - image: circleci/mariadb:10.3
+      - image: cimg/mariadb:10.11
         environment:
           MYSQL_DATABASE: govcms
           MYSQL_ROOT_PASSWORD: govcms
