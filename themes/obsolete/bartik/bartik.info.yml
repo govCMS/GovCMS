@@ -1,0 +1,72 @@
+name: Bartik
+type: theme
+base theme: false
+description: 'The Bartik theme from Drupal 8/9 moved to contrib.[obsolete]'
+# version: VERSION
+core_version_requirement: ^9 || ^10
+
+package: GovCMS [obsolete]
+lifecycle: obsolete
+lifecycle_link: 'https://github.com/GovCMS/GovCMS'
+
+libraries:
+  - bartik/classy.base
+  - bartik/classy.messages
+  - core/normalize
+  - bartik/global-styling
+
+libraries-extend:
+  core/drupal.dialog:
+    - bartik/classy.dialog
+  core/drupal.dropbutton:
+    - bartik/classy.dropbutton
+  core/drupal.progress:
+    - bartik/classy.progress
+  file/drupal.file:
+    - bartik/classy.file
+  filter/drupal.filter.admin:
+    - bartik/filter
+  filter/drupal.filter:
+    - bartik/filter
+  media/media_embed_ckeditor_theme:
+    - bartik/classy.media_embed_ckeditor_theme
+  media_library/view:
+    - bartik/classy.media_library
+  media_library/widget:
+    - bartik/classy.media_library
+  tour/tour:
+    - bartik/tour
+  user/drupal.user:
+    - bartik/user
+
+ckeditor_stylesheets:
+  - css/base/elements.css
+  - css/components/captions.css
+  - css/components/table.css
+  - css/components/text-formatted.css
+  - css/classy/components/media-embed-error.css
+regions:
+  header: Header
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  highlighted: Highlighted
+  featured_top: 'Featured top'
+  breadcrumb: Breadcrumb
+  content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  featured_bottom_first: 'Featured bottom first'
+  featured_bottom_second: 'Featured bottom second'
+  featured_bottom_third: 'Featured bottom third'
+  footer_first: 'Footer first'
+  footer_second: 'Footer second'
+  footer_third: 'Footer third'
+  footer_fourth: 'Footer fourth'
+  footer_fifth: 'Footer fifth'
+
+# Information added by Drupal.org packaging script on 2022-08-19
+version: '1.0.2'
+project: 'bartik'
+datestamp: 1660912289
