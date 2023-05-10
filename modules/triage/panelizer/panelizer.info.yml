@@ -1,7 +1,0 @@
-name: Panelizer
-type: module
-description: 'Allow any entity view mode to be rendered using a Panels display. [Drupal 10 compatibility]'
-package: GovCMS [Drupal 10 compatibility]
-core_version_requirement: ^9 || ^10
-lifecycle: deprecated
-lifecycle_link: 'https://github.com/GovCMS/GovCMS'
