@@ -5,6 +5,8 @@
  * GovCMS update helper functions.
  */
 
+ use Drupal\Core\Extension\ExtensionLifecycle;
+
 /**
  * Enables ckeditor5 module if it is not already enabled.
  */
@@ -17,27 +19,33 @@ function govcms_update_10000() {
 }
 
 /**
- * Transfer Adminimal theme to Claro. (experimental/test only)
+ * Transfer obsolete admin theme to Claro.
  */
 function govcms_update_10001() {
+  // Load the available themes.
+  $theme_extension_list = \Drupal::service('extension.list.theme');
+  $theme_extension_list->reset();
   // Load the system.theme config.
   $config = \Drupal::configFactory()->getEditable('system.theme');
   $admin_theme = $config->get('admin');
-  if ($admin_theme == 'adminimal_theme') {
-    // Check if the Claro theme is installed.
-    $claro_theme = \Drupal::service('theme_handler')->themeExists('claro');
-    if (!$claro_theme) {
-      // Install the Claro theme.
-      \Drupal::service('theme_installer')->install(['claro']);
+  $admin_theme_info = $theme_extension_list->getExtensionInfo($admin_theme);
+
+  if (isset($admin_theme_info[ExtensionLifecycle::LIFECYCLE_IDENTIFIER])) {
+    if ($admin_theme_info[ExtensionLifecycle::LIFECYCLE_IDENTIFIER] === ExtensionLifecycle::OBSOLETE) {
+      // Check if the Claro theme is installed.
+      $claro_theme = \Drupal::service('theme_handler')->themeExists('claro');
+      if (!$claro_theme) {
+        // Install the Claro theme.
+        \Drupal::service('theme_installer')->install(['claro']);
+      }
+      // Set claro as the default admin theme.
+      $config->set('admin', 'claro')->save();
     }
-    // Set claro as the default admin theme.
-    $config->set('admin', 'claro')->save();
   }
 }
 
 /**
  * Update the pathauto.settings configuration if 'safe_tokens' is not set.
- * (experimental/test only)
  */
 function govcms_update_10002() {
   // Check if the pathauto module is enabled.
@@ -61,7 +69,6 @@ function govcms_update_10002() {
     }
   }
 }
-
 
 /**
  * Uninstall outdated modules from GovCMS Drupal 9.
