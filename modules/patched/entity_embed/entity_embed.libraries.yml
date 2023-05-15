@@ -1,0 +1,36 @@
+drupal.entity_embed.dialog:
+  version: VERSION
+  js:
+    js/entity_embed.dialog.js: {}
+  css:
+    theme:
+      css/entity_embed.dialog.css: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once
+
+caption:
+  version: VERSION
+  css:
+    component:
+      css/entity_embed.filter.caption.css: {}
+  dependencies:
+    - filter/caption
+
+# CKEditor 5
+entity_embed:
+  js:
+    js/build/drupalentity.js: { minified: true }
+  dependencies:
+    - core/ckeditor5
+    - core/drupal
+
+admin.entity_embed:
+  js:
+    js/entity_embed.set_dynamic_icons.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once
+    - core/drupalSettings

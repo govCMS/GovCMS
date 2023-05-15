@@ -1,0 +1,20 @@
+entity_embed_test.entity_embed_twig_test.id:
+  path: '/entity_embed_twig_test/id'
+  defaults:
+    _controller: '\Drupal\entity_embed_test\EntityEmbedTestTwigController::idRender'
+  requirements:
+    _access: 'TRUE'
+
+entity_embed_test.entity_embed_twig_test.label_plugin:
+  path: '/entity_embed_twig_test/label_plugin'
+  defaults:
+    _controller: '\Drupal\entity_embed_test\EntityEmbedTestTwigController::labelPluginRender'
+  requirements:
+    _access: 'TRUE'
+
+entity_embed_test.entity_embed_twig_test.label_plugin_no_link:
+  path: '/entity_embed_twig_test/label_plugin_no_link'
+  defaults:
+    _controller: '\Drupal\entity_embed_test\EntityEmbedTestTwigController::labelPluginNoLinkRender'
+  requirements:
+    _access: 'TRUE'

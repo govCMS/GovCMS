@@ -1,0 +1,16 @@
+name: 'Entity Embed Translation test'
+type: module
+description: 'Aids in testing translation within entity embed'
+package: Testing
+dependencies:
+ - drupal:content_translation
+ - drupal:file
+ - drupal:image
+ - drupal:node
+ - drupal:text
+ - drupal:media
+ - drupal:ckeditor
+ - drupal:editor
+ - embed:embed
+ - entity_embed:entity_embed
+ - ckeditor5:ckeditor5

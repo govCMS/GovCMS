@@ -1,0 +1,15 @@
+name: 'Entity Embed test'
+type: module
+description: 'Support module for the Entity Embed module tests.'
+package: Testing
+dependencies:
+ - drupal:file
+ - drupal:image
+ - drupal:node
+ - drupal:text
+ - drupal:media
+ - drupal:ckeditor
+ - drupal:editor
+ - embed:embed
+ - entity_embed:entity_embed
+ - ckeditor5:ckeditor5

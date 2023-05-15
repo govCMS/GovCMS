@@ -1,0 +1,13 @@
+{
+    "name": "drupal/entity_embed",
+    "description": "Allows any entity to be embedded within a text area using a WYSIWYG editor.",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "drupal/embed": "^1.5"
+    },
+    "require-dev": {
+        "drupal/ckeditor": "^1",
+        "drupal/entity_browser": "^2.2"
+    }
+}

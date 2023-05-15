@@ -1,0 +1,9 @@
+langcode: en
+status: false
+dependencies:
+  module:
+    - media
+id: media.thumb
+label: 'Thumb (View Mode)'
+targetEntityType: media
+cache: true
