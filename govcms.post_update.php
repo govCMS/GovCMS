@@ -46,23 +46,3 @@ function govcms_post_update_replace_ckeditor5() {
     }
   }
 }
-
-/**
- * Removes the entity_embed plugin from text filters.
- */
-function govcms_post_update_remove_entity_embed() {
-  $plugin_id = 'entity_embed';
-  $config_factory = \Drupal::configFactory();
-  foreach ($config_factory->listAll('filter.format.') as $filter_config_name) {
-    $filter = $config_factory->getEditable($filter_config_name);
-
-    if ($filters = $filter->get('filters')) {
-      if (isset($filters[$plugin_id])) {
-        // Remove the filter plugin.
-        unset($filters[$plugin_id]);
-        $filter->set('filters', $filters);
-        $filter->save();
-      }
-    }
-  }
-}
