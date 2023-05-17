@@ -24,6 +24,24 @@ function govcms_post_update_replace_block_node_type_condition() {
 }
 
 /**
+ * Updates the visibility condition for the node type in the context module.
+ */
+function govcms_post_update_replace_context_node_type_condition() {
+  $config_factory = \Drupal::configFactory();
+  foreach ($config_factory->listAll('context.context.') as $context_config_name) {
+    $context = $config_factory->getEditable($context_config_name);
+
+    if ($context->get('conditions.node_type')) {
+      $configuration = $context->get('conditions.node_type');
+      $configuration['id'] = 'entity_bundle:node';
+      $context->set('conditions.entity_bundle:node', $configuration);
+      $context->clear('conditions.node_type');
+      $context->save(TRUE);
+    }
+  }
+}
+
+/**
  * Replaces the CKEditor to 5 from 4.
  */
 function govcms_post_update_replace_ckeditor5() {
