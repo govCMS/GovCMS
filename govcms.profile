@@ -49,44 +49,6 @@ function govcms_system_breadcrumb_alter(Breadcrumb $breadcrumb, RouteMatchInterf
 }
 
 /**
- * Implements hook_field_widget_form_alter().
- *
- * @deprecated in drupal:9.2.0 and is removed from drupal:10.0.0. Use
- *   hook_field_widget_single_element_form_alter instead.
- *
- * @see https://www.drupal.org/node/3180429
- */
-function govcms_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
-  // In Drupal 7 `hook_field_widget_form_alter` could be implemented by the
-  // theme, but in Drupal 8 this hook changed to being module-only. This hook
-  // can be critical for improving the editor experience for things like
-  // paragraphs. Implementing themes can access the plugin ID via
-  // $context['widget']->getPluginId().
-  \Drupal::theme()->alter([
-    'field_widget_form',
-  ], $element, $form_state, $context);
-}
-
-/**
- * Implements hook_field_widget_multivalue_form_alter().
- *
- * @deprecated in drupal:9.2.0 and is removed from drupal:10.0.0. Use
- *   hook_field_widget_complete_form_alter instead.
- *
- * @see https://www.drupal.org/node/3180429
- */
-function govcms_field_widget_multivalue_form_alter(&$elements, FormStateInterface $form_state, $context) {
-  // In Drupal 7 `hook_field_widget_multivalue_form_alter` could be implemented
-  // by the theme, but in Drupal 8 this hook changed to being module-only.
-  // This hook can be critical for improving the editor experience for things
-  // like paragraphs. Implementing themes can access the plugin ID via
-  // $context['widget']->getPluginId().
-  \Drupal::theme()->alter([
-    'field_widget_multivalue_form',
-  ], $elements, $form_state, $context);
-}
-
-/**
  * Implements hook_field_widget_single_element_form_alter().
  *
  * Introduced in Drupal 9.2.x.
