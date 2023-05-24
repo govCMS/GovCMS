@@ -173,7 +173,7 @@
                 "Unsetting metatags - https://www.drupal.org/project/metatag/issues/2735195": "https://www.drupal.org/files/issues/2022-03-15/metatag-unset-2735195.patch"
             },
             "drupal/tfa": {
-                "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2022-11-23/tfa-2930541-54_2.patch"
+                "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2023-05-24/tfa-2930541-73_0.patch"
             }
         }
     },
