@@ -169,9 +169,6 @@
             "drupal/login_security": {
                 "Correctly detect invalid username/password or blocked account login errors - https://www.drupal.org/project/login_security/issues/3292974": "https://www.drupal.org/files/issues/2023-02-14/login_security-3292974-21.patch"
             },
-            "drupal/metatag": {
-                "Unsetting metatags - https://www.drupal.org/project/metatag/issues/2735195": "https://www.drupal.org/files/issues/2022-03-15/metatag-unset-2735195.patch"
-            },
             "drupal/tfa": {
                 "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2022-11-23/tfa-2930541-54_2.patch"
             }
