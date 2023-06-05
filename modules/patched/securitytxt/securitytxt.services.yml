@@ -1,3 +1,0 @@
-services:
-  securitytxt.serializer:
-    class: Drupal\securitytxt\SecuritytxtSerializer
