@@ -135,7 +135,7 @@
         "webflo/drupal-finder": "^1.2"
     },
     "require-dev": {
-        "drush/drush": "~11"
+        "drush/drush": "~12"
     },
     "config": {
         "allow-plugins": {
