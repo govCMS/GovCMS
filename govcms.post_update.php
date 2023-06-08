@@ -89,7 +89,7 @@ function govcms_post_update_replace_ckeditor5() {
 /**
  * Removes the video_embed_wysiwyg plugin from text filters.
  */
-function govcms_post_update_remove_entity_embed() {
+function govcms_post_update_remove_video_embed_wysiwyg() {
   $plugin_id = 'video_embed_wysiwyg';
   $config_factory = \Drupal::configFactory();
   foreach ($config_factory->listAll('filter.format.') as $filter_config_name) {
