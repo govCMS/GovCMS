@@ -85,3 +85,23 @@ function govcms_post_update_replace_ckeditor5() {
     }
   }
 }
+
+/**
+ * Removes the video_embed_wysiwyg plugin from text filters.
+ */
+function govcms_post_update_remove_entity_embed() {
+  $plugin_id = 'video_embed_wysiwyg';
+  $config_factory = \Drupal::configFactory();
+  foreach ($config_factory->listAll('filter.format.') as $filter_config_name) {
+    $filter = $config_factory->getEditable($filter_config_name);
+
+    if ($filters = $filter->get('filters')) {
+      if (isset($filters[$plugin_id])) {
+        // Remove the filter plugin.
+        unset($filters[$plugin_id]);
+        $filter->set('filters', $filters);
+        $filter->save();
+      }
+    }
+  }
+}
