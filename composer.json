@@ -128,7 +128,7 @@
         "drupal/token": "1.11.0",
         "drupal/twig_tweak": "3.2.1",
         "drupal/username_enumeration_prevention": "1.3.0",
-        "drupal/webform": "6.2.0-beta5",
+        "drupal/webform": "6.2.0-beta6",
         "harvesthq/chosen": "1.8.7",
         "oomphinc/composer-installers-extender": "^2.0",
         "swiftmailer/swiftmailer": "6.3.0",
