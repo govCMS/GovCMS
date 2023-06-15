@@ -168,6 +168,9 @@
         "enable-patching": true,
         "composer-exit-on-patch-failure": true,
         "patches": {
+            "drupal/core": {
+                "CKEditor 5 Style plugin configuration tab does not appear - https://www.drupal.org/project/drupal/issues/3309585": "https://www.drupal.org/files/issues/2023-06-15/drupal-3309585-14.patch"
+            },
             "drupal/login_security": {
                 "Correctly detect invalid username/password or blocked account login errors - https://www.drupal.org/project/login_security/issues/3292974": "https://www.drupal.org/files/issues/2023-02-14/login_security-3292974-21.patch"
             },
