@@ -50,6 +50,7 @@
         "drupal/bigmenu": "2.0.0-rc3",
         "drupal/captcha": "2.0.0",
         "drupal/chosen": "4.0.0",
+        "drupal/ckeditor": "1.0.2",
         "drupal/components": "3.0.0-beta3",
         "drupal/config_filter": "2.4.0",
         "drupal/config_ignore": "2.4.0",
