@@ -85,7 +85,7 @@
         "drupal/google_analytics": "4.0.2",
         "drupal/govcms_dlm": "2.0.0",
         "drupal/honeypot": "2.1.2",
-        "drupal/inline_entity_form": "2.0.0-rc4",
+        "drupal/inline_entity_form": "2.0.0-rc4 || 1.0.0-rc15",
         "drupal/key": "1.17.0",
         "drupal/layout_builder_modal": "1.2.0",
         "drupal/layout_builder_restrictions": "2.18.0",
