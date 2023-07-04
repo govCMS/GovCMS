@@ -1,6 +1,0 @@
-securitytxt.configure:
-  title: 'Security.txt'
-  description: 'Configure and sign the site security.txt file.'
-  route_name: securitytxt.configure
-  parent: system.admin_config_system
-  weight: 50
