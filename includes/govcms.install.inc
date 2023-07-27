@@ -42,5 +42,19 @@ function govcms_modules_installed($modules, $is_syncing) {
         $role->save();
       }
     }
+
+    if (in_array('securitytxt', $modules)) {
+      // Anonymous user.
+      if ($role = Role::load('anonymous')) {
+        $role->grantPermission('view_securitytxt');
+        $role->save();
+      }
+
+      // Authenticated user.
+      if ($role = Role::load('authenticated')) {
+        $role->grantPermission('view_securitytxt');
+        $role->save();
+      }
+    }
   }
 }
