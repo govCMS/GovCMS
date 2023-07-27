@@ -42,19 +42,18 @@ function govcms_modules_installed($modules, $is_syncing) {
         $role->save();
       }
     }
+  }
+}
 
-    if (in_array('securitytxt', $modules)) {
-      // Anonymous user.
-      if ($role = Role::load('anonymous')) {
-        $role->grantPermission('view securitytxt');
-        $role->save();
-      }
-
-      // Authenticated user.
-      if ($role = Role::load('authenticated')) {
-        $role->grantPermission('view securitytxt');
-        $role->save();
-      }
-    }
+/**
+ * Provide the default permissions to a newly installed GovCMS site.
+ */
+function govcms_default_permissions() {
+  $module_handler = \Drupal::moduleHandler();
+  if ($module_handler->moduleExists('securitytxt')) {
+    // Anonymous role.
+    user_role_grant_permissions(RoleInterface::ANONYMOUS_ID, ['view securitytxt']);
+    // Authenticated role.
+    user_role_grant_permissions(RoleInterface::AUTHENTICATED_ID, ['view securitytxt']);
   }
 }

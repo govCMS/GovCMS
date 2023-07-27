@@ -125,4 +125,7 @@ function govcms_install() {
       'use_default' => FALSE,
     ])
     ->save(TRUE);
+
+  // Grant the default permissions.
+  govcms_default_permissions();
 }
