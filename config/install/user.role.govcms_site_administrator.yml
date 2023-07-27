@@ -20,6 +20,7 @@ dependencies:
     - workflows.workflow.editorial
   module:
     - block
+    - block_content
     - content_moderation
     - contextual
     - field_ui
