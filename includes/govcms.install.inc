@@ -46,13 +46,13 @@ function govcms_modules_installed($modules, $is_syncing) {
     if (in_array('securitytxt', $modules)) {
       // Anonymous user.
       if ($role = Role::load('anonymous')) {
-        $role->grantPermission('view_securitytxt');
+        $role->grantPermission('view securitytxt');
         $role->save();
       }
 
       // Authenticated user.
       if ($role = Role::load('authenticated')) {
-        $role->grantPermission('view_securitytxt');
+        $role->grantPermission('view securitytxt');
         $role->save();
       }
     }
