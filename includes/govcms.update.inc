@@ -10,7 +10,7 @@
 /**
  * Implements hook_update_last_removed().
  */
-function govcms_security_update_last_removed() {
+function govcms_update_last_removed() {
   return 9003;
 }
 
