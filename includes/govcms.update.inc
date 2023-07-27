@@ -8,6 +8,13 @@
  use Drupal\Core\Extension\ExtensionLifecycle;
 
 /**
+ * Implements hook_update_last_removed().
+ */
+function govcms_security_update_last_removed() {
+  return 9003;
+}
+
+/**
  * Enables ckeditor5 module if it is not already enabled.
  */
 function govcms_update_10000() {
@@ -68,11 +75,4 @@ function govcms_update_10002() {
       $config->set('safe_tokens', $safe_tokens)->save();
     }
   }
-}
-
-/**
- * Uninstall outdated modules from GovCMS Drupal 9.
- */
-function govcms_update_10003() {
-  // Placeholder.
 }
