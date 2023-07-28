@@ -1,9 +1,9 @@
 name: GovCMS
 type: profile
 description: 'A GovCMS Drupal Distribution for government and the public sector in Australia.'
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^10
 project: 'govcms'
-version: '3.x-develop'
+version: '3.0.0'
 
 distribution:
   name: GovCMS
