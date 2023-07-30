@@ -7,7 +7,8 @@ let modules = Object.entries(packages['require']).filter((str) => {
 describe('Cross check module and library versions', () => {
     modules.forEach((module, i) => {
         it(`${module}`, () => {
-            cy.composerCommand('show ' + module[0] + ' | grep versions').its('stdout').should('contain', module[1])
+            const moduleVersion = module[1].substring(0, module[1].indexOf(" as"));
+            cy.composerCommand('show ' + module[0] + ' | grep versions').its('stdout').should('contain', moduleVersion)
         })
     })
 })
