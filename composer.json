@@ -48,7 +48,7 @@
         "drupal/address": "1.12.0",
         "drupal/admin_toolbar": "3.4.1",
         "drupal/bigmenu": "2.0.0-rc3",
-        "drupal/captcha": "2.0.3",
+        "drupal/captcha": "2.0.4",
         "drupal/chosen": "4.0.0",
         "drupal/components": "3.0.0-beta3",
         "drupal/config_filter": "2.4.0",
@@ -81,7 +81,7 @@
         "drupal/events_log_track": "3.1.6",
         "drupal/facets": "2.0.6",
         "drupal/field_group": "3.4.0",
-        "drupal/focal_point": "2.0.1",
+        "drupal/focal_point": "2.0.2",
         "drupal/google_analytics": "4.0.2",
         "drupal/govcms_dlm": "2.0.0",
         "drupal/honeypot": "2.1.2",
@@ -97,7 +97,7 @@
         "drupal/media_vimeo_domain_privacy": "1.1",
         "drupal/menu_block": "1.10.0",
         "drupal/menu_trail_by_path": "2.0.0",
-        "drupal/metatag": "1.22.0",
+        "drupal/metatag": "2.0.0",
         "drupal/migrate_file": "2.1.2",
         "drupal/migrate_plus": "6.0.1",
         "drupal/migrate_source_csv": "3.5.0",
@@ -176,6 +176,9 @@
             },
             "drupal/tfa": {
                 "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2023-07-19/tfa-2930541-81.patch"
+            },
+            "drupal/honeypot": {
+                "Fix missing primary key in table `honeypot_user` - https://www.drupal.org/project/honeypot/issues/2943526": "https://www.drupal.org/files/issues/2023-07-10/honeypot-add_primary_key-2943526-64.patch"
             }
         }
     },
