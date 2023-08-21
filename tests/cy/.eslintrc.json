@@ -1,9 +1,0 @@
-{
-  "plugins": [
-    "@cypress/json"
-  ],
-  "extends": [
-    "plugin:chai-friendly/recommended",
-    "plugin:cypress/recommended"
-  ]
-}
