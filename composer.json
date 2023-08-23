@@ -171,14 +171,17 @@
         "enable-patching": true,
         "composer-exit-on-patch-failure": true,
         "patches": {
+            "drupal/honeypot": {
+                "Fix missing primary key in table `honeypot_user` - https://www.drupal.org/project/honeypot/issues/2943526": "https://www.drupal.org/files/issues/2023-07-10/honeypot-add_primary_key-2943526-64.patch"
+            },
             "drupal/login_security": {
                 "Correctly detect invalid username/password or blocked account login errors - https://www.drupal.org/project/login_security/issues/3292974": "https://www.drupal.org/files/issues/2023-02-14/login_security-3292974-21.patch"
             },
+            "drupal/password_policy": {
+                "Expired users log in, css and js will not be loaded - https://www.drupal.org/project/password_policy/issues/3380929": "https://www.drupal.org/files/issues/2023-08-14/3380929-2.patch"
+            },
             "drupal/tfa": {
                 "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2023-07-19/tfa-2930541-81.patch"
-            },
-            "drupal/honeypot": {
-                "Fix missing primary key in table `honeypot_user` - https://www.drupal.org/project/honeypot/issues/2943526": "https://www.drupal.org/files/issues/2023-07-10/honeypot-add_primary_key-2943526-64.patch"
             }
         }
     },
