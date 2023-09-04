@@ -1,7 +1,0 @@
-name: Aggregator
-type: module
-description: 'Gathers and displays syndicated content (RSS, RDF, and Atom feeds) from external sources. [obsolete]'
-package: GovCMS [obsolete]
-core_version_requirement: ^9 || ^10
-lifecycle: obsolete
-lifecycle_link: 'https://github.com/GovCMS/GovCMS'
