@@ -19,3 +19,28 @@ function govcms_security_install($is_syncing) {
 function govcms_security_update_last_removed() {
   return 9005;
 }
+
+/**
+ * Remove rtf and doc file extension from the file field.
+ */
+function govcms_security_update_10001() {
+  $extension_config = \Drupal::configFactory()->getEditable('field.field.media.document.field_media_document');
+
+  if (!empty($extension_config)) {
+    $settings = $extension_config->get('settings');
+    if (isset($settings['file_extensions'])) {
+      $file_extensions = explode(' ', $settings['file_extensions']);
+      // Remove rtf extension.
+      if (($key = array_search('rtf', $file_extensions)) !== false) {
+        unset($file_extensions[$key]);
+      }
+      // Remove doc extension.
+      if (($key = array_search('doc', $file_extensions)) !== false) {
+        unset($file_extensions[$key]);
+      }
+
+      $settings['file_extensions'] = implode(' ', $file_extensions);
+      $extension_config->set('settings', $settings)->save();
+    }
+  }
+}
