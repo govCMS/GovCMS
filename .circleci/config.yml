@@ -6,6 +6,10 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Checkout tests
+          command: |
+            git clone https://github.com/govcms-tests/tests.git tests
+      - run:
           name: Check Drupal best practices
           command: |
             cd tests && composer install
@@ -70,6 +74,10 @@ jobs:
     working_directory: /app
     steps:
       - checkout
+      - run:
+          name: Checkout tests
+          command: |
+            git clone https://github.com/govcms-tests/tests.git tests
       - run:
           name: Setup webserver
           command: |
