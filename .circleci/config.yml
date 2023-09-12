@@ -8,11 +8,11 @@ jobs:
       - run:
           name: Checkout tests
           command: |
-            git clone https://github.com/govcms-tests/tests.git tests
+            composer create-project govcms/tests:3.x-dev tests
       - run:
           name: Check Drupal best practices
           command: |
-            cd tests && composer install
+            cd tests
             ./vendor/bin/phpcs --standard=phpcs.govcms.xml -p || true
   build:
     docker:
@@ -77,7 +77,7 @@ jobs:
       - run:
           name: Checkout tests
           command: |
-            git clone https://github.com/govcms-tests/tests.git tests
+            composer create-project govcms/tests:3.x-dev tests
       - run:
           name: Setup webserver
           command: |
