@@ -118,7 +118,7 @@
         "drupal/role_delegation": "1.2.0",
         "drupal/scheduled_transitions": "2.3.0",
         "drupal/search_api": "1.29.0",
-        "drupal/search_api_attachments": "9.0.1",
+        "drupal/search_api_attachments": "9.0.2",
         "drupal/search_api_solr": "4.2.12",
         "drupal/seckit": "2.0.1",
         "drupal/securitytxt": "1.4.0",
