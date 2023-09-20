@@ -1,0 +1,8 @@
+services:
+  # GovCMS events subscriber.
+  govcms_security_events_subscriber:
+    # Event subscriber class that will listen for the events.
+    class: '\Drupal\govcms_security\EventSubscriber\GovcmsSecurityEventsSubscriber'
+    # Tagged as an event_subscriber to register this subscriber with the event_dispatch service.
+    tags:
+      - { name: 'event_subscriber' }
