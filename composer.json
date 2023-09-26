@@ -181,9 +181,6 @@
             },
             "drupal/honeypot": {
                 "Fix missing primary key in table `honeypot_user` - https://www.drupal.org/project/honeypot/issues/2943526": "https://www.drupal.org/files/issues/2023-07-10/honeypot-add_primary_key-2943526-64.patch"
-            },
-            "drupal/search_api_attachments": {
-                "Fix fatal error call to Bytes::toInt in file extractor - https://www.drupal.org/project/search_api_attachments/issues/3358930": "https://www.drupal.org/files/issues/2023-08-01/3358930-change-deprecated-toInt.patch"
             }
         }
     },
