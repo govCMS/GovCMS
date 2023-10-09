@@ -1,6 +1,7 @@
 version: 2
+
 jobs:
-  validate:code:
+  validate-code:
     docker:
       - image: cimg/php:8.1
     steps:
@@ -14,6 +15,7 @@ jobs:
           command: |
             cd tests
             ./vendor/bin/phpcs --standard=phpcs.govcms.xml -p || true
+
   build:
     docker:
       - image: cimg/php:8.1
@@ -28,7 +30,8 @@ jobs:
           command: |
             composer update --profile --prefer-dist --optimize-autoloader
             composer show -i
-  test:basic:
+
+  test-basic:
     docker:
       - image: govcmstesting/php:8.1-apache
       - image: cimg/mariadb:10.11
@@ -44,13 +47,13 @@ jobs:
           command: |
             composer update --profile --prefer-dist --optimize-autoloader
       - run:
-          name: Get PHP and drush version status
+          name: Get PHP and Drush version status
           command: |
             php -v
             composer --version
             bin/drush version
       - run:
-          name: Wait for MariaDb to be ready
+          name: Wait for MariaDB to be ready
           command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
       - run:
           name: Install GovCMS site
@@ -63,7 +66,8 @@ jobs:
             cd web
             ../bin/drush status
             ../bin/drush pm:list --no-core
-  test:cypress:
+
+  test-cypress:
     docker:
       - image: govcmstesting/php:8.1-apache
       - image: cimg/mariadb:10.11
@@ -86,7 +90,7 @@ jobs:
             echo "127.0.0.1 local.govcms.gov.au" | tee --append /etc/hosts
             service apache2 restart
       - run:
-          name: Wait for MariaDb to be ready
+          name: Wait for MariaDB to be ready
           command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
       - run:
           name: Install GovCMS site
@@ -109,32 +113,18 @@ jobs:
           path: tests/cy/cypress/videos
       - store_artifacts:
           path: tests/cy/cypress/screenshots
+
 workflows:
   version: 2
   main:
     jobs:
-      - validate:code
+      - validate-code
       - build:
           requires:
-            - validate:code
-          filters:
-            tags:
-              only: /.*/
-            branches:
-              only: /.*/
-      - test:basic:
+            - validate-code
+      - test-basic:
           requires:
             - build
-          filters:
-            tags:
-              only: /.*/
-            branches:
-              only: /.*/
-      - test:cypress:
+      - test-cypress:
           requires:
             - build
-          filters:
-            tags:
-              only: /.*/
-            branches:
-              only: /.*/
