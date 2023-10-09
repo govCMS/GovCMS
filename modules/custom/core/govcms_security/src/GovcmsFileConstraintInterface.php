@@ -12,4 +12,11 @@ interface GovcmsFileConstraintInterface {
    */
   public const BLOCKED_EXTENSIONS = ['doc', 'xls', 'ppt', 'rtf'];
 
+  /**
+   * The regex used to extract the filename from the content disposition header.
+   *
+   * @var string
+   */
+  public const REQUEST_HEADER_FILENAME_REGEX = '@\bfilename(?<star>\*?)=\"(?<filename>.+)\"@';
+
 }
