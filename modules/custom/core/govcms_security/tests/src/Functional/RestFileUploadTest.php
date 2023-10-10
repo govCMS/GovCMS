@@ -219,7 +219,7 @@ class RestFileUploadTest extends ResourceTestBase {
       $this->assertFileDoesNotExist('public://foobar/' . $test_file_name);
     }
 
-    // Test a txt file that should be blocked.
+    // Test a txt file that should not be blocked.
     $response = $this->fileRequest($uri, $this->testFileData, ['Content-Disposition' => 'file; filename="example.txt"']);
     $this->assertSame(201, $response->getStatusCode());
     $expected = $this->getExpectedNormalizedEntity();
