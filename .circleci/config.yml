@@ -24,7 +24,7 @@ jobs:
           name: Check Drupal best practices
           command: |
             cd tests
-            ./vendor/bin/phpcs --standard=phpcs.govcms.xml -p || true
+            ./vendor/bin/phpcs --standard=phpcs.govcms.xml || true
 
   build:
     docker:
@@ -38,8 +38,15 @@ jobs:
       - run:
           name: Install GovCMS distribution
           command: |
-            composer update --profile --prefer-dist --optimize-autoloader
-            composer show -i
+            composer update --profile --prefer-dist --optimize-autoloader --no-scripts
+      - run:
+          name: List all packages within the GovCMS distribution
+          command: |
+            composer show -i -D
+      - run:
+          name: List outdated packages within the GovCMS distribution
+          command: |
+            composer outdated -D
 
   test-basic:
     docker:
