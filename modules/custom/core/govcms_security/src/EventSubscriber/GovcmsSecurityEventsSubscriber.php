@@ -43,7 +43,7 @@ class GovcmsSecurityEventsSubscriber implements EventSubscriberInterface {
       // File upladed by API.
       if ($content_disposition) {
         if (preg_match(GovcmsFileConstraintInterface::REQUEST_HEADER_FILENAME_REGEX, $content_disposition, $matches)) {
-          if (isset($matches['filename'])) {
+          if (!empty($matches['filename'])) {
             // Validate the file name.
             $this->validateFile($matches['filename']);
           }
