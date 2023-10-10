@@ -41,7 +41,8 @@ class JsonApiFileUploadTest extends BrowserTestBase {
     'entity_test',
     'file',
     'jsonapi_test_field_access',
-    'rest_test', 'basic_auth',
+    'rest_test',
+    'basic_auth',
     'text',
     'govcms_security',
   ];
@@ -187,7 +188,7 @@ class JsonApiFileUploadTest extends BrowserTestBase {
       $response = $this->fileRequest($uri, $this->testFileData, ['Content-Disposition' => 'filename="' . $test_file_name . '"']);
       // The file upload request should get 403 response.
       $this->assertEquals(403, $response->getStatusCode());
-      // Override the expected filesize.
+      // The file should not be existed in the public folder.
       $this->assertFileDoesNotExist('public://foobar/' . $test_file_name);
     }
 
