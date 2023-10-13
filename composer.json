@@ -46,7 +46,7 @@
         "cweagans/composer-patches": "^1.7",
         "dropzone/dropzone": "5.7.2",
         "drupal/address": "1.12.0",
-        "drupal/admin_toolbar": "3.4.1",
+        "drupal/admin_toolbar": "3.4.2",
         "drupal/bigmenu": "2.0.0-rc3",
         "drupal/captcha": "2.0.5",
         "drupal/chosen": "4.0.0",
