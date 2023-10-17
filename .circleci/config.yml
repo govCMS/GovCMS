@@ -84,6 +84,44 @@ jobs:
             ../bin/drush status
             ../bin/drush pm:list --no-core
 
+  test-phpunit:
+    docker:
+      - image: govcmstesting/php:8.1-apache
+        environment:
+          SIMPLETEST_BASE_URL: "http://local.govcms.gov.au"
+          SIMPLETEST_DB: "sqlite://localhost/sites/default/files/.ht.sqlite"
+    working_directory: /app
+    steps:
+      - checkout
+      - run:
+          name: Install GovCMS dependencies
+          command: |
+            composer update --profile --prefer-dist --optimize-autoloader
+            composer config --no-plugins allow-plugins.phpstan/extension-installer 1
+            composer require --dev drupal/core-dev:"^10.1"
+            chown -R www-data:www-data web/sites
+            rm -rf tests
+      - run:
+          name: Setup webserver
+          command: |
+            rm -rf /var/www/html
+            ln -sf /app/web /var/www/html
+            cp .circleci/httpd.conf.circle /etc/apache2/sites-available/default.conf
+            a2ensite default
+            echo "127.0.0.1 local.govcms.gov.au" | tee --append /etc/hosts
+            service apache2 restart
+      - run:
+          name: Checkout tests
+          command: |
+            composer create-project govcms/tests:3.x-dev tests
+            mkdir -p web/modules/develop/govcms_security/tests
+            cp -r modules/custom/core/govcms_security web/modules/develop/
+            cp -r tests/phpunit/govcms/modules/govcms_security/tests web/modules/develop/govcms_security/
+      - run:
+          name: Execute the PHPUnit test for the minisite module
+          command: |
+            sudo -u root -E sudo -u www-data -E ./bin/phpunit -c web/core web/modules/contrib/minisite || true
+
   test-cypress:
     docker:
       - image: govcmstesting/php:8.1-apache
@@ -141,6 +179,9 @@ workflows:
           requires:
             - validate-composer
       - test-basic:
+          requires:
+            - build
+      - test-phpunit:
           requires:
             - build
       - test-cypress:
