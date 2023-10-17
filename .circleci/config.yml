@@ -134,12 +134,16 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Checkout tests
+          name: Install GovCMS dependencies
           command: |
-            composer create-project govcms/tests:3.x-dev tests
+            composer update --profile --prefer-dist --optimize-autoloader
+            chown -R www-data:www-data web/sites
+            rm -rf tests
       - run:
           name: Setup webserver
           command: |
+            rm -rf /var/www/html
+            ln -sf /app/web /var/www/html
             cp /app/.circleci/httpd.conf.circle /etc/apache2/sites-available/default.conf
             a2ensite default
             echo "127.0.0.1 local.govcms.gov.au" | tee --append /etc/hosts
@@ -148,21 +152,23 @@ jobs:
           name: Wait for MariaDB to be ready
           command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
       - run:
+          name: Checkout tests
+          command: |
+            composer create-project govcms/tests:3.x-dev tests
+      - run:
           name: Install GovCMS site
           command: |
-            composer update --profile --prefer-dist --optimize-autoloader
-            cd web
-            ../bin/drush site-install -y govcms --db-url=mysql://root:govcms@127.0.0.1:3306/govcms --site-name='GovCMS' --account-pass=password install_configure_form.enable_update_status_emails=NULL install_configure_form.enable_update_status_module=NULL || true
+            ./bin/drush site-install -y govcms --db-url=mysql://root:govcms@127.0.0.1:3306/govcms --site-name='GovCMS' --account-pass=password install_configure_form.enable_update_status_emails=NULL install_configure_form.enable_update_status_module=NULL || true
       - run:
           name: Install Cypress Dependencies
           command: |
+            cp /app/.circleci/cypress.env.json /app/tests/cy/cypress.env.json
             cd tests/cy
             yarn
       - run:
           name: Run Cypress tests
           command: |
             cd tests/cy
-            cp /app/.circleci/cypress.env.json /app/tests/cy/cypress.env.json
             yarn cypress:run
       - store_artifacts:
           path: tests/cy/cypress/videos
