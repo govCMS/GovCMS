@@ -40,7 +40,7 @@
         "drupal/chosen": "4.0.0",
         "drupal/components": "3.0.0-beta3",
         "drupal/config_filter": "2.4.0",
-        "drupal/config_ignore": "2.4.0",
+        "drupal/config_ignore": "3.0.0",
         "drupal/config_perms": "2.1",
         "drupal/config_split": "2.0.0-rc4",
         "drupal/config_update": "2.0.0-alpha3",
