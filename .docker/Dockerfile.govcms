@@ -34,15 +34,14 @@ COPY composer.json ./
 # Install Composer dependencies
 RUN \
     --mount=type=cache,mode=0777,target=/root/.composer/cache \
-    composer update --no-scripts --no-autoloader
+    composer config --no-plugins allow-plugins.phpstan/extension-installer 1 && \
+    composer require palantirnet/drupal-rector drupal/core-dev:"^10.0" mglaman/drupal-check --dev --no-update && \
+    composer update --no-scripts --no-autoloader && \
+    cp vendor/palantirnet/drupal-rector/rector.php .
 
-# Adjust ownership and create a symbolic link
-RUN chown -R www-data:www-data web/sites web/modules web/themes && \
-    rm -rf /opt/drupal && \
+# Create a symbolic link
+RUN rm -rf /opt/drupal && \
     ln -sf /app/web /var/www/html
-
-# Set the PATH environment variable
-ENV PATH=${PATH}:/app/bin
 
 # Stage 2: Final application image
 FROM builder as site
@@ -57,6 +56,10 @@ COPY . /app/
 RUN \
     --mount=type=cache,mode=0777,target=/root/.composer/cache \
     composer config --no-plugins allow-plugins.phpstan/extension-installer 1 && \
-    composer require palantirnet/drupal-rector drupal/core-dev:"^10.0" mglaman/drupal-check --dev --no-update && \
-    composer update && \
-    cp vendor/palantirnet/drupal-rector/rector.php .
+    composer install
+
+# Adjust ownership
+RUN chown -R www-data:www-data web/sites web/modules web/themes
+
+# Set the PATH environment variable
+ENV PATH=${PATH}:/app/bin
