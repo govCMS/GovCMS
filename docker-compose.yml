@@ -6,20 +6,23 @@ services:
     build:
       context: .
       dockerfile: $PWD/.docker/Dockerfile.govcms
-      secrets:
-       - github_token
     ports:
       - 8888:80
     volumes:
       - /root/.composer
       - /var/www/html/sites
-      - $PWD/web/develop/modules:/app/web/modules/develop
-      - $PWD/web/develop/themes:/app/web/themes/develop
-      #- $PWD/web/develop/profiles:/app/web/profiles
-    environment:
-      GITHUB_TOKEN: /run/secrets/github_token
-    secrets:
-       - github_token
+      - $PWD/modules:/app/web/profiles/govcms/modules
+      - $PWD/themes:/app/web/profiles/govcms/themes
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /app/web/profiles/govcms
+          ignore:
+            - modules/
+            - themes/
+        - action: rebuild
+          path: composer.json
 
   ##########################################
   # mariadb: The database used by local
@@ -32,11 +35,7 @@ services:
       MARIADB_USER: drupal
       MARIADB_PASSWORD: drupal
     volumes:
-      - $PWD/web/develop/database:/var/lib/mysql
-
-secrets:
-   github_token:
-     file: $PWD/.docker/auth.json
+      - /var/lib/mysql
 
 networks:
   default:
