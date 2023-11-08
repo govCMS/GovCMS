@@ -50,13 +50,13 @@ FROM builder as site
 # Set the working directory
 WORKDIR /app
 
+# Copy the rest of the application files
+COPY . /app/
+
 # Configure Composer
 RUN \
     --mount=type=cache,mode=0777,target=/root/.composer/cache \
     composer config --no-plugins allow-plugins.phpstan/extension-installer 1 && \
-    composer require palantirnet/drupal-rector drupal/core-dev:"^10.0" mglaman/drupal-check --dev && \
-    cp vendor/palantirnet/drupal-rector/rector.php && \
-    composer install --optimize-autoloader
-
-# Copy the rest of the application files
-COPY . /app/
+    composer require palantirnet/drupal-rector drupal/core-dev:"^10.0" mglaman/drupal-check --dev --no-update && \
+    composer update && \
+    cp vendor/palantirnet/drupal-rector/rector.php .
