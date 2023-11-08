@@ -4,7 +4,7 @@ FROM drupal:10-php8.1
 RUN ln -sf /usr/share/zoneinfo/Australia/Sydney /etc/localtime
 
 RUN apt-get update && \
-    apt-get install -q -y libicu-dev sqlite3 mariadb-client git unzip rsync nano && \
+    apt-get install -q -y libicu-dev sqlite3 mariadb-client git unzip rsync sudo && \
     apt-get autoclean && \
     apt-get autoremove && \
     rm -rf /var/lib/apt/lists/* && \
@@ -24,7 +24,6 @@ WORKDIR /app
 
 COPY . /app/
 
-# RUN --mount=type=secret,id=github_token,dst=/app/auth.json set -eux; \
 RUN set -eux; \
     composer update; \
     composer config --no-plugins allow-plugins.phpstan/extension-installer 1;\
