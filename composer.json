@@ -113,7 +113,7 @@
         "drupal/simple_oauth": "5.2.4",
         "drupal/simple_sitemap": "4.1.6",
         "drupal/swiftmailer": "2.4.0",
-        "drupal/symfony_mailer": "1.4.0-beta2",
+        "drupal/symfony_mailer": "1.4.0",
         "drupal/tfa": "1.2.0",
         "drupal/token": "1.13.0",
         "drupal/twig_tweak": "3.2.1",
