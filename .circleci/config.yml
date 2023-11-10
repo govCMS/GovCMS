@@ -114,9 +114,6 @@ jobs:
           name: Checkout tests
           command: |
             composer create-project govcms/tests:3.x-dev tests
-            mkdir -p web/modules/develop/govcms_security/tests
-            cp -r modules/custom/core/govcms_security web/modules/develop/
-            cp -r tests/phpunit/govcms/modules/govcms_security/tests web/modules/develop/govcms_security/
       - run:
           name: Execute the PHPUnit test for the minisite module
           command: |
