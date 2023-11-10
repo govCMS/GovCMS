@@ -176,10 +176,10 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "rsync -av --delete --exclude '.*' --exclude 'web'  --exclude 'vendor' --exclude 'tests' --exclude 'bin' ./ web/profiles/govcms"
+            "rsync -av --delete --exclude '.*' --exclude 'web'  --exclude 'vendor' --exclude 'bin' ./ web/profiles/govcms"
         ],
         "post-update-cmd": [
-            "rsync -av --delete --exclude '.*' --exclude 'web'  --exclude 'vendor' --exclude 'tests' --exclude 'bin' ./ web/profiles/govcms"
+            "rsync -av --delete --exclude '.*' --exclude 'web'  --exclude 'vendor' --exclude 'bin' ./ web/profiles/govcms"
         ],
         "nuke": "rm -r -f composer.lock bin app web vendor"
     },
