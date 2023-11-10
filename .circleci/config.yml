@@ -115,10 +115,6 @@ jobs:
           command: |
             composer create-project govcms/tests:3.x-dev tests
       - run:
-          name: Execute the PHPUnit test for the minisite module
-          command: |
-            sudo -u root -E sudo -u www-data -E ./bin/phpunit -c web/core web/modules/contrib/minisite || true
-      - run:
           name: Execute the PHPUnit test for the govcms_security module
           command: |
             sudo -u root -E sudo -u www-data -E ./bin/phpunit -c web/core web/profiles/govcms/modules/custom/core/govcms_security || true
