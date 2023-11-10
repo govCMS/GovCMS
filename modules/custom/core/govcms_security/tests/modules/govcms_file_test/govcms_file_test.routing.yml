@@ -1,0 +1,6 @@
+govcms.test.file.save_upload_from_form_test:
+  path: '/govcms-file-test/save_upload_from_form_test'
+  defaults:
+    _form: '\Drupal\govcms_file_test\Form\FileTestSaveUploadFromForm'
+  requirements:
+    _access: 'TRUE'
