@@ -1,7 +1,0 @@
-name: Color
-type: module
-description: 'Allows users to change the color scheme of compatible themes. [obsolete]'
-package: GovCMS [obsolete]
-core_version_requirement: ^9 || ^10
-lifecycle: obsolete
-lifecycle_link: 'https://github.com/GovCMS/GovCMS'
