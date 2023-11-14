@@ -36,7 +36,7 @@
         "drupal/address": "1.12.0",
         "drupal/admin_toolbar": "3.4.2",
         "drupal/bigmenu": "2.0.0-rc3",
-        "drupal/block_inactive_users": "2.3",
+        "drupal/block_inactive_users": "2.4",
         "drupal/captcha": "2.0.5",
         "drupal/chosen": "4.0.0",
         "drupal/components": "3.0.0-beta3",
@@ -169,9 +169,6 @@
             },
             "drupal/tfa": {
                 "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2023-07-19/tfa-2930541-81.patch"
-            },
-            "drupal/block_inactive_users": {
-                "Fix the issue of the reactivation link never expiring - https://www.drupal.org/project/block_inactive_users/issues/3394246": "https://git.drupalcode.org/project/block_inactive_users/-/merge_requests/24.patch"
             }
         }
     },
