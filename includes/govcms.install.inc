@@ -9,6 +9,22 @@ use Drupal\user\Entity\Role;
 use Drupal\user\RoleInterface;
 
 /**
+ * Implements hook_system_info_alter(arry &$info, Extention $file, string $type).
+ * array $info: The .info.yml file contents, passed by reference so that it can be altered.
+ * \Drupal\Core\Extension\Extension $file: Full information about the module or theme.
+ * string $type: Either 'module' or 'theme', depending on the type of .info.yml file that was passed.
+ */
+function govcms_system_info_alter(&$info, $file, $type) {
+  // To set a module to be obsolte, add to $Obsolete_modules[module_name1, module_name2...] array
+  $Obsolete_modules = ["config_filter"];
+  
+  if ($type == 'module' && in_array($file->getName(), $Obsolete_modules)) {
+    $info['lifecycle'] = 'obsolete';
+    $info['lifecycle_link'] = 'https://github.com/GovCMS/GovCMS';
+  }
+}
+
+/**
  * Implements hook_modules_installed().
  */
 function govcms_modules_installed($modules, $is_syncing) {
