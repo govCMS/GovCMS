@@ -15,10 +15,10 @@ use Drupal\user\RoleInterface;
  * string $type: Either 'module' or 'theme', depending on the type of .info.yml file that was passed.
  */
 function govcms_system_info_alter(&$info, $file, $type) {
-  // To set a module to be obsolte, add to $Obsolete_modules[module_name1, module_name2...] array
-  $Obsolete_modules = ["config_filter"];
+  // To set a module to be obsolte, add to $obsoleteModules[module_name1, module_name2...] array
+  $obsoleteModules = ["config_filter"];
   
-  if ($type == 'module' && in_array($file->getName(), $Obsolete_modules)) {
+  if ($type == 'module' && in_array($file->getName(), $obsoleteModules)) {
     $info['lifecycle'] = 'obsolete';
     $info['lifecycle_link'] = 'https://github.com/GovCMS/GovCMS';
   }
