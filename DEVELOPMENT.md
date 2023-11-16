@@ -58,22 +58,14 @@ Follow the below steps to set up your local development environment for GovCMS:
     cd govcms
     ```
 
-3. Copy the auth.json.example file to auth.json (for Composer and GitHub API rate limit ):
-
-    ```console
-    cd .docker
-    cp auth.json.example auth.json
-    vi auth.json
-    ```
-
-4. Start the Docker containers by running the following command:
+3. Start the Docker containers by running the following command:
 
     ```console
     cd govcms
     docker compose up -d
     ```
 
-5. The website should now be running at http://localhost:8888. You can access the website by opening this URL in your
+4. The website should now be running at http://localhost:8888. You can access the website by opening this URL in your
    browser.
 
 ## Running Tests

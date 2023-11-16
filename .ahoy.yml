@@ -24,6 +24,10 @@ commands:
     usage: Stop Docker containers.
     cmd: docker compose stop "$@"
 
+  watch:
+    usage: Use Compose Watch for live development.
+    cmd: docker compose watch
+
   cli:
     usage: Start a shell.
     cmd: docker compose exec govcms bash
@@ -38,7 +42,7 @@ commands:
 
   phpunit:
     usage: Run PHPUnit tests.
-    cmd: docker compose exec govcms phpunit "$@"
+    cmd: docker compose exec govcms sudo -u root -E sudo -u www-data -E /app/bin/phpunit "$@"
 
   drupal-check:
     usage: Static analysis tool to check for correctness and deprecation errors.
