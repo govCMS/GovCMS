@@ -13,6 +13,8 @@ services:
       - /var/www/html/sites
       - $PWD/modules:/app/web/profiles/govcms/modules
       - $PWD/themes:/app/web/profiles/govcms/themes
+      - $PWD/src:/app/web/profiles/govcms/src
+      - $PWD/tests:/app/web/profiles/govcms/tests
     develop:
       watch:
         - action: sync
@@ -21,6 +23,8 @@ services:
           ignore:
             - modules/
             - themes/
+            - src/
+            - tests/
         - action: rebuild
           path: composer.json
 
