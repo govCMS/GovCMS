@@ -84,12 +84,6 @@ function govcms_install() {
     ->set('page.front', '/node')
     ->save(TRUE);
 
-  // Enable the admin theme.
-  \Drupal::configFactory()
-    ->getEditable('node.settings')
-    ->set('use_admin_theme', TRUE)
-    ->save(TRUE);
-
   // Set the path to the logo, favicon and README file based on install directory.
   $govcms_path = \Drupal::service('extension.list.profile')->getPath('govcms');
   \Drupal::configFactory()
