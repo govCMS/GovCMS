@@ -8,12 +8,6 @@
 use Drupal\shortcut\Entity\Shortcut;
 use Drupal\menu_link_content\Entity\MenuLinkContent;
 
-// Define a default theme constant.
-const GOVCMS_DEFAULT_THEME = 'govcms_bartik';
-
-// Define the admin theme.
-const GOVCMS_DEFAULT_ADMIN_THEME = 'claro';
-
 // GovCMS update hooks.
 include_once __DIR__ . '/includes/govcms.update.inc';
 
@@ -88,13 +82,6 @@ function govcms_install() {
   \Drupal::configFactory()
     ->getEditable('system.site')
     ->set('page.front', '/node')
-    ->save(TRUE);
-
-  // Set the default and admin theme.
-  \Drupal::configFactory()
-    ->getEditable('system.theme')
-    ->set('default', GOVCMS_DEFAULT_THEME)
-    ->set('admin', GOVCMS_DEFAULT_ADMIN_THEME)
     ->save(TRUE);
 
   // Enable the admin theme.
