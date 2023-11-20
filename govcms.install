@@ -25,12 +25,6 @@ include_once __DIR__ . '/includes/govcms.update.inc';
  * @see system_install()
  */
 function govcms_install() {
-  // Restrict user registration to admin role creation.
-  \Drupal::configFactory()
-    ->getEditable('user.settings')
-    ->set('register', \Drupal\user\UserInterface::REGISTER_ADMINISTRATORS_ONLY)
-    ->save(TRUE);
-
   // Populate the default shortcut set.
   Shortcut::create(
     [
