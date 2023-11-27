@@ -76,3 +76,24 @@ function govcms_update_10002() {
     }
   }
 }
+
+/**
+ * Implements hook_update_N().
+ * Disables color, hal, module_filter, and tracker modules if the modules's lifecycle is obsolete.
+ */
+function govcms_update_10003() {
+  // List of modules to uninstall.
+  $modules_to_uninstall = ['color', 'hal', 'module_filter', 'tracker'];
+
+  // Get the module installer service.
+  $module_installer = \Drupal::service('module_installer');
+
+  // Uninstall each module in the array.
+  foreach ($modules_to_uninstall as $module) {
+    // Check if the module is installed before attempting to uninstall.
+    if (\Drupal::moduleHandler()->moduleExists($module)) {
+      // Uninstall the module using the module installer service.
+      $module_installer->uninstall([$module]);
+    }
+  }
+}
