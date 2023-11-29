@@ -87,11 +87,14 @@ function govcms_update_10003() {
 
   // Get the module installer service.
   $module_installer = \Drupal::service('module_installer');
+  $module_handler = \Drupal::service('module_handler');
 
   // Uninstall each module in the array.
   foreach ($modules_to_uninstall as $module) {
-    // Check if the module is installed before attempting to uninstall.
-    if (\Drupal::moduleHandler()->moduleExists($module)) {
+    // Check if the module is installed and marked as obsolete before attempting to uninstall.
+    $moduleInfo = \Drupal::service('extension.list.module')->getExtensionInfo($module);
+
+    if ($module_handler->moduleExists($module) && $moduleInfo && isset($moduleInfo['lifecycle']) && $moduleInfo['lifecycle'] === 'obsolete') {
       // Uninstall the module using the module installer service.
       $module_installer->uninstall([$module]);
     }
