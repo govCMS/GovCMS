@@ -7,8 +7,8 @@ disable_core_login_error:     1
 notice_attempts_available:    1
 last_login_timestamp:         1
 last_access_timestamp:        0
-user_blocked_email_user:      ''
-login_activity_email_user:    ''
+user_blocked_notification_emails:      ''
+login_activity_notification_emails:    ''
 notice_attempts_message:      'Unrecognised username or password. Have you <a href="/user/password">forgotten your password</a>?'
 host_soft_banned:             'This host is not allowed to log in to @site. Please contact your site administrator.'
 host_hard_banned:             'The IP address @ip is banned at @site, and will not be able to access any of its content from now on. Please contact the site administrator.'
