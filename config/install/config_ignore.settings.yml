@@ -1,8 +1,9 @@
+mode: simple
 ignored_config_entities:
-  - 'clamav.settings'
-  - 'login_security.settings'
-  - 'password_policy.*'
-  - 'seckit.settings'
-  - 'system.menu.*'
-  - 'webform.webform.*'
-  - 'webform.webform_options.*'
+    - 'clamav.settings'
+    - 'login_security.settings'
+    - 'password_policy.*'
+    - 'seckit.settings'
+    - 'system.menu.*'
+    - 'webform.webform.*'
+    - 'webform.webform_options.*'
