@@ -1,15 +1,31 @@
 version: 2
+
 jobs:
-  validate:code:
+  validate-composer:
     docker:
       - image: cimg/php:8.1
     steps:
       - checkout
       - run:
+          name: Validate distribution composer.json
+          command: |
+            composer validate --no-check-all
+
+  drupal-practices:
+    docker:
+      - image: cimg/php:8.1
+    steps:
+      - checkout
+      - run:
+          name: Checkout tests
+          command: |
+            composer create-project govcms/tests:3.x-dev tests
+      - run:
           name: Check Drupal best practices
           command: |
-            cd tests && composer install
-            ./vendor/bin/phpcs --standard=phpcs.govcms.xml -p || true
+            cd tests
+            ./vendor/bin/phpcs --standard=phpcs.govcms.xml || true
+
   build:
     docker:
       - image: cimg/php:8.1
@@ -22,9 +38,17 @@ jobs:
       - run:
           name: Install GovCMS distribution
           command: |
-            composer update --profile --prefer-dist --optimize-autoloader
-            composer show -i
-  test:basic:
+            composer update --profile --prefer-dist --optimize-autoloader --no-scripts
+      - run:
+          name: List all packages within the GovCMS distribution
+          command: |
+            composer show -i -D
+      - run:
+          name: List outdated packages within the GovCMS distribution
+          command: |
+            composer outdated -D
+
+  test-basic:
     docker:
       - image: govcmstesting/php:8.1-apache
       - image: cimg/mariadb:10.11
@@ -40,13 +64,13 @@ jobs:
           command: |
             composer update --profile --prefer-dist --optimize-autoloader
       - run:
-          name: Get PHP and drush version status
+          name: Get PHP and Drush version status
           command: |
             php -v
             composer --version
             bin/drush version
       - run:
-          name: Wait for MariaDb to be ready
+          name: Wait for MariaDB to be ready
           command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
       - run:
           name: Install GovCMS site
@@ -59,7 +83,43 @@ jobs:
             cd web
             ../bin/drush status
             ../bin/drush pm:list --no-core
-  test:cypress:
+
+  test-phpunit:
+    docker:
+      - image: govcmstesting/php:8.1-apache
+        environment:
+          SIMPLETEST_BASE_URL: "http://local.govcms.gov.au"
+          SIMPLETEST_DB: "sqlite://localhost/sites/default/files/.ht.sqlite"
+    working_directory: /app
+    steps:
+      - checkout
+      - run:
+          name: Install GovCMS dependencies
+          command: |
+            composer update --profile --prefer-dist --optimize-autoloader
+            composer config --no-plugins allow-plugins.phpstan/extension-installer 1
+            composer require --dev drupal/core-dev:"^10.1"
+            chown -R www-data:www-data web/sites
+            rm -rf tests
+      - run:
+          name: Setup webserver
+          command: |
+            rm -rf /var/www/html
+            ln -sf /app/web /var/www/html
+            cp .circleci/httpd.conf.circle /etc/apache2/sites-available/default.conf
+            a2ensite default
+            echo "127.0.0.1 local.govcms.gov.au" | tee --append /etc/hosts
+            service apache2 restart
+      - run:
+          name: Checkout tests
+          command: |
+            composer create-project govcms/tests:3.x-dev tests
+      - run:
+          name: Execute the PHPUnit test for the govcms_security module
+          command: |
+            sudo -u root -E sudo -u www-data -E ./bin/phpunit -c web/core web/profiles/govcms/modules/custom/core/govcms_security || true
+
+  test-cypress:
     docker:
       - image: govcmstesting/php:8.1-apache
       - image: cimg/mariadb:10.11
@@ -71,62 +131,62 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install GovCMS dependencies
+          command: |
+            composer update --profile --prefer-dist --optimize-autoloader
+            chown -R www-data:www-data web/sites
+            rm -rf tests
+      - run:
           name: Setup webserver
           command: |
+            rm -rf /var/www/html
+            ln -sf /app/web /var/www/html
             cp /app/.circleci/httpd.conf.circle /etc/apache2/sites-available/default.conf
             a2ensite default
             echo "127.0.0.1 local.govcms.gov.au" | tee --append /etc/hosts
             service apache2 restart
       - run:
-          name: Wait for MariaDb to be ready
+          name: Wait for MariaDB to be ready
           command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
+      - run:
+          name: Checkout tests
+          command: |
+            composer create-project govcms/tests:3.x-dev tests
       - run:
           name: Install GovCMS site
           command: |
-            composer update --profile --prefer-dist --optimize-autoloader
-            cd web
-            ../bin/drush site-install -y govcms --db-url=mysql://root:govcms@127.0.0.1:3306/govcms --site-name='GovCMS' --account-pass=password install_configure_form.enable_update_status_emails=NULL install_configure_form.enable_update_status_module=NULL || true
+            ./bin/drush site-install -y govcms --db-url=mysql://root:govcms@127.0.0.1:3306/govcms --site-name='GovCMS' --account-pass=password install_configure_form.enable_update_status_emails=NULL install_configure_form.enable_update_status_module=NULL || true
       - run:
           name: Install Cypress Dependencies
           command: |
+            cp /app/.circleci/cypress.env.json /app/tests/cy/cypress.env.json
             cd tests/cy
             yarn
       - run:
           name: Run Cypress tests
           command: |
             cd tests/cy
-            cp /app/.circleci/cypress.env.json /app/tests/cy/cypress.env.json
             yarn cypress:run
       - store_artifacts:
           path: tests/cy/cypress/videos
       - store_artifacts:
           path: tests/cy/cypress/screenshots
+
 workflows:
   version: 2
   main:
     jobs:
-      - validate:code
+      - validate-composer
+      - drupal-practices
       - build:
           requires:
-            - validate:code
-          filters:
-            tags:
-              only: /.*/
-            branches:
-              only: /.*/
-      - test:basic:
+            - validate-composer
+      - test-basic:
           requires:
             - build
-          filters:
-            tags:
-              only: /.*/
-            branches:
-              only: /.*/
-      - test:cypress:
+      - test-phpunit:
           requires:
             - build
-          filters:
-            tags:
-              only: /.*/
-            branches:
-              only: /.*/
+      - test-cypress:
+          requires:
+            - build
