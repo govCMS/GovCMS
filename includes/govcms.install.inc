@@ -10,6 +10,8 @@ use Drupal\user\RoleInterface;
 use Drupal\govcms\Event\ModuleInstalledEvent;
 use Drupal\govcms\Modules\Lifecycle as ModuleLifeCycle;
 
+require_once __DIR__ . '/../src/modules/Lifecycle.php';
+
 /**
  * Implements hook_system_info_alter().
  */
@@ -17,8 +19,7 @@ function govcms_system_info_alter(&$info, $file, $type) {
   if ($type === 'module') {
     $module_name = $file->getName();
 
-    // $ModuleLifeCycle = new ModuleLifeCycle();
-    $ModuleLifeCycle = \Drupal::service('govcms.modules.lifecycle');
+    $ModuleLifeCycle = new ModuleLifeCycle();
 
     if (in_array($module_name, ModuleLifeCycle::DEPRECATED_MODULES)) {
       // Update module information for deprecated modules.
