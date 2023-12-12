@@ -5,6 +5,7 @@
  * GovCMS install helper functions.
  */
 
+use Drupal\Core\Extension\ExtensionLifecycle;
 use Drupal\user\RoleInterface;
 use Drupal\govcms\Event\ModuleInstalledEvent;
 use Drupal\govcms\Modules\Lifecycle as ModuleLifeCycle;
@@ -20,10 +21,10 @@ function govcms_system_info_alter(&$info, $file, $type) {
 
     if (in_array($module_name, ModuleLifeCycle::DEPRECATED_MODULES)) {
       // Update module information for deprecated modules.
-      $ModuleLifeCycle->updateModuleInfo($info, 'deprecated');
+      $ModuleLifeCycle->updateModuleInfo($info, ExtensionLifecycle::DEPRECATED);
     } elseif (in_array($module_name, ModuleLifeCycle::OBSOLETE_MODULES)) {
       // Update module information for obsolete modules.
-      $ModuleLifeCycle->updateModuleInfo($info, 'obsolete');
+      $ModuleLifeCycle->updateModuleInfo($info, ExtensionLifecycle::DEPRECATED);
     }
   }
 }
