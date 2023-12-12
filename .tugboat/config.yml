@@ -77,13 +77,12 @@ services:
 
         # Install the site.
         - bin/drush -r "${DOCROOT}" site:install govcms install_configure_form.update_status_module='array(FALSE,FALSE)' -y
+        - bin/drush en module_permissions -y
 
       # Commands when building a new branch/PR update.
       build:
         - COMPOSER_MEMORY_LIMIT=-1 composer update
         - bin/drush cache:rebuild
-        # Partial importing is still having some issues with Drush 10 and Drupal 9.
-        #- bin/drush config-import --partial --source="${TUGBOAT_ROOT}/config/test" -y
-        - bin/drush en module_permissions -y
+        - bin/drush config-import --partial --source="${TUGBOAT_ROOT}/config/test" -y
         - bin/drush updatedb -y
         - bin/drush cache:rebuild
