@@ -66,14 +66,14 @@ services:
         - chmod 0664 ${DOCROOT}/sites/default/default.services.yml
 
         # Install the site.
-        - vendor/bin/drush -r "${DOCROOT}" site:install govcms install_configure_form.update_status_module='array(FALSE,FALSE)' -y
+        - bin/drush -r "${DOCROOT}" site:install govcms install_configure_form.update_status_module='array(FALSE,FALSE)' -y
 
       # Commands when building a new branch/PR update.
       build:
         - COMPOSER_MEMORY_LIMIT=-1 composer update
-        - vendor/bin/drush cache:rebuild
+        - bin/drush cache:rebuild
         # Partial importing is still having some issues with Drush 10 and Drupal 9.
-        #- vendor/bin/drush config-import --partial --source="${TUGBOAT_ROOT}/config/test" -y
-        - vendor/bin/drush en module_permissions -y
-        - vendor/bin/drush updatedb -y
-        - vendor/bin/drush cache:rebuild
+        #- bin/drush config-import --partial --source="${TUGBOAT_ROOT}/config/test" -y
+        - bin/drush en module_permissions -y
+        - bin/drush updatedb -y
+        - bin/drush cache:rebuild
