@@ -17,14 +17,15 @@ function govcms_system_info_alter(&$info, $file, $type) {
   if ($type === 'module') {
     $module_name = $file->getName();
 
-    $ModuleLifeCycle = new ModuleLifeCycle();
+    // $ModuleLifeCycle = new ModuleLifeCycle();
+    $ModuleLifeCycle = \Drupal::service('govcms.modules.lifecycle');
 
     if (in_array($module_name, ModuleLifeCycle::DEPRECATED_MODULES)) {
       // Update module information for deprecated modules.
       $ModuleLifeCycle->updateModuleInfo($info, ExtensionLifecycle::DEPRECATED);
     } elseif (in_array($module_name, ModuleLifeCycle::OBSOLETE_MODULES)) {
       // Update module information for obsolete modules.
-      $ModuleLifeCycle->updateModuleInfo($info, ExtensionLifecycle::DEPRECATED);
+      $ModuleLifeCycle->updateModuleInfo($info, ExtensionLifecycle::OBSOLETE);
     }
   }
 }
