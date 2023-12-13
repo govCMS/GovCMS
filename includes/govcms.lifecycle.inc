@@ -5,7 +5,7 @@
  * GovCMS lifecycle helper functions.
  */
 
-require_once __DIR__ . '/../src/modules/Lifecycle.php';
+require_once __DIR__ . '/../src/Modules/Lifecycle.php';
 
 use Drupal\Core\Extension\ExtensionLifecycle;
 use Drupal\govcms\Modules\Lifecycle as ModuleLifeCycle;
