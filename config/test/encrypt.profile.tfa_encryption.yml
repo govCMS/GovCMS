@@ -8,5 +8,5 @@ dependencies:
 id: tfa_encryption
 label: 'TFA Encryption'
 encryption_method: real_aes
-encryption_key: tfa_key
 encryption_method_configuration: {  }
+encryption_key: tfa_key

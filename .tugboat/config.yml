@@ -1,7 +1,17 @@
 services:
 
-  mysql:
-    image: tugboatqa/mysql:5
+  database:
+    # Use the latest available 5.x version of MySQL
+    image: tugboatqa/mariadb:10.5
+
+    # A set of commands to run while building this service
+    commands:
+      # Configure the server for the site to run on.
+      init:
+        # Increase the allowed packet size to 512MB.
+        - mysql -e "SET GLOBAL max_allowed_packet=536870912;"
+        # Ensure this packet size persists even if MySQL restarts.
+        - echo "max_allowed_packet=536870912" >> /etc/mysql/conf.d/tugboat.cnf
 
   app:
     image: tugboatqa/php:8.1-apache
@@ -10,7 +20,7 @@ services:
     #   2. Exposes port 80 to the Tugboat HTTP proxy
     #   3. Routes requests to the preview URL to this service
     default: true
-    depends: mysql
+    depends: database
     visualdiffs:
       :default:
         - /
@@ -30,9 +40,6 @@ services:
 
         # Clean up. This keeps image storage tighter on Tugboat.
         - apt-get autoclean && apt-get clean
-
-        # Install drush-launcher.
-        - wget -O /usr/local/bin/drush https://github.com/drush-ops/drush-launcher/releases/download/0.6.0/drush.phar && chmod +x /usr/local/bin/drush
 
         # Install/update packages managed by composer, including drush.
         - composer selfupdate && composer clear
@@ -69,14 +76,13 @@ services:
         - chmod 0664 ${DOCROOT}/sites/default/default.services.yml
 
         # Install the site.
-        - drush -r "${DOCROOT}" site:install govcms install_configure_form.update_status_module='array(FALSE,FALSE)' -y
+        - bin/drush -r "${DOCROOT}" site:install govcms install_configure_form.update_status_module='array(FALSE,FALSE)' -y
+        - bin/drush en module_permissions -y
 
       # Commands when building a new branch/PR update.
       build:
         - COMPOSER_MEMORY_LIMIT=-1 composer update
-        - drush cache:rebuild
-        # Partial importing is still having some issues with Drush 10 and Drupal 9.
-        #- drush config-import --partial --source="${TUGBOAT_ROOT}/config/test" -y
-        - drush en module_permissions -y
-        - drush updatedb -y
-        - drush cache:rebuild
+        - bin/drush cache:rebuild
+        - bin/drush config-import --partial --source="${TUGBOAT_ROOT}/config/test" -y
+        - bin/drush updatedb -y
+        - bin/drush cache:rebuild
