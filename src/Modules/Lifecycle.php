@@ -2,6 +2,7 @@
 
 namespace Drupal\govcms\Modules;
 
+use Drupal\Core\Extension\ExtensionLifecycle;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 
 /**
@@ -19,9 +20,6 @@ class Lifecycle {
     'config_filter',
     'panelizer',
   ];
-
-  // Constant for 'obsolete' lifecycle status.
-  const MODULE_LIFECYCLE_OBSOLETE = 'obsolete';
 
   /**
    * Constructs a new service.
@@ -59,7 +57,7 @@ class Lifecycle {
       if ($module_handler->moduleExists($module)) {
         $moduleInfo = \Drupal::service('extension.list.module')->getExtensionInfo($module);
 
-        if ($moduleInfo && isset($moduleInfo['lifecycle']) && $moduleInfo['lifecycle'] === self::MODULE_LIFECYCLE_OBSOLETE) {
+        if ($moduleInfo && isset($moduleInfo['lifecycle']) && $moduleInfo['lifecycle'] === ExtensionLifecycle::OBSOLETE) {
           $module_installer->uninstall([$module]);
         }
       }

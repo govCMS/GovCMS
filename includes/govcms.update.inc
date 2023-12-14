@@ -77,6 +77,10 @@ function govcms_update_10002() {
   }
 }
 
+/**
+ * Implements hook_update_N().
+ * Disables color, hal, module_filter, and tracker modules if the modules's lifecycle is obsolete.
+ */
 function govcms_update_10003() {
   // Get the Lifecycle service.
   $lifecycle_service = \Drupal::service('govcms.modules.lifecycle');
