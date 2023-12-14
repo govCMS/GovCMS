@@ -2,6 +2,8 @@
 
 namespace Drupal\govcms\Modules;
 
+use Drupal\Core\Extension\ModuleHandlerInterface;
+
 /**
  * Service description.
  */
@@ -17,6 +19,9 @@ class Lifecycle {
     'config_filter',
     'panelizer',
   ];
+
+  // Constant for 'obsolete' lifecycle status.
+  const MODULE_LIFECYCLE_OBSOLETE = 'obsolete';
 
   /**
    * Constructs a new service.
@@ -38,4 +43,26 @@ class Lifecycle {
     $info['lifecycle_link'] = 'https://github.com/GovCMS/GovCMS';
   }
 
+  /**
+   * Uninstalls modules marked as obsolete.
+   *
+   * @param array $modules
+   *   The modules to uninstall.
+   */
+  public function uninstallObsoleteModules(array $modules): void {
+    // Get the module installer service.
+    $module_installer = \Drupal::service('module_installer');
+    $module_handler = \Drupal::service('module_handler');
+
+    foreach ($modules as $module) {
+      // Check if the module is installed and marked as obsolete before attempting to uninstall.
+      if ($module_handler->moduleExists($module)) {
+        $moduleInfo = \Drupal::service('extension.list.module')->getExtensionInfo($module);
+
+        if ($moduleInfo && isset($moduleInfo['lifecycle']) && $moduleInfo['lifecycle'] === self::MODULE_LIFECYCLE_OBSOLETE) {
+          $module_installer->uninstall([$module]);
+        }
+      }
+    }
+  }
 }

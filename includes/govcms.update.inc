@@ -76,3 +76,14 @@ function govcms_update_10002() {
     }
   }
 }
+
+function govcms_update_10003() {
+  // Get the Lifecycle service.
+  $lifecycle_service = \Drupal::service('govcms.modules.lifecycle');
+
+  // List of modules to uninstall.
+  $modules_to_uninstall = ['color', 'hal', 'module_filter', 'tracker'];
+
+  // Call the service method to uninstall specified modules marked as 'obsolete'.
+  $lifecycle_service->uninstallObsoleteModules($modules_to_uninstall);
+}
