@@ -11,6 +11,7 @@ services:
     volumes:
       - /root/.composer
       - /var/www/html/sites
+      - $PWD/config:/app/web/profiles/govcms/config
       - $PWD/modules:/app/web/profiles/govcms/modules
       - $PWD/themes:/app/web/profiles/govcms/themes
       - $PWD/src:/app/web/profiles/govcms/src
@@ -21,6 +22,7 @@ services:
           path: .
           target: /app/web/profiles/govcms
           ignore:
+            - config/
             - modules/
             - themes/
             - src/
