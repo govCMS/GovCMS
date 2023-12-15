@@ -1,0 +1,9 @@
+services:
+  govcms.modules.lifecycle:
+    class: Drupal\govcms\Modules\Lifecycle
+
+  govcms.event_subscriber:
+    class: Drupal\govcms\EventSubscriber\GovcmsSubscriber
+    arguments: ['@messenger']
+    tags:
+      - { name: event_subscriber }
