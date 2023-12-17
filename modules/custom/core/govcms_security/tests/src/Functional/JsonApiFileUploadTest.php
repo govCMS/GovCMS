@@ -50,6 +50,11 @@ class JsonApiFileUploadTest extends BrowserTestBase {
   /**
    * {@inheritdoc}
    */
+  protected $profile = 'govcms';
+
+  /**
+   * {@inheritdoc}
+   */
   protected $defaultTheme = 'stark';
 
   /**
