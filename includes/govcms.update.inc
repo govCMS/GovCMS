@@ -79,7 +79,7 @@ function govcms_update_10002() {
 
 /**
  * Implements hook_update_N().
- * Disables color, hal, module_filter, and tracker modules if the modules's lifecycle is obsolete.
+ * Disables specified modules if marked as 'obsolete'.
  */
 function govcms_update_10003() {
   // Get the Lifecycle service.
