@@ -8,6 +8,8 @@ services:
       dockerfile: $PWD/.docker/Dockerfile.govcms
     ports:
       - 8888:80
+    extra_hosts:
+      host.docker.internal: host-gateway
     volumes:
       - /root/.composer
       - /var/www/html/sites
