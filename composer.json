@@ -126,7 +126,12 @@
         "webflo/drupal-finder": "^1.2"
     },
     "require-dev": {
-        "drush/drush": "~12"
+        "drush/drush": "~12",
+        "mglaman/phpstan-drupal": "^1.2",
+        "phpstan/extension-installer": "^1.3",
+        "phpstan/phpstan": "^1.10",
+        "phpstan/phpstan-deprecation-rules": "^1.1",
+        "phpstan/phpstan-strict-rules": "^1.5"
     },
     "config": {
         "allow-plugins": {
@@ -135,7 +140,8 @@
             "drupal/core-composer-scaffold": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "oomphinc/composer-installers-extender": true,
-            "drupal/core-vendor-hardening": true
+            "drupal/core-vendor-hardening": true,
+            "phpstan/extension-installer": true
         },
         "bin-dir": "bin/",
         "sort-packages": true,
