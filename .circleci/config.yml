@@ -122,9 +122,6 @@ jobs:
   test-phpstan:
     docker:
       - image: govcmstesting/php:8.1-apache
-        environment:
-          SIMPLETEST_BASE_URL: "http://local.govcms.gov.au"
-          SIMPLETEST_DB: "sqlite://localhost/sites/default/files/.ht.sqlite"
     working_directory: /app
     steps:
       - checkout
@@ -132,14 +129,10 @@ jobs:
           name: Install GovCMS dependencies
           command: |
             composer update --profile --prefer-dist --optimize-autoloader
-            composer config --no-plugins allow-plugins.phpstan/extension-installer 1
-            composer require --dev drupal/core-dev:"^10.1"
-            chown -R www-data:www-data web/sites
-            rm -rf tests
       - run:
           name: Run PHPStan checks
           command: |
-            php ./vendor/phpstan/phpstan/phpstan analyse --level max src modules includes || true
+            vendor/phpstan/phpstan/phpstan analyse -c phpstan.neon || true
 
 
   test-cypress:
