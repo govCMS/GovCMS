@@ -8,124 +8,85 @@
 use Drupal\shortcut\Entity\Shortcut;
 use Drupal\menu_link_content\Entity\MenuLinkContent;
 
-// Define a default theme constant.
-const GOVCMS_DEFAULT_THEME = 'govcms_bartik';
-
-// Define the admin theme.
-const GOVCMS_DEFAULT_ADMIN_THEME = 'claro';
-
 // GovCMS update hooks.
 include_once __DIR__ . '/includes/govcms.update.inc';
 
 /**
  * Implements hook_install().
  *
- * Perform actions to set up the site for GovCMS Profile.
+ * Sets up the GovCMS profile during installation.
  *
  * @see system_install()
  */
 function govcms_install() {
-  // Restrict user registration to admin role creation.
-  \Drupal::configFactory()
-    ->getEditable('user.settings')
-    ->set('register', \Drupal\user\UserInterface::REGISTER_ADMINISTRATORS_ONLY)
-    ->save(TRUE);
-
-  // Populate the default shortcut set.
-  Shortcut::create(
-    [
-      'shortcut_set' => 'default',
-      'title' => t('Add content'),
-      'weight' => 1,
-      'link' => ['uri' => 'internal:/node/add'],
-    ]
-  )->save();
-
-  MenuLinkContent::create(
-    [
-      'title' => 'Accessibility',
-      'link' => ['uri' => 'https://www.govcms.gov.au'],
-      'menu_name' => 'footer',
-    ]
-  )->save();
-
-  MenuLinkContent::create(
-    [
-      'title' => 'Copyright',
-      'link' => ['uri' => 'https://www.govcms.gov.au'],
-      'menu_name' => 'footer',
-    ]
-  )->save();
-
-  MenuLinkContent::create(
-    [
-      'title' => 'Disclaimers',
-      'link' => ['uri' => 'https://www.govcms.gov.au'],
-      'menu_name' => 'footer',
-    ]
-  )->save();
-
-  MenuLinkContent::create(
-    [
-      'title' => 'Privacy',
-      'link' => ['uri' => 'https://www.govcms.gov.au'],
-      'menu_name' => 'footer',
-    ]
-  )->save();
-
-  MenuLinkContent::create([
-    'title' => 'Our community',
-    'link' => ['uri' => 'https://www.govcms.gov.au/our-community'],
-    'menu_name' => 'govcms-community',
+  // Create default shortcut for adding content.
+  Shortcut::create([
+    'shortcut_set' => 'default',
+    'title' => t('Add content'),
+    'weight' => 1,
+    'link' => ['uri' => 'internal:/node/add'],
   ])->save();
 
-  MenuLinkContent::create([
-    'title' => 'About GovCMS',
-    'link' => ['uri' => 'https://www.govcms.gov.au/about'],
-    'menu_name' => 'govcms-about',
-  ])->save();
+  // Create footer menu links.
+  $footerMenuLinks = ['Accessibility', 'Copyright', 'Disclaimers', 'Privacy'];
+  foreach ($footerMenuLinks as $linkTitle) {
+    MenuLinkContent::create([
+      'title' => $linkTitle,
+      'link' => ['uri' => 'https://www.govcms.gov.au'],
+      'menu_name' => 'footer',
+    ])->save();
+  }
 
-  // Don't do anything else during config sync.
+  // Create custom menu links.
+  $customMenuLinks = [
+    [
+      'title' => 'Our community',
+      'path' => '/our-community',
+      'menu_name' => 'govcms-community',
+    ],
+    [
+      'title' => 'About GovCMS',
+      'path' => '/about',
+      'menu_name' => 'govcms-about',
+    ],
+  ];
+  foreach ($customMenuLinks as $customLink) {
+    MenuLinkContent::create([
+      'title' => $customLink['title'],
+      'link' => ['uri' => 'https://www.govcms.gov.au' . $customLink['path']],
+      'menu_name' => $customLink['menu_name'],
+    ])->save();
+  }
+
+  // Skip further actions during config sync.
   if (\Drupal::isConfigSyncing()) {
     return;
   }
 
   // Set front page to "node".
+  $frontPagePath = '/node';
   \Drupal::configFactory()
     ->getEditable('system.site')
-    ->set('page.front', '/node')
+    ->set('page.front', $frontPagePath)
     ->save(TRUE);
 
-  // Set the default and admin theme.
-  \Drupal::configFactory()
-    ->getEditable('system.theme')
-    ->set('default', GOVCMS_DEFAULT_THEME)
-    ->set('admin', GOVCMS_DEFAULT_ADMIN_THEME)
-    ->save(TRUE);
-
-  // Enable the admin theme.
-  \Drupal::configFactory()
-    ->getEditable('node.settings')
-    ->set('use_admin_theme', TRUE)
-    ->save(TRUE);
-
-  // Set the path to the logo, favicon and README file based on install directory.
-  $govcms_path = \Drupal::service('extension.list.profile')->getPath('govcms');
+  // Set paths for the logo, favicon, and README file based on install directory.
+  $govcmsPath = \Drupal::service('extension.list.profile')->getPath('govcms');
   \Drupal::configFactory()
     ->getEditable('system.theme.global')
     ->set('logo', [
-      'path' => $govcms_path . '/logo.svg',
+      'path' => $govcmsPath . '/logo.svg',
       'url' => '',
       'use_default' => TRUE,
     ])
     ->set('favicon', [
       'mimetype' => 'image/vnd.microsoft.icon',
-      'path' => $govcms_path . '/favicon.ico',
+      'path' => $govcmsPath . '/favicon.ico',
       'url' => '',
       'use_default' => FALSE,
     ])
     ->save(TRUE);
 
-  // Grant the default permissions.
+  // Grant default permissions.
   govcms_default_permissions();
 }
