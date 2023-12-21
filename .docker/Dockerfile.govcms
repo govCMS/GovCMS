@@ -8,7 +8,7 @@ RUN ln -sf /usr/share/zoneinfo/Australia/Sydney /etc/localtime
 RUN \
     --mount=type=cache,target=/var/cache/apt \
     apt-get update && \
-    apt-get install -y --no-install-recommends libicu-dev sqlite3 mariadb-client git unzip rsync sudo && \
+    apt-get install -y --no-install-recommends libicu-dev sqlite3 mariadb-client git unzip rsync sudo net-tools iputils-ping && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     docker-php-ext-configure intl && \
@@ -18,6 +18,15 @@ RUN \
 RUN echo "memory_limit = 512M" >> /usr/local/etc/php/conf.d/docker-php-ram-limit.ini && \
     echo "upload_max_filesize = 100M" >> /usr/local/etc/php/conf.d/docker-php-upload-limit.ini && \
     echo "post_max_size = 100M" >> /usr/local/etc/php/conf.d/docker-php-upload-limit.ini
+
+# Install and configure Xdebug
+RUN pecl install xdebug \
+    && docker-php-ext-enable xdebug \
+    && echo "xdebug.mode=debug" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+    && echo "xdebug.client_host = host.docker.internal" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+
+# Manually create phpstorm coverage directory, needed to get coverage results in PHPStorm
+RUN mkdir -p "/opt/phpstorm-coverage" && chmod a+rw "/opt/phpstorm-coverage"
 
 # Set Composer environment variables
 ENV COMPOSER_ALLOW_SUPERUSER=1
