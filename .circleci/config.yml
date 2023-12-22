@@ -219,6 +219,12 @@ workflows:
       - test-phpunit:
           requires:
             - build
+      - test-phpstan:
+          requires:
+            - build
+      - test-phpcs:
+          requires:
+            - build
       - test-cypress:
           requires:
             - build
