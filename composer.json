@@ -126,6 +126,7 @@
         "webflo/drupal-finder": "^1.2"
     },
     "require-dev": {
+        "drush/drush": "~12",
         "drupal/coder": "^8.3",
         "drupal/core-dev": "^8.0@beta",
         "drush/drush": "~12",
