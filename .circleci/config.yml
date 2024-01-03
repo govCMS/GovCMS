@@ -92,6 +92,7 @@ jobs:
           SIMPLETEST_DB: "sqlite://localhost/sites/default/files/.ht.sqlite"
     working_directory: /app
     steps:
+      - run: git config --global --add safe.directory /tmp/_circleci_local_build_repo
       - checkout
       - run:
           name: Install GovCMS dependencies
