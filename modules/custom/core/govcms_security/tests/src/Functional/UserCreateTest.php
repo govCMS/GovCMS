@@ -37,7 +37,7 @@ class UserCreateTest extends BrowserTestBase {
       'administer users',
     ]);
     $this->drupalLogin($user);
-    
+
     // Test user creation page for valid password length.
     $name = $this->randomMachineName();
     $edit = [
