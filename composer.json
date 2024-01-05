@@ -128,7 +128,7 @@
     "require-dev": {
         "drush/drush": "~12",
         "drupal/coder": "^8.3",
-        "drupal/core-dev": "^8.0@beta",
+        "drupal/core-dev": "^10.1",
         "mglaman/phpstan-drupal": "^1.2",
         "phpmd/phpmd": "^2.15",
         "phpstan/extension-installer": "^1.3",

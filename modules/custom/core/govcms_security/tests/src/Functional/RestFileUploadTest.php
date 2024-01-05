@@ -38,6 +38,11 @@ class RestFileUploadTest extends ResourceTestBase {
   /**
    * {@inheritdoc}
    */
+  protected $profile = 'govcms';
+
+  /**
+   * {@inheritdoc}
+   */
   protected $defaultTheme = 'stark';
 
   /**
