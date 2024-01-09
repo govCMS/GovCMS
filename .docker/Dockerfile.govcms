@@ -57,7 +57,7 @@ RUN \
     composer install
 
 # Adjust ownership
-RUN chown -R www-data:www-data web/sites web/modules web/themes
+RUN chown -R www-data:www-data web/sites web/modules web/themes ../var/www ./
 
 # Set the PATH environment variable
 ENV PATH=${PATH}:/app/bin
