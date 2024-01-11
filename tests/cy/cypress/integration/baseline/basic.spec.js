@@ -1,0 +1,16 @@
+const role = 'govcms-site-admin'
+let user_role = ''
+
+describe('Basic tests to ensure setup is correct', () => {
+  it('Check initial page', ()=>{
+    cy.visit('')
+    cy.screenshot()
+    cy.exec().then((result) => {
+      cy.log(result.stdout);
+    })
+
+
+
+  })
+
+})
