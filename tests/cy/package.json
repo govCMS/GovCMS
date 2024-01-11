@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Cypress integration for GovCMS distribution",
   "scripts": {
-    "cypress:open": "cypress open",
+    "cypress:open": "cypress open --config baseUrl=http://localhost:8888",
     "cypress:run": "cypress run",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx,.json,.eslintrc .",
     "lint:fix": "yarn lint --fix",

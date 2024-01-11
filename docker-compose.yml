@@ -1,4 +1,16 @@
 services:
+  cypress:
+    image: "cypress/included:9.4.1"
+    depends_on:
+      - govcms
+      - mariadb
+    environment:
+      - CYPRESS_baseUrl=http://localhost:8888
+    working_dir: /web/profiles/govcms/tests/cy
+    volumes:
+      - ./:/app/web/profiles/govcms/tests/cy
+
+
   ##########################################
   # govcms: The GovCMS local development
   ##########################################

@@ -6,7 +6,7 @@
   "chromeWebSecurity": false,
   "env": {
     "localEnv": "lagoon",
-    "drupalDrushCmdLine": "../../bin/drush %command",
+    "drupalDrushCmdLine": "ahoy cli; bin/drush %command",
     "user": {
       "administrator": {
         "username": "administrator",
