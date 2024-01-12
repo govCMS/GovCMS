@@ -59,15 +59,6 @@ Cypress.Commands.add("composerCommand", (command) => {
   return cy.exec(execCmd)
 });
 
-Cypress.Commands.add("govcmsInitialLogin", () => {
-  const username = Cypress.env('site_admin').username
-  const password = Cypress.env('site_admin').password
-  cy.visit('user/login')
-  cy.get("#edit-name").type(username)
-  cy.get("#edit-pass").type(password)
-  cy.get("#edit-submit").click()
-})
-
 Cypress.Commands.add("createUser", (siteRole) => {
   cy.govcmsInitialLogin()
   cy.fixture(`users/${siteRole}.json`).then((user) => {
@@ -107,7 +98,7 @@ Cypress.Commands.add("deleteUser", (siteRole) => {
 
 Cypress.Commands.add("userLogin", (siteRole) => {
   if (siteRole === 'govcms-site-admin') {
-    cy.govcmsInitialLogin()
+    cy.drupalLogin()
   } else {
     cy.fixture(`users/${siteRole}.json`).then((user) => {
       const username = user.firstname + user.lastname
@@ -121,9 +112,6 @@ Cypress.Commands.add("userLogin", (siteRole) => {
   }
 })
 
-Cypress.Commands.add("userlogout", () => {
-  cy.visit(`/user/logout`)
-})
 
 Cypress.Commands.add("type_ckeditor", (element, content) => {
   cy.window()

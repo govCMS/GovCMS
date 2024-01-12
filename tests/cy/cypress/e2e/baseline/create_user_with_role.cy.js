@@ -11,6 +11,6 @@ describe('User can create a new user with a role', () => {
     })
   }
   it('Clean up and log out', () => {
-    cy.userlogout()
+    cy.drupalLogout()
   })
 })
