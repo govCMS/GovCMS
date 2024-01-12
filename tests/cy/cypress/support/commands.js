@@ -59,20 +59,42 @@ Cypress.Commands.add("composerCommand", (command) => {
   return cy.exec(execCmd)
 });
 
+Cypress.Commands.add("govcmsInitialLogin", () => {
+  const username = Cypress.env('site_admin').username
+  const password = Cypress.env('site_admin').password
+  cy.visit('user/login')
+  cy.get("#edit-name").type(username)
+  cy.get("#edit-pass").type(password)
+  cy.get("#edit-submit").click()
+})
+
 Cypress.Commands.add("createUser", (siteRole) => {
+  cy.govcmsInitialLogin()
   cy.fixture(`users/${siteRole}.json`).then((user) => {
     const username = user.firstname + user.lastname
     const password = user.password
     const email = user.email
-    const role = user.role
-    cy.drupalDrushCommand([
-      "user:create",
-      username,
-      `--mail="${email}"`,
-      `--password="${password}"`,
-    ]).then(() => {
-      cy.drupalDrushCommand(["urol", role, username])
-    })
+    cy.visit('admin/people/create')
+    cy.get('#edit-mail')
+      .type(email, { force: true })
+    cy.get('#edit-name')
+      .type(username, { force: true })
+    cy.get('#edit-pass-pass1', { force: true })
+      .type(password, { force: true })
+    cy.get('#edit-pass-pass2', { force: true })
+      .type(password, { force: true })
+    cy.get('#edit-submit')
+      .click({ force: true })
+    cy.get('.messages-list__item')
+      .contains('Created a new user account')
+    cy.get('#toolbar-link-entity-user-collection')
+      .click({ force: true })
+    cy.get('#edit-user-bulk-form-0')
+      .click({ force: true })
+    cy.get('#edit-action')
+      .select('Add the ' + siteRole + ' role to the selected user(s)')
+    cy.get('#edit-submit')
+      .click({ force: true })
   })
 })
 
@@ -84,15 +106,19 @@ Cypress.Commands.add("deleteUser", (siteRole) => {
 })
 
 Cypress.Commands.add("userLogin", (siteRole) => {
-  cy.fixture(`users/${siteRole}.json`).then((user) => {
-    const username = user.firstname + user.lastname
-    const password = user.password
-    cy.visit(`/user/login`)
-    //cy.aliasAll()
-    cy.get("#edit-name").type(username)
-    cy.get("#edit-pass").type(password)
-    cy.get("#edit-submit").click()
-  })
+  if (siteRole === 'govcms-site-admin') {
+    cy.govcmsInitialLogin()
+  } else {
+    cy.fixture(`users/${siteRole}.json`).then((user) => {
+      const username = user.firstname + user.lastname
+      const password = user.password
+      cy.visit(`/user/login`)
+      //cy.aliasAll()
+      cy.get("#edit-name").type(username)
+      cy.get("#edit-pass").type(password)
+      cy.get("#edit-submit").click()
+    })
+  }
 })
 
 Cypress.Commands.add("userlogout", () => {
@@ -110,10 +136,10 @@ Cypress.Commands.add("type_ckeditor", (element, content) => {
 // userrole is the plain english version of the role ie.
 // govcms-content-author would be Content Author
 // role is the user that should login to Drupal
-Cypress.Commands.add('uiCreateUser', (userrole, role) => {
+Cypress.Commands.add('checkUserCreation', (userrole, testRole) => {
   let user_role_machine_name = 'govcms-' + userrole.toLowerCase().replace(' ', '-')
   let password = user_role_machine_name + '#123'
-  cy.userLogin(role).then(() => {
+  cy.userLogin(testRole).then(() => {
     cy.get('#toolbar-link-entity-user-collection')
       .click({ force: true })
     cy.get('.local-actions__item > .button')

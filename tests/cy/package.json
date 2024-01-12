@@ -15,9 +15,10 @@
     }
   },
   "dependencies": {
-    "cypress": "^9.4.1",
+    "cypress": "^13.6.2",
     "cypress-file-upload": "^5.0.7",
-    "cypress-xpath": "^1.6.2"
+    "cypress-xpath": "^1.6.2",
+    "yarn": "^1.22.21"
   },
   "devDependencies": {
     "@cypress/eslint-plugin-json": "^3.2.3",
@@ -28,7 +29,10 @@
     "lint-staged": "^12.3.3"
   },
   "license": "GPL-2.0",
-  "repository": "https://github.com/govCMS/GovCMS",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/govCMS/GovCMS.git"
+  },
   "author": "Joseph Zhao <pandaski@outlook.com.au>",
   "lint-staged": {
     "*.coffee": [
@@ -40,5 +44,14 @@
       "yarn eslint --fix",
       "git add"
     ]
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/govCMS/GovCMS/issues"
+  },
+  "homepage": "https://github.com/govCMS/GovCMS#readme",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": []
 }
