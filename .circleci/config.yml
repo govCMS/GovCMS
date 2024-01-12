@@ -19,11 +19,11 @@ jobs:
       - run:
           name: Checkout tests
           command: |
-            composer create-project govcms/tests:3.x-dev tests
+            composer create-project govcms/tests:3.x-dev test
       - run:
           name: Check Drupal best practices
           command: |
-            cd tests
+            cd test
             ./vendor/bin/phpcs --standard=phpcs.govcms.xml || true
 
   build:
