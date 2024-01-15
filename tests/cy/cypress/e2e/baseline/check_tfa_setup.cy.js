@@ -37,7 +37,15 @@ describe('Check TFA setup', () => {
         cy.get('.messages-list__item').contains(`Saved the ${testProfile} encryption profile.`)
     })
 
-    it('Set up TFA', () =>{})
+    it('Set up TFA', () =>{
+        cy.execDrush('-y cset tfa.settings enabled 1')
+        // Enforce TFA set up for Content Author, Content Approver, and Site Admin roles.
+        cy.execDrush('-y cset tfa.settings required_roles.govcms_content_author govcms_content_author')
+        cy.execDrush('-y cset tfa.settings required_roles.govcms_content_approver govcms_content_approver')
+        cy.execDrush('-y cset tfa.settings required_roles.govcms_site_administrator govcms_site_administrator')
+        // Set Encryption profile
+        cy.execDrush(`-y cset tfa.settings encryption ${testProfile}`)
+    })
 
     it('Check new user is asked to enable TFA', () => {})
 

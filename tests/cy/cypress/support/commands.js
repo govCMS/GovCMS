@@ -16,25 +16,12 @@ Cypress.Commands.add("aliasAll", () =>
 )
 
 // Drupal drush command.
-Cypress.Commands.add("drupalDrushCommand", (command) => {
+Cypress.Commands.add("execDrush", (command) => {
     const cmd = Cypress.env('drupalDrushCmdLine');
-
-    // if (cmd == null) {
-    //   if (Cypress.env('localEnv') === "lando") {
-    //     cmd = 'lando drush %command'
-    //   } else {
-    //     cmd = 'docker compose exec govcms bash -c "drush %command"'
-    //   }
-    // }
     if (typeof command !== 'string') {
         throw Error("Drush command must be a string")
     }
     command = [command];
-
-    // if (typeof command === 'string') {
-    //     command = [command];
-    // }
-
     const execCmd = cmd.replace('%command', command.join(' '));
     return cy.exec(execCmd);
 });
