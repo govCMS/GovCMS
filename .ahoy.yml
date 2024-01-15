@@ -47,3 +47,21 @@ commands:
   drupal-check:
     usage: Static analysis tool to check for correctness and deprecation errors.
     cmd: docker compose exec govcms drupal-check "$@"
+
+  cypress:
+    usage: Run all Cypress tests
+    cmd: |
+      cd tests/cy &&
+      yarn run cypress run "cypress/e2e/*"
+
+  cr:
+    usage: Alias for 'cypress'
+    cmd: |
+      ahoy cypress
+
+  co:
+    usage: Open a new Cypress testing window
+    cmd: |
+      cd tests/cy &&
+      yarn run cypress open
+

@@ -19,6 +19,7 @@ Install using yarn
 ```
 npm init -y
 yarn add cypress
+yarn install
 ```
 
 Cypress should be now be installed. To check, run
