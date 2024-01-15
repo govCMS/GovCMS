@@ -23,7 +23,7 @@ Cypress.Commands.add("drupalDrushCommand", (command) => {
     if (Cypress.env('localEnv') === "lando") {
       cmd = 'lando drush %command'
     } else {
-      cmd = 'drush %command'
+      cmd = 'docker compose exec govcms bash -c "drush %command"'
     }
   }
 

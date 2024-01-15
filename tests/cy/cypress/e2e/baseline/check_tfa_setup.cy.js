@@ -8,8 +8,6 @@ describe('Check TFA setup', () => {
     cy.drupalLogin()
   })
 
-
-
   it('Create encryption key', () => {
     cy.visit('admin/config/system/keys')
     cy.visit('admin/config/system/keys/add')
@@ -38,6 +36,12 @@ describe('Check TFA setup', () => {
     cy.get('#edit-submit').click({ force: true })
     cy.get('.messages-list__item').contains(`Saved the ${testProfile} encryption profile.`)
   })
+
+  it('Set up TFA', () =>{})
+
+  it('Check new user is asked to enable TFA', () => {})
+
+
 
   it('Clean up', () => {
     // Remove created key, which automatically deletes the created profile as well.
