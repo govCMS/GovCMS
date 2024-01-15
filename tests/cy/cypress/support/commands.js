@@ -6,118 +6,121 @@ import 'cypress-file-upload';
 // The below command does the all the aliasing for you.
 // @example beforeEach(() => cy.aliasAll())
 Cypress.Commands.add("aliasAll", () =>
-  cy.get("[data-cy]").then((list) => {
-    list.each((i, { dataset: { cy: name } }) => {
-      if (name) {
-        cy.get(`[data-cy="${name}"]`).as(name)
-      }
+    cy.get("[data-cy]").then((list) => {
+        list.each((i, {dataset: {cy: name}}) => {
+            if (name) {
+                cy.get(`[data-cy="${name}"]`).as(name)
+            }
+        })
     })
-  })
 )
 
 // Drupal drush command.
 Cypress.Commands.add("drupalDrushCommand", (command) => {
-  var cmd = Cypress.env('drupalDrushCmdLine');
+    const cmd = Cypress.env('drupalDrushCmdLine');
 
-  if (cmd == null) {
-    if (Cypress.env('localEnv') === "lando") {
-      cmd = 'lando drush %command'
-    } else {
-      cmd = 'docker compose exec govcms bash -c "drush %command"'
+    // if (cmd == null) {
+    //   if (Cypress.env('localEnv') === "lando") {
+    //     cmd = 'lando drush %command'
+    //   } else {
+    //     cmd = 'docker compose exec govcms bash -c "drush %command"'
+    //   }
+    // }
+    if (typeof command !== 'string') {
+        throw Error("Drush command must be a string")
     }
-  }
-
-  if (typeof command === 'string') {
     command = [command];
-  }
 
-  const execCmd = cmd.replace('%command', command.join(' '));
+    // if (typeof command === 'string') {
+    //     command = [command];
+    // }
 
-  return cy.exec(execCmd);
+    const execCmd = cmd.replace('%command', command.join(' '));
+    return cy.exec(execCmd);
 });
 
 
 // Composer command.
 Cypress.Commands.add("composerCommand", (command) => {
-  var cmd = Cypress.env('composerCmdLine');
+    var cmd = Cypress.env('composerCmdLine');
 
-  if (cmd == null) {
-    console.log(Cypress.env())
-    if (Cypress.env('localEnv') === "lando") {
-      cmd = 'cd ../..; lando composer %command'
-    } else {
-      cmd = 'cd ../..; composer %command'
+    if (cmd == null) {
+        console.log(Cypress.env())
+        if (Cypress.env('localEnv') === "lando") {
+            cmd = 'cd ../..; lando composer %command'
+        } else {
+            cmd = 'cd ../..; composer %command'
+        }
     }
-  }
 
-  if (typeof command === 'string') {
-    command = [command];
-  }
+    if (typeof command === 'string') {
+        command = [command];
+    }
 
-  const execCmd = cmd.replace('%command', command.join(' '));
+    const execCmd = cmd.replace('%command', command.join(' '));
 
-  return cy.exec(execCmd)
+    return cy.exec(execCmd)
 });
 
 Cypress.Commands.add("createUser", (siteRole) => {
-  cy.govcmsInitialLogin()
-  cy.fixture(`users/${siteRole}.json`).then((user) => {
-    const username = user.firstname + user.lastname
-    const password = user.password
-    const email = user.email
-    cy.visit('admin/people/create')
-    cy.get('#edit-mail')
-      .type(email, { force: true })
-    cy.get('#edit-name')
-      .type(username, { force: true })
-    cy.get('#edit-pass-pass1', { force: true })
-      .type(password, { force: true })
-    cy.get('#edit-pass-pass2', { force: true })
-      .type(password, { force: true })
-    cy.get('#edit-submit')
-      .click({ force: true })
-    cy.get('.messages-list__item')
-      .contains('Created a new user account')
-    cy.get('#toolbar-link-entity-user-collection')
-      .click({ force: true })
-    cy.get('#edit-user-bulk-form-0')
-      .click({ force: true })
-    cy.get('#edit-action')
-      .select('Add the ' + siteRole + ' role to the selected user(s)')
-    cy.get('#edit-submit')
-      .click({ force: true })
-  })
+    cy.govcmsInitialLogin()
+    cy.fixture(`users/${siteRole}.json`).then((user) => {
+        const username = user.firstname + user.lastname
+        const password = user.password
+        const email = user.email
+        cy.visit('admin/people/create')
+        cy.get('#edit-mail')
+            .type(email, {force: true})
+        cy.get('#edit-name')
+            .type(username, {force: true})
+        cy.get('#edit-pass-pass1', {force: true})
+            .type(password, {force: true})
+        cy.get('#edit-pass-pass2', {force: true})
+            .type(password, {force: true})
+        cy.get('#edit-submit')
+            .click({force: true})
+        cy.get('.messages-list__item')
+            .contains('Created a new user account')
+        cy.get('#toolbar-link-entity-user-collection')
+            .click({force: true})
+        cy.get('#edit-user-bulk-form-0')
+            .click({force: true})
+        cy.get('#edit-action')
+            .select('Add the ' + siteRole + ' role to the selected user(s)')
+        cy.get('#edit-submit')
+            .click({force: true})
+    })
 })
 
 Cypress.Commands.add("deleteUser", (siteRole) => {
-  cy.fixture(`users/${siteRole}.json`).then((user) => {
-    const username = user.firstname + user.lastname
-    cy.drupalDrushCommand(["ucan", "--delete-content", username, "-y"])
-  })
+    cy.fixture(`users/${siteRole}.json`).then((user) => {
+        const username = user.firstname + user.lastname
+        cy.drupalDrushCommand(["ucan", "--delete-content", username, "-y"])
+    })
 })
 
 Cypress.Commands.add("userLogin", (siteRole) => {
-  if (siteRole === 'govcms-site-admin') {
-    cy.drupalLogin()
-  } else {
-    cy.fixture(`users/${siteRole}.json`).then((user) => {
-      const username = user.firstname + user.lastname
-      const password = user.password
-      cy.visit(`/user/login`)
-      //cy.aliasAll()
-      cy.get("#edit-name").type(username)
-      cy.get("#edit-pass").type(password)
-      cy.get("#edit-submit").click()
-    })
-  }
+    if (siteRole === 'govcms-site-admin') {
+        cy.drupalLogin()
+    } else {
+        cy.fixture(`users/${siteRole}.json`).then((user) => {
+            const username = user.firstname + user.lastname
+            const password = user.password
+            cy.visit(`/user/login`)
+            //cy.aliasAll()
+            cy.get("#edit-name").type(username)
+            cy.get("#edit-pass").type(password)
+            cy.get("#edit-submit").click()
+        })
+    }
 })
 
 
 Cypress.Commands.add("type_ckeditor", (element, content) => {
-  cy.window()
-    .then(win => {
-      win.CKEDITOR.instances[element].setData(content);
-    });
+    cy.window()
+        .then(win => {
+            win.CKEDITOR.instances[element].setData(content);
+        });
 });
 
 
