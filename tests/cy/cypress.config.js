@@ -35,6 +35,7 @@ module.exports = defineConfig({
         //   return require('./cypress/plugins/index.js')(on, config)
         // },
         baseUrl: 'http://localhost:8888',
+        experimentalRunAllSpecs: true
     },
     watchForFileChanges: false
 })

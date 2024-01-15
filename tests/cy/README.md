@@ -37,6 +37,7 @@ we assume that you already have a local GovCMS instance running (i.e using Docke
 with global superadmin already created. We then need to configure two things:
 - local url
 - Superadmin details.
+- Drush location
 
 *Local URL*
 
@@ -56,6 +57,22 @@ You must create a new file 'cypress.env.json' and add the following details:
     }
 }
 ```
+
+*Drush location*
+
+Some of the Cypress tests use Drush to speed up test runs. For example, a basic task such as user creation takes several
+stages of browser navigation, including typing into forms. In contrast, the same task can be done using a single Drush
+command that takes only an instant to complete.
+
+For Drush to work, we must give Cypress access to it. We do this by setting `drupalDrushCmdLine` to the bash command
+necessary to execute Drush locally. In the case of Docker Compose, we set:
+
+```json
+{
+  "drupalDrushCmdLine" : "docker compose exec govcms bash -c \"drush %command\""
+}
+```
+where `govcms` is the docker container name.
 
 You are now set up and ready to run tests!
 
