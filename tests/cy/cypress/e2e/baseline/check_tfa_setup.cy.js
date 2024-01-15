@@ -47,14 +47,28 @@ describe('Check TFA setup', () => {
         cy.execDrush(`-y cset tfa.settings encryption ${testProfile}`)
     })
 
-    it('Check new user is asked to enable TFA', () => {})
-
+    it('Check new user is asked to enable TFA', () => {
+        cy.visit('user/logout')
+        cy.execDrush('user:create testUser --password=password')
+        cy.execDrush('user:role:add govcms_content_author testUser')
+        // Log in as the new user.
+        cy.visit('user')
+        cy.get("#edit-name").type('testUser')
+        cy.get("#edit-pass").type('password')
+        cy.get("#edit-submit").click()
+        // Check user is prompted to set up TFA.
+        cy.get('.messages.messages--error').contains(`You are required to setup two-factor authentication.`)
+    })
 
     it('Clean up', () => {
         // Remove created key, which automatically deletes the created profile as well.
         cy.visit(`admin/config/system/keys/manage/${testKey}/delete?destination=/admin/config/system/keys`)
         cy.get('#edit-submit').click()
         cy.get('.messages-list__item').contains(`The key ${testKey} has been deleted.`)
+        // Disable TFA.
+        cy.execDrush('-y cset tfa.settings enabled 0')
+        // Remove user created for testing purposes
+        cy.execDrush('-y user:cancel --delete-content testUser')
     })
 
 })
