@@ -63,5 +63,5 @@ commands:
     usage: Open a new Cypress testing window
     cmd: |
       cd tests/cy &&
-      yarn run cypress open
+      yarn run cypress open --config watchForFileChanges=false
 
