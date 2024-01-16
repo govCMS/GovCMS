@@ -1,14 +1,16 @@
 // Test setup TFA module.
 const testKey = 'testkey123'
 const testProfile = 'testprofile123'
+const testUsername = 'avril'
 
 
 describe('Check TFA setup', () => {
-    beforeEach(() => {
-        cy.drupalLogin()
-    })
+    // beforeEach(() => {
+    //     cy.drupalLogin()
+    // })
 
     it('Create encryption key', () => {
+        cy.drupalLogin()
         cy.visit('admin/config/system/keys')
         cy.visit('admin/config/system/keys/add')
         cy.get('#edit-label').type(testKey)
@@ -26,6 +28,7 @@ describe('Check TFA setup', () => {
     })
 
     it('Create encryption profile', () => {
+        cy.drupalLogin()
         cy.visit('admin/config/system/encryption/profiles/add')
         cy.get('#edit-label').type(testProfile)
         cy.wait(250)
@@ -39,6 +42,7 @@ describe('Check TFA setup', () => {
 
     it('Set up TFA', () =>{
         cy.execDrush('-y cset tfa.settings enabled 1')
+        cy.execDrush('-y cset tfa.settings validation_skip 10')
         // Enforce TFA set up for Content Author, Content Approver, and Site Admin roles.
         cy.execDrush('-y cset tfa.settings required_roles.govcms_content_author govcms_content_author')
         cy.execDrush('-y cset tfa.settings required_roles.govcms_content_approver govcms_content_approver')
@@ -49,26 +53,56 @@ describe('Check TFA setup', () => {
 
     it('Check new user is asked to enable TFA', () => {
         cy.visit('user/logout')
-        cy.execDrush('user:create testUser --password=password')
-        cy.execDrush('user:role:add govcms_content_author testUser')
+        cy.execDrush(`user:create ${testUsername} --password=password`)
+        cy.execDrush(`user:role:add govcms_content_author ${testUsername}`)
+        cy.execDrush('role:perm:add govcms_content_author \'setup own tfa\'')
         // Log in as the new user.
         cy.visit('user')
-        cy.get("#edit-name").type('testUser')
+        cy.get("#edit-name").type(`${testUsername}`)
         cy.get("#edit-pass").type('password')
         cy.get("#edit-submit").click()
         // Check user is prompted to set up TFA.
         cy.get('.messages.messages--error').contains(`You are required to setup two-factor authentication.`)
     })
 
+    it('Check user can set up TFA', () => {
+        let SECRET_KEY;
+        // Login
+        cy.visit('user/logout')
+        cy.visit('user')
+        cy.get("#edit-name").type(`${testUsername}`)
+        cy.get("#edit-pass").type('password')
+        cy.get("#edit-submit").click()
+        // Set up TFA
+        cy.get('.messages.messages--error').within(() => {
+            cy.get('a').click()
+        })
+        cy.get('[data-drupal-selector="edit-link"]').within(() => {
+            cy.get('a').click()
+        })
+        cy.get('[data-drupal-selector="edit-current-pass"]').type('password')
+        cy.get('#edit-submit').click()
+        cy.get('[data-drupal-selector="edit-seed"]').invoke('val').then((val) => {
+            SECRET_KEY = val
+            cy.log(SECRET_KEY)
+            cy.task("generateOTP", SECRET_KEY).then(token => {
+                cy.get('[data-drupal-selector="edit-code"]').type(token)
+            })
+        })
+        cy.get('[data-drupal-selector="edit-login"]').click()
+
+    })
+
     it('Clean up', () => {
+        // Disable TFA.
+        cy.execDrush('-y cset tfa.settings enabled 0')
+        cy.drupalLogin()
         // Remove created key, which automatically deletes the created profile as well.
         cy.visit(`admin/config/system/keys/manage/${testKey}/delete?destination=/admin/config/system/keys`)
         cy.get('#edit-submit').click()
         cy.get('.messages-list__item').contains(`The key ${testKey} has been deleted.`)
-        // Disable TFA.
-        cy.execDrush('-y cset tfa.settings enabled 0')
         // Remove user created for testing purposes
-        cy.execDrush('-y user:cancel --delete-content testUser')
+        cy.execDrush(`-y user:cancel --delete-content ${testUsername}`)
     })
 
 })

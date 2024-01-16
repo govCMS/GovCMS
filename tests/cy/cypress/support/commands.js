@@ -108,6 +108,6 @@ Cypress.Commands.add("type_ckeditor", (element, content) => {
         .then(win => {
             win.CKEDITOR.instances[element].setData(content);
         });
-});
+})
 
 
