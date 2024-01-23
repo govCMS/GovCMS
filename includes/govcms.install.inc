@@ -5,43 +5,25 @@
  * GovCMS install helper functions.
  */
 
-use Drupal\user\Entity\Role;
 use Drupal\user\RoleInterface;
+use Drupal\govcms\Event\ModuleInstalledEvent;
 
 /**
  * Implements hook_modules_installed().
  */
 function govcms_modules_installed($modules, $is_syncing) {
-  $potential_conflicts = [
-    'panelizer',
-  ];
+  // Predefined array of module names to check.
+  $modulesToCheck = ['role_delegation', 'module_permissions'];
 
-  if (!empty(array_intersect($modules, $potential_conflicts))) {
-    \Drupal::messenger()
-      ->addWarning(t('Some modules are deprecated. See the <a href=":govcms-docs">GovCMS support documentation</a> for more information.', [
-        ':govcms-docs' => 'https://github.com/govCMS/GovCMS',
-      ]));
-  }
+  // Check if any module from the predefined array is being installed.
+  $modules_installed = array_intersect($modulesToCheck, $modules);
+  if (!empty(($modules_installed)) && !$is_syncing) {
+    // Instantiate our event.
+    $event = new ModuleInstalledEvent($modules_installed);
 
-  if (!$is_syncing) {
-    if (in_array('role_delegation', $modules)) {
-      // Site administrator.
-      if ($role = Role::load('govcms_site_administrator')) {
-        $role->grantPermission('assign govcms_content_approver role');
-        $role->grantPermission('assign govcms_content_author role');
-        $role->grantPermission('assign govcms_site_administrator role');
-        $role->save();
-      }
-    }
-
-    if (in_array('module_permissions', $modules)) {
-      // Site administrator.
-      if ($role = Role::load('govcms_site_administrator')) {
-        $role->grantPermission('administer managed modules');
-        $role->grantPermission('administer managed modules permissions');
-        $role->save();
-      }
-    }
+    // Get the event_dispatcher service and dispatch the event.
+    $event_dispatcher = \Drupal::service('event_dispatcher');
+    $event_dispatcher->dispatch($event, ModuleInstalledEvent::MODULES_INSTALLED);
   }
 }
 
