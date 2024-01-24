@@ -101,8 +101,7 @@ function govcms_update_10004() {
   $lifecycle_service = \Drupal::service('govcms.modules.lifecycle');
 
   // List of modules to uninstall.
-  $modules_to_uninstall = ['features', 'features_ui', 'forum', 'govcms8_foundations', 'govcms8_calendar_item', 'govcms8_layouts',
-    'govcms8_modifiers', 'govcms_media', 'govcms_news_and_media', 'govcms_search', 'govcms_standard_page'];
+  $modules_to_uninstall = ['features', 'features_ui', 'forum', 'govcms_media', 'govcms_news_and_media', 'govcms_search', 'govcms_standard_page'];
 
   // Call the service method to uninstall specified modules marked as 'obsolete'.
   $lifecycle_service->uninstallObsoleteModules($modules_to_uninstall);
