@@ -19,6 +19,7 @@ class Lifecycle {
   const OBSOLETE_MODULES = [
     'config_filter',
     'panelizer',
+    'forum'
   ];
 
   /**
