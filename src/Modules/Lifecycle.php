@@ -18,6 +18,7 @@ class Lifecycle {
   // Obsolete modules.
   const OBSOLETE_MODULES = [
     'config_filter',
+    'forum',
     'panelizer',
   ];
 
