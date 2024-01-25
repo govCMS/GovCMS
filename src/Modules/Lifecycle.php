@@ -20,6 +20,7 @@ class Lifecycle {
     'config_filter',
     'forum',
     'panelizer',
+    'swiftmailer',
   ];
 
   /**
