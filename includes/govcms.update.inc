@@ -93,9 +93,25 @@ function govcms_update_10003() {
 }
 
 /**
- * Install symfony_mailer module if swiftmailer module is installed.
+ * Implements hook_update_N().
+ * Disables specified modules if marked as 'obsolete'.
  */
 function govcms_update_10004() {
+  // Get the Lifecycle service.
+  $lifecycle_service = \Drupal::service('govcms.modules.lifecycle');
+
+  // List of modules to uninstall.
+  $modules_to_uninstall = ['features', 'features_ui', 'govcms_media', 'govcms_news_and_media', 'govcms_search', 'govcms_standard_page'];
+
+  // Call the service method to uninstall specified modules marked as 'obsolete'.
+  $lifecycle_service->uninstallObsoleteModules($modules_to_uninstall);
+}
+
+/**
+ * Implements hook_update_N().
+ * Install symfony_mailer module if swiftmailer module is installed.
+ */
+function govcms_update_10005() {
   // Check if the swiftmailer module is installed,
   // and the symfony_mailer hasn't been installed.
   if (\Drupal::moduleHandler()->moduleExists('swiftmailer') &&
