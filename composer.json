@@ -55,7 +55,7 @@
         "drupal/devel": "5.1.2",
         "drupal/diff": "1.1.0",
         "drupal/dropzonejs": "2.8.0",
-        "drupal/ds": "3.18.0",
+        "drupal/ds": "3.15.0",
         "drupal/dynamic_entity_reference": "3.1.0",
         "drupal/embed": "1.7.0",
         "drupal/encrypt": "3.1.0",
@@ -162,6 +162,9 @@
         "enable-patching": true,
         "composer-exit-on-patch-failure": true,
         "patches": {
+            "drupal/ds": {
+                "Error using `ds_devel` - https://www.drupal.org/project/ds/issues/3338860": "https://www.drupal.org/files/issues/2023-04-04/3338860-5-d10-compatible_0.patch"
+            },
             "drupal/login_security": {
                 "Correctly detect invalid username/password or blocked account login errors - https://www.drupal.org/project/login_security/issues/3292974": "https://www.drupal.org/files/issues/2023-02-14/login_security-3292974-21.patch"
             },
