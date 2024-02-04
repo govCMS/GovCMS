@@ -1,3 +1,4 @@
+mode: simple
 ignored_config_entities:
   - 'clamav.settings'
   - 'login_security.settings'

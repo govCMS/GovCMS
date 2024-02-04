@@ -22,7 +22,7 @@ RUN echo "memory_limit = 512M" >> /usr/local/etc/php/conf.d/docker-php-ram-limit
 # Set Composer environment variables
 ENV COMPOSER_ALLOW_SUPERUSER=1
 ENV COMPOSER_MEMORY_LIMIT=-1
-ENV SIMPLETEST_BASE_URL="http://localhost"
+ENV SIMPLETEST_BASE_URL="http://govcms"
 ENV SIMPLETEST_DB='mysql://drupal:drupal@mariadb/drupal'
 
 # Set working directory
@@ -34,8 +34,7 @@ COPY composer.json ./
 # Install Composer dependencies
 RUN \
     --mount=type=cache,mode=0777,target=/root/.composer/cache \
-    composer config --no-plugins allow-plugins.phpstan/extension-installer 1 && \
-    composer require palantirnet/drupal-rector drupal/core-dev:"^10.0" mglaman/drupal-check --dev --no-update && \
+    composer require palantirnet/drupal-rector mglaman/drupal-check --dev --no-update && \
     composer update --no-scripts --no-autoloader && \
     cp vendor/palantirnet/drupal-rector/rector.php .
 
@@ -55,7 +54,6 @@ COPY . /app/
 # Configure Composer
 RUN \
     --mount=type=cache,mode=0777,target=/root/.composer/cache \
-    composer config --no-plugins allow-plugins.phpstan/extension-installer 1 && \
     composer install
 
 # Adjust ownership
