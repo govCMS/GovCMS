@@ -126,7 +126,7 @@ function govcms_update_10005() {
  * Implements hook_update_N().
  * Disables swiftmailer module if marked as 'obsolete'.
  */
-function govcms_update_10006() {
+function govcms_update_10005() {
   // Get the Lifecycle service.
   $lifecycle_service = \Drupal::service('govcms.modules.lifecycle');
 
