@@ -121,3 +121,18 @@ function govcms_update_10005() {
     \Drupal::service('module_installer')->install(['symfony_mailer']);
   }
 }
+
+/**
+ * Implements hook_update_N().
+ * Disables swiftmailer module if marked as 'obsolete'.
+ */
+function govcms_update_10006() {
+  // Get the Lifecycle service.
+  $lifecycle_service = \Drupal::service('govcms.modules.lifecycle');
+
+  // List of modules to uninstall.
+  $modules_to_uninstall = ['swiftmailer'];
+
+  // Call the service method to uninstall specified modules marked as 'obsolete'.
+  $lifecycle_service->uninstallObsoleteModules($modules_to_uninstall);
+}
