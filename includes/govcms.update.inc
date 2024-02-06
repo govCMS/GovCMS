@@ -109,21 +109,6 @@ function govcms_update_10004() {
 
 /**
  * Implements hook_update_N().
- * Install symfony_mailer module if swiftmailer module is installed.
- */
-function govcms_update_10005() {
-  // Check if the swiftmailer module is installed,
-  // and the symfony_mailer hasn't been installed.
-  if (\Drupal::moduleHandler()->moduleExists('swiftmailer') &&
-    !\Drupal::moduleHandler()->moduleExists('symfony_mailer')
-  ) {
-    // Install the symfony_mailer module.
-    \Drupal::service('module_installer')->install(['symfony_mailer']);
-  }
-}
-
-/**
- * Implements hook_update_N().
  * Disables swiftmailer module if marked as 'obsolete'.
  */
 function govcms_update_10005() {
