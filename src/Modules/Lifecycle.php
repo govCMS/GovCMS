@@ -11,14 +11,15 @@ use Drupal\Core\Extension\ModuleHandlerInterface;
 class Lifecycle {
 
   // Deprecated modules.
-  const DEPRECATED_MODULES = [
-    'swiftmailer',
-  ];
+  const DEPRECATED_MODULES = [];
 
   // Obsolete modules.
   const OBSOLETE_MODULES = [
     'config_filter',
+    'forum',
     'panelizer',
+    'swiftmailer',
+    'tracker',
   ];
 
   /**
