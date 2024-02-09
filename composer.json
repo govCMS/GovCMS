@@ -119,7 +119,7 @@
         "drupal/twig_tweak": "3.2.1",
         "drupal/username_enumeration_prevention": "1.3.0",
         "drupal/webform": "6.2.2",
-        "egulias/email-validator": "4.0.1 as 3.2.6",
+        "egulias/email-validator": "4.0.2",
         "govcms-assets/chosen": "2.2.1",
         "oomphinc/composer-installers-extender": "^2.0",
         "swiftmailer/swiftmailer": "6.3.0",
