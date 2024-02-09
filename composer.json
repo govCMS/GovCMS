@@ -49,7 +49,7 @@
         "drupal/contact_storage": "1.3.0",
         "drupal/context": "5.0.0-rc1",
         "drupal/core-composer-scaffold": "10.1.8",
-        "drupal/core-recommended": "10.1.8",
+        "drupal/core-recommended": "10.2.3",
         "drupal/crop": "2.3.0",
         "drupal/ctools": "3.14.0",
         "drupal/devel": "5.1.2",
