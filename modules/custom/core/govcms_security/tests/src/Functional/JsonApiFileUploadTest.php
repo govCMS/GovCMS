@@ -27,11 +27,17 @@ use Psr\Http\Message\ResponseInterface;
  *
  * @group jsonapi
  */
+#[AllowDynamicProperties]
 class JsonApiFileUploadTest extends BrowserTestBase {
 
   use ApiRequestTrait {
     makeApiRequest as request;
   }
+
+  /**
+   * @var string
+   */
+  protected $resourceType;
 
   /**
    * {@inheritdoc}
@@ -136,6 +142,9 @@ class JsonApiFileUploadTest extends BrowserTestBase {
     $entity_type_manager = $this->container->get('entity_type.manager');
     $this->entityStorage = $entity_type_manager->getStorage(static::$entityTypeId);
     $this->entity = $this->setUpFields($this->createEntity(), $this->account);
+
+    // Initialise the $resourceType property.
+    $this->resourceType = '';
 
     $this->resourceType = $this->container->get('jsonapi.resource_type.repository')->getByTypeName(static::$resourceTypeName);
 
