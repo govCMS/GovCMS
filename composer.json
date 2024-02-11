@@ -33,7 +33,7 @@
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
         "dropzone/dropzone": "5.7.2",
-        "drupal/address": "1.12.0",
+        "drupal/address": "2.0.0",
         "drupal/admin_toolbar": "3.4.2",
         "drupal/bigmenu": "2.0.0-rc3",
         "drupal/captcha": "2.0.5",
@@ -48,14 +48,14 @@
         "drupal/consumers": "1.17.0",
         "drupal/contact_storage": "1.3.0",
         "drupal/context": "5.0.0-rc1",
-        "drupal/core-composer-scaffold": "10.1.8",
-        "drupal/core-recommended": "10.2.3",
+        "drupal/core-composer-scaffold": "10.2.3",
+        "drupal/core-recommended": "10.2.3",        
         "drupal/crop": "2.3.0",
         "drupal/ctools": "3.14.0",
         "drupal/devel": "5.1.2",
         "drupal/diff": "1.1.0",
         "drupal/dropzonejs": "2.8.0",
-        "drupal/ds": "3.15.0",
+        "drupal/ds": "3.18.0",
         "drupal/dynamic_entity_reference": "3.1.0",
         "drupal/embed": "1.7.0",
         "drupal/encrypt": "3.1.0",
@@ -162,9 +162,6 @@
         "enable-patching": true,
         "composer-exit-on-patch-failure": true,
         "patches": {
-            "drupal/ds": {
-                "Error using `ds_devel` - https://www.drupal.org/project/ds/issues/3338860": "https://www.drupal.org/files/issues/2023-04-04/3338860-5-d10-compatible_0.patch"
-            },
             "drupal/login_security": {
                 "Correctly detect invalid username/password or blocked account login errors - https://www.drupal.org/project/login_security/issues/3292974": "https://www.drupal.org/files/issues/2023-02-14/login_security-3292974-21.patch"
             },
