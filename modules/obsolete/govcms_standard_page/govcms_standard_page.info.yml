@@ -1,7 +1,0 @@
-name: 'Standard page'
-type: module
-description: 'Provides Standard page content type and related configuration. [obsolete]'
-package: GovCMS [obsolete]
-core_version_requirement: ^9 || ^10
-lifecycle: obsolete
-lifecycle_link: 'https://github.com/GovCMS/GovCMS'
