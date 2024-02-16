@@ -1,0 +1,4 @@
+reset TFA skip count:
+  title: 'Reset TFA Skip validation attempts'
+  description: 'Only users with this permission can reset the TFA skip validation attempts.'
+  restrict access: true
