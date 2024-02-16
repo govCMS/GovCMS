@@ -1,4 +1,4 @@
-version: 2.1
+version: '2.1'
 
 orbs:
   tests: 'govcms/tests@3'
@@ -6,11 +6,11 @@ orbs:
 workflows:
   test:
     jobs:
-      - tests/validate-composer
-      - tests/drupal-practices
+      - tests/validate_composer
+      - tests/drupal_practices
       - tests/build:
           requires:
-            - tests/validate-composer
+            - tests/validate_composer
       - tests/basic:
           requires:
             - tests/build
