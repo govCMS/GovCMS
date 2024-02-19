@@ -14,7 +14,7 @@ services:
         - echo "max_allowed_packet=536870912" >> /etc/mysql/conf.d/tugboat.cnf
 
   app:
-    image: tugboatqa/php:8.2-apache
+    image: tugboatqa/php:8.1-apache
     # Set this as the default service. This does a few things
     #   1. Clones the git repository into the service container
     #   2. Exposes port 80 to the Tugboat HTTP proxy
