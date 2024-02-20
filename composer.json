@@ -33,7 +33,7 @@
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
         "dropzone/dropzone": "5.7.2",
-        "drupal/address": "2.0.0",
+        "drupal/address": "2.0.1",
         "drupal/admin_toolbar": "3.4.2",
         "drupal/bigmenu": "2.0.0-rc3",
         "drupal/captcha": "2.0.5",
