@@ -26,7 +26,7 @@ https://govcmschat.slack.com/archives/C01BD9B3V5W
 To get started with GovCMS, you need to have the following prerequisites:
 
 - A web server like Apache or Nginx
-- PHP version 8.2 or above
+- PHP version 8.1 or above
 - MySQL or PostgresSQL database
 
 More documents can be found in:
