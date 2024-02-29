@@ -62,7 +62,7 @@
         "drupal/entity_browser": "2.9.0",
         "drupal/entity_class_formatter": "2.0.0",
         "drupal/entity_embed": "1.5",
-        "drupal/entity_hierarchy": "3.3.10",
+        "drupal/entity_hierarchy": "5.0.0-alpha3",
         "drupal/entity_reference_display": "2.0.0",
         "drupal/entity_reference_revisions": "1.11.0",
         "drupal/environment_indicator": "4.0.17",
