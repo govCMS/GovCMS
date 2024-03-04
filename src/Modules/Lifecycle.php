@@ -17,6 +17,7 @@ class Lifecycle {
   const OBSOLETE_MODULES = [
     'config_filter',
     'forum',
+    'mailsystem',
     'panelizer',
     'swiftmailer',
     'tracker',
