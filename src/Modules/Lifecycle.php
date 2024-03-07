@@ -20,6 +20,9 @@ class Lifecycle {
     'panelizer',
     'swiftmailer',
     'tracker',
+    'rdf',
+    'quickedit',
+    'adminimal_admin_toolbar'
   ];
 
   /**

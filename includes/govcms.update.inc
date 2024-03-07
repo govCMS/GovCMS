@@ -121,3 +121,18 @@ function govcms_update_10005() {
   // Call the service method to uninstall specified modules marked as 'obsolete'.
   $lifecycle_service->uninstallObsoleteModules($modules_to_uninstall);
 }
+
+/**
+ * Implements hook_update_N().
+ * Uninstall rdf, quickedit, and adminimal_admin_toolbar module if marked as 'obsolete'.
+ */
+function govcms_update_10006() {
+  // Get the Lifecycle service.
+  $lifecycle_service = \Drupal::service('govcms.modules.lifecycle');
+
+  // List of modules to uninstall.
+  $modules_to_uninstall = ['rdf', 'quickedit', 'adminimal_admin_toolbar'];
+
+  // Call the service method to uninstall specified modules marked as 'obsolete'.
+  $lifecycle_service->uninstallObsoleteModules($modules_to_uninstall);
+}
