@@ -19,7 +19,7 @@ class Lifecycle {
     'forum',
     'panelizer',
     'swiftmailer',
-    'tracker'
+    'tracker',
   ];
 
   /**
