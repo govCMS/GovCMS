@@ -114,6 +114,19 @@ function govcms_security_form_tfa_settings_form_alter(&$form, FormStateInterface
 }
 
 /**
+ * Implement hook_form_FORM_ID_alter()
+ *
+ * Disable the Import all button for all users from User Interface.
+ * Display a message around disabled config synchronization.
+ *
+ */
+function govcms_security_form_config_admin_import_form_alter(&$form, FormStateInterface $form_state) {
+  $form['actions']['submit']['#access'] = FALSE;
+  \Drupal::messenger()->addMessage("Configuration import is blocked via govcms_security module.");
+}
+
+
+/**
  * Implements hook_form_alter().
  */
 function govcms_security_form_alter(&$form, FormStateInterface $form_state, $form_id) {
