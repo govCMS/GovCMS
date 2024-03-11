@@ -15,8 +15,10 @@ class Lifecycle {
 
   // Obsolete modules.
   const OBSOLETE_MODULES = [
+    'ckeditor',
     'config_filter',
     'forum',
+    'mailsystem',
     'panelizer',
     'swiftmailer',
     'tracker',
