@@ -226,3 +226,17 @@ function govcms_security_cron() {
   \Drupal::keyValueExpirable('update_available_releases')->deleteAll();
   \Drupal::keyValueExpirable('update_available_releases')->setMultiple([]);
 }
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter() for tfa_base_overview form.
+ */
+function govcms_security_form_tfa_base_overview_alter(&$form, FormStateInterface $form_state, $form_id) : void {
+  // Ensure that the Reset TFA skip count button is only available to privileged
+  // users with the 'reset TFA skip count' permission.
+  if (\Drupal::currentUser()->hasPermission('reset TFA skip count')) {
+    return;
+  }
+  if (isset($form['actions']['reset_skip_attempts'])) {
+    $form['actions']['reset_skip_attempts']['#access'] = FALSE;
+  }
+}
