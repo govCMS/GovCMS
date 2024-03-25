@@ -14,26 +14,14 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "dropzone/dropzone",
-                "version": "v5.7.2",
-                "type": "drupal-library",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://github.com/dropzone/dropzone/archive/refs/tags/v5.7.2.zip"
-                }
-            }
         }
     ],
     "require": {
         "php": "^8.1.0",
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
-        "dropzone/dropzone": "5.7.2",
-        "drupal/address": "2.0.0",
+        "govcms-assets/dropzone": "5.7.2",
+        "drupal/address": "2.0.1",
         "drupal/admin_toolbar": "3.4.2",
         "drupal/bigmenu": "2.0.0-rc3",
         "drupal/captcha": "2.0.5",
@@ -54,7 +42,7 @@
         "drupal/ctools": "3.14.0",
         "drupal/devel": "5.1.2",
         "drupal/diff": "1.1.0",
-        "drupal/dropzonejs": "2.8.0",
+        "drupal/dropzonejs": "2.10.0",
         "drupal/ds": "3.19.0",
         "drupal/dynamic_entity_reference": "3.2.0",
         "drupal/embed": "1.7.0",
@@ -67,7 +55,7 @@
         "drupal/entity_reference_revisions": "1.11.0",
         "drupal/environment_indicator": "4.0.17",
         "drupal/events_log_track": "3.1.9",
-        "drupal/facets": "2.0.6",
+        "drupal/facets": "2.0.7",
         "drupal/field_group": "3.4.0",
         "drupal/focal_point": "2.0.2",
         "drupal/google_analytics": "4.0.2",
@@ -104,7 +92,7 @@
         "drupal/rest_menu_items": "3.0.3",
         "drupal/robotstxt": "1.5.0",
         "drupal/role_delegation": "1.2.0",
-        "drupal/scheduled_transitions": "2.3.0",
+        "drupal/scheduled_transitions": "2.4.1",
         "drupal/search_api": "1.31.0",
         "drupal/search_api_attachments": "9.0.2",
         "drupal/search_api_solr": "4.3.1",
@@ -116,7 +104,7 @@
         "drupal/symfony_mailer": "1.4.1",
         "drupal/tfa": "1.5.0",
         "drupal/token": "1.13.0",
-        "drupal/twig_tweak": "3.2.1",
+        "drupal/twig_tweak": "3.3.0",
         "drupal/username_enumeration_prevention": "1.3.0",
         "drupal/webform": "6.2.2",
         "govcms-assets/chosen": "2.2.1",
