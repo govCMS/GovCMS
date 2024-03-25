@@ -39,7 +39,7 @@ libraries-extend:
   user/drupal.user:
     - bartik/user
 
-ckeditor5-stylesheets:
+ckeditor_stylesheets:
   - css/base/elements.css
   - css/components/captions.css
   - css/components/table.css
