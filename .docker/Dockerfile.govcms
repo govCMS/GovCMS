@@ -1,5 +1,5 @@
 # Stage 1: Build the application
-FROM drupal:10-php8.1 as builder
+FROM drupal:10-php8.2 as builder
 
 # Set timezone to Australia/Sydney by default
 RUN ln -sf /usr/share/zoneinfo/Australia/Sydney /etc/localtime
