@@ -4,19 +4,38 @@ orbs:
   tests: 'govcms/tests@3'
 
 workflows:
+  version: 2
   test:
     jobs:
-      - tests/validate_composer
-      - tests/drupal_practices
+      - tests/validate_composer:
+          matrix:
+            parameters:
+              php_version: ["8.1-apache", "8.2-apache"]
+      - tests/drupal_practices:
+          matrix:
+            parameters:
+              php_version: ["8.1-apache", "8.2-apache"]
       - tests/build:
+          matrix:
+            parameters:
+              php_version: ["8.1-apache", "8.2-apache"]
           requires:
             - tests/validate_composer
       - tests/basic:
+          matrix:
+            parameters:
+              php_version: ["8.1-apache", "8.2-apache"]
           requires:
             - tests/build
       - tests/phpunit:
+          matrix:
+            parameters:
+              php_version: ["8.1-apache", "8.2-apache"]
           requires:
             - tests/build
       - tests/cypress:
+          matrix:
+            parameters:
+              php_version: ["8.1-apache", "8.2-apache"]
           requires:
             - tests/build
