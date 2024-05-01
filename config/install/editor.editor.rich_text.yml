@@ -57,8 +57,10 @@ settings:
         - '<ol type>'
         - '<img data-entity-type data-entity-uuid>'
     ckeditor5_list:
-      reversed: false
-      startIndex: true
+      properties:
+        reversed: false
+        startIndex: true
+      multiBlock: true
     ckeditor5_alignment:
       enabled_alignments:
         - left
