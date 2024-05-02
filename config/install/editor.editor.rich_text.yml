@@ -55,7 +55,7 @@ settings:
         - '<blockquote cite>'
         - '<ul type>'
         - '<ol type>'
-        - '<img data-entity-type data-entity-uuid>'
+        - '<img>'
     ckeditor5_list:
       reversed: false
       startIndex: true
