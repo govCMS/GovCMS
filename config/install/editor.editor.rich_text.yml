@@ -55,7 +55,6 @@ settings:
         - '<blockquote cite>'
         - '<ul type>'
         - '<ol type>'
-        - '<img>'
     ckeditor5_list:
       reversed: false
       startIndex: true
