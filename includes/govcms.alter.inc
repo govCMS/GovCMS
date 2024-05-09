@@ -88,7 +88,7 @@ function govcms_field_widget_complete_form_alter(array &$field_widget_complete_f
 /**
  * Implements hook_config_schema_info_alter().
  */
-function MODULE_config_schema_info_alter(&$definitions)
+function govcms_config_schema_info_alter(&$definitions)
 {
     if (isset($definitions['ckeditor5.plugin.ckeditor5_sourceEditing']))
     {
