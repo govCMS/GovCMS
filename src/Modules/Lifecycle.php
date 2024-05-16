@@ -22,6 +22,7 @@ class Lifecycle {
     'panelizer',
     'swiftmailer',
     'tracker',
+    'aggregator'
   ];
 
   /**
