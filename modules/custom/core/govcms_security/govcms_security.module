@@ -38,7 +38,6 @@ function govcms_security_form_user_login_form_alter(&$form, &$form_state) {
   $form['#attributes']['autocomplete'] = 'off';
 }
 
-
 /**
  * Implement hook_form_FORM_ID_alter()
  */
