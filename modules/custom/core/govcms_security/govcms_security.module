@@ -35,7 +35,7 @@ function govcms_security_form_contact_message_contact_form_alter(&$form, FormSta
  * Implements hook_form_FORM_ID_alter().
  */
 function govcms_security_form_user_login_form_alter(&$form, &$form_state) {
-    $form['#attributes']['autocomplete'] = 'off';
+  $form['#attributes']['autocomplete'] = 'off';
 }
 
 /**
