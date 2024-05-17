@@ -1,9 +1,0 @@
-#govcms_security.login:
-#  path: 'user/login'
-#  defaults:
-#    _form: '\Drupal\govcms_security\Form\GovcmsLoginForm'
-#    _title: 'Test Login Form'
-#  requirements:
-#    _user_is_logged_in: 'FALSE'
-#  options:
-#    _maintenance_access: TRUE

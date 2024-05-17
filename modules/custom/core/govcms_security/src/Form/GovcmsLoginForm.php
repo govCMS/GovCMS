@@ -2,10 +2,10 @@
 
 namespace Drupal\govcms_security\Form;
 
-use Drupal\user\Form\UserLoginForm;
+use Drupal\tfa\Form\TfaLoginForm;
 use Drupal\Core\Form\FormStateInterface;
 
-class GovcmsLoginForm extends UserLoginForm {
+class GovcmsLoginForm extends TfaLoginForm {
 
     /**
      * @{inheritdoc}
