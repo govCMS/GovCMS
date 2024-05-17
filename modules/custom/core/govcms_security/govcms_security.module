@@ -32,11 +32,16 @@ function govcms_security_form_contact_message_contact_form_alter(&$form, FormSta
 }
 
 /**
- * Implements hook_form_FORM_ID_alter().
+ * Implements hook_preprocess_HOOK().
  */
-function govcms_security_form_user_login_form_alter(&$form, &$form_state) {
-  $form['#attributes']['autocomplete'] = 'off';
+function govcms_security_preprocess_menu_local_task(&$variables) {
+  $current_route = \Drupal::routeMatch()->getRouteName();
+  if ($current_route === 'user.login') {
+    $form = \Drupal::formBuilder()->getForm('Drupal\govcms_security\Form\GovcmsLoginForm');
+    $variables['page']['user.login'] = $form;
+  }
 }
+
 
 /**
  * Implement hook_form_FORM_ID_alter()
