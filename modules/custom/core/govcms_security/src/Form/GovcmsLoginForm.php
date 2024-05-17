@@ -8,7 +8,7 @@ use Drupal\Core\Form\FormStateInterface;
 class GovcmsLoginForm extends TfaLoginForm {
 
     /**
-     * @{inheritdoc}
+     * {@inheritdoc}
      */
     public function validateFinal(array &$form, FormStateInterface $form_state) {
         if ($form_state->hasAnyErrors()) {
