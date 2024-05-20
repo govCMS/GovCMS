@@ -51,11 +51,10 @@ settings:
         - '<h5 id>'
         - '<h6 id>'
         - '<drupal-entity alt title data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button>'
-        - '<a hreflang data-entity-substitution data-entity-type data-entity-uuid>'
+        - '<a hreflang>'
         - '<blockquote cite>'
         - '<ul type>'
         - '<ol type>'
-        - '<img data-entity-type data-entity-uuid>'
     ckeditor5_list:
       properties:
         reversed: false
