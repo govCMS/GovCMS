@@ -24,7 +24,7 @@
         "drupal/address": "2.0.1",
         "drupal/admin_toolbar": "3.4.2",
         "drupal/bigmenu": "2.0.0-rc3",
-        "drupal/block_inactive_users": "2.7",
+        "drupal/block_inactive_users": "2.7.0",
         "drupal/captcha": "2.0.5",
         "drupal/chosen": "4.0.1",
         "drupal/components": "3.0.0-beta3",
