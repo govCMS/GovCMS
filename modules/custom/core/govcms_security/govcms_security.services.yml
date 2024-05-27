@@ -6,7 +6,3 @@ services:
     # Tagged as an event_subscriber to register this subscriber with the event_dispatch service.
     tags:
       - { name: 'event_subscriber' }
-  govcms_security.route_subscriber:
-    class: \Drupal\govcms_security\Routing\GovcmsRouteSubscriber
-    tags:
-      - { name: 'event_subscriber' }
