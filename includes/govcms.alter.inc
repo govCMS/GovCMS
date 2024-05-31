@@ -84,3 +84,14 @@ function govcms_field_widget_complete_form_alter(array &$field_widget_complete_f
     'field_widget_complete_' . $context['widget']->getPluginId() . '_form',
   ], $field_widget_complete_form, $form_state, $context);
 }
+
+/**
+ * Implements hook_config_schema_info_alter().
+ */
+function govcms_config_schema_info_alter(&$definitions)
+{
+    if (isset($definitions['ckeditor5.plugin.ckeditor5_sourceEditing']))
+    {
+        unset($definitions['ckeditor5.plugin.ckeditor5_sourceEditing']['mapping']['allowed_tags']['sequence']['constraints']['SourceEditingRedundantTags']);
+    }
+}
