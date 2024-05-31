@@ -99,7 +99,7 @@
         "drupal/search_api_attachments": "9.0.2",
         "drupal/search_api_solr": "4.3.2",
         "drupal/seckit": "2.0.1",
-        "drupal/securitytxt": "1.4.0",
+        "drupal/securitytxt": "1.6.0",
         "drupal/shield": "1.7.0",
         "drupal/simple_oauth": "5.2.5",
         "drupal/simple_sitemap": "4.1.9",
