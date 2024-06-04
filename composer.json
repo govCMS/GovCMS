@@ -102,7 +102,7 @@
         "drupal/securitytxt": "1.6.0",
         "drupal/shield": "1.7.0",
         "drupal/simple_oauth": "5.2.5",
-        "drupal/simple_sitemap": "4.1.9",
+        "drupal/simple_sitemap": "4.1.8",
         "drupal/symfony_mailer": "1.4.1",
         "drupal/token": "1.14.0",
         "drupal/tfa": "1.7.0",
