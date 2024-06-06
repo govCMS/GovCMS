@@ -110,7 +110,7 @@ function govcms_security_form_tfa_settings_form_alter(&$form, FormStateInterface
     $form['tfa_required_roles']['#access'] = FALSE;
   }
   // Limit the max validation skip to 10.
-  $form['validation_skip']['#max'] = 10;
+  $form['users_without_tfa']['validation_skip']['#max'] = 10;
 }
 
 /**
