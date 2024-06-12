@@ -3,3 +3,10 @@ govcms.front_page:
   route_name:      '<front>'
   menu_name:       main
   weight:          -99
+
+govcms.admin.lifecycle_report:
+  title: 'GovCMS Lifecycle Report'
+  description: 'View lifecycle status for modules and themes'
+  parent: system.admin_reports
+  route_name: govcms.admin.lifecycle_report
+  weight: 100

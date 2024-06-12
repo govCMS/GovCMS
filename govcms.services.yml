@@ -1,6 +1,9 @@
 services:
+  govcms.lifecycle:
+    class: Drupal\govcms\Lifecycle\Lifecycle
+
   govcms.modules.lifecycle:
-    class: Drupal\govcms\Modules\Lifecycle
+    class: Drupal\govcms\Lifecycle\Lifecycle
 
   govcms.event_subscriber:
     class: Drupal\govcms\EventSubscriber\GovcmsSubscriber

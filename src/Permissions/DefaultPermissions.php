@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\govcms\Modules;
+namespace Drupal\govcms\Permissions;
 
 use Drupal\user\RoleInterface;
 
