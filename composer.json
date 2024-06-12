@@ -70,6 +70,7 @@
         "drupal/linkit": "6.1.4",
         "drupal/login_security": "2.0.1",
         "drupal/mailsystem": "4.4.0",
+        "drupal/media_bulk_upload": "3.0.2",
         "drupal/media_entity_file_replace": "1.2.0",
         "drupal/media_file_delete": "1.3.0",
         "drupal/media_vimeo_domain_privacy": "1.1",
