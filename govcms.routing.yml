@@ -4,4 +4,4 @@ govcms.admin.lifecycle_report:
     _controller: 'Drupal\govcms\Controller\LifecycleReportController::displayLifecycle'
     _title: 'GovCMS Lifecycle Report'
   requirements:
-    _permission: 'access lifecycle reports'
+    _permission: 'access site reports'
