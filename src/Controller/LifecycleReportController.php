@@ -91,11 +91,18 @@ class LifecycleReportController extends ControllerBase {
     return $profile->info['version'] ?? 'Unknown';
   }
 
-
   private function formatDataForTable($data): array {
     $rows = [];
     foreach ($data as $item) {
-      $isEnabled = \Drupal::service('module_handler')->moduleExists($item[0]);
+      $isEnabled = FALSE;
+
+      if ($item[2] === 'Modules') {
+        $isEnabled = \Drupal::service('module_handler')->moduleExists($item[0]);
+      }
+      elseif ($item[2] === 'Themes') {
+        $isEnabled = \Drupal::service('theme_handler')->themeExists($item[0]);
+      }
+
       $statusClass = $isEnabled ? 'color-error' : 'color-success';
       $statusText = $isEnabled ? 'Enabled' : 'Disabled';
 
@@ -127,6 +134,5 @@ class LifecycleReportController extends ControllerBase {
       ],
     ];
   }
-
 
 }
