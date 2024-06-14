@@ -11,6 +11,27 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Breadcrumb\Breadcrumb;
 
 /**
+ * Implements hook_menu_links_discovered_alter().
+ *
+ * Alter menu links for the admin reports page.
+ */
+function govcms_menu_links_discovered_alter(array &$links) {
+  // Define the allowed route.
+  $allowed_route = 'govcms.admin.lifecycle_report';
+
+  // Iterate over the discovered menu links.
+  foreach ($links as $key => $link) {
+    // Check if the menu link has a route name and its parent is under system.admin_reports.
+    if (isset($link['route_name']) && isset($link['parent']) && $link['parent'] === 'system.admin_reports') {
+      // Remove the link if it's not the allowed route.
+      if ($link['route_name'] !== $allowed_route) {
+        unset($links[$key]);
+      }
+    }
+  }
+}
+
+/**
  * Implements hook_form_FORM_ID_alter() for install_configure_form().
  *
  * Allows the profile to alter the site configuration form.
