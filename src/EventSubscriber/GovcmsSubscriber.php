@@ -3,7 +3,7 @@
 namespace Drupal\govcms\EventSubscriber;
 
 use Drupal\Core\Messenger\MessengerInterface;
-use Drupal\govcms\Lifecycle\DefaultPermissions;
+use Drupal\govcms\Permissions\DefaultPermissions;
 use Drupal\user\Entity\Role;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
