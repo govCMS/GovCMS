@@ -1,0 +1,3 @@
+access govcms site reports:
+  title: 'View GovCMS site reports'
+  restrict access: true
