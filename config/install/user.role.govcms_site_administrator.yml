@@ -49,6 +49,7 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access files overview'
+  - 'access govcms site reports'
   - 'access media overview'
   - 'access shortcuts'
   - 'access site in maintenance mode'
