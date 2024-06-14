@@ -95,14 +95,18 @@ class LifecycleReportController extends ControllerBase {
   private function formatDataForTable($data): array {
     $rows = [];
     foreach ($data as $item) {
+      $isEnabled = \Drupal::service('module_handler')->moduleExists($item[0]);
+      $statusClass = $isEnabled ? 'color-error' : 'color-success';
+      $statusText = $isEnabled ? 'Enabled' : 'Disabled';
+
       $rows[] = [
         'data' => [
           ['data' => $item[0], 'class' => ['column-item']],
           ['data' => $item[2], 'class' => ['column-type']],
-          ['data' => $item[1], 'class' => ['column-status']],
+          ['data' => $statusText, 'class' => ['column-status']],
           ['data' => 'EOL Placeholder', 'class' => ['column-eol']],
         ],
-        'class' => ['align-middle'],
+        'class' => ['align-middle', $statusClass],
       ];
     }
 
@@ -121,5 +125,6 @@ class LifecycleReportController extends ControllerBase {
       ],
     ];
   }
+
 
 }
