@@ -112,7 +112,6 @@ class LifecycleReportController extends ControllerBase {
           ['data' => $item[2], 'class' => ['column-type']],
           ['data' => $item[1], 'class' => ['column-lifecycle']],
           ['data' => $statusText, 'class' => ['column-status']],
-          ['data' => 'EOL Placeholder', 'class' => ['column-eol']],
         ],
         'class' => ['align-middle', $statusClass],
       ];
@@ -125,7 +124,6 @@ class LifecycleReportController extends ControllerBase {
         ['data' => 'Type', 'class' => ['column-type']],
         ['data' => 'Lifecycle', 'class' => ['column-lifecycle']],
         ['data' => 'Status', 'class' => ['column-status']],
-        ['data' => 'EOL', 'class' => ['column-eol']],
       ],
       '#rows' => $rows,
       '#empty' => t('No items to display.'),
