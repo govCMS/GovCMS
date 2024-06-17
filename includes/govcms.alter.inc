@@ -17,7 +17,7 @@ use Drupal\Core\Breadcrumb\Breadcrumb;
  */
 function govcms_menu_links_discovered_alter(array &$links) {
   // Define the allowed route.
-  $allowed_route = 'govcms.admin.lifecycle_report';
+  $allowed_route = 'govcms.admin.system_report';
 
   // Iterate over the discovered menu links.
   foreach ($links as $key => $link) {
