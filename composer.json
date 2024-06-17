@@ -56,6 +56,7 @@
         "drupal/entity_reference_revisions": "1.11.0",
         "drupal/environment_indicator": "4.0.19",
         "drupal/events_log_track": "3.1.9",
+        "drupal/externalauth":"2.0.5",
         "drupal/facets": "2.0.7",
         "drupal/field_group": "3.4.0",
         "drupal/file_to_media": "1.0.2",
@@ -104,6 +105,7 @@
         "drupal/securitytxt": "1.6.0",
         "drupal/shield": "1.8.0",
         "drupal/simple_oauth": "5.2.5",
+        "drupal/simplesamlphp_auth": "4.0.0",
         "drupal/simple_sitemap": "4.1.9",
         "drupal/symfony_mailer": "1.4.1",
         "drupal/token": "1.15.0",
@@ -113,6 +115,7 @@
         "drupal/webform": "6.2.7",
         "govcms-assets/chosen": "2.2.1",
         "oomphinc/composer-installers-extender": "^2.0",
+        "simplesamlphp/simplesamlphp": "2.2.2",
         "webflo/drupal-finder": "^1.2"
     },
     "require-dev": {
@@ -128,7 +131,8 @@
             "oomphinc/composer-installers-extender": true,
             "drupal/core-vendor-hardening": true,
             "phpstan/extension-installer": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "simplesamlphp/composer-module-installer": true
         },
         "bin-dir": "bin/",
         "sort-packages": true,
