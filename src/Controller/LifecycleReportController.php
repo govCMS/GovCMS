@@ -5,6 +5,8 @@ namespace Drupal\govcms\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\govcms\Lifecycle\Lifecycle;
+use Drupal\Core\Url;
+use Drupal\Core\Link;
 
 class LifecycleReportController extends ControllerBase {
 
@@ -35,7 +37,7 @@ class LifecycleReportController extends ControllerBase {
     foreach ($lifecycleData as $type => $statuses) {
       foreach ($statuses as $status => $items) {
         foreach ($items as $item) {
-          $govcmsLifeCycleData[] = [$item, ucfirst($status), ucfirst($type)];
+          $govcmsLifeCycleData[] = [$item, ucfirst((string) $status), ucfirst((string) $type)];
         }
       }
     }
@@ -49,6 +51,21 @@ class LifecycleReportController extends ControllerBase {
         '#suffix' => '</div>',
       ],
     ];
+
+    $current_user = \Drupal::currentUser();
+
+    // Check if the current user has uid 1.
+    if ($current_user->id() == 1) {
+      $url = Url::fromRoute('system.status');
+      $link = Link::fromTextAndUrl($this->t('Core Version: @version', ['@version' => \Drupal::VERSION]), $url)->toString();
+
+      $govcms_general_info_item[] = [
+        '#type' => 'markup',
+        '#markup' => '<h3 class="system-status-general-info__item-title">Drupal Status report</h3>' . $link,
+        '#prefix' => '<div class="system-status-general-info__item card">',
+        '#suffix' => '</div>',
+      ];
+    }
 
     $govcms_general_info_items = [
       '#type' => 'markup',

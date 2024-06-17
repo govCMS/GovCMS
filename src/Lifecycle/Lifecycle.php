@@ -14,10 +14,10 @@ use Drupal\Core\Extension\ThemeInstallerInterface;
 class Lifecycle {
 
   // Deprecated modules.
-  const DEPRECATED_MODULES = [];
+  public const DEPRECATED_MODULES = [];
 
   // Obsolete modules.
-  const OBSOLETE_MODULES = [
+  public const OBSOLETE_MODULES = [
     'ckeditor',
     'config_filter',
     'forum',
@@ -28,10 +28,10 @@ class Lifecycle {
   ];
 
   // Deprecated themes.
-  const DEPRECATED_THEMES = [];
+  public const DEPRECATED_THEMES = [];
 
   // Obsolete themes.
-  const OBSOLETE_THEMES = [
+  public const OBSOLETE_THEMES = [
     'bartik',
     'seven',
   ];

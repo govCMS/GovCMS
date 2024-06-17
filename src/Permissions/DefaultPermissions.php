@@ -9,7 +9,7 @@ use Drupal\user\RoleInterface;
  */
 final class DefaultPermissions {
 
-  const DEFAULT_PERMISSIONS = [
+  public const DEFAULT_PERMISSIONS = [
     'role_delegation' => [
       'govcms_site_administrator' => [
         'assign govcms_content_approver role',

@@ -9,22 +9,56 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Breadcrumb\Breadcrumb;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_toolbar().
+ */
+function govcms_toolbar() {
+  $items = [];
+
+  $items['govcms_system_report'] = [
+    '#type' => 'toolbar_item',
+    'tab' => [
+      '#type' => 'link',
+      '#title' => t('GovCMS System Report'),
+      '#url' => Url::fromRoute('govcms.admin.system_report'),
+      '#options' => [
+        'attributes' => [
+          'title' => t('GovCMS System Report'),
+          'class' => [
+            'toolbar-icon',
+            'toolbar-icon-system-admin-reports',
+            'toolbar-item',
+          ],
+        ],
+      ],
+    ],
+    '#weight' => 100,
+  ];
+
+  return $items;
+}
 
 /**
  * Implements hook_menu_links_discovered_alter().
  *
  * Alter menu links for the admin reports page.
  */
-function govcms_menu_links_discovered_alter(array &$links) {
-  // Define the allowed route.
-  $allowed_route = 'govcms.admin.system_report';
+function govcms_menu_links_discovered_alter(array &$links): void {
+  // Define the restricted routes.
+  $restricted_routes = [
+    'system.status',
+    'update.status',
+    'event_log_track.report_form',
+  ];
 
   // Iterate over the discovered menu links.
   foreach ($links as $key => $link) {
-    // Check if the menu link has a route name and its parent is under system.admin_reports.
+    // Check if the menu link has a route name.
     if (isset($link['route_name']) && isset($link['parent']) && $link['parent'] === 'system.admin_reports') {
-      // Remove the link if it's not the allowed route.
-      if ($link['route_name'] !== $allowed_route) {
+      // Remove the link if it matches any of the restricted routes.
+      if (in_array($link['route_name'], $restricted_routes)) {
         unset($links[$key]);
       }
     }
@@ -39,6 +73,10 @@ function govcms_menu_links_discovered_alter(array &$links) {
 function govcms_form_install_configure_form_alter(&$form, FormStateInterface $form_state) {
   // Add a placeholder as example that one can choose an arbitrary site name.
   $form['site_information']['site_name']['#attributes']['placeholder'] = t('GovCMS');
+  $form['site_information']['site_name']['#attributes']['value'] = t('GovCMS');
+  $form['site_information']['site_mail']['#attributes']['value'] = 'no-reply@govcms.localhost';
+  $form['admin_account']['account']['name']['#attributes']['value'] = 'admin';
+  $form['admin_account']['account']['mail']['#attributes']['value'] = 'admin@govcms.localhost';
 }
 
 /**
