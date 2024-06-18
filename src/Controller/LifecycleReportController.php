@@ -43,6 +43,13 @@ class LifecycleReportController extends ControllerBase {
     }
     $govcmsLifeCycleTable = $this->formatDataForTable($govcmsLifeCycleData);
 
+    // Descriptions for Lifecycle statuses
+    $lifecycleDescriptions = '<p><strong>Deprecated:</strong> Modules and themes included in the current release but scheduled for removal due to future non-support or non-compliance with standards.</p>'
+      . '<p><strong>Obsolete:</strong> Modules and themes no longer installable on new sites and retained only for backward compatibility, recommended for replacement to avoid security or compatibility issues.</p>';
+
+    // Link to the documentation
+    $documentationLink = '<p>For more information on GovCMS lifecycle statuses, please refer to our <a href="https://github.com/govCMS/GovCMS/wiki/4.2-GovCMS-Lifecycle" target="_blank" rel="noopener noreferrer">documentation</a>.</p>';
+
     $govcms_general_info_item = [
       [
         '#type' => 'markup',
@@ -95,7 +102,9 @@ class LifecycleReportController extends ControllerBase {
       $govcms_general_info_render_array,
       [
         '#type' => 'markup',
-        '#markup' => '<h2 class="system-status-general-info__header">Lifecycle</h2>',
+        '#markup' => '<h2 class="system-status-general-info__header">Lifecycle</h2>'
+        . $lifecycleDescriptions
+        . $documentationLink
       ],
       $govcmsLifeCycleTable,
     ];
