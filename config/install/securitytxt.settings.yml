@@ -1,9 +1,10 @@
-enabled: true
+enabled: TRUE
 enabled_signature: FALSE
 contact_email: ''
 contact_phone: ''
 contact_page_url: 'https://www.govcms.gov.au/support/security/disclosure'
 encryption_key_url: ''
 policy_url: ''
-acknowledgement_url: ''
+acknowledgments_url: ''
 signature_text: ''
+
