@@ -184,15 +184,18 @@ final class SystemReportController extends ControllerBase {
       '#markup' => '<h2 class="system-status-general-info__header">Lifecycle</h2>',
     ];
 
+    $documentationUrl = Url::fromUri('https://github.com/govCMS/GovCMS/wiki/4.2-GovCMS-Lifecycle', ['attributes' => ['target' => '_blank', 'rel' => 'noopener noreferrer']]);
+    $documentationLink = Link::fromTextAndUrl($this->t('documentation'), $documentationUrl)->toString();
+    $documentationText = '<p>For more information on GovCMS lifecycle statuses, please refer to our ' . $documentationLink . '.</p>';
+
     // Add the legend.
     $build['legend'] = [
       '#markup' => '
         <div class="lifecycle-legend">
-          <p><strong>Lifecycle Legend:</strong></p>
           <ul>
-            <li><strong>Active:</strong> Actively maintained and supported.</li>
-            <li><strong>Deprecated:</strong> No longer recommended for use, may be removed in future releases.</li>
-            <li><strong>Obsolete:</strong> No longer maintained or supported, should be replaced.</li>
+            <li><strong>Deprecated:</strong> Modules and themes included in the current release but scheduled for removal due to future non-support or non-compliance with standards..</li>
+            <li><strong>Obsolete:</strong> Modules and themes no longer installable on new sites and retained only for backward compatibility, recommended for replacement to avoid security or compatibility issues.</li>
+            <li>' .$documentationText. '</li>
           </ul>
         </div>',
     ];
