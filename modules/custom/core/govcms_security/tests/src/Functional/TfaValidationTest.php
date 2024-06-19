@@ -65,7 +65,7 @@ class TfaValidationTest extends TfaTestBase {
     /**
      * Test invalid 'Skip Validation' settings
      */
-    public function testInvalidSettingValues() {
+    public function testInvalidSettingValues(): void {
         $invalid_values = [-1, 11, 20, -10];
 
         foreach ($invalid_values as $value) {
