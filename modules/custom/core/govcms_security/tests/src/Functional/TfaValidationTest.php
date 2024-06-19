@@ -41,7 +41,6 @@ class TfaValidationTest extends TfaTestBase {
 
         // create and log in as site admin user
         $this->adminUser = $this->drupalCreateUser([
-            'administer site configuration',
             'admin tfa settings',
         ]);
         $this->drupalLogin($this->adminUser);
