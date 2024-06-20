@@ -6,8 +6,8 @@
     "license": "GPL-2.0-or-later",
     "homepage": "https://www.govcms.gov.au",
     "support": {
-        "issues:": "https://github.com/GovCMS/GovCMS/issues",
-        "wik": "https://github.com/GovCMS/GovCMS/wiki",
+        "issues": "https://github.com/GovCMS/GovCMS/issues",
+        "wiki": "https://github.com/GovCMS/GovCMS/wiki",
         "source": "https://github.com/GovCMS/GovCMS/releases"
     },
     "repositories": [
