@@ -97,27 +97,4 @@ class Lifecycle {
       }
     }
   }
-
-  /**
-   * Uninstalls themes marked as obsolete.
-   *
-   * @param array $themes
-   *   The themes to uninstall.
-   */
-  public function uninstallObsoleteThemes(array $themes): void {
-    // Get the theme installer service.
-    $theme_installer = \Drupal::service('theme_installer');
-    $theme_handler = \Drupal::service('theme_handler');
-
-    foreach ($themes as $theme) {
-      // Check if the theme is installed and marked as obsolete before attempting to uninstall.
-      if ($theme_handler->themeExists($theme)) {
-        $themeInfo = \Drupal::service('extension.list.theme')->getExtensionInfo($theme);
-
-        if ($themeInfo && isset($themeInfo['lifecycle']) && $themeInfo['lifecycle'] === ExtensionLifecycle::OBSOLETE) {
-          $theme_installer->uninstall([$theme]);
-        }
-      }
-    }
-  }
 }
