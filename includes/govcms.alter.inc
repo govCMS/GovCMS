@@ -22,7 +22,7 @@ function govcms_toolbar() {
     'tab' => [
       '#type' => 'link',
       '#title' => t('GovCMS System Report'),
-      '#url' => Url::fromRoute('govcms.admin.system_report'),
+      '#url' => Url::fromRoute('govcms.system_report'),
       '#options' => [
         'attributes' => [
           'title' => t('GovCMS System Report'),
