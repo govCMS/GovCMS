@@ -1,15 +1,7 @@
-govcms.admin.system_report:
-  path: '/admin/reports/system-report'
-  defaults:
-    _controller: 'Drupal\govcms\Controller\LifecycleReportController::displayLifecycle'
-    _title: 'GovCMS System Report'
-  requirements:
-    _permission: 'access site reports'
-
 govcms.system_report:
-  path: '/admin/reports/govcms/system-report'
+  path: '/admin/reports/system-report'
   defaults:
     _title: 'GovCMS System Report'
     _controller: '\Drupal\govcms\Controller\SystemReportController'
   requirements:
-    _permission: 'access content'
+    _permission: 'access site reports'
