@@ -36,6 +36,7 @@ class GovcmsSubscriber implements EventSubscriberInterface {
   /**
    * {@inheritdoc}
    */
+  #[\Override]
   public static function getSubscribedEvents(): array {
     return [
       ModuleInstalledEvent::MODULES_INSTALLED => ['onModulesInstalled'],

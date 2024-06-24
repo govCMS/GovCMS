@@ -20,35 +20,27 @@ use Drupal\Core\Link;
 final class SystemReportController extends ControllerBase {
 
   /**
-   * The lifecycle service.
-   */
-  private readonly Lifecycle $lifecycle;
-
-  /**
-   * The current request.
-   */
-  private readonly Request $request;
-
-  protected $themeHandler;
-
-  /**
    * The controller constructor.
    */
   public function __construct(
-    Lifecycle $lifecycle,
-    Request $request,
+    /**
+     * The lifecycle service.
+     */
+    private readonly Lifecycle $lifecycle,
+    /**
+     * The current request.
+     */
+    private readonly Request $request,
     ModuleHandlerInterface $moduleHandler,
-    ThemeHandlerInterface $theme_handler
+    protected ThemeHandlerInterface $themeHandler
   ) {
-    $this->lifecycle = $lifecycle;
-    $this->request = $request;
     $this->moduleHandler = $moduleHandler;
-    $this->themeHandler = $theme_handler;
   }
 
   /**
    * {@inheritdoc}
    */
+  #[\Override]
   public static function create(ContainerInterface $container): self {
     return new self(
       $container->get('govcms.lifecycle'),
@@ -169,7 +161,7 @@ final class SystemReportController extends ControllerBase {
             'data' => [
               'name' => $item,
               'type' => ucfirst($type),
-              'lifecycle' => ucfirst($lifecycle),
+              'lifecycle' => ucfirst((string) $lifecycle),
               'status' => $statusText,
             ],
             'class' => [$row_class],
