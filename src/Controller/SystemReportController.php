@@ -29,6 +29,8 @@ final class SystemReportController extends ControllerBase {
    */
   private readonly Request $request;
 
+  protected $themeHandler;
+
   /**
    * The controller constructor.
    */
@@ -36,12 +38,12 @@ final class SystemReportController extends ControllerBase {
     Lifecycle $lifecycle,
     Request $request,
     ModuleHandlerInterface $moduleHandler,
-    ThemeHandlerInterface $themeHandler
+    ThemeHandlerInterface $theme_handler
   ) {
     $this->lifecycle = $lifecycle;
     $this->request = $request;
     $this->moduleHandler = $moduleHandler;
-    $this->themeHandler = $themeHandler;
+    $this->themeHandler = $theme_handler;
   }
 
   /**
