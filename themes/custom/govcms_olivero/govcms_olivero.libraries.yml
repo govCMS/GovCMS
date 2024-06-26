@@ -1,0 +1,5 @@
+# GovCMS Olivero styling.
+govcms-olivero-styling:
+  css:
+    theme:
+      css/govcms-olivero.theme.style.css: {}
