@@ -9,8 +9,8 @@ dependencies:
     - govcms_olivero
 id: govcms_olivero_community
 theme: govcms_olivero
-region: footer_second
-weight: 0
+region: footer_top
+weight: -3
 provider: null
 plugin: 'system_menu_block:govcms-community'
 settings:
