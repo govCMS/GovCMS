@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: govcms-about
-label: 'About GovCMS'
-description: 'About GovCMS'
-locked: false
