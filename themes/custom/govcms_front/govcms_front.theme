@@ -25,6 +25,7 @@ function govcms_front_preprocess_block__system_menu_block(&$variables) {
         if ($region === 'footer_top') {
           // Add the column class to the block.
           $variables['attributes']['class'][] = 'column';
+          $variables['attributes']['class'][] = 'footer-menu-block';
         }
         else {
           $variables['attributes']['class'][] = 'menu-block-' . $region;
@@ -40,6 +41,15 @@ function govcms_front_preprocess_block__system_menu_block(&$variables) {
  */
 function govcms_front_preprocess_block__system_branding_block(&$variables) {
   $variables['attributes']['class'][] = 'navbar-brand';
+}
+
+/**
+ *
+ * Implements hook_preprocess_HOOK() for breadcrumb.html.twig
+ */
+function govcms_front_preprocess_breadcrumb(&$variables) {
+  $variables['attributes']['class'][] = 'breadcrumb';
+  $variables['attributes']['class'][] = 'has-succeeds-separator';
 }
 
 function govcms_front_preprocess_menu__main(&$variables) {

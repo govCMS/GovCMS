@@ -176,6 +176,28 @@ ul {
   list-style-image: none;
 }
 
+.footer-menu-block ul {
+    list-style: none;
+    margin-left: 0;
+}
+
 footer .column h2 {
     font-size: var(--bulma-size-medium);
+}
+
+/* Regions */
+.region--content {
+  margin-block-end: var(--sp);
+}
+
+@media (min-width: 43.75rem) {
+  .region--content {
+    margin-block-end: var(--sp2);
+  }
+}
+
+@media (min-width: 62.5rem) {
+  .region--content {
+    margin-block-end: var(--sp3);
+  }
 }
