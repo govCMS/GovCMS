@@ -1,3 +1,18 @@
+
+/* Bulma Theme variables */
+:root {
+  --bulma-size-small: 0.75rem;
+  --bulma-size-normal: 1rem;
+  --bulma-size-medium: 1.25rem;
+  --bulma-size-large: 1.5rem;
+  --bulma-weight-light: 300;
+  --bulma-weight-normal: 400;
+  --bulma-weight-medium: 500;
+  --bulma-weight-semibold: 600;
+  --bulma-weight-bold: 700;
+  --bulma-weight-extrabold: 800;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   text-size-adjust: 100%;
@@ -161,3 +176,6 @@ ul {
   list-style-image: none;
 }
 
+footer .column h2 {
+    font-size: var(--bulma-size-medium);
+}
