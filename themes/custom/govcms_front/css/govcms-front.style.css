@@ -176,6 +176,17 @@ ul {
   list-style-image: none;
 }
 
+/* links inside of the main content region */
+.main-content a {
+    text-decoration: underline;
+    color: #1a73e8;
+}
+
+/* links inside of the footer region */
+footer li a {
+    color: #121212;
+}
+
 .footer-menu-block ul {
     list-style: none;
     margin-left: 0;
