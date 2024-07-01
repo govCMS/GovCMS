@@ -176,6 +176,21 @@ ul {
   list-style-image: none;
 }
 
+/* sidebar menu block */
+.menu-block-sidebar ul.navbar-start {
+    display: block;
+}
+
+.menu-block-sidebar ul.navbar-start li.navbar-item {
+    border-bottom: 1px solid gray;
+    padding-left: 0;
+}
+
+.menu-block-sidebar ul.navbar-start a {
+    text-decoration: none;
+}
+
+
 /* links inside of the main content region */
 .main-content a {
     text-decoration: underline;

@@ -9,7 +9,7 @@ dependencies:
     - govcms_front
 id: govcms_front_sidebar_navigation
 theme: govcms_front
-region: sidebar_second
+region: sidebar
 weight: -2
 provider: null
 plugin: 'system_menu_block:main'

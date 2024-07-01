@@ -52,6 +52,9 @@ function govcms_front_preprocess_breadcrumb(&$variables) {
   $variables['attributes']['class'][] = 'has-succeeds-separator';
 }
 
+/*
+ * Implements hook_preprocess_HOOK() for menu--main.html.twig
+ */
 function govcms_front_preprocess_menu__main(&$variables) {
   $variables['attributes']['class'][] = 'navbar-start';
 

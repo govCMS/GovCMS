@@ -70,7 +70,7 @@
       </header>
     {% endif %}
 
-    <div id="main-wrapper" class="layout-main-wrapper layout-container">
+    <div id="main-wrapper" class="layout-main-wrapper layout-container container">
       <div id="main" class="layout-main">
         <div class="main-content">
           <a id="main-content" tabindex="-1"></a>
@@ -80,13 +80,15 @@
             {{ page.breadcrumb }}
 
             {% if page.sidebar %}
-              <div class="sidebar-grid grid-full">
-                <main role="main" class="site-main">
+              <div class="columns">
+                <main role="main" class="site-main column is-four-fifths">
                   {{ page.content_above }}
                   {{ page.content }}
                 </main>
 
+                <div class="sidebar-wrapper column">
                 {{ page.sidebar }}
+                </div>
               </div>
             {% else %}
               <main role="main">
