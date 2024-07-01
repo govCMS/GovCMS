@@ -245,3 +245,30 @@ footer .column h2 {
   /* There is no variable for the color - #fff4f4. */
   background-color: #fff4f4;
 }
+
+/* Messages */
+.messages__wrapper .messages {
+    background: no-repeat 10px 17px;
+    padding: 15px 20px 15px 35px;
+}
+
+.messages.messages--error {
+    border-color: #c71c22;
+    color: #db1f25;
+    background-color: #fcedee;
+    background-image: url(../icons/error.svg);
+}
+
+.messages.messages--status {
+    border-color: #73a839;
+    color: #608d30;
+    background-color: #f5faf0;
+    background-image: url(../icons/check.svg);
+}
+
+.messages__wrapper .messages.messages--warning {
+    background-color: #fff3eb;
+    border-color: #dd5600;
+    color: #db5500;
+    background-image: url(../icons/warning.svg);
+}
