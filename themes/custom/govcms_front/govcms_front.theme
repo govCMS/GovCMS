@@ -69,3 +69,35 @@ function govcms_front_preprocess_menu__main(&$variables) {
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_HOOK() for node.html.twig.
+ */
+function govcms_front_preprocess_node(&$variables) {
+  // Remove the "Add new comment" link on teasers or when the comment form is
+  // displayed on the page.
+  if ($variables['teaser'] || !empty($variables['content']['comments']['comment_form'])) {
+    unset($variables['content']['links']['comment']['#links']['comment-add']);
+  }
+
+  // Apply custom date formatter to "date" field.
+  if (!empty($variables['date']) && !empty($variables['display_submitted']) && $variables['display_submitted'] === TRUE) {
+    $variables['date'] = \Drupal::service('date.formatter')->format($variables['node']->getCreatedTime(), 'olivero_medium');
+  }
+
+  // Pass layout variable to template if content type is article in full view
+  // mode. This is then used in the template to create a BEM style CSS class to
+  // control the layout.
+  if ($variables['node']->bundle() === 'article' && $variables['view_mode'] === 'full') {
+    $variables['layout'] = 'content-narrow';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for menu-local-task.html.twig.
+ */
+function govcms_front_preprocess_menu_local_task(&$variables) {
+  if (isset($variables['is_active']) && $variables['is_active']) {
+    $variables['attributes']['class'][] = 'is-active';
+  }
+}
