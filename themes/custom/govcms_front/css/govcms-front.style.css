@@ -26,6 +26,7 @@ body {
 div#main-wrapper {
   background: #fff;
   position: static;
+  min-height: 30rem;
 }
 
 .site-footer__inner.container {
