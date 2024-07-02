@@ -202,6 +202,11 @@ footer li a {
   color: #121212;
 }
 
+/* links inside of pager */
+.pagination ul.pagination-list a {
+    text-decoration: none;
+}
+
 .footer-menu-block ul {
   list-style: none;
   margin-left: 0;
