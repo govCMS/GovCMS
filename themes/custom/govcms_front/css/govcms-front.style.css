@@ -204,9 +204,14 @@ footer li a {
 
 /* links inside of pager */
 .pagination ul.pagination-list a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
+nav.pagination {
+  margin: 1.5rem 0;
+}
+
+/* Footer menu */
 .footer-menu-block ul {
   list-style: none;
   margin-left: 0;
@@ -253,32 +258,32 @@ footer .column h2 {
 
 /* Messages */
 .messages__wrapper .messages {
-    background: no-repeat 10px 17px;
-    padding: 15px 20px 15px 35px;
+  background: no-repeat 10px 17px;
+  padding: 15px 20px 15px 35px;
 }
 
 .messages.messages--error {
-    border-color: #c71c22;
-    color: #db1f25;
-    background-color: #fcedee;
-    background-image: url(../icons/error.svg);
+  border-color: #c71c22;
+  color: #db1f25;
+  background-color: #fcedee;
+  background-image: url(../icons/error.svg);
 }
 
 .messages.messages--status {
-    border-color: #73a839;
-    color: #608d30;
-    background-color: #f5faf0;
-    background-image: url(../icons/check.svg);
+  border-color: #73a839;
+  color: #608d30;
+  background-color: #f5faf0;
+  background-image: url(../icons/check.svg);
 }
 
 .messages__wrapper .messages.messages--warning {
-    background-color: #fff3eb;
-    border-color: #dd5600;
-    color: #db5500;
-    background-image: url(../icons/warning.svg);
+  background-color: #fff3eb;
+  border-color: #dd5600;
+  color: #db5500;
+  background-image: url(../icons/warning.svg);
 }
 
 /* RSS icon */
 a.feed-icon {
-    display: block;
+  display: block;
 }
