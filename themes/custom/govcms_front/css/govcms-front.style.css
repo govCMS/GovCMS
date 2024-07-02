@@ -272,3 +272,8 @@ footer .column h2 {
     color: #db5500;
     background-image: url(../icons/warning.svg);
 }
+
+/* RSS icon */
+a.feed-icon {
+    display: block;
+}
