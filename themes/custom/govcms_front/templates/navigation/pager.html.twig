@@ -60,7 +60,7 @@
       {% endif %}
       {# Now generate the actual pager piece. #}
       {% for key, item in items.pages %}
-        <li class="pagination-link{{ current == key ? ' is-active' : '' }}">
+        <li class="pagination-link{{ current == key ? ' is-current' : '' }}">
           {% if current == key %}
             {% set title = 'Current page'|t %}
           {% else %}
