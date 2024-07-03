@@ -23,16 +23,30 @@ body {
   margin: 0;
 }
 
+/* Make full height */
+html, body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+article.node.node--view-mode-full {
+    min-height: 30rem;
+}
+
+/* main div wrapper */
 div#main-wrapper {
   background: #fff;
   position: static;
-  min-height: 33rem;
+  min-height: 50rem;
 }
 
+/* footer container */
 .site-footer__inner.container {
   padding: 0.7rem;
 }
 
+/* page header */
 #page #header {
   background: none;
 }
@@ -63,6 +77,7 @@ div#main-wrapper {
   background-color: #f5f5f5;
 }
 
+/* side bar */
 .sidebar .block {
   background: none;
   border: none;
@@ -89,6 +104,7 @@ div#main-wrapper {
   background-color: #f5f5f5;
 }
 
+/* header container */
 .container.site-header__inner__container.navbar {
   background: #fff;
   border-bottom: .5rem solid #1678b3;
@@ -106,6 +122,7 @@ div#block-govcms-front-site-branding {
   width: 95%;
 }
 
+/* general html tags */
 h1 {
   letter-spacing: -0.01em;
   font-size: 1.75rem;
