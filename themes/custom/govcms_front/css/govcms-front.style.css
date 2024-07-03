@@ -71,14 +71,6 @@ div#page {
   background: none;
 }
 
-#page #header #block-govcms-olivero-site-branding {
-  padding: 3rem 0;
-}
-
-#page #header #block-govcms-olivero-site-branding .site-branding__logo img {
-  width: 250px;
-}
-
 #page #header .region-primary-menu .block-menu .menu {
   margin: 0;
   padding: 0;

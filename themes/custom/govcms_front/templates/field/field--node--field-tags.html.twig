@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * olivero theme override for tags field.
+ * govcms_front theme override for tags field.
  *
  * Available variables:
  * - attributes: HTML attributes for the containing element.
@@ -37,7 +37,6 @@
   ]
 %}
 
-{{ attach_library('olivero/tags') }}
 <div{{ attributes.addClass(classes) }}>
   {% if not label_hidden %}
     <h3{{ title_attributes.addClass(title_classes) }}>{{ label }}</h3>
