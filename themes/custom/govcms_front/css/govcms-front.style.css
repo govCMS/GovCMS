@@ -46,13 +46,14 @@ article.node.node--view-mode-full {
 div#main-wrapper {
   background: #fff;
   position: static;
-  min-height: 50rem;
+  flex: 1;
   width: 100%;
 }
 
 /* footer container */
 footer.container {
   width: 100%;
+  flex: 0;
 }
 
 .site-footer__inner.container {
