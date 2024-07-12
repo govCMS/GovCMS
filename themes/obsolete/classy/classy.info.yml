@@ -1,8 +1,0 @@
-name: Classy
-type: theme
-base theme: false
-description: 'Drupal administration theme with modern minimalist design. [obsolete]'
-package: GovCMS [obsolete]
-core_version_requirement: ^9 || ^10
-lifecycle: obsolete
-lifecycle_link: 'https://github.com/GovCMS/GovCMS'

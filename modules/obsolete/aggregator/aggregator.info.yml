@@ -1,0 +1,18 @@
+name: Aggregator
+type: module
+description: 'Gathers and displays syndicated content (RSS, RDF, and Atom feeds) from external sources.'
+lifecycle: obsolete
+lifecycle_link: 'https://github.com/GovCMS/GovCMS'
+package: Core
+core_version_requirement: '>=10.0'
+configure: aggregator.admin_settings
+dependencies:
+  - drupal:file
+  - drupal:options
+test_dependencies:
+  - drupal:classy
+
+# Information added by Drupal.org packaging script on 2023-05-18
+version: '2.0.2'
+project: 'aggregator'
+datestamp: 1684453774
