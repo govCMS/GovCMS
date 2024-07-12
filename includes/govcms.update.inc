@@ -137,6 +137,7 @@ function govcms_update_10006() {
   $lifecycle_service->uninstallObsoleteModules($modules_to_uninstall);
 }
 /**
+ * Implements hook_update_N().
  * Uninstall rdf, quickedit, and adminimal_admin_toolbar module if marked as 'obsolete'.
  */
 function govcms_update_10007() {
