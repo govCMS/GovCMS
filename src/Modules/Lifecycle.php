@@ -22,7 +22,8 @@ class Lifecycle {
     'panelizer',
     'swiftmailer',
     'tracker',
-    'block_place'
+    'block_place',
+    'aggregator'
   ];
 
   /**
