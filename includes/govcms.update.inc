@@ -136,13 +136,26 @@ function govcms_update_10006() {
   // Call the service method to uninstall specified modules marked as 'obsolete'.
   $lifecycle_service->uninstallObsoleteModules($modules_to_uninstall);
 }
+/**
+ * Uninstall rdf, quickedit, and adminimal_admin_toolbar module if marked as 'obsolete'.
+ */
+function govcms_update_10007() {
+  // Get the Lifecycle service.
+  $lifecycle_service = \Drupal::service('govcms.modules.lifecycle');
 
+  // List of modules to uninstall.
+  $modules_to_uninstall = ['block_place'];
+
+  // Call the service method to uninstall specified modules marked as 'obsolete'.
+  $lifecycle_service->uninstallObsoleteModules($modules_to_uninstall);
+}
+  
 /**
  * Implements hook_update_N().
  * Install events_log_track_file module for any sites with file_to_media module
  * installed and events_log_track_file uninstalled.
  */
-function govcms_update_10007() {
+function govcms_update_10008() {
     $moduleHandler = \Drupal::service('module_handler');
     $dependencyNotMet = $moduleHandler->moduleExists('file_to_media') && !$moduleHandler->moduleExists('event_log_track_file');
     if ($dependencyNotMet) {
