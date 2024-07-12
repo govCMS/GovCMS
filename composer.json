@@ -39,7 +39,7 @@
         "drupal/context": "5.0.0-rc1",
         "drupal/core-composer-scaffold": "10.2.7",
         "drupal/core-recommended": "10.2.7",
-        "drupal/crop": "2.3.0",
+        "drupal/crop": "2.4.0",
         "drupal/ctools": "4.1.0",
         "drupal/devel": "5.1.2",
         "drupal/diff": "1.7.0",
