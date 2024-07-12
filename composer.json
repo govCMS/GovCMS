@@ -83,7 +83,7 @@
         "drupal/migrate_plus": "6.0.2",
         "drupal/migrate_source_csv": "3.6.0",
         "drupal/migrate_tools": "6.0.4",
-        "drupal/minisite": "2.1.0",
+        "drupal/minisite": "2.2.0",
         "drupal/modifiers": "1.6.0",
         "drupal/module_permissions": "3.2.0",
         "drupal/panels": "4.8.0",
