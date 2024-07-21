@@ -110,7 +110,7 @@
         "drupal/tfa": "1.7.0",
         "drupal/twig_tweak": "3.3.0",
         "drupal/username_enumeration_prevention": "1.3.0",
-        "drupal/webform": "6.2.3",
+        "drupal/webform": "6.2.7",
         "govcms-assets/chosen": "2.2.1",
         "oomphinc/composer-installers-extender": "^2.0",
         "webflo/drupal-finder": "^1.2"
