@@ -1,0 +1,6 @@
+allow:
+  set_drupal_pwd: false
+login_link_show: false
+register_users: false
+secure: true
+httponly: true
