@@ -150,16 +150,16 @@ function govcms_update_10007() {
   // Call the service method to uninstall specified modules marked as 'obsolete'.
   $lifecycle_service->uninstallObsoleteModules($modules_to_uninstall);
 }
-  
+
 /**
  * Implements hook_update_N().
- * Install events_log_track_file module for any sites with file_to_media module
- * installed and events_log_track_file uninstalled.
+ *
+ * Installs events_log_track_file module if it is not already installed.
  */
 function govcms_update_10008() {
     $moduleHandler = \Drupal::service('module_handler');
-    $dependencyNotMet = $moduleHandler->moduleExists('file_to_media') && !$moduleHandler->moduleExists('event_log_track_file');
-    if ($dependencyNotMet) {
+    $notInstalled = !$moduleHandler->moduleExists('event_log_track_file');
+    if ($notInstalled) {
         $moduleInstaller = \Drupal::service('module_installer');
         $moduleInstaller->install(['event_log_track_file']);
     }

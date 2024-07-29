@@ -254,12 +254,3 @@ function govcms_security_form_tfa_base_overview_alter(&$form, FormStateInterface
   }
 }
 
-/**
- * Implements hook_module_installed()
- */
-function govcms_security_modules_installed($modules) {
-    if (in_array('file_to_media', $modules)) {
-        $installer = \Drupal::service('module_installer');
-        $installer->install(['event_log_track_file']);
-    }
-}
