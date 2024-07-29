@@ -253,4 +253,3 @@ function govcms_security_form_tfa_base_overview_alter(&$form, FormStateInterface
     $form['actions']['reset_skip_attempts']['#access'] = FALSE;
   }
 }
-
