@@ -56,6 +56,7 @@
         "drupal/entity_reference_revisions": "1.11.0",
         "drupal/environment_indicator": "4.0.19",
         "drupal/events_log_track": "3.1.9",
+        "drupal/externalauth":"2.0.6",
         "drupal/facets": "2.0.7",
         "drupal/field_group": "3.4.0",
         "drupal/file_to_media": "1.0.2",
@@ -105,6 +106,7 @@
         "drupal/shield": "1.8.0",
         "drupal/simple_oauth": "5.2.5",
         "drupal/simple_sitemap": "4.1.9",
+        "drupal/simplesamlphp_auth": "4.0.0",
         "drupal/symfony_mailer": "1.4.1",
         "drupal/token": "1.15.0",
         "drupal/tfa": "1.7.0",
@@ -113,6 +115,7 @@
         "drupal/webform": "6.2.7",
         "govcms-assets/chosen": "2.2.1",
         "oomphinc/composer-installers-extender": "^2.0",
+        "simplesamlphp/simplesamlphp": "2.2.2",
         "webflo/drupal-finder": "^1.2"
     },
     "require-dev": {
@@ -128,7 +131,8 @@
             "oomphinc/composer-installers-extender": true,
             "drupal/core-vendor-hardening": true,
             "phpstan/extension-installer": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "simplesamlphp/composer-module-installer": true
         },
         "bin-dir": "bin/",
         "sort-packages": true,
@@ -155,6 +159,10 @@
         "patches": {
             "drupal/login_security": {
                 "Correctly detect invalid username/password or blocked account login errors - https://www.drupal.org/project/login_security/issues/3292974": "https://www.drupal.org/files/issues/2023-02-14/login_security-3292974-21.patch"
+            },
+            "drupal/password_policy": {
+                "Apply password policies for SSO users - https://www.drupal.org/project/password_policy/issues/3366169": "https://www.drupal.org/files/issues/2024-07-25/password_policy-3366169-8.patch",
+                "AJAX error when password field is hidden - https://www.drupal.org/project/password_policy/issues/3442714": "https://www.drupal.org/files/issues/2024-07-26/password_policy-3442714-7.patch" 
             },
             "drupal/tfa": {
                 "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2023-07-19/tfa-2930541-81.patch"
