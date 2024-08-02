@@ -1,0 +1,55 @@
+name: GovCMS Release Branch Check
+
+on:
+  push:
+    branches: 'release/**'
+
+permissions:
+  contents: read
+
+
+jobs:
+  check-branch-name:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check release branch name format
+        run: |
+          echo "Current branch is ${GITHUB_REF}"
+          REGEX="^refs/heads/release/([0-9]+)\.x/([0-9]+)\.[0-9]+\.[0-9]+$"
+          if [[ "$GITHUB_REF" =~ $REGEX ]]; then
+            major_ver=${BASH_REMATCH[1]}
+            rep_major_ver=${BASH_REMATCH[2]}
+            if [[ "$major_ver" == "$rep_major_ver" ]]; then
+              echo "Correct release branch name format"
+            else
+              echo "Incorrect release branch name format"
+              exit 1
+            fi
+          else
+            echo "Incorrect release branch name format"
+            exit 1
+          fi
+
+  check-version:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Get GovCMS version
+        id: getGovcmsVersion
+        uses: mikefarah/yq@master
+        with:
+          cmd: yq '.version' 'govcms.info.yml'
+      - name: Check branch and govcms version are equal
+        run: |
+          G_VERSION=${{ steps.getGovcmsVersion.outputs.result }}
+          echo "GovCMS version defined as ${G_VERSION}"
+          echo "Current branch is ${GITHUB_REF}"
+          B_VERSION=$(echo $GITHUB_REF | cut -d '/' -f 5)
+          echo "Branch version is set to ${B_VERSION}"
+          if [ "$G_VERSION" != "$B_VERSION" ]; then
+            echo "GovCMS and Branch versions are not equal."
+            exit 1
+          fi
