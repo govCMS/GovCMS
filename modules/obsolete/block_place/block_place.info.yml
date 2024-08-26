@@ -1,7 +1,0 @@
-name: Place Blocks
-type: module
-description: 'Allow administrators to place blocks from any Drupal page [obsolete]'
-package: GovCMS [obsolete]
-core_version_requirement: ^9 || ^10
-lifecycle: obsolete
-lifecycle_link: 'https://github.com/GovCMS/GovCMS'

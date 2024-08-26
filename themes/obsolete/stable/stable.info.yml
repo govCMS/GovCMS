@@ -1,8 +1,0 @@
-name: Stable
-type: theme
-base theme: false
-description: 'A base theme using Drupal 8.0.0 core markup and CSS. [obsolete]'
-package: GovCMS [obsolete]
-core_version_requirement: ^9 || ^10
-lifecycle: obsolete
-lifecycle_link: 'https://github.com/GovCMS/GovCMS'
