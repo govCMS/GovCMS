@@ -100,7 +100,7 @@
         "drupal/search_api_solr": "4.3.5",
         "drupal/scheduled_transitions": "2.5.0",
         "drupal/search_api_attachments": "9.0.3",
-        "drupal/seckit": "2.0.1",
+        "drupal/seckit": "2.0.2",
         "drupal/securitytxt": "1.6.0",
         "drupal/shield": "1.8.0",
         "drupal/simple_oauth": "5.2.5",
