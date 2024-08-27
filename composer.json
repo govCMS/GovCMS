@@ -153,9 +153,6 @@
         "enable-patching": true,
         "composer-exit-on-patch-failure": true,
         "patches": {
-            "drupal/login_security": {
-                "Correctly detect invalid username/password or blocked account login errors - https://www.drupal.org/project/login_security/issues/3292974": "https://www.drupal.org/files/issues/2023-02-14/login_security-3292974-21.patch"
-            },
             "drupal/tfa": {
                 "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2023-07-19/tfa-2930541-81.patch"
             }
