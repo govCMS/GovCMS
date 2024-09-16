@@ -136,3 +136,32 @@ function govcms_update_10006() {
   // Call the service method to uninstall specified modules marked as 'obsolete'.
   $lifecycle_service->uninstallObsoleteModules($modules_to_uninstall);
 }
+
+/**
+ * Implements hook_update_N().
+ * Uninstall rdf, quickedit, and adminimal_admin_toolbar module if marked as 'obsolete'.
+ */
+function govcms_update_10007() {
+  // Get the Lifecycle service.
+  $lifecycle_service = \Drupal::service('govcms.modules.lifecycle');
+
+  // List of modules to uninstall.
+  $modules_to_uninstall = ['block_place'];
+
+  // Call the service method to uninstall specified modules marked as 'obsolete'.
+  $lifecycle_service->uninstallObsoleteModules($modules_to_uninstall);
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Installs events_log_track_file module if it is not already installed.
+ */
+function govcms_update_10008() {
+    $moduleHandler = \Drupal::service('module_handler');
+    $notInstalled = !$moduleHandler->moduleExists('event_log_track_file');
+    if ($notInstalled) {
+        $moduleInstaller = \Drupal::service('module_installer');
+        $moduleInstaller->install(['event_log_track_file']);
+    }
+}
