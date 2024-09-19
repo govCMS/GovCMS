@@ -90,7 +90,7 @@
         "drupal/password_policy": "4.0.3",
         "drupal/pathauto": "1.13.0",
         "drupal/real_aes": "2.6.0",
-        "drupal/recaptcha": "3.3.0",
+        "drupal/recaptcha": "3.4.0",
         "drupal/recaptcha_v3": "2.0.2",
         "drupal/redirect": "1.9.0",
         "drupal/rest_menu_items": "3.0.3",
