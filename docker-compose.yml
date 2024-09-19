@@ -15,6 +15,7 @@ services:
       - $PWD/modules:/app/web/profiles/govcms/modules
       - $PWD/themes:/app/web/profiles/govcms/themes
       - $PWD/src:/app/web/profiles/govcms/src
+      - ./includes:/app/web/profiles/govcms/includes
       - $PWD/tests:/app/web/profiles/govcms/tests
     develop:
       watch:
