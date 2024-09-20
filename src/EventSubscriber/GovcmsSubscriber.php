@@ -3,7 +3,7 @@
 namespace Drupal\govcms\EventSubscriber;
 
 use Drupal\Core\Messenger\MessengerInterface;
-use Drupal\govcms\Modules\DefaultPermissions;
+use Drupal\govcms\Permissions\DefaultPermissions;
 use Drupal\user\Entity\Role;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
@@ -36,6 +36,7 @@ class GovcmsSubscriber implements EventSubscriberInterface {
   /**
    * {@inheritdoc}
    */
+  #[\Override]
   public static function getSubscribedEvents(): array {
     return [
       ModuleInstalledEvent::MODULES_INSTALLED => ['onModulesInstalled'],
