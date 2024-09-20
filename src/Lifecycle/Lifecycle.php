@@ -1,9 +1,12 @@
 <?php
 
-namespace Drupal\govcms\Modules;
+namespace Drupal\govcms\Lifecycle;
 
 use Drupal\Core\Extension\ExtensionLifecycle;
 use Drupal\Core\Extension\ModuleHandlerInterface;
+use Drupal\Core\Extension\ModuleInstallerInterface;
+use Drupal\Core\Extension\ThemeHandlerInterface;
+use Drupal\Core\Extension\ThemeInstallerInterface;
 
 /**
  * Service description.
@@ -11,10 +14,10 @@ use Drupal\Core\Extension\ModuleHandlerInterface;
 class Lifecycle {
 
   // Deprecated modules.
-  const DEPRECATED_MODULES = [];
+  public const DEPRECATED_MODULES = [];
 
   // Obsolete modules.
-  const OBSOLETE_MODULES = [
+  public const OBSOLETE_MODULES = [
     'ckeditor',
     'config_filter',
     'forum',
@@ -26,20 +29,48 @@ class Lifecycle {
     'aggregator'
   ];
 
+  // Deprecated themes.
+  public const DEPRECATED_THEMES = [];
+
+  // Obsolete themes.
+  public const OBSOLETE_THEMES = [
+    'bartik',
+    'seven',
+  ];
+
   /**
    * Constructs a new service.
    */
   public function __construct() {}
 
   /**
-   * Updates module information based on its lifecycle status.
+   * Retrieves the lifecycle status of all modules and themes.
+   *
+   * @return array An array with two keys, 'modules' and 'themes', each containing an array
+   *               of 'deprecated' and 'obsolete' items.
+   */
+  public function getLifecycleStatus() {
+    return [
+      'modules' => [
+        'deprecated' => self::DEPRECATED_MODULES,
+        'obsolete' => self::OBSOLETE_MODULES,
+      ],
+      'themes' => [
+        'deprecated' => self::DEPRECATED_THEMES,
+        'obsolete' => self::OBSOLETE_THEMES,
+      ]
+    ];
+  }
+
+  /**
+   * Updates extension information based on its lifecycle status.
    *
    * @param array $info
-   *   The module information array.
+   *   The extension information array.
    * @param string $lifecycle
    *   The lifecycle status ('deprecated' or 'obsolete').
    */
-  public function updateModuleInfo(array &$info, string $lifecycle): void {
+  public function updateExtensionInfo(array &$info, string $lifecycle): void {
     $info['name'] .= " [$lifecycle]";
     $info['package'] = "GovCMS [$lifecycle]";
     $info['lifecycle'] = $lifecycle;
