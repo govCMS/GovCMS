@@ -1,6 +1,10 @@
 services:
+  govcms.lifecycle:
+    class: Drupal\govcms\Lifecycle\Lifecycle
+
   govcms.modules.lifecycle:
-    class: Drupal\govcms\Modules\Lifecycle
+    alias: govcms.lifecycle
+    deprecated: 'The "%alias_id%" service is deprecated and will be removed in a future release. Use "govcms.lifecycle" instead.'
 
   govcms.event_subscriber:
     class: Drupal\govcms\EventSubscriber\GovcmsSubscriber

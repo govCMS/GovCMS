@@ -9,17 +9,15 @@ use Drupal\Component\EventDispatcher\Event;
  */
 class ModuleInstalledEvent extends Event {
 
-  const MODULES_INSTALLED = 'govcms.modules_installed';
-
-  public array $modules;
+  public const MODULES_INSTALLED = 'govcms.modules_installed';
 
   /**
    * Constructs the object.
    *
    * @param array $modules
    */
-  public function __construct(array $modules) {
-    $this->modules = $modules;
+  public function __construct(public array $modules)
+  {
   }
 
 }
