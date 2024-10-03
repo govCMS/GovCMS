@@ -128,7 +128,8 @@
             "oomphinc/composer-installers-extender": true,
             "drupal/core-vendor-hardening": true,
             "phpstan/extension-installer": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "tbachert/spi": true
         },
         "bin-dir": "bin/",
         "sort-packages": true,
