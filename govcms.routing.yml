@@ -1,7 +1,0 @@
-govcms.system_report:
-  path: '/admin/reports/system-report'
-  defaults:
-    _title: 'GovCMS System Report'
-    _controller: '\Drupal\govcms\Controller\SystemReportController'
-  requirements:
-    _permission: 'access site reports'
