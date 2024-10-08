@@ -52,7 +52,6 @@ permissions:
   - 'access media overview'
   - 'access shortcuts'
   - 'access site in maintenance mode'
-  - 'access site reports'
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'access user profiles'
