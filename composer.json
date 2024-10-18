@@ -93,7 +93,7 @@
         "drupal/recaptcha": "3.4.0",
         "drupal/recaptcha_v3": "2.0.3",
         "drupal/redirect": "1.10.0",
-        "drupal/rest_menu_items": "3.0.3",
+        "drupal/rest_menu_items": "3.0.4",
         "drupal/robotstxt": "1.6.0",
         "drupal/role_delegation": "1.2.0",
         "drupal/search_api": "1.35.0",
