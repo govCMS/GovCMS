@@ -95,7 +95,7 @@
         "drupal/redirect": "1.10.0",
         "drupal/rest_menu_items": "3.0.4",
         "drupal/robotstxt": "1.6.0",
-        "drupal/role_delegation": "1.2.0",
+        "drupal/role_delegation": "1.3.0",
         "drupal/search_api": "1.35.0",
         "drupal/search_api_solr": "4.3.5",
         "drupal/scheduled_transitions": "2.5.0",
