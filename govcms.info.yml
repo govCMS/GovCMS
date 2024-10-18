@@ -10,7 +10,6 @@ distribution:
   langcode: en
 
 install:
-  - drupal:big_pipe
   - drupal:block
   - drupal:block_content
   - drupal:ckeditor5
