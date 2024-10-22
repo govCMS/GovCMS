@@ -108,7 +108,7 @@
         "drupal/symfony_mailer": "1.4.1",
         "drupal/token": "1.15.0",
         "drupal/tfa": "1.8.0",
-        "drupal/twig_tweak": "3.3.0",
+        "drupal/twig_tweak": "3.4.0",
         "drupal/username_enumeration_prevention": "1.4.0",
         "drupal/webform": "6.2.7",
         "govcms-assets/chosen": "2.2.1",
