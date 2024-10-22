@@ -65,7 +65,7 @@
         "drupal/inline_entity_form": "3.0.0-rc20",
         "drupal/honeypot": "2.1.4",
         "drupal/key": "1.19.0",
-        "drupal/layout_builder_modal": "1.2.0",
+        "drupal/layout_builder_modal": "2.0.0",
         "drupal/layout_builder_restrictions": "2.20.0",
         "drupal/linked_field": "1.5.0",
         "drupal/linkit": "6.1.4",
