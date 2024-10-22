@@ -117,7 +117,7 @@
     },
     "require-dev": {
         "drupal/core-dev": "^10.2",
-        "drush/drush": "~12"
+        "drush/drush": "~13"
     },
     "config": {
         "allow-plugins": {
