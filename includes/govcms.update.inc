@@ -165,3 +165,17 @@ function govcms_update_10008() {
         $moduleInstaller->install(['event_log_track_file']);
     }
 }
+/**
+ * Implements hook_update_N().
+ * Uninstall aggregator module if marked as 'obsolete'.
+ */
+function govcms_update_10009() {
+  // Get the Lifecycle service.
+  $lifecycle_service = \Drupal::service('govcms.modules.lifecycle');
+
+  // List of modules to uninstall.
+  $modules_to_uninstall = ['aggregator'];
+
+  // Call the service method to uninstall specified modules marked as 'obsolete'.
+  $lifecycle_service->uninstallObsoleteModules($modules_to_uninstall);
+}
