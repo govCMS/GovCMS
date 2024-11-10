@@ -1,0 +1,98 @@
+<?php
+
+/**
+ *
+ * @file
+ * Functions to support theming in the GovCMS Front theme.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK() for block--system-menu-block.html.twig
+ */
+function govcms_front_preprocess_block__system_menu_block(&$variables) {
+  if (!empty($variables['elements']['#id'])) {
+    if ($variables['elements']['#id'] === 'govcms_front_main_navigation') {
+      $variables['attributes']['class'][] = 'navbar';
+      $variables['attributes']['class'][] = 'is-transparent';
+      $variables['attributes']['class'][] = 'has-text-weight-bold';
+    }
+    else {
+      /** @var \Drupal\block\BlockInterface $block */
+      $block = \Drupal::entityTypeManager()->getStorage('block')->load($variables['elements']['#id']);
+      if ($block) {
+        $region = $block->getRegion();
+
+        if ($region === 'footer_top') {
+          // Add the column class to the block.
+          $variables['attributes']['class'][] = 'column';
+          $variables['attributes']['class'][] = 'footer-menu-block';
+        }
+        else {
+          $variables['attributes']['class'][] = 'menu-block-' . $region;
+        }
+      }
+    }
+  }
+}
+
+/**
+ *
+ * Implements hook_preprocess_HOOK() for block--system-branding-block.html.twig
+ */
+function govcms_front_preprocess_block__system_branding_block(&$variables) {
+  $variables['attributes']['class'][] = 'navbar-brand';
+}
+
+/**
+ *
+ * Implements hook_preprocess_HOOK() for breadcrumb.html.twig
+ */
+function govcms_front_preprocess_breadcrumb(&$variables) {
+  $variables['attributes']['class'][] = 'breadcrumb';
+  $variables['attributes']['class'][] = 'has-succeeds-separator';
+}
+
+/*
+ * Implements hook_preprocess_HOOK() for menu--main.html.twig
+ */
+function govcms_front_preprocess_menu__main(&$variables) {
+  $variables['attributes']['class'][] = 'navbar-start';
+
+  if (isset($variables['items'])) {
+    foreach ($variables['items'] as &$item) {
+      if (isset($item['attributes']) && is_array($item['attributes'])) {
+        $item['attributes'] = new Attribute($item['attributes']);
+      } elseif (!isset($item['attributes'])) {
+        $item['attributes'] = new Attribute();
+      }
+      $item['attributes']->addClass('navbar-item');
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for node.html.twig.
+ */
+function govcms_front_preprocess_node(&$variables) {
+  // Remove the "Add new comment" link on teasers or when the comment form is
+  // displayed on the page.
+  if ($variables['teaser'] || !empty($variables['content']['comments']['comment_form'])) {
+    unset($variables['content']['links']['comment']['#links']['comment-add']);
+  }
+
+  // Pass layout variable to template if content type is article in full view
+  // mode. This is then used in the template to create a BEM style CSS class to
+  // control the layout.
+  if ($variables['node']->bundle() === 'article' && $variables['view_mode'] === 'full') {
+    $variables['layout'] = 'content-narrow';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for menu-local-task.html.twig.
+ */
+function govcms_front_preprocess_menu_local_task(&$variables) {
+  if (isset($variables['is_active']) && $variables['is_active']) {
+    $variables['attributes']['class'][] = 'is-active';
+  }
+}

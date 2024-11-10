@@ -1,0 +1,11 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      css/bulmaswatch-cerulean.min.css: {}
+
+govcms-override:
+  version: 1.x
+  css:
+    theme:
+      css/govcms-front.style.css: {}

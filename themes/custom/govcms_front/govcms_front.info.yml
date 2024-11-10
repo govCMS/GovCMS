@@ -1,0 +1,23 @@
+name: 'GovCMS Front'
+type: theme
+description: 'A prototype front theme from GovCMS.'
+core_version_requirement: ^10 || ^11
+base theme: false
+package: 'GovCMS'
+regions:
+  header: Header
+  primary_menu: Primary menu
+  secondary_menu: Secondary menu
+  hero: Hero (full width)
+  highlighted: Highlighted
+  breadcrumb: Breadcrumb
+  social: Social Bar
+  content_above: Content Above
+  content: Content
+  sidebar: Sidebar
+  content_below: Content Below
+  footer_top: Footer Top
+  footer_bottom: Footer Bottom
+libraries:
+ - govcms_front/global-styling
+ - govcms_front/govcms-override

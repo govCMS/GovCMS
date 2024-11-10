@@ -1,0 +1,3 @@
+govcms_front.settings:
+  type: theme_settings
+  label: 'GovCMS front settings'
