@@ -115,7 +115,7 @@
         "drupal/webform": "6.2.7",
         "govcms-assets/chosen": "2.2.1",
         "oomphinc/composer-installers-extender": "^2.0",
-        "simplesamlphp/simplesamlphp": "2.3.2",
+        "simplesamlphp/simplesamlphp": "2.3.3",
         "webflo/drupal-finder": "^1.2"
     },
     "require-dev": {
