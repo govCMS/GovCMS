@@ -112,7 +112,7 @@
         "drupal/tfa": "1.9.0",
         "drupal/twig_tweak": "3.4.0",
         "drupal/username_enumeration_prevention": "1.4.0",
-        "drupal/webform": "6.2.7",
+        "drupal/webform": "6.2.8",
         "govcms-assets/chosen": "2.2.1",
         "oomphinc/composer-installers-extender": "^2.0",
         "simplesamlphp/simplesamlphp": "2.3.2",
