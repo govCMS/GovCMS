@@ -26,7 +26,7 @@
         "drupal/bigmenu": "2.1.0",
         "drupal/block_inactive_users": "2.8.0",
         "drupal/captcha": "2.0.7",
-        "drupal/chosen": "4.0.3",
+        "drupal/chosen": "5.0.1",
         "drupal/components": "3.1.0",
         "drupal/config_filter": "2.7.0",
         "drupal/config_ignore": "3.3.0",
