@@ -85,7 +85,7 @@
         "drupal/migrate_tools": "6.0.4",
         "drupal/minisite": "2.3.0",
         "drupal/modifiers": "1.6.0",
-        "drupal/module_permissions": "3.2.0",
+        "drupal/module_permissions": "4.0.0",
         "drupal/panels": "4.8.0",
         "drupal/paragraphs": "1.18.0",
         "drupal/password_policy": "4.0.3",
@@ -133,7 +133,6 @@
         "drupal/media_bulk_upload": "*",
         "drupal/media_vimeo_domain_privacy": "*",
         "drupal/minisite": "*",
-        "drupal/module_permissions": "*",
         "drupal/simplesamlphp_auth": "*",
         "simplesamlphp/simplesamlphp": "*"
     },
