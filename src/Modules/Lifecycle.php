@@ -18,6 +18,7 @@ class Lifecycle {
     'ckeditor',
     'config_filter',
     'forum',
+    'google_analytics',
     'mailsystem',
     'panelizer',
     'swiftmailer',
