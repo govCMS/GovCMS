@@ -185,7 +185,7 @@ function govcms_update_10009() {
  * Implements hook_update_N().
  * Uninstall mailsystem module if marked as 'obsolete'.
  */
-function govcms_update_10010() {
+function govcms_update_10011() {
   // Get the Lifecycle service.
   $lifecycle_service = \Drupal::service('govcms.modules.lifecycle');
 
