@@ -110,7 +110,7 @@
         "drupal/simplesamlphp_auth": "4.0.1",
         "drupal/symfony_mailer": "1.5.0",
         "drupal/token": "1.15.0",
-        "drupal/tfa": "1.10.0",
+        "drupal/tfa": "1.11.0",
         "drupal/twig_tweak": "3.4.1",
         "drupal/username_enumeration_prevention": "1.4.0",
         "drupal/webform": "6.2.9",
