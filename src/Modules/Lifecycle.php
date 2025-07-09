@@ -27,6 +27,7 @@ class Lifecycle {
     'block_inactive_users',
     'event_log_track_ui',
     'panels', 
+    'govcms_ui'
   ];
 
   /**
