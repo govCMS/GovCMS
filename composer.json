@@ -28,7 +28,6 @@
         "drupal/captcha": "2.0.7",
         "drupal/chosen": "4.0.3",
         "drupal/components": "3.1.0",
-        "drupal/config_filter": "2.7.0",
         "drupal/config_ignore": "3.3.0",
         "drupal/config_perms": "2.3.0",
         "drupal/config_split": "2.0.2",
