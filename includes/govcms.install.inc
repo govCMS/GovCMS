@@ -39,10 +39,3 @@ function govcms_default_permissions() {
     user_role_grant_permissions(RoleInterface::AUTHENTICATED_ID, ['view securitytxt']);
   }
 }
-
-/**
- * Implements hook_install().
- */
-function govcms_install() {
-  \Drupal::service('module_installer')->install(['govcms_dlm']);
-}
