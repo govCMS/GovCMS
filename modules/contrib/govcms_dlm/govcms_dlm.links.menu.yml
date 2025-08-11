@@ -1,0 +1,5 @@
+govcms_dlm.form:
+  route_name: govcms_dlm.form
+  title: 'Email DLM settings'
+  description: 'Set your email markings here for site wide emails'
+  parent: system.admin_config_system

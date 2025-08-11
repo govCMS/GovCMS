@@ -1,0 +1,134 @@
+<?php
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\webform\Entity\Webform;
+
+/**
+ * @file
+ * Main functions of the govcms_dlm module.
+ */
+
+/**
+ * Add DLM field to Webform settings.
+ * 
+ *What it does:
+ *This hook modifies the Webform settings form.
+ *It adds a new DLM Classification dropdown field to each webform’s settings page.
+ *The selected DLM value is stored using third-party settings, specific to each webform.
+ *Why it's needed:
+ *So content editors or site admins can choose a different DLM per webform from the UI.
+ */
+function govcms_dlm_form_webform_settings_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $webform = $form_state->getFormObject()->getEntity();
+
+  $form['govcms_dlm'] = [
+    '#type' => 'details',
+    '#title' => t('DLM Settings'),
+    '#open' => TRUE,
+  ];
+
+  $form['govcms_dlm']['dlm_classification'] = [
+    '#type' => 'select',
+    '#title' => t('DLM Classification'),
+    '#options' => [
+      '' => t('- Default (site-wide) -'),
+      '[SEC=UNOFFICIAL]' => '[SEC=UNOFFICIAL]',
+      '[SEC=SENSITIVE]' => '[SEC=SENSITIVE]',
+      '[SEC=PROTECTED]' => '[SEC=PROTECTED]',
+    ],
+    '#default_value' => $webform->getThirdPartySetting('govcms_dlm', 'dlm_classification', ''),
+    '#description' => t('Overrides the global DLM for this webform.'),
+  ];
+}
+
+/**
+ * Save per-webform DLM setting.
+ *
+ *What it does:
+ *Before a webform is saved, this hook checks for the selected DLM value from the settings form.
+ *It then stores the selected DLM value in that webform’s third-party settings (this avoids needing custom config schema).
+ *Why it's needed:
+ *Ensures the per-webform DLM selection is persisted to the database.
+ */
+function govcms_dlm_webform_presave(Webform $webform) {
+  $dlm = \Drupal::request()->request->get('dlm_classification');
+  if ($dlm !== NULL) {
+    $webform->setThirdPartySetting('govcms_dlm', 'dlm_classification', $dlm);
+  }
+}
+
+/**
+ * Implements hook_help().
+ */
+function govcms_dlm_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.govcms_dlm':
+      $readme_file = dirname(__FILE__) . '/README.txt';
+
+      if (!file_exists($readme_file)) {
+        return FALSE;
+      }
+
+      $readme = file_get_contents($readme_file);
+
+      $element = [
+        '#type' => 'html_tag',
+        '#tag' => 'pre',
+        '#value' => $readme,
+      ];
+
+      // Markdown is optionally supported if you already have it installed.
+      if (\Drupal::moduleHandler()->moduleExists('markdown')) {
+        $filters = \Drupal::moduleHandler()->invoke('markdown', 'filter_info');
+        $info = $filters['filter_markdown'];
+
+        if (function_exists($info['process callback'])) {
+          $function = $info['process callback'];
+          $element = ['#markup' => \Drupal\Component\Utility\Xss::filterAdmin($function($readme, NULL))];
+        }
+      }
+
+      return \Drupal::service('renderer')->render($element);
+  }
+}
+
+/**
+ * Implements hook_mail_alter().
+ *
+ * Adds the config variable govcms_current_dlm to the end of emails sent using
+ * drupal_mail
+ *
+ *
+ *What it does:
+ *This runs when Drupal sends an email.
+ *If the email was triggered by a Webform submission, it looks up the related webform.
+ *It then:
+ *Checks if the webform has a custom DLM setting.
+ *Falls back to the default site-wide DLM if none is set.
+ *Prepends the DLM string to the email subject.
+ *Why it's needed:
+ *So emails sent from different webforms carry their appropriate classification markers, improving DLM compliance on a per-form basis.
+ */
+function govcms_dlm_mail_alter(&$message) {
+  $message['subject'] = t('@subject @dlm', [
+    '@subject' => $message['subject'],
+    '@dlm' => \Drupal::config('govcms_dlm.settings')->get('suffix'),
+  ]);
+
+  if (isset($message['params']['webform_submission']) && $message['params']['webform_submission'] instanceof \Drupal\webform\WebformSubmissionInterface) {
+  $submission = $message['params']['webform_submission'];
+  $webform = $submission->getWebform();
+
+  // Check for per-webform DLM
+  $dlm = $webform->getThirdPartySetting('govcms_dlm', 'dlm_classification', '');
+
+  // Fallback to default
+  if (empty($dlm)) {
+    $dlm = \Drupal::config('govcms_dlm.settings')->get('default_dlm');
+  }
+
+  if (!empty($dlm)) {
+    $message['subject'] = $dlm . ' ' . $message['subject'];
+  }
+}
+
+}

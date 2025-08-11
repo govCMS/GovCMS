@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Contains install and update functions for govcms_dlm module.
+ */
+
+/**
+ * Reset the configuration for updating the new DLM tags.
+ */
+function govcms_dlm_8100() {
+  // Resave default dlm.
+  \Drupal::configFactory()->getEditable('govcms_dlm.settings')
+    ->set('suffix', '[SEC=UNOFFICIAL]')
+    ->save();
+}
