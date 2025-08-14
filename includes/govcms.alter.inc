@@ -46,6 +46,11 @@ function govcms_toolbar() {
  * Alter menu links for the admin reports page.
  */
 function govcms_menu_links_discovered_alter(array &$links): void {
+  // Allow UID 1 (super admin) to see everything.
+  $current_user = \Drupal::currentUser();
+  if ($current_user->id() == 1) {
+    return;
+  }
   // Define the restricted routes.
   $restricted_routes = [
     'system.status',
