@@ -27,36 +27,22 @@ function govcms_install() {
     'link' => ['uri' => 'internal:/node/add'],
   ])->save();
 
-  // Create footer menu links.
-  $footerMenuLinks = ['Accessibility', 'Copyright', 'Disclaimers', 'Privacy'];
-  foreach ($footerMenuLinks as $linkTitle) {
-    MenuLinkContent::create([
-      'title' => $linkTitle,
-      'link' => ['uri' => 'https://www.govcms.gov.au'],
-      'menu_name' => 'footer',
-    ])->save();
-  }
-
-  // Create custom menu links.
-  $customMenuLinks = [
-    [
-      'title' => 'Our community',
-      'path' => '/our-community',
-      'menu_name' => 'govcms-community',
+  // Create a basic page.
+  $node_data = [
+    'type' => 'govcms_standard_page',
+    'title' => 'Welcome to GovCMS',
+    'body' => [
+      'value' => '<p>This is the default welcome page created during installation.</p>
+        <p>Get started by ... creating theme, content types, site builder training, visiting knowledge base?</p>',
+      'format' => 'rich_text',
     ],
-    [
-      'title' => 'About GovCMS',
-      'path' => '/about',
-      'menu_name' => 'govcms-about',
-    ],
+    'uid' => 1,
+    'status' => 1,
   ];
-  foreach ($customMenuLinks as $customLink) {
-    MenuLinkContent::create([
-      'title' => $customLink['title'],
-      'link' => ['uri' => 'https://www.govcms.gov.au' . $customLink['path']],
-      'menu_name' => $customLink['menu_name'],
-    ])->save();
-  }
+
+  $node = \Drupal::entityTypeManager()->getStorage('node')->create($node_data);
+  $node->set('moderation_state', 'published');
+  $node->save();
 
   // Skip further actions during config sync.
   if (\Drupal::isConfigSyncing()) {
