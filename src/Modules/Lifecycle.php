@@ -41,6 +41,16 @@ class Lifecycle {
     'graphql',
     'statistics',
     'purge_purger_http',
+    'action',
+    'help_topics',
+    'tour',
+    'webform_icheck',
+    'webform_location_geocomplete',
+    'webform_location_places',
+    'webform_shortcuts',
+    'webform_toggles',
+    'panelizer_quickedit',
+    'panels_ipe',
   ];
 
   /**
