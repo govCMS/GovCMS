@@ -137,7 +137,7 @@
             "drupal/core-vendor-hardening": true,
             "phpstan/extension-installer": true,
             "php-http/discovery": true,
-            "simplesamlphp/composer-module-installer": false,
+            "simplesamlphp/composer-module-installer": true,
             "simplesamlphp/composer-xmlprovider-installer": false,
             "tbachert/spi": true
         },
