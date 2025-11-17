@@ -98,7 +98,7 @@
         "drupal/rest_menu_items": "3.0.5",
         "drupal/robotstxt": "1.6.0",
         "drupal/role_delegation": "1.6.0",
-        "drupal/search_api": "1.38.0",
+        "drupal/search_api": "1.40.0",
         "drupal/search_api_solr": "4.3.10",
         "drupal/scheduled_transitions": "2.7.0",
         "drupal/search_api_attachments": "10.0.5",
