@@ -101,7 +101,7 @@
         "drupal/scheduled_transitions": "2.8.3",
         "drupal/search_api": "1.40.0",
         "drupal/search_api_attachments": "10.0.5",
-        "drupal/search_api_autocomplete": "1.10.0",
+        "drupal/search_api_autocomplete": "1.11.0",
         "drupal/search_api_solr": "4.3.10",
         "drupal/search_api_spellcheck": "4.0.1",
         "drupal/seckit": "2.0.3",
