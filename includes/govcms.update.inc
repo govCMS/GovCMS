@@ -180,3 +180,19 @@ function govcms_update_10009() {
   // Call the service method to uninstall specified modules marked as 'obsolete'.
   $lifecycle_service->uninstallObsoleteModules($modules_to_uninstall);
 }
+
+/**
+ * Implements hook_update_N().
+ * Uninstall mailsystem module if marked as 'obsolete'.
+ */
+function govcms_update_10011() {
+  // Get the Lifecycle service.
+  $lifecycle_service = \Drupal::service('govcms.modules.lifecycle');
+
+  // List of modules to uninstall.
+  $modules_to_uninstall = ['mailsystem'];
+
+  // Call the service method to uninstall specified modules marked as 'obsolete'.
+  $lifecycle_service->uninstallObsoleteModules($modules_to_uninstall);
+}
+
