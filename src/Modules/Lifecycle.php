@@ -41,9 +41,6 @@ class Lifecycle {
     'graphql',
     'statistics',
     'purge_purger_http',
-    'page_manager_ui',
-    'page_manager',
-    'services_tfa',
   ];
 
   /**
