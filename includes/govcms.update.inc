@@ -190,6 +190,7 @@ function govcms_update_10009() {
  * Uninstall purge_purger_http module if marked as 'obsolete'.
  * Uninstall help_topics module if marked as 'obsolete'.
  * Uninstall tour module if marked as 'obsolete'.
+ * Uninstall Page Manager modules if marked as 'obsolete'.
  */
 function govcms_update_10010() {
   // Get the Lifecycle service.
@@ -202,7 +203,10 @@ function govcms_update_10010() {
                            'restui',
                            'purge_purger_http',
                            'help_topics',
-                           'tour'];
+                           'tour',
+                           'page_manager',
+                           'page_manager_ui',
+                          ];
 
   // Call the service method to uninstall specified modules marked as 'obsolete'.
   $lifecycle_service->uninstallObsoleteModules($modules_to_uninstall);
