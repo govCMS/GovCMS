@@ -195,7 +195,7 @@ function govcms_update_10009() {
 function govcms_update_10010() {
   // Get the Lifecycle service.
   $lifecycle_service = \Drupal::service('govcms.modules.lifecycle');
-   
+
   // List of modules to uninstall.
   $modules_to_uninstall = ['config_filter',
                            'panels',
@@ -225,4 +225,19 @@ function govcms_update_10011() {
     $config = $config_factory->getEditable($config_name);
     $config->set('proxy_headers', '')->save();
   }
+}
+
+/**
+ * Implements hook_update_N().
+ * Uninstall panelizer module if marked as 'obsolete'.
+ */
+function govcms_update_10012() {
+  // Get the Lifecycle service.
+  $lifecycle_service = \Drupal::service('govcms.modules.lifecycle');
+
+  // List of modules to uninstall.
+  $modules_to_uninstall = ['panelizer'];
+
+  // Call the service method to uninstall specified modules marked as 'obsolete'.
+  $lifecycle_service->uninstallObsoleteModules($modules_to_uninstall);
 }
