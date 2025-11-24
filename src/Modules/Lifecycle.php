@@ -49,6 +49,8 @@ class Lifecycle {
     'webform_location_places',
     'webform_shortcuts',
     'webform_toggles',
+    'panelizer_quickedit',
+    'panels_ipe',
   ];
 
   /**
