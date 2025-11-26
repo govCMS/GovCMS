@@ -183,7 +183,6 @@ function govcms_update_10009() {
 
 /**
  * Implements hook_update_N().
- * Uninstall panels module if marked as 'obsolete'.
  * Uninstall config_filter module if marked as 'obsolete'.
  * Uninstall jquery_ui_accordion module if marked as 'obsolete'.
  * Uninstall Rest UI module if marked as 'obsolete'.
@@ -198,7 +197,6 @@ function govcms_update_10010() {
    
   // List of modules to uninstall.
   $modules_to_uninstall = ['config_filter',
-                           'panels',
                            'jquery_ui_accordion',
                            'restui',
                            'purge_purger_http',
