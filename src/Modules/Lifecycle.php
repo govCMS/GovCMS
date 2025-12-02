@@ -84,15 +84,19 @@ class Lifecycle {
     $module_installer = \Drupal::service('module_installer');
     $module_handler = \Drupal::service('module_handler');
 
+    $modules_to_uninstall = [];
     foreach ($modules as $module) {
       // Check if the module is installed and marked as obsolete before attempting to uninstall.
       if ($module_handler->moduleExists($module)) {
         $moduleInfo = \Drupal::service('extension.list.module')->getExtensionInfo($module);
 
         if ($moduleInfo && isset($moduleInfo['lifecycle']) && $moduleInfo['lifecycle'] === ExtensionLifecycle::OBSOLETE) {
-          $module_installer->uninstall([$module]);
+          $modules_to_uninstall[] = $module;
         }
       }
+    }
+    if ($modules_to_uninstall) {
+      $module_installer->uninstall($modules_to_uninstall);
     }
   }
 }
