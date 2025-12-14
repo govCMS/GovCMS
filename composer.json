@@ -195,7 +195,7 @@
                 "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2023-07-19/tfa-2930541-81.patch"
             },
             "drupal/simplesamlphp_auth": {
-                "Drupal 11 compatibility - https://www.drupal.org/project/simplesamlphp_auth/issues/3447463": "https://git.drupalcode.org/project/simplesamlphp_auth/-/merge_requests/45.patch"
+                "Drupal 11 compatibility - https://www.drupal.org/project/simplesamlphp_auth/issues/3447463": "https://www.drupal.org/files/issues/2025-12-15/simplesamlphp_auth-3447463-55-without_test.patch"
             }
         }
     },
