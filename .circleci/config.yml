@@ -24,12 +24,8 @@ jobs:
 
   build:
     docker:
-      - image: govcmsdev/govcms:latest-php8.3-apache
-    working_directory: /app
+      - image: cimg/php:8.3
     steps:
-      - run:
-          name: Clean Working Directory
-          command: find /app -mindepth 1 -delete
       - checkout
       - run:
           name: Install GovCMS distribution
@@ -41,7 +37,7 @@ jobs:
           name: List outdated packages within the GovCMS distribution
           command: composer outdated -D --no-plugins
       - persist_to_workspace:
-          root: /app
+          root: .
           paths:
             - .
 
