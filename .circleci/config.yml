@@ -13,11 +13,20 @@ jobs:
           name: Validate Composer
           command: composer validate --no-check-all --no-plugins
 
+  drupal_practices:
+    docker:
+      - image: cimg/php:8.3
+    steps:
+      - checkout
+      - run:
+          name: Check Drupal Practices
+          command: composer show -i -D --no-plugins
+
 workflows:
   test:
     jobs:
       - validate_composer
-      - tests/drupal_practices
+      - drupal_practices
       - tests/build:
           requires:
             - validate_composer
