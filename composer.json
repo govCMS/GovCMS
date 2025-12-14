@@ -6,6 +6,9 @@
     ],
     "type": "drupal-profile",
     "license": "GPL-2.0-or-later",
+    "provide": {
+        "composer-plugin-api": "2.9.0"
+    },
     "homepage": "https://www.govcms.gov.au",
     "support": {
         "issues": "https://github.com/GovCMS/GovCMS/issues",
