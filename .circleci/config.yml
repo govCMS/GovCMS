@@ -3,14 +3,24 @@ version: '2.1'
 orbs:
   tests: 'govcms/tests@4'
 
+jobs:
+  validate_composer:
+    docker:
+      - image: cimg/php:8.3
+    steps:
+      - checkout
+      - run:
+          name: Validate Composer
+          command: composer validate --no-check-all --no-plugins
+
 workflows:
   test:
     jobs:
-      - tests/validate_composer
+      - validate_composer
       - tests/drupal_practices
       - tests/build:
           requires:
-            - tests/validate_composer
+            - validate_composer
       - tests/basic:
           requires:
             - tests/build
