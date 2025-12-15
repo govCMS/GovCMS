@@ -3,58 +3,32 @@ version: '2.1'
 orbs:
   tests: 'govcms/tests@4'
 
-jobs:
-  validate_composer:
-    docker:
-      - image: cimg/php:8.3
-    steps:
-      - checkout
-      - run:
-          name: Validate Composer
-          command: composer validate --no-check-all --no-plugins
-
-  drupal_practices:
-    docker:
-      - image: cimg/php:8.3
-    steps:
-      - checkout
-      - run:
-          name: Check Drupal Practices
-          command: composer show -i -D --no-plugins
-
-  build:
-    docker:
-      - image: cimg/php:8.3
-    steps:
-      - checkout
-      - run:
-          name: Install GovCMS distribution
-          command: composer update --profile --prefer-dist --optimize-autoloader --no-scripts
-      - run:
-          name: List all packages within the GovCMS distribution
-          command: composer show -i -D --no-plugins
-      - run:
-          name: List outdated packages within the GovCMS distribution
-          command: composer outdated -D --no-plugins
-      - persist_to_workspace:
-          root: .
-          paths:
-            - .
-
 workflows:
   test:
     jobs:
-      - validate_composer
-      - drupal_practices
-      - build:
+      - tests/validate_composer:
+          pre-steps:
+            - run:
+                name: Upgrade Composer to latest version
+                command: composer self-update
+      - tests/drupal_practices:
+          pre-steps:
+            - run:
+                name: Upgrade Composer to latest version
+                command: composer self-update
+      - tests/build:
+          pre-steps:
+            - run:
+                name: Upgrade Composer to latest version
+                command: composer self-update
           requires:
-            - validate_composer
+            - tests/validate_composer
       - tests/basic:
           requires:
-            - build
+            - tests/build
       - tests/phpunit:
           requires:
-            - build
+            - tests/build
       - tests/cypress:
           requires:
-            - build
+            - tests/build
