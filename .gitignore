@@ -10,6 +10,7 @@ tests/cy/cypress/fixtures/currentComposer.json
 docroot/
 web/
 app/
+recipes/
 
 # Ignore build artifacts
 /deploy
