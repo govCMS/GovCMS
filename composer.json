@@ -59,8 +59,8 @@
         "drupal/consumers": "1.22.0",
         "drupal/contact_storage": "1.5.0",
         "drupal/context": "5.0.0-rc2",
-        "drupal/core-composer-scaffold": "11.3.0-rc1",
-        "drupal/core-recommended": "11.3.0-rc1",
+        "drupal/core-composer-scaffold": "11.3.0",
+        "drupal/core-recommended": "11.3.0",
         "drupal/crop": "2.5.0",
         "drupal/ctools": "4.1.0",
         "drupal/devel": "5.4.0",
@@ -215,7 +215,7 @@
                 "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2023-07-19/tfa-2930541-81.patch"
             },
             "drupal/simplesamlphp_auth": {
-                "Drupal 11 compatibility - https://www.drupal.org/project/simplesamlphp_auth/issues/3447463": "https://www.drupal.org/files/issues/2025-12-15/simplesamlphp_auth-3447463-55-without_test.patch"
+                "Drupal 11 compatibility - https://www.drupal.org/project/simplesamlphp_auth/issues/3447463": "https://www.drupal.org/files/issues/2025-12-18/simplesamlphp_auth-3447463-57-without_test.patch"
             }
         }
     },
