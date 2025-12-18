@@ -7,10 +7,20 @@ workflows:
   test:
     jobs:
       - tests/validate_composer
+        # Update the Composer to the latest version:
+          pre-steps:
+            - run:
+                name: Upgrade Composer to support latest dependencies
+                command: sudo composer self-update --2
       - tests/drupal_practices
       - tests/build:
           requires:
             - tests/validate_composer
+          # Update the Composer to the latest version:
+          pre-steps:
+            - run:
+                name: Upgrade Composer
+                command: sudo composer self-update --2
       - tests/basic:
           requires:
             - tests/build
