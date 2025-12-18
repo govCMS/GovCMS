@@ -6,8 +6,8 @@ orbs:
 workflows:
   test:
     jobs:
-      - tests/validate_composer
-        # Update the Composer to the latest version:
+      - tests/validate_composer:
+          # Update the Composer to the latest version:
           pre-steps:
             - run:
                 name: Upgrade Composer to support latest dependencies
