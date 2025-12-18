@@ -3,30 +3,33 @@ version: '2.1'
 orbs:
   tests: 'govcms/tests@4'
 
+# Update the Composer to the latest version.
+update_composer: &update_composer
+  pre-steps:
+    - run:
+        name: Upgrade Composer
+        command: sudo composer self-update --2
+
 workflows:
   test:
     jobs:
       - tests/validate_composer:
-          # Update the Composer to the latest version:
-          pre-steps:
-            - run:
-                name: Upgrade Composer to support latest dependencies
-                command: sudo composer self-update --2
-      - tests/drupal_practices
+          <<: *update_composer
+      - tests/drupal_practices:
+          <<: *update_composer
       - tests/build:
+          <<: *update_composer
           requires:
             - tests/validate_composer
-          # Update the Composer to the latest version:
-          pre-steps:
-            - run:
-                name: Upgrade Composer
-                command: sudo composer self-update --2
       - tests/basic:
+          <<: *update_composer
           requires:
             - tests/build
       - tests/phpunit:
+          <<: *update_composer
           requires:
             - tests/build
       - tests/cypress:
+          <<: *update_composer
           requires:
             - tests/build
