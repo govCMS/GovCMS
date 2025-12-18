@@ -1,9 +1,14 @@
 {
     "name": "govcms/govcms",
     "description": "GovCMS Drupal Distribution",
-    "keywords": ["GovCMS"],
+    "keywords": [
+        "GovCMS"
+    ],
     "type": "drupal-profile",
     "license": "GPL-2.0-or-later",
+    "provide": {
+        "ext-bcmath": "*"
+    },
     "homepage": "https://www.govcms.gov.au",
     "support": {
         "issues": "https://github.com/GovCMS/GovCMS/issues",
@@ -11,6 +16,24 @@
         "source": "https://github.com/GovCMS/GovCMS/releases"
     },
     "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "drupal/simplesamlphp_auth",
+                "version": "4.0.1+d11",
+                "type": "drupal-module",
+                "source": {
+                    "type": "git",
+                    "url": "https://git.drupalcode.org/project/simplesamlphp_auth.git",
+                    "reference": "4.0.1"
+                },
+                "require": {
+                    "drupal/core": "^11",
+                    "drupal/externalauth": "2.0.8",
+                    "simplesamlphp/simplesamlphp": "2.5.0-rc5"
+                }
+            }
+        },
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
@@ -36,8 +59,8 @@
         "drupal/consumers": "1.22.0",
         "drupal/contact_storage": "1.5.0",
         "drupal/context": "5.0.0-rc2",
-        "drupal/core-composer-scaffold": "11.2.8",
-        "drupal/core-recommended": "11.2.8",
+        "drupal/core-composer-scaffold": "11.3.0",
+        "drupal/core-recommended": "11.3.0",
         "drupal/crop": "2.5.0",
         "drupal/ctools": "4.1.0",
         "drupal/devel": "5.4.0",
@@ -107,6 +130,7 @@
         "drupal/shield": "1.8.0",
         "drupal/simple_oauth": "6.0.9",
         "drupal/simple_sitemap": "4.2.2",
+        "drupal/simplesamlphp_auth": "4.0.1+d11",
         "drupal/symfony_mailer": "1.6.2",
         "drupal/tfa": "1.12.0",
         "drupal/token": "1.16.0",
@@ -117,6 +141,7 @@
         "govcms-assets/chosen": "3.0.1",
         "govcms-assets/dropzone": "5.9.3",
         "oomphinc/composer-installers-extender": "^2.0",
+        "simplesamlphp/simplesamlphp": "2.5.0-rc5",
         "webflo/drupal-finder": "^1.2"
     },
     "require-dev": {
@@ -127,12 +152,14 @@
         "allow-plugins": {
             "composer/installers": true,
             "cweagans/composer-patches": true,
-            "drupal/core-composer-scaffold": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "oomphinc/composer-installers-extender": true,
+            "drupal/core-composer-scaffold": true,
             "drupal/core-vendor-hardening": true,
-            "phpstan/extension-installer": true,
+            "oomphinc/composer-installers-extender": true,
             "php-http/discovery": true,
+            "phpstan/extension-installer": true,
+            "simplesamlphp/composer-module-installer": false,
+            "simplesamlphp/composer-xmlprovider-installer": false,
             "tbachert/spi": true
         },
         "bin-dir": "bin/",
@@ -146,14 +173,30 @@
             }
         },
         "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/modules/custom/{$name}": ["type:drupal-custom-module"],
-            "web/profiles/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
-            "web/libraries/{$name}": ["type:drupal-library"],
-            "drush/contrib/{$name}": ["type:drupal-drush"]
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "web/profiles/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "web/themes/custom/{$name}": [
+                "type:drupal-custom-theme"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "drush/contrib/{$name}": [
+                "type:drupal-drush"
+            ]
         },
         "enable-patching": true,
         "composer-exit-on-patch-failure": true,
@@ -170,6 +213,9 @@
             },
             "drupal/tfa": {
                 "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2023-07-19/tfa-2930541-81.patch"
+            },
+            "drupal/simplesamlphp_auth": {
+                "Drupal 11 compatibility - https://www.drupal.org/project/simplesamlphp_auth/issues/3447463": "https://www.drupal.org/files/issues/2025-12-18/simplesamlphp_auth-3447463-57-without_test.patch"
             }
         }
     },
