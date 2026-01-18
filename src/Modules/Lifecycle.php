@@ -51,6 +51,7 @@ class Lifecycle {
     'webform_toggles',
     'panelizer_quickedit',
     'panels_ipe',
+    'services_tfa',
   ];
 
   /**
