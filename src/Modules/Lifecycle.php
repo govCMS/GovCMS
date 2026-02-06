@@ -26,6 +26,32 @@ class Lifecycle {
     'aggregator',
     'block_inactive_users',
     'event_log_track_ui',
+    'govcms8_foundations',
+    'video_embed_field',
+    'jquery_ui_accordion',
+    'jquery_ui_resizable',
+    'panels',
+    'permissions_by_term',
+    'permissions_by_entity',
+    'restui',
+    'clamav',
+    'govcms8_layouts',
+    'redirect_404',
+    'field_layout',
+    'graphql',
+    'statistics',
+    'purge_purger_http',
+    'action',
+    'help_topics',
+    'tour',
+    'webform_icheck',
+    'webform_location_geocomplete',
+    'webform_location_places',
+    'webform_shortcuts',
+    'webform_toggles',
+    'panelizer_quickedit',
+    'panels_ipe',
+    'services_tfa',
   ];
 
   /**
@@ -59,15 +85,19 @@ class Lifecycle {
     $module_installer = \Drupal::service('module_installer');
     $module_handler = \Drupal::service('module_handler');
 
+    $modules_to_uninstall = [];
     foreach ($modules as $module) {
       // Check if the module is installed and marked as obsolete before attempting to uninstall.
       if ($module_handler->moduleExists($module)) {
         $moduleInfo = \Drupal::service('extension.list.module')->getExtensionInfo($module);
 
         if ($moduleInfo && isset($moduleInfo['lifecycle']) && $moduleInfo['lifecycle'] === ExtensionLifecycle::OBSOLETE) {
-          $module_installer->uninstall([$module]);
+          $modules_to_uninstall[] = $module;
         }
       }
+    }
+    if ($modules_to_uninstall) {
+      $module_installer->uninstall($modules_to_uninstall);
     }
   }
 }

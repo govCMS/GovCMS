@@ -20,7 +20,7 @@ use Drupal\webform\Plugin\WebformElement\ManagedFile;
  */
 function govcms_security_js_settings_alter(array &$settings, \Drupal\Core\Asset\AttachedAssetsInterface $assets) {
   if (isset($settings['password'])) {
-    $settings['password']['tooShort'] = t('Make it at least 14 characters');
+    $settings['password']['tooShort'] = t('Make it at least 15 characters');
   }
 }
 
@@ -36,13 +36,6 @@ function govcms_security_form_contact_message_contact_form_alter(&$form, FormSta
  */
 function govcms_security_form_user_login_form_alter(&$form, &$form_state) {
   $form['#attributes']['autocomplete'] = 'off';
-}
-
-/**
- * Implement hook_form_FORM_ID_alter()
- */
-function govcms_security_form_user_admin_settings_alter(&$form, FormStateInterface $form_state) {
-  $form['admin_role']['#access'] = FALSE;
 }
 
 /**

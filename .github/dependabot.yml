@@ -2,6 +2,13 @@ version: 2
 updates:
 - package-ecosystem: composer
   directory: "/"
+  ignore:
+    - dependency-name: "drupal/core*"
+      update-types: ["version-update:semver-major"]
+  groups:
+    drupal-core:
+      patterns:
+        - "drupal/core*"
   schedule:
     interval: daily
     time: "06:00"
@@ -10,3 +17,21 @@ updates:
   target-branch: 3.x-develop
   reviewers:
   - pandaskii
+- package-ecosystem: composer
+  directory: "/"
+  ignore:
+    - dependency-name: "drupal/core*"
+      update-types: ["version-update:semver-major"]
+  groups:
+    drupal-core:
+      patterns:
+        - "drupal/core*"
+  schedule:
+    interval: daily
+    time: "06:00"
+    timezone: "Australia/Sydney"
+  open-pull-requests-limit: 50
+  target-branch: 4.x-develop
+  labels:
+    - "drupal11"
+    - "dependencies"

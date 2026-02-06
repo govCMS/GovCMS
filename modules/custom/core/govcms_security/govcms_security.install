@@ -19,3 +19,29 @@ function govcms_security_install($is_syncing) {
 function govcms_security_update_last_removed() {
   return 9005;
 }
+
+/**
+ * Implements hook_update_N().
+ * GOVCMSD10-1309 : Increase Password Length to 15 Characters for existing sites
+ */
+function govcms_security_update_10001() {
+  $config = Drupal::configFactory()->getEditable('password_policy.password_policy.austism');
+  $changed = FALSE;
+  if ($config) {
+    $constraints = $config->get('policy_constraints');
+    if ($constraints && is_array($constraints)) {
+      foreach ($constraints as &$cons) {
+        if (isset($cons['id']) && $cons['id'] === 'password_length') {
+          if ($cons['character_length'] < 15) {
+            $cons['character_length'] = 15;
+            $changed = TRUE;
+          }
+          break;
+        }
+      }
+      if ($changed) {
+        $config->set('policy_constraints', $constraints)->save();
+      }
+    }
+  }
+}
