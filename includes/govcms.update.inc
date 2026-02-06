@@ -224,3 +224,22 @@ function govcms_update_10011() {
     $config->set('proxy_headers', '')->save();
   }
 }
+
+/**
+ * Implements hook_update_N().
+ * Uninstall Panels module if Page Manager module is not in use.
+ */
+function govcms_update_10012() {
+  // Get required services.
+  $lifecycle_service = \Drupal::service('govcms.modules.lifecycle');
+  $module_handler = \Drupal::service('module_handler');
+
+  // List of modules to uninstall.
+  $modules_to_uninstall = ['panels'];
+
+  // Only run if Page Manager not present
+  if (!$module_handler->moduleExists('page_manager')) {
+    // Call the service method to uninstall specified modules marked as 'obsolete'.
+    $lifecycle_service->uninstallObsoleteModules($modules_to_uninstall);
+  }
+}
