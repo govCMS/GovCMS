@@ -125,7 +125,7 @@
         "drush/drush": "~12"
     },
     "replace": {
-        "drupal/ban": "2.0.2"
+        "drupal/ban": "*"
     },
     "conflict": {
         "dealerdirect/phpcodesniffer-composer-installer": "1.1.0"
