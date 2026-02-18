@@ -66,7 +66,7 @@
         "drupal/govcms_dlm": "3.0.0",
         "drupal/inline_entity_form": "3.0.0-rc21",
         "drupal/honeypot": "2.2.2",
-        "drupal/key": "1.20.0",
+        "drupal/key": "1.22.0",
         "drupal/layout_builder_modal": "2.0.0",
         "drupal/layout_builder_restrictions": "3.0.4",
         "drupal/linked_field": "1.7.0",
