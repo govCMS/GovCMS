@@ -19,7 +19,7 @@
     "require": {
         "php": "^8.3.0",
         "composer/installers": "^2.0",
-        "cweagans/composer-patches": "^1.7",
+        "cweagans/composer-patches": "^2.0",
         "govcms-assets/dropzone": "5.9.3",
         "drupal/address": "2.0.4",
         "drupal/admin_toolbar": "3.6.2",
