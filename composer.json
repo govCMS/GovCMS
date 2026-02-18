@@ -35,7 +35,7 @@
         "drupal/config_update": "2.0.0-alpha4",
         "drupal/consultation-consultation": "1.0.4",
         "drupal/consumers": "1.21.0",
-        "drupal/contact_storage": "1.4.0",
+        "drupal/contact_storage": "1.5.0",
         "drupal/context": "5.0.0-rc2",
         "drupal/core-composer-scaffold": "10.5.8",
         "drupal/core-recommended": "10.5.8",
