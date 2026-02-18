@@ -22,7 +22,7 @@
         "cweagans/composer-patches": "^1.7",
         "govcms-assets/dropzone": "5.9.3",
         "drupal/address": "2.0.4",
-        "drupal/admin_toolbar": "3.6.2",
+        "drupal/admin_toolbar": "3.6.3",
         "drupal/bigmenu": "2.1.0",
         "drupal/block_inactive_users": "2.8.0",
         "drupal/captcha": "2.0.9",
