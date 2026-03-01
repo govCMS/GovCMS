@@ -75,6 +75,7 @@
         "drupal/linked_field": "1.7.0",
         "drupal/linkit": "7.0.12",
         "drupal/login_security": "2.0.7",
+        "drupal/mailsystem": "4.5.0",
         "drupal/media_bulk_upload": "3.0.5",
         "drupal/media_entity_file_replace": "1.3.0",
         "drupal/media_file_delete": "1.3.1",
