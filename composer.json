@@ -118,7 +118,7 @@
         "drupal/twig_tweak": "3.4.1",
         "drupal/username_enumeration_prevention": "1.4.0",
         "drupal/views_data_export": "1.8.0",
-        "drupal/webform": "6.3.0-beta7",
+        "drupal/webform": "6.3.0-beta8",
         "drupal/workbench_access": "2.0.4",
         "govcms-assets/chosen": "3.0.1",
         "govcms-assets/dropzone": "5.9.3",
