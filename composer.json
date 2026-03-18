@@ -123,7 +123,7 @@
         "govcms-assets/chosen": "3.0.1",
         "govcms-assets/dropzone": "5.9.3",
         "oomphinc/composer-installers-extender": "^2.0",
-        "simplesamlphp/simplesamlphp": "2.5.0-rc5",
+        "simplesamlphp/simplesamlphp": "2.5.0",
         "webflo/drupal-finder": "^1.2"
     },
     "require-dev": {
