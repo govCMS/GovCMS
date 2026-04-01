@@ -102,7 +102,7 @@
         "drupal/role_delegation": "1.6.0",
         "drupal/scheduled_transitions": "2.8.4",
         "drupal/search_api": "1.40.0",
-        "drupal/search_api_attachments": "10.0.7",
+        "drupal/search_api_attachments": "10.0.8",
         "drupal/search_api_autocomplete": "1.11.0",
         "drupal/search_api_solr": "4.3.10",
         "drupal/search_api_spellcheck": "4.0.1",
