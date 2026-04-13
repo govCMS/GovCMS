@@ -23,6 +23,7 @@ class Lifecycle {
     'mailsystem',
     'redirect_404',
     'services_tfa',
+    'admin_toolbar_links_access_filter',
   ];
 
   /**
