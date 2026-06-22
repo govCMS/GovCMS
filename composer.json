@@ -36,8 +36,8 @@
         "drupal/consumers": "1.24.0",
         "drupal/contact_storage": "1.5.0",
         "drupal/context": "5.0.0-rc2",
-        "drupal/core-composer-scaffold": "11.3.10",
-        "drupal/core-recommended": "11.3.10",
+        "drupal/core-composer-scaffold": "11.3.12",
+        "drupal/core-recommended": "11.3.12",
         "drupal/crop": "2.6.0",
         "drupal/ctools": "4.1.0",
         "drupal/devel": "5.5.0",
@@ -123,7 +123,7 @@
         "govcms-assets/chosen": "3.0.1",
         "govcms-assets/dropzone": "5.9.3",
         "oomphinc/composer-installers-extender": "^2.0",
-        "simplesamlphp/simplesamlphp": "2.5.0",
+        "simplesamlphp/simplesamlphp": "2.5.2",
         "webflo/drupal-finder": "^1.2"
     },
     "require-dev": {
