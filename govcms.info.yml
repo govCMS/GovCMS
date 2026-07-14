@@ -19,6 +19,7 @@ install:
   - drupal:datetime_range
   - drupal:dynamic_page_cache
   - drupal:field_ui
+  - drupal:govcms_dlm
   - drupal:help
   - drupal:layout_builder
   - drupal:media_library
