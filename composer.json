@@ -110,7 +110,7 @@
         "drupal/seckit": "2.0.3",
         "drupal/securitytxt": "1.6.0",
         "drupal/shield": "1.8.0",
-        "drupal/simple_oauth": "6.1.0",
+        "drupal/simple_oauth": "6.1.1",
         "drupal/simple_sitemap": "4.2.3",
         "drupal/simplesamlphp_auth": "4.1.0",
         "drupal/symfony_mailer": "1.6.2",
