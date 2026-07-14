@@ -98,7 +98,7 @@
         "drupal/recaptcha": "3.4.0",
         "drupal/recaptcha_v3": "2.0.5",
         "drupal/redirect": "1.11.0",
-        "drupal/rest_menu_items": "3.0.6",
+        "drupal/rest_menu_items": "3.0.7",
         "drupal/robotstxt": "1.6.0",
         "drupal/role_delegation": "1.6.0",
         "drupal/scheduled_transitions": "2.8.4",
