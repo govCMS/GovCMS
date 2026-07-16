@@ -15,6 +15,11 @@
   "commitMessageAction": "Update", 
   "commitMessageTopic": "{{depName}}",
   "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}",
+
+  "separateMajorMinor": true,
+  "separateMultipleMajor": true,
+  "separateMultipleMinor": true,
+  "separateMinorPatch": true,
   
   "labels": ["drupal11"],
   
