@@ -152,11 +152,7 @@
         },
         "bin-dir": "bin/",
         "sort-packages": true,
-        "optimize-autoloader": true,
-        "audit": {
-            "block-insecure": false
-        }
-        
+        "optimize-autoloader": true
     },
     "extra": {
         "drupal-scaffold": {
