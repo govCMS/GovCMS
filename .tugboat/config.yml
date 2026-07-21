@@ -57,6 +57,9 @@ services:
         # Link the config and private files paths.
         - ln -snf "${TUGBOAT_ROOT}/config" "${DOCROOT}/../config"
         - ln -snf "${TUGBOAT_ROOT}/files-private" "${DOCROOT}/../files-private"
+        
+        # Disable SSL for MySQL client connections
+        - echo -e "[client]\nskip-ssl = true" > /etc/mysql/my.cnf
 
       # Commands when refreshing an existing preview.
       update:
