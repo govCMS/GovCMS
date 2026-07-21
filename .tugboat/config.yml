@@ -59,7 +59,32 @@ services:
         - ln -snf "${TUGBOAT_ROOT}/files-private" "${DOCROOT}/../files-private"
         
         # Disable SSL for MySQL client connections
-        - echo -e "[client]\nskip-ssl = true" > /etc/mysql/my.cnf
+        - echo -e "[client]\nskip-ssl = true" > /etc/my.cnf
+        - mkdir -p /etc/drush
+        - |
+          cat <<EOF > /etc/drush/drush.yml
+          command:
+            sql:
+              cli:
+                options:
+                  extra: "--skip-ssl"
+              connect:
+                options:
+                  extra: "--skip-ssl"
+              create:
+                options:
+                  extra: "--skip-ssl"
+              drop:
+                options:
+                  extra: "--skip-ssl"
+              dump:
+                options:
+                  extra: "--skip-ssl"
+                  extra-dump: "--skip-ssl"
+              query:
+                options:
+                  extra: "--skip-ssl"
+          EOF
 
       # Commands when refreshing an existing preview.
       update:
