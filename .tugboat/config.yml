@@ -57,7 +57,7 @@ services:
         # Link the config and private files paths.
         - ln -snf "${TUGBOAT_ROOT}/config" "${DOCROOT}/../config"
         - ln -snf "${TUGBOAT_ROOT}/files-private" "${DOCROOT}/../files-private"
-        
+
       # Commands when refreshing an existing preview.
       update:
         # Install/update packages managed by composer, including drush.
