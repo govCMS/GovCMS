@@ -60,34 +60,6 @@ services:
         - ln -snf "${TUGBOAT_ROOT}/config" "${DOCROOT}/../config"
         - ln -snf "${TUGBOAT_ROOT}/files-private" "${DOCROOT}/../files-private"
 
-        - echo -e '[client]\nskip-ssl = true' > /etc/my.cnf
-        # Disable SSL for Drush SQL commands
-        - mkdir -p /etc/drush
-        - |
-          cat <<EOF > /etc/drush/drush.yml
-          command:
-            sql:
-              cli:
-                options:
-                  extra: "--skip-ssl"
-              connect:
-                options:
-                  extra: "--skip-ssl"
-              create:
-                options:
-                  extra: "--skip-ssl"
-              drop:
-                options:
-                  extra: "--skip-ssl"
-              dump:
-                options:
-                  extra: "--skip-ssl"
-                  extra-dump: "--skip-ssl"
-              query:
-                options:
-                  extra: "--skip-ssl"
-          EOF
-
       # Commands when refreshing an existing preview.
       update:
         # Install/update packages managed by composer, including drush.
