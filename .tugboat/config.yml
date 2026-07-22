@@ -8,6 +8,10 @@ services:
     commands:
       # Configure the server for the site to run on.
       init:
+      # running diagnostic commands 
+        - mysql --version
+        - mysql -Nse "SELECT VERSION();"
+        - mysql -e "SHOW VARIABLES WHERE Variable_name IN ('have_ssl', 'require_secure_transport');"
         # Increase the allowed packet size to 512MB.
         - mysql -e "SET GLOBAL max_allowed_packet=536870912;"
         # Ensure this packet size persists even if MySQL restarts.
@@ -32,6 +36,9 @@ services:
     commands:
       # Commands that set up the basic preview infrastructure.
       init:
+        # running diagnostic commands 
+        - mysql --version
+        - php -i | grep -iE "Client API version|mysqlnd" || true
         # Tooling.
         - apt-get update
         - apt-get install -y libbz2-dev libzip-dev
@@ -77,6 +84,10 @@ services:
 
         # Install the site.
         - bin/drush -r "${DOCROOT}" site:install govcms install_configure_form.update_status_module='array(FALSE,FALSE)' -y
+
+        # Confirm Drupal's connection and report the connected server version.
+        - bin/drush -r "${DOCROOT}" sql:query "SELECT DATABASE(), VERSION();"
+        
         - bin/drush en module_permissions -y
 
       # Commands when building a new branch/PR update.
