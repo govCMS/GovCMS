@@ -83,7 +83,7 @@ services:
         - chmod 0664 ${DOCROOT}/sites/default/default.services.yml
 
         # Install the site.
-        - bin/drush -r "${DOCROOT}" site:install govcms install_configure_form.update_status_module='array(FALSE,FALSE)' -y
+        - bin/drush -r "${DOCROOT}" site:install govcms install_configure_form.update_status_module='array(FALSE,FALSE)' --extra=--disable-ssl -y
 
         # Test Drupal's PHP/PDO connection; this must succeed.
         - >-
@@ -92,7 +92,7 @@ services:
           \Drupal::database()->query("SELECT VERSION()")->fetchField(), PHP_EOL;'
 
       # Demonstrate whether the command-line client still has the TLS problem.
-        - bin/drush -r "${DOCROOT}" sql:query "SELECT DATABASE(), VERSION();" || true
+        - bin/drush -r "${DOCROOT}" sql:query "SELECT DATABASE(), VERSION();" --extra=--disable-ssl || true
 
         - bin/drush en module_permissions -y
 
