@@ -2,7 +2,7 @@ services:
 
   database:
     # Use the latest available 10.6.x version of MariaDB
-    image: tugboatqa/mariadb:10.6
+    image: tugboatqa/mariadb:11.4
 
     # A set of commands to run while building this service
     commands:
@@ -83,7 +83,7 @@ services:
         - chmod 0664 ${DOCROOT}/sites/default/default.services.yml
 
         # Install the site.
-        - bin/drush -r "${DOCROOT}" site:install govcms install_configure_form.update_status_module='array(FALSE,FALSE)' --extra=--disable-ssl -y
+        - bin/drush -r "${DOCROOT}" site:install govcms install_configure_form.update_status_module='array(FALSE,FALSE)' -y
 
         # Test Drupal's PHP/PDO connection; this must succeed.
         - >-
@@ -92,7 +92,7 @@ services:
           \Drupal::database()->query("SELECT VERSION()")->fetchField(), PHP_EOL;'
 
       # Demonstrate whether the command-line client still has the TLS problem.
-        - bin/drush -r "${DOCROOT}" sql:query "SELECT DATABASE(), VERSION();" --extra=--disable-ssl || true
+        - bin/drush -r "${DOCROOT}" sql:query "SELECT DATABASE(), VERSION();" || true
 
         - bin/drush en module_permissions -y
 
