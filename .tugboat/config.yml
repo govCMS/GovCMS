@@ -85,9 +85,15 @@ services:
         # Install the site.
         - bin/drush -r "${DOCROOT}" site:install govcms install_configure_form.update_status_module='array(FALSE,FALSE)' -y
 
-        # Confirm Drupal's connection and report the connected server version.
-        - bin/drush -r "${DOCROOT}" sql:query "SELECT DATABASE(), VERSION();"
-        
+        # Test Drupal's PHP/PDO connection; this must succeed.
+        - >-
+          bin/drush -r "${DOCROOT}" php:eval
+          'echo "Server version through Drupal: ",
+          \Drupal::database()->query("SELECT VERSION()")->fetchField(), PHP_EOL;'
+
+      # Demonstrate whether the command-line client still has the TLS problem.
+        - bin/drush -r "${DOCROOT}" sql:query "SELECT DATABASE(), VERSION();" || true
+
         - bin/drush en module_permissions -y
 
       # Commands when building a new branch/PR update.
