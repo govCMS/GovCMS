@@ -8,9 +8,11 @@ services:
     commands:
       # Configure the server for the site to run on.
       init:
-      # running diagnostic commands 
+        # Report the MariaDB command-line client version installed in the database container
         - mariadb --version
+        # Query the running MariaDB server to report its exact version.
         - mariadb -Nse "SELECT VERSION();"
+        # Confirm whether the server has TLS enabled and whether it requires clients to use encrypted connections
         - mariadb -e "SHOW VARIABLES WHERE Variable_name IN ('have_ssl', 'require_secure_transport');"
         # Increase the allowed packet size to 512MB.
         - mariadb -e "SET GLOBAL max_allowed_packet=536870912;"
@@ -36,9 +38,10 @@ services:
     commands:
       # Commands that set up the basic preview infrastructure.
       init:
-        # running diagnostic commands 
+        # Report the MariaDB command-line client version used by Drush SQL commands from the app container
         - mysql --version
-        - php -i | grep -iE "Client API version|mysqlnd" || true
+        # Report the PHP MySQL client implementation and version used by Drupal for its normal database connections.
+        - php -i | grep -iE "Client API version|mysqlnd"
         # Tooling.
         - apt-get update
         - apt-get install -y libbz2-dev libzip-dev
@@ -85,14 +88,15 @@ services:
         # Install the site.
         - bin/drush -r "${DOCROOT}" site:install govcms install_configure_form.update_status_module='array(FALSE,FALSE)' -y
 
-        # Test Drupal's PHP/PDO connection; this must succeed.
+        # Verify that Drupal can query the database through PHP/mysqlnd and
+        # report the MariaDB server version reached by that connection.
         - >-
           bin/drush -r "${DOCROOT}" php:eval
           'echo "Server version through Drupal: ",
           \Drupal::database()->query("SELECT VERSION()")->fetchField(), PHP_EOL;'
 
-      # Demonstrate whether the command-line client still has the TLS problem.
-        - bin/drush -r "${DOCROOT}" sql:query "SELECT DATABASE(), VERSION();" || true
+        # Verify that Drush can connect through the MariaDB command-line client.
+        - bin/drush -r "${DOCROOT}" sql:query "SELECT DATABASE(), VERSION();"
 
         - bin/drush en module_permissions -y
 
