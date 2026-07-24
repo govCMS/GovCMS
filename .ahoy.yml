@@ -44,6 +44,10 @@ commands:
     usage: Run PHPUnit tests.
     cmd: docker compose exec govcms sudo -u root -E sudo -u www-data -E /app/bin/phpunit "$@"
 
-  drupal-check:
-    usage: Static analysis tool to check for correctness and deprecation errors.
-    cmd: docker compose exec govcms drupal-check "$@"
+  phpstan:
+  usage: Run default phpstan level-2 analysis.
+  cmd: docker compose exec govcms phpstan analyse --level=2 "$@"
+
+  phpstan-analysis:
+  usage: Run phpstan level-6 analysis.
+  cmd: docker compose exec govcms phpstan analyse --level=6 "$@"
