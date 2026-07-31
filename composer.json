@@ -42,7 +42,7 @@
         "drupal/crop": "2.6.0",
         "drupal/ctools": "4.1.0",
         "drupal/devel": "5.5.0",
-        "drupal/diff": "2.1.0",
+        "drupal/diff": "1.10.0",
         "drupal/dropzonejs": "2.11.0",
         "drupal/ds": "3.37.0",
         "drupal/dynamic_entity_reference": "3.2.2",
