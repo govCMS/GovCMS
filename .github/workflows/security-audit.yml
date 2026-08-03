@@ -1,0 +1,42 @@
+name: GovCMS scheduled security audit
+
+on:
+  schedule:
+    # Every day at 5:15 am Sydney time.
+    - cron: '15 5 * * *'
+      timezone: 'Australia/Sydney'
+
+    # Every day at 7:27 am Sydney time.
+    - cron: '27 7 * * *'
+      timezone: 'Australia/Sydney'
+
+  # Allows testing from the GitHub Actions UI.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  security-audit:
+    runs-on: ubuntu-latest
+
+    container:
+      image: govcmstesting/ci:latest-php8.3-apache
+      options: --user root
+      
+    steps:
+      - name: Check out 4.x-develop
+        uses: actions/checkout@v7
+        with:
+          ref: 4.x-develop
+
+      - name: Resolve GovCMS dependencies
+        run: >
+          composer update
+          --profile
+          --prefer-dist
+          --optimize-autoloader
+          --no-scripts
+
+      - name: Run Composer security audit
+        run: composer audit --locked
