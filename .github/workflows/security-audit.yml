@@ -2,10 +2,6 @@ name: GovCMS scheduled security audit
 
 on:
   schedule:
-    # Every day at 5:15 am Sydney time.
-    - cron: '15 5 * * *'
-      timezone: 'Australia/Sydney'
-
     # Every day at 7:27 am Sydney time.
     - cron: '27 7 * * *'
       timezone: 'Australia/Sydney'
