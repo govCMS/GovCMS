@@ -1,0 +1,7 @@
+govcms_dlm.form:
+  path: /admin/config/system/dlm
+  defaults:
+    _title: 'Email DLM settings'
+    _form: \Drupal\govcms_dlm\Form\GovcmsDlmForm
+  requirements:
+    _permission: 'administer govcms_dlm'

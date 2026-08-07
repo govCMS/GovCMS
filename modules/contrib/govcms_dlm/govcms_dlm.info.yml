@@ -1,0 +1,7 @@
+name: 'GovCMS Dissemination Limiting Marker (DLM)'
+type: module
+description: Add optional DLM to emails sent from drupal mail.
+package: GovCMS
+core_version_requirement: ^10 || ^11
+version: 3.0.1
+configure: 'govcms_dlm.form'
