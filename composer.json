@@ -90,7 +90,7 @@
         "drupal/migrate_source_csv": "3.8.0",
         "drupal/migrate_tools": "6.1.4",
         "drupal/minisite": "3.0.3",
-        "drupal/modifiers": "1.6.0",
+        "drupal/modifiers": "1.8.0",
         "drupal/module_permissions": "4.0.0",
         "drupal/paragraphs": "1.21.0",
         "drupal/password_policy": "4.0.3",
