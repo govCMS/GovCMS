@@ -146,6 +146,7 @@
             "php-http/discovery": true,
             "simplesamlphp/composer-module-installer": false,
             "simplesamlphp/composer-xmlprovider-installer": false,
+            "symfony/runtime": true,
             "tbachert/spi": true
         },
         "bin-dir": "bin/",
