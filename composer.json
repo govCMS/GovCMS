@@ -186,7 +186,7 @@
                 "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2026-01-13/tfa-2930541-94.patch"
             },
             "drupal/diff": {
-                "AddressFieldBuilder::build is not compatible with diff 2.0.x's CoreFieldBuilder::build - https://www.drupal.org/files/issues/2024-07-10/diff-module-support-3460590-2.patch": "https://www.drupal.org/files/issues/2024-07-10/diff-module-support-3460590-2.patch"
+                "AddressFieldBuilder::build is not compatible with diff 2.0.x's CoreFieldBuilder::build - https://www.drupal.org/project/address/issues/3460590": "https://www.drupal.org/files/issues/2024-07-10/diff-module-support-3460590-2.patch"
             }
         }
     },
