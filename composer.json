@@ -45,7 +45,7 @@
         "drupal/diff": "1.10.0",
         "drupal/dropzonejs": "2.11.0",
         "drupal/ds": "3.37.0",
-        "drupal/dynamic_entity_reference": "3.2.2",
+        "drupal/dynamic_entity_reference": "3.2.3",
         "drupal/embed": "1.10.0",
         "drupal/encrypt": "3.3.0",
         "drupal/entity_browser": "2.15.0",
