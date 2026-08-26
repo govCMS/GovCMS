@@ -73,7 +73,7 @@
         "drupal/jsonapi_extras": "3.28.0",
         "drupal/key": "1.22.0",
         "drupal/layout_builder_modal": "2.0.0",
-        "drupal/layout_builder_restrictions": "3.0.4",
+        "drupal/layout_builder_restrictions": "3.0.6",
         "drupal/linked_field": "1.7.0",
         "drupal/linkit": "7.0.16",
         "drupal/login_security": "2.0.7",
