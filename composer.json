@@ -189,7 +189,7 @@
                 "AJAX error when password field is hidden - https://www.drupal.org/project/password_policy/issues/3442714": "https://www.drupal.org/files/issues/2024-07-26/password_policy-3442714-7.patch"
             },
             "drupal/tfa": {
-                "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2026-01-13/tfa-2930541-94.patch",
+                "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2026-08-26/tfa-2930541-96.patch",
                 "Implicitly marking parameter as nullable is deprecated in PHP8.4 - https://www.drupal.org/project/tfa/issues/3496146": "https://www.drupal.org/files/issues/2026-07-29/3496146-php84-deprecations-interface-compatible.patch"
             },
             "drupal/address": {
