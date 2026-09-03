@@ -1,5 +1,5 @@
 # Stage 1: Build the application
-FROM drupal:11-php8.3 as builder
+FROM drupal:11-php8.4 as builder
 
 # Set timezone to Australia/Sydney by default
 RUN ln -sf /usr/share/zoneinfo/Australia/Sydney /etc/localtime
@@ -34,7 +34,7 @@ COPY composer.json ./
 # Install Composer dependencies
 RUN \
     --mount=type=cache,mode=0777,target=/root/.composer/cache \
-    composer require palantirnet/drupal-rector mglaman/drupal-check --dev --no-update && \
+    composer require palantirnet/drupal-rector --dev --no-update && \
     composer update --no-scripts --no-autoloader && \
     cp vendor/palantirnet/drupal-rector/rector.php .
 
