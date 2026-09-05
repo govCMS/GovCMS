@@ -124,7 +124,7 @@
         "drupal/workbench_access": "2.0.4",
         "govcms-assets/chosen": "3.1.3",
         "govcms-assets/dropzone": "5.9.3",
-        "simplesamlphp/simplesamlphp": "2.5.2",
+        "simplesamlphp/simplesamlphp": "2.5.3.1",
         "webflo/drupal-finder": "^1.2"
     },
     "require-dev": {
