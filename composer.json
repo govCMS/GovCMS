@@ -182,7 +182,8 @@
                 "hasAffectingChanges ignores delta 2+ if first one was not updated - https://www.drupal.org/project/entity_reference_revisions/issues/3582279": "https://git.drupalcode.org/project/entity_reference_revisions/-/commit/16b72c367ba3b734a294dc822f7dce79e8bb5aea.diff"
             },
             "drupal/facets": {
-                "Creating requests causes failures on Drupal 10.3 - https://www.drupal.org/project/facets/issues/3466281": "https://www.drupal.org/files/issues/2024-11-21/3466281-7.patch"
+                "Creating requests causes failures on Drupal 10.3 - https://www.drupal.org/project/facets/issues/3466281": "https://www.drupal.org/files/issues/2024-11-21/3466281-7.patch",
+                "Cannot remove the last active facet after Drupal 11.4 Url::createFromRequest change - https://www.drupal.org/project/facets/issues/3609745": "https://git.drupalcode.org/project/facets/-/commit/383be3348483ed1c97866c14918b8950fabb4f2b.diff"
             },
             "drupal/password_policy": {
                 "Apply password policies for SSO users - https://www.drupal.org/project/password_policy/issues/3366169": "https://www.drupal.org/files/issues/2024-07-25/password_policy-3366169-8.patch",
