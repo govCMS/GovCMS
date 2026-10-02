@@ -16,7 +16,7 @@ function govcms_update_last_removed() {
  * Implements hook_update_N().
  * Uninstall admin_toolbar_links_access_filter module if marked as 'obsolete'.
  */
-function govcms_update_11000() {
+function govcms_update_11001() {
   // Get the Lifecycle service.
   $lifecycle_service = \Drupal::service('govcms.modules.lifecycle');
 
