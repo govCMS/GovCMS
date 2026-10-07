@@ -133,7 +133,8 @@
         "drush/drush": "~13"
     },
     "replace": {
-        "drupal/ban": "*"
+        "drupal/ban": "*",
+        "drupal/contact":"*"
     },
     "config": {
         "allow-plugins": {
