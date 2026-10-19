@@ -282,8 +282,8 @@ function govcms_security_file_presave(FileInterface $file) {
     }
   }
   else {
-    $original_uri = $file->getOriginal()->getFileUri();
-    if (file_exists($uri) && !file_exists($original_uri)) {
+    $original_uri = $file->getOriginal()?->getFileUri();
+    if ($original_uri && file_exists($uri) && !file_exists($original_uri)) {
       $file_system->move($uri, $original_uri, FileExists::Error);
     }
   }

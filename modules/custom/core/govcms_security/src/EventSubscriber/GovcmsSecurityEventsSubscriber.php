@@ -43,7 +43,7 @@ class GovcmsSecurityEventsSubscriber implements EventSubscriberInterface {
    * @param \Drupal\file\Validation\FileValidationEvent $event
    *   The file validation event.
    */
-  public function onFileValidation(FileValidationEvent $event) {
+  public function onFileValidation(FileValidationEvent $event): void {
     $file = $event->file;
     foreach ([$file->getFilename(), $file->getFileUri()] as $name) {
       if (is_string($name) && BlockedFileExtension::isBlocked($name)) {
@@ -112,15 +112,12 @@ class GovcmsSecurityEventsSubscriber implements EventSubscriberInterface {
    *   Thrown when the file validation failed.
    */
   protected function validateFile($name) {
-    // The file extension of the original name.
-    $extension = BlockedFileExtension::getExtension($name);
-    if ($extension) {
-      if (BlockedFileExtension::isBlocked($name)) {
-        $message = sprintf('\'%s\' file is blocked from uploading ', $extension);
-        // @todo Remove the uploaded file from the temporary folder as it is blocked
-        // and do not need anymore.
-        throw new AccessDeniedHttpException($message);
-      }
+    if (BlockedFileExtension::isBlocked($name)) {
+      $extension = BlockedFileExtension::getExtension($name);
+      $message = sprintf('\'%s\' file is blocked from uploading ', $extension);
+      // @todo Remove the uploaded file from the temporary folder as it is blocked
+      // and do not need anymore.
+      throw new AccessDeniedHttpException($message);
     }
 
     return TRUE;
