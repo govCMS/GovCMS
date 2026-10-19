@@ -9,8 +9,12 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Site\Settings;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityStorageException;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Extension\Extension;
+use Drupal\Core\File\FileExists;
+use Drupal\file\FileInterface;
+use Drupal\govcms_security\BlockedFileExtension;
 use Drupal\user\Entity\Role;
 use Drupal\user\RoleInterface;
 use Drupal\webform\Plugin\WebformElement\ManagedFile;
@@ -245,4 +249,48 @@ function govcms_security_form_tfa_base_overview_alter(&$form, FormStateInterface
   if (isset($form['actions']['reset_skip_attempts'])) {
     $form['actions']['reset_skip_attempts']['#access'] = FALSE;
   }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave() for file entities.
+ *
+ * Backstop for files that are not created through an upload form or API, for
+ * example by Drush, migrations or custom code using the file repository
+ * service. Uploads are rejected earlier, during file validation.
+ *
+ * @see \Drupal\govcms_security\EventSubscriber\GovcmsSecurityEventsSubscriber::onFileValidation()
+ */
+function govcms_security_file_presave(FileInterface $file) {
+  $uri = $file->getFileUri();
+  // Only check new files and files being moved, so that existing files stored
+  // before the block, for example legacy .doc attachments, can still be saved
+  // when core updates their status or usage.
+  if (!$file->isNew() && $uri === $file->getOriginal()?->getFileUri()) {
+    return;
+  }
+  if (!is_string($uri) || !BlockedFileExtension::isBlocked($uri)) {
+    return;
+  }
+
+  // The file data is written or moved before the entity is saved. Remove a new
+  // file, or move a renamed one back, so that it is not left in place to be
+  // served under the blocked extension.
+  $file_system = \Drupal::service('file_system');
+  if ($file->isNew()) {
+    if (file_exists($uri)) {
+      $file_system->delete($uri);
+    }
+  }
+  else {
+    $original_uri = $file->getOriginal()?->getFileUri();
+    if ($original_uri && file_exists($uri) && !file_exists($original_uri)) {
+      $file_system->move($uri, $original_uri, FileExists::Error);
+    }
+  }
+
+  \Drupal::logger('govcms_security')->warning('Refused to save file %uri: the %extension extension is blocked.', [
+    '%uri' => $uri,
+    '%extension' => BlockedFileExtension::getExtension($uri),
+  ]);
+  throw new EntityStorageException(sprintf('Files with the "%s" extension are not allowed.', BlockedFileExtension::getExtension($uri)));
 }

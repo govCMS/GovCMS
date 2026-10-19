@@ -6,12 +6,18 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use Symfony\Component\Validator\ConstraintViolation;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Drupal\file\Validation\FileValidationEvent;
+use Drupal\govcms_security\BlockedFileExtension;
 use Drupal\govcms_security\GovcmsFileConstraintInterface;
 
 /**
  * GovCMS security event subscriber.
  */
 class GovcmsSecurityEventsSubscriber implements EventSubscriberInterface {
+
+  use StringTranslationTrait;
 
   /**
    * {@inheritdoc}
@@ -23,7 +29,37 @@ class GovcmsSecurityEventsSubscriber implements EventSubscriberInterface {
     $events = [];
     // Subscribe to Symfony kernel request with default priority of 0.
     $events[KernelEvents::REQUEST][] = ['onRequest'];
+    // Validate files after core has sanitised the file name.
+    $events[FileValidationEvent::class][] = ['onFileValidation'];
     return $events;
+  }
+
+  /**
+   * Rejects files with a blocked extension during file validation.
+   *
+   * This checks the file name that will be stored, before the file is moved
+   * to its destination.
+   *
+   * @param \Drupal\file\Validation\FileValidationEvent $event
+   *   The file validation event.
+   */
+  public function onFileValidation(FileValidationEvent $event): void {
+    $file = $event->file;
+    foreach ([$file->getFilename(), $file->getFileUri()] as $name) {
+      if (is_string($name) && BlockedFileExtension::isBlocked($name)) {
+        $template = 'Files with the %extension extension are not allowed.';
+        $parameters = ['%extension' => BlockedFileExtension::getExtension($name)];
+        $event->violations->add(new ConstraintViolation(
+          $this->t('Files with the %extension extension are not allowed.', $parameters),
+          $template,
+          $parameters,
+          $file,
+          'filename',
+          $name,
+        ));
+        return;
+      }
+    }
   }
 
   /**
@@ -76,15 +112,12 @@ class GovcmsSecurityEventsSubscriber implements EventSubscriberInterface {
    *   Thrown when the file validation failed.
    */
   protected function validateFile($name) {
-    // The file extension of the original name.
-    $extension = pathinfo($name, PATHINFO_EXTENSION);
-    if ($extension && is_string($extension)) {
-      if (in_array(strtolower($extension), GovcmsFileConstraintInterface::BLOCKED_EXTENSIONS, TRUE)) {
-        $message = sprintf('\'%s\' file is blocked from uploading ', $extension);
-        // @todo Remove the uploaded file from the temporary folder as it is blocked
-        // and do not need anymore.
-        throw new AccessDeniedHttpException($message);
-      }
+    if (BlockedFileExtension::isBlocked($name)) {
+      $extension = BlockedFileExtension::getExtension($name);
+      $message = sprintf('\'%s\' file is blocked from uploading ', $extension);
+      // @todo Remove the uploaded file from the temporary folder as it is blocked
+      // and do not need anymore.
+      throw new AccessDeniedHttpException($message);
     }
 
     return TRUE;
