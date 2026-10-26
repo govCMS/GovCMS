@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "php": "^8.3.0",
+        "php": "^8.4.0",
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
         "drupal/address": "2.0.4",
@@ -37,31 +37,31 @@
         "drupal/consumers": "1.24.0",
         "drupal/contact_storage": "1.5.0",
         "drupal/context": "5.0.0-rc2",
-        "drupal/core-composer-scaffold": "11.3.19",
-        "drupal/core-recommended": "11.3.19",
+        "drupal/core-composer-scaffold": "11.4.10",
+        "drupal/core-recommended": "11.4.10",
         "drupal/crop": "2.6.0",
-        "drupal/ctools": "4.1.0",
+        "drupal/ctools": "4.1.1",
         "drupal/devel": "5.5.0",
         "drupal/diff": "2.0.1",
         "drupal/dropzonejs": "2.11.0",
         "drupal/ds": "3.37.0",
-        "drupal/dynamic_entity_reference": "3.2.2",
+        "drupal/dynamic_entity_reference": "3.2.3",
         "drupal/embed": "1.10.0",
-        "drupal/encrypt": "3.2.0",
+        "drupal/encrypt": "3.3.0",
         "drupal/entity_browser": "2.16.0",
-        "drupal/entity_class_formatter": "2.0.1",
+        "drupal/entity_class_formatter": "2.0.2",
         "drupal/entity_embed": "1.7.0",
         "drupal/entity_hierarchy": "3.3.15",
-        "drupal/entity_reference_display": "2.0.5",
+        "drupal/entity_reference_display": "2.0.6",
         "drupal/entity_reference_revisions": "1.14.0",
         "drupal/environment_indicator": "4.0.25",
-        "drupal/events_log_track": "4.0.2",
+        "drupal/events_log_track": "5.0.0",
         "drupal/externalauth": "2.0.13",
         "drupal/facets": "2.0.10",
         "drupal/fakeobjects": "2.0.1",
         "drupal/field_group": "4.0.0",
         "drupal/file_to_media": "1.0.3",
-        "drupal/focal_point": "2.1.2",
+        "drupal/focal_point": "2.1.3",
         "drupal/google_analytics": "4.0.3",
         "drupal/google_tag": "2.0.9",
         "drupal/govcms_dlm": "3.0.0",
@@ -70,10 +70,11 @@
         "drupal/jquery_ui": "1.8.0",
         "drupal/jquery_ui_draggable": "2.1.0",
         "drupal/jquery_ui_droppable": "2.1.0",
+        "drupal/jsonapi_extras": "3.28.0",
         "drupal/key": "1.22.0",
         "drupal/layout_builder_modal": "2.0.0",
         "drupal/layout_builder_restrictions": "3.0.4",
-        "drupal/linked_field": "1.7.0",
+        "drupal/linked_field": "1.8.0",
         "drupal/linkit": "7.0.16",
         "drupal/login_security": "2.0.7",
         "drupal/mailsystem": "4.5.0",
@@ -89,13 +90,13 @@
         "drupal/migrate_source_csv": "3.8.0",
         "drupal/migrate_tools": "6.1.4",
         "drupal/minisite": "3.0.3",
-        "drupal/modifiers": "1.6.0",
+        "drupal/modifiers": "1.8.0",
         "drupal/module_permissions": "4.0.0",
-        "drupal/paragraphs": "1.21.0",
+        "drupal/paragraphs": "1.23.0",
         "drupal/password_policy": "4.0.3",
-        "drupal/pathauto": "1.14.0",
+        "drupal/pathauto": "1.15.0",
         "drupal/real_aes": "2.6.0",
-        "drupal/recaptcha": "3.4.0",
+        "drupal/recaptcha": "3.5.0",
         "drupal/recaptcha_v3": "2.0.5",
         "drupal/redirect": "1.13.0",
         "drupal/rest_menu_items": "3.0.7",
@@ -105,7 +106,7 @@
         "drupal/search_api": "1.41.0",
         "drupal/search_api_attachments": "10.0.10",
         "drupal/search_api_autocomplete": "1.12.0",
-        "drupal/search_api_solr": "4.3.10",
+        "drupal/search_api_solr": "4.4.0",
         "drupal/search_api_spellcheck": "4.0.1",
         "drupal/seckit": "2.0.3",
         "drupal/securitytxt": "1.6.0",
@@ -113,7 +114,7 @@
         "drupal/simple_oauth": "6.1.1",
         "drupal/simple_sitemap": "4.2.3",
         "drupal/simplesamlphp_auth": "4.1.0",
-        "drupal/symfony_mailer": "1.6.2",
+        "drupal/symfony_mailer": "2.0.2",
         "drupal/tfa": "1.12.0",
         "drupal/token": "1.17.0",
         "drupal/twig_tweak": "3.4.2",
@@ -123,7 +124,6 @@
         "drupal/workbench_access": "2.0.4",
         "govcms-assets/chosen": "3.1.3",
         "govcms-assets/dropzone": "5.9.3",
-        "oomphinc/composer-installers-extender": "^2.0",
         "simplesamlphp/simplesamlphp": "2.5.2",
         "webflo/drupal-finder": "^1.2"
     },
@@ -133,7 +133,8 @@
         "drush/drush": "~13"
     },
     "replace": {
-        "drupal/ban": "*"
+        "drupal/ban": "*",
+        "drupal/contact":"*"
     },
     "config": {
         "allow-plugins": {
@@ -141,12 +142,12 @@
             "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "oomphinc/composer-installers-extender": true,
             "drupal/core-vendor-hardening": true,
             "phpstan/extension-installer": true,
             "php-http/discovery": true,
             "simplesamlphp/composer-module-installer": false,
             "simplesamlphp/composer-xmlprovider-installer": false,
+            "symfony/runtime": true,
             "tbachert/spi": true
         },
         "bin-dir": "bin/",
@@ -172,6 +173,9 @@
         "enable-patching": true,
         "composer-exit-on-patch-failure": true,
         "patches": {
+            "drupal/jsonapi_extras": {
+                "Add a new dedicated permission for JSON API extra config - https://www.drupal.org/project/jsonapi_extras/issues/3309122": "https://www.drupal.org/files/issues/2026-05-06/jsonapi_extras-add-permission-3309122-10_1.patch"
+            },
             "drupal/entity_embed": {
                 "CKEditor 45 compatibility - https://www.drupal.org/project/entity_embed/issues/3531672": "https://www.drupal.org/files/issues/2025-08-08/entity_embed--fix-ckeditor-icon-reference--3531672-22.patch"
             },
@@ -179,17 +183,23 @@
                 "hasAffectingChanges ignores delta 2+ if first one was not updated - https://www.drupal.org/project/entity_reference_revisions/issues/3582279": "https://git.drupalcode.org/project/entity_reference_revisions/-/commit/16b72c367ba3b734a294dc822f7dce79e8bb5aea.diff"
             },
             "drupal/facets": {
-                "Creating requests causes failures on Drupal 10.3 - https://www.drupal.org/project/facets/issues/3466281": "https://www.drupal.org/files/issues/2024-11-21/3466281-7.patch"
+                "Creating requests causes failures on Drupal 10.3 - https://www.drupal.org/project/facets/issues/3466281": "https://www.drupal.org/files/issues/2024-11-21/3466281-7.patch",
+                "Cannot remove the last active facet after Drupal 11.4 Url::createFromRequest change - https://www.drupal.org/project/facets/issues/3609745": "https://git.drupalcode.org/project/facets/-/commit/383be3348483ed1c97866c14918b8950fabb4f2b.diff"
             },
             "drupal/password_policy": {
                 "Apply password policies for SSO users - https://www.drupal.org/project/password_policy/issues/3366169": "https://www.drupal.org/files/issues/2024-07-25/password_policy-3366169-8.patch",
                 "AJAX error when password field is hidden - https://www.drupal.org/project/password_policy/issues/3442714": "https://www.drupal.org/files/issues/2024-07-26/password_policy-3442714-7.patch"
             },
             "drupal/tfa": {
-                "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2026-01-13/tfa-2930541-94.patch"
+                "Create Email one-time-code Validation Plugin & related Setup Plugin - https://www.drupal.org/project/tfa/issues/2930541": "https://www.drupal.org/files/issues/2026-08-26/tfa-2930541-96.patch",
+                "Implicitly marking parameter as nullable is deprecated in PHP8.4 - https://www.drupal.org/project/tfa/issues/3496146": "https://www.drupal.org/files/issues/2026-07-29/3496146-php84-deprecations-interface-compatible.patch"
             },
             "drupal/address": {
                 "AddressFieldBuilder::build is not compatible with diff 2.0.x's CoreFieldBuilder::build - https://www.drupal.org/project/address/issues/3460590": "https://www.drupal.org/files/issues/2024-07-10/diff-module-support-3460590-2.patch"
+            },
+            "drupal/symfony_mailer": {
+                "Receiving TypeError when $langcode is null in mailer_override - https://www.drupal.org/project/symfony_mailer/issues/3618931": "https://www.drupal.org/files/issues/2026-08-26/symfony_mailer-3618931.patch",
+                "CommentLinkBuilderInterface not found - https://www.drupal.org/project/symfony_mailer/issues/3589038": "https://www.drupal.org/files/issues/2026-05-13/symfony_mailer-3589038-mailerpass-class-exists-guard.patch"
             }
         }
     },
