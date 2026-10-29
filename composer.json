@@ -84,7 +84,7 @@
         "drupal/media_vimeo_domain_privacy": "1.2.0",
         "drupal/menu_block": "1.14.0",
         "drupal/menu_trail_by_path": "2.2.0",
-        "drupal/metatag": "2.2.0",
+        "drupal/metatag": "2.2.4",
         "drupal/migrate_file": "3.0.0-alpha1",
         "drupal/migrate_plus": "6.0.10",
         "drupal/migrate_source_csv": "3.8.0",
