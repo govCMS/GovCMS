@@ -15,6 +15,7 @@ class Lifecycle {
 
   // Obsolete modules.
   const OBSOLETE_MODULES = [
+    'admin_toolbar_links_access_filter',
     'clamav',
     'event_log_track_ui',
     'field_layout',

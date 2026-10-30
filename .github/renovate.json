@@ -42,6 +42,13 @@
       "matchPackageNames": [
         "/^drupal/core/"
       ]
+    },
+    {
+      "matchManagers": ["composer"],
+      "matchPackageNames": [
+        "simplesamlphp/simplesamlphp"
+      ],
+      "versioning": "loose"
     }
   ]
 }
