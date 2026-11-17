@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Hook\Attribute\LegacyHook;
 use Drupal\Core\Site\Settings;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\EntityInterface;
@@ -73,9 +74,9 @@ function govcms_security_form_user_admin_permissions_alter(&$form, FormStateInte
       // authenticated.
       elseif (!empty($permission['restrict access'])) {
         foreach ([
-                   RoleInterface::ANONYMOUS_ID,
-                   RoleInterface::AUTHENTICATED_ID,
-                 ] as $rid) {
+          RoleInterface::ANONYMOUS_ID,
+          RoleInterface::AUTHENTICATED_ID,
+        ] as $rid) {
           $form['permissions'][$permission_name][$rid]['#disabled'] = TRUE;
           $form['permissions'][$permission_name][$rid]['#default_value'] = FALSE;
         }
@@ -244,5 +245,41 @@ function govcms_security_form_tfa_base_overview_alter(&$form, FormStateInterface
   }
   if (isset($form['actions']['reset_skip_attempts'])) {
     $form['actions']['reset_skip_attempts']['#access'] = FALSE;
+  }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter() for oauth2_scope_form.
+ */
+#[LegacyHook]
+function govcms_security_form_oauth2_scope_form_alter(&$form, FormStateInterface $form_state, $form_id) : void {
+  if (\Drupal::hasService('govcms_security.oauth_hooks')) {
+    /** @var \Drupal\govcms_security\Hook\OauthHooks $oauth_hooks */
+    $oauth_hooks = \Drupal::service('govcms_security.oauth_hooks');
+    $oauth_hooks->oauth2ScopeFormAlter($form, $form_state, $form_id);
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave() for oauth2_scope entity.
+ */
+#[LegacyHook]
+function govcms_security_oauth2_scope_presave(EntityInterface $entity) : void {
+  if (\Drupal::hasService('govcms_security.oauth_hooks')) {
+    /** @var \Drupal\govcms_security\Hook\OauthHooks $oauth_hooks */
+    $oauth_hooks = \Drupal::service('govcms_security.oauth_hooks');
+    $oauth_hooks->oauth2ScopePresave($entity);
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_load() for oauth2_scope entity.
+ */
+#[LegacyHook]
+function govcms_security_oauth2_scope_load(array $entities) : void {
+  if (\Drupal::hasService('govcms_security.oauth_hooks')) {
+    /** @var \Drupal\govcms_security\Hook\OauthHooks $oauth_hooks */
+    $oauth_hooks = \Drupal::service('govcms_security.oauth_hooks');
+    $oauth_hooks->oauth2ScopeLoad($entities);
   }
 }
