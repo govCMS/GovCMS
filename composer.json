@@ -20,7 +20,7 @@
         "php": "^8.4.0",
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
-        "drupal/address": "2.0.4",
+        "drupal/address": "2.0.6",
         "drupal/admin_toolbar": "3.6.3",
         "drupal/anchor_link": "3.0.6",
         "drupal/better_exposed_filters": "7.1.3",
