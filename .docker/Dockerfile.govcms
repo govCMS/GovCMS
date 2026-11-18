@@ -22,6 +22,7 @@ RUN echo "memory_limit = 512M" >> /usr/local/etc/php/conf.d/docker-php-ram-limit
 # Set Composer environment variables
 ENV COMPOSER_ALLOW_SUPERUSER=1
 ENV COMPOSER_MEMORY_LIMIT=-1
+ENV COMPOSER_POLICY_ADVISORIES_BLOCK=0
 ENV SIMPLETEST_BASE_URL="http://govcms"
 ENV SIMPLETEST_DB='mysql://drupal:drupal@mariadb/drupal'
 
