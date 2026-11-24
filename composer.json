@@ -40,7 +40,7 @@
         "drupal/core-composer-scaffold": "11.4.13",
         "drupal/core-recommended": "11.4.13",
         "drupal/crop": "2.6.0",
-        "drupal/ctools": "4.1.1",
+        "drupal/ctools": "4.1.2",
         "drupal/devel": "5.5.0",
         "drupal/diff": "2.0.1",
         "drupal/dropzonejs": "2.11.0",
