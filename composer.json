@@ -101,7 +101,7 @@
         "drupal/redirect": "1.13.0",
         "drupal/rest_menu_items": "3.0.7",
         "drupal/robotstxt": "1.6.0",
-        "drupal/role_delegation": "1.6.0",
+        "drupal/role_delegation": "1.7.0",
         "drupal/scheduled_transitions": "2.8.4",
         "drupal/search_api": "1.41.0",
         "drupal/search_api_attachments": "10.0.10",
