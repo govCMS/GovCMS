@@ -200,7 +200,8 @@
             },
             "drupal/symfony_mailer": {
                 "Receiving TypeError when $langcode is null in mailer_override - https://www.drupal.org/project/symfony_mailer/issues/3618931": "https://www.drupal.org/files/issues/2026-08-26/symfony_mailer-3618931.patch",
-                "CommentLinkBuilderInterface not found - https://www.drupal.org/project/symfony_mailer/issues/3589038": "https://www.drupal.org/files/issues/2026-05-13/symfony_mailer-3589038-mailerpass-class-exists-guard.patch"
+                "CommentLinkBuilderInterface not found - https://www.drupal.org/project/symfony_mailer/issues/3589038": "https://www.drupal.org/files/issues/2026-05-13/symfony_mailer-3589038-mailerpass-class-exists-guard.patch",
+                "Fix circular service dependency in MailerConfigOverride - https://www.drupal.org/project/symfony_mailer/issues/3608684": "https://www.drupal.org/files/issues/2026-10-20/3608684-15.patch"
             }
         }
     },
