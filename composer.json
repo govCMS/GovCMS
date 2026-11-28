@@ -36,7 +36,7 @@
         "drupal/consultation-consultation": "1.1.0",
         "drupal/consumers": "1.24.0",
         "drupal/contact_storage": "1.5.0",
-        "drupal/context": "5.0.0-rc2",
+        "drupal/context": "5.0.0-rc4",
         "drupal/core-composer-scaffold": "11.4.13",
         "drupal/core-recommended": "11.4.13",
         "drupal/crop": "2.6.0",
